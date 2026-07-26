@@ -25,5 +25,59 @@ subscriptions:
     stage: A
     diff_threshold_pct: 15
   keyword_recall_mode: or
-  intent_profiles: []
+  intent_profiles:
+    - tag: EP
+      description: Earth and Planetary Astrophysics
+      enabled: true
+      paper_sources:
+        - arxiv
+      keywords:
+        - keyword: protoplanetary disk
+          keyword_cn: 原行星盘
+          query: observations and theoretical models of protoplanetary disks and disk evolution
+        - keyword: planet formation
+          keyword_cn: 行星形成
+          query: formation and early evolution of planets, planetesimals, and planetary systems
+        - keyword: exoplanet atmosphere
+          keyword_cn: 系外行星大气
+          query: observations and models of exoplanet atmospheres, climate, chemistry, and escape
+        - keyword: exoplanet detection
+          keyword_cn: 系外行星探测
+          query: new exoplanet discoveries and detection or characterization methods
+        - keyword: orbital dynamics
+          keyword_cn: 轨道动力学
+          query: dynamics, architectures, stability, and evolution of planetary systems
+        - keyword: Solar System small bodies
+          keyword_cn: 太阳系小天体
+          query: asteroids, comets, Kuiper belt objects, and constraints on Solar System origins
+        - keyword: planetary instrumentation
+          keyword_cn: 行星科学仪器
+          query: instruments and analysis methods enabling exoplanet and planetary science
+      intent_queries:
+        - query: impactful new observational studies of exoplanets and planetary systems
+          query_cn: 有重要影响的系外行星与行星系统观测研究
+          enabled: true
+          source: manual
+          note: ''
+        - query: theoretical and numerical advances in planet formation and protoplanetary disks
+          query_cn: 行星形成与原行星盘理论和数值研究进展
+          enabled: true
+          source: manual
+          note: ''
+        - query: atmospheric characterization, chemistry, climate, and escape of exoplanets
+          query_cn: 系外行星大气表征、化学、气候与逃逸
+          enabled: true
+          source: manual
+          note: ''
+        - query: planetary dynamics, migration, stability, and population-level architectures
+          query_cn: 行星动力学、迁移、稳定性及总体结构
+          enabled: true
+          source: manual
+          note: ''
+        - query: high-impact Solar System origins and small-body research
+          query_cn: 太阳系起源和小天体的重要研究
+          enabled: true
+          source: manual
+          note: ''
+      updated_at: '2026-07-26T00:00:00Z'
 source_backends: {}
