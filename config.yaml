@@ -38,6 +38,9 @@ subscriptions:
         - keyword: planet formation
           keyword_cn: 行星形成
           query: formation and early evolution of planets, planetesimals, and planetary systems
+        - keyword: Solar System formation
+          keyword_cn: 太阳系形成
+          query: formation and early evolution of the Solar System, including the solar nebula, planetesimals, giant-planet migration, chronology, and cosmochemical constraints
         - keyword: exoplanet atmosphere
           keyword_cn: 系外行星大气
           query: observations and models of exoplanet atmospheres, climate, chemistry, and escape
@@ -74,10 +77,10 @@ subscriptions:
           enabled: true
           source: manual
           note: ''
-        - query: high-impact Solar System origins and small-body research
-          query_cn: 太阳系起源和小天体的重要研究
+        - query: Solar System formation and early evolution constrained by meteorites, cosmochemistry, planetesimals, small-body populations, and dynamical models
+          query_cn: 由陨石、宇宙化学、星子、小天体族群及动力学模型约束的太阳系形成与早期演化
           enabled: true
           source: manual
           note: ''
-      updated_at: '2026-07-26T00:00:00Z'
+      updated_at: '2026-07-26T02:15:00Z'
 source_backends: {}
