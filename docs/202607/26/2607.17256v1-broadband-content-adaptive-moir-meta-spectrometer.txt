@@ -1,0 +1,975 @@
+Title: Broadband Content-Adaptive Moiré Meta-spectrometer
+
+URL Source: https://arxiv.org/pdf/2607.17256v1
+
+Published Time: Tue, 21 Jul 2026 01:08:41 GMT
+
+Number of Pages: 32
+
+Markdown Content:
+# Broadband Content-Adaptive Moir´ eMeta-spectrometer 
+
+## Arnab Ghosh 1, Johannes E. Fr¨ och 2, Arka Majumdar 2,Vishwanath Saragadam 1* 
+
+> 1*
+
+Department of Electrical and Computer Engineering, University of California, Riverside, 900 University Ave, Riverside, 92521, California, USA. 
+
+> 2
+
+Department of Electrical and Computer Engineering, University of Washington, 185 Stevens Way, Seattle, 98195, Washington, USA. *Corresponding author(s). E-mail(s): vishwans@ucr.edu; jfroech@uw.edu; Contributing authors: aghos034@ucr.edu; arka@ece.uw.edu;  
+
+> Keywords: Metalens, Spectrometer, Adaptive Sampling, Moir´ e lenses
+
+Optical spectroscopy underpins material characterization, chemical sensing, and astronomy, but conventional instruments face a rigid trade-off between footprint, spectral range, and resolution. We demonstrate a content-adaptive spectrometer that overcomes this by co-designing dispersive Moir´ e meta-optics with a recursive sampling algorithm. Instead of using Moir´ e metalenses solely for varifocal tuning, we harness the strong chromatic aberration arising from phase-wrapping in their subwavelength metasurface architecture. This hyperchromaticity enables a deterministic, one-to-one mapping between the metasurfaces’ mutual rotation angle and the sharply focused wavelength, repurposing the pair as a high-resolution spectral scanner. To acceler-ate data acquisition, we introduce a content-adaptive recursive sampling protocol that exploits the structural sparsity of physical spectra: a fast coarse sweep identifies high-information regions, followed by successively finer angular refinement only where needed. Using a laboratory prototype spanning 405–980 nm, we reconstruct diverse spectra—from smooth broadband to sparse multi-line laser emissions—with nearly 3 ×
+
+fewer measurements on average at matched fidelity (up to 7 × for sparse line spec-tra), achieving 30 dB reconstruction 6.7 × faster than conventional uniform sampling. 1arXiv:2607.17256v1 [eess.SP] 19 Jul 2026 Fig . 1 Working principle of the metalens cascaded to form the Moir ´e meta -optic .a) Optical layout of 
+
+the rotational spectrometer showing the rotating meta -optic(MO 1) cascaded with a static meta -optic 
+
+(MO 2) at close approximity to each other .Realtive rotation of MO 1 with respect to MO 2 causes 
+
+wavelength dependent focus to shift at the sensor plane . b)Phase profiles of MO 1 and Mo 2 which are 
+
+equal and opposite phase patterns which when cascaded together generates a converging quadratic 
+
+phase .    
+
+> Moiré meta -optical
+> element 1 (fixed)
+> Collimated broadband input
+> Moiré meta -optical element 2
+> (rotating, angle 𝜃 )
+> Wavelength Dependent
+> focusing
+> (a) Schematic of the Moiré spectrometer (b) PSF as 𝜃
+> varies
+> (c) SEM images of the
+> meta -optical elements
+> Coarse Sampling Content -Adaptive
+> Fine Sampling
+> Important Region
+> Selection
+> Recursive refinement
+> (d) Content -Adaptive Sampling
+> (e) Sample -efficient
+> high -resolution spectrum Wavelength(nm)
+> Norm. Intensity
+> Wavelength(nm)
+> Wavelength(nm)
+> Norm. Intensity
+> Wavelength(nm)
+> 100nm
+> 100nm
+
+Fig. 1 A content-adaptive Moir´ e Meta-optical spectrometer . A pair of rotating Moir´ e optics enable focus tuning; by exploiting the chromatic properties of meta-optics, we can instead tune the specific wavelength that is in focus, thereby enabling a fast and flexible single pixel spectrometer. 
+
+a) Optical layout of the rotational spectrometer showing the rotating meta-optic (MO1) cascaded with a static meta-optic (MO2) at close proximity to each other. The relative rotation of MO1 with respect to MO2 causes wavelength dependent focus shift at the sensor plane. b) PSF changes from blue to infrared wavelengths as the angle between the two elements increases. c) SEM images of the meta-optical elements showing the nano-pillars. d) shows our content adaptive sensing strategy, where we first perform coarse sampling, which enables estimation of important regions (such as laser peak). We then scan only within these important regions, and repeat the process recursively. e) The end product is a high resolution spectrum with significantly fewer measurements compared to full Nyquist sampling. 
+
+This establishes a framework for intelligent, task-adaptive meta-optical sensors that tightly integrate physical dispersion with computational signal processing for real-time spectrometry. 
+
+# 1 Introduction 
+
+Broadband compact spectrometers that combine small form factor with high spectral resolution are increasingly gaining popularity in the research community and show a lot of promise in wearable portable sensing, diagnostics and field deployable instru-mentation [1]. Conventional dispersive spectrometers use diffraction gratings or prisms to separate wavelengths and sample the dispersed light uniformly across the band, 2which constrains both spectral resolution and optical throughput, increases the over-all form factor, and prevents the instrument from distinguishing wavelength regions that carry a lot of information from those that carry relatively little [2]. Recent advances in meta-optics have paved the way for ultra-thin, multifunctional spectral devices [3]: metalenses offer a fundamentally higher degree of design freedom over phase, wavelength, and chromatic dispersion than classical diffractive optical elements (DOEs) [4, 5], but the sampling axis of these meta-optical instruments is still fixed at fabrication, and compact spectrometers therefore continue to balance spectral range, spectral resolution, and acquisition time against the non-uniform information content of the signals they measure. Content-aware sampling is a natural solution to this trade-off between resolution and time. The instrument can allocate fewer samples to smooth regions and more samples to sharper regions that need refinement, so that the overall sample budget is concentrated where the spectrum is informative. Wavelet-tree adaptive sampling has been demonstrated for hyperspectral images, ghost imaging, and free-form lensing [6– 8], compressed hyperspectral acquisition exploits the same structural sparsity [9], active wavelength selection has been shown in tunable-laser chemical sensing [10], autonomous planetary spectroscopy on Mars uses adaptive acquisition to manage lim-ited measurement budgets in the field [11], and Gaussian-process-driven autonomous experiments are now routine at large-scale beamline facilities [12, 13]. A small fraction of the spectral axis carries most of the information across all of these settings, and that is the structural property our scanner exploits. Our key insight is that this content aware programmability can be realized by combining the Moir´ e varifocal effect [14, 15] with the adaptive scanning algorithm. The relative rotation between two cascaded meta-optical elements allows us to move on the spectral axis independent of the lens geometry and select the wavelength that will be in focus in the sensor during acquisition time, and the motor step size sets the spectral sampling interval. The adaptive scanning algorithm then exploits this axis directly, choosing where the next measurement is taken based on the spectrum observed so far [8, 10]. The two are tightly coupled in a closed acquisition loop, with the algorithm dynamically reprogramming the dispersion law in response to the measured spectrum. The result is a compact, single-pixel meta-optical spectrometer [16] that allocates measurements where they matter most: smooth regions are captured with very few samples, sharp spectral features trigger localized refinement, and a usable spectrum is available after every acquisition round. We realize the Moir´ e varifocal mechanism by cascading two meta-surfaces with equal-magnitude, opposite-signed quadratic-azimuthal phase profiles, mounted along a common optical axis. A relative rotation between the two metasurfaces synthesizes a net quadratic phase via the Moir´ e effect, producing an effective varifocal lens whose optical power scales linearly with the rotation angle. The rotation angle can then be mapped to the wavelength brought into focus at a fixed detector plane, based on the reciprocal relationship between focal length and wavelength due to wrapping of the Moir´ e optics phase profile [17]. The mapping is linear in wavenumber, so that the motor step size, not the geometry of the optic, sets the spectral sampling interval. A content-adaptive Faber-Schauder scanner then drives this substrate in closed loop: a 3content-independent pilot sweep partitions the band into intervals, leaf intervals are scored by a local second-difference detail coefficient, those whose detail exceeds an intensity-normalised threshold are bisected by acquiring a single new measurement at the midpoint, and the policy directly commands the rotation stage so that the dispersion law is reprogrammed on-the-fly in response to the spectrum being measured. 
+
+# 2 Results 
+
+The core enabling hardware for our adaptive scanner is a pair of Metasurfaces with Moir´ e phase functions that together implement a tunable spectral focusing element. We provide an overview of our hardware setup and then explain the content-adaptive sampling strategy. 
+
+## 2.1 Moir´ e meta-optical spectrometer 
+
+The spectrometer comprises two cascaded metalenses with equal and opposite phase profiles Φ MO 1 (r, φ ) = a r 2φ and Φ MO 2 (r, φ ) = −ΦMO 1 (r, φ ) [14], mounted along a common optical axis (Fig. 1a). As MO 1 is rotated with respect to the stationary MO 2, the Moir´ e effect produces a quadratic phase whose optical power (inverse of focal length) scales linearly with the relative rotation angle θ [14, 18] for a fixed wavelength. Conversely, for a fixed focal length, the wavenumber (1 /λ ) changes linearly with the relative rotation angle. We leverage this λ − θ relationship to implement a flexible spectrometer. Our Meta-optical spectrometer is governed by the following wavelength-angle relationship(derived in Supplementary Note 1), 
+
+θ = πa f 
+
+1
+
+λ + θ0, (1) where f is the effective focal length and θ0 a constant angular offset. We calibrated our optical system with 6 narrowband lasers to obtain the following empirical relationship, 
+
+λ [nm] = 10 7
+
+358 .46 θpeak + 11 761 .70 . (2) Given this one-to-one and continuous relationship, spectral resolution becomes a pro-grammable parameter: coarser angular steps trade resolution for speed, while finer steps increase sampling density without hardware modification. This programmabil-ity enables content-adaptive acquisition via a recursive sampling strategy, where an initial coarse sweep identifies spectrally rich regions and subsequent rounds allocate measurements preferentially to those regions (Fig. 1b–c). In contrast, a fixed resolu-tion scanning either results in a highly coarse spectrum, missing out on important spectral details, or a very slow scan that requires substantially more samples. 
+
+## 2.2 Characterizing the Moir´ e spectrometer 
+
+We calibrated the λ − θ relationship by scanning 6 narrowband lasers from 405 nm to 980 nm, enabling a visible to near infrared (NIR) spectrometer. Figure 2 (a) directly 4Fig . 1 Working principle of the metalens cascaded to form the Moir ´e meta -optic .a) Optical layout of 
+
+the rotational spectrometer showing the rotating meta -optic(MO 1) cascaded with a static meta -optic 
+
+(MO 2) at close approximity to each other .Realtive rotation of MO 1 with respect to MO 2 causes 
+
+wavelength dependent focus to shift at the sensor plane . b)Phase profiles of MO 1 and Mo 2 which are 
+
+equal and opposite phase patterns which when cascaded together generates a converging quadratic 
+
+phase .                        
+
+> (a) PSF measured by an RGB image for various rotation angles (b)Spectrum of monochromator at various wavelengths
+> Spectrum
+> location
+> 𝜃 =0∘𝜃 =1∘𝜃 =2∘𝜃 =3∘
+> 𝜃 =4∘𝜃 =5∘𝜃 =6∘𝜃 =7∘
+> (c) Central wavelength and FWHM of calibration lasers
+> Wavelength(nm)
+> Dial Wavelength(nm)
+> Norm.  Intensity( a.u .)
+
+Fig. 2 Characterization of our Moir´ e Spectrometer. (a) shows the PSF captured by a color camera at some representative angles between the two meta-optic. The circle in the top left image shows the location where the PSF had least rotation, and hence corresponded to the best location for sampling the spectrum. We note that all our measurements were captured with a grayscale camera; an RGB camera was used only to show the PSFs. (b) Monochromator swept at 14 dial settings (520–780 nm, 20 nm steps), measured simultaneously by our spectrometer (solid with fill) and an off-the-shelf reference(dashed); color encodes the dial wavelength. (c) shows FWHM and central wavelength of spectra of the calibration laser sources. As expected, the FWHM increases as we move from 400 nm to 1000 nm, as the resolution is constant in wavenumber. Across the board, we establish our optical setup as a precise spectrometer. 
+
+shows the PSF at some angles captured by an RGB camera for reference to demon-strate the effect of chromatic shift at fixed focal length. The center of the PSF shows a sharp change in color with angle in a range from 0 ◦ to 7 ◦, demonstrating the distinct 
+
+λ − θ relationship. Figure 2 (b) shows the spectral accuracy of the system against an off-the-shelf reference spectrometer over 14 monochromator dial settings from 520– 780 nm. The dial settings are distinguished by color, with the system and ground truth denoted by solid and dashed lines, respectively. We observe that the system’s peak wavelength aligns with the reference peak value, apart from a constant offset of 3.6 nm. Figure 2 (c) shows the FWHM and central wavelength of various calibration sources throughout the visible and NIR range to demonstrate the accuracy in spectral reconstruction, emphasizing the precision and resolution of our optical setup. 5Fig. 3 Flexible-resolution spectrometry. Reconstructed spectra of five light sources (rows: halogen, white LED, R/G/B LED triplet, halogen + 532 nm laser, CFL) at angular step sizes ∆θ = 3 ◦, 1◦, 0.5◦, 0.1◦ (columns). Coloured curves are piecewise-linear reconstructions ˆf (λ), row-normalized to the peak of the densest 0 .1◦ scan; the 0 .1◦ scan is overlaid on coarser-step panels in black as the in-figure ground truth. Ticks below each panel mark sampled angular positions; per-panel labels give the step size, PSNR against the 0 .1◦ reference (coarser columns), and 0 .1◦ sample count N (rightmost column). 
+
+6Pilot sampling at content - 
+
+> independent fixed locations
+> Gradients at midpoint of
+> previous samples
+> Bisect only important
+> locations , select top -k
+> important samples
+
+A. Coarse Scan  B.  Next Sample    
+
+> Location Computation
+> C. Content -
+> Adaptive Splitting
+> Spectrum Samples Probed Midpoint Calculated Midpoint Current Spectrum
+> Wavelength(nm)
+> Norm. Intensity
+> Angles(in º) A
+> Wavelength(nm)
+> Norm. Intensity
+> Angles(in º) B
+> Wavelength(nm)
+> Norm. Intensity
+> Angles(in º)
+> Bisected Interval
+> C
+> Repeat until convergence or end of sampling budget
+
+Fig. 4 Content-adaptive sampling. We propose a two-stage, three step content-adaptive sam-pling strategy that enables high resolution and sample efficient scanning. A) We first do acontent-independent pilot sample at very coarse resolution. B) Then, we estimate the next locations to sample by looking at local gradients of the spectrum. C) The spectrometer is then directed to sample only at these important locations. (B, C) are repeated until the spectrum converges, or the sampling budget ends. This enables an “anytime” spectrometer where each round of content-adaptive sampling results in a usable spectrum. 
+
+## 2.3 Flexible resolution spectrometer 
+
+A central feature of the platform is that spectral resolution functions as a pro-grammable acquisition setting: by adjusting the motor step size, the setup can trade sampling density (and thus effective resolution) against measurement speed. We illus-trate this by measuring the same spectral target with several different angular step sizes. Figure 3 shows scans of various commonly occurring light sources at various angular steps, from very coarse 3 ◦ that requires as few as 11 measurements, to very fine 0 .1◦ that requires as many as 301 measurements. We first observe that our opti-cal setup can scan any spectrum with high precision across a very broad range of wavelengths. In particular, compact fluorescent lamps (CFLs) have strong emission peaks that are precisely identified by our optical setup. Second, we make a critical observation about the trade-off between the resolution and number of samples. When spectrum is smooth (like halogen) and spread across the whole wavelength range, the quality does not improve past a small set of measurements. In contrast, for sharp spec-tra, quality keeps improving until 0 .1◦ step size, but the spectrum itself occupies an extremely narrow part of the wavelength range. This combination is captured in the “Halogen+532 nm” source where the laser is refined as resolution progresses, but the halogen part does not improve. This motivates our content-adaptive scanning strategy which we discuss next. A useful consequence of the mapping between rotation and wavelength is that a uniform angular sweep automatically generates a wavelength-dependent resolution, 7450 600                                
+
+> 0.0
+> 0.5
+> 1.0
+> Norm. Intensity  N = 5 (+5)
+> 450 600
+> 0.0
+> 0.5
+> 1.0 N = 13 (+8)
+> 450 600
+> 0.0
+> 0.5
+> 1.0 N = 21 (+8)
+> 450 600
+> 0.0
+> 0.5
+> 1.0 N = 45 (+24)
+> 450 600
+> 0.0
+> 0.5
+> 1.0 N = 59 (+14)
+> 500 800 1100
+> 0.0
+> 0.5
+> 1.0
+> Norm. Intensity  N = 5 (+5)
+> 500 800 1100
+> 0.0
+> 0.5
+> 1.0 N = 17 (+12)
+> 500 800 1100
+> 0.0
+> 0.5
+> 1.0 N = 37 (+20)
+> 500 800 1100
+> 0.0
+> 0.5
+> 1.0 N = 82 (+45)
+> 500 800 1100
+> 0.0
+> 0.5
+> 1.0 N = 92 (+10)
+> 450 600
+> Wavelength (nm)
+> 0.0
+> 0.5
+> 1.0
+> Norm. Intensity  N = 5 (+5)
+> 450 600
+> Wavelength (nm)
+> 0.0
+> 0.5
+> 1.0 N = 17 (+12)
+> 450 600
+> Wavelength (nm)
+> 0.0
+> 0.5
+> 1.0 N = 41 (+24)
+> 450 600
+> Wavelength (nm)
+> 0.0
+> 0.5
+> 1.0 N = 94 (+53)
+> 450 600
+> Wavelength (nm)
+> 0.0
+> 0.5
+> 1.0 N = 112 (+18)
+
+Pilot Round 2 Round 4 Round 7 Round 8    
+
+> Green Laser Halogen + 532
+> nm Laser
+> CFL
+> Ground truth Reconstructed spectrum New samples (this round) Prior samples
+
+Fig. 5 Adaptive Faber-Schauder bisection algorithm based acquisition across three classes of test spectra. Rows: a 532 nm diode laser (top), a halogen continuum combined with a 532 nm laser line (middle), and a compact fluorescent lamp (CFL, bottom). Columns show the recon-struction at the uniform pilot sweep and at three successive adaptive rounds; each panel reports the cumulative sample count N and, in parentheses, the new samples added in that round. Filled curves are the piecewise-linear reconstruction ˆft(λ) from the cumulative sample set. Triangles beneath the wavelength axis mark sample locations (long dash : current round; small dash : prior rounds). 
+
+fine at the blue end of the band and coarser at the red end. Because Eq. (1) is lin-ear in wavenumber, equal angular steps result in a wavelength resolution that scales as ∆ λ ∝ λ2 (Supplementary Note 1). This is well-matched to typical spectroscopic content, in which atomic and ionic emission lines cluster more densely at short wave-lengths where the same angular step delivers finer ∆ λ, while smooth continua are adequately sampled by coarser steps at long wavelengths. The content-adaptive scan-ning algorithm functions on top of this baseline by redirecting samples to regions of large spectral detail. 
+
+## 2.4 Content-adaptive spectrometry 
+
+Motivated by the need for varying sampling densities for smooth spectra and laser-like spectra, we develop a wavelet tree-based content-adaptive scanner. This adaptive scanning follows two stages. In the first stage, we capture a small set of uniformly (in wavenumber) spaced samples across the whole wavelength range to estimate the impor-tant regions. These important regions are estimated by the “detail coefficients” of the 8wavelet zero-tree [8], which is similar in principle to gradients in spectrum. In the sec-ond stage, we measure samples only in the important regions to refine the spectrum. This is primarily enabled by our fast and flexible scanning hardware that is otherwise not possible with a dispersive element-based spectrometer. The second stage is per-formed recursively, where we re-estimate the important regions and then scan only there. Figure 4 shows a flowchart of the proposed content-adaptive sampling strategy. The full scanner and its parameter settings are detailed in Supplementary Note 2(Sup-plementary Algorithm 1 and Supplementary Table 1). We show results of adaptively sampling common light sources in Fig. 5 across 8 rounds of adaptive sampling. For smooth spectra such as halogen, the second stage terminates early, as the improve-ments are marginal. For sharp laser-like spectra, the stages continue, but the number of samples per stage are considerably small as the region of sampling is compact. Hence, adaptive sampling captures both the sharp laser peak and the smooth halo-gen continuum with roughly 3 × fewer measurements on average—up to 7 × for sparse line spectra—than uniform sampling at matched fidelity. Supplementary Figs. 1–3 show the complete round-by-round reconstructions for a broadband-plus-laser source, a compact fluorescent lamp, and a 532 nm laser, while Supplementary Figs. 4–5 report the eleven-source adaptive-versus-uniform benchmark (Supplementary Note 3). 
+
+# 3 Discussion 
+
+We introduced a content-adaptive Moir´ e meta-spectrometer in which the spectral sampling axis is reshaped during acquisition by the algorithm, rather than being predetermined by the optics. Recent computational spectrometers using colloidal quantum dots [19], single nanowires [20], disordered photonic chips [21], photonic crystal slabs [22], folded metasurface relays [23], electrically tunable van der Waals junctions [24], and angle-resolved or angle-multiplexed dielectric metasurfaces [25–27] have achieved impressive miniaturization in detector area, device footprint, spectral resolution, and single-shot operation. Yet all employ a dispersion law fixed at fabrica-tion, so the sampling pattern is set solely by the optics and detector layout. In contrast, our architecture decouples the sampling axis from the optic: by rotating two cascaded meta-optical elements relative to each other [14, 28], we select which wavelength is brought into focus, and the algorithm adaptively decides which wavelengths to probe based on the spectrum measured so far. This approach transfers content-adaptive sam-pling techniques previously explored in computational imaging [6–8] and autonomous experimental platforms [10–12] onto a compact meta-optical system, where the disper-sion law is reconfigured on demand rather than assumed to be a fixed measurement matrix to be inverted numerically. Our optical setup needs only a single photo-detector positioned behind a fixed collection aperture. Operating in this single-pixel mode can significantly lower both power consumption and overall cost. Our platform therefore holds broader promise for compact spectroscopic systems. A programmable one-dimensional degree of freedom supports spectrally informed scanning strategies and enables task-specific scanning modes, allowing dynamic switching from coarse spectral scans to fine-resolution scans for detecting narrow emission lines, depending on the application needs. 9Limitations and Future Directions. The current prototype has limitations pri-marily arising from the rotation stage. We chose the rotation stage for its speed and simplicity; however it operates in an open loop configuration, requiring complete halt before next measurement, resulting in significant overhead between samples. Future work can leverage precision rotation stages that are extremely fast to achieve real-time spectrometer. Our meta-optical element currently works for visible to NIR wave-lengths. Future work can leverage anti-reflective coatings, and broadband materials to implement higher throughput broadband spectrometers. 
+
+# 4 Methods 
+
+## 4.1 Fabrication of meta-optics 
+
+A SiN thin film of 1000 nm thickness was deposited via PECVD (SPTS PECVD) on a 0.5 mm thick quartz wafer. After deposition, the wafer was diced to 1.5 cm squares. A positive resist (ZEP 520 A) was applied onto the sample with a maximum 4k rpm, which yielded a thickness of approximately 400 nm. The resist was baked on a hot plate at 180 ◦C for 3 min, followed by a cooling step and subsequent deposition of a conductive polymer layer (DisCharge H2O), with the same spin parameters. We then used electron beam lithography (EBL) with a 100 keV electron beam (JEOL JBX6300FS) at a dose of 275 μC cm-2. After EBL, the conductive polymer layer was removed using a brief IPA rinse, followed by developing of the resist in Amyl Acetate for 2 min at room temperature. Subsequently, we used a brief oxygen plasma descum step in a barrel etcher (100 W, 15 s). Following, a layer of 100 nm AlOx was deposited using electron beam evaporation. The deposited layer was lifted off overnight in a heated NMP bath. After further cleaning in Acetone/IPA and barrel etcher, the mask design was transferred into the underlying SiN film in an ICP RIE etcher using a mixture of C4F8/SF6 (Oxford PlasmaLab System 100). 
+
+## 4.2 Hardware details 
+
+The spectrometer comprises of two cascaded meta-optics, MO 1 and MO 2, mounted on individual translation and rotation stages along a common optical axis. MO 1 is the rotating element, seated on a piezo-motorized rotation stage, while MO 2 is its static counterpart, and both are mounted on lateral translation stages that allow the centroids of the two meta-optics to be brought onto the rotation axis to high precision. The wavelength-selective focusing of the cascaded pair is extremely sensitive to lateral decenter and tilt between the two elements [15, 28, 29], so we use a PSF-driven visual procedure to enforce co-axiality between MO 1 and MO 2, registration of MO 1 to the rotation axis, and minimal tilt between the two surfaces and the sensor plane; the full procedure is described in Supplementary Note 4 and illustrated in Supplementary Figs. 6 and 7. Illumination is provided by a fiber-coupled, approximately point-like source placed at the 2 f distance from MO 1, and the focus formed by the cascaded pair is captured by a monochrome scientific camera operated in 16-bit mode with 4 × 4 hardware binning, which sums the charge from 16 native pixels into each binned readout pixel before digitization and matches the spatial extent of the binned pixel 10 to that of the focused PSF spot, raising the per-readout signal-to-noise ratio. For spectroscopic acquisition only the single binned pixel coinciding with the on-axis PSF centroid is read out at every angle, with ten frames averaged at a 5 ms exposure to suppress temporal noise, so the per-angle output of the system is one scalar intensity value and the detector functions as a single-pixel photo-detector [16, 30] with a one-dimensional spectral reconstruction. 
+
+## 4.3 Adaptive Faber-Schauder bisection 
+
+The content-adaptive scanner of Section 2.4 is implemented as a Faber-Schauder bisection algorithm on the rotation axis, following adaptive bisection refinement in computational imaging [6–8], active wavelength selection in tunable sensing [10], and Gaussian-process autonomous experiments at large-scale facilities [11, 12]. 
+
+Detail coefficient. For each leaf interval [ xL, x R] with midpoint xM , the local detail is scored by the Faber-Schauder coefficient 
+
+d = f (xM ) − 12
+
+ f (xL) + f (xR) , (3) i.e., the local second-order finite difference of f on [ xL, x R]. This is the natural coefficient in the dyadic Faber-Schauder hat-function expansion of piecewise-linear functions [31, 32] and a proxy for the local Haar wavelet magnitude; it vanishes on locally affine regions and grows quadratically with interval width on regions of high curvature. 
+
+Refinement and reconstruction. Intervals whose detail exceeds an intensity-normalized threshold are bisected by acquiring a single new measurement at the midpoint, subject to a top-K per-round splitting budget [33] and to hardware guards on the minimum interval width ∆ θmin and the maximum tree depth Dmax . Within each round, midpoints are visited in nearest-neighbor order from the current stage position to minimize total angular travel without affecting reconstruction fidelity. The spec-trum is reconstructed by piecewise-linear interpolation on the resulting non-uniform mesh; the estimator is anytime , improves monotonically with samples, and is consis-tent with the optimal N -term rate for piecewise-smooth signals on adaptive dyadic partitions [34–36]. The full algorithmic partition which includes pilot length, threshold normaliza-tion, per-round budget, termination conditions are discussed in Supplementary Note 2 (Supplementary Algorithm 1), with all parameter values in Supplementary Table 1. 
+
+# 5 Acknowledgements 
+
+This work was supported by NSF grants NSF-2120774, CCF-2403123, and DTRA grant HDTRA12610007. Part of this work was conducted at the Washington Nanofab-rication Facility / Molecular Analysis Facility, a National Nanotechnology Coordinated Infrastructure (NNCI) site at the University of Washington with partial support from the National Science Foundation via awards NNCI-1542101 and NNCI-2025489. 11 References 
+
+[1] Tran, M. H. & Fei, B. Compact and ultracompact spectral imagers: technology and applications in biomedical imaging. J. Biomed. Opt. 28 , 040901 (2023). URL https://www.spiedigitallibrary. org/journals/journal-of-biomedical-optics/volume-28/issue-4/040901/ Compact-and-ultracompact-spectral-imagers--technology-and-applications-in/ 10.1117/1.JBO.28.4.040901.full. [2] Ye, E., Atabaki, A. H., Han, N. & Ram, R. J. Miniature, sub-nanometer resolution talbot spectrometer. Opt. Lett. 41 , 2434 (2016). URL https://opg.optica.org/ abstract.cfm?URI=ol-41-11-2434. [3] Yu, N. et al. Light propagation with phase discontinuities: Generalized laws of reflection and refraction. Science 334 , 333–337 (2011). URL https://www. science.org/doi/10.1126/science.1210713. [4] Chen, W. T. et al. A broadband achromatic metalens for focusing and imaging in the visible. Nature Nanotechnol. 13 , 220–226 (2018). URL https://www.nature. com/articles/s41565-017-0034-6. [5] Khorasaninejad, M. et al. Achromatic metalens over 60 nm bandwidth in the visible and metalens with reverse chromatic dispersion. Nano Lett. 17 , 1819–1824 (2017). URL https://pubs.acs.org/doi/10.1021/acs.nanolett.6b05137. [6] Dai, H. et al. Adaptive compressed sampling based on extended wavelet trees. 
+
+Appl. Opt. 53 , 6619 (2014). URL https://opg.optica.org/abstract.cfm?URI= ao-53-29-6619. [7] Yu, W.-K. et al. Adaptive compressive ghost imaging based on wavelet trees and sparse representation. Opt. Express 22 , 7133–7144 (2014). URL https://opg. optica.org/oe/fulltext.cfm?uri=oe-22-6-7133. [8] Saragadam, V. & Sankaranarayanan, A. C. IEEE (ed.) Wavelet tree parsing with freeform lensing . (ed.IEEE) 2019 IEEE International Conference on Computa-tional Photography (ICCP) , 1–10 (IEEE, 2019). URL https://ieeexplore.ieee.org/ document/8747327. [9] Hahn, J., Debes, C., Leigsnering, M. & Zoubir, A. M. Compressive sensing and adaptive direct sampling in hyperspectral imaging. Digital Signal Pro-cess. 26 , 113–126 (2014). URL https://linkinghub.elsevier.com/retrieve/pii/ S1051200413002807. [10] Sullivan, K. J., Ditzler, M. D. & Heys, J. J. Active wavelength selection for mixture analysis with tunable infrared detectors. Sens. Actuators B Chem. 
+
+208 , 230–237 (2015). URL https://www.sciencedirect.com/science/article/pii/ S0925400514013069. 12 [11] Lawson, P. R. et al. Adaptive sampling with PIXL on the mars perseverance rover. Icarus 429 , 116433 (2025). URL https://linkinghub.elsevier.com/retrieve/ pii/S0019103524004937. [12] Noack, M. M. et al. Gaussian processes for autonomous data acquisition at large-scale synchrotron and neutron facilities. Nat. Rev. Phys. 3, 685–697 (2021). URL https://www.nature.com/articles/s42254-021-00345-y. [13] Teixeira Parente, M. et al. Active learning-assisted neutron spectroscopy with log-Gaussian processes. Nat. Commun. 14 , 2246 (2023). URL https://www. nature.com/articles/s41467-023-37418-8. [14] Bernet, S. & Ritsch-Marte, M. Adjustable refractive power from diffractive moir´ eelements. Appl. Opt. 47 , 3722 (2008). URL https://opg.optica.org/abstract.cfm? URI=ao-47-21-3722. [15] Ogawa, C., Nakamura, S., Aso, T., Ikezawa, S. & Iwami, K. Rotational varifocal moir´ e metalens made of single-crystal silicon meta-atoms for visible wavelengths. Nanophotonics 11 , 1941–1948 (2022). URL https://pmc.ncbi.nlm. nih.gov/articles/PMC11501419/. [16] Edgar, M. P., Gibson, G. M. & Padgett, M. J. Principles and prospects for single-pixel imaging. Nat. Photonics 13 , 13–20 (2019). URL https://www.nature.com/ articles/s41566-018-0300-7. [17] Arbabi, E., Arbabi, A., Kamali, S. M., Horie, Y. & Faraon, A. Controlling the sign of chromatic dispersion in diffractive optics with dielectric metasur-faces. Optica 4, 625 (2017). URL https://opg.optica.org/optica/abstract.cfm? uri=optica-4-6-625. [18] Bernet, S., Harm, W. & Ritsch-Marte, M. Demonstration of focus-tunable diffrac-tive moir´ e-lenses. Opt. Express 21 , 6955 (2013). URL https://opg.optica.org/ oe/abstract.cfm?uri=oe-21-6-6955. [19] Bao, J. & Bawendi, M. G. A colloidal quantum dot spectrometer. Nature 523 ,67–70 (2015). URL https://www.nature.com/articles/nature14576. [20] Yang, Z. et al. Single-nanowire spectrometers. Science 365 , 1017–1020 (2019). URL https://www.science.org/doi/10.1126/science.aax8814. [21] Redding, B., Liew, S. F., Sarma, R. & Cao, H. Compact spectrometer based on a disordered photonic chip. Nat. Photonics 7, 746–751 (2013). URL https: //www.nature.com/articles/nphoton.2013.190. [22] Wang, Z. et al. Single-shot on-chip spectral sensors based on photonic crystal slabs. Nat. Commun. 10 , 1020 (2019). URL https://www.nature.com/articles/ s41467-019-08994-5. 13 [23] Faraji-Dana, M. et al. Compact folded metasurface spectrometer. Nat. Commun. 
+
+9, 4196 (2018). URL https://www.nature.com/articles/s41467-018-06495-5. [24] Yoon, H. H. et al. Miniaturized spectrometers with a tunable van der waals junction. Science 378 , 296–299 (2022). URL https://www.science.org/doi/10. 1126/science.add8544. [25] Cai, G. et al. Compact angle-resolved metasurface spectrometer. Nat. Mater. 23 ,71–78 (2024). URL https://www.nature.com/articles/s41563-023-01710-1. [26] Tittl, A. et al. Imaging-based molecular barcoding with pixelated dielectric meta-surfaces. Science 360 , 1105–1109 (2018). URL https://www.science.org/doi/10. 1126/science.aas9768. [27] Leitis, A. et al. Angle-multiplexed all-dielectric metasurfaces for broadband molecular fingerprint retrieval. Sci. Adv. 5, eaaw2871 (2019). URL https: //www.science.org/doi/10.1126/sciadv.aaw2871. [28] Iwami, K., Ogawa, C., Nagase, T. & Ikezawa, S. Demonstration of focal length tuning by rotational varifocal moir´ e metalens in an ir-a wavelength. Opt. Express 28 , 35602–35614 (2020). URL https://opg.optica.org/oe/abstract.cfm? uri=oe-28-24-35602. [29] Li, Y. et al. Large-gap cascaded moir´ e metasurfaces enabling switchable bright-field and phase-contrast imaging compatible with coherent and incoherent light. 
+
+Nanophotonics 14 , 5495–5509 (2025). URL https://www.degruyterbrill.com/ document/doi/10.1515/nanoph-2025-0494/html. [30] Duarte, M. F. et al. Single-pixel imaging via compressive sampling. IEEE Sig-nal Process. Mag. 25 , 83–91 (2008). URL https://ieeexplore.ieee.org/document/ 4472247. [31] Douzi, K., Mammass, D., Wittner, T. & Nouboud, F. Faber-schauder wavelet transform, application to edge detection and image characterization. J. Math. Imaging Vis. 14 , 91–101 (2001). URL https://link.springer.com/article/10.1023/ A:1011213914008. [32] Mallat, S. A Wavelet Tour of Signal Processing Second edn (Academic Press, 1999). [33] Berger, M. J. & Oliger, J. Adaptive mesh refinement for hyperbolic partial differential equations. J. Comput. Phys. 53 , 484–512 (1984). URL https: //www.sciencedirect.com/science/article/abs/pii/0021999184900731. [34] DeVore, R. A. Nonlinear approximation. Acta Numer. 7, 51–150 (1998). URL https://www.cambridge.org/core/journals/acta-numerica/article/ nonlinear-approximation/C8E028C39B8E2F35F277F58FBFFBB504. 14 [35] Cohen, A., Dahmen, W. & DeVore, R. Adaptive wavelet methods for elliptic operator equations: convergence rates. Math. Comp. 70 , 27–75 (2001). URL https://www.ams.org/journals/mcom/2001-70-233/S0025-5718-00-01252-7/. [36] Baraniuk, R. G., Cevher, V., Duarte, M. F. & Hegde, C. Model-based compressive sensing. IEEE Trans. Inf. Theory 56 , 1982–2001 (2010). URL https://ieeexplore. ieee.org/document/5437428. 15 Supplementary Material 
+
+# 1 Derivations 
+
+This section develops the fundamental theory of the Moir´ e meta-spectrometer. We begin by deriving the dispersion law used throughout the main text, demonstrating an affine relationship between the wavenumber and the relative rotation angle of the two Moir´ e metasurfaces. We then show that, under uniform angular sampling, the corresponding spectral interval ∆ λ scales as λ2. This scaling arises directly from the linear dispersion in wavenumber and serves as the geometric basis for the content-adaptive scanner. 
+
+## 1.1 Moir´ e Metalens Principle and Angle-Wavelength Calibra-tion 
+
+The operational principle of Moir´ e meta-optics relies on the mutual rotation of two complementary metasurfaces [1, 2]. We describe the phase profiles of the two meta-surfaces in polar coordinates ( r, ϕ ) as Φ MO 1 (r, ϕ ) and Φ MO 2 (r, ϕ ), with corresponding complex transmission functions 
+
+TMO 1 (r, ϕ ) = exp( iΦMO 1 (r, ϕ )) , TMO 2 (r, ϕ ) = exp( iΦMO 2 (r, ϕ )) . (1) To enable Moir´ e tuning, the metasurfaces are designed to be phase-complementary, such that Φ MO 2 (r, ϕ ) = −ΦMO 1 (r, ϕ ). Rotating the second metasurface by a relative angle θ modifies its transmission to TMO 2 (r, ϕ −θ) = exp( −iΦMO 1 (r, ϕ − θ)). The joint transmission of the cascaded stack is therefore 
+
+Tjoint (r, ϕ ; θ) = TMO 1 (r, ϕ ) TMO 2 (r, ϕ − θ) = exp( i [Φ MO 1 (r, ϕ ) − ΦMO 1 (r, ϕ − θ)]) .
+
+(2) For small relative rotations, the phase difference in Eq. (2) admits a first-order Taylor approximation, ΦMO 1 (r, ϕ ) − ΦMO 1 (r, ϕ − θ) ≈ θ ∂ΦMO 1 (r, ϕ )
+
+∂ϕ , (3) which shows that rotation converts an angular phase gradient into an effective, rotation-controlled wavefront. To synthesize a tunable lens, we adopt a separable phase design Φ MO 1 (r, ϕ ) = Φr (r) Φ ϕ(ϕ) and seek a net quadratic phase that matches a thin lens of focal length 1f at wavelength λ,
+
+Tlens (r) = exp 
+
+
+
+−i πr 2
+
+λf 
+
+
+
+. (4) Choosing Φ r(r) = ar 2 and Φ ϕ(ϕ) = ϕ yields ∂ΦMO 1 (r, ϕ )/∂ϕ = ar 2. Substituting into Eq. (3) and equating to the lens phase in Eq. (4) (the overall sign is fixed by the rotation sense, equivalently by the sign of a) gives the matching condition 
+
+ar 2 θ = πr 2
+
+λf . (5) Accounting for a constant rotation stage offset compared to the Moir´ e lens pair, 
+
+ar 2 (θ − θ0) = πr 2
+
+λf , (6) which directly yields the calibration relationship 
+
+θ =
+
+ πaf 
+
+ 1
+
+λ + θ0. (7) Equation (7) predicts a monotonic inverse dependence between rotation angle and wavelength for fixed f (i.e., θ ∝ λ−1), with θ0 capturing the offset between the opti-cal and mechanical angular references. Experimentally, we calibrate this mapping using a set of narrow-linewidth laser lines (Supplementary Note 4) to associate each wavelength with a unique rotation angle read by the encoder, enabling wavelength assignment and spectral reconstruction from a controlled rotational scan. 
+
+## 1.2 Wavelength-squared scaling of the spectral interval 
+
+The calibrated dispersion law of Eq. (7) is affine in wavenumber ν ≡ 1/λ , with slope 
+
+dθ/dν = π/ (af ) independent of λ. Equal commanded angular steps ∆ θ therefore correspond to equal wavenumber steps, ∆ν = af π ∆θ, (8) and a uniform sweep in θ is a uniform sweep in ν. Converting to a wavelength interval via ν = 1 /λ gives ∆ ν = −∆λ/λ 2, so ∆λ(λ) = af λ 2
+
+π ∆θ. (9) The λ2 scaling is therefore a direct geometric consequence of dispersing linearly in wavenumber while sampling uniformly in angle, and is independent of any property of the focusing optic beyond the dispersion law itself. A fixed angular step delivers finer ∆λ at short wavelengths and coarser ∆ λ at long wavelengths, naturally matching the wavelength dependence of typical atomic and molecular line densities. 22 Adaptive Scanning Algorithm 
+
+This section details the content-adaptive Faber–Schauder scanner used throughout the main paper. The acquisition proceeds in three stages: a content-agnostic coarse pilot sweep that initializes the interval tree (Phase 1, Section 2.2); a budget-limited, iterative refinement loop that repeatedly bisects intervals containing high levels of detail (Phase 2, Section 2.3); and a final piecewise-linear reconstruction defined on the resulting non-uniform mesh (Phase 3, Section 2.4). The full procedure is summarized in Algorithm S1, and the parameter choices used in this work are listed in Table S1. 
+
+## 2.1 Notation and the Faber–Schauder detail coefficient 
+
+Let f (θ) denote the measured intensity at rotation angle θ, and ˆf (θ) its piecewise-linear reconstruction from a finite sample set. The acquisition spans the angular domain [θmin , θ max ], which Eq. (7) maps bijectively to the wavelength axis λ(θ). For a subin-terval [ θL, θ R] with midpoint θM = ( θL + θR)/2, the linear interpolant predicts a midpoint intensity ˜f (θM ) = 12 (fL + fR). After measuring fM = f (θM ), the deviation from this prediction defines the Faber–Schauder detail coefficient 
+
+d[θL, θ R] ≜ fM − 12 (fL + fR) , (10) the local second-order finite difference of f . Three properties make d a well-founded refine-or-stop criterion. First, it vanishes on affine intervals: if f is linear over [ θL, θ R]then d = 0, so smooth, slowly varying regions yield negligible detail and stop refining early. Second, it scales quadratically with the interval width and tracks the local curvature of f ; for f ∈ C2, a Taylor expansion about θM yields 
+
+d[θL, θ R] = h2 
+
+> 4
+
+f ′′ (ξL) + f ′′ (ξR) ≤ h2 
+
+> 2
+
+∥f ′′ ∥∞,[θL,θ R], (11) where h = ( θR −θL)/2 is the half-interval width and ξL, ξ R lie in the left and right sub-intervals. The detail is therefore largest near sharp emission lines and decays as h2 once the interval is small enough for the interpolant to be accurate, concentrating samples where the spectrum is sharp. Third, d is the magnitude of a wavelet coefficient rather than an empirical heuristic: expanding f in the dyadic Faber–Schauder hat-function basis, 
+
+f (θ) = f (θmin ) φ0,0(θ) + f (θmax ) φ0,1(θ) + X
+
+> ℓ≥0
+
+X
+
+> k
+
+cℓ,k ψℓ,k (θ), (12) where cℓ,k = f (θℓ,k,M ) − 12
+
+f (θℓ,k ) + f (θℓ,k +1 ) is the signed form of Eq. (10). The scanner’s decision metric d is thus exactly the absolute Faber–Schauder coefficient of 
+
+f on the corresponding dyadic interval [3, 4]. 
+
+## 2.2 Phase 1: Pilot sweep 
+
+Acquisition begins with Npilot equally spaced angular positions across [ θmin , θ max ]. We use Npilot = 5 throughout this work; this choice is small enough to leave most of the sample budget for the adaptive phase yet large enough that every level-zero interval 3has a chance of detecting a peak of width ≳ 1% of the sweep range. The five pilot positions partition the domain into Npilot − 1 = 4 level-zero intervals, which form the initial refinement frontier F(0) .To minimise unnecessary motor travel during the pilot, the five positions are visited in greedy nearest-neighbour order starting from the current stage position θcurr :
+
+θnext = arg min 
+
+> θ∈Sk
+
+θ − θprev , (13) where Sk is the set of yet-unvisited pilot positions at step k. On a one-dimensional domain this heuristic is optimal whenever θcurr lies outside the convex hull of S0 and incurs at most a 2 × overhead otherwise. 
+
+## 2.3 Phase 2: Iterative refinement 
+
+Refinement proceeds in successive rounds t = 1 , . . . , R . Each round comprises four steps. 
+
+Step 1 (filter). The current frontier F(t−1) is filtered to a candidate set C(t) by removing nodes that have either reached the maximum tree depth Dmax or whose interval width has dropped below the minimum reproducible motor step ∆ θmin . Nodes failing either guard are retained on the frontier but are not eligible for splitting in subsequent rounds. 
+
+Step 2 (pre-measurement of midpoints). For each candidate interval [ θL, θ R] ∈C(t) whose midpoint has not yet been probed, the spectrometer records a single mea-surement at θM = ( θL + θR)/2. If this midpoint (within a small angular tolerance) coincides with an already sampled position, the value is retrieved from cache instead of being remeasured. The detail coefficient d[θL, θ R] is then evaluated using Eq. (10). Every candidate must be measured before ranking: ranking intervals only by the end-point difference |fR −fL| would often miss symmetric structures such as emission lines, whose endpoints can be nearly identical despite a strong peak in between. 
+
+Step 3 (intensity-normalised threshold). The detail threshold for round t is set relative to the running peak intensity, 
+
+τ (t)rel = τ · max 
+
+> θ′∈S (t)
+
+f (θ′), (14) where S(t) is the set of all angular positions measured up to and including round t, and 
+
+τ ∈ (0 , 1) is the single dimensionless control parameter of the scanner. Because the threshold is rescaled by the running peak rather than fixed in absolute camera units, 
+
+τ behaves as a fractional detail-floor: τ = 10 −3, for example, means “split any interval whose midpoint prediction error exceeds 0 .1% of the largest measured intensity so far.” The self-normalising form has the additional property that it absorbs source-brightness variation across experiments without requiring per-source recalibration. 4Step 4 (top-K split, with re-queue). The candidate set C(t) is sorted by detail coefficient in descending order. A budgeted top-K policy then walks the sorted list and: (a) declares an interval a leaf (and removes it from the frontier) if its detail is below 
+
+τ (t)rel or if its bisected child width would fall below ∆ θmin ;(b) bisects the interval if its detail exceeds τ (t)rel , by acquiring a new sample at the midpoint (or reusing the pre-measured midpoint from Step 2) and creating two child intervals [ θL, θ M ] and [ θM , θ R] at depth ℓ + 1; (c) re-queues the interval onto the next round’s frontier F(t) once the per-round split count reaches K, so that high-detail intervals that did not fit in the current round’s budget are reconsidered in the next round. The top-K budget is structurally analogous to top-down adaptive mesh refinement [5]: it prevents any single round from spending the entire acquisition budget on one feature and ensures that detail is distributed across multiple peaks before any one peak is refined to its depth cap. 
+
+Termination. The refinement loop exits when any of four conditions holds: the fron-tier is empty (every interval has been declared a leaf); the candidate set is empty (all remaining intervals have hit Dmax or ∆ θmin ); the round counter reaches the config-ured cap R; or the total sample count reaches the budget B. On termination, the leaf intervals L(T ) = {[θi, θ i+1 ]} form a non-uniform partition of [ θmin , θ max ]. The full algorithm is given in Algorithm S1. 
+
+## 2.4 Phase 3: Reconstruction 
+
+After termination, the cached samples S = {(θi, f (θi)) } are sorted in ascending order of angle and converted to wavelength. Within each leaf interval [ θi, θ i+1 ] the spectrum is reconstructed by piecewise-linear interpolation, ˆf (θ) = f (θi) + f (θi+1 ) − f (θi)
+
+θi+1 − θi
+
+(θ − θi), θ ∈ [θi, θ i+1 ], (15) and the result is mapped to the wavelength axis to give ˆf (λ). The estimator is anytime :a usable reconstruction is available after every round of refinement, and the sequence ˆf1, ˆf2, . . . converges monotonically as |S| grows. For functions of bounded second vari-ation, piecewise-linear interpolation on an adaptively refined dyadic mesh achieves the optimal N -term approximation rate among order-one schemes [6, 7], which matches the regularity class of typical spectra: locally smooth across broad continua, locally rough at narrow emission lines. 
+
+## 2.5 Parameter values used in this work 
+
+Table S1 lists the control parameters used for every measurement in the main text and supplementary figures. The same parameter set was applied to every light source; no per-source retuning was performed. 5Supplementary Algorithm 1 Content-Adaptive Faber–Schauder Scanner. 
+
+Require: domain [ θmin , θ max ], relative threshold τ , sample budget B; guards: max depth Dmax , min width ∆ θmin , splits/round K, max rounds R.
+
+Ensure: samples S = {(λi, f i)} and piecewise-linear reconstruction ˆf (λ).  
+
+> 1:
+
+Pilot: measure Npilot equally spaced angles in nearest-neighbour order (Eq. 13), store in S, and seed the frontier F with the consecutive intervals at depth 0.  
+
+> 2:
+
+for t = 1 , . . . , R do ▷ refinement rounds  
+
+> 3:
+
+if |S| ≥ B or F = ∅ then  
+
+> 4:
+
+break  
+
+> 5:
+
+end if  
+
+> 6:
+
+C ← { I = [ θL, θ R] ∈ F : depth( I) < D max , θ R − θL ≥ ∆θmin } 
+
+> 7:
+
+for all I ∈ C do ▷ probe midpoints  
+
+> 8:
+
+m ← 12 (θL + θR); measure f (m) if not cached  
+
+> 9:
+
+dI ← f (m) − 12 (f (θL) + f (θR)) ▷ Faber–Schauder detail  
+
+> 10:
+
+end for  
+
+> 11:
+
+τrel ← τ · max θ∈S f (θ); F ← ∅; k ← 0 
+
+> 12:
+
+for all I ∈ C in order of decreasing dI do  
+
+> 13:
+
+if dI < τ rel or child width < ∆θmin then  
+
+> 14:
+
+continue ▷ interval resolved  
+
+> 15:
+
+else if k < K then  
+
+> 16:
+
+add children [ θL, m ], [m, θ R] to F at depth +1; k ← k + 1  
+
+> 17:
+
+else  
+
+> 18:
+
+re-queue I to F ▷ carried to next round  
+
+> 19:
+
+end if  
+
+> 20:
+
+end for  
+
+> 21:
+
+end for  
+
+> 22:
+
+Reconstruct: map θi 7 → λi (Eq. 2) and interpolate ˆf (λ) piecewise-linearly over 
+
+S sorted by λ. 
+
+> 23:
+
+return S, ˆf (λ)The single dimensionless control parameter τ mediates the trade-off between sam-ple efficiency and reconstruction fidelity. Smaller values of τ allow more sub-threshold features to be captured and drive more aggressive refinement, yielding higher-fidelity reconstructions at the expense of additional measurements. Larger values, in contrast, enforce stronger pruning and earlier termination, resulting in coarser reconstructions that require fewer samples. Empirically, we observe that τ ∈ [10 −6, 10 −4] spans the range in which the adaptive scanner surpasses a uniform sweep at matched fidelity for all tested source classes. The remaining parameters ( Dmax , ∆θmin , K, R ) are hardware-constrained limits rather than fidelity controls: ∆ θmin is determined by the minimum reproducible increment of the ELL14 rotation stage, Dmax and R act as safeguards against pathological inputs, and K = 2 guarantees that fine structure is shared across multiple peaks before any individual peak is refined to its maximum depth. 6Supplementary Table 1 Parameters of the content-adaptive Faber–Schauder scanner. These are the fixed configuration used for the adaptive-versus-uniform benchmark of Supplementary Figs. 4–5; the sample budget                                         
+
+> Bis swept over the listed values, and the detail threshold τis the only fidelity parameter (the remaining entries are hardware-aware guards). The minimum interval width ∆ θmin is a software floor on bisection, not the physical stage resolution. Symbol Parameter Setting key Value [θmin , θ max ]Angular sweep range SWEEP PARAMETERS [−10 ◦,+40 ◦]
+> Npilot Pilot sample count N COARSE 5
+> τDetail threshold (fractional) wtp tau 10 −4
+> Dmax Maximum tree depth wtp max depth 30 ∆θmin Minimum interval width (software guard) wtp min width deg 0.2◦
+> KSplits per round (top-k)wtp top k 1
+> RMaximum refinement rounds wtp max oscillations 100
+> BTotal sample budget (swept) SAMPLING BUDGET {8,16 ,32 ,64 ,128 ,256 }
+> tsettle Settle time per measurement settle seconds 10 ms
+
+# 3 Adaptive Scan Results 
+
+Supplementary Figures 1–3 replay the content-adaptive acquisition on three sources that span the spectral-difficulty range of the main paper: a broadband contin-uum carrying a single embedded laser line (Fig. 1), a compact fluorescent lamp combining several sharp mercury lines with a phosphor continuum (Fig. 2), and a near-monochromatic 532 nm laser (Fig. 3). In every case the five-sample pilot resolves only the smooth envelope, and each subsequent round spends its budget where the Faber– Schauder detail is largest (on the line cores and continuum shoulders) while leaving the flat regions sparsely sampled. By the final round all sharp features are recovered at a cumulative budget of N = 128 samples, the fidelity a uniform sweep reaches only with substantially more measurements. These experiments are the source-resolved manifes-tation of the main result: adaptive scanning reconstructs mixed line-plus-continuum spectra with roughly 3 × fewer measurements on average ( up to 7 × than uniform sampling at matched fidelity, with a usable spectrum available after every round. 
+
+Adaptive vs Uniform Scanning We compare the adaptive scanner to uniform angular sampling across eleven different sources, covering narrow-band emitters (lasers, LEDs, monochromator setpoints) as well as broadband emitters (a CFL and a combined halogen + 532 nm source). As ground truth G(λ), we use a densely sampled uniform sweep over θ ∈ [−10 ◦, +40 ◦] ( λ ∈ [384 , 1220] nm), padding angles outside each source’s emission band to its dark level. All evaluations are performed in simulation: the acquisition software is run unmodified on G, with each measurement returning the ground truth at a slightly perturbed angle (jitter σθ = 0 .05 ◦) and corrupted by a cali-brated shot-plus-read camera noise model. For uniform sampling, we distribute a total of N ∈ { 8, 16 , 32 , 64 , 128 , 256 } measurements evenly over the angular range; for the adaptive approach, we allocate the same budgets using the scanner described in Sup-plementary Note 2 (Algorithm S1). Both methods reconstruct the signal on the dense ground-truth grid via piecewise-linear interpolation, without any super-resolution or 7Fig . 1 Working principle of the metalens cascaded to form the Moir ´e meta -optic .a) Optical layout of 
+
+the rotational spectrometer showing the rotating meta -optic(MO 1) cascaded with a static meta -optic 
+
+(MO 2) at close approximity to each other .Realtive rotation of MO 1 with respect to MO 2 causes 
+
+wavelength dependent focus to shift at the sensor plane . b)Phase profiles of MO 1 and Mo 2 which are 
+
+equal and opposite phase patterns which when cascaded together generates a converging quadratic 
+
+phase .Supplementary Figure 1 Round-by-round adaptive reconstruction of a broadband source with an embedded laser line. Each panel shows the piecewise-linear reconstruction ˆft(λ)(colored fill) on the cumulative sample set at the end of round t, with the 0.01 ◦-step ground-truth scan overlaid in black. Panels are labeled by round (Pilot, Round 2–12) and annotate the cumulative sample count N together with the new samples added in that round (in parentheses). Tick marks beneath each axis indicate the angular positions of the new samples (colored) and prior samples (grey). The pilot sweep places N = 5 uniform samples across the full band; subsequent rounds pref-erentially refine the high-curvature region around the laser line while leaving the smooth continuum under-sampled, recovering both features by round 12 with N = 128 total measurements. 
+
+parametric model fitting. A single set of hyperparameters ( τ , top-k, minimum width) is used for all sources, selected by a grid search that optimizes the average performance across sources. 
+
+# 4 Methods 
+
+This section presents the experimental realization of the Moir´ e meta-spectrometer. We outline the optomechanical construction of the cascaded meta-optic pair and its associated translation and rotation stages, the PSF-based alignment protocol used to co-register MO 1 and MO 2 along a shared optical axis, and the high-precision wave-length calibration that relates the rotation angle of the ELL14 stage to a continuous spectral coordinate. Collectively, these procedures define the hardware platform on which the content-adaptive scanner described in Supplementary Note 2 operates. 8450 550 650                     
+
+> 0.0
+> 0.5
+> 1.0
+> Norm. Intensity
+> Pilot
+> N = 5 (+5)
+> 450 550 650
+> 0.0
+> 0.5
+> 1.0
+> Round 2
+> N = 9 (+4)
+> 450 550 650
+> 0.0
+> 0.5
+> 1.0
+> Round 3
+> N = 17 (+8)
+> 450 550 650
+> 0.0
+> 0.5
+> 1.0
+> Round 4
+> N = 29 (+12)
+> 450 550 650
+> 0.0
+> 0.5
+> 1.0
+> Norm. Intensity
+> Round 5
+> N = 41 (+12)
+> 450 550 650
+> 0.0
+> 0.5
+> 1.0
+> Round 6
+> N = 59 (+18)
+> 450 550 650
+> 0.0
+> 0.5
+> 1.0
+> Round 7
+> N = 75 (+16)
+> 450 550 650
+> 0.0
+> 0.5
+> 1.0
+> Round 8
+> N = 94 (+19)
+> 450 550 650
+> Wavelength (nm)
+> 0.0
+> 0.5
+> 1.0
+> Norm. Intensity
+> Round 9
+> N = 112 (+18)
+> 450 550 650
+> Wavelength (nm)
+> 0.0
+> 0.5
+> 1.0
+> Round 10
+> N = 120 (+8)
+> 450 550 650
+> Wavelength (nm)
+> 0.0
+> 0.5
+> 1.0
+> Round 11
+> N = 128 (+8)
+> Ground truth
+> Reconstructed spectrum
+> New samples (this round)
+> Prior samples
+
+Supplementary Figure 2 Round-by-round adaptive reconstruction of a compact fluo-rescent lamp (CFL). Same convention as Supplementary Fig. 1. The CFL emission combines sharp mercury lines near 436, 546, 578, and 611 nm with a broad phosphor continuum spanning the visible band. The pilot sweep ( N = 5) provides only a coarse continuum estimate; from Round 2 onward, the adaptive sampler concentrates new measurements at the wavelengths of the mercury lines, locking in their positions within the first few rounds and progressively narrowing their reconstructed widths toward the ground-truth FWHM. By the final round, every mercury line is resolved and the phos-phor continuum is faithfully recovered with a cumulative budget of N = 128 samples. 
+
+## 4.1 Experimental Setup 
+
+The experimental setup consists of two meta-optics placed sequentially along a com-mon optical axis. MO 1 is the meta-optic mounted on a compact two-axis translation stage (LM1XY, Thorlabs), which is then joined to the ELL14 motorized rotation stage using external SM1 thread adapters. These adapters provide the required separation between components and avoid mechanical friction during rotation, while also keeping the optical axis mechanically well-defined through SM1-threaded interfaces. The X–Y translation stage provides a direct way to laterally shift MO 1 while the entire assembly still rotates, which is essential for centering the optic relative to the mechanical axis of the ELL14 piezo-motorized rotation stage. A dovetail translation is integrated at the base of the rotation-stage mount to decrease the separation distance between the two meta-optics. This axial degree of freedom allows us to bring MO 1 and MO 2 closer without disturbing the lateral centering, which is important for compact operation and for reducing propagation effects such as Talbot self-imaging over long inter-element distances. 9450 600               
+
+> 0.0
+> 0.5
+> 1.0
+> Norm. Intensity
+> Pilot
+> N = 5 (+5)
+> 450 600
+> 0.0
+> 0.5
+> 1.0
+> Round 2
+> N = 9 (+4)
+> 450 600
+> 0.0
+> 0.5
+> 1.0
+> Round 3
+> N = 13 (+4)
+> 450 600
+> 0.0
+> 0.5
+> 1.0
+> Round 4
+> N = 17 (+4)
+> 450 600
+> 0.0
+> 0.5
+> 1.0
+> Norm. Intensity
+> Round 5
+> N = 21 (+4)
+> 450 600
+> 0.0
+> 0.5
+> 1.0
+> Round 6
+> N = 27 (+6)
+> 450 600
+> 0.0
+> 0.5
+> 1.0
+> Round 7
+> N = 37 (+10)
+> 450 600
+> 0.0
+> 0.5
+> 1.0
+> Round 8
+> N = 45 (+8)
+> 450 600
+> Wavelength (nm)
+> 0.0
+> 0.5
+> 1.0
+> Norm. Intensity
+> Round 9
+> N = 59 (+14)
+> 450 600
+> Wavelength (nm)
+> 0.0
+> 0.5
+> 1.0
+> Round 10
+> N = 75 (+16)
+> 450 600
+> Wavelength (nm)
+> 0.0
+> 0.5
+> 1.0
+> Round 11
+> N = 97 (+22)
+> 450 600
+> Wavelength (nm)
+> 0.0
+> 0.5
+> 1.0
+> Round 12
+> N = 128 (+31)
+> Ground truth Reconstructed spectrum New samples (this round) Prior samples
+
+Supplementary Figure 3 Round-by-round adaptive reconstruction of a 532 nm green laser. Same convention as Supplementary Fig. 1. The source is a single near-monochromatic line at 532 nm — the hardest case for blind sampling, as the N = 5 pilot straddles it and recovers almost none of its amplitude. From Round 2 onward the adaptive sampler localises the line and spends essentially all new measurements there, restoring the peak within a few rounds and narrowing the reconstructed width toward the ground-truth FWHM until it is fully resolved at the cumulative budget N = 128. 
+
+MO 2 is the static meta-lens that is mounted only on an X–Y translation stage so that the centroid of MO 2 can coincide with the principal axis passing through the center of MO 1. In other words, MO 1 defines the rotating reference axis, and MO 2 is then translated to be co-axial with that reference. The MO 2 stage also uses a dovetail 
+
+z-axis translation stage to reduce the distance between the meta-optics and to fine-tune the axial separation during alignment, especially when the PSF shape indicates residual defocus or spacing-induced changes in the effective system response. The illumination source is placed approximately 40 mm to the left of MO 1 (approx-imately at a 2 f distance) and consists of a circular slit of 50 μm diameter coupled to a fiber probe. This configuration provides an approximately point-like input that is well-suited for monitoring the point spread function (PSF) of the combined sys-tem. We use a monochrome camera (FLIR Blackfly grayscale) as the detector, and we adjust the camera position and orientation such that (i) the PSF centroid is close to the center pixel and (ii) the dominant lobes are approximately equal in size and intensity. These conditions not only improve visual interpretability but also provide a practical symmetry check that the sensor plane is approximately perpendicular to the optical axis and that gross tilt is minimized. 10 8 16 32 64 128 256 
+
+> 10
+> 20
+> 30
+> PSNR (dB)
+
+Laser 407 nm      
+
+> 816 32 64 128 256
+> 20
+> 30
+
+Laser 533 nm      
+
+> 816 32 64 128 256
+> 20
+> 30
+
+Laser 637 nm      
+
+> 816 32 64 128 256
+> 20
+> 40
+> PSNR (dB)
+
+Blue LED      
+
+> 816 32 64 128 256
+> 20
+> 40
+
+Green LED      
+
+> 816 32 64 128 256
+> 20
+> 40
+
+Red LED      
+
+> 816 32 64 128 256
+> 20
+> 30
+> 40
+> PSNR (dB)
+
+White LED      
+
+> 816 32 64 128 256
+> 20
+> 30
+> 40
+
+Monochromator 520 nm      
+
+> 816 32 64 128 256
+> 20
+> 40
+
+Monochromator 620 nm      
+
+> 816 32 64 128 256
+
+Sample budget 
+
+> 20
+> 30
+> 40
+> PSNR (dB)
+
+CFL      
+
+> 816 32 64 128 256
+
+Sample budget  
+
+> 20
+> 30
+> 40
+
+Halogen + 532 nm      
+
+> 816 32 64 128 256
+
+Sample budget 
+
+> 20
+> 40
+
+Average of all sources 
+
+Adaptive Samples Uniform Samples 30 dB Supplementary Figure 4 Reconstruction PSNR versus sample budget for adaptive and uniform angular sampling across eleven light sources. Panels show three lasers (407, 533, 637 nm), four LEDs (blue, green, red, white), two monochromator setpoints (520, 620 nm), a CFL, a mixed halogen + 532 nm source, and the across-source average (bottom right). Blue: adaptive sampling; orange: uniform sampling; dashed: 30 dB reference. Adaptive sampling uses one fixed configuration for all sources and budgets (5-sample pilot, greedy top-k = 1, detail threshold τ = 10 −4,minimum interval width 0 .2◦). Averaged over all sources, adaptive sampling beats uniform at every budget—by +5 .6 dB on average and up to ≈ + 11 dB at mid budgets—with convergence as N → 256, where uniform becomes dense. 
+
+## 4.2 Alignment 
+
+The optical setup is extremely sensitive to lateral misalignment between the centroids of the two meta-optics. In this system, even small decenter between MO 1 and MO 2
+
+can introduce angle-dependent aberrations and apparent motion of the focal spot, which directly degrades repeatability during rotational scanning. To ensure spectral and spatial stability of the focal point during rotation of MO 1, we use a PSF-driven visual centering procedure designed to satisfy three alignment objectives: 11 0 25 50 75 
+
+> 10
+> 20
+> 30
+> PSNR (dB)
+
+Laser 407 nm    
+
+> 025 50 75
+> 20
+> 30
+
+Laser 533 nm    
+
+> 025 50 75
+> 20
+> 30
+
+Laser 637 nm    
+
+> 025 50 75
+> 20
+> 40
+> PSNR (dB)
+
+Blue LED    
+
+> 025 50 75
+> 20
+> 40
+
+Green LED    
+
+> 025 50 75
+> 20
+> 40
+
+Red LED    
+
+> 025 50 75
+> 20
+> 40
+> PSNR (dB)
+
+White LED    
+
+> 025 50 75
+> 20
+> 30
+> 40
+
+Monochromator 520 nm    
+
+> 025 50 75
+> 20
+> 30
+> 40
+
+Monochromator 620 nm    
+
+> 025 50 75
+
+Acquisition time (s) 
+
+> 20
+> 30
+> 40
+> PSNR (dB)
+
+CFL    
+
+> 025 50 75
+
+Acquisition time (s)  
+
+> 20
+> 30
+> 40
+
+Halogen + 532 nm    
+
+> 025 50 75
+
+Acquisition time (s) 
+
+> 20
+> 40
+
+Average of all sources 
+
+Adaptive Samples Uniform Samples 30 dB Supplementary Figure 5 Reconstruction PSNR versus acquisition time for adaptive (WTP) and uniform angular sampling. Same eleven sources and panel layout as Fig. 4, here at a fixed budget of N = 256 samples: the PSNR of the cumulative reconstruction is plotted against the modelled acquisition time as samples accrue in measurement order. Blue: adaptive sampling; orange: uniform; dashed line: 30 dB. Because adaptive sampling concentrates measurements on spectral fea-tures instead of sweeping uniformly, it reaches a given PSNR in substantially less acquisition time (≈ 6.7× faster to 30 dB on average); the curves converge once uniform sampling has covered the full range. 
+
+• Rotation-axis centering: the axis of rotation of the motorized rotation stage coincides with the centroid of MO 1.
+
+• Co-axiality: the centroids of MO 1 and MO 2 lie on the same optical axis. 
+
+• Minimal tilt: the surfaces of the two metalenses are parallel to each other and to the sensor plane, and approximately orthogonal to the line joining the point source and the sensor plane. 
+
+Quasi-incoherent PSF as a stable alignment observable. We illuminate the system with a monochromatic collimated laser module and make it quasi-incoherent 12 Fig . 1 Working principle of the metalens cascaded to form the Moir ´e meta -optic .a) Optical layout of 
+
+the rotational spectrometer showing the rotating meta -optic(MO 1) cascaded with a static meta -optic 
+
+(MO 2) at close approximity to each other .Realtive rotation of MO 1 with respect to MO 2 causes 
+
+wavelength dependent focus to shift at the sensor plane . b)Phase profiles of MO 1 and Mo 2 which are 
+
+equal and opposite phase patterns which when cascaded together generates a converging quadratic 
+
+phase .           
+
+> MO2
+> SM1T2
+> ELL14
+> LM1XY
+> MO1
+> BFS -U3 -23S3M
+> Monochrome
+> Sensor(BFS -
+> U3 -23S3M)
+> X-Y
+> Translation
+> Thread
+> Coupler
+> Rotation Stage
+> Fiber
+> Optic
+> Cable
+> Meta -Optics
+> a) Experimental setup image with la beled parts.
+> c)Schematic diagram showing mechanical assembly.
+> b) PSF of asingle metalens (MO1 )
+
+Supplementary Figure 6 Optomechanical assembly of the Moir´ e meta-spectrometer. a, 
+
+Annotated image of the prototype: the rotating meta-optic MO 1 is mounted on a two-axis translation stage (LM1XY, Thorlabs) coupled to a piezo-motorised rotation stage (ELL14) through SM1 thread adapters; the static meta-optic MO 2 is mounted on its own LM1XY downstream, and the focused PSF is recorded by a monochrome scientific camera (BFS-U3-23S3M, FLIR Blackfly). b, Reference PSF through MO 1 alone under quasi-incoherent monochromatic illumination, used as the visual reference for the centring procedure of Supplementary Note 4.2. c, Schematic of the optical train: a fibre-coupled point-like source illuminates the cascaded MO 1/MO 2 pair through SM1-threaded mounts; the wavelength brought to focus on the sensor plane is selected by the relative rotation angle 
+
+θ commanded to the ELL14. 
+
+by scrambling the phase with a rotating diffuser, which is a sandpapered translucent polymer sheet attached to a small motor. The reason for scrambling is that a purely coherent laser source generates strong speckle and interference artifacts at the detec-tor, which makes the PSF fluctuate in time and biases any centroid-based centering. The rotating diffuser produces a time-varying phase screen that is averaged by the camera exposure, resulting in a stable PSF profile that is reproducible across repeated measurements. Under this illumination, the system PSF becomes an interpretable and repeatable visual reference that we monitor throughout alignment. 13 Fig . 1 Working principle of the metalens cascaded to form the Moir ´e meta -optic .a) Optical layout of 
+
+the rotational spectrometer showing the rotating meta -optic(MO 1) cascaded with a static meta -optic 
+
+(MO 2) at close approximity to each other .Realtive rotation of MO 1 with respect to MO 2 causes 
+
+wavelength dependent focus to shift at the sensor plane . b)Phase profiles of MO 1 and Mo 2 which are 
+
+equal and opposite phase patterns which when cascaded together generates a converging quadratic 
+
+phase .                                  
+
+> Θ= 1º Θ= 3º Θ= 5º Θ= 7º Θ= 10º
+> Θ= 1º Θ= 3º Θ= 5º Θ= 7º Θ= 10º
+> a) Misaligned Single metalens PSF b) Aligned Single metalens PSF
+> c) System PSF measured by an RGB sensor with misaligned metalens at different rotation angles
+> d)System PSF measured by an RGB sensor with axial alignment between the metalens at different rotation angles
+> e) White LED X -θLine Scan of over fine and coarse rotation angles
+> X(Pixels along the line)
+> X(Pixels along the line)
+> Rotation Angle(in º) Rotation Angle(in º)
+
+Supplementary Figure 7 PSF-driven alignment of the Moir´ e meta-optics. a, b, Single-metalens PSF through MO 1 before ( a) and after ( b) centering MO 1 on the ELL14 rotation axis: we track the PSF centroid over a full rotation (KLT tracker), fit a circle to its path, and translate MO 1 (LM1XY) until the fitted radius is below one binned pixel. c, d, Cascaded MO 1/MO 2 PSF (RGB sensor) at θ = 1 ◦, 3◦, 5◦, 7◦, 10 ◦ before ( c) and after ( d) co-axially aligning MO 2 to MO 1:misalignment causes angle-dependent focal drift and asymmetric, fan-shaped lobes; alignment yields a stationary centroid and clean, wavelength-selective intensity modulation. e, X–θ line-scan of a white-LED source through the aligned system over fine ( θ ∈ [0 , 14] ◦, left) and coarse ( θ ∈ [0 , 100] ◦,right) ranges; the dominant bright track follows the calibrated λ–θ dispersion. 
+
+14 4.3 Centering MO 1 to the rotation axis (ELL14). 
+
+The first objective is to align the centroid of MO 1 with the axis of rotation of the motorized rotation stage. A lateral decenter from the rotation axis produces a char-acteristic and intuitive signature: during smooth rotation, the PSF centroid does not remain stationary, but instead traces a circular trajectory around the true rotation center in the detector plane. Conceptually, MO 1 rotates about a mechanical axis; if the optic center is offset from this axis, the optical response “orbits” around the true rotation center, and the PSF centroid draws an arc (or a full circle over a complete rotation). This trajectory provides a direct, image-domain indicator of decenter, and it is the basis of our centering procedure. To quantify this trajectory and reduce observer bias, we use a KLT (Kanade-Lucas-Tomasi) feature tracker to track a stable, high-contrast region of the PSF (typically the bright core or a consistent portion of the fan-like PSF) across frames acquired during a rotation sweep. The tracked points form a 2D trajectory in detector coordinates. We then fit a circle to this trajectory and estimate the rotation center(PSF centroid) from the circle fit. We then use the LM1XY translation mount beneath MO 1 to apply small lateral corrections that move MO 1 toward this estimated center. After each adjustment, we repeat the rotation sweep and tracking. The procedure converges when the fitted radius becomes minimal and, visually, the PSF centroid remains nearly stationary over rotation, indicating that the centroid of MO 1 is well registered to the ELL14 rotation axis. 
+
+Co-aligning MO 2 to MO 1 and stabilizing the focus during rotation. Once MO 1 is centered, we align MO 2 using its XY translation stage such that the com-bined system produces a stable focus whose position does not drift during rotation of MO 1. This step enforces co-axiality between the two meta-optics: MO 1 defines the rotating optical axis, and MO 2 is translated until the PSF symmetry and centroid stability are maximized. The main visual cue is that the MO 1–MO 2 pair behaves as an effective convex lens whose focusing behavior is controlled by the relative angle between the two meta-optics. Therefore, as MO 1 rotates about its axis, the image of the point source should remain spatially static on the sensor if MO 2 is properly cen-tered and the two surfaces are approximately parallel. At the same time, the PSF intensity is expected to vary smoothly with angle, with a maximum at the relative angle corresponding to the monochromatic illumination wavelength (consistent with the wavelength-selective response of the meta-optic pair). In our experiments, success-ful alignment is indicated by (i) negligible lateral drift of the PSF centroid over the full rotation sweep, (ii) smooth and repeatable intensity modulation versus angle, and (iii) stable PSF morphology (no abrupt asymmetry changes) across repeated sweeps. Finally, after co-alignment, we reduce the M O 1 − M O 2 separation using the dove-tail z-translations on the MO 1 and MO 2 mounts. This step is performed after lateral centering because changing axial spacing can slightly perturb mechanical stresses and alignment. We iteratively reduce the spacing while confirming that the PSF remains stable and centered, thereby achieving a compact configuration with reduced Talbot-length-related sensitivity while preserving repeatability. 15 4.4 Precision calibration of the Moir´ e spectrometer 
+
+Wavelength calibration of the spectrometer was performed by acquiring the angular emission spectra of six distinct laser configurations (407.08 nm, 533.09 nm, 636.91 nm, 787.47 nm, 849.72 nm, and 974.16 nm). To mitigate the effects of mechanical backlash and hysteresis in the motorized rotational stage, bidirectional spectral acqui-sitions—consisting of both clockwise and counterclockwise sweeps—were performed for each reference wavelength. The acquired intensity profiles from both scanning directions were averaged to yield a robust, directionally unbiased signal. Because the discrete angular sampling inherently limits the precision of raw peak identification (i.e., using a simple maximum), we determined the exact central angle of each emission line by fitting a Gaussian distribution to the averaged intensity profile surrounding the region of maximum intensity. The resulting highly precise Gaussian-fitted peak cen-ters ( θpeak ) were mapped against the theoretical wavenumber (10 7/λ , in cm −1) of each corresponding laser. Linear regression analysis of these six points revealed a highly con-sistent calibration function, consistent with the linear wavenumber–angle dispersion of Eq. (7): ν [cm −1] = 358 .4601 θpeak + 11761 .6953, with a coefficient of determina-tion ( R2) exceeding 0.999. This experimentally derived linear map was subsequently rigorously inverted to establish the mapping from raw rotational angle to continuous wavelength ( λ = 10 7/(358 .4601 × θpeak + 11761 .6953)), forming the definitive spec-tral calibration used across all subsequent commercial light source benchmarks and adaptive sampling routines. 
+
+# References 
+
+[1] Bernet, S. & Ritsch-Marte, M. Adjustable refractive power from diffractive moir´ eelements. Appl. Opt. 47 , 3722 (2008). URL https://opg.optica.org/abstract.cfm? URI=ao-47-21-3722. [2] Bernet, S., Harm, W. & Ritsch-Marte, M. Demonstration of focus-tunable diffrac-tive moir´ e-lenses. Opt. Express 21 , 6955 (2013). URL https://opg.optica.org/oe/ abstract.cfm?uri=oe-21-6-6955. [3] Douzi, K., Mammass, D., Wittner, T. & Nouboud, F. Faber-schauder wavelet transform, application to edge detection and image characterization. J. Math. Imaging Vis. 14 , 91–101 (2001). URL https://link.springer.com/article/10.1023/ A:1011213914008. [4] Mallat, S. A Wavelet Tour of Signal Processing Second edn (Academic Press, 1999). [5] Berger, M. J. & Oliger, J. Adaptive mesh refinement for hyperbolic partial dif-ferential equations. J. Comput. Phys. 53 , 484–512 (1984). URL https://www. sciencedirect.com/science/article/abs/pii/0021999184900731. [6] DeVore, R. A. Nonlinear approximation. Acta Numer. 7, 51–150 (1998). URL https://www.cambridge.org/core/journals/acta-numerica/article/ 16 nonlinear-approximation/C8E028C39B8E2F35F277F58FBFFBB504. [7] Cohen, A., Dahmen, W. & DeVore, R. Adaptive wavelet methods for elliptic operator equations: convergence rates. Math. Comp. 70 , 27–75 (2001). URL https://www.ams.org/journals/mcom/2001-70-233/S0025-5718-00-01252-7/. 17

@@ -1,0 +1,179 @@
+Title: Capture of interstellar objects during stellar encounters
+
+URL Source: https://arxiv.org/pdf/2607.18551v1
+
+Published Time: Wed, 22 Jul 2026 00:17:16 GMT
+
+Number of Pages: 6
+
+Markdown Content:
+Astronomy & Astrophysics manuscript no. aa60697-26 ©ESO 2026 July 22, 2026 
+
+# Capture of interstellar objects during stellar encounters 
+
+Sean N. Raymond 1, Nathan A. Kaib 2 and Matthew J. Hopkins 3 
+
+> 1
+
+Laboratoire d’Astrophysique de Bordeaux, CNRS and Université de Bordeaux, Allée Geo ff roy St. Hilaire, 33615 Pessac, France e-mail: rayray.sean@gmail.com  
+
+> 2
+
+Planetary Science Institute, 1700 E. Fort Lowell, Suite 106, Tucson, AZ 85719, USA  
+
+> 3
+
+Te Kura Mat¯ u, University of Canterbury, Private Bag 4800, Christchurch 8140, New Zealand Submitted April 29, 2026 – Accepted July 10, 2026 
+
+ABSTRACT 
+
+As they orbit within the Galaxy, stars swim through a vast population of interstellar objects (ISOs). In this paper, we use N-body simulations to show that a fraction of ISOs within ∼1 pc of the Sun (its tidal radius) may be captured during the flyby of another star – a mechanism that requires no planets. Capture is most e ffi cient when the impulse imparted by the flyby is comparable to the escape speed at the widest stable orbit, which is roughly 0.1 km /s for the Sun. ISO capture is dominated by the few highest-impulse stellar flybys, typically involving relatively slow encounters with massive stars. Most ISOs are captured in the outer parts of the Oort cloud, with semimajor axes greater than ∼50,000 au. Using Monte Carlo simulations, we show that the Sun underwent only a small number of ISO-capturing flybys in its history (median [mean] of 1 [1.7]). Using the ¯ Otautahi-Oxford population model, we estimate that a few times ∼10 4 ‘Oumuamua-sized ISOs were likely captured by the Sun. This only represents a ∼10 −8±1 contribution to the total Oort cloud population, yet it contains roughly as many present-day captured ISOs as Jupiter-assisted capture provides. Given that flybys are unavoidable in the Galactic field, most stars should, at any given time, host have sparse Oort clouds populated with ISOs captured during stellar flybys. Massive stars are both the main drivers of capture when they fly by a given star, and more e ffi cient at capturing ISOs around themselves than low-mass stars. 
+
+Key words. interstellar objects – Oort cloud – comets – stellar encounters 
+
+1. Introduction 
+
+While their existence had been hypothesized for decades (e.g. Whipple 1975; McGlynn & Chapman 1989; Kresak 1992; Sen & Rama 1993; Moro-Martín et al. 2009; Jura 2011; Engelhardt et al. 2017), the discovery of interstellar objects (ISOs) still contained many surprises. Analysis of the first ISO, the 100 m-scale 1I /‘Oumuamua (Meech et al. 2017), hinted that such objects were far more common than predicted by simple models of planetary formation and ejection, suggesting that they may not follow an asteroid belt-like size-frequency distribution (e.g. Moro-Martín 2018; Raymond et al. 2018a,b; Portegies Zwart et al. 2018; ’Oumuamua ISSI Team et al. 2019). To explain its discovery, Do et al. (2018) inferred a number density of n ≈ 0.1 ‘Oumuamua-sized objects per cubic au. As 2I /Borisov was discovered by an amateur and not in the confines of a survey (e.g. Jewitt & Luu 2019), it is challenging to use it to estimate the underlying population density. Given its activity, 3I /ATLAS has been observed by a large number of telescopes, and Hui et al. (2026) derived n ≈ 3 × 10 −3 au −3 from its detection. Stars can gravitationally capture ISOs onto bound orbits. Capture requires a change in an ISO’s velocity comparable to its velocity at infinity relative to the Sun – that is, its speed after subtracting o ff the Sun’s gravitational accelera-tion. The best-studied ISO capture mechanism is the result of Jupiter (Valtonen & Innanen 1982; Hands & Dehnen 2020; Napier et al. 2021a; Dehnen & Hands 2022). Jupiter’s gravita-tional influence can temporarily capture passing ISOs, whose orbits remain stably within the confines of the Solar System for millions of years (or more), before being re-ejected (Napier et al. 2021b; Dehnen et al. 2022). Other mechanisms for ISO capture have been studied to some degree – for instance, the Galactic tide has been shown to temporarily capture passing ISOs (Peñarrubia 2023). In this paper, we show that stellar flybys are another mecha-nism for ISO capture – and, unlike other mechanisms, one that does not require the existence of any giant planets. During a stel-lar encounter, the impulse imparted by the flyby star can lead to the capture of a fraction of ISOs that happen to be passing through a star’s sphere of gravitational influence (defined by the tidal radius – see Eq. 1), and that also have a su ffi ciently low velocity relative to the Sun. This mechanism is analogous to the capture of the irregular satellites of the giant planets dur-ing close encounters su ff ered during the giant planet instabil-ity (Nesvorný et al. 2007, 2014). We first present a series of N-body simulations of stellar fly-bys including 10 7 ISO particles each, and use them to devise a simple criterion for capture. We determine the orbital charac-teristics of ISOs and calibrate to the ¯ Otautahi-Oxford ISO pop-ulation model (Hopkins et al. 2023, 2025; Dorsey et al. 2025). Then, we perform a series of Monte Carlo realizations of stellar flybys of the Sun within the Galactic field, to estimate the num-ber of ISOs captured throughout its lifetime. We discuss how our results can be extrapolated to other stars, as well as the limita-tions of our study. 
+
+2. N-body simulations of ISO capture 
+
+Our simulations start with a population of ISOs passing through the Sun’s sphere of influence, and simulated a single stellar flyby 
+
+Article number, page 1 arXiv:2607.18551v1 [astro-ph.EP] 20 Jul 2026 A&A proofs: manuscript no. aa60697-26     
+
+> Fig. 1. The fraction of ISOs with v∞less than the flyby impulse that are captured in a given flyby, as a function of the impulse. Each symbol is a simulation with 10 7ISOs. The grey curve is a lognormal fit to the simulations.
+
+with predefined characteristics. Each simulation included a pop-ulation of 10 7 ISOs with initially isotropic velocity and spatial distributions, and a velocity at infinity v∞ distribution evenly spread between zero and 100 km /s. 1 This allows us to determine the capture rate as a function of initial velocity and to convolve it with a more realistic distribution (see below). We used 1 pc (206265 au) as the outer bound of our simu-lations. This is only slightly larger than estimates of the Sun’s tidal radius Rtide , beyond which an object is no longer bound to its star (Smoluchowski & Torbett 1984), defined as (Tremaine 1993): 
+
+Rtide ≈ 1.9 × 10 5au M⋆
+
+M⊙
+
+!1/3
+
+ρ−1/30 , (1) where M⋆ is the stellar mass and ρ0 is the Galac-tic density relative to the local value of roughly 0.1 M ⊙ pc −3 (Holmberg & Flynn 2000; Chakrabarti et al. 2021). When a given ISO passed beyond 1 pc, it was re-initialized at a di ff erent point on a sphere of 1 pc in radius, with the same v∞, with a trajectory chosen to scale with the square of the impact parameter (Henon 1972). We then subjected the Sun-ISO system to a single stellar flyby, with varying parameters. The star was initialized just in-terior to the 1 pc sphere, and integrated as it passed by the Sun. Our simulations were evolved with the Mercury inte-grator (Chambers 1999), modified to account for the displace-ment of ISOs that leave our 1 pc sphere, as described above. Each system was integrated with the Bulirsch-Stoer integra-tor (Press et al. 1992) with accuracy parameter of 10 −15 and a default timestep of 100 days for long enough for the star to pass back outside of 1 pc (20-100 kyr depending on v∞). There are three relevant flyby parameters: the stellar mass 
+
+M⋆, the impact parameter b, and the velocity at infinity v∞. In a preliminary set of runs, we tested parameter space more or less at random. Then, we performed a systematic sweep of flybys that appeared capable of capturing ISOs. We fixed a fiducial case with M⋆ = 0.7 M ⊙, v∞ = 30 km /s, and b = 3000 au. We then did a parameter sweep, fixing M⋆ = 0.7 M ⊙ and v∞ = 30 km /s, then testing b = 100, 300, 1000, 10000, 30000, and 10 5 au. Next, we    
+
+> 1In practice, we ran 10 4simulations with 10 3ISOs each and an identi-cal flyby (in ‘embarrassingly parallel’ fashion). Given that ISOs do not self-interact, we combined the results.
+
+fixed M⋆ = 0.7 M ⊙ and b = 3000 au, and tested v∞ =1, 3, 10, and 100 km /s. Finally, we fixed v∞ = 30 km /s and b = 3000 au and tested M⋆ = 0.02, 0.07, 0.2, 0.8, 1, 1.4, 2, 2.5, 3.2, 4, 6, 7, 8, 10, 12, 14, 16, 18, 20, and 30 M ⊙. We consider an ISO to be captured if its aphelion distance is less than our adopted tidal radius of 1 pc. The number and distribution of captured ISOs scales with a single quantity: the flyby impulse, defined as: Impulse = 2GM ⋆
+
+v∞b , (2) where G is the gravitational constant. The ISOs that were cap-tured in our simulations had v∞ smaller than the flyby impulse. This demonstrates that the capture mechanism was indirect: the flyby star’s velocity impulse to the Sun caused a fraction of ISOs within the Sun’s Hill sphere to become bound. Of course, only ISOs with the appropriate velocity vectors were susceptible to capture. Figure 1 shows the capture e ffi ciency of ISOs that were cap-tured as a function of the flyby impulse. For impulses lower than 0.025-0.03 km /s, virtually no ISOs are captured. There is a steady increase in the capture probability until it reaches a peak at an impulse of ∼ 0.1 km /s, then decreases at higher impulse. The tightness of the relation in Fig. 1 – which combines simula-tions spanning three orders of magnitude in stellar mass, impact parameter, and encounter velocity – demonstrates that the im-pulse is the controlling parameter irrespective of stellar mass, encounter geometry, or velocity. The Solar System’s tidal radius sets the natural velocity scale for capture. An object that is securely bound, with eccentric-ity below unity, will typically have a semimajor axis of order 
+
+a ≈ 10 5 au, corresponding to an escape speed of ∼0.1 km /s. Capture therefore requires a change in velocity of this same or-der, comparable to that needed for ejection. At lower impulses, the perturbation is insu ffi cient to bind the object, although some ISOs can be tenuously captured for impulses down to a frac-tion of this value. Capture is most e ffi cient when the impulse is comparable to the escape speed at the tidal radius. At higher impulses, objects can in principle be captured onto tighter or-bits, but the e ff ective capture cross section decreases: stronger encounters require more specific geometries and therefore occur less frequently. As a result, the overall capture e ffi ciency declines at large impulses. In this way, the capture probability naturally peaks at an impulse comparable to the escape speed. The capture probability from Fig. 1 can be fit with a lognor-mal distribution: 
+
+P(x) = A H (x − xmin ) exp 
+
+"
+
+− (ln x − ln x0)2
+
+2σ2
+
+#
+
+, (3) where x is the flyby impulse, H is the Heaviside function (equal to zero below xmin and 1 above), x0 is the characteristic impulse at which capture is maximized, and σ describes the width of the capture window in log-space. In the fit shown in Fig. 1, A =
+
+0.040, x0 = 0.105 km /s, σ = 0.55, and xmin = 0.02 km /s. Figure 2 illustrates the impulse dependence of ISO cap-ture using three simulations, each with M⋆ = 0.7 M ⊙ and b =
+
+3000 au, but with v∞ = 1, 3, and 10 km /s. Recall from Eq. 2 that the flyby impulse scales inversely with v∞. The simulation with v∞ = 3 km /s had an impulse of 0.14 km /s, at the peak from Fig. 1. ISOs captured in that simulation peaked in semi-major axis just above 10 5. The lower-impulse flyby in Fig. 2 (with v∞ = 10 km /s) captured fewer total objects and these were skewed to larger semimajor axis, where a smaller impulse           
+
+> Article number, page 2 Sean N. Raymond, Nathan A. Kaib and Matthew J. Hopkins: Capture of interstellar objects during stellar encounters
+> Fig. 2. Semimajor axis distribution of captured ISOs in three simu-lations, each with stellar mass M⋆=0.7 M ⊙and impact parameter
+> b=3000 au, but with velocity at infinity v∞=1, 3, and 10 km /s.
+
+is needed. The higher-impulse flyby also captured fewer total ISOs, but they were skewed to lower semimajor axes. The question becomes, how many ISO-capturing flybys has the Sun undergone since its formation? To address this, we must model the Sun’s encounter history within the Galaxy. 
+
+3. Monte Carlo simulations of flybys and ISO capture 
+
+We built a simple Monte Carlo model of stellar flybys, fol-lowing the approach of Rickman et al. (2008). The masses of flyby stars were chosen to follow the observed mass function of nearby stars determined by Reid et al. (2002), with a lower limit set to 0 .05 M ⊙. The orbital velocities of stars were cho-sen as a function of their masses to match the present-day ve-locity distribution (see Table 1 of Rickman et al. 2008). The resulting velocity distribution has a median of 40.2 km /s (con-sistent with Binney & Tremaine 2008) and a standard devia-tion of 16.9 km /s when averaged over all stellar types. We use these distributions to calculate a flux-weighted encounter rate, which is itself a function of stellar mass. We find that, over all stellar types, the Sun undergoes roughly one flyby within 1 pc every 50,000 years. This rate is consistent with previ-ous studies (e.g. Heisler & Tremaine 1986; Zink et al. 2020; Brown & Rein 2022) and implies that the Sun has undergone roughly 90,000 stellar flybys that penetrated its tidal radius dur-ing its 4.5 Gyr lifetime. Armed with these quantities, our code generates the appropriate number of encounters with realistic mass, velocity, and close approach distributions. Figure 3 shows an example flyby history of the Sun drawn with this Monte Carlo method. In this case, there were three encounters strong enough to capture ISOs (shown in black); these were not necessarily the closest encounters, as a slow-moving, high-mass star can impart a strong impulse at a large distance (see Eq. 2). Nonetheless, the highest-impulse flybys tend to come from stars significantly more massive than the Sun (Rickman et al. 2008). In this example, the first two ISO-capturing flybys were each with a star of 4 M ⊙, and, coinciden-tally, both had flybys with v∞ ≈ 27 km /s. The first flyby had a much closer approach to the Sun (impact parameter b = 3432 au for the first vs. b = 9972 au for the second), and imparted an impulse of 0.075 km /s compared with 0.026 km /s for the sec-ond flyby. The third flyby was in a di ff erent realm of parameter  
+
+> Fig. 3. An example encounter history of the Sun. Each symbol shows a given stellar flyby, with a size that scales with the stellar mass. The black symbols imparted an impulse su ffi cient to induce ISO capture.
+
+space, consisting of a 0 .47 M ⊙ M dwarf passing within 226 au of the Sun with v∞ = 72 .4 km /s. It imparted an impulse of 0.05 km /s. To estimate the actual number of ISOs that should be cap-tured in a given flyby, we calibrate to the ¯Otautahi-Oxford ISO population model (Hopkins et al. 2023, 2025; Dorsey et al. 2025). At the small heliocentric speeds at which ISOs are sus-ceptible to capture ( v∞ ≲ 0.1 km /s), the ISO velocity distribu-tion probability density function is approximately uniform with a value of 3 × 10 −6 (km /s) −3. Thus, the fraction of ISOs with heliocentric velocity at infinity less than v∞ is: 
+
+F(v∞) = (3 × 10 −6 (km /s) −3) · 3π
+
+4 v∞3 (4) and the total number within our spherical volume V is F(v∞)nV ,where n is the (poorly-constrained) number density of ISOs in the Galactic neighborhood. Do et al. (2018) calculated n ≈
+
+0.1 au −3 from the detection of 1I and Hui et al. (2026) derived 
+
+n ≈ 3 × 10 −3 au −3 from the detection of 3I. These two objects are more than an order of magnitude di ff erent in size, and also vary greatly in the parameter regimes in which they are detectable, given that one is active and the other is not (Engelhardt et al. 2017). The three strongest-impulse flybys from Fig. 3 captured a total of 431,000 ISOs, assuming n = 0.1 au −3 (appropriate for ‘Oumuamua-sized objects). Yet capture varied hugely between the flybys, given the strong dependence of capture on the impulse (Fig. 1). The first flyby had the highest impulse and captured 366,000 ISOs, or roughly 85% of the total number. The second flyby only captured 1000 ISOs and the third 64,000. If we instead adopt n = 3×10 −3 au −3, these flybys captured a total of ∼ 13,000 3I /ATLAS-sized objects. We performed a set of 10 3 Monte Carlo realizations to eval-uate the likelihood of di ff erent outcomes. It’s worth noting that some of these realizations are incompatible with the present-day Solar System. Flybys within ∼100 au put the dynamical stabil-ity of the planets at risk (Brown & Rein 2022; Kaib & Raymond 2025) – 21 of our Monte Carlo realizations had such a close encounter, and we exclude those from further analysis. The me-dian closest flyby su ff ered by the Sun was ∼630 au. The median system underwent one flyby with impulse large enough to cap-ture ISOs, with a mean of 1.66 ISO-capturing flybys and a range of zero to 7, with 18% of realizations having no ISO-capturing flyby. The median maximum impulse was 0.04 km /s, in a range   
+
+> Article number, page 3 A&A proofs: manuscript no. aa60697-26
+> Fig. 4. Orbital distribution of captured ISOs across all of our simula-tions.
+
+consistent with previous work by Kaib & Quinn (2009). This value for the impulse is located along the increasing slope in capture probability seen in Fig. 1. An additional 18% of realiza-tions su ff ered a flyby with an impulse at or above the peak in capture probability at ∼0.1 km /s, without passing so close as to disrupt the planets’ orbits. The median mass of all ISO-capturing flybys was 1 .22 M ⊙, with a median impact parameter of 2300 au and a median v∞ of 28 km /s. The median number of captured ‘Oumuamua-sized ISOs (assuming n = 0.1 au −3) was 2 .1 × 10 4,with a range from zero to 1 .1 × 10 7 and a 20th to 80th percentile range of 10 3 to 3 .3 × 10 5.Massive stars play an outsized role in the capture of ISOs. Of the thousands of ISO-capturing flybys in our Monte Carlo re-alizations, 59% involved the flyby of a star more massive than the Sun. Only 13% were the result of a flyby with M⋆ < 0.5 M ⊙,and only 3% with M⋆ < 0.25 M ⊙. While low-mass stars domi-nate by number, they play only a minor role in accelerating stars and causing ISO capture. 
+
+4. Captured ISOs within the Oort cloud 
+
+Figure 4 shows the orbits of all ISO particles captured in our di ff erent simulations. There is clear edge in eccentricity coming from the imposed requirement that a captured ISO must have an aphelion smaller than 1 pc. The overall distribution is clearly reminiscent of that of the Oort cloud, as captured ISOs have an isotropic inclination distribution and a roughly thermal ec-centricity distribution (with a median eccentricity of ∼ 0.72 for semimajor axes below 10 5 au – to avoid the bias from the aphe-lion requirement). Yet the number of captured ISOs is tiny compared with na-tive Oort cloud comets. Our simulations imply that the Sun may have captured a few times 10 4 100 m-scale ISOs, or ∼
+
+10 3 km-scale ISOs. This is 7-9 orders of magnitude less than the commonly-expected Oort cloud population (see review in Kaib & Volk 2024). Boe et al. (2019) estimated that there are on the order of 10 9 long-period comets larger than 1 km in the Solar System. Thus, even if all of the captured ISOs were on inner So-lar System-crossing orbits, they would still be outnumbered by native comets at a rate of 10 6 to one. The catalog of long-period comets needs to approach that order to have a reasonable hope of finding an ISO captured by the mechanism described here. The most favorable case would be if there was a rapid in-flux of such objects shortly after their capture, rather than a steady state. However, a flyby would also create a spike in na-tive cometary populations (Hills 1981; Hut et al. 1987), so it’s not clear that this would actually help. Even though captured ISOs will clearly be vastly outnum-bered by native comets, it is possible that they could be dis-tinguishable by their chemical and isotopic compositions. In-deed, both 2I and 3I have compositions that are significantly di ff erent from Solar System comets (e.g. Bodewits et al. 2020; Cordiner et al. 2026; Opitom et al. 2026). There are a handful of long-period comets with unusual compositions (Fink 1992; Schleicher 2008; McKay et al. 2019). However, our results sug-gest that it is statistically very unlikely that these objects are ISOs captured in stellar flybys. The orbits onto which ISOs are captured – mostly beyond 5 × 10 4au (Fig. 4) – are also the most fragile in the Solar System. Objects at these distances are strongly perturbed by the Galac-tic tide and by subsequent stellar flybys, and native outer Oort cloud bodies on comparable orbits are eroded on timescales of a few Gyr (e.g. Kaib et al. 2011; Torres et al. 2019). Captured ISOs should be lost at a similar rate. However, because ISO-capturing flybys are distributed roughly uniformly in time, ob-jects captured in the recent past have had little time to be re-moved. At any epoch, the bound captured population therefore reflects a balance between episodic capture and continuous ero-sion; the numbers quoted above represent objects ever captured, of which we assume roughly half survive to the present day (see Sec. 5.3). 
+
+5. Discussion 
+
+> 5.1. Extrapolation to other stars
+
+Flyby-driven capture of interstellar objects is a generic mecha-nism that must apply to all stars, whether or not they have planets of their own. The dynamics is simple to extrapolate – all Solar-mass stars in the Solar neighborhood should have a similar pop-ulation of ISOs captured by this process as the Sun. There is a stellar mass dependence to ISO capture. Eq. 1 shows that the tidal radius Rtide ∝ M1/3 
+
+> ⋆
+
+. The critical impulse to capture an object – essentially, the velocity that should corre-spond to the peak in capture e ffi ciency from Fig. 1 – scales with the escape speed at the tidal radius. This means that the critical impulse velocity, vimp ,crit ∝ M1/3 
+
+> ⋆
+
+. The number of ISOs avail-able to capture, meanwhile, scale with the volume enclosed by the tidal radius, such that Niso ∝ R3 
+
+> tide
+
+∝ M⋆. Considering just these two factors, the capture rate of ISOs should scale strongly with stellar mass, as M4/3 
+
+> ⋆
+
+. This implies that higher-mass stars are likely to have a substantially richer population of captured ISOs than lower-mass ones. Nonetheless, we expect that most stars should, at any given time, host a sparse population of ISOs captured from stellar flybys into their Oort clouds. 
+
+> 5.2. A candidate ISO-capturing flyby
+
+The Sun underwent the relatively close flyby of the Sun-like star HD 7977 roughly 2.8 Myr ago (Bailer-Jones 2022). The clos-est approach is hard to constrain using Gaia, but there is a ∼5% chance it passed within 4000 au. Using the dynamics and align-ment of di ff erent categories of comets, Kaib & Raymond (2026) estimated its closest approach at 6000-10000 au. Given that the star’s mass and v∞ are relatively well measured (at 1 .1 M ⊙ and 27 km /s, respectively), we can establish that this was probably not a strong ISO-capturing event. The maximum plausible im-pulse – if the star had a closest approach of 3000 au from the  
+
+> Article number, page 4 Sean N. Raymond, Nathan A. Kaib and Matthew J. Hopkins: Capture of interstellar objects during stellar encounters
+> Table 1. Comparison of the two ISO capture channels.
+
+Jupiter-assisted capture Stellar flyby capture (this work) Requirement Giant planet(s) None – operates for any star Capture tempo Quasi-steady, ∼2 per 1000 yr a Episodic; dominated by ∼1–2 strong flybys per lifetime Total captured over 4.5 Gyr a ∼ 9 × 10 6 ∼ 2 × 10 4 (median; large stochastic spread) Typical captured orbits Loosely bound, perihelia near Jupiter Outer Oort cloud, a ≳ 5 × 10 4 au Residence time ∼1–10 Myr a Up to Gyr (limited by Galactic tide and later flybys) Present-day captured population ∼ 10 3–10 4 ∼ 10 4 (assuming ∼50% retention)      
+
+> Notes. Numbers assume ‘Oumuamua-sized objects ( n≈0.1 au −3; Do et al. 2018). (a)(Dehnen et al. 2022).
+
+Sun – would have been 0.024 km /s, just below the threshold for ISO capture. We performed a series of N-body simulations which showed, as expected, that ISO capture was unlikely dur-ing this event. 
+
+5.3. Comparison with other ISO capture mechanisms 
+
+Jupiter-assisted ISO capture has been demonstrated as a viable mechanism (Valtonen & Innanen 1982; Hands & Dehnen 2020; Napier et al. 2021a; Dehnen & Hands 2022). Dehnen et al. (2022) showed that this acts to capture roughly 2 new ‘Oumuamua-sized ISOs per 1000 yrs, which amounts to 9 × 10 6
+
+captures over the Sun’s lifetime. This is a factor of ∼500 higher than the time-averaged capture rate from stellar flybys, if we as-sume the median number of captured objects from the Monte Carlo simulations presented in Section 3. Yet ISOs captured through stellar flybys are likely to be much longer-lived than those captured with Jupiter’s assistance. Dehnen et al. (2022) es-timated the residence time of captured ISOs in the ∼ 1 − 10 Myr range, as scattering by Jupiter and Saturn rapidly leads to their ejection. If we make the simple assumption that half of flyby-captured ISOs survive to the present-day (e.g. Kaib et al. 2011), then the number of ISOs residing in the Solar System that were captured by each mechanism should be similar, albeit on quite di ff erent orbits. Peñarrubia (2023) showed that the Galactic tide creates a halo of almost-captured ISOs around the Solar System. While this halo is relatively di ff use, containing ∼ 10 7 objects, one can imagine that this population of very low relative-velocity objects could significantly increase the capture e ffi ciency of stel-lar flybys. Forbes et al. (2026) also found a small (factor ∼1/100) excess of low-velocity ISOs, coming in large part from objects that were barely ejected from the Solar System. 
+
+5.4. Limitations of our work and Uncertainty budget 
+
+The number of captured ISOs is uncertain for several reasons, in decreasing order of importance. The first is the stochastic nature of the Sun’s encounter history: across our Monte Carlo realiza-tions, the number of captured ‘Oumuamua-sized ISOs from zero (18% of realizations) to 7 .1 × 10 6, with a median of 1 .8 × 10 4 and a 20th-80th percentile range of 10 3 to 3 .3 × 10 5. Because cap-ture is dominated by the single strongest flyby, this distribution is heavy-tailed. The second is the ISO number density, which is uncertain at the order-of-magnitude level (Do et al. 2018; Hui et al. 2026) and enters our results linearly. The third is the shape of the low-velocity tail of the ISO velocity distribution (see Sect. 5.4). In calculating the absolute number of captured ISOs, we have relied exclusively on the ¯ Otautahi-Oxford ISO population model (Hopkins et al. 2023, 2025; Dorsey et al. 2025). Even a modest change in the velocity distribution of these objects, espe-cially at very low velocities, would have a considerable impact on our results. For instance, if the abundance of ISOs at very low relative velocity were to be substantially higher (perhaps as a re-sult of the Galactic tide; Peñarrubia 2023; Forbes et al. 2026), then the number of captured ISOs could be substantially larger. Finally, our adopted capture criterion and finite simulation vol-ume introduce uncertainties at the factor-of-order-unity level. Finally, our simulations are admittedly simplistic, as we ig-nore the Sun’s orbit within the Galaxy. Allowing the Sun’s or-bital radius to oscillate would make Rtide vary as a function of time, which would likely lead to loss of the outermost orbits of the Oort cloud (e.g. Kaib et al. 2011). Our simulation bounding box is likewise smaller than one would like; however, there is an R3 cost to to increasing it, in terms of the number of ISOs to simulate or the number of simulations to run. 
+
+5.5. Universality of flyby-driven capture 
+
+The Solar System has long been suspected of containing cap-tured, non-native material. Stellar encounters have been invoked to capture planetesimals from a passing star onto Sedna-like or-bits (e.g. Kenyon & Bromley 2004; Jílková et al. 2015), and it has been proposed that a substantial fraction of the Oort cloud itself may have been captured from the Sun’s siblings in its birth cluster (Levison et al. 2010). The recent ISO discoveries have now confirmed directly that extraterrestrial material regularly passes through the Solar System. The mechanism presented here adds a capture pathway that requires no birth cluster and no giant planets, operating in the Galactic field throughout a star’s life-time. While this mechanism is only activated during su ffi ciently strong stellar flybys, of which there have likely only been 1-2 during the Sun’s history, it is likely responsible for a large frac-tion of the captured ISOs currently residing in the Solar System (see Table 1). 
+
+6. Summary 
+
+To summarize, this paper contains three main results. First, ISO capture during stellar flybys is controlled by a single parame-ter – the flyby impulse (Eq. 2) – and is most e ffi cient when the impulse is comparable to the escape speed at the tidal radius, roughly 0.1 km /s for the Sun (see Fig. 1). Second, capture is dominated by the few strongest flybys in a star’s history, which preferentially involve massive stars; massive stars are also more effi cient at capturing ISOs around themselves. Third, the Sun probably underwent only 1-2 capture-inducing flybys, and has likely captured a few times 10 4 ‘Oumuamua-sized ISOs, pre-dominantly onto orbits in the outer Oort cloud – a contribution of only ∼ 10 −8 of the total Oort cloud population, but one that essentially every field star should share.  
+
+> Acknowledgements. We thank the anonymous referee for a constructive report that improved the paper. NAK’s contributions to this work were supported from
+> Article number, page 5
+
+A&A proofs: manuscript no. aa60697-26 
+
+NASA Solar System Workings grant 80NSSC24K1874 and NASA Emerging Worlds grant 80NSSC23K0771. MJH appreciates support from the Elaine P. Snowden Fellowship. SNR acknowledges funding from the Programme Na-tionale de Planetologie (PNP) of the INSU (CNRS), and in the framework of the Investments for the Future programme IdEx, Universite de Bordeaux /RRI ORIGINS. 
+
+References 
+
+Bailer-Jones, C. A. L. 2022, ApJ, 935, L9 Binney, J. & Tremaine, S. 2008, Galactic Dynamics: Second Edition Bodewits, D., Noonan, J. W., Feldman, P. D., et al. 2020, Nature Astronomy, 4, 867 Boe, B., Jedicke, R., Meech, K. J., et al. 2019, Icarus, 333, 252 Brown, G. & Rein, H. 2022, MNRAS, 515, 5942 Chakrabarti, S., Chang, P., Lam, M. T., Vigeland, S. J., & Quillen, A. C. 2021, ApJ, 907, L26 Chambers, J. E. 1999, MNRAS, 304, 793 Cordiner, M., Roth, N. X., Micheli, M., et al. 2026, arXiv e-prints, arXiv:2603.06911 Dehnen, W. & Hands, T. O. 2022, MNRAS, 512, 4062 Dehnen, W., Hands, T. O., & Schönrich, R. 2022, MNRAS, 512, 4078 Do, A., Tucker, M. A., & Tonry, J. 2018, ApJ, 855, L10 Dorsey, R. C., Hopkins, M. J., Bannister, M. T., et al. 2025, PSJ, 6, 214 Engelhardt, T., Jedicke, R., Vereš, P., et al. 2017, AJ, 153, 133 Fink, U. 1992, Science, 257, 1926 Forbes, J. C., Bannister, M. T., Lintott, C., & Hopkins, M. J. 2026, arXiv e-prints, arXiv:2607.04216 Hands, T. O. & Dehnen, W. 2020, MNRAS, 493, L59 Heisler, J. & Tremaine, S. 1986, Icarus, 65, 13 Henon, M. 1972, A&A, 19, 488 Hills, J. G. 1981, AJ, 86, 1730 Holmberg, J. & Flynn, C. 2000, MNRAS, 313, 209 Hopkins, M. J., Dorsey, R. C., Forbes, J. C., et al. 2025, ApJ, 990, L30 Hopkins, M. J., Lintott, C., Bannister, M. T., Mackereth, J. T., & Forbes, J. C. 2023, AJ, 166, 241 Hui, M.-T., Jewitt, D., Mutchler, M. J., Agarwal, J., & Kim, Y. 2026, ApJ, 999, L37 Hut, P., Alvarez, W., Elder, W. P., et al. 1987, Nature, 329, 118 Jewitt, D. & Luu, J. 2019, ApJ, 886, L29 Jílková, L., Portegies Zwart, S., Pijloo, T., & Hammer, M. 2015, MNRAS, 453, 3157 Jura, M. 2011, AJ, 141, 155 Kaib, N. A. & Quinn, T. 2009, Science, 325, 1234 Kaib, N. A. & Raymond, S. N. 2025, Icarus, 439, 116632 Kaib, N. A. & Raymond, S. N. 2026, PSJ, 7, 160 Kaib, N. A., Roškar, R., & Quinn, T. 2011, Icarus, 215, 491 Kaib, N. A. & Volk, K. 2024, in Comets III, ed. K. J. Meech, M. R. Combi, D. Bockelée-Morvan, S. N. Raymond, & M. E. Zolensky, 97–120 Kenyon, S. J. & Bromley, B. C. 2004, ApJ, 602, L133 Kresak, L. 1992, A&A, 259, 682 Levison, H. F., Thommes, E., & Duncan, M. J. 2010, AJ, 139, 1297 McGlynn, T. A. & Chapman, R. D. 1989, ApJ, 346, L105 McKay, A. J., DiSanti, M. A., Kelley, M. S. P., et al. 2019, AJ, 158, 128 Meech, K. J., Weryk, R., Micheli, M., et al. 2017, Nature, 552, 378 Moro-Martín, A. 2018, ApJ, 866, 131 Moro-Martín, A., Turner, E. L., & Loeb, A. 2009, ApJ, 704, 733 Napier, K. J., Adams, F. C., & Batygin, K. 2021a, PSJ, 2, 53 Napier, K. J., Adams, F. C., & Batygin, K. 2021b, PSJ, 2, 217 Nesvorný, D., Vokrouhlický, D., & Deienno, R. 2014, ApJ, 784, 22 Nesvorný, D., Vokrouhlický, D., & Morbidelli, A. 2007, AJ, 133, 1962 Opitom, C., Manfroid, J., Hutsemékers, D., et al. 2026, arXiv e-prints, arXiv:2603.07187 ’Oumuamua ISSI Team, Bannister, M. T., Bhandare, A., et al. 2019, Nature As-tronomy, 3, 594 Peñarrubia, J. 2023, MNRAS, 519, 1955 Portegies Zwart, S., Torres, S., Pelupessy, I., Bédorf, J., & Cai, M. X. 2018, MNRAS, 479, L17 Press, W. H., Teukolsky, S. A., Vetterling, W. T., & Flannery, B. P. 1992, Numer-ical recipes in FORTRAN. The art of scientific computing Raymond, S. N., Armitage, P. J., & Veras, D. 2018a, ApJ, 856, L7 Raymond, S. N., Armitage, P. J., Veras, D., Quintana, E. V., & Barclay, T. 2018b, MNRAS, 476, 3031 Reid, I. N., Gizis, J. E., & Hawley, S. L. 2002, AJ, 124, 2721 Rickman, H., Fouchard, M., Froeschlé, C., & Valsecchi, G. B. 2008, Celestial Mechanics and Dynamical Astronomy, 102, 111 Schleicher, D. G. 2008, AJ, 136, 2204 Sen, A. K. & Rama, N. C. 1993, A&A, 275, 298 Smoluchowski, R. & Torbett, M. 1984, Nature, 311, 38 Torres, S., Cai, M. X., Brown, A. G. A., & Portegies Zwart, S. 2019, A&A, 629, A139 Tremaine, S. 1993, in Astronomical Society of the Pacific Conference Series, Vol. 36, Planets Around Pulsars, ed. J. A. Phillips, S. E. Thorsett, & S. R. Kulkarni, 335–344 Valtonen, M. J. & Innanen, K. A. 1982, ApJ, 255, 307 Whipple, F. L. 1975, AJ, 80, 525 Zink, J. K., Batygin, K., & Adams, F. C. 2020, AJ, 160, 232 
+
+Article number, page 6

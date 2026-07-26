@@ -1,0 +1,1456 @@
+Title: Statistics on the population of distant substellar companions to nearby stars
+
+URL Source: https://arxiv.org/pdf/2607.20673v1
+
+Published Time: Fri, 24 Jul 2026 00:11:57 GMT
+
+Number of Pages: 21
+
+Markdown Content:
+Astronomy & Astrophysics manuscript no. aa58411-25 ©ESO 2026 July 24, 2026 
+
+# Statistics on the population of distant substellar companions to nearby stars 
+
+Souleymane Ouedraogo 1, 2, 3, ∗ , Étienne Artigau 3, 4 , Sié Zacharie Kam 1 , Orlagh L. Creevey 2 , Clémence Fontanive 5, 3, 4 , Neil J. Cook 3 , René Doyon 3, 4 , Fabrice Bado 1, 2
+
+> 1
+
+Laboratoire de Physique et de Chimie de l’Environnement , Université Joseph Ki-Zerbo, 03 BP 7021 Ouagadougou 03, Burkina Faso 
+
+> 2
+
+Université Côte d’Azur, Observatoire de la Côte d’Azur, CNRS, Laboratoire Lagrange, France 
+
+> 3
+
+Institut Trottier de recherche sur les exoplanètes, Département de Physique, Université de Montréal, Montréal, Québec, Canada 
+
+> 4
+
+Observatoire du Mont-Mégantic, Québec, Canada 
+
+> 5
+
+SUPA, Institute for Astronomy, University of Edinburgh, Blackford Hill, Edinburgh EH9 3HJ, UK 
+
+> ∗
+
+e-mail: souley.ouedraogo@ujkz.bf 
+
+Accepted 17 July 2026 
+
+ABSTRACT 
+
+Context. Wide substellar companions to stars provide valuable benchmarks for investigating the formation and evolutionary pathways of brown dwarfs and giant planets far beyond the extent of protoplanetary discs. Association to their primary also provides age and metallicity constraints that are otherwise challenging to obtain for isolated objects. 
+
+Aims. We present a statistical approach to determine the properties of the population of substellar companions to nearby main-sequence stars. This work uses proper motion measurements derived from multi-epoch WISE imaging. Our sample includes 2103 stars within 20 pc and has a sensitivity su ffi cient to detect substellar companions down to ∼300 K and out to orbital separations of 20 000 AU. 
+
+Methods. We use a Bayesian approach, based on Markov Chain Monte Carlo (MCMC) methods, to constrain the parameters of the companion mass and semi-major axis distributions. We account for observational biases, notably the decreasing detectability of fainter objects with increasing absolute magnitude M W2, and we robustly explore the underlying population properties. We assume that the companion mass (M) and semi-major axis (a) follow power laws, described by d2n ∝ MαaβdM da .
+
+Results. Fitting this model to the data yields the following constraints at the 1 σ confidence level α = −0.21 +0.31  
+
+> −0.27
+
+and β = −1.38 ± 0.32 and an occurrence rate of 1 .07 +0.31  
+
+> −0.24
+
+% for companions between 5 and 80 M J and at separations of 1 000–20 000 AU. The occurrence rate of companions increases for tighter orbits, and more massive host stars. 
+
+Conclusions. The inferred mass properties of the substellar companion population are broadly consistent with previous results from direct imaging surveys, despite di ff erences in target selection. Notably, the power-law distributions in both mass and separation are consistent with those of stellar binaries. As the input sample is about an order of magnitude larger than that of any previous imaging survey of substellar companions, we significantly improve the statistical characterisation of these objects. Our results suggest that the wide-separation companions represent the low-mass tail of the stellar companion population, rather than a direct extension of the population of close-in giant planets. 
+
+Key words. (Stars:) brown dwarfs, (Stars:) binaries: visual, (Stars): planetary systems, Stars: statistics, 
+
+1. Introduction 
+
+Over the past decades, direct imaging and wide-field surveys have shown that planetary and brown dwarf (BD) companions can remain gravitationally bound to their host stars at separa-tions ranging from a few tens to several tens of thousands of as-tronomical units (AU). These discoveries highlight the remark-able diversity of planetary system architectures and suggest that wide-orbit companions are a natural outcome of star and planet formation processes (Kratter & Matzner 2006; Bate 2009). In the Solar System, this distant region corresponds to the Oort Cloud, which marks the transition between the Sun’s grav-itational dominance and the influence of the Galactic environ-ment (Oort 1950). The long-term stability of such outer reser-voirs provides important constraints on their formation path-ways and dynamical evolution, as well as on their susceptibility to external perturbations — including close stellar encounters, Galactic tides, and the Sun’s birth cluster conditions (Heisler & Tremaine 1986; Kaib & Quinn 2008; Brasser & Morbidelli 2013). Early hypotheses invoked the presence of a massive, unseen solar companion (e.g., Alvarez & Muller 1984). However, mod-ern dynamical studies emphasise the dominant role of external perturbations. In particular, Raymond et al. (2024) demonstrated that Galactic tides, stellar flybys, and early cluster environments can reproduce many observed properties of the distant Solar Sys-tem, including the orbital distribution of long-period comets. While wide-field infrared surveys like 2 Micron All-Sky Sur-vey (2MASS; Skrutskie et al. 2006) and Wide-Field Infrared Survey Explorer (WISE; Wright et al. 2010) have ruled out the presence of any such massive companion, the existence of a distant planetary-mass companion, such as the proposed Planet Nine (Brown & Batygin 2021), remains a possibility. These hy-potheses highlight the relevance of searching for faint, wide-separation companions in the outskirts of planetary systems. This concept is further supported by observations beyond the So-
+
+Article number, page 1 of 21 arXiv:2607.20673v1 [astro-ph.SR] 22 Jul 2026 A&A proofs: manuscript no. aa58411-25 
+
+lar System with the discovery of BDs at separations of thousands of AU from their host stars (e.g., GU Psc b at ∼2000 AU; Naud et al. 2014). Such systems demonstrate that BDs and planetary-mass companions can and do populate the outer regions of stellar systems. Over the past decades, numerous surveys have sought to identify BD and planetary-mass companions on wide orbits. Most campaigns used adaptive optics (AO) and have focused on young stars in nearby associations within ∼ 100 pc, capitalising on the higher luminosity of substellar objects at early stages of their evolution. However, these young systems should also have older, cooler counterparts among the nearby field population, whose proximity compensates for their faintness. Such Gyr-old analogues in the Solar neighbourhood are best probed in the mid-infrared where their thermal emission remains detectable despite their relatively cold temperatures. Our knowledge of these systems stems largely from a combi-nation of targeted searches and serendipitous discoveries (e.g., Kirkpatrick et al. 2011a; Luhman 2014; Fontanive et al. 2020). Some companions have emerged unexpectedly in searches for isolated BDs; others were uncovered through citizen science ef-forts like Backyard Worlds (e.g., Kuchner et al. 2017; Faherty et al. 2018, 2021; Rothermich et al. 2024). However, most of these e ff orts are not statistically complete, and interpreting their results requires caution. While AO surveys of young moving group (YMG) members allow for reasonably accurate age es-timates (e.g., Malo et al. 2013; Gagné et al. 2018), young star-forming regions such as the Taurus complex or the Orion re-gion — where pre-main sequence populations have ages robustly constrained by isochrone fitting — also o ff er reliable age con-straints (Bell et al. 2015; Kounkel et al. 2018; Zari et al. 2019). By contrast, the same cannot be said for field BDs whose phys-ical parameters often rely heavily on models and external cal-ibrators. This makes individual benchmark systems, where the primary star’s age and metallicity are known, especially valuable for anchoring BD evolutionary models and masses. Despite major progress in detecting planetary-mass compan-ions to main-sequence stars, current techniques remain sensi-tive to limited ranges of orbital separation and host age. Radial-velocity and transit surveys mainly probe companions within a few AU, leaving the regime from about 5 to several thousand AU relatively unexplored, especially around older stars. We address this gap with a statistically complete, volume-limited catalogue of BD companions, accounting for selection biases and obser-vational constraints. Wide companions may form through grav-itational instability in massive discs, direct collapse in turbulent clouds (Kratter & Lodato 2016), or core accretion (Pollack et al. 1996; Ida & Lin 2004; Mordasini et al. 2009), and can later be redistributed by stellar fly-bys (Goodwin & Whitworth 2007) or Kozai-Lidov evolution in triple systems (Naoz 2016). In this study, we use archival WISE (Wright et al. 2010) data to constrain the statistical properties of wide-orbit substel-lar companions, down to the planetary-mass regime, at projected separations of up to 20 000 AU. Although this survey does not present the discovery of new BD companions, its primary goal is to provide a statisti-cally robust characterisation of the BD population around main-sequence stars. In particular, the survey is designed to constrain the mass function of BD companions, testing whether it rises towards lower masses—possibly indicating a significant popula-tion of low-mass objects scattered to wide orbits—or instead de-clines at low masses, as expected from the turnover of the stellar binary mass function. Furthermore, the analysis aims to quantify the distribution of companions as a function of orbital separation, including the presence of any drop-o ff at large separations, and to compare the observed trends with expectations from dynamical stability ar-guments for wide binaries evolving in the galactic disc. Finally, by examining the companion population as a function of stellar properties, this work investigates the dependence of BD compan-ion occurrence and characteristics on host star mass, providing constraints on the dominant formation pathways of wide-orbit substellar companions. Sect. 2 describes the stellar sample and the companion de-tection methodology. The results of the search are presented in Sect. 3. In Sect. 4, we derive the global completeness map for the full sample, as well as separate maps for FGK and M dwarfs. These completeness estimates are incorporated into a Markov Chain Monte Carlo (MCMC) framework in Sect. 5 to constrain the parameters governing the companion population. We then discuss the implications of our results and compare them with predictions from planet formation models bf in Sect. 6, before summarising our conclusions in Sect. 7. 
+
+2. Survey description 
+
+While several previous studies have searched for brown dwarf (BD) companions around nearby stars and characterised indi-vidual systems, none provides a volume-limited survey of sub-stellar companions from which robust statistical conclusions can be drawn. This limitation is not restricted to imaging surveys, although larger-scale and more complete surveys exist for stellar binaries (e.g., El-Badry et al. 2021). In the present study, we perform a search on a sample that is larger by an order of magnitude than those used in previous com-panion searches, with sensitivity ranging from early-L dwarfs (Kirkpatrick et al. 1999) to well into the Y-dwarf regime (Cush-ing et al. 2011). We opt for the 20 pc sample of all main-sequence stars, as this volume represents an optimal balance between completeness and detectability. The Gaia survey (Gaia Collaboration 2022) is complete to the bottom of the main sequence within this distance (Golovin et al. 2023), while WISE (Wright et al. 2010) provides the capability to detect late-T dwarfs Burgasser et al. (2000) out to distances beyond 20 pc and Y dwarfs to ∼ 10 pc (e.g., WISEP J173835.52 +273258.9, Kirkpatrick et al. 2011a; Cushing et al. 2011). By construction, the stars in our sample are predominantly representative of the thin-disc stellar population, as they are drawn from the local solar neighbourhood. In contrast to surveys that have focused on restricted stellar samples, such as those car-ried out with GPI (Marois et al. 2014), NICI (Biller et al. 2013), NaCo (Chauvin et al. 2010), and SPHERE (Desidera et al. 2021), or the studies conducted as part of the PSYM-WIDE project (Naud et al. 2017) examining 95 young stars from K5 to L5 and nearby BDs or the WEIRD project (Baron et al. 2019), which targeted 344 stars, our approach is based on a sample nearly ten times larger ( >2000 stars). This significant expansion provides a more statistically robust perspective on the properties of BDs as companions, particularly within stellar environments similar to that of the Sun. The main drawback of this sample selection is that stellar ages are not generally known and have to be handled statistically. 
+
+> Article number, page 2 of 21 Ouedraogo et al.: Population of Distant Substellar Companions
+
+2.1. The 20 pc main sequence sample in Gaia 
+
+To construct our sample, we rely on the complete and homo-geneous dataset of the solar neighbourhood within a 20 pc ra-dius, extracted from the catalogue of Kirkpatrick et al. (2024). This catalogue includes approximately 3600 objects, compiled using Gaia EDR3 astrometric data, complemented by additional sources such as 2MASS, WISE, Pan-STARRS, and a systematic literature review. Thanks to the inclusion of Gaia data, the sample is basically complete for nearby objects. Gaia provides a precise character-isation of stellar primaries, including distances, proper motions, and absolute magnitudes. These measurements constitute a ro-bust foundation for the identification of companions in comple-mentary surveys, such as WISE. The resulting catalogue serves as a benchmark for studies of the local substellar population. From this dataset, we selected 2 126 main-sequence systems (Figure 1) for which astrometric, photometric, and best-estimate masses are available. 0 1 2 3 4 5 
+
+> BP - RP
+> 0.0
+> 2.5
+> 5.0
+> 7.5
+> 10.0
+> 12.5
+> 15.0
+> 17.5
+> 20.0
+> MG
+> Gaia DR3 (background)
+> Kirkpatrick et al. 2024 (Main Sequence)
+> 10 1
+> 10 0
+> Total log Mass of system (log(M/M  ))
+
+Fig. 1: Hertzsprung–Russell (HR) diagram of absolute magni-tude M G as a function of Bp − Rp. The background distribu-tion corresponds to Gaia DR3 sources located within 20 pc of the Sun. The colour scale indicates the logarithm of the total mass of the system. The data from Kirkpatrick et al. (2024) in-clude 2 126 systems with at least one main-sequence component (two objects lack parallax measurements: LP 822 −37 AB and L 128 −7), which form the baseline sample used in our analysis. We focused on stellar objects for our sample and the distinction be-comes challenging at the very low-mass end without an accurate age. We applied an absolute magnitude cut at MG < 15 .5, corre-sponding to roughly spectral type M9, but acknowledge that ear-lier objects may be substellar and some L dwarfs are low-mass stars. Due to the nature of our selection, our sample spans a wide range of stellar ages, rather than focusing on a specific age group. Stellar ages are estimated based on the initial mass of each system, using a statistical approach to account for their main-sequence lifetime. 
+
+2.2. Using CatWISE as a co-moving survey 
+
+The Backyard Worlds: Planet 9 project 1, a citizen science ini-tiative, has greatly contributed to the discovery of cold ob-jects in the solar neighbourhood using data from the WISE and NEOWISE missions (Rothermich et al. 2024). Notable discov-eries resulting from this e ff ort include several unusual brown dwarfs, such as WISEA J153429.75-104303.3, nicknamed “The Accident” because it was identified serendipitously in the field of another candidate rather than through a dedicated search. It was originally reported in its discovery paper (Kirkpatrick et al. 2021a). Its extremely low metallicity, along with its pecu-liar spectroscopic features and colours, remain, to date, unique among known BDs (Faherty et al. 2025). The analysis was performed using data obtained with the Wide-field Infrared Survey Explorer (WISE; Wright et al. 2010). WISE is a NASA Earth-orbiting mission that surveyed the entire sky simultaneously at wavelengths of 3.4, 4.6, 12, and 22 μm, referred to as the W1, W2, W3, and W4 bands, respectively. The 
+
+W1 and W2 bands are of particular interest as they probe the deep methane (CH 4) absorption feature at 3.3 μm observed in BDs, as well as the relatively transparent region near ∼4.6 μm. The W1 − W2 red colour of cold BDs, which is almost unique among astronomical sources, greatly facilitates their identifi-cation. Some of these objects are part of multiple systems (e.g., WISE J033605.05–014350.4 in Calissendor ff et al. 2023; CWISEP J193518.59-154620.3 De Furio et al. 2025a) that in-clude substellar or planetary-mass companions revealed through various observational techniques. Our analysis is based on the CatWISE2020 catalogue (Marocco et al. 2021), which provides a typical astrometric precision of ∼ 20 mas /yr for sources with magnitude W1 ≈ 15, and ∼ 100 mas /yr for W1 ≈ 17. This level of sensitivity allows e ffi cient detection of high proper motion objects. Taking into account the dispersion of transverse veloci-ties in the thin-disc (generally between 20 and 30 km /s), objects located within 20 pc typically exhibit proper motions of 200 to 300 mas /yr. CatWISE2020 is thus well suited to identifying a large fraction of these nearby objects. This precision is su ffi -cient to allow for the confirmation of common proper motion for nearby wide binaries. The CatWISE2020 catalogue was built in an entirely automated fashion from combined WISE and NE-OWISE datasets. Each source was detected and tracked across multiple observing epochs using an automated positional match-ing and astrometric fitting pipeline, as described in Marocco et al. (2021). This procedure yielded uniform photometric and astrometric measurements, including proper motions, for more than 1.9 billion sources. In the present work we focus on systems out to projected separations of about 20 000 AU. This upper limit reflects the approximate maximum separation at which stellar systems remain gravitationally bound over Galactic timescales, depending on their mass and the dynamical conditions of their local environment (Weinberg et al. 1987). 
+
+2.2.1. Cuts in colour space 
+
+Objects within 20 pc have very accurate parallaxes (Gaia DR3, Gaia Collaboration 2022). For objects not included in Gaia, reli-able parallaxes have been compiled by Kirkpatrick et al. (2024). For this work, we assume that distance uncertainties are neg-ligible compared to photometric uncertainties in the CatWISE catalogue for determining MW2. 
+
+> 1https://www.zooniverse.org/projects/marckuchner/ backyard-worlds-planet-9
+> Article number, page 3 of 21
+
+A&A proofs: manuscript no. aa58411-25 
+
+In order to identify new BD candidates, we characterise their location in the colour space defined by the W1 and W2 filters of WISE. Cold BDs of spectral types L, T, and Y are distin-guished by very red W1 − W2 colours, typically greater than 2.0 mag (Kirkpatrick et al. 2011a). A preliminary selection of candidates was carried out using CatWISE colour information (Marocco et al. 2021). For any given host star from the input sample, we use the Gaia parallax to transform W2 magnitudes into MW2 for putative companions at the distance of the star be-ing considered. We then compare all field objects to the MW2 vs 
+
+W1 − W2 sequence of known LTY dwarfs and select objects that have properties that would be consistent with being a BD. 0 1 2 3 4 5
+
+W1 - W2 
+
+10 
+
+11 
+
+12 
+
+13 
+
+14 
+
+15 
+
+16 
+
+17 
+
+> MW2
+
+L0 
+
+L5 
+
+T0 
+
+T5 
+
+Y0 
+
+Y3 
+
+> Spectral type
+
+Fig. 2: Colour–magnitude diagram (CMD) M W2 vs. W1−W2, in-cluding the injection of the observed BD population from Kirk-patrick et al. (2024). The polynomial relation for BD and se-lection bounds for the identification of objects consistent with a companion are shown. Note that the width of the selection box increases in the late-T and Y dwarf regime as objects display an increasingly broad dispersion in their W1−W2 colour for a given MW2 .This is illustrated by the selection envelope shown in Fig-ure 2, where the polynomial relation is taken from type "FLD" for M6–T9 (see Table 19 Faherty et al. 2016) and type T6–Y4 (see Table 8 Kirkpatrick et al. 2019). The acceptance width for candidate selection is defined empirically, with a di ff erence of 0.3 mag for M W2 < 11 .5, 1.5 mag for M W2 > 14 and increasing linearly between these values. The acceptance width is defined as 4 times the median absolute deviation to the polynomial rela-tions. Only a few field objects are retained within this selection ribbon (see left Fig. 5). Finally, we apply an absolute magnitude cut at MW2 ≥ 9, which produces a realistic detection threshold dependent on spectral type: earlier-type objects must be intrin-sically brighter to enter the sample, whereas later types can be detected at fainter apparent magnitudes, consistent with the sur-vey depth of CatWISE. Proper motions were extracted from the CatWISE catalogue. However, the adopted dispersion was not derived directly from the quoted individual uncertainties, but rather estimated empir-ically from the population of objects with comparable magni-tudes, yielding a representative ( σμα,empirical , σμδ,empirical ) per spa-tial dimension in the sky plane. This value was derived from the 16 th and 84 th percentiles of the proper motion per spatial dimen-sion and per magnitude bin (see Fig 3). This approach accounts not only for instrumental errors but also for the intrinsic kine-matics of the sources. The measured proper motion dispersion, therefore, reflects the convolution of measurement uncertainties with the genuine motion of stellar populations, which may intro-duce a non-negligible level of contamination into our detection criteria. 10 11 12 13 14 15 16 17       
+
+> W2 (mag)
+> 0.01
+> 0.02
+> 0.03
+> 0.04
+> 0.05
+> 0.06
+> Proper motion uncertainty (mas yr  1) L 34-26
+> , empirical 1-
+> , empirical 1-
+> Median e, empirical
+> Median e, empirical
+
+Fig. 3: Proper-motion dispersion as a function of W2 magnitude. Blue and red circles show the 1 σ uncertainties in μα, empirical and 
+
+μδ, empirical , respectively, as a function of the W2 bin centres for the star L 34-26. Blue and red plus signs indicate the median values of the reported uncertainties ( eμα, empirical and eμδ, empirical ). To assess the probability that a colour candidate is part of a co-moving pair rather than a chance alignment, we analysed the regions around the host star by modeling proper motions using Gaussian distributions defined by equations 1 and 2. To confirm that the candidate is gravitationally bound to the host star rather than a background object, we verified that its proper motion is consistent with that of the primary star (Rothermich et al. 2024; Faherty et al. 2021). The relative ρ of the field and co-moving hypotheses are de-fined by 
+
+ρfield = e−0.5σ2field , (1) 
+
+ρco −move = e−0.5σ2co-move , (2) where σfield represents the observed dispersion of proper motions for objects within the field of view, in a given magnitude bin. The term σco-move refers to the dispersion of the di ff erence between proper motions reported by CatWISE and those from Gaia for the system being considered. The corresponding quan-tities are defined by 
+
+σ2field = μα, wise 
+
+σμα, empirical 
+
+!2
+
++ μδ, wise 
+
+σμδ, empirical 
+
+!2
+
+,σ2co-move = μα, wise − μα⋆ 
+
+σμα, wise 
+
+!2
+
++ μδ, wise − μδ⋆ 
+
+σμδ, wise 
+
+!2
+
+.
+
+The equation 1 represents the ‘zero-motion’ or ‘stationary’ Gaussian, characterising the proper motions of objects consis-tent with zero proper motion in the field frame. The equation 2, on the other hand, represents a ‘co-moving’ Gaussian, model-ing objects gravitationally bound to their host stars. We assume that the proper motion errors in Gaia are negligible compared to those of CatWISE. 
+
+Article number, page 4 of 21 Ouedraogo et al.: Population of Distant Substellar Companions 
+
+The probability that a system is truly co-moving is then esti-mated using the following formula: 
+
+Pcomove = ρco-move N2
+
+ρfield N1 + ρco-move N2
+
+, (3) where N 1 represents the number of field objects that have colour /magnitude properties consistent with being BD candi-dates (e.g., objects being in the ‘acceptance’ ribbon in Figure 2 at the distance of the host star), and N 2 corresponds to the num-ber of randomly generated and prioritised co-moving objects. To determine N 1, we determine the number of colour candidates we would have in a 2 ◦ radius around the system and scale that number to the on-sky area of a 20 000 AU disc centred on the system. N 1 varies from near unity (more distant systems, high galactic latitudes) to a few tens. In contrast, determining N 2 is less straightforward; the expected number of BD companions per system is significantly below one. Assuming that all companions are known and dividing by the number of systems gives an N 2 ∼ 0.01. We note that this may appear as a circular argument; the number of companions has an impact on the likelihood of recovering more companions. In practice, changing N 2 even by a factor of 2 (i.e., only half of the companions at the relevant separation would be known) does not aff ect our results. The threshold for a candidate to be considered co-moving was set at 0.5. The probability for each brown dwarf recovered in this work is given in Table C.1 in Appendix C. 
+
+> 2.2.2. Construction of joint recovery map
+
+For all targets in the sample, we derive a recovery map in pro-jected separation versus M W2 space. The recovery rate as a func-tion of projected separation is constructed from ρ(r) (Eq. B.1) projected at the distance of the system using the parallax pro-vided by Gaia. This determines if the object would be recovered as a source in CatWISE, but does not inform as to whether the common proper motion would be detected. In an extreme case, the host star would have a projected velocity smaller than the 1 σ
+
+limit of CatWISE at the magnitude considered. To quantify our sensitivity to faint companions, we deter-mined the detection limit beyond which a statistically significant measurement of common proper motion (i.e., exceeding >3σ)can no longer be achieved. This threshold defines the minimum brightness required for a candidate to be reliably identified as co-moving with its host star. At fainter magnitudes, the increasing uncertainties in proper motion measurements preclude a robust confirmation of the physical association. In order to perform the statistical analysis presented in Sect. 5, the joint map of absolute W2 magnitude versus projected separation must be transformed into a mass–separation map. Since individual stellar ages are not available for our sample, and given the di ffi culty of determining them for a large popu-lation, we adopted a statistical approach based on the empirical method introduced by Marocco et al. (2024). This method (see their Sect. 7.4) uses Galactic kinematics as an age proxy, while accounting for the dynamical heating of the Galactic disc ob-served in the solar neighbourhood (Wielen 1977; Aumer & Bin-ney 2009a; Sharma et al. 2021). We used four independent samples of nearby stars (Casagrande et al. 2011; Luck 2017, 2018; Bensby et al. 2014), restricted to the physical age range 0 −13 .8 Gyr. The correspond-ing age probability distribution functions (PDFs) were combined to construct an age PDF representative of each star in the sample. We assumed a simultaneous formation of the components within systems. The maximum allowable age is constrained by the main-sequence lifetime of the most massive star, esti-mated using the MIST stellar evolution models 2 (log(Age /yr) =
+
+5−10 .3, M = 0.1−300 M ⊙ ; Choi et al. 2016, see their Fig. 13), and capped at ∼ 10 Gyr in agreement with observational con-straints on the Galactic disc (Aumer & Binney 2009b; Haywood et al. 2013). ATMO2020 (Phillips et al. 2020) atmospheric and evolution-ary models 34 were used to interpolate companion masses from absolute W2 magnitudes when marginalising over the age prob-ability distribution. Figure 4 illustrates the magnitude-limited map, the separation-limited map, and the joint recovery probability maps in the absolute W2 magnitude–separation and mass–separation planes for the HN Peg system. The T2 companion HN Peg b would be readily detectable if it were not for its angular sepa-ration from the host star intrinsic brightness and proper motion. However, given its angular separation of 43 .2′′ , the probability of recovering the companion drops below 25%. Consistently, this source is not recovered in the CatWISE catalogue, in agreement with the joint detection probability inferred from our analysis. 
+
+3. Survey results 
+
+As part of our substellar companion search strategy, we sys-tematically excluded objects with proper motions greater than 3′′ /yr to remain within the sensitivity limits of the CatWISE2020 catalogue. For such high proper motion objects (21 objects, in-cluding G 272-61 AB, 61 Cyg AB, Barnard’s Star and Epsilon Indi), the likelihood of recovering bound companions is signifi-cantly diminished. This selection criterion a ff ects only a negligi-ble fraction of the stellar population analysed. A notable exam-ple of an excluded system is the well-known triple system ϵ Indi, which consists of the primary star ϵ Indi (HD 209100), a K5V lo-cated at 3.64 ± 0.096 pc(Gaia Collaboration 2022), with a high proper motion of approximately 4 .7′′ /yr. It is accompanied by a BD binary, ϵ Indi Bab (T1.5 +T6), separated by 0 .732 ′′ , corre-sponding to a projected separation of about 2.65 AU (McCaugh-rean et al. 2004). The binary shares a common proper motion with the host star and is widely separated at 1 459 AU (Scholz et al. 2003). Although the separation of the companion system is compatible with our selection criteria, ϵ Indi represents an ex-treme case. Its exclusion does not significantly a ff ect the overall mass or separation distributions in our sample. Table 1: Summary of the sample selection. Selection Number Initial sample 2 126 No parallax measurement (a)
+
+2High proper-motion objects (b) 21 Final sample 2103     
+
+> Notes. (a)Objects without available parallax measurements (see caption Fig. 1). (b)Objects with high proper motions not reliably detected in CatWISE, as described above.
+
+Applying the selection criteria listed in Table 1, we identified 41 objects satisfying all the conditions described in Sect. 2.    
+
+> 2https://waps.cfa.harvard.edu/MIST/
+> 3https://www.erc-atmo.eu/?page_id=322
+> 4https://perso.ens-lyon.fr/isabelle.baraffe/ ATMO2020/
+> Article number, page 5 of 21
+
+A&A proofs: manuscript no. aa58411-25 10 1 10 2 10 3 2 × 10 4         
+
+> Separation (AU)
+> 10
+> 11
+> 12
+> 13
+> 14
+> 15
+> 16
+> 17
+> MW2
+> (1)
+> Brightness recovery
+> 25%
+> 50%
+> 75%
+> 95%
+> 10 110 210 32 × 10 4
+> Separation (AU)
+> (2)
+> Separation recovery
+> 25% 50%
+> 75%
+> 95%
+> 10 110 210 32 × 10 4
+> Separation (AU)
+> (3)
+> Joint recovery
+> 25%
+> 50%
+> 75%  95%
+> 10 110 210 32 × 10 4
+> Separation (AU)
+> 0
+> 10
+> 20
+> 30
+> 40
+> 50
+> 60
+> 70
+> 80
+> Mass (Mjup)
+> (4)
+> Mass-separation
+> 25%
+> 50%
+> 75%
+> 95%
+
+Fig. 4: Completeness maps for the HN Peg system. [1]: In this recovery map, we only account for the combination of companion brightness and our ability to reliably measure its common proper motion with the host star. For the HN Peg system, the companion would readily be recovered and recognised as co-moving. [2] This recovery map shows reliability in the recovery of the companion at close separation to the primary, regardless of the common proper motion. In this map, the companion to HN Peg would have a low likelihood of recovery. [3] Joint recovery map for the system in the M W2 vs separation diagram. [4] Same map as previous, but expressed in mass rather than W2 magnitude. The mass accounts for the age distribution assumed for the system (see Section 2.2.2). In all panels, the colour scale indicates the detection probability, with contours tracing levels from 10% to 95%. Companion injection tests show that the recovery probability is below 25% in both absolute magnitude and mass. 
+
+Fig. 5: Left– CMD of the objects observed in the field of L 34-24. Objects located inside the selection band in the left panel are considered colour candidates; typically, only a handful of such objects are found per field. In this specific case, colour candidates include the known BD companion, L 34-24 B, highlighted in orange. Other colour candidates include one object that would have properties of a late-T at the distance of the L 34-24 system and a few brighter objects in part of the CMD where the BD colour sequence is close to W1 − W2 = 0. Right– Proper motion distribution of the objects around L 34-24 (in black). A handful of field objects would be in the acceptance radius for co-moving objects (note that the radius is indicative here, as it is magnitude-dependent). A single object, L 34-24 B, is both a co-moving and a colour candidate. The other colour candidates were found to be unrelated and have a proper motion consistent with random background sources. In both panels, we show the bulk of the distribution with a colour scale, while individual high-sigma outliers are highlighted with blue points. Each candidate was subsequently subjected to a system-atic visual inspection using all available multi-epoch un-WISE /NEOWISE images displayed in SAOImage DS9 5. The  
+
+> 5
+
+https://sites.google.com/cfa.harvard.edu/saoimageds9 
+
+image cubes generated from the multi-epoch observations were examined to assess the consistency of the source appearance over time, whilst catalogue information (source positions and W1 /W2 photometry) was used solely to facilitate source identification. 
+
+Article number, page 6 of 21 Ouedraogo et al.: Population of Distant Substellar Companions 10 1 10 2 10 3 10 4 2 × 10 4
+
+Separation (AU)     
+
+> 10
+> 11
+> 12
+> 13
+> 14
+> 15
+> 16
+> 17
+> MW2 1
+> 2
+> 3
+> 456
+> 7
+> 8
+> 9
+> 10
+> 11
+> 12
+> 13
+> 14
+> 15
+> 16
+> 17
+> 1
+> 2
+> 34
+> 5
+> 10%
+> 25%
+> 50% 75%
+> 95%
+> Recovered BDs
+> 1: BD+06 2986B
+> 2: BD+13 2618C
+> 3: 2MASS J13054106+2046394
+> 4: SDSS J175805.46+463311.9
+> 5: WISE J095047.32+011733.3
+> 6: WISE J183207.99-540942.0
+> 7: ULAS J142320.79+011638.2
+> 8: GJ 570 D
+> 9: 2MASS J07580132-2538587
+> 10: L 34-26 B
+> 11: 2MASS J11225550+2550250
+> 12: LP 738-14 B
+> 13: Ross 19B
+> 14: WISE J200520.38+542433.9
+> 15: Wolf 940 B
+> 16: 2MASS J15232263+3014562
+> 17: WISE J111838.70+312537.9
+> BDs not recovered
+> 1: 15 Sge B
+> 2: 54 Psc B
+> 3: Gl 229 B
+> 4: HD 182488 B
+> 5: HN Peg B
+> L0
+> L2
+> L4
+> L6
+> L8
+> T0
+> T2
+> T5
+> T6
+> T7
+> T8
+> T9
+> Y0
+> Y1
+> Y2
+> Y3
+> Spectral type
+
+Fig. 6: Completeness map and average probability of detection for Gaia stars within a 20 pc radius. It represents the average probability of detection in percent as a function of MW2, and projected separation ( ap). Spectral types correspond to the reference types defined by the polynomials in Fig. 2. Unrecovered objects at small projected separations are not included in the figure. SCR J1845 −6357 B and WISE J072003.20 −084651.2 B have projected separations of 4.5 AU and 2.173 AU, respectively. The purpose of this inspection was to verify that each candidate appeared as an isolated point source consistent with a genuine astrophysical object, and to reject imaging artefacts, extended sources, and objects a ff ected by source blending or contamina-tion (see Appendix D for representative examples). Several candidates also exhibited optical counterparts on the blue photographic plates (Lasker et al. 2008), inconsistent with the expected properties of brown dwarfs. Following this validation procedure, only 17 candidates were retained as credible brown dwarf candidates after comparison with archival data and the literature. We present in Fig. 5 an example detection of the companion L 34-24 B. This object, initially identified as a common–proper-motion companion to L 34-24 by Zhang et al. (2021b), is de-scribed in detail in Appendix A, where we also provide a consis-tent summary of all companions recovered by our method. Although all detected BD candidates were selected using the same criteria in our study, their physical properties were not al-ways derived in a homogeneous manner in the original discovery papers. This heterogeneity limits the possibility of directly in-ferring a mass function. In contrast, the W2 magnitudes remain reliable and directly comparable, as they all originate from the same photometric catalogue. The key physical parameters used in our analysis for the known and recovered systems are compiled in Appendix C, Ta-ble C.1. These include spectral types, primary masses, compan-ion masses, parallaxes, projected separations, and WISE W1 and 
+
+W2 magnitudes. Appendix A.1 also presents the objects that were not recov-ered by our method and discusses the underlying causes. 
+
+4. Completeness Maps and Survey sensitivity 
+
+We used detection limits in terms of absolute magnitudes and projected separations, as illustrated in Figure 4, to evaluate the survey’s sensitivity to companions of a given magnitude and pro-jected separations. A simulation was first performed to produce a completeness map for each star (Fig. 4). Summing these maps over all targets provides an estimate of the survey’s average sen-sitivity (Fig. 6), expressed as the fraction of stars for which a companion of a given absolute magnitude MW2 and projected separation would have been detected. Figure 6 shows that the survey is most sensitive at wide sep-arations, up to about 20 000 AU, and down to an absolute mag-nitude of MW2 ≃ 17, consistent with the survey’s expected sen-sitivity (Marocco et al. 2021). We injected simulated companions and tracked those that were recovered as well as those that were not recovered (see Ap-pendix A.1). The average detection probability reaches about 25% for separations beyond 100 AU and remains non-negligible (around 10%) below this threshold. The low recovery rate at small separations results from the fact that such recovery is pos-sible only for a handful of very nearby systems (say, within 5 pc), which represent only a small fraction of the entire sample. 
+
+4.1. Statistical properties of Sun-like versus M dwarf companions 
+
+In order to provide an initial assessment of how the occurrence of companions might depend on the total system mass, we di-vided our sample into two mass bins: above and below 0.5 M ⊙ .For single-star systems, this threshold largely corresponds to the 
+
+Article number, page 7 of 21 A&A proofs: manuscript no. aa58411-25 10 1 10 2 10 3 10 4 2 × 10 4
+
+> Separation (AU)
+> 10
+> 11
+> 12
+> 13
+> 14
+> 15
+> 16
+> 17
+> MW2
+> Completeness Map for Sun-like Stars
+> 10%
+> 25%
+> 50%
+> 75%
+> 95%
+
+(a) 10 1 10 2 10 3 10 4 2 × 10 4 
+
+> Separation (AU)
+> Completeness Map for Low-Mass Stars
+> 10%
+> 25%
+> 50%
+> 75%
+> 95%
+> L0
+> L3
+> L6
+> L8
+> T0
+> T3
+> T5
+> T6
+> T8
+> T9
+> Y0
+> Y1
+> Y2
+> Y3
+> Spectral type
+
+(b) 
+
+Fig. 7: Completeness Map — (a) Systems with an initial total mass greater than 0.5 M ⊙ (FGK stars); (b) Systems with an initial total mass lower than 0.5 M ⊙ (M dwarfs). Objects marked with a square ( ■) correspond to companions that were not recovered during our search. This map thus confirms the low detection probability for most of these objects. Those marked with a circle ( •) are the companions we successfully recovered. distinction between M dwarfs (lower mass) and FGK or Sun-like stars (higher mass). Among the 747 FGK-type stars in our sample, we detected ten companions, corresponding to a raw detection frequency of approximately 1.3 %. According to the completeness map (Fig. 7, left panel), the detection probabilities associated with these companions mostly range between 25% and 75%, with no additional undetected sources found during our survey. In contrast, seven companions were detected among the 1356 M dwarfs, corresponding to a detection frequency of 0.5 %. For these systems, the detection probabilities are generally greater than or equal to 50% (Fig. 7, right panel). The compan-ion masses, compiled from the literature, range from 12.5 to 74.5 MJup for FGK hosts and from 8.0 to 72.0 MJup for M dwarfs. The projected separations, computed from Gaia parallaxes, also di ff er between the two subsamples: 1175–11 853 AU for FGK stars and 390–9902 AU for M dwarfs. These di ff erences reflect both observational sensitivity e ff ects and the intrinsic physical properties of the systems. Although the raw detection frequencies di ff er between the two stellar populations, the assessment on di ff erences on intrin-sic underlying distribution di ff erences needs to account for dif-ferences in completeness between the two samples; this is done in Sect. 5. 
+
+4.2. Half-life survival of companions 
+
+We assessed the long-term dynamical stability of the identified systems. To do this, we estimated the dynamical half-life ( t1/2) of each system (see Fig. 8). This estimate is based on the total initial mass of the systems, as reported by Kirkpatrick et al. (2024), and on their projected separations. The calculation relies on the the-oretical framework for dynamical stability in multiple systems developed by Weinberg et al. (1987), which allows one to esti-mate the characteristic timescale beyond which a binary system may be disrupted by external gravitational interactions—such as encounters with passing stars or the Galactic tidal field. This ap-proach enables us to evaluate the likelihood that these compan-ions remain gravitationally bound over cosmological timescales, thereby providing insight into their long-term viability as binary or multiple systems. 0.00 0.02 0.04 0.06 0.08 0.10 0.12 0.14     
+
+> a0(pc / M )
+> 10
+> 11
+> 12
+> 13
+> 14
+> 15
+> MW2
+> HD 17057 AB
+> Ross 19 AB
+> L 34-26 AB
+> LP 374-39 AB
+> t1/2 = 5 Gyr
+> t1/2 = 1 Gyr
+> L0
+> L3
+> L5
+> L8
+> T0
+> T3
+> T5
+> T6
+> T8
+> T9
+> Y0
+> Y1
+> Spectral Type
+
+Fig. 8: Separation-to-total-mass ratio for L, T, and Y binaries within 20 pc. Values above ∼0.05 pc / M⊙ are predicted to have a half-life of ∼5 Gyr, while systems with a ratio of 0.1 pc / M⊙ have a ∼1 Gyr half-life (Weinberg et al. 1987). We assume that the a0 value scales with the separation-to-mass ratio, but note that this approximation is only strictly valid for passing stars and not giant molecular clouds (see Section IV in Weinberg et al. (1987) on binary mass and scaling and Figure 2 therein). These results reveal that four systems exhibit relatively short half-lives compared to the age of the galactic disc; two systems have half-lives of 1 − 5 Gyr and two <1 Gyr. The Sun-like system HD 170573, with its companion WISEJ183207.99-540942.0, has an estimated age of > 9 Gyr (Calamari et al. 2024), making it an ancient system. The discrep-ancy between its age and half-life suggests that the companion may eventually be ejected due to external perturbations, such as encounters with massive giant molecular clouds or disc stars. In its current configuration, the system would have likely been disrupted many times, given the current age of the system. This suggests that the system has been dynamically excited to its 
+
+Article number, page 8 of 21 Ouedraogo et al.: Population of Distant Substellar Companions 
+
+current configuration relatively recently and that it is on the cusp of disruption in the relatively near future. Conversely, the low-mass system COCONUTS-2, with companion L34-26 B, has an estimated age of 150–800 Myr (Zhang et al. 2025), suggesting that it may have formed in its current orbital configuration. Finally, two other low-mass systems also have half-lives shorter than 1 Gyr. The first, LP´ 374-39 with companion 2MASSJ11225550 +2550250 (LP374-39B), has an unknown age; this limits our interpretation, but its metallicity and Galac-tic location may provide additional clues regarding its dynamical history and potential vulnerability to external perturbations. The second, Ross 19 with companion Ross 19 B, has an estimated age of 7 .2+3.8
+
+> −3.6
+
+Gyr (Schneider et al. 2021), significantly older than its 
+
+∼1 Gyr half-life, which, similarly to the HD 170573 system, sug-gests a relatively recent excitation into its current orbital config-uration. Notably, Ross 19 is the most metal-poor system in the sample of BD-hosting stars. 
+
+4.3. Long-term dynamical stability of ultra-wide companion systems 
+
+The ultra-wide companions investigated are expected to be par-ticularly sensitive to external perturbations and therefore provide valuable constraints on the long-term dynamical evolution of low-binding-energy binaries. The analysis presented in Sect. 4.2 off ers insight into the global dynamical properties of these sys-tems and enables an assessment of their long-term stability. To investigate their possible future evolution, we computed their gravitational binding energies, estimated the di ff usion-driven disruption limit following the formalism of Weinberg et al. (1987) for a characteristic age of 10 Gyr, and evaluated the potential impact of perturbations induced by giant molecular clouds, galactic tides, and passing stars. The gravitational binding energy was calculated using the expression introduced by Caballero (2009): 
+
+|U∗ 
+
+> g
+
+| = GM 1 M2
+
+s , (4) where G is the gravitational constant, M1 and M2 are the masses of the two components, and s is the projected physical separa-tion. In several previous studies (Chinchilla et al. 2020; González-Payo et al. 2023), a correction factor of 1.26 has been applied to convert the projected separation s into an estimate of the or-bital semi-major axis a, under the assumption of circular orbits and isotropic inclination distributions (i.e. a = 1.26 s). How-ever, numerical simulations of wide binaries by Tokovinin et al. (2020) have shown that, for population-level studies, the median projected separation provides a reliable estimate of the median semi-major axis without the need for such a correction. As these arguments do not apply to individual systems, and to remain consistent with previous statistical analyses, no projection cor-rection was applied in this work. Over the lifetime of wide binary systems, catastrophic en-counters such as direct collisions are exceedingly rare com-pared to the cumulative e ff ect of weak gravitational perturba-tions from passing field stars (Weinberg et al. 1987). We there-fore accounted for long-term stellar perturbations using the sim-plified statistical prescription introduced by Dhital et al. (2010), which provides an estimate of the maximum separation at which a system of a given total mass can survive for a given time: 
+
+amax ≈ 1.212 Mtot 
+
+t∗
+
+, (5) where Mtot is the total system mass in units of M⊙, t∗ is the sys-tem age in Gyr, and amax is the projected separation expressed in parsecs. Estimating the reduced binding energy using Eq. 4 requires knowledge of the mass of each component. In our sample, some companions (ULAS J150457.65 +053800.8, WISE J183207.99-540942.0) lack mass estimates in the literature, while Ross 19B has a mass estimated between 15 and 44 MJup (Schneider et al. 2021). To overcome these gaps, we combined the age PDF of each star (described in Sect. 2.2.2), interpolated the ATMO2020 mod-els Phillips et al. (2020) at the companion’s M W2 and derived a most-likely mass and 1 σ confidence interval. The most likely mass is used in MCMC simulations presented in Sect. 5. For in-stance, for Ross 19B, we adopted Madopted = 24 .1 M Jup , consis-tent with the range provided by (Schneider et al. 2021). Adopted masses for all other companions are listed in Table C.1(see Ap-pendix C). Figure 9 presents the reduced binding energy (left panel) and the projected physical separation (right panel) as a function of to-tal system mass for the ultra-wide companion sample. In the left panel, the horizontal line marks the empirical lower envelope of the most weakly bound systems, around 10 33 J, first identified by Caballero (2010). The right panel shows the di ff usion-driven dis-ruption limit at 10 Gyr derived from the formalism of Weinberg et al. (1987). In both panels, the systems Ross 19 AB and LP 374–39 AB, discussed in detail in Sect. 4.2, lie close to the inferred dynami-cal stability boundaries, suggesting that their present configura-tions may be susceptible to external perturbations. In contrast, the fragile system L 34–24 AB, despite its low binding energy (Zhang et al. 2021a), appears capable of surviving in its current configuration for at least several million years. We further investigated the potential impact of perturbations induced by giant molecular clouds on wide companion systems using the formalism developed by Weinberg et al. (1987), which describes the orbital evolution of binaries subjected to external gravitational perturbations. Following Faherty et al. (2010a), we assume that the analytic Fokker–Planck coe ffi cients derived by Weinberg et al. (1987) are applicable in the regime dominated by single, impulsive encoun-ters 6. Within this framework, we evaluate the characteristic im-pact parameter for interactions with GMCs, which depends on both the total system mass and the orbital separation of the com-panion 7
+
+In this regime, the impact parameter associated with the Fokker–Planck approximation scales as bGMC ,FP ∝ M−1/4a3/4,
+
+while the maximum impact parameter scales as bmax ∝
+
+a3/2 M−1/2, where M denotes the total mass of the system and 
+
+a the orbital separation. For all companions in our sample, we find that bGMC ,FP ex-ceeds bmax , indicating that perturbations due to giant molecular clouds are unlikely to have significantly a ff ected these systems. For the sample as a whole, the characteristic impact parameters remain above the critical disruption threshold, suggesting that GMCs have not played a dominant role in the dynamical evolu-tion of these wide companion systems.                          
+
+> 6Assuming GM /(aϵV2rel )≪M/Mp
+> 2
+> .
+> 7We adopt Vrel =20 km s −1,ϵ=0.1, MGMC =5×10 5M⊙, and Mp=
+> 0.7M⊙, following Weinberg et al. (1987) and Close et al. (2007). Article number, page 9 of 21 A&A proofs: manuscript no. aa58411-25 10 110 010 1
+
+Mtot (M )  
+
+> 10 33
+> 10 34
+> 10 35
+> Binding energy | U *
+> g | (J)
+> Ross 19 AB
+> LP 374-39 AB
+> L 34-26 AB
+> 10 210 310 4
+
+Separation s (AU)  
+
+> 10 1
+> 10 0
+> 10 1
+> Mtot  (M )
+> Ross 19 AB
+> LP 374-39 AB
+> L 34-26 AB
+
+Fig. 9: Reduced binding energy (left panel) and projected physical separation (right panel) as a function of the total system mass. On both panels, binary systems are shown as plus symbols, triple systems as triangles, and quadruple systems as squares. In the left panel, systems highlighted in blue correspond to weakly bound systems, as defined by the binding energy threshold estimated by Caballero (2010) (dashed line). On the right panel, systems also shown in blue represent fragile systems located near the 10 Gyr di ff usion limit (continuous line), taking into account stellar encounters and the estimated average binary lifetime from Eq. (28) of (Weinberg et al. 1987), and also computed using the approximation from (Dhital et al. 2010) (see Eq. 5). 
+
+5. MCMC Statistical Analysis 
+
+We used a statistical framework based on the Markov Chain Monte Carlo (MCMC) sampling method described in Fontanive et al. (2018); Fontanive et al. (2019) to constrain the distribu-tions of substellar companions in our observed sample. The anal-ysis was performed using the emcee Python package (Foreman-Mackey et al. 2013), which implements the a ffi ne-invariant en-semble sampler introduced by Goodman & Weare (2010). We use the Fontanive et al. (2019) framework and adopt the parametric power-law model introduced by Nielsen et al. (2019), which provides a description of the underlying population of substellar companions. The di ff erential occurrence rate is ex-pressed as dn2 = f M αaβ dM da, (6) where α and β are the power-law indices of the companion mass and semi-major axis distributions, respectively. The parameter 
+
+f denotes the fraction of stars hosting at least one companion within the explored parameter space and is treated as a free pa-rameter. The occurrence rate is normalised over the interval of 5 − 80 M jup and separations of 1 000–20 000 AU. We used flat priors on all parameters: α and β bounded to [-5, +5], and f
+
+bounded to [10 −5, 1]. We included the geometric e ff ect of the observed projected separation, while dn is defined in terms of the three-dimensional separation. Details regarding the imple-mentation of this correction are given in Appendix E. To ensure robust convergence, the MCMC analysis was per-formed using 2 × 10 3 walkers, each evolved over 10 3 steps. Af-ter an initial burn-in phase, the ensemble of walkers expanded from their initial positions and reached a stable and represen-tative sampling of the parameter space, converging towards re-gions of maximum posterior density, similarly to the behaviour reported in Fontanive et al. (2019). The complete results of our MCMC analysis on the entire sample are presented in Fig. 10. In order to investigate the host-mass dependency of substellar companions, we repeated the analysis for the M-dwarf and FGK sub-samples (see Fig. 10) in Table 2. Table 2: Best-fit parameters for companion distributions. Sample Nsys α β log 10 f
+
+All 2103 −0.21 +0.31  
+
+> −0.27
+
+−1.38 ± 0.32 −1.97 +0.11 
+
+> −0.11
+
+FGK 747 0.01 +0.48  
+
+> −0.40
+
+−1.46 ± 0.43 −1.71 +0.14 
+
+> −0.15
+
+M 1356 −0.43 +0.43  
+
+> −0.36
+
+−1.45 ± 0.51 −2.13 +0.16  
+
+> −0.17
+> Notes. The parameters correspond to the best-fitting model derived from companions with projected separations between 1 000 and 20 000 AU. Quoted uncertainties correspond to the 68 % confidence intervals.
+
+For the sample of all stars, the best-fit parameters obtained from the MCMC analysis are listed in Table 2. These results indi-cate a higher occurrence rate of companions at smaller projected separations, as suggested by the negative value of β, while the mass distribution shows a mild decrease towards higher masses, corresponding to a negative α. The occurrence rate, log 10 f , is also provided in Table 2, allowing a direct comparison with the FGK and M-dwarf subsamples. For the FGK subsample, the inferred separation distribution indicates a decreasing companion occurrence towards wider pro-jected separations. The mass distribution shows a flat distribution for FGK stars and, to 1 σ, a decreasing distribution towards higher masses for M dwarf companions. We constrained the occurrence rate of LTY companions; the normalisation of the occurrence is for the 1 000–20 000 AU domain, even if the current framework has a significant recovery rate below that inner separation (Wolf 940 B is recovered < 1 000 AU). As show in Fig. 6, for some systems close-in M-dwarf systems, we have sensitivity at the few hun-dred AUs. The sensitivity at smaller separations is accounted for 
+
+> Article number, page 10 of 21 Ouedraogo et al.: Population of Distant Substellar Companions
+
+Fig. 10: Comparison of the MCMC posterior distributions for the parameters of the double power-law model fitted to the full sam-ple, describing the population of giant planets with masses be-tween 5 and 80 MJup . The model also includes the overall occur-rence rate f normalised between 1 000 and 20 000 au. The results indicate a low logarithmic occurrence rate and negative power-law indices for the full sample, suggesting a higher frequency of planetary companions at lower masses and smaller projected separations. The inferred values are consistent with Öpik’s law (Öpik 1924), originally proposed for stellar visual binaries and corresponding to β = −1. in the Bayesian framework of Fontanive et al. (2018) outside of the bounds of normalisation. Assuming Gaussian uncertainties and independent measure-ments, as defined in Table 2, we quantified the significance of the di ff erences between the FGK and M populations by compar-ing the di ff erence between the fitted values with their combined uncertainties. The statistical significance is calculated as: 
+
+S = |XFGK − XM|
+
+q
+
+σ2FGK + σ2M
+
+, (7) where X denotes the parameter being compared and σ its associated uncertainty. Applied to the companion occurrence rates (log 10 ( f )), this comparison yields a di ff erence at the 2.1 −σ level, correspond-ing to a p-value of p ≃ 0.04. This result provides a marginal indication of a di ff erence between the companion occurrence rates around FGK- and M-type stars. This suggestion of a higher occurrence rate of companions around FGK stars compared to M dwarfs is consistent with the trends reported by Baron et al. (2019) and Nielsen et al. (2019), although the separation ranges di ff er, even if the explored mass domains are comparable. We further applied this approach to the parameters α and β
+
+describing the companion mass-ratio distributions. The result-ing di ff erences are below 1 σ (S α ≃ 0.7–0.8 and S β ≃ 0.02), indicating that these parameters are statistically consistent be-tween the two populations. Therefore, although FGK stars ex-hibit a higher companion occurrence rate within the mass and separation ranges explored in this study, no statistically signifi-cant di ff erence is found in the shape of the companion mass-ratio distributions between FGK- and M-type host stars. 
+
+6. Comparison with population models 
+
+We compare our measurements with population synthesis pre-dictions for various formation scenarios, with a particular focus on gravitational instability (described in Sect. 6.1), which e ff ec-tively spans the parameter space probed by our sample. Our sample is dominated by massive companions at wide or-bital separations. Current core accretion (CA) population synthe-sis models do not reach these regimes, with predicted compan-ions extending up to ∼465 AU in separation and ∼0.045 M Jup 
+
+in mass (Mordasini 2018; Emsenhuber et al. 2021). Exploring our parameter space would therefore require uncertain extrapo-lations. Additional dynamical mechanisms, such as Kozai–Lidov cy-cles in hierarchical triple systems (Naoz 2016) or turbulent frag-mentation of the parent molecular cloud (Whitworth et al. 2007), may also contribute to shaping the observed architectures. How-ever, given the large companion masses and separations consid-ered here, our analysis primarily relies on the predictions of GI models. The overall slope in separation distribution, β = −1.38 ±0.32, is nearly consistent with the Öpik law (Öpik 1924) for stellar binaries, where abundance is uniform in log separation ( β = −1). There is no significant di ff erence between M dwarfs and FGK stars in the separation power law (respectively −1.45 ± 0.51 and 
+
+−1.46 ± 0.43). 
+
+> 6.1. Gravitational Instability
+
+The GI population synthesis framework was developed by For-gan & Rice (2013) and updated by Forgan et al. (2018). This rapid formation mechanism operates in massive, cold protoplan-etary discs ( Q < 1.5), which become gravitationally unstable and fragment into self-gravitating clumps. The initial fragments, with masses ranging from 3 to 125 M Jup , subsequently evolve through a tidal downsizing process involving contraction, orbital migration, gas and dust accretion, and tidal disruption. This evo-lution produces gas giant planets, brown dwarfs, or low-mass stellar companions, predominantly at wide orbital separations (>20 AU). Host star masses M∗ range from 0.8 to 1.2 M ⊙ (extendable to 0.5–2 M ⊙), with high disc-to-star mass ratios ( q = 0.25–1.0) favouring fragmentation beyond 30–40 AU. The improvements introduced by Forgan et al. (2018), including fragment–fragment interactions and refined migration prescriptions (Types I /II), re-duce the excess of close-in objects and improve agreement with observations. The Disc Instability Population SYnthesis (DIPSY; Schib et al. 2025a) framework presents a new global population syn-thesis model for companion formation via gravitational disc in-stability. This framework solves the 1D viscous disc evolution with infall from the molecular cloud core, stellar irradiation, photoevaporation, and self-gravity fragmentation, covering com-panions from planetary to low-stellar masses around host stars ranging from brown dwarfs to massive B-type stars, including M dwarfs (Schib et al. 2025b). In baseline populations, ∼ 10 % of discs fragment, yielding mostly brown dwarfs (75 %) at large separations ( > 100 au), with strong sensitivity to interconnected processes such as gas ac-cretion, orbital migration, and N-body interactions (Schib et al. 2025b).  
+
+> Article number, page 11 of 21 A&A proofs: manuscript no. aa58411-25
+
+The DIPSY model series explore the impact of fundamen-tal physical assumptions on companion formation through grav-itational instability. DIPSY-0 establishes the fiducial reference model, characterised by disc-regulated gas accretion, a restricted number of initial fragments, and protoplanetary disc parameters consistent with observational constraints. DIPSY-1 tests the ef-fect of unconstrained gas accretion, allowing higher mass con-sumption rates. DIPSY-2 removes accretion entirely while in-creasing initial fragment masses to preserve global statistical properties. DIPSY-3 simplifies initial orbital conditions by im-posing zero eccentricities, eliminating complex early-stage dy-namics. DIPSY-4 increases the radial extension of the protoplan-etary disc to assess the e ff ect of available fragmentation area. DIPSY-5 reduces the number of fragments produced per insta-bility event, testing sensitivity to late-stage gravitational interac-tions and collisions. DIPSY-6 explores variations in disc viscos-ity and photoevaporation parameters, two critical processes gov-erning dissipation and thermal evolution. Despite this extensive range of parametric variations spanning distinct aspects of disc physics and initial conditions, the final statistical distributions of companion mass and separation remain remarkably similar across all models. This result demonstrates the robustness of the gravitational instability scenario and indicates that gravitational dynamical processes (mutual gravitational interactions, inelas-tic collisions, and orbital migration) dominate system evolution independently of these initial physical details. 
+
+Fig. 11: Empirical α and β slopes for the M-dwarf and FGK samples ( right panels), and for the full sample (left panels) com-pared to the DIPSY (Schib et al. 2025b) models (D0 to D6, cor-responding to versions DIPSY-0 to DIPSY-6). The FGK com-panion distribution is consistent at the 2 σ level with all but the DIPSY-2 population. M dwarf DIPSY companions tend to have much steeper mass and semi-major axis distributions than ob-served. We compared the constraints on the parameters α and β de-rived from our di ff erent samples (the full sample, FGK dwarfs, and M dwarfs) with the predictions of the DIPSY model 8 for companions with masses between 0 .5 and 80 MJup and projected separations ranging from 1 000 to 20 000 AU. Figure 11 shows this comparison, with the left panels corresponding to the full sample and the right panels to the FGK- and M-dwarf subsam-ples. Overall, the DIPSY models provide a good match to the con-straints derived from the full sample. Except for the DIPSY-2 model, all predictions remain consistent with the observational constraints at the 2 σ level. This agreement suggests that the for-mation and dynamical evolution scenarios implemented in these simulations are broadly capable of reproducing the observed  
+
+> 8https://zenodo.org/records/17380339
+
+distribution of wide-orbit companions. In particular, the results favour a population of relatively massive companions, including high-mass brown dwarfs, at small orbital separations. We stress that the DIPSY models are initial mass /separation distribution, while the observed sample has, in most cases, had many Gyr of interaction with field stars and giant molecular clouds. It is not a primeval distribution and the correspondence with models should be seen as indicative until these e ff ects are included in a physically consistent framework. 
+
+> 6.2. Comparison with IMF measurements in the sub-stellar regime
+
+A comparison with the initial mass function (IMF) is only mean-ingful under the assumption that companion masses are them-selves drawn from the IMF, which is not trivial. This assumption is approximately valid for stellar binaries at large separations around massive primaries (Moe & Di Stefano 2017). Neverthe-less, such a comparison should be interpreted with caution, since low-mass companions located at very large separations ( > 1000 au) may have formed through turbulent fragmentation of the parental molecular cloud rather than through processes associ-ated with the circumstellar disc of the primary star. Most IMF studies define the mass function as 
+
+dN /dM ∝ M−α, whereas we adopt the convention used in exoplanet and sub-stellar companion studies ( dN /dM ∝ Mα;Cumming et al. 2008; Nielsen et al. 2019; Baron et al. 2015). The sign of the slope must be reversed when comparing our results with published IMF measurements. For young asso-ciations, the reported IMF slopes are α = 0.33 ± 0.19 over 0.01–0 .1 M⊙ Muzic et al. 2025 and α = 0.14 ± 0.19 over 0 .01– 0.2 M⊙ Rom et al. 2026. The field IMF within 20 pc also yields 
+
+α = 0.6 over the mass range 0 .01–0 .05 M⊙ (Kirkpatrick et al. 2024). Taking into account this di ff erence in slope convention, our companion mass functions are consistent with these IMF at the < 2 − σ level. 
+
+7. Prospects 
+
+We performed a statistical analysis to constrain the distribution of substellar companions in the planetary mass regime. This study is based on a compilation of direct imaging surveys from the CatWISE archives and assumes a power-law distribution for substellar companion masses and projected separation. 
+
+> 7.1. Expanding on direct imaging surveys
+
+The mass distribution derived in this study is broadly consistent with that reported by Baron et al. (2019), despite notable di ff er-ences in methodology and sample selection criteria. This agree-ment indicates that the overall trends identified in both studies are relatively robust against observational biases and method-ological di ff erences. In particular, Baron et al. (2019) performed a statistical analysis combining high-resolution direct imaging and deep seeing-limited observations to simultaneously probe the full orbital separation domain from 5 to 5000 AU around a sample of 344 young, nearby stars. By assuming that the companion distribution in mass and semi-major axis follows a power-law, they constrained the parameters of this distribution and obtained an overall occurrence rate of ∼11 % for com-panions with masses between 1 and 20 MJup over these sep-arations, finding that companion frequency decreases with in-creasing semi-major axis and, marginally, with companion mass, 
+
+> Article number, page 12 of 21 Ouedraogo et al.: Population of Distant Substellar Companions
+
+while increasing with host star mass. In this context, our work re-visits Gyr-old analogues of these systems; therefore, the agree-ment observed between the inferred mass distributions is not un-expected. In contrast, our results show significant discrepancies with those presented by Nielsen et al. (2019). These di ff erences may arise from variations in the assumptions adopted for population modeling, or from intrinsic di ff erences in the parameter space explored rather than from the properties of the samples them-selves. Specifically, Nielsen et al. (2019) analysed the demograph-ics of giant planets and brown dwarfs around approximately 300 stars, at orbital separations between 10 and 100 AU. They found an occurrence rate of roughly 9 % for planets of 5–13 MJup and about 0.8 % for brown dwarfs of 13–80 MJup within this sepa-ration range. Our WISE-based observations probe significantly wider orbital separations and di ff erent mass regimes. It is there-fore not surprising that the observed populations di ff er, as they sample distinct regions of the parameter space that are domi-nated by di ff erent formation mechanisms. 
+
+7.2. Origin of substellar companions 
+
+The trend highlighted by our study remains qualitatively com-patible with expectations from disc GI, in which more mas-sive discs around higher-mass stars are generally expected to be more prone to fragmentation. However, the comparison with the DIPSY predictions, particularly in the M-dwarf regime, in-dicates that the agreement is not uniformly supported across the full stellar-mass range and should therefore be interpreted with caution. Alternative formation pathways may also contribute to the population of wide-orbit substellar companions. In particular, turbulent fragmentation within the parental molecular cloud could in principle produce objects in the planetary-mass regime, in a manner analogous to the formation of very low-mass stars or brown dwarfs. Recent observational studies probing the lowest-mass end of the initial mass function and the population of very low-mass brown dwarfs and planetary-mass objects have begun to explore this regime (De Furio et al. 2025b; Luhman & Alves de Oliveira 2025). However, current theoretical and observational studies do not yet provide quantitative predictions for the occurrence rate, or-bital properties, or mass distributions of bound companions com-parable to those available for disc GI. As a result, it remains di ffi cult at present to directly confront this scenario with the ob-servational demographics of substellar companions. Future theoretical work, including numerical simulations ca-pable of producing testable predictions, will be required to assess the relative contribution of this mechanism. Expanding the sam-ple of well-characterised systems will also help clarify the origin of these objects. 
+
+7.3. Understanding weakly-bound binaries 
+
+Interestingly, some of the detected or candidate systems appear dynamically fragile given their estimated ages. Although this ap-parent discrepancy may be compatible with statistical survival in rare instances (some systems are at > 10 half-lives), it likely in-dicate that the companions have not remained on their current wide orbits throughout the entire evolutionary history of the sys-tem. Instead, dynamical processes migrated these companions outward to their present fragile configurations. Understanding these processes is beyond the scope of the current work, but the fact that two out of 17 systems are in that state suggests that this is a common behaviour. Future N-body simulations incor-porating realistic Galactic models, such as the Besançon model (Robin et al. 2003; Czekaj et al. 2014), together with the Galac-tic potential and stellar encounters, will be required to quantify the long-term dynamical evolution of these systems and to de-termine whether their present-day configurations can naturally arise from late-time dynamical processes. 
+
+7.4. Reaching lower masses at wide separations 
+
+The decision to limit our sample to a 20 pc radius was driven by the goal of maximising both statistical completeness and depth, rather than extending the survey to larger but less reliable dis-tances. Beyond this limit, especially for the coolest substellar ob-jects such as T and Y dwarfs, we approach the sensitivity thresh-old of the WISE survey in the W2 band. This constraint signifi-cantly hampers the reliability of detections and the completeness of the sample at faint absolute magnitudes (M W2), thereby reduc-ing the number of detectable objects. In principle, these limitations could be mitigated through im-proved angular resolution, which would enable the combination of direct imaging with astrometric and radial velocity measure-ments. However, no upcoming mission operating near 4 μm is expected to o ff er better angular resolution than WISE. Although the James Webb Space Telescope (JWST; Rigby et al. 2023) provides vastly superior sensitivity—by several orders of mag-nitude—its extremely limited sky coverage restricts its useful-ness for large-scale statistical studies. Similarly, the SPHEREx mission Crill et al. (2020), which will o ff er full-sky spectral cov-erage between 0.75 and 5 μm, is limited by its relatively coarse angular resolution of about 6 ′′ , similar to that of WISE. Wide-field missions such as Euclid (Laureijs et al. 2011; Euclid Collaboration et al. 2022) and the Nancy Grace Roman Space Telescope (Spergel et al. 2015; Akeson et al. 2019) will pro-vide an important complement to these surveys, mostly for L and T dwarfs and to a lesser extent for Y dwarfs. With sky cov-erage approaching one third of the sky and angular resolutions of 
+
+∼ 0.1−0.2′′ , they will enable e ffi cient detections of brown dwarfs and low-mass companions across large stellar samples, although their sensitivity remains less favourable for probing the coldest objects than surveys operating near 4 μm. The recently commis-sioned Vera C. Rubin Observatory will further strengthen this observational landscape. Through the Legacy Survey of Space and Time (LSST), it will provide deep multi-epoch imaging in the red optical bands over approximately 18 000 deg 2, corre-sponding to nearly half the sky (Ivezi´ c et al. 2019). Its unprece-dented combination of depth, sky coverage, and astrometric pre-cision will enable the identification of large samples of substel-lar objects and wide substellar companions through common proper motion searches, thereby providing robust constraints on the demographics of the substellar population, particularly for the warmer brown dwarfs that remain detectable at optical wave-lengths (LSST Science Collaboration et al. 2009; Gizis et al. 2022). The statistical power of these samples will complement mid-infrared surveys by probing a larger sample of host stars for L and T companions.  
+
+> Acknowledgements. The authors thank the anonymous referee for the construc-tive comments and suggestions that greatly improved the overall quality of the paper. This research was supported by the Laboratory of Physics and Environ-mental Chemistry (LPCE) at Université Joseph KI-ZERBO in Burkina Faso. It also received financial support through a research mobility grant awarded for a research stay at the Université de Montréal, within the Trottier Institute for
+> Article number, page 13 of 21
+
+A&A proofs: manuscript no. aa58411-25 
+
+Research on Exoplanets (iREx), thanks to the Canadian government via Global Aff airs Canada. SO is grateful to the E rasmus programme for financial support, provided through the Université Côte d’Azur, the Université Joseph KI-ZERBO, and the Observa-toire de la Côte d’Azur / Laboratoire Lagrange in Nice, France ÉA, NJC & RD acknowledge the financial support of the FRQ-NT through the Centre de recherche en astrophysique du Québec as well as the support from the Trottier Family Foundation and the Trottier Institute for Research on Exoplanets. ÉA & RD acknowledge support from the Canada Foundation for Innovation (CFI) programme, the Université de Montréal and Université Laval, the Canada Economic Development (CED) programme and the Ministere of Economy, In-novation and Energy (MEIE). This publication makes use of data from the WISE (Wide-field Infrared Survey Explorer) mission, a joint project funded by NASA, which enabled sky mapping at 20 di ff erent epochs over approximately 12 years. It also uses the VizieR catalogue service and the SIMBAD database, both op-erated by the Centre de Données Astronomiques de Strasbourg (CDS), France. This work also uses data from the Gaia mission of the European Space Agency (ESA), accessible at https://www.cosmos.esa.int/gaia , and processed by the Gaia Data Processing and Analysis Consortium (DPAC). DPAC is funded by national institutions, particularly those participating in the Gaia Multilateral Agreement. 
+
+References 
+
+Akeson, R., Armus, L., Bachelet, E., et al. 2019, arXiv e-prints, arXiv:1902.05569, doi: 10.48550/arXiv.1902.05569 
+
+Alvarez, W., & Muller, R. A. 1984, Nature, 308, 718, doi: 10.1038/308718a0 
+
+Antoniadis-Karnavas, A., Sousa, S. G., Delgado-Mena, E., Santos, N. C., & Andreasen, D. T. 2024, A&A, 690, A58, doi: 10.1051/0004-6361/ 202450722 
+
+Aumer, M., & Binney, J. J. 2009a, MNRAS, 397, 1286, doi: 10.1111/j. 1365-2966.2009.15053.x 
+
+—. 2009b, MNRAS, 397, 1286, doi: 10.1111/j.1365-2966.2009.15053.x 
+
+Baron, F., Lafrenière, D., Artigau, É., et al. 2019, AJ, 158, 187, doi: 10.3847/ 1538-3881/ab4130 
+
+Baron, F., Artigau, E., Rameau, J., et al. 2015, in AAS /Division for Extreme Solar Systems Abstracts, Vol. 47, AAS /Division for Extreme Solar Systems Abstracts, 104.09 Bate, M. R. 2009, MNRAS, 392, 590, doi: 10.1111/j.1365-2966.2008. 14106.x 
+
+Bell, C. P. M., Mamajek, E. E., & Naylor, T. 2015, MNRAS, 454, 593, doi: 10. 1093/mnras/stv1981 
+
+Bensby, T., Feltzing, S., & Oey, M. S. 2014, A&A, 562, A71, doi: 10.1051/ 0004-6361/201322631 
+
+Biller, B. A., Kasper, M., Close, L. M., Brandner, W., & Kellner, S. 2006, ApJ, 641, L141, doi: 10.1086/504256 
+
+Biller, B. A., Liu, M. C., Wahhaj, Z., et al. 2013, ApJ, 777, 160, doi: 10.1088/ 0004-637X/777/2/160 
+
+Brandt, G. M., Dupuy, T. J., Li, Y., et al. 2021, AJ, 162, 301, doi: 10.3847/ 1538-3881/ac273e 
+
+Brasser, R., & Morbidelli, A. 2013, Icarus, 225, 40, doi: 10.1016/j.icarus. 2013.03.012 
+
+Brown, M. E., & Batygin, K. 2021, AJ, 162, 219, doi: 10.3847/1538-3881/ ac2056 
+
+Burgasser, A. J., Brown, M. E., Kirkpatrick, J. D., et al. 2000, American As-tronomical Society Meeting Abstracts #195, 195, 109.13. https://ui. adsabs.harvard.edu/abs/2000AAS...19510913B/abstract 
+
+Burgasser, A. J., Simcoe, R. A., Bochanski, J. J., et al. 2010, ApJ, 725, 1405, doi: 10.1088/0004-637X/725/2/1405 
+
+Burgasser, A. J., Schneider, A. C., Meisner, A. M., et al. 2025, ApJ, 982, 79, doi: 10.3847/1538-4357/adb39f 
+
+Burningham, B., Pinfield, D. J., Leggett, S. K., et al. 2009, MNRAS, 395, 1237, doi: 10.1111/j.1365-2966.2009.14620.x 
+
+Burningham, B., Cardoso, C. V., Smith, L., et al. 2013, MNRAS, 433, 457, doi: 10.1093/mnras/stt740 
+
+Caballero, J. A. 2009, A&A, 507, 251, doi: 10.1051/0004-6361/200912596 
+
+—. 2010, A&A, 514, A98, doi: 10.1051/0004-6361/200913986 
+
+Calamari, E., Faherty, J. K., Visscher, C., et al. 2024, ApJ, 963, 67, doi: 10. 3847/1538-4357/ad1f6d 
+
+Calissendor ff , P., De Furio, M., Meyer, M., et al. 2023, ApJ, 947, L30, doi: 10. 3847/2041-8213/acc86d 
+
+Casagrande, L., Schönrich, R., Asplund, M., et al. 2011, A&A, 530, A138, doi: 10.1051/0004-6361/201016276 
+
+Chauvin, G., Lagrange, A. M., Bonavita, M., et al. 2010, A&A, 509, A52, doi: 10.1051/0004-6361/200911716 
+
+Chinchilla, P., Béjar, V. J. S., Lodieu, N., et al. 2020, A&A, 633, A152, doi: 10. 1051/0004-6361/201936130 
+
+Choi, J., Dotter, A., Conroy, C., et al. 2016, ApJ, 823, 102, doi: 10.3847/ 0004-637X/823/2/102 
+
+Close, L. M., Zuckerman, B., Song, I., et al. 2007, ApJ, 660, 1492, doi: 10. 1086/513417 
+
+Crepp, J. R., Johnson, J. A., Fischer, D. A., et al. 2012, ApJ, 751, 97, doi: 10. 1088/0004-637X/751/2/97 
+
+Crill, B. P., Werner, M., Akeson, R., et al. 2020, in Society of Photo-Optical In-strumentation Engineers (SPIE) Conference Series, Vol. 11443, Space Tele-scopes and Instrumentation 2020: Optical, Infrared, and Millimeter Wave, ed. M. Lystrup & M. D. Perrin, 114430I, doi: 10.1117/12.2567224 
+
+Cruz, K. L., Reid, I. N., Liebert, J., Kirkpatrick, J. D., & Lowrance, P. J. 2003, AJ, 126, 2421, doi: 10.1086/378607 
+
+Cumming, A., Butler, R. P., Marcy, G. W., et al. 2008, PASP, 120, 531, doi: 10. 1086/588487 
+
+Cushing, M. C., Kirkpatrick, J. D., Gelino, C. R., et al. 2011, The Astrophysical Journal, 743, 50, doi: 10.1088/0004-637X/743/1/50 
+
+Cushing, M. C., Kirkpatrick, J. D., Gelino, C. R., et al. 2011, ApJ, 743, 50, doi: 10.1088/0004-637X/743/1/50 
+
+Czekaj, M. A., Robin, A. C., Figueras, F., Luri, X., & Haywood, M. 2014, A&A, 564, A102, doi: 10.1051/0004-6361/201322139 
+
+De Furio, M., Faherty, J. K., Bardalez Gagliu ffi , D. C., et al. 2025a, ApJ, 990, L63, doi: 10.3847/2041-8213/adfee1 
+
+De Furio, M., Meyer, M. R., Greene, T., et al. 2025b, ApJ, 981, L34, doi: 10. 3847/2041-8213/adb96a 
+
+Deacon, N. R., Liu, M. C., Magnier, E. A., et al. 2012, ApJ, 757, 100, doi: 10. 1088/0004-637X/757/1/100 
+
+Desidera, S., Chauvin, G., Bonavita, M., et al. 2021, Astronomy and Astro-physics, 651, A70, doi: 10.1051/0004-6361/202038806 
+
+Dhital, S., West, A. A., Stassun, K. G., & Bochanski, J. J. 2010, AJ, 139, 2566, doi: 10.1088/0004-6256/139/6/2566 
+
+Dupuy, T. J., Liu, M. C., Best, W. M. J., et al. 2019, AJ, 158, 174, doi: 10.3847/ 1538-3881/ab3cd1 
+
+El-Badry, K., Rix, H.-W., & Heintz, T. M. 2021, MNRAS, 506, 2269, doi: 10. 1093/mnras/stab323 
+
+Emsenhuber, A., Mordasini, C., Burn, R., et al. 2021, A&A, 656, A70, doi: 10. 1051/0004-6361/202038863 
+
+Euclid Collaboration, Scaramella, R., Amiaux, J., et al. 2022, A&A, 662, A112, doi: 10.1051/0004-6361/202141938 
+
+Faherty, J. K., Burgasser, A. J., West, A. A., et al. 2010a, AJ, 139, 176, doi: 10. 1088/0004-6256/139/1/176 
+
+—. 2010b, AJ, 139, 176, doi: 10.1088/0004-6256/139/1/176 
+
+Faherty, J. K., Riedel, A. R., Cruz, K. L., et al. 2016, ApJS, 225, 10, doi: 10. 3847/0067-0049/225/1/10 
+
+Faherty, J. K., Kuchner, M., Schneider, A., et al. 2018, in American Astronom-ical Society Meeting Abstracts, Vol. 231, American Astronomical Society Meeting Abstracts #231, 158.14 Faherty, J. K., Gagné, J., Popinchalk, M., et al. 2021, ApJ, 923, 48, doi: 10. 3847/1538-4357/ac2499 
+
+Faherty, J. K., Meisner, A. M., Burningham, B., et al. 2025, Nature, 645, 62, doi: 10.1038/s41586-025-09369-1 
+
+Feng, F., Butler, R. P., Vogt, S. S., et al. 2022, ApJS, 262, 21, doi: 10.3847/ 1538-4365/ac7e57 
+
+Fontanive, C., Biller, B., Bonavita, M., & Allers, K. 2018, Monthly Notices of the Royal Astronomical Society, 479, 2702, doi: 10.1093/mnras/sty1682 
+
+Fontanive, C., Rice, K., Bonavita, M., et al. 2019, MNRAS, 485, 4967, doi: 10. 1093/mnras/stz671 
+
+Fontanive, C., Allers, K. N., Pantoja, B., et al. 2020, ApJ, 905, L14, doi: 10. 3847/2041-8213/abcaf8 
+
+Foreman-Mackey, D., Hogg, D. W., Lang, D., & Goodman, J. 2013, PASP, 125, 306, doi: 10.1086/670067 
+
+Forgan, D., & Rice, K. 2013, MNRAS, 432, 3168, doi: 10.1093/mnras/ stt672 
+
+Forgan, D. H., Hall, C., Meru, F., & Rice, W. K. M. 2018, MNRAS, 474, 5036, doi: 10.1093/mnras/stx2870 
+
+Gagné, J., Mamajek, E. E., Malo, L., et al. 2018, ApJ, 856, 23, doi: 10.3847/ 1538-4357/aaae09 
+
+Gaia Collaboration. 2022, VizieR Online Data Catalog, 1355, I /355, doi: 10. 26093/cds/vizier.1355 
+
+Gaia Collaboration, Brown, A. G. A., Vallenari, A., et al. 2018, Astronomy & Astrophysics, 616, A1, doi: 10.1051/0004-6361/201833051 
+
+Gaia Collaboration, Brown, A. G. A., Vallenari, A., et al. 2021, A&A, 649, A1, doi: 10.1051/0004-6361/202039657 
+
+Gaia Collaboration, Vallenari, A., Brown, A. G. A., et al. 2023, A&A, 674, A1, doi: 10.1051/0004-6361/202243940 
+
+Gizis, J. E., Yoachim, P., Jones, R. L., Hilligoss, D., & Ji, J. 2022, ApJS, 263, 23, doi: 10.3847/1538-4365/ac961f 
+
+Golovin, A., Re ff ert, S., Just, A., et al. 2023, A&A, 670, A19, doi: 10.1051/ 0004-6361/202244250 
+
+Article number, page 14 of 21 Ouedraogo et al.: Population of Distant Substellar Companions 
+
+Gomes, J. I., Pinfield, D. J., Marocco, F., et al. 2013, MNRAS, 431, 2745, doi: 10.1093/mnras/stt371 
+
+González-Payo, J., Caballero, J. A., & Cortés-Contreras, M. 2023, A&A, 670, A102, doi: 10.1051/0004-6361/202245476 
+
+Goodman, J., & Weare, J. 2010, Communications in Applied Mathematics and Computational Science, 5, 65, doi: 10.2140/camcos.2010.5.65 
+
+Goodwin, S. P., & Whitworth, A. 2007, A&A, 466, 943, doi: 10.1051/ 0004-6361:20066745 
+
+Hambly, N. C., Henry, T. J., Subasavage, J. P., Brown, M. A., & Jao, W.-C. 2004, AJ, 128, 437, doi: 10.1086/421748 
+
+Haywood, M., Di Matteo, P., Lehnert, M. D., Katz, D., & Gómez, A. 2013, A&A, 560, A109, doi: 10.1051/0004-6361/201321397 
+
+Heisler, J., & Tremaine, S. 1986, Icarus, 65, 13, doi: 10.1016/0019-1035(86) 90060-6 
+
+Huang, D., Liu, Q., Wyatt, M. C., & Kennedy, G. M. 2025, VizieR Online Data Catalog: WISE 12um exozodi candidates within 10pc (Huang +, 2025), VizieR On-line Data Catalog: J /A+A/698 /A246. Originally published in: 2025A&A...698A.246H Ida, S., & Lin, D. N. C. 2004, ApJ, 616, 567, doi: 10.1086/424830 
+
+Ivezi´ c, Ž., Kahn, S. M., Tyson, J. A., et al. 2019, ApJ, 873, 111, doi: 10.3847/ 1538-4357/ab042c 
+
+Kaib, N. A., & Quinn, T. 2008, Icarus, 197, 221, doi: 10.1016/j.icarus. 2008.03.020 
+
+Kasper, M., Biller, B. A., Burrows, A., et al. 2007, A&A, 471, 655, doi: 10. 1051/0004-6361:20077881 
+
+Kirkpatrick, J. D., Dahn, C. C., Monet, D. G., et al. 2001, AJ, 121, 3235, doi: 10. 1086/321085 
+
+Kirkpatrick, J. D., Reid, I. N., Liebert, J., et al. 1999, The Astrophysical Journal, 519, 802, doi: 10.1086/307414 
+
+Kirkpatrick, J. D., Cushing, M. C., Gelino, C. R., et al. 2011a, ApJS, 197, 19, doi: 10.1088/0067-0049/197/2/19 
+
+—. 2011b, ApJS, 197, 19, doi: 10.1088/0067-0049/197/2/19 
+
+Kirkpatrick, J. D., Martin, E. C., Smart, R. L., et al. 2019, ApJS, 240, 19, doi: 10. 3847/1538-4365/aaf6af 
+
+Kirkpatrick, J. D., Marocco, F., Caselden, D., et al. 2021a, ApJ, 915, L6, doi: 10. 3847/2041-8213/ac0437 
+
+Kirkpatrick, J. D., Gelino, C. R., Faherty, J. K., et al. 2021b, ApJS, 253, 7, doi: 10.3847/1538-4365/abd107 
+
+Kirkpatrick, J. D., Marocco, F., Gelino, C. R., et al. 2024, ApJS, 271, 55, doi: 10. 3847/1538-4365/ad24e2 
+
+Kounkel, M., Covey, K., Suárez, G., et al. 2018, AJ, 156, 84, doi: 10.3847/ 1538-3881/aad1f1 
+
+Kratter, K., & Lodato, G. 2016, ARA&A, 54, 271, doi: 10.1146/ annurev-astro-081915-023307 
+
+Kratter, K. M., & Matzner, C. D. 2006, MNRAS, 373, 1563, doi: 10.1111/j. 1365-2966.2006.11103.x 
+
+Kuchner, M. J., Faherty, J. K., Schneider, A. C., et al. 2017, ApJ, 841, L19, doi: 10.3847/2041-8213/aa7200 
+
+Kuznetsov, M. K., del Burgo, C., Pavlenko, Y. V., & Frith, J. 2019, ApJ, 878, 134, doi: 10.3847/1538-4357/ab1fe9 
+
+Lasker, B. M., Lattanzi, M. G., McLean, B. J., et al. 2008, AJ, 136, 735, doi: 10. 1088/0004-6256/136/2/735 
+
+Laureijs, R., Amiaux, J., Arduini, S., et al. 2011, arXiv e-prints, arXiv:1110.3193, doi: 10.48550/arXiv.1110.3193 
+
+Liu, M. C., Fischer, D. A., Graham, J. R., et al. 2002, ApJ, 571, 519, doi: 10. 1086/339845 
+
+LSST Science Collaboration, Abell, P. A., Allison, J., et al. 2009, arXiv e-prints, arXiv:0912.0201, doi: 10.48550/arXiv.0912.0201 
+
+Luck, R. E. 2017, AJ, 153, 21, doi: 10.3847/1538-3881/153/1/21 
+
+—. 2018, AJ, 155, 111, doi: 10.3847/1538-3881/aaa9b5 
+
+Luhman, K. L. 2014, ApJ, 786, L18, doi: 10.1088/2041-8205/786/2/L18 
+
+Luhman, K. L., & Alves de Oliveira, C. 2025, ApJ, 986, L14, doi: 10.3847/ 2041-8213/addc55 
+
+Mace, G. N., Mann, A. W., Ski ff , B. A., et al. 2018, ApJ, 854, 145, doi: 10. 3847/1538-4357/aaa8dd 
+
+Malo, L., Doyon, R., Lafrenière, D., et al. 2013, ApJ, 762, 88, doi: 10.1088/ 0004-637X/762/2/88 
+
+Marocco, F., Eisenhardt, P. R. M., Fowler, J. W., et al. 2021, ApJS, 253, 8, doi: 10.3847/1538-4365/abd805 
+
+Marocco, F., Kirkpatrick, J. D., Schneider, A. C., et al. 2024, ApJ, 967, 147, doi: 10.3847/1538-4357/ad3f1d 
+
+Marois, C., Draper, Z., Barman, T., et al. 2014, NOAO Proposal. http: //adsabs.harvard.edu/abs/2014noao.prop..197M 
+
+McCaughrean, M. J., Close, L. M., Scholz, R. D., et al. 2004, A&A, 413, 1029, doi: 10.1051/0004-6361:20034292 
+
+Meisner, A. M., Lang, D., & Schlegel, D. J. 2017, AJ, 154, 161, doi: 10.3847/ 1538-3881/aa894e 
+
+Moe, M., & Di Stefano, R. 2017, ApJS, 230, 15, doi: 10.3847/1538-4365/ aa6fb6 
+
+Mordasini, C. 2018, Planetary Population Synthesis, doi: 10.1007/ 978-3-319-55333-7_143 
+
+Mordasini, C., Alibert, Y., & Benz, W. 2009, A&A, 501, 1139, doi: 10.1051/ 0004-6361/200810301 
+
+Muzic, K., Almendros-Abad, V., Baptista, A., et al. 2025, A&A, 701, A147, doi: 10.1051/0004-6361/202555903 
+
+Nakajima, T., Oppenheimer, B., Kulkarni, S., et al. 1995, nature, 378, 463 Naoz, S. 2016, ARA&A, 54, 441, doi: 10.1146/ annurev-astro-081915-023315 
+
+Naud, M.-E., Artigau, É., Doyon, R., et al. 2017, AJ, 154, 129, doi: 10.3847/ 1538-3881/aa826b 
+
+Naud, M.-E., Artigau, É., Malo, L., et al. 2014, ApJ, 787, 5, doi: 10.1088/ 0004-637X/787/1/5 
+
+Nielsen, E. L., De Rosa, R. J., Macintosh, B., et al. 2019, AJ, 158, 13, doi: 10. 3847/1538-3881/ab16e9 
+
+Oort, J. H. 1950, Bull. Astron. Inst. Netherlands, 11, 91 Phillips, M. W., Tremblin, P., Bara ff e, I., et al. 2020, A&A, 637, A38, doi: 10. 1051/0004-6361/201937381 
+
+Pinfield, D. J., Burningham, B., Lodieu, N., et al. 2012, MNRAS, 422, 1922, doi: 10.1111/j.1365-2966.2012.20549.x 
+
+Pollack, J. B., Hubickyj, O., Bodenheimer, P., et al. 1996, Icarus, 124, 62, doi: 10.1006/icar.1996.0190 
+
+Raymond, S. N., Kaib, N. A., Selsis, F., & Bouy, H. 2024, MNRAS, 527, 6126, doi: 10.1093/mnras/stad3604 
+
+Rigby, J., Perrin, M., McElwain, M., et al. 2023, PASP, 135, 048001, doi: 10. 1088/1538-3873/acb293 
+
+Robin, A. C., Reylé, C., Derrière, S., & Picaud, S. 2003, A&A, 409, 523, doi: 10. 1051/0004-6361:20031117 
+
+Rom, T., Moraux, E., Muži´ c, K., et al. 2026, A&A, 706, A58, doi: 10.1051/ 0004-6361/202556578 
+
+Rothermich, A., Faherty, J. K., Bardalez-Gagliu ffi , D., et al. 2024, AJ, 167, 253, doi: 10.3847/1538-3881/ad324e 
+
+Sanghi, A., Liu, M. C., Best, W. M. J., et al. 2023, ApJ, 959, 63, doi: 10.3847/ 1538-4357/acff66 
+
+Schib, O., Mordasini, C., Emsenhuber, A., & Helled, R. 2025a, A&A, 704, A27, doi: 10.1051/0004-6361/202556262 
+
+—. 2025b, A&A, 704, A28, doi: 10.1051/0004-6361/202556261 
+
+Schneider, A. C., Meisner, A. M., Gagné, J., et al. 2021, ApJ, 921, 140, doi: 10. 3847/1538-4357/ac1c75 
+
+Scholz, R. D. 2010, A&A, 515, A92, doi: 10.1051/0004-6361/201014264 
+
+Scholz, R. D., McCaughrean, M. J., Lodieu, N., & Kuhlbrodt, B. 2003, A&A, 398, L29, doi: 10.1051/0004-6361:20021847 
+
+Sharma, S., Hayden, M. R., Bland-Hawthorn, J., et al. 2021, MNRAS, 506, 1761, doi: 10.1093/mnras/stab1086 
+
+Skrutskie, M. F., Cutri, R. M., Stiening, R., et al. 2006, AJ, 131, 1163, doi: 10. 1086/498708 
+
+Soubiran, C., Brouillet, N., & Casamiquela, L. 2022, A&A, 663, A4, doi: 10. 1051/0004-6361/202142409 
+
+Spergel, D., Gehrels, N., Baltay, C., et al. 2015, arXiv e-prints, arXiv:1503.03757, doi: 10.48550/arXiv.1503.03757 
+
+Tokovinin, A., Petr-Gotzens, M. G., & Briceño, C. 2020, AJ, 160, 268, doi: 10. 3847/1538-3881/abc2d6 
+
+van Leeuwen, F. 2007, A&A, 474, 653, doi: 10.1051/0004-6361:20078357 
+
+Weinberg, M. D., Shapiro, S. L., & Wasserman, I. 1987, ApJ, 312, 367, doi: 10. 1086/164883 
+
+Whitworth, A., Bate, M. R., Nordlund, Å., Reipurth, B., & Zinnecker, H. 2007, in Protostars and Planets V, ed. B. Reipurth, D. Jewitt, & K. Keil, 459 Wielen, R. 1977, A&A, 60, 263 Wright, E. L., Eisenhardt, P. R. M., Mainzer, A. K., et al. 2010, AJ, 140, 1868, doi: 10.1088/0004-6256/140/6/1868 
+
+Wright, E. L., Skrutskie, M. F., Kirkpatrick, J. D., et al. 2013, AJ, 145, 84, doi: 10.1088/0004-6256/145/3/84 
+
+Xuan, J. W., Mérand, A., Thompson, W., et al. 2024, Nature, 634, 1070, doi: 10. 1038/s41586-024-08064-x 
+
+Zari, E., Brown, A. G. A., & de Zeeuw, P. T. 2019, A&A, 628, A123, doi: 10. 1051/0004-6361/201935781 
+
+Zhang, Z., Liu, M. C., Best, W. M. J., Dupuy, T. J., & Siverd, R. J. 2021a, ApJ, 911, 7, doi: 10.3847/1538-4357/abe3fa 
+
+Zhang, Z., Liu, M. C., Claytor, Z. R., et al. 2021b, ApJ, 916, L11, doi: 10.3847/ 2041-8213/ac1123 
+
+Zhang, Z., Mukherjee, S., Liu, M. C., et al. 2025, AJ, 169, 9, doi: 10.3847/ 1538-3881/ad8b2d 
+
+Öpik, E. 1924, Publications of the Tartu Astrofizica Observatory, 25, 1. https: //ui.adsabs.harvard.edu/abs/1924PTarO..25f...1O 
+
+Article number, page 15 of 21 A&A proofs: manuscript no. aa58411-25 
+
+Appendix A: Properties of recovered companions 
+
+We present here the properties of the companions recovered with the current framework. The main parameters are compiled in Ta-ble C.1. 
+
+> BD+06 2986 AB
+
+The BD +06 2986 system was identified as a common proper motion pair by Scholz (2010). The primary component, a solar-type dwarf detected in Gaia DR3, has a metallicity of [Fe /H] = −0.37 (Scholz 2010; Burgasser et al. 2025). The com-panion, BD +06 2986B (also known as HIP 73786B or ULAS J150457.65 +053800.8), shares a consistent proper motion with the primary, confirming their physical association. Its e ff ective temperature is estimated at 953 ±48 K (Burgasser et al. 2025). 
+
+> BD+13 2618 ABC
+
+BD +13 2618 (Ross 458) is a hierarchical triple system consist-ing of a close binary, Ross 458 AB, and a distant substellar companion, Ross 458 C (Burgasser et al. 2010). The primary system, detectable in Gaia DR3, exhibits a supersolar metallic-ity with [Fe /H] = + 0.20 ± 0.05 and an estimated age between 150 and 800 Myr (Burgasser et al. 2010). BD +13 2618 C (Ross 458 C) shares a common proper motion with the central binary at a wide projected separation and has an e ff ective temperature of 790 +63  
+
+> −10
+
+K (Burgasser et al. 2025). 
+
+> BD+21 2486 ABC
+
+BD +21 2486 is a triple system consisting of a close stellar bi-nary, BD +21 2486 AB, unresolved in Gaia DR3 , and a wide-separation substellar companion, 2MASS J13054106 +2046394 (also known as GJ 499C), which is detected in Gaia DR3. The companion shares a common proper motion with the binary, in-dicating a physical association (Cruz et al. 2003; Gomes et al. 2013). The system is estimated to be between 3 and 5 Gyr old (Calamari et al. 2024). The e ff ective temperature of the substel-lar companion has been reported as 1574 ± 170 K (Gomes et al. 2013) and 1603 K (Kirkpatrick et al. 2021b). 
+
+> G 204-39 AB
+
+G 204-39 is a binary system identified by Faherty et al. (2010b), composed of a host star detected in Gaia DR3 and a substellar companion. The estimated age of the primary star ranges be-tween 0.5 and 1.5 Gyr. Both objects share a common proper mo-tion, indicating likely gravitational binding despite a large an-gular separation. The companion, G 204-39B, is a BD with an eff ective temperature estimated at 901 ± 88 K (Kirkpatrick et al. 2021b). 
+
+> G 48-43 AB
+
+LHS 6176 is a binary system composed of a low-mass dwarf star, G 48-43 (LHS 6176), detected in Gaia DR3, and a substellar companion, G 48-43 B (WISE J095047.32 +011733.3), discov-ered by Burningham et al. (2013). The primary component is a low-mass dwarf with a metallicity of [Fe /H] = −0.30 ±0.1 and an age greater than 3.5 Gyr (Burningham et al. 2013). The compan-ion, WISE J095047.32 +011733.3, shares common proper mo-tion with the host star and is widely separated. It has a metal-licity of [M /H] = −0.21 dex and an e ff ective temperature of 802 ± 64 K (Burgasser et al. 2025). 
+
+> Gl 570 ABCD
+
+The Gl 570 system is a hierarchical configuration composed of four components. Gl 570 A is the primary star, while Gl 570 B and Gl 570 C form a close binary subsystem. The fourth compo-nent, Gl 570 D, is a BD with an estimated e ff ective temperature of 901 ± 88 K (Kirkpatrick et al. 2021b). 
+
+> HD 170573 & WISE J183207.99-540942.0
+
+HD 170573 is a solar-type star listed in Gaia DR3, with an es-timated age between 9 and 13.5 Gyr. It belongs to a binary sys-tem that includes a substellar companion, WISE J183207.99-540942.0, discovered through the Backyard Worlds: Planet 9 programme (Rothermich et al. 2024). The companion was iden-tified based on its common proper motion with the primary star, despite a wide angular separation. Its e ff ective temperature is es-timated at 819 ± 79 K. 
+
+> HD 65486 AB
+
+HD 65486 (HIP 38939) is a solar-type dwarf star detectable in Gaia DR3, slightly metal-poor with [Fe /H] = −0.24, and an esti-mated age of 900 +1900  
+
+> −600
+
+Myr (Deacon et al. 2012). The star forms a wide binary system with a substellar companion, HIP 38939 b, with an e ff ective temperature of 1095 ± 88 K (Kirkpatrick et al. 2021b), detected through spectroscopic observations and discov-ered by Deacon et al. (2012). 
+
+> HD 126053 AB
+
+HD 126053 (BD +01 2920, HIP 70319) is a binary system con-sisting of a solar-type primary star and a substellar compan-ion, discovered by Pinfield et al. (2012). The primary star is a slightly metal-poor dwarf, identified in Gaia DR3, with an iron abundance of [Fe /H] = −0.38 ± 0.06 and an estimated age rang-ing from 2.3 to 14.4 Gyr (Calamari et al. 2024). The system hosts a distant companion, WISE J142320.84 +011638.0, which shares a common proper motion with the host star, suggesting a physical association. This companion has been identified as a BD based on its photometric and spectroscopic properties, with an e ff ective temperature of 670 ± 34 K and a metallicity of [M /H] = ˘0 .35 dex (Burgasser et al. 2025). 
+
+> L 34-26 AB
+
+The L 34-26 (COCONUTS-2) system, composed of the primary star COCONUTS-2A and its substellar companion COCONUTS-2B, was discovered and characterised by Zhang et al. (2021b) as part of the COol Companions ON Ultraw-ide orbiTS (COCONUTS) programme—a wide-field imaging survey designed to detect cold and widely separated compan-ions around nearby stars. The two components exhibit common proper motion. COCONUTS-2A (L 34-26) is a young, low-mass star listed in Gaia DR3, with an estimated metallicity of [Fe /H] 
+
+= 0.00 ± 0.08 dex. Its age is estimated to lie between 150 and 800 Myr based on multiple youth indicators (Zhang et al. 2021b). The companion, COCONUTS-2B (L 34-26 B), is an extremely cold substellar object with an estimated e ff ective temperature 
+
+> Article number, page 16 of 21 Ouedraogo et al.: Population of Distant Substellar Companions
+
+of 483 +44  
+
+> −53
+
+K Zhang et al. (2025), placing it among the coldest planetary-mass companions known. 
+
+> LP 738 -14 AB
+
+LP 738-14 is a low-mass dwarf star with a metallicity compara-ble to that of the Sun and exhibits no detectable H α emission. Based on its metallicity and kinematic properties, the age of the system is constrained to an upper limit of approximately 10 Gyr (Deacon et al. 2012). It is part of a binary system that includes a substellar companion, LP 738-14B (also known as LHS 2803 b), discovered by Deacon et al. (2012). The companion was identi-fied based on its common proper motion with the primary star at a wide angular separation. LP 738-14B has an estimated e ff ec-tive temperature of 939 ±88 K (Kirkpatrick et al. 2021b). 
+
+> LP 374-39 AB
+
+LP 374-39 (GJ 3657, LHS 302) is a late-type dwarf star with a metallicity of -0.1 dex (Kuznetsov et al. 2019), forming a widely separated binary system with WISEPC J112254.73 +255021.5, a confirmed substellar companion discovered by Kirkpatrick et al. (2011b). Both objects share a common proper motion, indicating a likely physical association. The companion has an estimated eff ective temperature of 855 ± 88 K (Kirkpatrick et al. 2021b), while the age of the system remains unknown at this time. 
+
+> Ross 19 AB
+
+Ross 19 is a low-mass dwarf star detected in Gaia DR3, with an estimated age of 7 .2+3.8 
+
+> −3.8
+
+Gyr and a metallicity of [Fe /H] =
+
+−0.40 ± 0.12 (Schneider et al. 2021). It forms a wide-separation binary system, as reported in the same study, with a very cold substellar companion, Ross 19 B, whose e ff ective temperature is estimated to be 500 +115  
+
+> −100
+
+K. 
+
+ξ UMa AB & WISE J111838.70+312537.9 
+
+WISE J111838.70 +312537.9 shares a common proper motion with the nearby quadruple star system ξ Ursae Majoris, discov-ered by Wright et al. (2013). This companion orbits the system at a wide separation. The primary star, unresolved in the Gaia DR3 catalogue (Gaia Collaboration et al. 2023), exhibits solar metallicity, suggesting a minimum system age of 2 Gyr. The ef-fective temperature of WISE J111838.70 +312537.9 is estimated at 559 ± 88 K (Kirkpatrick et al. 2024). 
+
+> Wolf 940 AB
+
+Wolf 940 is a binary system composed of the star Gaia DR3 Wolf 940 A (also known as LHS 3708 and GJ 1263), with an estimated metallicity of [Fe /H] = -0.06 ± 0.20, and a substellar companion, Wolf 940 B, discovered by Burningham et al. (2009). The system exhibits common proper motion and a wide angular separation between the two components. The companion, Wolf 940 B, has an e ff ective temperature of 586 ± 35 K (Burgasser et al. 2025). 
+
+> Wolf 1130 ABC
+
+Wolf 1130 is a hierarchical triple system composed of a close bi-nary (Wolf 1130 AB) and a distant substellar companion, Wolf 1130 C (WISE J200520.38 +542433.9), discovered by Mace et al. (2018). The primary component, Wolf 1130 A, is a low-mass star detected in Gaia DR3, with a subsolar metallicity of [Fe /H] = -0.7 ± 0.12 dex (Mace et al. 2018). It forms a tight pair with a compact white dwarf. Wolf 1130 B has an initial mass es-timated at about 7.2 M ⊙ (Kirkpatrick et al. 2024). The high mass of the white dwarf and the short orbital separation suggest a his-tory of close binary evolution (Mace et al. 2018). The third com-ponent, Wolf 1130 C, shares common proper motion with the inner binary and lies at a wide projected separation. This sub-stellar companion has an estimated e ff ective temperature of 644 
+
+± 32 K and a metallicity of [M /H] = −0.65 +0.10  
+
+> −0.07
+
+dex (Burgasser et al. 2025). 
+
+η CrB ABC 
+
+η Coronae Borealis is a triple stellar system consist-ing of a solar-type binary, η CrB AB, with an estimated age between 1.0 - 2.5 Gyr, and a substellar companion, 2MASSW J1523226 +301456, discovered by Kirkpatrick et al. (2001). The companion shares common proper motion with the system and lies at a wide separation from the primary binary. Its eff ective temperature is estimated to be 295 ± 76 K (Kirkpatrick et al. 2021b). 
+
+> Appendix A.1: Properties of known companions not recovered
+
+This section gathers the properties of companions previously re-ported in the literature around stars in our sample, but not recov-ered by our approach. We also discuss the possible reasons for their non-detection. 
+
+> 15 Sge AB
+
+15 Sge AB is a binary system first identified by Crepp et al. (2012). The primary component, 15 Sge A, is a G0V dwarf star imaged directly by Liu et al. (2002), located at a dis-tance of 17 .77 ± 0.014 pc (Gaia Collaboration et al. 2023). The star shows a mild metal enrichment with a metallicity of [Fe /H] = 0.05 ± 0.07 dex, an estimated age of 2 .5 ± 1.8 Gyr, an e ff ective temperature of Teff = 5883 ± 59 K, and a mass of 1.08 ± 0.04 M ⊙ (Crepp et al. 2012). An alternative stellar mass estimate of 0 .960 M ⊙ has also been reported by Kirkpatrick et al. (2024). The secondary component, 15 Sge B, is an L4 dwarf or-biting at an angular separation of 1 .03 ′′ (18 .3+0.4 
+
+> −0.5
+
+AU) (Crepp et al. 2012), unresolved in WISE imaging. The companion has an e ff ective temperature of T eff = 1533 ± 88 K (Kirkpatrick et al. 2021b) and a dynamical mass of 68 .7+2.4 
+
+> −3.1
+
+MJup . Its orbit is ec-centric ( e = 0.50 +0.01 
+
+> −0.01
+
+), with an orbital period of about 73.3 yr around the host star (Crepp et al. 2012). 
+
+> 54 Psc AB
+
+54 Psc (AB) is a binary system with an estimated age of 7 ±3 Gyr (Scholz et al. 2003), composed of a K0.5V primary, 54 Psc A (HD 3651), located at a distance of 11 .11 ± 0.048 pc (Gaia Col-laboration et al. 2023), a mass of 0 .900 ± 0.111 M ⊙ (Kirkpatrick et al. 2024), an e ff ective temperature of 5 203 ±23 K, and a metal-licity of 0 .14 ± 0.02 dex (Soubiran et al. 2022). The second component, 54 Psc B (HD 3651 B), is aT7 .5 ± 0.5 spectral-type BD sharing a common proper mo-tion with its host star and located at a projected separation of 476 ± 6 AU. This cold companion has an estimated mass of  
+
+> Article number, page 17 of 21 A&A proofs: manuscript no. aa58411-25
+
+0.051 ± 0.014 M ⊙ and an e ff ective temperature of 810 ± 50 K (Scholz et al. 2003). It is undetectable in WISE observations due to its angular proximity to the primary component. 
+
+> HN Peg AB
+
+HN Peg A is a G0V dwarf located at 18.13 pc (Gaia Collaboration et al. 2023). Its mass is estimated to be 1.080 ± 0.140 M ⊙ (Kirkpatrick et al. 2024) and its atmo-spheric parameters are T eff = 5939 ± 21 K with a metallicity of [Fe /H] = −0.06 ± 0.02 dex (Soubiran et al. 2022). HN Peg A forms a binary system with the BD HN Peg B, which has a spec-tral type of T2.5 and is located at a projected separation of ap-proximately 795 ± 15 AU. The mass of HN Peg B is estimated to be 0 .021 ± 0.009 M ⊙ (Scholz et al. 2003), and its e ff ective tem-perature is 1043 ± 23 K (Kirkpatrick et al. 2021b). The system’s age is about 0 .3 ± 0.2 Gyr (Scholz et al. 2003). Considering its brightness and proper motion, HN Peg B would be readily re-trieved as a co-moving companion were it not for the proximity of its host star (see Figure 4). 
+
+> GJ 229 AB
+
+GJ 229 is an M1.5V star located at 5.76 pc (Gaia Collabora-tion et al. 2023), with a mass of 0 .579 ± 0.007 M ⊙ , an e ff ec-tive temperature of 3738 ± 101 K, and a metallicity of [Fe /H] 
+
+= −0.07 ± 0.13 dex (Antoniadis-Karnavas et al. 2024). The star has a BD companion detected through direct imaging (Naka-jima et al. 1995), with an estimated mass of 71 .4 ± 0.6 M Jup ,a separation of 33 AU (Brandt et al. 2021), and a temperature of 927 ± 77 K (Kirkpatrick et al. 2021b). Recently, analyses con-ducted in Xuan et al. (2024) concluded that GJ 229 AB is a bi-nary system. At a projected separation of ∼7′′ , the system would be barely resolved by WISE and, at the contrast ratio considered, is undetected. 
+
+> HD 182488 AB
+
+HD 182488 is a dwarf star of spectral type K0V C, with a mass of 0 .940 ± 0.220 M ⊙ (Kirkpatrick et al. 2024), and 0.93 ± 0.03 M ⊙ (Feng et al. 2022), an e ff ective temperature of Teff = 5405 ± 15 K, a metallicity of 0 .19 ± 0.02 dex (Soubi-ran et al. 2022), and located at 15.607 pc (Gaia Collaboration et al. 2023). This star, GJ 758 (HD 182488), hosts a cold com-panion, HD 182488 B, a T9 BD, whose mass is estimated at 38 .0±0.8 M Jup (Brandt et al. 2021) and temperature at 581 ±88 K (Kirkpatrick et al. 2021b). The projected separation between the primary and its companion is 29 .7+4.2 
+
+> −5.3
+
+AU (Brandt et al. 2021). The system is 7 .5+1.8 
+
+> −1.4
+
+Gyr old (Brandt et al. 2021). At a projected separation of ∼2′′ , the system is not resolved by the WISE imag-ing. 
+
+> SCR J1845-6357 AB
+
+SCR 1845 −6357 is a nearby binary system located at a distance of 4 .005 ± 0.002 pc (Gaia Collaboration et al. 2023). The pri-mary component, discovered in 2004 in the SuperCOSMOS sur-vey (Hambly et al. 2004), is an M8.5V dwarf. Its mass is esti-mated at 0 .087 ± 0.009 M ⊙ (Kirkpatrick et al. 2024), with an eff ective temperature of 2600 K(Kasper et al. 2007). The secondary component, SCR 1845B, is a T6 (Biller et al. 2006; Kasper et al. 2007) at a projected separation from the host star of only 1 .170 ′′ ± 0.003, corresponding to about 4.5 AU. At such a small angular distance, the system is unresolved in 
+
+WISE imaging. Evolutionary models suggest that SCR 1845B has a mass between 40 and 50 M Jup , with an estimated age of 1.8–3.1 Gyr (Kasper et al. 2007). Its e ff ective temperature is 969 ± 88 K (Kirkpatrick et al. 2021b). 
+
+> WISE J072003.20-084651.2 AB
+
+WISE J072003.20 −084651.2 is a binary system composed of a primary star, WISE J072003.20 −084651.2 A, classified as an M9.5V dwarf, located at a distance of 6 .80 +0.05  
+
+> −0.06
+
+pc (Dupuy et al. 2019). The primary has a mass of 0 .095 ± 0.006 M ⊙ (Dupuy et al. 2019; Kirkpatrick et al. 2024) and an e ff ective temper-ature of Teff ≈ 2100 K (Huang et al. 2025). The companion, WISE J072003.20 −084651.2 B, is a T5.5 BD with a mass of 66 ±4 M Jup , detected at a projected separation of 2 .173 +0.028  
+
+> −0.029
+
+AU, corresponding to an angular separation of approximately 0 .32 ′′ 
+
+(Dupuy et al. 2019). The system remains unresolved in WISE imaging due to its tight separation. 
+
+Appendix B: Recovery rate at small separation 
+
+The search for co-moving companions is hampered, at small sep-arations, by the modest resolution (FWHM ∼ 6′′ at W1 and W2) of WISE and the bright point-spread function of host stars. The fallo ff in the probability of detecting a companion of a given brightness at a given separation around a host star can be deter-mined empirically. One can reasonably assume that faint sources are intrinsically isotropically distributed around bright stars. Al-though this is not true on large scales (e.g., galactic plane versus poles), it is a valid approximation at the degree scale. We compiled the CatWISE catalogue for representative lines of sight uniformly distributed over the entire celestial sphere. For magnitudes ranging from W2 = 4 to 10 .5, in bins of 0.25 mag, we counted the number of faint sources in annuli of constant area. We then compiled the number of faint background objects at magnitudes of W2 = 14, 15, 16, and 17, representative of sub-stellar companions. Figure A.1 illustrates the fallo ff of recovery rates close to central stars representative of bright, median, and faint targets in our sample. The number of sources is flat at large separations and is nor-malised to the mean counts at separations of 150 to 300 ′′ . The density of sources falls to half the background value around a separation of ∼ 70 ′′ for the W2 = 17 mag bin. The distribution is well fitted with a density ρ modeled as : 
+
+ρ(r) = 1 − e−0.5r2/r20 (B.1) where r0 is the fallo ff scale and r the angular separation be-tween the central object and the background sources. The r0
+
+value is determined for relevant brightnesses for our stellar sam-ple and companions. The low density of brighter ( W2 = 10 − 13) background objects does not allow for the determination of r0 at these magnitudes; we use the values for W2 = 14 for all brighter companions. This leads to a slightly pessimistic recovery rate for close-in L dwarfs (typically 30 − 50 ′′ ). Also, the small number of stars with W2 < 4 does not allow for a direct determination of the recovery rate for the brightest stars in our sample. We use the recovery rate for W2 = 4 for all brighter stars, which tends to slightly overestimate the recovery rate at close-in separations around the few A and F stars in the solar vicinity (65 stars with 
+
+W2 < 3.5). 
+
+> Article number, page 18 of 21
+
+Ouedraogo et al.: Population of Distant Substellar Companions 0 100 200 300 400 500                          
+
+> Separation (arcsec)
+> 0.0
+> 0.2
+> 0.4
+> 0.6
+> 0.8
+> 1.0
+> 1.2
+> Relative source density
+> Primary W2 = 3.75 4.25
+> Background W2 mag
+> W2 bg = 12.5 13.5 = 44.7
+> W2 bg = 13.5 14.5 = 45.0
+> W2 bg = 14.5 15.5 = 46.8
+> W2 bg = 15.5 16.5 = 55.4
+> W2 bg = 16.5 17.5 = 85.2 050 100 150 200 250 300
+> Separation (arcsec)
+> 0.0
+> 0.2
+> 0.4
+> 0.6
+> 0.8
+> 1.0
+> 1.2
+> Relative source density
+> Primary W2 = 6.75 7.25
+> Background W2 mag
+> W2 bg = 12.5 13.5 = 24.2
+> W2 bg = 13.5 14.5 = 23.6
+> W2 bg = 14.5 15.5 = 25.1
+> W2 bg = 15.5 16.5 = 32.5
+> W2 bg = 16.5 17.5 = 42.1 020 40 60 80 100
+> Separation (arcsec)
+> 0.0
+> 0.2
+> 0.4
+> 0.6
+> 0.8
+> 1.0
+> 1.2
+> Relative source density
+> Primary W2 = 9.75 10.25
+> Background W2 mag
+> W2 bg = 13.5 14.5 = 2.5
+> W2 bg = 14.5 15.5 = 2.8
+> W2 bg = 15.5 16.5 = 7.6
+> W2 bg = 16.5 17.5 = 13.6
+
+Fig. A.1: Mean background source density as a function of angular distance to W2 = 4, 7, 10 stars in CatWISE, corresponding roughly to the 10 th , 50 th and 90 th percentile of host stars in our sample. As one would expect, the decline for fainter sources (W2=17) happens at larger angular separation to the central object. The decrease is reasonably well parametrized with a Gaussian fallo ff (dashed lines). In the statistical analysis, values below 0.25 are set to zero as the companion would be embedded in the host star’s PSF and challenging to detect without PSF subtraction. We note an increase in visual binaries for brighter companions (W2 = 13 .5 − 14 .5 and 14 .5 − 15 .5) around the fainter hosts (left panel). The most plausible explanation being that these are simply physically associated pairs, breaking the assumption of a radially homogeneous distribution of background faint objects. 
+
+Appendix C: Table of recovered companion properties 
+
+This table compiles all measured parameters for the recovered companions, along with several key properties of the host stars, including their spectral type, the total initial mass of each sys-tem, and the parallax. 
+
+Appendix D: Representative false positives 
+
+All candidates were examined visually in the per-epoch stacks compiled by Meisner et al. (2017) 9, using the tile index file 10 .False positives were found be ghosting and di ff raction spikes that are co-moving with the star. As the ghosting pattern and di ff rac-tion spike properties are wavelength-dependent, some features were present in W2 and absent in W1 (or present elsewhere in the frame), leading to very red W2 − W1 colours and co-moving properties (ghosting and spikes ‘follow’ the host star). We exam-ined both the original frames for obvious positional match with di ff raction patterns (e.g., a candidate around UPMJ0726-3033 in Figure D.1). Also, as the WISE spacecraft scanned regions of the sky every six months with a sky-plane orientation flipped by ∼180 ◦ in detector space. By constructing a median ‘odd’ and ‘even’ visit frame, one can largely subtract the science scene and see if ghost patterns match a tentative candidate (e.g., a candidate around π Men in Figure D.1). 
+
+Appendix E: Projection Effect in the MCMC Framework 
+
+The population model describes the true three-dimensional (3D) separation r of binary companions as a power law, 
+
+P3D (r | β) = (β + 1) rβ
+
+rβ+1max − rβ+1min 
+
+, r ∈ [rmin , rmax ], (E.1)  
+
+> 9
+
+https: // unwise.me / 
+
+> 10
+
+https://portal.nersc.gov/project/cosmo/temp/ ameisner/neo8/tr_neo8_index.fits 
+
+while observations only yield the projected (on-sky) separation 
+
+ρ. For a randomly oriented binary with true separation r, the pro-jected separation is ρ = r sin φ, where cos φ is uniformly dis-tributed on [ −1, 1]. A change of variables gives the projection kernel 
+
+P(ρ | r) = ρ
+
+r pr2 − ρ2 , 0 ≤ ρ ≤ r. (E.2) This kernel has an expectation value ⟨ρ⟩ = (π/ 4) r ≈ 0.785 r,peaks near ρ ≈ r, and has a tail towards small ρ corresponding to systems viewed nearly along the line of sight. 
+
+Appendix E.1: Projected separation PDF 
+
+The observed projected-separation probability density function (PDF) is obtained by marginalising the 3D distribution over the projection kernel: 
+
+Pproj (ρ | β) =
+
+Z rmax 
+
+> ρ
+
+P3D (r | β) ρ
+
+r pr2 − ρ2 dr, (E.3) where the lower integration limit is ρ because ρ ≤ r by construc-tion. 
+
+Appendix E.2: Discretisation as a matrix–vector product 
+
+Rather than evaluating Eq. (E.3) numerically at every MCMC step, we pre-compute a kernel matrix K of dimension NK × NK
+
+(with NK = 300) on a logarithmically spaced grid. We define bin edges {rlo  
+
+> j
+
+, rhi  
+
+> j
+
+}NK 
+
+> j=1
+
+for the 3D separation and grid points {ρi}NK
+
+> i=1
+
+for the projected separation, both spanning [ rmin , rmax ]. Using the analytic antiderivative 
+
+Z ρ
+
+r pr2 − ρ2 dr = − arcsin 
+
+ ρ
+
+r
+
+
+
++ C, (E.4) 
+
+Article number, page 19 of 21 A&A proofs: manuscript no. aa58411-25 
+
+Table C.1: Parameters of recovered systems with a cool companion 
+
+Name SpType a Mass b Plx c Sep d Prob d W1e W2e
+
+[M Jup ] [mas] [au] [%] [mag] [mag] BD +06 2986 K8V 614 52.50 ±0.023 ULAS J150457.65 +053800.8 T6 pec 41.07 ⋆ 1287 100 16.2 ±0.03 14.3 ±0.01 BD +13 2618 AB M1.5V 673 86.9 ±0.12 BD +13 2618 C T8 12.5 +3.2 
+
+> −2.8
+
+1175 100 16.37 ±0.03 13.89 ±0.01 BD +21 2486 AB K7V 1087 50.80 ±0.02 1
+
+2MASS J13054106 +2046394 L5 74.45 ±0.24 2 10075 100 12.56 ±0.01 12.191 ±0.008 G 204-39 M3V 415 71.49 ±0.01 2MASS J17580545 +4633099 T6.5 28.13 ±7.04 2 2774 100 15.62 ±0.01 13.83 ±0.01 G 48-43 M3.5V 239 51.002 ±0.02 ULAS J095047.28 +011734.3 T8 47 +6.4 
+
+> −7.8
+
+1012 100 17.81 ±0.09 14.49 ±0.01 Gl 570 ABC K4V +M1.5 V 613 169.88 ±0.06 Gl 570 D T7 36.2 +5.8 
+
+> −5.8
+
+1532 100 14.85 ±0.01 12.13 ±0.007 HD 170573 K4.5V 806 52.29 ±0.02 WISE J183207.99-540942.0 T7 35.19 ⋆ 11852 99.99 16.57 ±0.08 14.437 ±0.03 HD 65486 K4V 775 54.15 ±0.01 2MASS J07580132-2538587 T4.5 28.94 ±8.8 2 1716 100 15.77 ±0.03 13.86 ±0.01 HD 126053 G1.5V 1068 57.27 ±0.03 ULAS J142320.79 +011638.2 T8 39 +7.1 
+
+> −9.1
+
+2722 100 17.88 ±0.11 14.77 ±0.02 L 34-26 M3Ve 395 91.82 ±0.01 L 34-26 B T9 8±23 6512 100 17.08 ±0.03 14.61 ±0.01 LP 738-14 M4.5V 159 55.02 ±0.02 LP 738-14 B T5.5 72 +4 
+
+> −74
+
+1226 100 16.20 ±0.03 14.16 ±0.01 LP 374-39 M5V 156 61.65 ±0.06 2MASS J11225550 +2550250 T6 16.58 ±4.56 2 4131 100 16.26 ±0.042 14.10 ±0.02 Ross 19 M3.5V 348 57.32 ±0.03 Ross 19 B T9.5 5 15–40 5, 24.10 ⋆ 9902 99.99 18.61 ±0.18 15.81 ±0.05 
+
+ξ UMa AB F8.5V +G2V 4336 114.48 ±0.43 6
+
+WISE J111838.70 +312537.9 T8.5 31.9 +6.4 
+
+> −8.3
+
+4449 100 16.84 ±0.07 13.35 ±0.01 Wolf 940 M4V 299 80.73 ±0.05 Wolf 940 B T8.5 28.2 +2.6 
+
+> −2.7
+
+389 100 16.51 ±0.03 14.37 ±0.019 Wolf 1130 AB M1 +wd 8090 60.29 ±0.02 WISE J200520.38 +542433.9 sdT8 44.9 3118 100 17.15 ±0.03 15.14 ±0.02 
+
+η CrB AB F9V +G2V 2204 55.98 ±0.78 7
+
+2MASS J15232263 +3014562 L8 44 ±6.46 2 3549 100 13.5 ±0.01 13.01 ±0.01 
+
+Notes. The mass of the host star corresponds to the total mass of the system and is also taken from a Kirkpatrick et al. (2024); companion mass is from b Zhang et al. (2021a); c Gaia Collaboration et al. (2023); d This work; e Marocco et al. (2021); 1 Gaia Collaboration et al. (2021); 2 Sanghi et al. (2023); 3 Zhang et al. (2025); 4 Deacon et al. (2012); 5 Schneider et al. (2021); 6 Gaia Collaboration et al. (2018); 7 van Leeuwen (2007). The companion masses (M Jup ) were derived following the procedure described in Sect. 4.3. The stellar ages adopted to constrain the masses of Ross 19, HD 170573, and BD +06 2986 are 7.49, 2.95, and 3.46 Gyr, respectively. The determination of these parameters follows the analysis presented in Sects. 2.2.2 and 4.3. 
+
+the matrix elements are computed exactly: 
+
+Ki j =
+
+
+
+arcsin 
+
+ ρi
+
+rlo 
+
+> j
+
+ − arcsin 
+
+ ρi
+
+rhi 
+
+> j
+
+ , ρi < rlo  
+
+> j
+
+,π
+
+2 − arcsin 
+
+ ρi
+
+rhi 
+
+> j
+
+ , rlo  
+
+> j
+
+≤ ρi ≤ rhi  
+
+> j
+
+,
+
+0, ρi > rhi  
+
+> j
+
+.
+
+(E.5) Because K depends only on geometry, it is independent of β and is computed once at startup. At each MCMC step the projected PDF on the grid is obtained via a matrix–vector product, 
+
+Pproj = K P3D (β), (E.6) where [ P3D ] j = P3D (r j | β). Values at arbitrary ρ are then ob-tained by interpolation in log ρ.
+
+Appendix E.3: Role in the likelihood 
+
+The projection enters both terms of the log-likelihood, ln L =
+
+ln Lcount + ln Lpos .
+
+Poisson count term. Synthetic companions are drawn with 3D separations r ∼ rβ and projected via ρ = r sin φ (with cos φ ∼ U (−1, 1)) before evaluating the detection probability 
+
+π(ρ, m). The expected number of detections is 
+
+Nmodel det = N⋆ f ⟨π⟩, ⟨π⟩ = 1
+
+NMC 
+
+> NMC
+
+X
+
+> k=1
+
+πρproj  
+
+> k
+
+, mk
+
+ , (E.7) where NMC is the number of Monte Carlo draws, leading to ln Lcount = ln Poisson Nobs det Nmodel det 
+
+ . (E.8) 
+
+Article number, page 20 of 21 Ouedraogo et al.: Population of Distant Substellar Companions -4 -3 -2 -1 0 +1 +2 +3 +4                   
+
+> [arcmin]
+> -4
+> -3
+> -2
+> -1
+> 0
+> +1
+> +2
+> +3
+> +4
+> [arcmin]  Men
+> N
+> E1
+> Sample visit
+> -4 -3 -2 -1 0+1 +2 +3 +4
+> [arcmin]
+> Men
+> Odd Even visits
+> Men -2 -1 0+1 +2
+> [arcmin]
+> -2
+> -1
+> 0
+> +1
+> +2
+> [arcmin]
+> UPMJ0726-3033
+> N
+> E1
+> Sample visit
+> -2 -1 0+1 +2
+> [arcmin]
+> UPMJ0726-3033
+> Odd Even visits
+> UPMJ0726-3033
+
+Fig. D.1: WISE W2 cutouts of two false-positive candidates, each shown as a sample individual visit (left) and the di ff erence between median odd’ and even’ visit frames (right). Red circles mark the host-star position (dashed) and the candidate position (solid). Top: A candidate around π Men is identified as a ghost-ing artefact: the odd −even frame shows a clear residual at the candidate location, consistent with a ghost pattern that follows the host star and reverses in detector space between visit sets. 
+
+Bottom: A candidate around UPM J0726-3033 is identified as a di ff raction spike of the host star, visible as a point-source-like feature in the sample visit at a position consistent with the known spike geometry of the WISE PSF. 
+
+Position term. For each detected companion at observed mass 
+
+mi and projected separation ρi, the position likelihood is ln Lpos =
+
+> Ndet
+
+X
+
+> i=1
+
+ln 
+
+Z
+
+P(m | α) Pproj (ρ | β) π(m, ρ ) d m dρ − Ndet ln ⟨π⟩,
+
+(E.9) where Pproj (ρ | β) is the projected PDF from Eq. (E.6), not the raw 3D power law of Eq. (E.1). The integral for each companion is evaluated numerically on a small grid centred on its observed (mi, ρ i), with pre-computed detection probabilities. 
+
+Appendix E.4: Summary 
+
+The projection e ff ect is accounted for in two complementary ways: 1. Monte Carlo projection (ρ = r sin φ) for the count /normalisation term (Eq. E.7). 2. Analytic kernel matrix K (Eq. E.5) for the per-companion position term, reducing each MCMC evaluation to an O(N2 
+
+> K
+
+)matrix–vector product plus interpolation. This approach ensures that the 3D-to-projected mapping is han-dled consistently throughout the inference, without introducing additional free parameters. 
+
+Article number, page 21 of 21
