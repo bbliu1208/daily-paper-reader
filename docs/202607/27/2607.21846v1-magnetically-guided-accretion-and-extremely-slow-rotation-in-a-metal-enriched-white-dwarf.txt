@@ -1,0 +1,302 @@
+Title: Magnetically guided accretion and extremely slow rotation in a metal-enriched white dwarf
+
+URL Source: https://arxiv.org/pdf/2607.21846v1
+
+Published Time: Mon, 27 Jul 2026 00:14:23 GMT
+
+Number of Pages: 9
+
+Markdown Content:
+Astronomy & Astrophysics manuscript no. WD1532 ©ESO 2026 July 27, 2026 
+
+# Magnetically guided accretion and extremely slow rotation in a metal-enriched white dwarf 
+
+S. Bagnulo 1, M. A. Stroet 1, 2, C. P. Folsom 3, M. A. Hollands 4, J. D. Landstreet 5, 1, and G. Ramsay 1 
+
+> 1
+
+Armagh Observatory & Planetarium, College Hill, Armagh BT61 9DG, UK  
+
+> 2
+
+School of Mathematics and Physics, Queen’s University Belfast, University Rd, Belfast BT7 1NN, UK  
+
+> 3
+
+Tartu Observatory, University of Tartu, Observatooriumi 1, Töravere, 61602, Estonia  
+
+> 4
+
+Department of Physics, University of Warwick, Coventry CV4 7AL, UK  
+
+> 5
+
+Dept. of Physics & Astronomy, University of Western Ontario, London, Ontario N6A 3K7, Canada Received April 30, 2026; accepted July 22, 2026 
+
+ABSTRACT 
+
+White dwarfs that show atmospheric metal enrichment o ff er a direct window into the bulk composition of exoplanetary material and provide some of the most direct constraints on the building blocks of rocky exoplanetary systems. Recent work has suggested that magnetic fields may influence how this material is accreted, potentially channelling debris along field lines and retaining it near magnetic poles rather than allowing it to be redistributed uniformly across the stellar surface. Here we report the discovery of photometric, spectroscopic, and spectropolarimetric variability in the magnetic DZ white dwarf WD 1532 +129, revealing a rotation period of about 289 d, by far the longest yet directly measured for any degenerate star. The observed period may result from the combined e ff ect of angular-momentum loss during the evolution leading to the white dwarf stage and an unusually slowly rotating progenitor, perhaps a magnetic Ap star. The white dwarf exhibits surface abundance inhomogeneities, with metals concentrated near both magnetic poles, and the observed modulation is consistent with localised metal-rich regions aligned with the magnetic geometry. WD 1532 +129 is the third of the four known magnetic DZ white dwarfs within 20 pc to show evidence for polar metal enhancement, indicating that magnetically guided inhomogeneities are a common property of magnetic metal-enriched white dwarfs. 
+
+Key words. white dwarfs — stars: magnetic field — stars: individual: WD 1532 +129 — stars: rotation 
+
+1. Introduction 
+
+White dwarfs frequently bear the hallmarks of their long-gone planetary systems, including photospheric traces of heavy ele-ments accreted from circumstellar debris disks (Zuckerman et al. 2003; Koester et al. 2014). These metal-enriched white dwarfs provide a direct window into the bulk composition of exoplan-etary material, o ff ering constraints on the building blocks of rocky planetary systems and their dynamical evolution (Zuck-erman et al. 2003; Farihi et al. 2009). In most cool white dwarfs, effi cient surface convection is expected to homogenise freshly accreted metals over the stellar photosphere, producing a chem-ically uniform surface distribution on timescales much shorter than those for accretion and gravitational settling (Cunningham et al. 2021). However, recent observations challenge this expec-tation. Magnetic fields are known to play a central role in stellar surface chemistry and structure, and may similarly govern how accreted planetary material is distributed across the surface of white dwarfs. In particular, a weak magnetic field can truncate a gaseous accretion disk and guide infalling plasma along field lines toward the magnetic poles (Metzger et al. 2012; Farihi et al. 2018). The first clear example of such magnetically chan-nelled accretion was identified in the nearby DZ white dwarf WD 0816–310, whose ∼ 140 kG field confines metals to a persis-tent “scar” near a magnetic pole, producing synchronous varia-tions in both the magnetic field and metal line strength as the star rotates (Bagnulo et al. 2024a). A second object, WD 2138 −332, shows the same behaviour: a clearly variable ∼ 60 kG dipolar field, periodic changes in metal line strength, and correlated vari-ation of the longitudinal field, demonstrating that even a modest field can shape the surface pattern of accreted material (Bagnulo et al. 2024b). These objects are two of the four magnetic DZ white dwarfs in the 20 pc volume around the Sun. The discovery of these two systems established a new physi-cal picture for metal accretion onto white dwarfs, in which even weak magnetism can channel ionised debris streams onto small surface regions. Despite the recognition that magnetic fields can shape the accretion flow of planetary debris, the overall fre-quency and physical consequences of magnetically channelled accretion remain poorly constrained. Surface inhomogeneities can only be revealed through rotational modulation, providing a probe of both the magnetic geometry and the distribution of accreted material. However, only a few metal-enriched white dwarfs with measurable magnetic fields have been monitored in su ffi cient detail to test for abundance inhomogeneities, and even fewer have been observed with phase-resolved spectropolarime-try. Rotational modulation also provides one of the few direct ways to measure the spin periods of these stars, and thus to test whether magnetic, metal-enriched white dwarfs show unusual rotational behaviour. Establishing whether the surface distribu-tion of metals is commonly linked to magnetic geometry, and determining how magnetism alters the transport and retention of heavy elements within the atmosphere, are essential next steps. In this work, we present new spectropolarimetric observations of a third cool, weakly magnetic DZ white dwarf within 20 pc, combined with archival photometry. Our analysis allows us to 
+
+Article number, page 1 of 9 arXiv:2607.21846v1 [astro-ph.SR] 23 Jul 2026 A&A proofs: manuscript no. WD1532 
+
+investigate both the surface distribution of accreted metals and the rotational behaviour of this system. 
+
+2. Observations 
+
+> 2.1. Spectropolarimetry
+
+A spectropolarimetric survey of nearby white dwarfs found that four of the 13 DZ /DZA white dwarfs within the local 20 pc volume have a magnetic field: WD 0816 −310, WD 1009 −184, WD 1532 +129 and WD 2138 −332 (Bagnulo & Landstreet 2019). After the discovery of absorption line strength variabil-ity due to the presence of metal abundance patches at the sur-face of the DZ stars WD 0816 −310 (Bagnulo et al. 2024a) and WD 2138 −332 (Bagnulo et al. 2024b), we monitored a third known magnetic DZ white dwarf of the local 20 pc volume, WD 1532 +129. Its e ff ective temperature, mass, and cooling age are 5796 K, 0 .63 M⊙, and 4.0 Gyr, respectively (O’Brien et al. 2024). Observations were obtained with the FORS2 instrument (Appenzeller et al. 1998) of the ESO VLT, using the 1200B grism which covers the wavelength range 3700–5200 Å. We used a 1 ′′ slit width, for a resolving power of 1400. We obtained new observations at five di ff erent epochs in 2025 and 2026. Each observing series consisted of two pairs of exposures. The same star had been observed twice in 2019 with FORS2 using the 1200B grism (again with a 1 ′′ slit width), and once in 2019 with ISIS, using the R600B grating (Bagnulo & Landstreet 2019). Data reduction was carried out with the FORS2 pipeline (Izzo et al. 2010) to obtain 2-dimensional wavelength-calibrated frames, from which beams were extracted using standard proce-dures within IRAF. Beam recombination was performed with simple F ortran routines. The intensity spectra were divided by the intensity spectrum of the white dwarf EC 20173-3036, a featureless He-rich white dwarf that was observed with the same setting both on 2019-06-19 and on 2025-10-29. Before being used for the normalisation, the two Stokes I spectra of EC 20173-3036 were smoothed with a 10-pixel boxcar. The mean longitudinal field ⟨Bz⟩ was measured at all epochs with the technique used by Bagnulo & Landstreet (2019). As discussed by Landstreet et al. (2014), ⟨Bz⟩ estimates depend on the instru-ment used and on the wavelength interval adopted for the mea-surement, therefore the uncertainties of our measurements are meaningful only in the context of internal consistency. ⟨Bz⟩ was determined from the ranges 4196 to 4254 Å and 4359 to 4405 Å. In all cases we adopted an e ff ective Landé factor geff = 1.25. The observing log is given in Table 1 and includes the measurements previously published, which were re-reduced to adopt exactly the same wavelength intervals specified above. We also calculated equivalent widths (EWs) spanning multi-ple (blended) spectral features. We used the wavelength ranges 4357–4421 Å and 4180–4335 Å, and also a wider window span-ning 4162–4466 Å (we avoided the range below 4100 Å, because the continuum level is quite uncertain). Results are given in Ta-ble A.1 of App. A. 
+
+> 2.2. Photometry
+
+It is known that some magnetic WDs exhibit photometric variability from which the rotational period may be inferred. WD 1532 +129 has been checked for variability with periods up to several days using TESS data, but no variation was detected (Hernandez et al. 2024). We therefore explored the possibility that photometric surveys with much slower cadence than TESS might reveal longer period variability, and retrieved data from three imaging photometric surveys. GOTO has sixteen 40 cm telescopes in both La Palma, Canaries, and Siding Spring, Aus-tralia and typically uses an L filter (400–700 nm) (Lyman et al. 2026); ATLAS has two 0.5 m telescopes in Hawaii, with iden-tical 0.5 m telescopes in Chile and South Africa (Tonry et al. 2018; Heinze et al. 2018) with observations made in the ‘c’ fil-ter (420–650 nm) and ‘o’ filter (560–820 nm); and ZTF has a 1.2 m and a 1.5 m telescope in Palomar, California, and uses g
+
+(409–552 nm), r (560–732 nm) and i (688–901 nm) filters (for a full description see Bellm et al. 2019). All three surveys have cadences of the order of one or a few days, and so are sensitive to variations with time scales of a few days or longer. The earli-est photometric data on WD 1532 +129 were obtained in ATLAS from August 2015, ZTF from March 2018, and in GOTO from Sept 2023. WD 1532 +129 has a significant proper motion (Gaia Collaboration 2023) that had to be taken into account when ex-tracting the forced photometry. ATLAS data were filtered to re-move bad data points using the filtering recommended on the ATLAS website. 
+
+3. Analysis of the stellar variability 
+
+Multi-epoch intensity and circular polarisation spectra of WD 1532 +129 obtained with FORS2 are shown in Fig. 1. The strong Ca i line shows variable circular polarisation profiles, and nearly constant intensity profiles, and so do the even deeper Ca ii H&K lines (not shown in the figure). Weaker Fe i lines show variability both in intensity and in circular polarisation. These line strength changes are more subtle than those observed in WD 0816 −310 and in WD 2138 −332 (Bagnulo et al. 2024a,b). However, the observed variability exceeds the noise. Magnetic fields are known to increase the equivalent widths of spectral lines, thereby mimicking enhanced chemical abun-dance (Babcock 1949; Stift & Leone 2003). We performed nu-merical experiments with the Zeeman code (Landstreet 1988; Landstreet et al. 2017), using the same He-rich atmosphere model adopted by Hollands et al. (2022) for their spectral anal-ysis of WD 1532 +129. We considered simple magnetic config-urations with surface field strengths ranging from 0 to 300 kG. We found that the observed variations in line shape and equiv-alent width remain far larger than can be explained by rotation-ally modulated changes in magnetic intensification. This con-clusion holds even when comparing a zero-field model with a model field strength of 300 kG; in the latter case, magnetic split-ting would already begin to be detectable at the spectral resolu-tion of FORS2. In App. B we also consider and rule out the hy-pothesis that the observed changes in the line equivalent width may be an artefact due to scattered light, and we show through radiative transfer calculations that metal abundance changes of the order of 0.2 dex can explain the observed variability of the line strength of the weaker lines, while keeping the profile of the strongest lines nearly constant. In the following, the line strength variability will be interpreted in terms of a non-homogeneous distribution of the metals at the surface of the star. Our measurements reveal that the longitudinal field of WD 1532 +129 reverses sign (see Table 1), but the general con-sistency between the four spectra obtained from April 3 to 27 2025 suggests that the stellar rotation period may be either roughly a multiple of 1 day, or at least several months long. Remarkably, period analyses of the ZTF, ATLAS and GOTO photometry all show periodic variability with a period of approx-imately 144 d. To evaluate whether this photometric variability 
+
+> Article number, page 2 of 9 S. Bagnulo et al.: Magnetically guided accretion and extremely slow rotation in a metal-enriched white dwarf
+
+Table 1: Observing log and longitudinal magnetic field measurements of WD 1532 +129. INSTR. Grism / MJD DATE UT Exp S/N ⟨Bz⟩ REF. Grating yyyy-mm-dd hh:mm (s) Å−1 (kG) FORS2 1200B 58560.271 2019-03-18 06:30 4 × 675 230 −5.0 ± 1.4 Bagnulo & Landstreet (2019) ISIS R600B 58592.106 2019-04-19 02:33 8 × 600 55 −18 .8 ± 7.3 Bagnulo & Landstreet (2019) FORS2 1200B 58653.101 2019-06-19 02:26 4 × 660 225 −23 .1 ± 2.1 Bagnulo & Landstreet (2019) FORS2 1200B 60768.353 2025-04-03 08:28 4 × 740 285 +24 .1 ± 1.0 this work FORS2 1200B 60770.347 2025-04-05 08:19 4 × 740 295 +24 .4 ± 0.9 this work FORS2 1200B 60788.301 2025-04-23 07:13 4 × 740 250 +26 .4 ± 1.2 this work FORS2 1200B 60792.324 2025-04-27 07:47 4 × 650 280 +25 .6 ± 0.9 this work FORS2 1200B 61148.183 2026-04-18 04:23 4 × 676 270 +1.6 ± 1.1 this work       
+
+> Notes. The ⟨Bz⟩estimates were obtained from the wavelength ranges 4196–4254 Å and 4359–4405 Å, adopting geff =1.25.
+
+Fig. 1: Intensity I normalised by the continuum Ic, and reduced polarised spectra (Stokes V/I) of WD 1532 +129 obtained at four di ff erent epochs. The two right panels show an enlarged view of the two left panels. The red lines correspond to a time when the mean longitudinal magnetic field has a positive maximum ( ∼ 26 kG), and the star is viewed approximately magnetic-pole-on; the black lines correspond to epochs when the mean longitudinal field is nearly zero and the star is viewed approximately magnetic-equator-on; the blue lines correspond to an epoch when the negative magnetic pole is in the visible stellar hemisphere as the mean longitudinal field is negative ( ∼ − 23 kG). The shaded regions correspond to 1 σ uncertainties. Intensity spectra are displayed with the original ∼ 0.7 Å bin, while Stokes V/I, to reduce the noise, are rebinned at ∼ 1.4 Å. was due to systematic trends, we extracted ATLAS photome-try for three nearby comparison stars with G ∼ 16 within 2 ′ of WD 1532 +129, applying the same filtering criteria to their light curves. We found no evidence of significant periodic signals in any of the three comparison stars. WD 1532 +129 is a single WD according to Toonen et al. (2017), which suggests that periodic light variability is likely linked to stellar rotation. However, the 144 d period was found inconsistent with the observations of the mean longitudinal field (see Fig. C.2 in App. C). Since WD 1532 +129 reverses the sign of its observed longitudinal field, the two magnetic hemispheres must be seen at di ff erent rotational phases. In such a geometry, the photometric modulation may repeat twice per rotation, so that the dominant photometric period corresponds to one half of the true rotation period P, as observed in other magnetic white dwarfs such as WD 0009 +501 and WD 0041–102 (Hernandez et al. 2024). In fact, we found that adopting twice the dominant photometric period as the rotation period and fitting each of the six photometric light curves and three EW curves with a second-order harmonic model, 
+
+fi(t) = Ai + Bi sin( ωt) + Ci cos( ωt) + Di sin(2 ωt) + Ei cos(2 ωt) ,
+
+where ω = 2π/ P, and i labels the individual data series, while fitting the longitudinal field measurements with 
+
+⟨Bz⟩ (t) = A′ + B′ sin( ωt) + C′ cos( ωt),
+
+yielded a fully consistent fit with a best-fitting period P =
+
+288 .7 ± 0.9 days. All WD 1532 +129 light curves, EW curves, and the longitudinal-field curve are shown in Fig. 2, phased with a  
+
+> Article number, page 3 of 9 A&A proofs: manuscript no. WD1532
+
+rotational period of 288.7 d. The adopted zero-point, MJD 59047.566, corresponds to the minimum of the ZTF g-band light curve. The orange curves show the corresponding best-fitting models, while the shaded regions represent the 1 σ and 3 σ con-fidence intervals derived from 10 000 Monte Carlo realisations of the best-fitting parameters. We note that the use of a sinusoidal model for ⟨Bz⟩ is not an assumption that the field of WD 1532 +129 has a simple mor-phology. The mean longitudinal field is a disk-averaged observ-able and is therefore most sensitive to the lowest-order, large-scale components of the magnetic field. More complex compo-nents tend to cancel in the disk average. For example, the contri-bution of a linear quadrupolar component to ⟨Bz⟩ is much smaller than that of a comparable dipolar component (Schwarzschild 1950), and this conclusion is also valid for a planar quadrupole (Bagnulo et al. 1996). Thus, even a complex field will produce an approximately sinusoidal longitudinal-field curve dominated by the dipolar component. Strongly non-sinusoidal behaviour would require a higher-order component large enough to sur-vive disk averaging, in which case it would likely also leave de-tectable signatures in Stokes I, through magnetically split line profiles. 
+
+4. Magnetic field and metal abundance patches 
+
+To investigate the relationship between magnetic variability and line-strength variability, it is useful first to infer an approximate picture of the magnetic field geometry from the observations. The longitudinal magnetic field of WD 1532 +129 varies pe-riodically and reverses sign as the star rotates. Since the longitu-dinal field is primarily sensitive to the dipolar component of the magnetic field, the observed sign reversal implies that both mag-netic poles of the dipole become visible during a rotation cycle. The fact that the phased variation of ⟨Bz⟩ is nearly symmetric about ⟨Bz⟩ = 0 indicates either that the rotation axis is approxi-mately perpendicular to the line of sight (while the dipolar axis may be inclined by any angle β with respect to the rotation axis), or that the dipolar axis is nearly perpendicular to the rotation axis (while the rotation axis may be inclined by any angle i with respect to the line of sight). Because the maximum observed value of |⟨ Bz⟩| is approxi-mately 25 kG, the polar strength Bp of a dipolar field must be at least ∼ 80 kG. The absence of detectable Zeeman splitting in the low-resolution spectra implies that the mean field modu-lus is <∼ 300 kG, which in turn formally sets an upper limit of approximately 450 kG on Bp. Assuming a centred dipole and adopting, somewhat arbitrarily, i = 90 ◦ and β = 60 ◦, one ob-tains Bp ∼ 100 kG (see, e.g., Eq. 1 of Preston 1967, adopting a limb darkening coe ffi cient u = 0.5). For i = 90 ◦ and β = 30 ◦, the corresponding polar strength is about 160 kG (we recall that the expression for ⟨Bz⟩ is symmetric with respect to the interchange of i and β). Overall, these considerations suggest that it is plau-sible to assume dipolar field strength at the magnetic poles of order 100–150 kG. Stronger constraints could be obtained from high-resolution spectroscopy of the Fe i lines. The EWs of the Fe i lines vary with magnetic phase: the lines become deeper when either magnetic pole is close to the line of sight, indicating that the local abundance of Fe is enhanced in the polar regions relative to the magnetic equator, confirming that metals are more concentrated where the magnetic field lines are locally perpendicular to the stellar surface. WD 1532 +129 is the third DZ white dwarf in which metal abundance patches have been found to be associated with the 0.97        
+
+> 1.00
+> 1.03
+> ZTF g
+> 0.97
+> 1.00
+> 1.03
+> ZTF r
+> 0.97
+> 1.00
+> 1.03
+> ZTF i
+> 0.97
+> 1.00
+> 1.03
+> GOTO L
+> 0.97
+> 1.00
+> 1.03
+> Atlas c
+> 0.97
+> 1.00
+> 1.03
+> Atlas o
+> 16
+> 18
+> 20
+> EW 1 [Å]
+> 4357-4421
+> 50
+> 60
+> 70
+> EW 2 [Å]
+> 4180-4335
+> 70
+> 80
+> 90
+> EW 3 [Å]
+> 4162-4466
+> 0.2 0.0 0.2 0.4 0.6 0.8 1.0 1.2
+> Phase (P=288.70 days)
+> 25
+> 0
+> 25
+> Bz [kG]
+
+Fig. 2: From top to bottom: WD 1532 +129 photometry from ZTF, GOTO, and ATLAS; equivalent width measurements from FORS2 spectra; and mean longitudinal field values, all phased with a rotational period of 288.7 d and a zero-point of MJD 59047.566. Solid curves show the best-fit models, while orange shaded regions mark the 1 σ and 3 σ confidence intervals. In the bottom panel, the red point with a visible error bar is the ⟨Bz⟩
+
+estimate obtained with ISIS at the WHT. It was not included in the fit, but is fully consistent with the long period derived here. The error bars of the FORS2 equivalent width and ⟨Bz⟩ measure-ments are smaller than the symbols. The vertical lines delimit one complete rotational cycle. magnetic poles. The same phenomenon was previously discov-ered in two other magnetic DZ white dwarfs within the lo-
+
+> Article number, page 4 of 9 S. Bagnulo et al.: Magnetically guided accretion and extremely slow rotation in a metal-enriched white dwarf
+
+cal 20 pc volume: WD 0816–310 (Bagnulo et al. 2024a) and WD 2138–332 (Bagnulo et al. 2024b). The available photometric bands cover most of the flux emitted by WD 1532 +129, from ∼ 400 nm to beyond 900 nm. The light curves are approximately anti-correlated with the Fe i
+
+equivalent widths, so that the star is faintest near magnetic pole-on phases. All available light curves vary approximately in phase, implying that the variability is not caused by simple wavelength redistribution from blue to red and infrared bands. Instead, the total local surface flux appears to be lower near the magnetic poles than at the equator. The same behaviour was ob-served in WD 2138 −332 (Bagnulo et al. 2024b), and remains at odds with the expectation that the local surface flux of a mag-netic white dwarf should be approximately constant over the stellar surface. Although magnetic fields can suppress convec-tion and thereby modify the atmospheric structure, theoretical models show that suppressing convection does not significantly aff ect the global cooling rate, at least for white dwarfs with 
+
+Teff ≳ 5500 K (Tremblay et al. 2015). No photometric variability has so far been detected in WD 0816–310 (Farihi et al. 2024). The three DZ stars WD 0816–310, WD 1532 +129, and WD 2138–332 may be regarded as cooler, metal-polluted ana-logues of a number of DB /DAB white dwarfs that exhibit both magnetic variability and surface-composition inhomogeneities, such as, for instance, Feige 7, PG 0853 +164, the “two-faced” white dwarf ZTF J203349.8 +322901.1 (nicknamed Janus), and SDSS J091016.43 +210554.2 (Achilleos et al. 1992; Wesemael et al. 2001; Caiazzo et al. 2023; Moss et al. 2024). The recent work of Moss et al. (2025) confirms that these and other simi-lar objects form part of an emerging class of double-faced white dwarfs, in which the observed H /He line-strength variations are interpreted in terms of non-uniform surface composition, often associated with magnetic-field geometry. For Janus, Caiazzo et al. (2023) discussed several possible magnetic explanations for the observed H /He surface inhomo-geneity. First, the magnetic field may locally suppress convec-tion, allowing one region to preserve a hydrogen-rich layer while another is mixed and becomes helium-dominated. Secondly, the magnetic field may produce small di ff erences in temperature or pressure structure across the surface; because the onset of he-lium convection is very sensitive to the local atmospheric con-ditions, such di ff erences may be su ffi cient to produce di ff er-ent apparent H /He compositions on di ff erent parts of the star. Thirdly, magnetic pressure may contribute directly to horizontal chemical separation in a stratified atmosphere. Similarly, Moss et al. (2025) modelled several double-faced white dwarfs with hydrogen-rich polar caps and helium-rich equatorial regions, and argued that magnetism is likely to a ff ect the convective processes that would otherwise lead to a more homogeneous H /He distri-bution. These mechanisms for producing surface inhomogeneities generally rely on the fact that hydrogen, as a trace element, floats to the stellar surface. The situation in cool DZ white dwarfs is di ff erent. In these stars, the inhomogeneous species are not resid-ual elements involved in spectral evolution, but metals accreted from tidally disrupted planetary material (Jura 2003; Farihi et al. 2009). In the absence of a magnetic field, these metals are ex-pected to be mixed vertically throughout the convection zone, redistributed horizontally over the stellar surface, and eventu-ally depleted by gravitational settling (e.g. Koester 2009; Koester et al. 2014). For cool helium-rich atmospheres, theoretical calcu-lations predict e ffi cient horizontal homogenisation on a vertical di ff usion timescale (Cunningham et al. 2021). The same calcula-tions also suggest that a field of order 100 kG is not, by itself, suf-ficient to suppress convection completely in cool white-dwarf at-mospheres (Cunningham et al. 2021). This makes the persistence of metal-line strength patches in WD 1532 +129, WD 0816–310, and WD 2138–332, all of which have field strengths of order 100–200 kG, particularly significant. Since the close correlation between magnetic-field geome-try and metal-line strength strongly suggests a causal role for the magnetic field, Bagnulo et al. (2024a) proposed that the magnetic field may channel ionised accretion flows preferen-tially towards the magnetic poles, producing an intrinsically non-uniform deposition pattern. The field may also inhibit, or at least make anisotropic, the subsequent horizontal redistribution of ac-creted material. While it is known that weak fields can truncate an ionised gas disk and guide the accretion stream towards the surface near each magnetic pole (Metzger et al. 2012), a di ffi -culty with the channelling scenario is that cool DZ white dwarfs do not emit enough UV flux to ionise the accreting gas. However, Bagnulo et al. (2024a) argued that close to the white dwarf even a tiny initial population of ions would be forced to circle around the magnetic field lines. These ions would move at high veloc-ity relative to the neutral gas and could ionise additional atoms through collisions, triggering a rapid ionisation cascade. In this picture, once the inflowing gas becomes su ffi ciently ionised, it is naturally guided along the magnetic field lines and deposited preferentially near the magnetic poles. While this provides a plausible mechanism for producing metal-rich polar regions, the relative importance of magnetically channelled accretion, inhib-ited horizontal mixing, and local atmospheric-structure e ff ects remains uncertain. 
+
+5. Slow rotation 
+
+Using TESS data, Oliveira da Rosa et al. (2024) found median rotation periods of 3.4 h for confirmed magnetic white dwarfs and 1.9 h for the subset of single systems. Using both photo-metric and polarimetric data, Hernandez et al. (2024) reached a similar conclusion, while also drawing attention to a few objects with periods of several days. Both samples include, and probably over-represent, ultra-massive white dwarfs, which are likely fast-rotating merger products and may follow a di ff erent rotational evolution from single-star remnants such as WD 1532 +129. Re-stricting the comparison to average-mass white dwarfs, for in-stance those with M ≤ 0.75 M⊙, still yields predominantly short periods, with median values of about 4–5 h. Non-magnetic white dwarfs appear to rotate more slowly than magnetic white dwarfs (Hernandez et al. 2024; Oliveira da Rosa et al. 2024), but their typical periods (25–35 h, Hermes et al. 2017) are still no longer than 1 or 2 d. WD 1532 +129 therefore remains an extreme out-lier, with by far the longest rotation period measured for any white dwarf, magnetic or not: P ≃ 289 d is about 16 times longer than the previous record holder, P = 17 .86 d of WD 2316 +123 (Schmidt & Norsworthy 1991). A class of strongly magnetic, polarimetrically non-variable white dwarfs has been identified in the literature and is often in-terpreted as consisting of extremely slowly rotating stars, with field strengths of tens of MG and rotational periods of the order of centuries (e.g. Kawka 2020; Ferrario et al. 2020). Bagnulo & Landstreet (2024) gave a di ff erent interpretation, noting that no white dwarfs have been observed with rotational periods longer than about 18 d, and arguing that it is therefore unlikely that mag-netic white dwarfs simply spin down through this interval. They instead proposed that the absence of polarimetric variability in these objects is best explained by the alignment of the magnetic  
+
+> Article number, page 5 of 9 A&A proofs: manuscript no. WD1532
+
+and rotational axes in old, strongly magnetic white dwarfs. In this context, WD 1532 +129 might appear to provide a direct ob-servational bridge between rapidly rotating and extremely slowly rotating white dwarfs, potentially challenging the conclusion of Bagnulo & Landstreet (2024). However, WD 1532 +129 is quite old ( ∼ 4.0 Gyr, O’Brien et al. 2024) and only weakly magnetic (∼ 0.1 MG), and therefore does not fit naturally into a scenario in which strongly magnetic white dwarfs undergo substantial spin-down. Its extreme rotation period may therefore have a di ff erent origin, rather than representing a transitional stage between fast and ultra-slow rotators. Detecting very long rotational periods photometrically is in-trinsically di ffi cult. Many time-series data sets, including those obtained by missions such as TESS, are detrended to remove in-strumental systematics and long-term drifts, a process that can attenuate or suppress genuine long-period signals. The TESS-based sample of Oliveira da Rosa et al. (2024) is naturally biased towards fast rotators, and one might speculate that a population of slowly rotating white dwarfs remains undetected. However, this e ff ect alone is unlikely to explain the apparent scarcity of such objects. Polarimetric observations, which often span sev-eral years, are sensitive to much longer timescales and should reveal rotational modulation unless that modulation is intrinsi-cally suppressed. If one considers only the average-mass stars in Table C.1 of Hernandez et al. (2024) whose rotation periods were not inferred via photometry but from magnetic measurements, the distribution still favours short periods, with a median of only 2.4 h. The mean period is longer, about 28 h, but it is strongly in-fluenced by a small number of longer-period objects. In conclu-sion, the available evidence indicates that magnetic white dwarfs are generally rapid rotators, with typical periods of the order of minutes to hours, but that objects with periods up to several days are not uncommon. However, objects as slow as WD 1532 +129 are unlikely to constitute a large hidden population. We note that WD 0816 −310, the first white dwarf in which magnetically guided accretion was identified, is a relatively slow rotator, with a period longer than the typical few-hour range. No light variability has been detected in this star, and the existing 
+
+⟨Bz⟩ and EW measurements do not tightly constrain its period. Nevertheless, they are consistent with values between about 2 days and 2 weeks (Bagnulo et al. 2024a). Magnetic white dwarfs with similarly long rotation periods are not uncommon. This could prompt speculation that slower rotation may be driven by interactions between the stellar magnetic field and circumstel-lar debris, either at present or during earlier episodes of plane-tary accretion. Such a mechanism would be analogous to disk locking in T Tauri stars (Koenigl 1991; Long et al. 2005; Bou-vier et al. 2007) or to the spin evolution of magnetic accreting neutron stars (Ghosh & Lamb 1979). However, accretion rates in metal-enriched white dwarfs are many orders of magnitude lower than in these systems. Moreover, for WD 1532 +129, the corotation radius, 
+
+rco = GMP 2
+
+4π2
+
+!1/3
+
+,
+
+corresponding to a rotation period of ∼ 289 d would lie at ∼ 0.7au, more than 10 4 stellar radii from the white dwarf. At that dis-tance, a dipolar surface field of order 0 .1 MG would be only a few times 10 −8 G, rendering e ffi cient magnetic locking implausi-ble. For a representative polluted-white-dwarf accretion rate we adopt the value of ˙M = 10 8 g s −1, chosen conservatively to be smaller than the lowest value estimated by Swan et al. (2023) for six objects. For such a value, the spherical Alfvén radius 
+
+rA ≃ μ4
+
+2GM ˙M2
+
+!1/7
+
+,
+
+with μ ≃ Beq R3 
+
+> ∗
+
+= Bp R3
+
+> ∗
+
+/2, would be only of order 0.06 au (∼ 1100 stellar radii); the actual disk truncation radius would be even smaller, and certainly far inside corotation. In that regime the interaction would more naturally spin the star up rather than brake it. Furthermore, the above estimate assumes e ffi cient coupling between the stellar magnetic field and the circumstel-lar material, while debris disks around cool white dwarfs can contain a substantial neutral or dusty component rather than a fully ionised accretion flow. Any reduction in magnetic coupling would further weaken the case for disk locking. Even if star–disk coupling were stronger at earlier, more rapidly rotating stages, the low accretion rates and limited debris masses of polluted white dwarfs make it extremely unlikely that this mechanism could remove enough angular momentum to produce a period of order one year. The rotation of white dwarfs is generally understood to reflect substantial angular-momentum redistribution and loss during post-main-sequence evolution. Estimates based on the change in stellar structure between the main sequence and the white-dwarf stage predict remnant spins much faster than those actually observed (Spruit 1998; Koester et al. 1998; Hermes et al. 2017). This has long pointed to the need for e ffi cient angular-momentum transport and loss during later evolutionary phases. In this context, WD 1532 +129 appears to represent an especially extreme outcome of this general evolutionary problem. A plau-sible interpretation is that WD 1532 +129 is the descendant of a slowly rotating progenitor, for instance a magnetic Ap star. Ap stars are known to rotate significantly more slowly than normal A-type stars, with periods of months not uncommon (Netopil et al. 2017), and a very small subset reaches periods of decades or longer; for instance, the roAp star γ Equ likely rotates with a period of about 97 yr (Bychkov et al. 2016), while HD 50169 has a securely established period of 29 yr (Mathys et al. 2019). Thus, the problem of very large angular-momentum loss is al-ready present on the main sequence. Even a progenitor of this kind, however, would still need to lose most of its angular mo-mentum before reaching the white-dwarf stage. The exception-ally long rotation period of WD 1532 +129 may therefore reflect the combined e ff ect of unusually slow progenitor rotation and substantial angular-momentum loss during later evolution. 
+
+6. Conclusions 
+
+Within the local 20 pc volume, there are 13 known DZ /DZA white dwarfs, and four of them have a weak but firmly detected magnetic field. At least three of the four known magnetic DZ white dwarfs within the local 20 pc volume exhibit spectral line variability synchronised with the rotational modulation of the mean longitudinal field, indicating that the photospheric abun-dances of heavy elements are enhanced near the magnetic poles and reduced at lower magnetic latitudes. This group comprises WD 0816 −310 (Bagnulo et al. 2024a), WD 2138 −332 (Bagnulo et al. 2024b), and the newly identified here as a third such case WD 1532 +129, which is the first one in which metal enhance-ment can be observed at both magnetic poles. These results indi-cate that magnetically guided accretion is common among mag-netic, metal-enriched white dwarfs. Remarkably, WD 1532 +129 has by far the longest rotational period ever measured in a white dwarf, P ∼ 289 d, an order of 
+
+> Article number, page 6 of 9
+
+S. Bagnulo et al.: Magnetically guided accretion and extremely slow rotation in a metal-enriched white dwarf 
+
+magnitude longer than the longest rotational period measured before. This extreme rotation period is unlikely to result from magnetic spin-down during the cooling phase. Slow rotation of white dwarfs in general already implies substantial angular-momentum loss during earlier evolution, but the exceptional pe-riod of WD 1532 +129 may represent an extreme case in which this general evolutionary e ff ect is further enhanced by descent from an unusually slowly rotating progenitor, perhaps a mag-netic Ap star. Beyond the specific case of the exceptionally slow rotation of WD 1532 +129, our results highlight the importance of under-standing how magnetic fields influence the retention and trans-port of metals in white dwarf atmospheres. The time that heavy elements persist after accretion, as well as the role of magnetic fields in modifying vertical and horizontal di ff usion, are both crucial for correctly interpreting observed atmospheric composi-tions and, by extension, the nature of the accreted planetary ma-terial. Addressing these issues will require improved modelling of magneto-convective di ff usion and dedicated monitoring cam-paigns to map both magnetic topology and surface abundance evolution across a broader population of metal-enriched mag-netic white dwarfs. 
+
+Acknowledgements. Based on observations collected at ESO’s Paranal Obser-vatory under programme IDs 115.27UN.002, 116.2921.001, and 116.2ASX.001 (PI: Bagnulo); 0102.D-0045(A), 0103.D-0029(A) and (B) (PI: Landstreet). All spectra are available in the observatory archives. JDL acknowledges the financial support of the Natural Sciences and Engineering Research Council of Canada, funding reference number 6377-2016. CPF received funding from the European Union’s Horizon Europe research and innovation programme under grant agree-ment No. 101079231 (EXOHOST), and from the United Kingdom Research and Innovation Horizon Europe Guarantee Scheme (grant number 10051045). The Gravitational-wave Optical Transient Observer (GOTO) project acknowl-edges the support of the Monash-Warwick Alliance; University of Warwick; Monash University; University of She ffi eld; University of Leicester; Armagh Observatory & Planetarium; the National Astronomical Research Institute of Thailand (NARIT); Instituto de Astrofísica de Canarias (IAC); University of Portsmouth; University of Turku; University of Birmingham; and the UK Sci-ence and Technology Facilities Council (STFC, grant numbers ST /T007184 /1, ST /T003103 /1 and ST /Z000165 /1). This work has made use of data from the As-teroid Terrestrial-impact Last Alert System (ATLAS) project which is primarily funded to search for near-Earth asteroids through NASA grants NN12AR55G, 80NSSC18K0284, and 80NSSC18K1575; by-products of the NEO search in-clude images and catalogs from the survey area. This work was partially funded by Kepler /K2 grant J1944 /80NSSC19K0112 and HST GO-15889, and STFC grants ST /T000198 /1 and ST /S006109 /1. The ATLAS science products have been made possible through the contributions of the University of Hawaii Insti-tute for Astronomy, the Queen’s University Belfast, the Space Telescope Science Institute, the South African Astronomical Observatory, and The Millennium In-stitute of Astrophysics (MAS), Chile. ZTF data were obtained with the Samuel Oschin Telescope 48-inch and the 60-inch Telescope at the Palomar Observa-tory as part of the Zwicky Transient Facility project. ZTF is supported by the National Science Foundation under Grants No. AST-1440341 and AST-2034437 and a collaboration including current partners Caltech, IPAC, the Weizmann In-stitute for Science, the Oskar Klein Center at Stockholm University, the Uni-versity of Maryland, Deutsches Elektronen-Synchrotron and Humboldt Univer-sity, the TANGO Consortium of Taiwan, the University of Wisconsin at Milwau-kee, Trinity College Dublin, Lawrence Livermore National Laboratories, IN2P3, University of Warwick, Ruhr University Bochum, Northwestern University and former partners the University of Washington, Los Alamos National Laborato-ries, and Lawrence Berkeley National Laboratories. Operations are conducted by COO, IPAC, and UW. 
+
+References 
+
+Achilleos, N., Wickramasinghe, D. T., Liebert, J., Sa ff er, R. A., & Grauer, A. D. 1992, ApJ, 396, 273 Appenzeller, I., Fricke, K., Fürtig, W., et al. 1998, The Messenger, 94, 1 Babcock, H. W. 1949, ApJ, 110, 126 Bagnulo, S., Farihi, J., Landstreet, J. D., & Folsom, C. P. 2024a, ApJ, 963, L22 Bagnulo, S., Landi Degl’Innocenti, M., & Landi Degl’Innocenti, E. 1996, A&A, 308, 115 Bagnulo, S. & Landstreet, J. D. 2019, A&A, 630, A65 Bagnulo, S. & Landstreet, J. D. 2024, A&A, 692, A174 Bagnulo, S., Landstreet, J. D., Farihi, J., et al. 2024b, A&A, 688, L14 Bellm, E. C., Kulkarni, S. R., Graham, M. J., et al. 2019, PASP, 131, 018002 Bouvier, J., Alencar, S. H. P., Harries, T. J., Johns-Krull, C. M., & Romanova, M. M. 2007, in Protostars and Planets V, ed. B. Reipurth, D. Jewitt, & K. Keil, 479 Bychkov, V. D., Bychkova, L. V., & Madej, J. 2016, MNRAS, 455, 2567 Caiazzo, I., Burdge, K. B., Tremblay, P.-E., et al. 2023, Nature, 620, 61 Cunningham, T., Tremblay, P.-E., Bauer, E. B., et al. 2021, MNRAS, 503, 1646 Farihi, J., Fossati, L., Wheatley, P. J., et al. 2018, MNRAS, 474, 947 Farihi, J., Jura, M., & Zuckerman, B. 2009, ApJ, 694, 805 Farihi, J., Robert, A., & Walters, N. 2024, MNRAS, 529, L164 Ferrario, L., Wickramasinghe, D., & Kawka, A. 2020, Advances in Space Re-search, 66, 1025 Gaia Collaboration. 2023, A&A, 674, A1 Ghosh, P. & Lamb, F. K. 1979, ApJ, 234, 296 Heinze, A. N., Tonry, J. L., Denneau, L., et al. 2018, AJ, 156, 241 Hermes, J. J., Gänsicke, B. T., Kawaler, S. D., et al. 2017, ApJS, 232, 23 Hernandez, M. S., Schreiber, M. R., Landstreet, J. D., et al. 2024, MNRAS, 528, 6056 Hollands, M. A., Tremblay, P.-E., Gänsicke, B. T., & Koester, D. 2022, MNRAS, 511, 71 Izzo, C., de Bilbao, L., Larsen, J., et al. 2010, in Society of Photo-Optical Instru-mentation Engineers (SPIE) Conference Series, Vol. 7737, Observatory Op-erations: Strategies, Processes, and Systems III, ed. D. R. Silva, A. B. Peck, & B. T. Soifer, 773729 Jura, M. 2003, ApJ, 584, L91 Kawka, A. 2020, in IAU Symposium, Vol. 357, White Dwarfs as Probes of Fun-damental Physics: Tracers of Planetary, Stellar and Galactic Evolution, ed. M. A. Barstow, S. J. Kleinman, J. L. Provencal, & L. Ferrario, 60–74 Koenigl, A. 1991, ApJ, 370, L39 Koester, D. 2009, A&A, 498, 517 Koester, D. 2010, Mem. Soc. Astron. Italiana, 81, 921 Koester, D., Dreizler, S., Weidemann, V., & Allard, N. F. 1998, A&A, 338, 612 Koester, D., Gänsicke, B. T., & Farihi, J. 2014, A&A, 566, A34 Landstreet, J. D. 1988, ApJ, 326, 967 Landstreet, J. D., Bagnulo, S., & Fossati, L. 2014, A&A, 572, A113 Landstreet, J. D., Bagnulo, S., Valyavin, G., & Valeev, A. F. 2017, A&A, 607, A92 Long, M., Romanova, M. M., & Lovelace, R. V. E. 2005, ApJ, 634, 1214 Lyman, J. D., O’Neill, D., Killestein, T., et al. 2026, arXiv e-prints, arXiv:2603.02330 Mathys, G., Romanyuk, I. I., Hubrig, S., et al. 2019, A&A, 624, A32 Metzger, B. D., Rafikov, R. R., & Bochkarev, K. V. 2012, MNRAS, 423, 505 Moss, A., Bergeron, P., Kilic, M., et al. 2024, MNRAS, 527, 10111 Moss, A., Kilic, M., Bergeron, P., et al. 2025, ApJ, 990, 25 Netopil, M., Paunzen, E., Hümmerich, S., & Bernhard, K. 2017, MNRAS, 468, 2745 O’Brien, M. W., Tremblay, P.-E., Klein, B. L., et al. 2024, MNRAS, 527, 8687 Oliveira da Rosa, G., Kepler, S. O., Soethe, L. T. T., Romero, A. D., & Bell, K. J. 2024, ApJ, 974, 314 Preston, G. W. 1967, ApJ, 150, 547 Schmidt, G. D. & Norsworthy, J. E. 1991, ApJ, 366, 270 Schwarzschild, M. 1950, ApJ, 112, 222 Spruit, H. C. 1998, A&A, 333, 603 Stift, M. J. & Leone, F. 2003, A&A, 398, 411 Swan, A., Farihi, J., Melis, C., et al. 2023, MNRAS, 526, 3815 Tonry, J. L., Denneau, L., Heinze, A. N., et al. 2018, PASP, 130, 064505 Toonen, S., Hollands, M., Gänsicke, B. T., & Boekholt, T. 2017, A&A, 602, A16 Tremblay, P. E., Fontaine, G., Freytag, B., et al. 2015, ApJ, 812, 19 Wesemael, F., Liebert, J., Schmidt, G. D., et al. 2001, ApJ, 554, 1118 Zuckerman, B., Koester, D., Reid, I. N., & Hünsch, M. 2003, ApJ, 596, 477 
+
+Article number, page 7 of 9 A&A proofs: manuscript no. WD1532 
+
+Appendix A: Equivalent width measurements 
+
+Table A.1 reports the EW measurements from FORS2 spectra. The ISIS spectrum was not used for EW measurements because its EWs are a ff ected by an instrumental bias that is not negligible compared with the variability detected in the FORS2 spectra. 
+
+Appendix B: Can the observed line variability be due to scattered light? 
+
+Since the observed variability of the line strength is quite subtle (∼ 15%), it is important to seriously examine the possibility that it is of instrumental origin. All observations in which the EWs reach their maxima were obtained under dark conditions. By contrast, two observations showing weaker lines were taken in bright time. In particular, on March 18, 2019, when the line EWs were close to their mini-mum values, the observations were obtained with a fractional lu-nar illumination (FLI) of 90%, with the Moon located 86 ◦ from the target and at an elevation of approximately 18 ◦. On June 19, 2019, when the line EWs were slightly larger but still be-low their maximum values, the observing conditions were even less favourable: the FLI was 97%, with the Moon about 66 ◦ from the target. One could suspect that scattered light was responsible for partially filling the spectral lines and making them appear weaker than when observed in dark time. To rule out any contamination, we ensured that an observa-tion taken at an epoch when a line-strength minimum and null 
+
+⟨Bz⟩ were predicted would be obtained during dark time. Data collected in 2026 confirm that the lines are weaker when the longitudinal magnetic field is zero, even in the absence of moon-light. In fact, intensity spectra obtained on 2026-04-18 (black solid line in Fig. 1) and on 2019-03-18 (black dotted line in Fig. 1), when |⟨ Bz⟩| was close to zero, are virtually indistinguish-able. Similarly, all spectra obtained in April 2025, when ⟨Bz⟩ was near its positive maximum, are virtually indistinguishable from one another. These tests confirm that the instrument is stable, that data reduction was carried out in a fully consistent way, and that line variability is intrinsic to the source. The strong Ca i 4227 line does not show a significant change in core depth, although Fig. 1 hints at a slight strengthening or broadening of the wings when the weaker metal lines are strongest. This is naturally explained if the variability is due to abundance changes. Since the line core is nearly saturated, a modest increase in Ca abundance produces little extra absorp-tion at line centre, whereas the unsaturated wings do respond and become slightly deeper, yielding only a modest increase in equivalent width. This behaviour is reproduced by the theoreti-cal spectra shown in Fig. B.1, both for the model based on Hol-lands et al. (2022) (blue line) and for the test case in which the Fe and Ca abundances are increased by +0.2 dex (orange line): weaker lines strengthen markedly, while the saturated Ca i 4227 line changes only weakly, mainly in its wings (radiative trans-fer calculations were performed using the atmospheric models described by Koester 2010). This supports an abundance-based interpretation. In contrast, the amount of scattered light needed to explain the variability of the Fe lines would also be expected to alter the Ca i 4227 profile much more noticeably, which is not seen. 4200 4250 4300 4350 4400 4450 Wavelength [˚ A] 0.00.20.40.60.81.0Normalised Flux Hollands et al. (2022) +0 .2 dex 
+
+Fig. B.1: Two theoretical spectra showing how an abundance change of +0.2 dex for both Fe and Ca produces a substantial line strength increase in the weaker Fe lines but onlt a small change in the stronger Ca i line, as described in the text. 
+
+Appendix C: Period analysis 
+
+Figure C.1 shows the Lomb-Scargle periodograms of the photo-metric data of WD 1532 +129. Figure C.2 shows the best fits to all quantities obtained after adopting the dominant period from the photometric data ( P = 144 .35 d). It is clear that this value of the rotation period does not fit the mean longitudinal field data. 
+
+> Article number, page 8 of 9
+
+S. Bagnulo et al.: Magnetically guided accretion and extremely slow rotation in a metal-enriched white dwarf 
+
+Table A.1: WD 1532 +129: ⟨Bz⟩ values and EWs in various wavelength ranges from all spectra obtained with FORS2 and the 1200B grism. 
+
+⟨Bz⟩ EW 1 (Å) EW 2 (Å) EW 3 (Å) Date (kG) 4357–4421 Å 4180–4335 Å 4162–4466 Å 2019-03-18 −5.0±1.4 16.541 ±0.039 56.898 ±0.069 77.850 ±0.096 2019-06-19 −23 .1±2.1 17.664 ±0.069 58.350 ±0.107 82.182 ±0.148 2025-04-03 +24 .1±1.0 19.175 ±0.029 64.191 ±0.050 90.050 ±0.072 2025-04-05 +24 .4±0.9 19.279 ±0.029 65.054 ±0.048 90.990 ±0.069 2025-04-23 +26 .4±1.2 19.375 ±0.034 64.069 ±0.058 89.734 ±0.082 2025-04-27 +25 .6±0.9 19.165 ±0.029 64.064 ±0.050 89.879 ±0.071 2026-04-18 +1.6±1.1 16.356 ±0.031 57.129 ±0.053 78.377 ±0.075 0.0        
+
+> 0.2
+> 0.4
+> ZTF g  Period = 144.35 days
+> FA prob. = 10 5
+> 0.0
+> 0.1
+> ZTF r
+> 0.0
+> 0.1
+> ZTF i
+> 0.0
+> 0.2
+> 0.4
+> GOTO L
+> 0.0
+> 0.2
+> Atlas c
+> 0.00 0.01 0.02 0.03 0.04 0.05
+> Frequency [days 1]
+> 0.00
+> 0.05
+> 0.10
+> Atlas o
+
+Fig. C.1: Lomb-Scargle periodograms of the photometric data of WD 1532 +129. The vertical orange line marks the frequency corresponding to a period of 144.35 days. The dashed horizontal line shows the height corresponding to a false alarm probability of 10 −5.0.97        
+
+> 1.00
+> 1.03
+> ZTF g
+> 0.97
+> 1.00
+> 1.03
+> ZTF r
+> 0.97
+> 1.00
+> 1.03
+> ZTF i
+> 0.97
+> 1.00
+> 1.03
+> GOTO L
+> 0.97
+> 1.00
+> 1.03
+> Atlas c
+> 0.97
+> 1.00
+> 1.03
+> Atlas o
+> 16
+> 18
+> EW 1 [Å]
+> 4357-4421
+> 55
+> 60
+> 65
+> EW 2 [Å]
+> 4180-4335
+> 80
+> 90
+> EW 3 [Å]
+> 4162-4466
+> 0.2 0.0 0.2 0.4 0.6 0.8 1.0 1.2
+> Phase (P=144.35 days)
+> 25
+> 0
+> 25
+> Bz [kG]
+
+Fig. C.2: Observed quantities for WD 1532 +129 phased with the best photometric period of 144.35 d and a zero-point of MJD 59047.566. Orange curves show the corresponding best-fitting models, and the shaded regions show the 1 σ and 3 σ confidence intervals. This period is inconsistent with the observed mean lon-gitudinal field variations shown in the bottom panel. The red point with visible error bars in the bottom panel represents the 
+
+⟨Bz⟩ estimate obtained with ISIS at the WHT, which was not included in the fit. The vertical lines delimit one complete rota-tional cycle. 
+
+Article number, page 9 of 9

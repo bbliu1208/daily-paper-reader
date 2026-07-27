@@ -1,0 +1,838 @@
+Title: A closer look at the WISPIT 2 host star. Evidence for a spectroscopic binary
+
+URL Source: https://arxiv.org/pdf/2607.22405v1
+
+Published Time: Mon, 27 Jul 2026 01:01:30 GMT
+
+Number of Pages: 11
+
+Markdown Content:
+Astronomy & Astrophysics manuscript no. main ©ESO 2026 July 27, 2026 
+
+Letter to the Editor 
+
+# A closer look at the WISPIT 2 host star ⋆
+
+# Evidence for a spectroscopic binary 
+
+C. J. Bürgy 1, 2⋆⋆ , M. Benisty 1, H. Alqubelat 3, C.F. Manara 3, and S. Facchini 4 
+
+> 1
+
+Max-Planck Institute for Astronomy (MPIA), Königstuhl 17, 69117 Heidelberg, Germany e-mail: buergy@mpia.de  
+
+> 2
+
+Department of Physics and Astronomy, Heidelberg University, Im Neuenheimer Feld 226, 69120 Heidelberg, Germany  
+
+> 3
+
+European Southern Observatory, Karl-Schwarzschild-Strasse 2, 85748 Garching bei München, Germany  
+
+> 4
+
+Dipartimento di Fisica, Università degli Studi di Milano, Via Celoria 16, 20133 Milano, Italy July 27, 2026 
+
+ABSTRACT 
+
+Context. While hundreds of protoplanetary discs have been studied in great detail, the detection of protoplanets still embedded in their native discs remains rare. WISPIT 2 is only the second laboratory allowing for direct study of planet formation while in progress. The recently discovered system hosts two giant protoplanets in a multi-ringed disc. 
+
+Aims. Here, we aim at characterising the WISPIT 2 host star spectroscopically to determine its stellar properties, accretion rate, and inner disc diagnostics, providing a more complete picture of the system. 
+
+Methods. We present optical and near-infrared spectroscopic observations obtained with the ESO VLT /X-Shooter and 2.2 m /FEROS instruments. We model the stellar spectrum to determine the spectral type and e ff ective temperature, analyse the emission lines to estimate the accretion rate, and search for evidence of a close stellar companion using radial velocity measurements. 
+
+Results. Our observations reveal that WISPIT 2 is a spectroscopic binary. The binary has a period of (4 .8 ± 0.1) days, which corresponds to a semi-major axis of 0 .072 au or 15 .54 R⊙, assuming co-planarity with the disc and a circular orbit. The binary system consists of a ∼ 0.97 M⊙ primary of spectral type K3 ( Teff ∼ 4700 K), and a ∼ 0.33 M⊙ secondary (mass ratio ∼0.34). We detect weak Hα emission, implying an accretion rate of ∼ 2 × 10 −11 M⊙ yr −1. However, this value is below the chromospheric level, suggesting little to no ongoing accretion onto the young stars. 
+
+Conclusions. This discovery makes the WISPIT 2 disc the first circumbinary system with directly imaged protoplanets, establishing this system as a unique benchmark for studying planet formation and disc evolution around binary stars. 
+
+Key words. protoplanetary discs – planets and satellites: formation – stars: variables: T Tauri – binaries: spectroscopic 
+
+1. Introduction 
+
+Thousands of mature exoplanets have now been detected, reveal-ing a remarkable diversity in planetary architectures and prop-erties that likely reflects the wide range of physical conditions present during their formation. To understand this diversity, it is fundamental to study forming protoplanets as they actively shape their natal environments. The PDS 70 system (e.g., Keppler et al. 2018) and the recently discovered WISPIT 2 system (Close et al. 2025; van Capelleveen et al. 2025; Lawlor et al. 2026) represent two confirmed cases of directly imaged protoplanetary systems. This Letter focuses on the latter. WISPIT 2 (TYC 5709-354-1) is a young ( ∼5 Myr) T Tauri system located at a distance of 
+
+∼133 pc (van Capelleveen et al. 2025). It hosts two giant planets, WISPIT 2b and WISPIT 2c, with estimated masses of ∼4.9 and 8-10 MJup , orbiting at projected separations of ∼57 au and 15 au, respectively (van Capelleveen et al. 2025; Lawlor et al. 2026). Hα observations indicate that WISPIT 2b is actively accret-ing from the surrounding circumplanetary material at a rate of approximately 2 × 10 −12 M⊙ yr −1 (Close et al. 2025). Interest-ingly, no H α emission has been detected from the inner planet,  
+
+> ⋆
+
+Based on observations collected at the European Southern Obser-vatory under ESO programme 116.2ASZ.  
+
+> ⋆⋆
+
+Corresponding author: buergy@mpia.de 
+
+WISPIT 2c, suggesting that WISPIT 2b starves it from disc ma-terial. Currently, the host star remains poorly characterised pre-venting a full picture of the system to be achieved. In this Letter, we present spectroscopic observations of WISPIT 2 that reveal it to be a spectroscopic binary system and provide a detailed spectral characterization of the primary star, as well as a study of accretion and wind tracers. Sect. 2 describes the observations, data reduction, and line analysis. The radial ve-locity analysis is presented in Sect. 3 and discussed in Sect. 4. 
+
+2. Spectroscopic observations 
+
+We obtained two VLT /X-Shooter spectra on April 16 and May 23, 2026 (Vernet et al. 2011, DDT 116.2ASZ; PI Bürgy), and five spectra with the MPG /ESO 2.2m FEROS spectrograph (Kaufer et al. 1999) between July 9 and July 13, 2026 (DDT 117.2AS7.001; PI Benisty). Details on the observations and data reduction are given in Appendix A.1. The WISPIT 2 X-Shooter spectrum shows very few emission lines, which will be analysed in more detail (Fig. 1 and below) and is dominated by a stellar photospheric continuum (Fig. B.1). The spectrum shows a clear Li I absorption feature at 670.8 nm, confirming the young nature of the star. To characterise the spec-
+
+Article number, page 1 arXiv:2607.22405v1 [astro-ph.EP] 24 Jul 2026 A&A proofs: manuscript no. main 
+
+trum, we use the FRAPPE 1 code (FitteR for Accretion ProPErties of T Tauri stars; Claes et al. 2024), which performs a fit to the entire spectrum using an interpolated grid of empirical class III spectral templates. We find the best fit spectral type to be K3, with Teff = 4600 K, L∗ = 0.63 L⊙, and M∗ = 1.1 M⊙, at a low extinction of Av = 0.15, consistently between the two epochs. FRAPPE is not able to strongly constrain the stellar accretion, as there is no UV-excess beyond the chromospheric noise level. To analyse the emission lines further, we fit a photospheric model using the grid of PHOENIX high-resolution stellar spec-tra (Husser et al. 2013). Assuming solar metallicity ([Fe /H] =
+
+0.0, [ α/M] = 0.0), we vary the stellar e ff ective temperature Teff 
+
+and surface gravity log g. The template is convolved with the instrumental resolution of the respective X-Shooter arm. Addi-tionally, the model accounts for rotational broadening through the projected stellar rotational velocity v sin i and for continuum veiling through the veiling factor r = Fveil /Fphot ,cont . The ob-served X-Shooter spectrum is allowed to be shifted by a radial velocity in order to match to the photospheric spectrum. After normalising both the observed and the modelled spectrum, the residuals between the two is calculated for a set of spectral re-gions suitable to trace photospheric characteristics (See Table B.1). For each photospheric model ( Teff , log g), the best-fit radial velocity shift, stellar rotation v sin i, and veiling r is determined by minimising the residuals through a least-squares minimisa-tion as implemented in the Python package lmfit . Models at di ff erent Teff and log g are then compared through their respec-tive best-fit squared residual sum. We recover a good fit to the observed photospheric lines at e ff ective temperatures of Teff =
+
+4500 − 4800 K, and surface gravity values of log g = 4.0 − 4.5, with a best fitting model at Teff = 4700 K, log g = 4.0. The best-fit radial-velocity shift is vr = −18 .86 ± 0.03 km s −1 for the first epoch (2026-04-16) and vr = + 25 .54 ± 0.03 km s −1 for the second epoch (2026-05-23). In both epochs, the stellar rotation is consistently constrained to small values ( v sin i ≲ 15 km s −1), unresolved at the spectral resolution of X-Shooter. We do not de-tect any significant veiling ( r ∼ 0). The best fit PHOENIX model and both X-Shooter epochs are shown in Figure B.2. We detect H α emission, as well as narrow emission of the Calcium Infrared Triplet in both epochs. Figure 1 shows a closer look at these detected lines after photospheric absorption re-moval, comparing the two epochs. The H α emission line flux is about 50% higher in the second epoch compared to the first one. While the red wing aligns well between the two epochs, the second epoch has a significantly stronger blue wing, thus also broadening the line overall. The line parameters are re-ported in Table B.2. Assuming that the H α traces accretion, we follow the empirical relation derived in Fiorellino et al. (2025); the measured H α flux corresponds to accretion luminosities of log Lacc ,1/L⊙ = −3.63 and log Lacc ,2/L⊙ = −3.39. At an ap-proximate mass of M∗ = 1.1 M⊙, and a radius range of R∗ =
+
+1.5 − 2.0 R⊙, the mass accretion rate of WISPIT 2 lies in a range of ˙ Macc = 1.4×10 −11 −1.8×10 −11 M⊙ yr −1 for the first epoch, and ˙Macc = 2.2×10 −11 −3.0×10 −11 M⊙ yr −1 for the second epoch. The observed accretion luminosity is about an order of magnitude be-low the typical chromospheric noise level in stars of this spectral type (Manara et al. 2017). The observed H α emission is there-fore consistent with a purely chromospheric origin, suggesting that WISPIT 2 is either very weakly accreting or not accreting. The Calcium Infrared Triplet is fairly similar in line shape and flux between the two epochs. Comparing the line fluxes re-ported in Table B.2, the second epoch is about 14-30% stronger           
+
+> 1https://github.com/RikClaes/FRAPPE.git -100 0100
+> 0.0
+> 2.5
+> 5.0 Hα
+> Flux [10 −13  erg/s/cm 2/nm]  XS, 2026-04-16
+> XS, 2026-05-23
+> -50 050
+> RV [km/s]
+> 0
+> 5
+> CaIRT 1
+> -50 050
+> RV [km/s]
+> 0
+> 5
+> CaIRT 2
+> -50 050
+> RV [km/s]
+> 0
+> 5
+> CaIRT 3
+
+Fig. 1: Zoom-in on the H α and Calcium Infrared Triplet lines. in line flux. A gallery of typical tracers of accretion and winds is shown in Figs. B.3 and B.4 for the two epochs, after removing the photospheric contribution. 
+
+3. Radial Velocity Variations and Orbital Fitting 
+
+Between the two X-Shooter epochs, we measured a radial veloc-ity (RV) shift of 42.4 km s −1 over 37 days. To investigate the ob-served RV variation, we targeted WISPIT 2 with five additional epochs using FEROS evenly spaced by ∼ 1 day. We calculated the RVs using the cross-correlation function (CCF) technique over spectral regions free of strong telluric ab-sorption and emission lines (Tab. B.1). To derive the RV, we cross-correlated each spectrum with the best-fit stellar template from Sect. 2. A Gaussian profile was fitted to each CCF to de-termine its centroid, which provides the RV measurement, while the uncertainty was taken as the error on the centroid. This proce-dure was applied consistently to the X-Shooter and FEROS data sets. Figure C.1 shows the resulting CCFs of WISPIT 2 spanning 
+
+∼87 days, and the corresponding RV measurements are listed in Tabs. A.1 and A.2. We modeled the RV measurements using a Markov Chain Monte Carlo (MCMC) approach to constrain the orbital parameters of the binary system. Specifically, we fitted a Keplerian model for a single-lined spectroscopic binary (SB1), parameterised by the orbital period ( P), time of periastron pas-sage ( T0), systemic velocity ( γ), and RV semi-amplitude ( K1). 
+
+Fig. 2: Orbital solution for WISPIT 2 fitted to the RV data (top) with residuals (bottom) as a function of orbital phase. 
+
+> Article number, page 2 C. J. Bürgy et al.: A closer look at the WISPIT 2 host star
+
+From these parameters, the model predicts the RV curve, vr(t), as a function of time t (see Alqubelat et al. 2026, for details): 
+
+v1(t) = V0 + K1 sin 2π(t − T0)
+
+P
+
+!
+
+(1) We let the emcee sampler run for 200000 steps with an ini-tial burn-in phase of 20000 steps. The resulting corner plots re-veal a bimodal posterior distribution, with two possible orbital solutions: one with a period of P ∼ 4.82 days (Fig. 2), while the other yields a period of P ∼ 4.62 days (Fig. C.3). Since the former provides a statistically better fit to the RV data, we adopt it as the preferred solution in this work. This period is also consistent with the independent period derived from the TESS photometric periodogram (Fig. 3), providing additional support for this solution. In Table 1, we report the the orbital parameters of WISPIT 2 derived from the MCMC fit (Fig. C.2). We used the parameters corresponding to the maximum likelihood values as best estimates of the model parameters. The uncertainty on the parameters was taken to be half the di ff erence between the 84th and 16th percentiles, providing an estimate of the 1 σ con-fidence interval. We then calculated the projected mass, separa-tion, and mass function to provide a lower limit on the secondary star mass. Figure B.5 shows the FEROS H α line profiles, while the equivalent widths measured in all epochs are listed in Table B.3. Despite the low S /N, we find no evidence for significant varia-tions in H α line luminosity over the binary orbital period. Table 1: Best-fit spectroscopic orbital parameters of WISPIT 2 
+
+Element Value 
+
+P (days) 4.8 ± 0.1
+
+γ (km s −1) 6.49 ± 0.065 K (km s −1) 25 .17 ± 0.05 T0 (MJD) 61101 .7967 ± 2.7
+
+M1 sin 3 i (M ⊙) 0.3523 ±0.0002 f(M) 0.007 ± 0.001 
+
+a sin i (au) 0.043 ± 0.00 
+
+a sin i (R⊙) 9.37 ± 0.02 
+
+4. Discussion & Conclusions 
+
+4.1. WISPIT 2 orbital parameters 
+
+The orbital fit of WISPIT 2 reveals RV variations with an ampli-tude of up to ±25 km s −1. Indeed, the consecutively taken epochs with FEROS show rapid RV variations from day to day. Our 7 RV epochs are consistent with a circular orbit, and show small residuals to the fitted model (Fig. 2). The RV fit and the TESS periodogram (Fig. 3) indicate compatible periodicity, following the binary motion over a period ∼ 4.82 days. While a circular configuration provides an excellent fit to the present data, to ro-bustly constrain the orbital parameters, including the period, ec-centricity e, and the orbit orientation ω, additional RV observa-tions spanning multiple orbital cycles will be required. To derive an estimate of the individual masses of the bi-nary components ( M1, and M2), and their physical separation (a), we combined spectroscopic orbital parameters with the to-tal dynamical mass of the system ( Mtot = 1.303 +0.001 
+
+> −0.001
+
+) estimated −2 −1 0 1 2       
+
+> Phase [days]
+> 0.98
+> 1.00
+> 1.02
+> 1.04
+> Normalized Flux
+> 0.05 0.10 0.15 0.20 0.25 0.30 0.35 0.40
+> Frequency [1/day]
+> 0.0
+> 0.2
+> 0.4
+> 0.6
+> 0.8
+> Lomb-Scargle Power  T = (4.736 ± 0.002) days
+
+Fig. 3: TESS light curve folded at the period of P ∼ 4.74 days (top), and periodogram (bottom), with fitted Gaussian (green). from a Keplerian fit to 12 CO ALMA observations (Benisty et al. in prep.). Observational and statistical evidence show that short period binaries P < 20 days tend to be aligned with the outer disc (Czekala et al. 2019). As a result, we adopt the outer disc incli-nation as derived from dust continuum emission ( i = 45 .66 ◦;Facchini et al. 2026) as the binary inclination ( ibin ) to estimate the binary properties. First, we calculated the spectroscopic mass function f (M) from the semi-amplitude of the primary ( K1), and the orbital period ( P ∼ 4.82 days) for a circular orbit: 
+
+f (M) = M32 sin 3 i
+
+(M1 + M2)2 = PK 31
+
+2πG (2) This allowed us to estimate the primary ( M1 = 0.97 M⊙) and secondary( M2 = 0.33 M⊙), the mass ratio ( q = 0.34), and the semi major axis ( a = 0.072 ∼ 15 .54 R⊙), which is in agreement with the spectral fit to the X-Shooter observations. 
+
+4.2. Accretion and disc evolution 
+
+Our results indicate a very low mass accretion rate, consistent with the chromospheric noise level. In protoplanetary discs, the relationship between stellar accretion and the global properties of protoplanetary discs (such as mass and radius) provides an important diagnostic of the physical processes driving disc evo-lution (e.g., Lodato et al. 2017; Manara et al. 2023). In systems hosting massive planets, however, the accretion flow can also be strongly modified by planet-disc interactions, which regu-late the transport of gas through the disc toward the central star. Following Manara et al. (2019), we compare the observed accretion rates and disc masses with the predictions of plane-tary population synthesis models for a ∼2 Myr-old disc popu-lation hosting giant planets (Mordasini et al. 2009, 2012) . In Fig. 4, we show these predictions together with observations of transition discs in various star-forming regions (Manara et al. 2023; Pinilla et al. 2018). We additionally mark the positions of PDS 70 and WISPIT 2, adopting the dust-continuum-based disc mass estimate as lower limit (Facchini et al. 2026). Both systems occupy a similar region of the ˙Macc –Mdisc plane, where their low accretion rates are consistent with the expected influence of giant 
+
+> Article number, page 3
+
+A&A proofs: manuscript no. main 
+
+planets that block material beyond their orbits and starve the in-ner disc regions. The lack of significant H α variability provides further evidence that the transport of material from the outer disc is strongly inhibited by the giant planets, limiting the amount of material that can reach the star. This is consistent with the ob-served gas- and dust-depleted cavity in 12 CO J = 3 − 2 within the orbit of WISPIT 2c (Benisty et al. in prep). While the accretion properties of WISPIT 2 are similar to those of PDS 70, the two systems di ff er in their wind signatures. PDS 70 shows the forbidden [OI] 6300 Å emission line, evidence for a magnetically driven disc wind launched close to the star (Campbell-White et al. 2023; Gaidos et al. 2024). This emission is not detected in WISPIT 2, suggesting that any disc wind is either absent or significantly weaker. 
+
+4.3. Circumbinary discs and planets 
+
+Binary stars are ubiquitous, with ∼65% of stars forming in multiple systems (Duchêne & Kraus 2013; O ff ner et al. 2023). In circumbinary discs, the central binary clears a cavity ex-tending to ∼2-3 times the binary separation (Cuello et al. 2025; Artymowicz & Lubow 1994). This cavity can in turn re-duce the e ffi ciency of mass transport onto the stars, poten-tially allowing circumbinary discs to retain more mass and remain larger at a given age compared to discs around sin-gle stars (Alexander 2012; Ronco et al. 2021). In this context, WISPIT 2 is particularly reminiscent of V4046 Sgr, a well-studied circumbinary system with prominent and highly struc-tured disc (Galloway-Sprietsma et al. 2025), at an advanced evo-lutionary stage ( ∼20 Myr) compared to typical disc lifetime (Hernández et al. 2007). The presence of the binary might be key to the long-lived nature of the disc, potentially providing a more favourable environment for the formation and survival of such massive, wide-orbit planets (e.g., Ruíz-Rodríguez et al. 2019). The population of circumbinary (P-type) planets around ma-ture stars remains small, with only 46 planets known in 37 sys-tems 2. Most are transit detections and occupy compact config-urations, orbiting just beyond the tidally truncated inner edge of the circumbinary disc consistent with inward migration be-ing halted at the cavity edge. Only a handful of circumbinary planets are known beyond 5 au, and just two systems share simi-larities with WISPIT 2: HD 155555 hosts a 3.8 M Jup companion at 7.3 au around a 1.68-day binary (Gratton et al. 2024), while HD 143811 hosts a ∼6 M Jup planet at ∼64 au around an 18.6-day binary (Squicciarini et al. 2025). With its 4.7-day binary and planets at ∼15 and ∼58 au, WISPIT 2 belongs to this very small class of wide-orbit planets around compact binaries, but is so far the only one caught at the time of formation. 
+
+5. Conclusions 
+
+In this Letter, we have shown, using VLT /X-Shooter and FEROS spectroscopy, that WISPIT 2 is a spectroscopic binary with a pe-riod of 4 .8 ± 0.1 days, consisting of a K3 ∼0.97 M⊙ primary and a ∼ 0.33 M⊙ secondary, with little to no ongoing accretion. WISPIT 2 becomes the first system in which two giant proto-planets have been directly imaged within a circumbinary disc and provides a key benchmark for studying planet formation and disc evolution around binary stars.   
+
+> Acknowledgements. We thank F. Zagaria for insightful discussions. MB has re-ceived funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (PROTOPLANETS,
+> 2
+
+https://exoplanet.eu/planets_binary_circum/ 
+
+Fig. 4: Predicted disc mass and mass accretion rates in models without and with planets, compared to transition disc observa-tions from various star forming regions (Manara et al. 2023). 
+
+> grant agreement No. 101002188). HA and CFM are funded by the European Union (ERC, WANDA, 101039452). SF acknowledges financial contribution from the European Union (ERC, UNVEIL, 101076613). Views and opinions ex-pressed are however those of the authors only and do not necessarily reflect those of the European Union or the European Research Council. Neither the European Union nor the granting authority can be held responsible for them.
+
+References 
+
+> Alexander, R. 2012, ApJ, 757, L29 Alqubelat, H., Manara, C. F., Campbell-White, J., et al. 2026, A&A, 706, A228 Artymowicz, P. & Lubow, S. H. 1994, ApJ, 421, 651 Brahm, R., Jordán, A., & Espinoza, N. 2017, PASP, 129, 034002 Campbell-White, J., Manara, C. F., Benisty, M., et al. 2023, ApJ, 956, 25 Claes, R. A. B., Campbell-White, J., Manara, C. F., et al. 2024, A&A, 690, A122 Close, L. M., van Capelleveen, R. F., Weible, G., et al. 2025, ApJ, 990, L9 Cuello, N., Alaguero, A., & Poblete, P. P. 2025, Symmetry, 17, 344 Czekala, I., Chiang, E., Andrews, S. M., et al. 2019, ApJ, 883, 22 Duchêne, G. & Kraus, A. 2013, ARA&A, 51, 269 Facchini, S., Curone, P., Benisty, M., et al. 2026, ApJ, 998, L16 Fiorellino, E., Alcalá, J. M., Manara, C. F., et al. 2025, A&A, 704, A42 Freudling, W., Romaniello, M., Bramich, D. M., et al. 2013, A&A, 559, A96 Gaidos, E., Thanathibodee, T., Ho ff man, A., et al. 2024, ApJ, 966, 167 Galloway-Sprietsma, M., Bae, J., Izquierdo, A. F., et al. 2025, ApJ, 984, L10 Gratton, R., Bonavita, M., Mesa, D., et al. 2024, A&A, 685, A119 Hernández, J., Hartmann, L., Megeath, S. T., et al. 2007, The Astrophysical Jour-nal, 662, 1067 Husser, T.-O., Wende-von Berg, S., Dreizler, S., et al. 2013, A&A, 553, A6 Kaufer, A., Stahl, O., Tubbesing, S., et al. 1999, The Messenger, 95, 8 Kausch, W., Noll, S., Smette, A., et al. 2015, A&A, 576, A78 Keppler, M., Benisty, M., Müller, A., et al. 2018, A&A, 617, A44 Lawlor, C., van Capelleveen, R. F., Bourdarot, G., et al. 2026, ApJ, 1000, L38 Lodato, G., Scardoni, C. E., Manara, C. F., & Testi, L. 2017, MNRAS, 472, 4700 Manara, C. F., Ansdell, M., Rosotti, G. P., et al. 2023, in Astronomical Society of the Pacific Conference Series, Vol. 534, Protostars and Planets VII, ed. S. Inutsuka, Y. Aikawa, T. Muto, K. Tomida, & M. Tamura, 539 Manara, C. F., Frasca, A., Alcalá, J. M., et al. 2017, A&A, 605, A86 Manara, C. F., Mordasini, C., Testi, L., et al. 2019, A&A, 631, L2 Modigliani, A., Goldoni, P., Royer, F., et al. 2010, in Society of Photo-Optical Instrumentation Engineers (SPIE) Conference Series, Vol. 7737, Observatory Operations: Strategies, Processes, and Systems III, ed. D. R. Silva, A. B. Peck, & B. T. Soifer, 773728 Mordasini, C., Alibert, Y., & Benz, W. 2009, A&A, 501, 1139 Mordasini, C., Alibert, Y., Klahr, H., & Henning, T. 2012, A&A, 547, A111 Off ner, S. S. R., Moe, M., Kratter, K. M., et al. 2023, in Astronomical Society of the Pacific Conference Series, Vol. 534, Protostars and Planets VII, ed. S. Inutsuka, Y. Aikawa, T. Muto, K. Tomida, & M. Tamura, 275
+
+Article number, page 4 C. J. Bürgy et al.: A closer look at the WISPIT 2 host star 
+
+Pinilla, P., Tazzari, M., Pascucci, I., et al. 2018, ApJ, 859, 32 Ronco, M. P., Guilera, O. M., Cuadra, J., et al. 2021, ApJ, 916, 113 Ruíz-Rodríguez, D., Kastner, J. H., Dong, R., et al. 2019, AJ, 157, 237 Smette, A., Sana, H., Noll, S., et al. 2015, A&A, 576, A77 Squicciarini, V., Mazoyer, J., Wilkinson, C., et al. 2025, A&A, 702, L10 van Capelleveen, R. F., Kenworthy, M. A., Ginski, C., et al. 2025, A&A, 704, A221 Vernet, J., Dekker, H., D’Odorico, S., et al. 2011, A&A, 536, A105 
+
+Article number, page 5 A&A proofs: manuscript no. main 
+
+Appendix A: Observational Information 
+
+A.1. Observations and data reduction 
+
+The two epochs of X-Shooter spectra were observed within the DDT program 116.2ASZ (PI Bürgy). The first spectrum was taken on April 16, 2026 at airmass-corrected seeing ∼ 1.3”, above the requested < 1”. Therefore, the observations were repeated on May 23, 2026 and carried out at airmass-corrected seeing ∼ 1”, as requested. During the first observations sky conditions were "Clear", while in the second epoch "Photometric". Both spectra were obtained with a narrow slit for the highest available spectral resolution and a wide slit for absolute flux calibration. The narrow slit observations were obtained using 0.5", 0.4", and 0.4" wide slits for the UVB, VIS, and NIR arms, respectively. Observations were performed in ABBA nodding mode to remove background sky emission. The wide slit observations were performed in stare mode using the 5" slit at the beginning of the observations. The corresponding reported spectral resolution of this observing setup is R ∼ 9700, 18400, and 11600 for the three arms, respectively. The X-Shooter data was reduced using the X-Shooter data reduction pipeline (v. 3.8.3; Modigliani et al. 2010), within the EsoReflex workflow (v. 2.11.5; Freudling et al. 2013), at default settings with the exception of the 1D spectral extraction window which was adapted to exclude a second star located within the slit for one of the nodding positions. Subsequently, the reduced spectra of the VIS and NIR arm were corrected for telluric absorption using Molecfit (v. 4.4.4.82 Smette et al. 2015; Kausch et al. 2015). The resulting spectra were re-scaled in flux to match the spectra taken with the wide slit in order to correct for flux losses. Finally, the spectra were individually corrected for the Earth’s motion relative to the local standard of rest (LSRK) at the time of observation. The FEROS observations were carried out under the DDT program 117.2AS7.001 (PI Benisty) between July 9 and July 13 2026, with an exposure time of 900 s each. The spectra were reduced using the ceres reduction pipeline 3 for echelle spectrographs (Brahm et al. 2017). The reduced and continuum-normalised spectra were corrected for Earth’s motion relative to LSRK at the time of observation. Table A.1: Log of X-Shooter Observations Date MJD Exp. Time Slit Width Airmass Seeing SNR RV (UVB - VIS - NIR) (UVB - VIS - NIR) (end) @ 705 nm [km /s] 2026-04-16 61147.39 2 x 180s 0.5 - 0.4 - 0.4 1.09 1.40" 47.6 −16 .72 ± 0.42 x 90s 2 x 4 x 50s 2026-05-23 61184.29 2 x 180s 0.5 - 0.4 - 0.4 1.08 1.01" 49.6 24 .51 ± 0.72 x 90s 2 x 4 x 50s  
+
+> Notes. Observational set up used to take the X-Shooter data. Additionally, we report the radial velocity measurements of WISPIT 2 in LSRK, derived via cross-correlation with a photospheric template.
+
+Table A.2: Log of FEROS Observations Date MJD Exp. Time Airmass Seeing RV [km /s] Phase ( ϕ)2026-07-09 61231.25 900.0932s 1.12 1.04 25 .15 ± 0.10 0.8576 2026-07-10 61232.25 900.0463s 1.13 1.63 27 .91 ± 0.09 0.0656 2026-07-11 61233.26 900.0464s 1.15 1.07 −0.44 ± 0.09 0.2739 2026-07-12 61234.25 900.0460s 1.13 0.98 −18 .45 ± 0.08 0.4798 2026-07-13 61235.25 900.0464s 1.16 0.83 −0.84 ± 0.11 0.6883  
+
+> Notes. Observational set up used to take the FEROS data. Additionally, we report the radial velocity measurements of WISPIT 2 in LSRK, derived via cross-correlation with a photospheric template.
+
+Appendix B: Spectra  
+
+> 3https://github.com/rabrahm/ceres.git
+> Article number, page 6
+
+C. J. Bürgy et al.: A closer look at the WISPIT 2 host star 10 −13     
+
+> 10 −12
+> Flux [erg/(s cm² nm)]
+> XShooter, 2026-04-16
+> XShooter, 2026-05-23
+> 300 400 600 1000 2000
+> Wavelength [nm]
+> 10 −13
+> 10 −12
+> Flux [erg/(s cm² nm)]
+> XShooter, 2026-04-16
+> XShooter, 2026-05-23
+
+Fig. B.1: Overview of the two X-Shooter spectra obtained. For comparison, the respective other epoch is plotted in grey. Table B.1: Spectral windows used for photospheric analysis X-Shooter FEROS Window Arm Window Order 440 - 459 nm UVB 517 - 533 nm 9512 - 522 nm UVB 533 - 545 nm 8534 - 550 nm VIS 545 - 557 nm 7605 - 627 nm VIS 557 - 573 nm 6702 - 712 nm VIS 573 - 588 nm 5760 - 772 nm VIS 588 - 603 nm 4816 - 822 nm VIS 603 - 622 nm 3959 - 980 nm VIS 617 - 626 nm 2634 - 638 nm 2638 - 645 nm 1650 - 653 nm 1
+
+Notes. List of spectral windows used for the photospheric fits of the X-Shooter spectra, as well as the cross-correlation of the FEROS spectra. 
+
+Table B.2: X-Shooter Line Detections Line λ0 ∆v0 FWHM Fline Lline log Lacc /L⊙
+
+(nm) (km s −1) (km s −1) (10 −14 erg s −1 cm −2) (10 −5 L⊙)2026-04-16 Hα 656 .29 5.72 51 .0 3.44 1.90 −3.63 Ca II 849 .80 1.47 19 .9 2.77 1.53 −1.63 Ca II 854 .21 1.05 28 .8 5.11 2.83 −1.43 Ca II 866 .21 2.28 25 .6 4.04 2.24 −1.33 2026-05-23 Hα 656 .29 −10 .14 68 .5 5.27 2.91 −3.39 Ca II 849 .80 1.70 20 .7 3.46 1.91 −1.53 Ca II 854 .21 1.21 30 .7 6.22 3.44 −1.34 Ca II 866 .21 2.16 27 .9 4.96 2.74 −1.24 
+
+Notes. Overview of the detected lines. For both epochs, we report the observed centroid shift ∆v0, the line FWHM, and the integrated line flux for the H α line, as well as the Calcium Infrared Triplet. Article number, page 7 A&A proofs: manuscript no. main 611 612 613 614 615 616 617                          
+
+> 0.4
+> 0.6
+> 0.8
+> 1.0
+> 702 704 706 708 710 712
+> 0.4
+> 0.6
+> 0.8
+> 1.0
+> 766 767 768 769 770 771 772 773 774 775
+> 0.4
+> 0.6
+> 0.8
+> 1.0
+> 816 817 818 819 820 821 822
+> 0.4
+> 0.6
+> 0.8
+> 1.0
+> 960 962 964 966 968 970
+> Wavelength [nm]
+> 0.4
+> 0.6
+> 0.8
+> 1.0
+> Normalised Flux
+
+Fig. B.2: Demonstration of the fitted PHOENIX model. Shown are the two X-Shooter epochs in blue and green in the background, as well as the best fit PHOENIX model in dotted black. Table B.3: H α Variability Night MJD EW [nm] Phase ( Φ)2026-04-16 61147.39 0.035 0.1149 2026-05-23 61184.29 0.052 0.4584 2026-07-09 61231.25 0.022 0.8576 2026-07-10 61232.25 0.014 0.0656 2026-07-11 61233.26 0.024 0.2739 2026-07-12 61234.25 0.026 0.4798 2026-07-13 61235.25 0.027 0.6883 
+
+Notes. Equivalent width of the H α emission line throughout all available epochs. Article number, page 8 C. J. Bürgy et al.: A closer look at the WISPIT 2 host star 0.6 
+
+0.8 
+
+1.0 
+
+1.2 
+
+> Norm. Flux
+
+Hα @ 656.3 nm 
+
+-400 -200 0 200 400 
+
+Rad. Vel. [km/s] 
+
+−1
+
+0
+
+1
+
+2
+
+3
+
+> Flux [10 −13  erg s cm 2 nm ]
+
+0.0 
+
+0.5 
+
+1.0 
+
+1.5 Hβ @ 486.1 nm 
+
+-400 -200 0 200 400 
+
+Rad. Vel. [km/s] 
+
+−2
+
+0
+
+2
+
+4
+
+6
+
+0.0 
+
+0.5 
+
+1.0 
+
+1.5 Hγ @ 434.0 nm 
+
+-400 -200 0 200 400 
+
+Rad. Vel. [km/s] 
+
+−2
+
+0
+
+2
+
+4
+
+6
+
+0.7 
+
+0.8 
+
+0.9 
+
+1.0 
+
+1.1 Pa β @ 1281.8 nm 
+
+-400 -200 0 200 400 
+
+Rad. Vel. [km/s] 
+
+0
+
+1
+
+2
+
+0.7 
+
+0.8 
+
+0.9 
+
+1.0 
+
+1.1 Br γ @ 2166.1 nm 
+
+-400 -200 0 200 400 
+
+Rad. Vel. [km/s] 
+
+0.0 
+
+0.2 
+
+0.4 
+
+0.4 
+
+0.6 
+
+0.8 
+
+1.0 
+
+1.2 Ca II @ 849.8 nm 
+
+-400 -200 0 200 400 
+
+Rad. Vel. [km/s] 
+
+0
+
+2
+
+4
+
+0.4 
+
+0.6 
+
+0.8 
+
+1.0 
+
+1.2 
+
+> Norm. Flux
+
+Ca II @ 854.2 nm 
+
+-400 -200 0 200 400 
+
+Rad. Vel. [km/s] 
+
+0
+
+2
+
+4
+
+> Flux [10 −13  erg s cm 2 nm ]
+
+0.4 
+
+0.6 
+
+0.8 
+
+1.0 
+
+1.2 Ca II @ 866.2 nm 
+
+-400 -200 0 200 400 
+
+Rad. Vel. [km/s] 
+
+0
+
+2
+
+4
+
+0.6 
+
+0.8 
+
+1.0 
+
+1.2 He I @ 587.6 nm 
+
+-400 -200 0 200 400 
+
+Rad. Vel. [km/s] 
+
+−1
+
+0
+
+1
+
+2
+
+3
+
+0.6 
+
+0.8 
+
+1.0 
+
+1.2 He I @ 667.8 nm 
+
+-400 -200 0 200 400 
+
+Rad. Vel. [km/s] 
+
+−1
+
+0
+
+1
+
+2
+
+3
+
+0.6 
+
+0.8 
+
+1.0 
+
+1.2 [O I] @ 630.0 nm 
+
+-400 -200 0 200 400 
+
+Rad. Vel. [km/s] 
+
+−1
+
+0
+
+1
+
+2
+
+3
+
+Fig. B.3: Gallery of lines traced with X-Shooter on 2026-04-16. The top row shows the normalised X-Shooter spectrum, shifted by 
+
+vr = −24 .29 km s −1 with respect to the disc systemic velocity (black), and the best fit PHOENIX stellar model convolved to the spectral resolution of the observations (red). The bottom row shows the residual flux. 
+
+Article number, page 9 A&A proofs: manuscript no. main 0.6 
+
+0.8 
+
+1.0 
+
+1.2 
+
+> Norm. Flux
+
+Hα @ 656.3 nm 
+
+-400 -200 0 200 400 
+
+Rad. Vel. [km/s] 
+
+−1
+
+0
+
+1
+
+2
+
+3
+
+> Flux [10 −13  erg s cm 2 nm ]
+
+0.0 
+
+0.5 
+
+1.0 
+
+1.5 Hβ @ 486.1 nm 
+
+-400 -200 0 200 400 
+
+Rad. Vel. [km/s] 
+
+−2
+
+0
+
+2
+
+4
+
+6
+
+0.0 
+
+0.5 
+
+1.0 
+
+1.5 Hγ @ 434.0 nm 
+
+-400 -200 0 200 400 
+
+Rad. Vel. [km/s] 
+
+−2
+
+0
+
+2
+
+4
+
+6
+
+0.7 
+
+0.8 
+
+0.9 
+
+1.0 
+
+1.1 Pa β @ 1281.8 nm 
+
+-400 -200 0 200 400 
+
+Rad. Vel. [km/s] 
+
+0
+
+1
+
+2
+
+0.7 
+
+0.8 
+
+0.9 
+
+1.0 
+
+1.1 Br γ @ 2166.1 nm 
+
+-400 -200 0 200 400 
+
+Rad. Vel. [km/s] 
+
+0.0 
+
+0.2 
+
+0.4 
+
+0.4 
+
+0.6 
+
+0.8 
+
+1.0 
+
+1.2 Ca II @ 849.8 nm 
+
+-400 -200 0 200 400 
+
+Rad. Vel. [km/s] 
+
+0
+
+2
+
+4
+
+0.4 
+
+0.6 
+
+0.8 
+
+1.0 
+
+1.2 
+
+> Norm. Flux
+
+Ca II @ 854.2 nm 
+
+-400 -200 0 200 400 
+
+Rad. Vel. [km/s] 
+
+0
+
+2
+
+4
+
+> Flux [10 −13  erg s cm 2 nm ]
+
+0.4 
+
+0.6 
+
+0.8 
+
+1.0 
+
+1.2 Ca II @ 866.2 nm 
+
+-400 -200 0 200 400 
+
+Rad. Vel. [km/s] 
+
+0
+
+2
+
+4
+
+0.6 
+
+0.8 
+
+1.0 
+
+1.2 He I @ 587.6 nm 
+
+-400 -200 0 200 400 
+
+Rad. Vel. [km/s] 
+
+−1
+
+0
+
+1
+
+2
+
+3
+
+0.6 
+
+0.8 
+
+1.0 
+
+1.2 He I @ 667.8 nm 
+
+-400 -200 0 200 400 
+
+Rad. Vel. [km/s] 
+
+−1
+
+0
+
+1
+
+2
+
+3
+
+0.6 
+
+0.8 
+
+1.0 
+
+1.2 [O I] @ 630.0 nm 
+
+-400 -200 0 200 400 
+
+Rad. Vel. [km/s] 
+
+−1
+
+0
+
+1
+
+2
+
+3
+
+Fig. B.4: Gallery of lines traced with X-Shooter on 2026-05-23. The top row shows the normalised X-Shooter spectrum, shifted by 
+
+vr = + 20 .11 km s −1 with respect to the disc systemic velocity (black), and the best fit PHOENIX stellar model convolved to the spectral resolution of the observations (red). The bottom row shows the residual flux. -100 0 100 
+
+Radial Velocity [km/s] 
+
+0.8 
+
+0.9 
+
+1.0 
+
+1.1 
+
+1.2 
+
+1.3 
+
+1.4 
+
+> Normalised Flux
+
+Hα2026-07-09 
+
+2026-07-10 
+
+2026-07-11 
+
+2026-07-12 
+
+2026-07-13 
+
+Fig. B.5: Comparison of H α line profiles across the FEROS epochs. The spectra are smoothed to the X-Shooter instrumental resolution to improve SNR. 
+
+Article number, page 10 C. J. Bürgy et al.: A closer look at the WISPIT 2 host star 
+
+Appendix C: Radial Velocity Analysis 0.0               
+
+> 0.5
+> 1.0 XS, 2026-04-17
+> 0.0
+> 0.5
+> 1.0 XS, 2026-05-24
+> 0.0
+> 0.5
+> 1.0 FEROS, 2026-07-09
+> 0.0
+> 0.5
+> 1.0 FEROS, 2026-07-10
+> 0.0
+> 0.5
+> 1.0 FEROS, 2026-07-11
+> 0.0
+> 0.5
+> 1.0 FEROS, 2026-07-12
+> −80 −60 −40 −20 020 40 60 80
+> Radial Velocity [km/s]
+> 0.0
+> 0.5
+> 1.0
+> Normalised CCF  FEROS, 2026-07-13
+
+Fig. C.1: Normalised cross correlation functions for all available epochs. We fit a Gaussian to the core-region around the cross correlation peak, which is shown in green. The derived radial velocity centroid is overplotted in red. The fit of the RV curve described in Sect.3, which corre-sponds to the solution of P ∼ 4.82. The distributions are single-peaked, with Gaussian profiles. The o ff -diagonal 2D plots repre-sent the bivariate distributions between each pair of parameters, which provide an immediate estimate of their correlation. 
+
+Fig. C.2: Corner plot of the orbital solution for WISPIT 2 adapted in this work. The vertical dashed lines indicate the 16th, 50th and 84th percentile. The vertical magenta lines correspond to the best likelihood estimates of each distribution. 
+
+Fig. C.3: Phase-folded solution of WISPIT 2 with P ∼ 4.62 days. The blue line fits the RV data taken with VLT /X-shooter in green and FEROS in black. Below, the residuals of the fitted model in phase. 
+
+Article number, page 11
