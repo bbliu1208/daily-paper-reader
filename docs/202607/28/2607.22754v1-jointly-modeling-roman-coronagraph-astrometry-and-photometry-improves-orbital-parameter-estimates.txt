@@ -1,0 +1,69 @@
+Title: Jointly Modeling Roman Coronagraph Astrometry and Photometry Improves Orbital Parameter Estimates
+
+URL Source: https://arxiv.org/pdf/2607.22754v1
+
+Published Time: Tue, 28 Jul 2026 00:07:38 GMT
+
+Number of Pages: 4
+
+Markdown Content:
+> Draft version July 28, 2026
+> Typeset using L ATEX twocolumn style in AASTeX631
+
+Jointly Modeling Roman Coronagraph Astrometry and Photometry Improves Orbital Parameter Estimates 
+
+Farrah Molina, 1, 2 Sarah Blunt, 3, 1 and Jason J. Wang 1
+
+> 1Center for Interdisciplinary Exploration and Research in Astrophysics (CIERA), Northwestern University, Evanston, IL 60208, USA
+> 2Department of Physics and Engineering, University of St. Thomas, Houston, TX, USA
+> 3Department of Astronomy and Astrophysics, University of California, Santa Cruz, CA, USA
+
+ABSTRACT Launching in 2027, the Nancy Roman Grace Space Telescope (Roman) has the potential to directly image exoplanets in reflected light for the first time. Roman imaging will introduce new constraints on exoplanet orbital parameters, since reflected-light intensity depends on orbital phase. In this Note, we discuss an addition to the open-source Python package orbitize! , which allows users to model exoplanet orbits using joint constraints from astrometry and photometric variations due to orbital phase. To investigate the impact of adding photometric data into the orbital model, we simulated realistic measurements of partial orbits, both including and excluding photometry in our model, and computed orbital posteriors. We found that fitting both astrometry and photometry improves posterior precision relative to fitting astrometry alone. This effect was more pronounced for higher-SNR images; for example, photometric data with SNR=10 yielded 33% improvement in inclination precision when including photometry, while SNR=3 data yielded only 12% improvement. 
+
+1. INTRODUCTION The Habitable Worlds Observatory (HWO) will aim to directly image exoplanets in nearby star systems to spectroscopically characterize Earth-mass planets in the habitable zones of Sun-like stars (National Academies of Sciences, Engineering, and Medicine 2021). To do this, the imaging community needs to build an instru-ment capable of achieving a contrast of 1e-10 in visi-ble reflected light. All directly-imaged exoplanets have been detected in infrared, with current state-of-the-art space-based instruments achieving an intensity contrast of ∼1e-5-1e-6 (Boccaletti, A. et al. 2022). The Roman Coronagraph Instrument (CGI) is a technology demon-stration intended to bridge this gap (Kasdin et al. 2020). After launch, time has been allocated for CGI to at-tempt to directly image an exoplanet in visible reflected light for the first time. The Roman CGI is expected to achieve an intensity contrast of ∼1e-8-1e-9 (Kasdin et al. 2020) as a technological demonstration for the HWO mission. Repeated CGI imaging will allow us to see the planet’s reflected-light intensity change as it orbits its host star. This is distinct from current direct imaging, which detects emitted light, and therefore is not sensi-tive to phase variations. In theory, observing this change in intensity will allow us to place additional constraints on a planet’s orbit using its photometric variability. In this Note, we explore how jointly modeling CGI pho-tometry and astrometry may affect our knowledge of a planet’s orbit, and how the signal noise ratio (SNR) affects the precision of the recovered orbital parameter posterior. To investigate the impact of phase-dependent pho-tometry on orbital parameter recovery, we modified 
+
+orbitize! , an open-source software toolkit for Bayesian orbit modeling of directly-imaged stellar companions (Blunt et al. 2020a, Blunt et al. 2024). The structure of this Note is as follows: Section 2 outlines a suite of simulations we ran using orbitize! , and Section 3 ana-lyzes the results of the simulations and discusses future work. 
+
+2. SIMULATIONS 2.1. Mock Data 
+
+In order to investigate the impact of SNR on recovered orbital posteriors, we generated three mock data sets of astrometry and photometry. Following the definitions in Blunt et al. (2020a), our test parameters are as follows: semimajor axis = 50 AU, eccentricity = 0.3, inclination = 30 °, Ω = 60 °, ω= 120 °, stellar parallax = 30 mas, albedo = 0.5, stellar mass = 1.25 M ⊙, and τ58849 = 0. To test the impact of jointly modeling astrometry and reflected-light photometry, we modified orbitize! , a Bayesian tool for computing the posteriors over orbital elements of directly imaged planets (Blunt et al. 2020b). Our implementation assumes a Lambertian disk reflec-tion model (see Appendix), which describes “matte” re-arXiv:2607.22754v1 [astro-ph.IM] 23 Jul 2026 2 Molina, Blunt & Wang 
+
+flection, or equally distributed reflection, off of a rough, porous surface. The assumption of a Lambertian disk is fixed in the current version of orbitize! ; future work will focus on creating a model that can accommodate more detailed reflection laws. We used orbitize! to predict astrometric and photometric values, then as-signed uncertainties assuming photon noise limited ob-servations for SNRs of 3, 5, and 10. We assumed 
+
+λ = 500 nm and D= 2 .4 m, the diameter of Roman’s CGI mirror. In other words, we defined the astrometric and photometric uncertainty as: astrometric uncertainty = λ/ DSNR (1) photometric uncertainty = photometric value SNR . (2) We also randomly added Gaussian noise to each mea-surement. 2.2. Posterior Recovery 
+
+Having generated our mock data sets, we next used 
+
+ptemcee (Vousden et al. 2016; Foreman-Mackey et al. 2013a), a parallel-tempered Affine-invariant Markov Chain Monte Carlo (MCMC) sampling algorithm, to re-cover posterior distributions. We used orbitize! ver-sion 3.3.0 to perform these tests. Each test used 20 temperatures, 1000 walkers, 10,000 burn-in steps, and 100,000 total steps per walker. We thinned each result-ing posterior by saving 1 out of every 10 steps. We ran two orbit fits for each SNR, one test using only the astrometry data, the other using both astrometry and photometry data. We assessed MCMC convergence by eye.  
+
+> 3.
+
+RESULTS Figure 1 visualizes the results of one joint pho-tometry+astrometry fit, assuming SNR=10. In this case, including photometry improves the posterior con-straint on inclination by 33%. The bottom panels of this figure show the impact of SNR on posterior con-straints. As expected, increasing SNR generally im-proves posterior constraints on both eccentricity and in-clination, both when fitting only astrometry and astrom-etry+photometry. However, the value added from pho-tometry increased with SNR; for SNR=3, including pho-tometry improved the inclination posterior constraint by 12%, while for SNR=10, including photometry improved the inclination posterior constraint by 33%. 3.1. Conclusion 
+
+This project demonstrates the quantifiable impact of including photometric measurements with reasonable uncertainties expected for Roman CGI in orbit fits. We observe that these improvements are dependent on SNR, with a higher SNR producing a greater improvement compared to the astrometric-only posteriors. These re-sults will allow for more accurate predictions of orbital parameters of directly imaged planets, in turn contribut-ing to the characterization of exoplanet populations. Future work for this project could focus on replac-ing the simplistic Lambertain disk reflection model with more realistic atmosphere models, investigating how posterior improvement depends on the true underlying orbital parameters, and investigating the relative impact of photometric and precursor RV or absolute astrome-try constraints (e.g. from Gaia or Hipparcos) on the recovered orbits. ACKNOWLEDGEMENTS We thank the BOBA group at Northwestern Univer-sity for their feedback in various stages of research. This material is based upon work supported by NASA under award 80NSSC24K0087. APPENDIX For convenience, below we develop the equations for a Lambertain disk model in the orbitize! coordinate system. The absolute distance between a planet and star at true anomaly f is given by: 
+
+R = a(1 − e2)(1 + e cos f ) , (1) and the line-of-sight distance, z, between the star and planet is: 
+
+z = R(− cos ω sin i sin f − cos f sin i sin ω). (2) 3
+
+Figure 1. The top four panels show 100 random draws from the orbital posterior for our SNR=10 case, jointly fitting astrometry and photometry. The bottom six panels show the posterior orbital constraints with and without photometric measurements for three different SNRs. The true values for the eccentricity and inclination are bolded and outlined in blue to show the improvements in constraint with an increasing SNR value. Takeaway: including photometry generally improves eccentricity and inclination constraints, and the improvement is more pronounced for higher values of SNR. 
+
+We can use these two physical distances to obtain α, the angle subtended by the path between the star, the planet, and the observer: 
+
+β = arctan 
+
+ −Rz
+
+
+
++ π (3) 
+
+α = 1
+
+π [sin( β) + ( π − β) cos( β)] . (4) Finally, we obtain the equation that calculates the relative brightness of the planet over time: planet brightness ∝ Aα
+
+R2 (5) where A is the planetary albedo, and R is the planetary radius. In the current implementation of orbitize! , we fit only for relative changes in brightness. 4 Molina, Blunt & Wang 
+
+## Software: orbitize! v3.4.0 (Blunt et al. 2020a, Blunt et al. 2024), astropy (Astropy Collaboration et al. 2013, As-tropy Collaboration et al. 2018, Astropy Collaboration et al. 2022) numpy (van der Walt et al. 2011), matplotlib (Hunter 2007), emcee (Collette 2013; Foreman-Mackey et al. 2013b; Foreman-Mackey et al. 2024), pandas (pandas development team 2026), HDF5 (Collette et al. 2023). REFERENCES 
+
+Astropy Collaboration, Robitaille, T. P., Tollerud, E. J., et al. 2013, A&A, 558, A33, doi: 10.1051/0004-6361/201322068 Astropy Collaboration, Price-Whelan, A. M., Sip˝ ocz, B. M., et al. 2018, AJ, 156, 123, doi: 10.3847/1538-3881/aabc4f Astropy Collaboration, Price-Whelan, A. M., Lim, P. L., et al. 2022, ApJ, 935, 167, doi: 10.3847/1538-4357/ac7c74 Blunt, S., Wang, J. J., Angelo, I., et al. 2020a, AJ, 159, 89, doi: 10.3847/1538-3881/ab6663 —. 2020b, AJ, 159, 89, doi: 10.3847/1538-3881/ab6663 Blunt, S., Wang, J., Hirsch, L., et al. 2024, The Journal of Open Source Software, 9, 6756, doi: 10.21105/joss.06756 Boccaletti, A., Cossou, C., Baudoz, P., et al. 2022, A&A, 667, A165, doi: 10.1051/0004-6361/202244578 Collette, A. 2013, Python and HDF5 (O’Reilly) Collette, A., Kluyver, T., Caswell, T. A., et al. 2023, h5py/h5py: 3.8.0, 3.8.0, Zenodo, doi: 10.5281/zenodo.7560547 Foreman-Mackey, D., Hogg, D. W., Lang, D., & Goodman, J. 2013a, PASP, 125, 306, doi: 10.1086/670067 —. 2013b, PASP, 125, 306, doi: 10.1086/670067 Foreman-Mackey, D., Farr, W. M., Archibald, A., et al. 2024, dfm/emcee: v3.1.6, v3.1.6, Zenodo, doi: 10.5281/zenodo.10996751 Hunter, J. D. 2007, Computing in Science & Engineering, 9, 90, doi: 10.1109/MCSE.2007.55 Kasdin, N. J., Bailey, V. P., Mennesson, B., et al. 2020, in Society of Photo-Optical Instrumentation Engineers (SPIE) Conference Series, Vol. 11443, Space Telescopes and Instrumentation 2020: Optical, Infrared, and Millimeter Wave, ed. M. Lystrup & M. D. Perrin, 114431U, doi: 10.1117/12.2562997 National Academies of Sciences, Engineering, and Medicine. 2021, Pathways to Discovery in Astronomy and Astrophysics for the 2020s, doi: 10.17226/26141 pandas development team, T. 2026, pandas-dev/pandas: Pandas, v3.0.4, Zenodo, doi: 10.5281/zenodo.21003741 van der Walt, S., Colbert, S. C., & Varoquaux, G. 2011, Computing in Science and Engineering, 13, 22, doi: 10.1109/MCSE.2011.37 Vousden, W. D., Farr, W. M., & Mandel, I. 2016, MNRAS, 455, 1919, doi: 10.1093/mnras/stv2422

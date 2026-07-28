@@ -1,0 +1,553 @@
+Title: Metal-Silicate Segregation During Planetary Accretion: Limited Iron Emulsification through intermediate Impacts
+
+URL Source: https://arxiv.org/pdf/2607.23035v1
+
+Published Time: Tue, 28 Jul 2026 00:31:12 GMT
+
+Number of Pages: 47
+
+Markdown Content:
+Highlights 
+
+Metal-Silicate Segregation During Planetary Accretion: Limited Iron Emul-sification through intermediate Impacts 
+
+Leila Honarbakhsh, Gabriele Morra, Peter Mora, Colin RM. Jackson • Entrainment coefficients increase with impactor size • Iron cloud geometrical dispersion remains limited for intermediate-sized impactors • Our models show that fragmentation continues for a longer duration after initial impact arXiv:2607.23035v1 [astro-ph.EP] 25 Jul 2026 Metal-Silicate Segregation During Planetary Accretion: Limited Iron Emulsification through intermediate Impacts 
+
+## Leila Honarbakhsh a, Gabriele Morra b, Peter Mora c and Colin RM. Jackson a
+
+> a
+
+School of Science and Engineering, Tulane University, Blessey Hall, New Orleans, 70118, Louisiana, United States 
+
+> b
+
+Department of Physics, University of Louisiana at Lafayette, Corner of Saint Mary Blvd. and Hebrard Blvd, Lafayette, 70504, Louisiana, United States 
+
+> c
+
+School of Earth and Atmospheric Sciences, Queensland University of Technology, Brisbane, 4000, QLD, Australia 
+
+A R T I C L E I N F O 
+
+Keywords :impactor magma ocean multiphase thermal lat-tice boltzmann method entrainment coefficient iron-silicate mixing 
+
+Abstract 
+
+In this study, we investigate the post-collisional evolution of an impactor’s iron core within a fully molten magma ocean using 2D numerical simulations with a novel Rothmann-Keller multi-phase Lattice Boltzmann Method. The impactor’s core diameter ranges from 152 km to 552 km, with aspect ratios from 0.75 to 
+
+5. At Reynolds numbers up to 10 4, our models reveal significant deformation and progressive fragmentation of the impactor into an iron cloud down to the smallest scale (several kilometers) that our method allows, which is then dispersed throughout the magma ocean by turbulent flow. We determined entrainment co-efficients for a range of intermediate impactor sizes with various shapes, finding that larger impactors consistently exhibit higher entrainment coefficients. By extrapolating our mixing data, we anticipate incomplete iron-silicate mixing for kilometer-scale impactors in a real magma ocean, qualitatively consistent with previous predictions of partial equilibration. Additionally, our models highlight the mid- to lower magma ocean depths as critical zones for further iron fragment breakups and material transfer in the magma ocean. 
+
+L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 1 of 44 Dynamics of Large Impactors in a Magma Ocean 
+
+1. Introduction 
+
+During planetary core formation, large differentiated impactors collided with the proto-Earth, generating magma oceans (MOs) whose depths and geometries varied based on the impactor’s size, velocity, and angle (Dale et al., 2023). Researchers have extensively investigated the dynamics of the impactor core as it descended through these MOs using theoretical, numerical, and experimental methods (Rubie et al., 2003; Dahl and Stevenson, 2010; Ichikawa et al., 2010; Deguen et al., 2011; Samuel, 2012; Deguen et al., 2014; Kendall and Melosh, 2016; Maas et al., 2021; Maller et al., 2024; Röhlen et al., 2025). The primary objective of these studies was to examine the metal-silicate segregation dynamics and to clarify the degree of metal-silicate mixing and equilibration, thereby refining the timing of accretion and enhancing the interpretation of geochemical signatures. Dominant turbulence within the MO plays a crucial role in segregation dynamics by strongly deforming the impactor’s iron core and fragmenting it into a cloud of tiny droplets that disperse throughout the magmatic flow, seeding iron-silicate mixing. In effect, turbulent entrainment draws in the surrounding silicate, causing the iron cloud to expand as it descends to greater depths (Turner, 1986; Deguen et al., 2014; Kendall and Melosh, 2016; Landeau et al., 2021). A larger amount of entrained MO facilitates more extensive chemical reactions, thereby exerting a stronger influence on the ultimate chemical composition of the mantle and core. The volume of the MO entrained by the iron cloud can be quantified by assuming a relationship between the entrainment rate and the inward entrainment velocity (Morton et al., 1956; Turner, 1986). According to the entrainment hypothesis, the entrained velocity across a turbulent flow is proportional to the flow’s characteristic velocity (Morton et al., 1956; Cenedese, 2024), where the proportionality constant is the entrainment coefficient.    
+
+> ∗Corresponding author
+> lhonarbakhsh@tulane.edu (L. Honarbakhsh)
+> ORCID (s):
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 2 of 44 Dynamics of Large Impactors in a Magma Ocean
+
+Dynamical conditions and the setup configuration are important factors that affect the entrainment coefficient. Various numerical and experimental inves-tigations have estimated the entrainment coefficient under different dynamical conditions. Using laboratory thermals, Turner (1986) found that the entrainment coefficient for buoyant clouds and thermals ranges from 0.2 to 0.25 . Similarly, Deguen et al. (2014) reported entrainment coefficients of 0.2-0.3 for interactions between immiscible fluids analogous to the iron-silicate system in a MO. Other studies have examined the effect of injector geometry on the entrainment rate and coefficient. For instance, numerical simulations by Kandakure et al. (2005) demonstrated that increasing the nozzle diameter enhances the air entrainment rate, a result that later was experimentally confirmed by Balamurugan et al. (2006). Moreover, Morrison et al. (2023) investigated the influence of the buoyant thermal aspect ratio on entrainment coefficient using direct numerical simulations at Re = 6300 , revealing its decrease by a factor of three as the aspect ratio increases by a factor of 4.In this study, we simulate the interaction between two immiscible fluids, namely, the impactor’s iron core and silicate in the MO, and similarly determine the effect of impactor geometry on the entrainment coefficient by testing various impactor diameters and aspect ratios. Iron-silicate mixing and equilibrium efficiency in the MO depend on several factors such as the size of the impactor’s core, depth of the MO, the iron droplet size, the amount of silicate in contact with iron, and the iron-silicate contact time (Rubie et al., 2003; Ichikawa et al., 2010; Dahl and Stevenson, 2010; Deguen et al., 2011, 2014; Röhlen et al., 2025). Some studies propose that small impactor cores, with diameters less than or equal to ten times the MO depth, fragment into centimeter-sized iron droplets within deep MOs, thereby facilitating efficient mixing and chemical equilibration (Deguen et al., 2014; Landeau et al., 2014). In another study, Samuel (2012) suggests that large diapirs smaller than the MO thickness may only reach chemical equilibrium over distances comparable to their initial size. According to Dahl and Stevenson (2010), impactor cores exceeding 10 km in diameter that collided with the proto-Earth during giant impacts may not fully disperse and equilibrate within the MO. In another study, Kendall and Melosh (2016) modeled impacts of differentiated impactors with   
+
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 3 of 44 Dynamics of Large Impactors in a Magma Ocean
+
+diameters of 100 km using hydrocode simulations. They showed that kilometer-scale impactor fragments can achieve chemical equilibrium in the deeper regions of the MO through turbulent entrainment. Thus, fragment size and MO depth are key parameters in assessing chemical equilibration, together with the contact time between the iron and silicate phases. Impact dynamics is another critical factor on the impactor’s core fragmenta-tion and iron-silicate mixing. Röhlen et al. (2025) investigated the influence of impactor size and velocity on its fragmentation within the MO using hydrocode models. Their findings revealed that impactor fragmentation is strongly dependent on MO depth, with shallower MOs exhibiting a lower degree of fragmentation and chemical equilibration. Similarly, Maller et al. (2024) experimentally examined the effects of impactor velocity and size on fragmentation in the MO, identifying the Froude number as a key factor controlling the fragmentation process. By experimentally investigating the effects of impact dynamics, including impactor speed, size, and density, as well as crater formation and jet collapse inertia, Landeau et al. (2021) found that undifferentiated impactors with diameters <
+
+100 km exhibit greater mixing with full chemical equilibration, whereas giant impacts show partial equilibration. Thus, the dynamics of the impactor core-MO interaction are central to understanding the chemical equilibration history of the early Earth. In this study, we pioneer the modeling of immiscible multiphase flow to explicitly simulate the interaction of an iron impactor core with a MO flow, independent of pre-existing thermal convection. We utilize a two-phase Lattice Boltzmann Method (LBM) (Mora et al., 2021, 2024) designed for immiscible fluids, which enables the self-consistent modeling of iron-silicate differentiation. By assigning discrete physical properties, such as density and viscosity, to each phase and utilizing a sophisticated ’recoloring’ algorithm (Mora et al., 2021), this numerical framework accurately resolves topological transitions from a coherent impactor to fragmented iron bodies. By maintaining sharp phase boundaries, this approach allows us to closely monitor the impactor’s fragmentation dynamics and the resulting extent of iron-silicate emulsification within the MO. A key challenge in modeling the interaction between the descending impactor core and the dynamics of the MO is accounting for the extremely turbulent nature of the MO. This turbulence is characterized by a computationally prohibitive high   
+
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 4 of 44 Dynamics of Large Impactors in a Magma Ocean
+
+Reynolds number ( ≈ 10 15 ). By focusing on the Reynolds number ranges up to 10 4
+
+in our study, we ensure a balance between computational feasibility and fidelity to the underlying physical processes, such as impactor fragmentation and interaction with MO turbulence. Quantifying iron-silicate mixing is both challenging and essential for accu-rately depicting the chemical and compositional state of our planet. Numerous studies have examined various mixing indices across different applications, with the standard deviation of the sample concentration relative to its mean serving as the most common indicator of the mixing process (Levy and Kalman, 2001). Poux et al. (1991) and Wang and Fan (1977) explored and tabulated various solid mixing indices, emphasizing the interrelation among these indices and highlighting the need to consider sample size in some cases. Similarly, Doroodchi et al. (2013) and Hashmi and Xu (2014) investigated the mixing behavior in microfluidic systems, examining several variance-based mixing indices. In another study, Kazemzadeh et al. (2021) employed a variance-based mixing index to evaluate the performance of a high-speed Scott impeller in mixing two immiscible liquids. Likewise, Duan et al. (2019) evaluated the mixing performance of an immiscible liquid–liquid cyclone reactor using variance-based mixing indices, whereas Zhu et al. (2024) defined mixing entropy and mixing time based on information entropy to measure the mixing degree of ionic liquid alkylation. The defined mixing metrics vary from 0 to 1, representing no mixing to perfect mixing, respectively. In this work, we use mixing entropy analyses to investigate the extent of iron-silicate mixing induced by the interaction of the impactor’s iron core with the MO across a range of diameters and aspect ratios. The structure of the paper is as follows: Section 2 outlines the simulation methodology, Section 3 presents the simulation results, and Sections 4 and 5 provide the discussion and conclusion, respectively. 
+
+2. Method 
+
+> 2.1. Lattice Boltzmann method
+
+The lattice Boltzmann method (LBM) has become increasingly prominent in com-putational fluid dynamics owing to its capability to model nonlinear rheologies, along with its straightforward parallelization, excellent scalability to large core   
+
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 5 of 44 Dynamics of Large Impactors in a Magma Ocean
+
+counts, and efficient treatment of interfacial dynamics and complex boundaries (He et al., 1999; Chiappini et al., 2010; Liang et al., 2016; Mora et al., 2021, 2023a,b, 2025). The iron-silicate segregation dynamics relevant to planetary core formation are primarily governed by Rayleigh-Taylor instability, which drives the descent of iron-rich diapirs or droplets through the silicate layer of the MO. Secondary Plateau-Rayleigh instabilities can further fragment iron streams and filaments into droplets as segregation progresses (Fleck et al., 2018). To this end, the Rothman–Keller multiphase lattice Boltzmann method (RKLBM) (Mora et al., 2021) provides a robust computational framework for investigating these pro-cesses (Latva-Kokko and Rothman, 2005a; Saito et al., 2017; Haghani et al., 2024). In this study, we employ the RKLBM framework to simulate iron-silicate segregation under conditions relevant to early planetary differentiation. This framework can be executed by excluding the thermal convection from RKTLBM (RK-Thermal LBM), which can model both thermal convection and multiphase flow simultaneously. However, its parameter interrelations and scaling still benefit from the use of thermal parameters (discussed later). The methodology formulation is outlined below. In the LBM terminology, the 𝐷𝑛𝑄𝑚 discrete lattice refers to a system with 𝑛 
+
+dimensions and 𝑚 discrete velocity vectors (the 𝐷 2𝑄 9 is used in this study). The velocity vectors, 𝐜 𝛼 , and weights, 𝜔 𝛼 , at each Cartesian lattice node and direction, 
+
+𝛼 , are defined as 
+
+𝐜 𝛼 =[(0 , 0) ,
+
+(1 , 0) , (0 , 1) , (−1 , 0) , (0 , −1) ,
+
+(1 , 1) , (−1 , 1) , (−1 , −1) , (1 , −1)]Δ 𝑥 ∕Δ 𝑡 , (1) and 
+
+𝑤 𝛼 =[4∕9 ,
+
+1∕9 , 1∕9 , 1∕9 , 1∕9 ,
+
+1∕36 , 1∕36 , 1∕36 , 1∕36] 
+
+, (2)   
+
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 6 of 44
+
+Dynamics of Large Impactors in a Magma Ocean 
+
+where Δx= 1 denotes the lattice spacing, and Δt= 1 is the lattice timestep. The corresponding velocity and weight parameters are used throughout the framework as described below. RKLBM is implemented through three fundamental steps: (i) streaming, (ii) collision, and (iii) recoloring. In the streaming step, the particle density distribu-tion functions, 𝑓 𝑘 𝛼 (𝑘 = 1 , 2, and 𝑘 refers to the iron and silicate phases), propagate along the lattice directions in each lattice node, and the following computational steps are implemented at each timestep to determine the momentum transfer. The post-streaming distribution function is given by 
+
+𝑓 𝑘 𝛼 (𝐱 , 𝑡 ) = 𝑓 𝑘 𝛼 (𝐱 − 𝐜 𝛼 Δ𝑡, 𝑡 − Δ 𝑡 ) (3) from which the macroscopic properties, such as fluid density and velocity, are obtained using the following expressions: 
+
+𝜌 𝑘 = ∑
+
+> 𝛼
+
+𝑓 𝑘 𝛼 , (4) 
+
+𝜌 = ∑
+
+> 𝑘
+
+𝜌 𝑘 , (5) 
+
+𝐮 = 1
+
+𝜌 
+
+∑
+
+> 𝑘
+
+∑
+
+> 𝛼
+
+𝑓 𝑘 𝛼 𝐜 𝛼 , (6) In the collision step, the standard LBM collision term relaxes the distributions toward Boltzmann equilibrium, while an additional term captures cohesive forces between the fluids. The collision step is obtained by adding the collision terms to the streaming terms: 
+
+𝑓 𝑘 ∗ 
+
+> 𝛼
+
+(𝐱 , 𝑡 ) = 𝑓 𝑘 𝛼 (𝐱 , 𝑡 ) + (Δ 𝑓 𝑘 𝛼 )1 + (Δ 𝑓 𝑘 𝛼 )2 , (7) 
+
+L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 7 of 44 Dynamics of Large Impactors in a Magma Ocean 
+
+where ∗ superscript represents the post-collision distributions, and (Δ 𝑓 𝑘 𝛼 )1 and 
+
+(Δ 𝑓 𝑘 𝛼 )2 correspond to the first and second collision terms, respectively. These terms and their constituent components are defined in the following: 
+
+(Δ 𝑓 𝑘 𝛼 )1 = 1
+
+𝜏 [𝑓 𝑘,𝑒𝑞 𝛼 (𝑥, 𝑡 ) − 𝑓 𝑘 𝛼 (𝑥, 𝑡 )] , (8) 
+
+(Δ 𝑓 𝑘 𝛼 )2 = 𝐴 |𝐅 | {𝜔 𝛼 [cos( 𝜆 𝛼 )|𝐜 𝛼 |]2 − 𝐵 𝛼 
+
+} (9) Here, 𝐅 (𝐱 , 𝐭 ) = Σ 𝛼 𝐜 𝛼 [𝜌 1(𝐱 + 𝐜 𝛼 Δ𝑇 , 𝑡 ) − 𝜌 2(𝐱 + 𝐜 𝛼 Δ𝑇 , 𝑡 )] denotes the color gradient (Latva-Kokko and Rothman, 2005b), 𝜆 𝛼 is the angle between 𝐅 and 𝐜 𝛼 , and defined as cos( 𝜆 𝛼 ) = 𝐜 𝛼 .𝐅   
+
+> |𝐜 𝛼 || 𝐅 |
+
+. 𝐵 0 = −4∕27 , 𝐵 𝛼 = 2∕27 for 𝛼 = 1 , 2, 3, 4, and 𝐵 𝛼 = 5∕108 
+
+for 𝛼 = 5 , 6, 7, 8.
+
+𝜏 is the relaxation time, representing the characteristic duration over which the density distribution function relaxes toward its respective equilibrium state. For the momentum distribution functions, the relaxation time controls the rate of momentum diffusion and is related to the kinematic viscosity as: 
+
+𝜏 𝑘 𝑓 = 3 𝜈 𝑘 𝑓 + 0 .5 (10) where 𝜈 𝑘 𝑓 denotes the kinematic viscosity of each phase. To manage abrupt variations in the relaxation time, 𝜏 , at the phase interface, different non-linear relations of 𝜓 (𝑥 ) = 𝜌 1(𝑥 )− 𝜌 2(𝑥 ) 
+
+> 𝜌 1(𝑥 )+ 𝜌 2(𝑥 )
+
+are used to smooth the relaxation time between the two phases (Grunau et al., 1993; Mora et al., 2021). 
+
+𝑓 𝑘,𝑒𝑞 𝛼 (𝑥, 𝑡 ) denotes the density equilibrium distribution function, which the distribution functions relax towards, and defined as follows: 
+
+𝑓 𝑘,𝑒𝑞 𝛼 (𝑥 ) = 𝜌 𝑘 (𝑃 𝑘 𝛼 + 𝜔 𝛼 [3( 𝐜 𝛼 .u) + 92(𝐜 𝛼 .u)2 − 32u2]) , (11) 
+
+L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 8 of 44 Dynamics of Large Impactors in a Magma Ocean 
+
+where 
+
+𝑃 𝑘 𝛼 =
+
+⎧⎪⎨⎪⎩
+
+𝛼 𝑘 , 𝛼 = 0  
+
+> 1− 𝛼 𝑘
+> 5
+
+, 𝛼 = 1 , 2, 3, 4 
+
+> 1− 𝛼 𝑘
+> 20
+
+, 𝛼 = 5 , 6, 7, 8
+
+(12) and 𝛼 1 = 𝜌 1 
+
+> 𝜌 1+ 𝜌 2
+
+and 𝛼 2 = 𝜌 2 
+
+> 𝜌 1+ 𝜌 2
+
+(Grunau et al., 1993; Reis and Phillips, 2007). 𝑃 𝑘 𝛼 
+
+denotes the rest and moving distributions in each phase when 𝐮 =0.After applying the streaming and collision steps to 𝑓 𝑘 𝛼 , which carries mass density of fluid 𝑘 , one obtains the incompressible Navier-Stokes equations (Chen and Doolen, 1998; Succi, 2001; Dellar, 2013). The last step of the multiphase RKLBM to achieve the separation of the two immiscible fluids is called recoloring and is obtained as follows (Rothman and Keller, 1988): 
+
+𝑓 𝑘 ∗∗  
+
+> 𝛼
+
+(𝐱 , 𝑡 ) = 𝜌 1
+
+𝜌 𝑓 ∗ 
+
+> 𝛼
+
++ 𝜁 𝜌 1𝜌 2
+
+𝜌 2 𝑓 𝑒𝑞 𝛼 (𝜌, 𝐮 = 0) 𝑐𝑜𝑠 (𝜆 𝛼 ) ± 𝐹 𝑏 𝑘𝛼 , (13) where ∗∗ superscript on the left-hand side refers to the post-recoloring distribution, 
+
+𝑓 ∗ 
+
+> 𝛼
+
+= ∑𝑘 𝑓 𝑘 ∗ 
+
+> 𝛼
+
+, and 𝜁 ∈ (0 , 1] is a parameter that can be adjusted to control the interfacial thickness ( 0.75 in this study). 𝐹 𝑏 𝑘𝛼 accounts for the buoyancy due to both temperature and compositional density differences. In other words, 𝐹 𝑏 𝑘𝛼 is a force term in the LBM in direction 𝛼 which applies an appropriate buoyancy force that captures the force on each fluid due to temperature differences (Boussinesq term) as well as compositional density differences ( i.e. Δ𝜌 ) where Δ𝜌 = 𝜌 − 𝜌 2 is the density difference between the total fluid and pure silicate. 
+
+2.2. Numerical Setup 
+
+In this study, we investigate the post-impact evolution of an impactor’s differen-tiated iron core (hereafter referred to as the impactor) in a turbulent MO while varying the impactor size and aspect ratio. We analyzed the temporal evolution of intermediate impactors with diameters: 152 km, 252 km, 352 km, 452 km, and 
+
+552 km in the MO. The aspect ratio, defined as the ratio of the impactor’s width to its height, ranges from 0.75 to 5, with increments of 0.25 . One example of our model setup is shown in Figure 1 for the impactor with a diameter of 552 km 
+
+L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 9 of 44 Dynamics of Large Impactors in a Magma Ocean 
+
+and aspect ratio of 5. In our models, we maintain a fixed aspect ratio of 2 for the numerical domain. For a given aspect ratio of 5, the impactor is modeled as a semi-ellipse with horizontal and vertical axes of 1105 km and 276 km, respectively, corresponding to a circular impactor with a diameter of 552 km. Previous planetesimal impact studies (Kendall and Melosh, 2016) indicate that an impactor with a diameter greater than 10 km remains intact after the impact and eventually comes to rest before interacting with the turbulent MO. Accordingly, we positioned the impactor near the surface at zero initial velocity in our simulations to investigate its emulsification and interactions within the MO. In our models, we implemented lateral periodic boundary conditions along with free-slip conditions at the top and bottom. Periodic lateral boundaries eliminate artificial edge effects and prevent the introduction of shear stresses that are not present in the actual MO. Meanwhile, the free-slip conditions at the top and bottom allow the impactor, initially placed at the top of the domain, to interact naturally with the underlying MO layer, ensuring a realistic representation of its engagement with deeper regions without the interference of artificial friction at the bottom boundary. Table 1 outlines the MO and simulation parameters used in this study. To characterize the dynamic behavior of our models, which mimic the interaction between an impactor and the MO, we introduce several dimensionless parameters, such as Reynolds number (Re), Weber number (We), Bond number (Bo), and Froude number (Fr), along with density and viscosity ratios. These parameters, discussed in detail below, define the dynamic regimes of iron-silicate interactions within the MO. The Reynolds number (Re), which represents the ratio of inertial to viscous forces, is defined as Re = 𝑢𝑙 ∕𝜈 where 𝜈 is the kinematic viscosity, 𝑙 is the impactor’s initial radius, and 𝑢 is the sinking velocity. In the real MO, Re can reach 10 15 . This estimate assumes an impactor with a 100 km radius, a post-impact velocity of several km/s (Deguen et al., 2011), and the silicate kinematic viscosity between 10 −7 − 10 −4 m2∕s (table 1). In our simulations, the core has a diameter ranging from 208 to 754 pixels, equivalent to 152 km and 552 km, the smallest and largest impactor diameters, respectively. Using a model (non-dimensional) viscosity of 𝜈 = 8 .28 × 10 −4 and sinking velocity slightly above 10 −2 , the resulting Re fall within the range 5896 –61025 . For a fixed impactor diameter, the Re values   
+
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 10 of 44 Dynamics of Large Impactors in a Magma Ocean
+
+remain of the same order of magnitude, irrespective of the aspect ratio employed in the model. The Weber number is defined as We = 𝜌 𝑓 𝑒 𝑢 2𝑙 𝜎 , and the Bond number is given by Bo = Δ𝜌𝑔𝑙 2 
+
+> 𝜎
+
+, where 𝜌 𝑓 𝑒 is the iron density, and Δ𝜌 and 𝜎 are the density difference and surface tension between iron and silicate, respectively. In real planetary impacts involving bodies with radii of 100 km or more, the MO naturally experiences We and Bo values on the order of 10 14 or beyond (Deguen et al., 2011). In our models, 𝜎 is set to 1.16 × 10 −4 in lattice unit, resulting in We and Bo values in the range 567 − 894 and 99 − 1299 , respectively, across various impactor sizes. Notably, the typical fragment radius in our simulations (determined as the most frequent radius in radii distribution over the entire simulation time) is 5 pixels (approximately 7 km, discussed in Section 3.2), and 
+
+𝜎 in lattice units for a single circular iron fragment of that size is determined from the 2D Young–Laplace relation 𝑑𝑃 = 𝜎 ∕𝑟 , where 𝑑𝑃 is the pressure difference between the inside and outside of the fragment. Despite the difference in scale between the We and Bo values in our models and those of real MO, the iron fragmentation regime observed in our simulations is qualitatively consistent with the reported fragmentation in laboratory experiments (Deguen et al., 2011, 2014; Landeau et al., 2014, 2021). This agreement indicates that our models capture the essential physics governing impactor segregation within the MO and are therefore capable of reproducing results consistent with experimental investigations. We define the viscosity ratio as the ratio between the viscosity of liquid silicates and that of liquid iron. Typically, liquid iron has a viscosity in the range of 5.4 × 10 −3 to 2 × 10 −3 Pa.s (Assael et al., 2006), while liquid silicates range from 10 −2 to 10 −1 Pa.s under conditions spanning atmospheric pressure to the core-mantle boundary (Bajgain et al., 2022). This yields a relative viscosity for the MO generally between 10 and 100 . However, for simplicity, our simulations set the viscosities of iron and silicate equal, even though in reality silicate’s viscosity is about an order of magnitude greater than that of liquid metal. The scaling of our numerical experiments justifies this assumption, as explained below. Mapping our high-resolution grid to the full MO depth ( ≈ 3000 km) yields a pixel width of about 732 meters. At this scale, each LBM fragment corresponds to an aggregate of many iron droplets within a predominantly silicate medium. Thus, the viscosity   
+
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 11 of 44
+
+Dynamics of Large Impactors in a Magma Ocean 
+
+assigned to each computational cell is an average weighted mainly by the silicate fraction, making the effect of lower iron viscosity negligible. The density ratio is defined as the difference between iron and silicate densities divided by the silicate density. In a real MO, this ratio is about 1.08 (Table 1). In our models, we assign iron and silicate densities of 1.1 and 1, respectively, following the standard LBM convention of normalizing densities to unity. This results in an iron-silicate density ratio about one order of magnitude lower than that of a real MO. Such a reduction is necessary to maintain numerical stability and accuracy within the LBM framework, as large density differences can lead to spurious velocities and numerical instabilities in multiphase simulations. By restricting the density ratio to values near unity, we ensure stable and reliable convergence of our model. To address this discrepancy, we adjust the model’s gravity using the thermal parameters as described in Section 2, by matching the ratio of compositional to thermal buoyancy forces in both model and MO. Specifically, the expression 
+
+( Δ𝜌𝑔 𝑐𝑜𝑚𝑝  
+
+> 𝜌 𝑠𝑖 𝑔 𝑐𝑜𝑛𝑣 𝛽 Δ𝑇
+
+)𝓁 = ( Δ𝜌𝑔 𝜌 𝑠𝑖 𝑔𝛽 Δ𝑇 )𝑝 preserves the intended buoyancy ratios and flow behavior while remaining within the stability limits of our numerical scheme. In other words, we introduce a compositional gravity term ( 𝑔 𝑐𝑜𝑚𝑝, 𝓁 ) to govern iron-silicate separation, using the model’s convective gravity ( 𝑔 𝑐𝑜𝑛𝑣, 𝓁 ) and the values of the thermal expansion ( 𝛽 ) and temperature difference in the model and real MO, as outlined below: 
+
+𝑔 𝑐𝑜𝑚𝑝, 𝓁 = ( 𝜌 𝑠𝑖, 𝓁 Δ𝜌 𝑝 𝛽 𝓁 Δ𝑇 𝓁 
+
+𝜌 𝑠𝑖,𝑝 Δ𝜌 𝓁 𝛽 𝑝 Δ𝑇 𝑝 
+
+)𝑔 𝑐𝑜𝑛𝑣, 𝓁 (14) Here, 𝑝 refers to the MO parameters, and 𝓁 denotes the lattice units. Note that these thermal parameters are merely used to scale the compositional gravity properly, and we do not model thermal convection in this study. The densimetric Froude number (Fr), which measures the ratio of inertial to gravitational buoyancy forces, is defined as Fr = 𝑢    
+
+> √𝑔 𝑐𝑜𝑚𝑝 (Δ 𝜌 ∕𝜌 si )𝑙
+
+where 𝜌 si is the silicate density. For large planetary impacts, Fr values typically lie in the range 
+
+1−500 (Allibert et al., 2023). Based on the model parameters listed in Table 1, the 
+
+L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 12 of 44 Dynamics of Large Impactors in a Magma Ocean 
+
+Froude numbers in our simulations range from 0.08 to 2.2, reflecting conditions where inertial and buoyancy forces are of comparable magnitude. 
+
+> 2.3. Timescale
+
+Matching the Fr formula (Section 2.2) for the model and MO and using 
+
+𝑢 𝑝 = 𝑢 𝓁 
+
+> Δ𝑥 𝑝
+> Δ𝑡 𝑝
+
+, where Δ𝑥 𝑝 = 𝐿 𝑝 ∕𝐿 𝓁 , we define the physical time step as follows: 
+
+Δ𝑡 𝑝 =
+
+√Δ𝜌 𝓁 𝑔 𝑐𝑜𝑚𝑝, 𝓁 𝜌 𝑠𝑖,𝑝 
+
+Δ𝜌 𝑝 𝑔 𝑝 𝜌 𝑠𝑖, 𝓁 
+
+Δ𝑥 𝑝 (15) 
+
+Δ𝑡 𝑝 is used to convert the model’s dimensionless time to real time. Using Table 1, one modeling time step is equivalent to 0.0086 sec. 
+
+3. Results 
+
+In this work, we investigate the effect of the impactor size and aspect ratio on the entrainment coefficient and iron-silicate mixing. In the following sections, we present the entrainment coefficients, the impactor’s fragmentation within the MO, and explore the extent of iron-silicate mixing using the mixing entropy metric. 
+
+> 3.1. Entrainment coefficient
+
+Numerous studies have explored the deformation and fragmentation of an impactor throughout its interaction with the MO (Deguen et al., 2011, 2014; Landeau et al., 2014; Lherm and Deguen, 2018). Likewise, our fluid dynamic numerical experiments exhibit fragmentation of the impactor and the development of an iron cloud controlled by variations in the impactor’s morphology arising from velocity fluctuations within the turbulent MO (Villermaux and Bossa, 2009; Tritton, 2012). Figure 2A illustrates the temporal evolution of an impactor with a diameter of 552 km in the MO, shown for aspect ratios of 1 (top panel) and 
+
+5 (bottom panel). Simulation time is normalized by the total steps ( 4 × 10 6;normalized simulation time, NST). The impactor is initialized at the top of the domain and sinks into a low-viscosity silicate phase. The sequence observed here for both aspect ratios mirrors the stirring regime reported in prior works (Wacheul et al., 2014; Lherm and Deguen, 2018; Kriaa et al., 2024), with the formation   
+
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 13 of 44
+
+Dynamics of Large Impactors in a Magma Ocean 
+
+Table 1 
+
+MO and simulation parameters 
+
+Parameters Magma ocean Dimension LBM 
+
+Silicate density ( 𝜌 𝑆𝑖 ) 3750 (1) 𝑘𝑔 𝑚 −3 1
+
+Iron density ( 𝜌 𝐹 𝑒 ) 7800 (1) 𝑘𝑔 𝑚 −3 1.1
+
+Density ratio ( Δ𝜌 ∕𝜌 𝑆𝑖 ) 1.08 — 0.1
+
+Gravity ( 𝑔 ) 9.8 m s −2 10 −3 (conv.), 
+
+1.059 × 10 −5 (comp.) Depth ( 𝐿 ) 3 × 10 6(2) 𝑚 4095 
+
+Dynamic Viscosity ( 𝜂 ) 10 −3 − 1 (3) 𝑃 𝑎.𝑠 2.67 × 10 −4 
+
+Kinematic viscosity ( 𝜈 ) 10 −7 − 10 −4 𝑚 2𝑠 −1 8.28 × 10 −4 
+
+Weber number (We) ≥ 10 14 (4) — 567 –894 
+
+Bond number (Bo) ≥ 10 14 (4) — 99 –1299  
+
+> 1
+
+Rubie et al. (2003);  
+
+> 2
+
+Solomatov (2015);  
+
+> 3
+
+Bajgain et al. (2022);  
+
+> 4
+
+Deguen et al. (2014) 
+
+of sheets and ligaments that subsequently break into smaller fragments. This indicates a qualitative agreement between our results and previous works. Visual inspection of the plots in Figure 2A reveals a wider lateral expansion and a larger number of iron fragments for the impactor with a larger aspect ratio (second-to-last snapshots in the bottom panels). To obtain a quantitative insight, first, we defined a red dotted reference line in each panel to examine the impactor’s evolution around it. This red line is determined by averaging the vertical coordinates of the iron cloud’s center of mass in both snapshots for a given column with different aspect ratios. The orange shaded regions mark the range of the spreading fronts of the iron cloud in each panel. We used the scikit-image Python library (van der Walt et al., 2014) to identify the iron fragments, the centroid and radius of each fragment, and the total number of fragments, nf, in each snapshot. These quantities are required to compute the local We, in every frame. For each snapshot, we estimated the surface tension in lattice units using the mode of the fragment radii ( i.e. , the most frequent radius in each frame) as 
+
+L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 14 of 44 Dynamics of Large Impactors in a Magma Ocean 
+
+described in Section 2.2. Using the velocity field at the fragment centroid, together with the fragment radius, the inferred surface tension, and the model iron density, we calculated the corresponding We value for each panel in Figure 2A. As the impactor sinks deeper into the MO, the shaded regions in all these panels gradually expand, reflecting enhanced interaction between the impactor and the MO, an increase in the number of fragments, and larger local We values. However, the impactor with the smaller aspect ratio undergoes less time-dependent evolution, as indicated by the smaller shaded area, and produces fewer iron fragments along the reference line than the impactor with the larger aspect ratio. Evidently, as expected, the temporal variations in We control the deformation and breakup of the impactor (Pilch and Erdman, 1987; Qaddah et al., 2019, 2020). Using the entrainment hypothesis and following Deguen et al. (2011, 2014), we have determined the entrainment coefficient, 𝛼 , for the impactor’s evolution within the MO across all tested diameters and aspect ratios, as described below. Figure 2B, left panel shows a snapshot of the iron cloud of an impactor with a diameter of 552 km and an aspect ratio of 5 at NST = 0.055 .We employed the scikit-image and SciPy Python libraries to track the geometric evolution of the iron cloud. The right panel of Figure 2B presents the envelope around the iron cloud, which is established by applying a mor-phological binary closing filter ( skimage.morphology ) with an optimized 
+
+50 -pixel circular structuring element, followed by a topological hole-filling operation (scipy.ndimage ). The total cross-sectional envelope area, A, is calculated directly as the spatial sum of this solid mask, and its outer boundary perimeter, p, is extracted using the Marching Squares algorithm via 
+
+skimage.measure.find_contours at an isolevel of 0.5. To determine 
+
+𝛼 , we used the following relation (Morton et al., 1956), across the simulation snapshots: 
+
+𝑑𝐴 ∕𝑑𝑧 = 𝑝𝛼 (16) and 
+
+𝛼 = 𝐴 − 𝐴 0
+
+∫ 𝑝𝑑𝑧 (17)   
+
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 15 of 44 Dynamics of Large Impactors in a Magma Ocean
+
+where 𝐴 0 is the initial cloud’s envelope area. The vertical displacement step between successive snapshots, dz, is evaluated using np.diff on the vertical coordinate of the cloud’s center of mass. The cumulative spatial integral ∫ 𝑝𝑑𝑧 
+
+is then computed by accumulating the product of p and this step size via 
+
+np.cumsum . After excluding the data points from the beginning and end of the trend that deviate from the linear growth of the iron cloud, which occurs primarily for smaller impactors with diameters of 152 km and 252 km, a linear regression of the total envelope area, A, against ∫ 𝑝𝑑𝑧 is performed via 
+
+scipy.stats.linregress . The slope of this linear fit yields 𝛼 . Figure A1, panels A to E, show the corresponding plots for all diameters and aspect ratios. To isolate the true entrainment behavior from edge artifacts, we initially placed the impactor at 500 pixels ( 366 km) below the upper boundary of the simulation domain and halted the cloud tracking at 500 pixels above the lower boundary. However, mainly for the smaller impactor diameters ( 152 km and 252 km), we manually truncated the data points at the beginning and end of the time series to isolate the linear growth phase of the cloud. Despite this rigorous boundary curation, these smaller impactors are heavily influenced by the background MO flow, obscuring a completely clean linear growth pattern (Figure A1, panels A and B) when compared to the larger impactor cases (Figure A1, panels C to E). To evaluate the sensitivity of 𝛼 to the initial conditions in our models, we conducted several simulations across all impactor diameters using a subset of aspect ratios, with the impactor placed at a depth of 500 pixels below the surface and its horizontal position shifted by one grid cell. We calculated 𝛼 for this set of simulations. Then we combined all alpha values from both models (with and without perturbations) into a single visualization for comprehensive statistical analysis. Figure 3 displays these combined datasets across all investigated impactor diameters and aspect ratios, utilizing circles for the models without perturbation and triangles for the perturbed models. To minimize visual crowding and clearly reveal any systematic trends in the color shading, the individual runs are visually simplified by averaging every three neighboring aspect ratios ( e.g. , binning aspect ratios 0.75 , 1, and 1.25 into an aspect ratio bin centered at 1).The statistical trend lines including, the solid mean line, and the dashed standard deviation line are computed using an unbinned dataset.   
+
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 16 of 44 Dynamics of Large Impactors in a Magma Ocean
+
+The plot demonstrates that 𝛼 increases systematically with increasing impactor size, falling within the range of [0 .00302 , 0.12426] for models without pertur-bation and [0 .00723 , 0.12240] for models with perturbations. Despite the slight variations in 𝛼 for a given diameter across different aspect ratios, and the fact that these ranges are lower than the experimental values ( 0.2 − 0 .3) determined by (Deguen et al., 2014), likely due to dimensional constraints in our 2D simulations, the central finding remains robust, demonstrating a clear dependence of 𝛼 on impactor diameter. We also conducted a simulation for a large impactor with a diameter of 
+
+1100 km and an aspect ratio of 5, through which, we determined 𝛼 = 0 .07807 .When compared against our intermediate-sized cases, at the same aspect ratio, this value indicates that the entrainment coefficient may plateau or even begin to decrease at very large scales. To further constrain the relationship between the impactor size and 𝛼 despite finite sample sizes in both models with and without perturbation, we employed Kernel Density Estimation (KDE) combined with bootstrapping. To perform an unbiased bootstrapping, we combined the 𝛼 values for a given impactor’s diameter and identical aspect ratios from both models. By repeatedly resampling the data ( 10000 iterations), we generated probability density functions (PDFs) and calculated 95% confidence intervals (CI) to define the likely range of the true physical average of 𝛼 . As illustrated by the probability density functions in Figure 4, the ensemble mean of 𝛼 increases systematically with impactor diameter, shifting from ≈ 0 .031 for the smallest body to 0.09 for the largest, a trend that persists regardless of initial grid-scale perturbations. Smaller impactors (𝐷 = 152 km and 252 km) display broader, shallower curves, demonstrating that entrainment efficiency at these scales is highly dependent on the initial geometry of the impactor. Conversely, for larger impactors ( 452 km ≤ 𝐷 ≤ 552 km), the curves become remarkably narrow and sharp, indicating that 𝛼 becomes highly predictable at larger scales and rendering the dynamics completely insensitive to initial impactor’s geometry. 
+
+> 3.2. Fragmentation
+
+One key question in iron-silicate segregation dynamics concerns how effi-ciently the impactor’s iron core breaks up and whether it fragments into the   
+
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 17 of 44 Dynamics of Large Impactors in a Magma Ocean
+
+smallest fragment size during its interaction with the MO before reaching the planetary core. This has important implications for iron-silicate equilibration efficiency and for the timescale of core formation (Nimmo and Kleine, 2015). Here, we evaluate this scenario using our models, focusing on the fragmentation of the impactor within the MO. Our results show the impactor fragments into progressively smaller pieces through the interaction with the turbulent MO before reaching the MO base. Figure 5, Left panels (A-D) illustrate this process (derived from post-processing of simulation results) for two end-member cases of the impactor’s diameter and aspect ratio: diameters of 152 km and 552 km, each with aspect ratios of 1 and 5.These plots show the temporal evolution of fragment radii, with iron breaking into smaller fragments, reaching model-resolved sizes consistently less than 10 km. The trend highlighted by the black arrow in panel A (left panel) indicates either large iron layers settling at the MO base or coalesced larger fragments. The black dashed lines denote the time just before the iron cloud first arrives at the bottom of the MO. Right-side plots (panels A-D) show snapshots of the iron cloud at times marked by the black dashed lines on the left plots. Comparing left and right plots further confirms that fragments reach the smallest grid-resolvable size before the iron cloud arrives at the MO base. If domain resolution were increased to capture the turbulence of the real MO, we would expect fragmentation to continue to correspondingly the smallest scales before base arrival. Our results, as well as this expectation, suggest that MO dynamics provide sufficient time to fragment impactors extensively before core accumulation. Our results also demonstrate that iron fragmentation yields a range of fragment sizes rather than a single characteristic radius, consistent with previous numerical and experimental studies (Villermaux and Bossa, 2009; Ichikawa et al., 2010; Wacheul et al., 2014). The evolution of the size distribution, where larger fragments break down into smaller ones through interactions with turbulent flow, is well described by the gamma function, Γ( 𝑘 ), in the following equation: 
+
+𝑝 (𝑥 ) = 𝑥 𝑘 −1 𝑒 −𝑥 𝜃 
+
+𝜃 𝑘 Γ( 𝑘 ) (18)   
+
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 18 of 44 Dynamics of Large Impactors in a Magma Ocean
+
+where 𝑥 refers the any arbitrary radius on the distribution, 𝑘 denotes the shape of the gamma distribution, 𝜃 is the gamma function scale, and Γ( 𝑘 ) presents the gamma function at 𝑘 value which is defined as Γ( 𝑘 ) = ( 𝑘 − 1)! . Smaller 𝑘 and larger 𝜃 correspond to a broader, more variable size distribution, while larger 𝑘 
+
+and smaller 𝜃 yield a narrower, more uniform size distribution. By determining 𝑘 
+
+and 𝜃 across various impactor sizes, Figure 5E reveals a systematic dependence on diameter: 𝑘 increases while 𝜃 decreases as the impactor diameter grows, a trend that remains consistent across all investigated aspect ratios. These results indicate that smaller impactors (lower 𝑘 ) produce a greater diversity of fragment sizes, whereas larger impactors (higher 𝑘 ) yield more similar-sized fragments. This diversity may enhance mixing efficiency, since smaller fragments are surrounded by more silicate in a given volume of the MO (Deguen et al., 2014; Landeau et al., 2021), while the more uniform fragment sizes associated with larger impactors may reduce the overall mixing efficiency. Whether core fragmentation occurs as a single, global event (Deguen et al., 2014) or through a cascading process (Rubie et al., 2003; Dahl and Stevenson, 2010; Samuel, 2012) remains a pivotal question, as the specific mechanism dictates the available time and surface area for chemical exchange. A single-event model implies that equilibration is governed by the initial breakup geometry, whereas a cascading process suggests a continuous creation of new interfaces, allowing for a much higher degree of metal-silicate interaction as the iron descends through the MO. Consistent with a previous study by Deguen et al. (2014), our results show that the impactor first entrains and incorporates ambi-ent silicate before fragmentation starts. Figure 6A demonstrates the successive fragmentation of the impactor with diameters of 152 km (top panels) and 552 km (bottom panels), both with an aspect ratio of 5. Insets in each panel enlarge the impactor’s evolution at each stage to better visualize the fragmentation process. As evident for the smaller impactor, fragmentation initiates at the upper parts of the elongated core at NST= 0.02 and progresses over time, whereas for the larger impactor it starts at the bottom edge (Rayleigh-Taylor-type erosion at the iron-silicate interface, as proposed by Dahl and Stevenson (2010)) at NST= 0.01 and proceeds with well-defined fragments over time. Our results also confirm that this progressive breakup is consistent with the fragmentation cascades described by Rubie et al. (2003) and Samuel (2012). In other words, in contrast to the   
+
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 19 of 44 Dynamics of Large Impactors in a Magma Ocean
+
+predominantly single fragmentation episode inferred by Deguen et al. (2014), our simulations show a cascading fragmentation sequence over NST= 0.02−0 .035 for the smaller impactor and NST= 0.01 − 0 .045 for the larger impactor, continuing until the smallest resolved fragment sizes are reached (not shown here). Our models reveal that impactors of different diameters begin fragmenting at comparable times. Figure 6B demonstrates the onset timing of fragmentation by showing the number of fragments as a function of NST for all impactor diameters, for aspect ratios of 1 (left panel) and 5 (right panel). Early portions of these curves highlight size- and aspect ratio-independent fragmentation onset. These results, which are driven from pure-turbulence models, match Röhlen et al. (2025) (their Fig. 5), who found similar fragmentation onset timing for different impactor sizes at fixed impact velocity and MO thickness. Their analysis (including a combination of impacts and turbulence dynamics) shows that smaller impactors form shallower craters while larger ones excavate deeper craters. This, along with the comparable fragmentation onset time in their results, implies that crater formation dissipates initial momentum such that MO turbulence governs the fragmentation across impactor sizes. This consistency between our results and theirs suggests that even giant impactors fragment to some extent during descent through sufficiently deep and turbulent MOs. 
+
+> 3.3. Analysis of Iron-Silicate Interfacial Distribution
+
+To constrain the iron-silicate interaction and mixing extent in our models, we analyzed the raw simulation density fields (stored as .npy arrays), in which each grid cell has one of these values: 0 for pure silicate, 1 for pure iron, and intermediate values between 0 and 1 representing the iron-silicate interface. We note that while a resolution gap exists between our planetary-scale models and a real MO—where a continuous hydrodynamic cascade eventually reduces the iron core down to centimeter-scale droplets—our models explicitly capture the large-scale hydrodynamic fragmentation regime. We propose that these resolved large fragments and the overall spatial distribution of the iron cloud define the interaction envelope in which the intermediate interface grid cells represent the specific regions of the MO where further sub-grid droplet breakdown would be concentrated. To quantify the extent of the iron cloud’s spatial expansion and iron-silicate interface characteristics, we adopted the mixing entropy metric (Zhu et al.,   
+
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 20 of 44 Dynamics of Large Impactors in a Magma Ocean
+
+2024), which is derived from the information entropy of a binary system (iron and silicate in this study). This metric is defined as the weighted average information content of the simulation grid, computed from the phase values assigned to each grid cell: 
+
+𝑀𝐸 = 𝐼𝐸 𝐼𝐸 𝑚𝑎𝑥 
+
+= −Σ 𝑁 𝑖 =0 [𝑝 𝑖 𝑙𝑛 (𝑝 𝑖 ) + (1 − 𝑝 𝑖 )𝑙𝑛 (1 − 𝑝 𝑖 )] −𝑁 [𝐶𝑙𝑛𝐶 + (1 − 𝐶 )𝑙𝑛 (1 − 𝐶 )] (19) Here, 𝑁 is the total number of grid cells in the field, while 𝑝 𝑖 and 1 − 𝑝 𝑖 
+
+denote the probabilities of iron and silicate in the 𝑖 th cell, respectively. The term 
+
+𝐼𝐸 𝑚𝑎𝑥 is a normalization factor, calculated based on the global iron concentration, 
+
+𝐶 , in the MO, where 𝐶 is the ratio of the initial impactor’s area to the total MO area. This factor ensures that maximum mixing 𝑀𝐸 = 1 is achieved when the iron cloud is uniformly distributed throughout the MO. The mixing entropy metric, 𝑀𝐸 , ranges from 0 to 1, representing insignificant cloud distribution to through cloud’s distribution inside the MO. It is important to note that there is a significant scale separation between the meter-to-kilometer-scale features resolved in our simulations and true millimeter-to-sub-meter emulsification pro-cesses in the MO. In other words, this mixing entropy metric differs fundamentally from thermodynamic mixing at the atomic scale. ME in this study serves as a macroscopic geometric proxy that quantifies the degree of spatial intermingling and fluid interface stretching at the grid scale. In a real MO, chemical equilibration is governed by the total available contact surface area between the immiscible iron and silicate phases. Under high shear stress, the descending iron mass stretches into thin filaments and sheets; when these structures become narrower than the local grid resolution in our simulations, the corresponding cells register intermediate phase ( 0 < 𝑝 𝑖 < 1), driving an increase in ME. Consequently, while an elevated ME does not imply atomic-level dissolution, it quantitatively tracks the expansion of the fluid interface envelope and the spatial dispersion of the iron cloud. This effectively identifies the volume fraction of the domain where large-scale dynamics have optimized the conditions required for sub-grid droplet breakdown.   
+
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 21 of 44 Dynamics of Large Impactors in a Magma Ocean
+
+To analyze the mixing dynamics, we distinguish between instant mixing entropy, which captures the spatial dispersion state of the iron cloud at any specific point in time, and the cumulative time fraction of mixing entropy, which aggregates these instantaneous states across the entire simulation to evaluate the percentage of total run time the system spent below a given mixing threshold. Our results reveal that the overall extent of mixing and mixing rate are relatively insignificant across all impactor sizes and aspect ratios. This behavior is qualitatively consistent with previous theoretical and experimental studies (Dahl and Stevenson, 2010; Landeau et al., 2014; Deguen et al., 2014), which predict incomplete emulsification for large impactors ( 𝐷 ≥ 10 km) inside the MO. We note that while those studies evaluate incomplete mixing via droplet-scale fluid emulsification length scales, the low ME values in this study reflect a limited large-scale (kilometer-sized) geometric dispersion of the iron cloud governed by the competition between turbulent entrainment and gravity settling. Figure 7A shows the instantaneous mixing entropy, tracking the dynamic evolution of the iron cloud’s spatial dispersion throughout the simulation time. These plots demonstrate that the peak mixing interval (represented by gray shaded regions) increases with larger impactor sizes. In other words, as the impactor size increases, a larger portion of the iron phase penetrates regions of pure silicate within the MO. The vertical dashed lines denote the times at which the leading front of the iron cloud first reaches the base of the MO. Following these intervals, the decreasing trend of the curves marks the subsequent sedimentation of the bulk of the iron at the bottom of the MO, while the plateaus at higher NSTs are associated with the smaller iron fragments that remain dynamically suspended in the MO. To explore the extent of cloud dispersion outside the primary size range investigated in this study, we evaluated the instantaneous mixing dynamics for extreme impactor diameters of 50 km and 1100 km, both modeled with aspect ratios of 1 and 5. The 1100 km case represents a massive, protoplanetary-scale impactor. Because the RKLBM numerical algorithm destabilizes under severe local velocity gradients that exceed the low-Mach-number limit (Ma > 1), our simulation for the 1100 km impactor with an aspect ratio of 1 suffered from numerical divergence and could not be completed. The temporal evolution of the instantaneous mixing for the successful simulations is shown in Figure A2. The   
+
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 22 of 44 Dynamics of Large Impactors in a Magma Ocean
+
+iron cloud of these impactors exhibits limited geometric dispersion across the MO, which closely aligns with the mixing trends established in our intermediate-size impactor models. To aggregate the temporal pathways shown in panel A, Figure 7B illustrates the cumulative time fraction of mixing entropy, which explicitly quantifies the percentage of total simulation runtime the system spends at or below a given mixing threshold. For the smallest impactor ( 𝐷 = 152 km), the mixing entropy reaches a maximum of approximately 0.072 at a cumulative time fraction of 
+
+100% . This maximum shifts to 0.094 for the largest impactor ( 𝐷 = 552 km). The profiles in Figure 7B reveal a steep vertical increase between 0.04 and 0.05 
+
+for diameters up to 352 km. This steepness indicates that the iron fragments reside within a narrow, nearly identical range of spatial dispersion states for the vast majority of the simulation history. In contrast, for larger impactors (𝐷 ≥ 452 km), the distribution shifts to the right and exhibits a lower and more gradual slope, signifying a wider variety of mixing states over the simulation time. While the maximum mixing entropy for the largest impactor is higher, this broader distribution indicates that the iron cloud exhibits a more diverse dispersion. Furthermore, the influence of the initial aspect ratio on the mixing entropy profiles becomes increasingly negligible as the impactor size increases. Determining the spatial location of the iron cloud during the peak mixing intervals (shaded regions in Figure 7A) provides critical insight into the depth of primary interaction of the iron cloud with the MO. Our results indicate that maximum primary mixing of the cloud with km-sized fragments is concentrated in the middle to deeper layers of the MO. Figure 8A displays snapshots for 252 km and 552 km impactors at times corresponding to the lower and upper bounds of these peak mixing intervals, illustrating the transit of the iron cloud into the deeper mantle. These regions serve as proxies for where further breakups (not captured in this study) are potentially most intense. In a real MO, the smallest turbulent eddies scale as 
+
+𝑑 ∝ 𝑅𝑒 −3∕4 (Succi, 2001), implying that the extreme turbulence of a planetary-scale mantle would further break these resolved fragments into far smaller droplets (Rubie et al., 2003; Deguen et al., 2014) compared to what our numerical model can achieve, although the ultimate stable droplet size will be governed by the balancing effect of surface tension. Consequently, the mid- to lower MO   
+
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 23 of 44 Dynamics of Large Impactors in a Magma Ocean
+
+layers identified in our models remain the probable zones for enhanced interface complexity and chemical exchange, provided that small-scale droplets (following further breakup) reach terminal Stokes velocity and their diffusion equilibration time is comparable to their residence time. Figure 8B tracks the temporal evolution of pixel categories for 152 km and 
+
+552 km impactors, at a fixed aspect ratio of 5. The interface pixels (dotted lines) represent grid cells containing a mixture of phases, while non-interface pixels (dashed lines) represent pure iron or silicate. The number of interface and non-interface pixels in both cases is normalized by the total number of pixels in the MO. By increasing the impactor diameter, the proportion of the interface pixels increases, indicating a more extensive spatial scattering of the iron phase in the MO; however, the absolute mixing entropy remains limited (< 0.1, Figure 7A) across all sizes and aspect ratios. 
+
+4. Discussion 
+
+We investigated the post-collisional evolution of the intermediate-sized differ-entiated impactor’s iron core within the MO, varying its size and aspect ratio. At sufficiently high Reynolds numbers, our simulations capture the breakup of the impactor core into an iron cloud, followed by its fragmentation into kilometer-scale bodies. While our models do not resolve the small-scale sub-range where efficient metal-silicate equilibration occurs, these results characterize the large-scale dynamics of the fragmentation cascade. These early-stage behaviors are expected to be universal in high-Reynolds turbulent flows, as confirmed by laboratory experiments and hydrocode simulations operating at lower, but comparably inertial, Reynolds numbers than those of real MO (Deguen et al., 2011; Samuel, 2012; Deguen et al., 2014; Kendall and Melosh, 2016; Landeau et al., 2014, 2021; Röhlen et al., 2025). Our results for a fixed impactor diameter indicate that impactors with different shapes (aspect ratios) follow distinct evolutionary paths at a given MO depth (Figure 2A), including systematic variations in the number of fragments produced during their interaction with the surrounding flow. According to our findings, more elongated impactors with slightly different cloud dispersion geometry may con-tribute differently to mantle mixing and chemical modification. Specifically, more   
+
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 24 of 44 Dynamics of Large Impactors in a Magma Ocean
+
+compact bodies produce fewer fragments and a less extended iron cloud, implying a reduced influence on material transport and mantle chemistry compared to their more elongated counterparts. According to laboratory experiments by Maller et al. (2024), the Froude number plays a key role in the impactor fragmentation, with a transition from largely intact cores to complete fragmentation as 𝑡𝑒𝑥𝑡𝐹 𝑒 increases from below 
+
+10 to around 40 for single-phase impactors, depending on the impactor size and impact speed. In contrast, as in iSALE hydrocode simulations (Röhlen et al., 2025), which exhibit substantial fragmentation over a broad range of Froude numbers (from 9.17 to 736 ), our models also show extensive fragmentation but at much lower Froude numbers ( 0.08 –2.2) than those explored in the laboratory experiments of Maller et al. (2024). While these previous studies define the Froude number exclusively at the moment of impact, they do not constrain the subsequent post-impact fragmentation dynamics. Our model fills this critical gap by tracking the long-term, post-impact fate of the impactor. Our results demonstrate that fragmentation continues for a significantly longer duration after the initial impact stage. This highlights that at the planetary scales of an MO, initial impact momentum is not the sole driver of core fragmentation; instead, buoyancy-driven instabilities can efficiently trigger and sustain fragmentation even in low-velocity, low-energy regimes. Using the entrainment hypothesis, we find that the entrainment coefficient in our models ranges from 0.00302 to 12426 , which is roughly one order of magnitude smaller than the experimental values ( 0.2–0.3) (Deguen et al., 2014). This discrepancy can be attributed to several factors: (i) The experimental setup employs a metal tube – analogous to an impactor core – with an aspect ratio of 
+
+1, while our simulations explore a range of aspect ratios. (ii) The experimental MO has dimensions of 25 .5 × 25 .5 × 47 cm 3, corresponding to an aspect ratio of 0.54 , compared to the MO aspect ratio of 2 used in this study. (iii) Our simulations neglect compressibility effects associated with supersonic flows post-impact due to limitations of our methodology, which is not well-suited for modeling high-speed compressible dynamics. (iv) The 2D geometry of our numerical models suppress 3D vortex stretching and prevent the turbulent energy cascade. Statistical analysis of our data indicates that 𝛼 depends on the impactor’s diameter (Figure 3). This size dependency is further validated by a bootstrapping   
+
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 25 of 44 Dynamics of Large Impactors in a Magma Ocean
+
+analysis, which confirms a clear positive correlation where larger impactors yield higher entrainment coefficients (Figure 4). Our models do provide new insight into how much silicate is entrained in the downward flow associated with the descent of impactor-derived iron. Previous calculations of MO and core chemistry have assumed that entrainment coefficients are constant for a wide variety of impactors (e.g., Rubie et al. (2015)). The net impact of this assumption is that larger impactors are predicted to have little silicate entrainment, and therefore, the chemical effect of larger impactors on MO is muted. Within the range of impactor sizes examined in this study, we show that larger impactors have higher entrainment coefficients than smaller impactors, countering the geometric limitations that larger impactors have in entraining silicate and reacting with the MO. This finding carries profound geochemical implications, indicating that the chemical effects of larger impactors may be progressively enhanced rather than muted, as was previously thought. However, an exploratory simulation of a significantly larger planetary-scale impactor yielded an 𝛼 value slightly lower than that of the largest body in our intermediate size range, suggesting that the entrainment coefficient may eventually plateau or decrease at extreme scales. Because this insight is drawn from a single exploratory run, these results highlight the need for a comprehensive, high-resolution study dedicated specifically to the large-scale impact scenarios to establish a firmer baseline. Our results demonstrate a sequential fragmentation of the impactor into its smallest fragment size (permitted by the model resolution) before its first arrival at the bottom of the MO (Figure 6). This implies that in extremely turbulent MOs, where fragments reach scales 5 to 6 orders of magnitude smaller than those in our models, such fine droplets would settle much more slowly than our km-sized fragments. Longer residence times would enhance iron-silicate equilibration opportunities, provided thermodynamic and kinetic conditions are met. Therefore, relying on our models, one anticipates that turbulence of the real MO provides sufficient time for extensive fragmentation before core accumulation, creating fa-vorable conditions for metal-silicate equilibration during planetary differentiation. In this investigation, we focused on the post-impact physical processes. and did not model the impact dynamics themselves, including crater formation and jet release as reported in previous numerical studies using iSALE (Tonks and   
+
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 26 of 44 Dynamics of Large Impactors in a Magma Ocean
+
+Melosh, 1993; Kendall and Melosh, 2016; Röhlen et al., 2025) nor the chemical interactions and diffusion between iron and silicate. We also did not examine the MO immediately after impact, when shock heating is especially intense near the impact point (Nakajima et al., 2021). These aspects, which would strengthen and extend our findings and provide a more complete picture of iron-silicate segregation dynamics, will be addressed in future complementary research. Nevertheless, as an initial step in evaluating our models, it is important to perform simulations without thermal effects, so that they can be directly compared with laboratory experiments and with iSALE calculations, which likewise neglect thermal evolution and viscous diffusion at the scales considered here. 
+
+5. Conclusion 
+
+In this study, we investigated the post-collisional temporal evolution of a differentiated impactor’s iron core as it interacts with the dynamics of a fully molten 3000 km-thick MO. We examined core diameters from 152 to 552 km (increments of 100 km) and aspect ratios from 0.75 to 5 (increments of 0.25 ), assuming no thermal effects. Our models demonstrate that MO turbulence strongly modifies the shape of the impactor core, fragmenting it into an iron cloud and kilometer-sized iron fragments dispersed throughout the MO. Fragmentation proceeds progressively through fragmentation cascade, generating additional fragments that continue to interact with the flow until they reach the grid resolution limit of our numerical models. We determined the entrainment coefficients for various impactor diameters and aspect ratios, ranging from 0.00302 to 0.12426 . Our analysis reveals a size-dependent relationship, where the entrainment coefficient increases with impactor diameter. By employing a bootstrapping method with 10000 resamples on the entrainment data, we also found that larger impactors exhibit higher entrainment coefficients during their interaction with the MO. Our findings indicate that elongated impactors significantly enhance the iron-silicate interfacial area, thereby paving the way for further fragment breakups. While tracking these subsequent, sub-scale breakups explicitly is beyond the current resolution limits of our models, our results establish a critical baseline for understanding the initial   
+
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 27 of 44 Dynamics of Large Impactors in a Magma Ocean
+
+stages of core emulsification. Using the mixing entropy metric, we found that iron cloud dispersion remains limited for all impactor sizes considered in this study, including the intermediate range, as well as the 50 km and 1100 km cases outside it. This restricted dispersion is in qualitative agreement with previous theoretical, numerical, and experimental work. Our results also indicate that the middle to lower layers of the MO exhibit a wider dispersion of the iron cloud. This creates favorable conditions for both metal-silicate equilibration and further fragment breakup, though capturing these subsequent sub-grid scale breakups remains beyond our current resolution limits. 
+
+CRediT authorship contribution statement Leila Honarbakhsh: Conceptualization, Methodology, Numerical Modeling, Results Processing, Software development, Writing. Gabriele Morra: Concep-tualization, Methodology, Writing. Peter Mora: Numerical Model Development, Software Development, Writing. Colin RM. Jackson: Conceptualization, Writ-ing. 
+
+Declaration of competing interest 
+
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper. 
+
+Acknowledgements 
+
+We would like to thank NASA for supporting this research through the NASA Emerging Worlds Grant 80NSSC21K0377. We thank the anonymous reviewers for their constructive comments, which greatly improved the quality of the manuscript. 
+
+Data Availability 
+
+The dataset presented in this paper is generated from a combination of numerical models (Mora et al., 2021; Mora and Yuen, 2018; Mora et al., 2023a) and is available in Mendeley Data (link: https://data.mendeley.com/ datasets/g4c6fsk79t/2 ) and Honarbakhsh (2026).   
+
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 28 of 44 Dynamics of Large Impactors in a Magma Ocean
+
+Appendix A Entrainment Coefficient Plots 
+
+Here, we present the variations of the iron cloud’s area plotted against the product of its perimeter and the change in its vertical center of mass. Figure A1, panels A through E display these results across all aspect ratios for impactor diameters ranging from 152 km to 552 km.   
+
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 29 of 44
+
+Dynamics of Large Impactors in a Magma Ocean 
+
+Figure 1: Schematic representation of our simulation model setup. The impactor is initially positioned at the top of the MO. L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 30 of 44 Dynamics of Large Impactors in a Magma Ocean               
+
+> Figure 2: Panel A shows the impactor evolution with a diameter of  552  km and two different aspect ratios,  1 (top) and  5 (bottom), in the MO. The red dashed line is computed as the average vertical position of the iron cloud center of mass across snapshots for all aspect ratios in a given column. The shaded regions indicate the full extent of the iron cloud evolution in each panel. Panel B shows the plots of the iron cloud from an impactor with a diameter of  552  km and an aspect ratio of  5 (left), alongside the envelope encloses the iron cloud shown in red (right). Two red dots indicate the region within one standard deviation of the iron concentration distribution.
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 31 of 44 Dynamics of Large Impactors in a Magma Ocean
+> Figure 3: Entrainment coefficient variation across different diameters and aspect ratios, with the mean (solid line) and standard deviation (dashed line).
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 32 of 44 Dynamics of Large Impactors in a Magma Ocean
+> 𝐷  (km)  𝜶 mean  95% CI Lower  95% CI Upper
+> 152  0.031  0.018  0.045 252  0.063  0.052  0.073 352  0.076  0.066  0.087 452  0.091  0.085  0.098 552  0.098  0.094  0.103
+> Figure 4: The probability density functions for the bootstrapped entrainment coefficient. The solid colored curves represent the primary KDE, while the surrounding ensemble of  10000  faint curves represents the bootstrapped distribution, highlighting the statistical variance. The colored dashed lines denote the expected mean  𝛼  for each impactor diameter. The corresponding tables provide the mean  𝛼
+> and the  95%  Confidence Intervals for each impactor diameter.
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 33 of 44 Dynamics of Large Impactors in a Magma Ocean
+> Figure 5: Left panels (A–D) show the fragmentation process for impactor cores with diameters of
+> 152  km and  552  km ;, and aspect ratios of  1 and  5. The black arrow highlights an instance of either large sedimented layers or coalesced iron fragments. Black vertical dashed lines mark the times just before the impactor first arrives at the bottom of the MO. Right panels (A–D) depict the moments when the leading front of the iron cloud reaches the base of the MO, corresponding to the dashed lines on the left plots. The plot of  𝑘  and  𝜃  versus impactor diameters is shown in panel E, with different colors representing various aspect ratios.
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 34 of 44 Dynamics of Large Impactors in a Magma Ocean Figure 6: Panel A shows the successive fragmentation of impactors with diameters of  152  km (top) and
+> 552  km (bottom), both with an aspect ratio of  5. Insets depict the magnified impactor evolution in each frame, for better visualization. Panel B shows the number of fragments versus NST for all impactor diameters, at aspect ratios of  1 (left) and  5 (right).
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 35 of 44 Dynamics of Large Impactors in a Magma Ocean
+> Figure 7: Panels A and B show the plots of the instantaneous mixing and cumulative time fraction of mixing entropy, respectively, for impactors with increasing diameters from left to right. Colors indicate different aspect ratios, and shaded regions in panel B mark areas of maximum mixing in each case. The vertical dashed lines show the times at which the impactor initially has reached the bottom of the MO.
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 36 of 44 Dynamics of Large Impactors in a Magma Ocean
+> Figure 8: Panel A shows the simulation snapshots of the impactor fragmentation with diameters  252  km (top rows) and  552  km (bottom rows), both with an aspect ratio of  5. In each row, the snapshots are taken at the times corresponding to the lower and upper bounds of the shaded areas in Figure 7B. Panel B presents the plot of the temporal evolution of the interface pixels (marked by a dotted line) and non-interface pixels (marked by a dashed line), for the impactor diameters and aspect ratio shown in panel A.
+> L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 37 of 44
+
+Dynamics of Large Impactors in a Magma Ocean 
+
+> Figure A1: Linear regression of the total envelope area,  𝐴 , against  ∫ 𝜌𝑑𝑧  across all aspect ratios (Panel A).
+
+L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 38 of 44 Dynamics of Large Impactors in a Magma Ocean 
+
+> Figure A1: Linear regression results continued (Panel B).
+
+L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 39 of 44 Dynamics of Large Impactors in a Magma Ocean 
+
+> Figure A1: Linear regression results continued (Panel C).
+
+L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 40 of 44 Dynamics of Large Impactors in a Magma Ocean 
+
+> Figure A1: Linear regression results continued (Panel D).
+
+L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 41 of 44 Dynamics of Large Impactors in a Magma Ocean 
+
+Instantaneous Mixing Dynamics for 50 km and 1100 km Impactors with Aspect Ratios of 1 and 5
+
+Figure A2 shows the evolution of instant mixing over the simulation time for impactors smaller and larger than the intermediate size range in this study. 
+
+References 
+
+Allibert, L., Landeau, M., Röhlen, R., Maller, A., Nakajima, M., Wünnemann, K., 2023. Planetary impacts: scaling of crater depth from subsonic to supersonic conditions. Journal of Geophysical Research: Planets 128, e2023JE007823. Assael, M.J., Kakosimos, K., Banish, R.M., Brillo, J., Egry, I., Brooks, R., Quested, P.N., Mills, K.C., Nagashima, A., Sato, Y., et al., 2006. Reference data for the density and viscosity of liquid aluminum and liquid iron. Journal of physical and chemical reference data 35, 285–300. Bajgain, S.K., Ashley, A.W., Mookherjee, M., Ghosh, D.B., Karki, B.B., 2022. Insights into magma ocean dynamics from the transport properties of basaltic melt. Nature communications 13, 7590. Balamurugan, S., Gaikar, V., Patwardhan, A., 2006. Hydrodynamic characteristics of gas–liquid ejectors. Chemical Engineering Research and Design 84, 1166–1179. Cenedese, C., 2024. The entrainment hypothesis–80 years old and still going strong. Journal of Fluid Mechanics 1000, F2. Chen, S., Doolen, G.D., 1998. Lattice boltzmann method for fluid flows. Annual review of fluid mechanics 30, 329–364. Chiappini, D., Bella, G., Succi, S., Toschi, F., Ubertini, S., et al., 2010. Improved lattice boltzmann without parasitic currents for rayleigh-taylor instability. Communications in Computational Physics 7, 423. Dahl, T.W., Stevenson, D.J., 2010. Turbulent mixing of metal and silicate during planet accretion—and interpretation of the hf–w chronometer. Earth and Planetary Science Letters 295, 177–186. Dale, K., Rubie, D.C., Nakajima, M., Jacobson, S., Nathan, G., Golabek, G.J., Cambioni, S., Morbidelli, A., 2023. An improved model of metal/silicate differentiation during earth’s accretion. Icarus 406, 115739. Deguen, R., Landeau, M., Olson, P., 2014. Turbulent metal–silicate mixing, fragmentation, and equilibration in magma oceans. Earth and Planetary Science Letters 391, 274–287. Deguen, R., Olson, P., Cardin, P., 2011. Experiments on turbulent metal-silicate mixing in a magma ocean. Earth and Planetary Science Letters 310, 303–313. Dellar, P.J., 2013. An interpretation and derivation of the lattice boltzmann method using strang splitting. Computers & Mathematics with Applications 65, 129–141. Doroodchi, E., Sathe, M., Evans, G., Moghtaderi, B., 2013. Liquid–liquid mixing using micro-fluidised beds. Chemical Engineering Research and Design 91, 2235–2242. Duan, S., Meng, X., Zhang, R., Liu, H., Xu, J., Du, W., Xu, C., Liu, Z., 2019. Experimental and computational investigation of mixing and separation performance in a liquid–liquid cyclone reactor. Industrial & Engineering Chemistry Research 58, 23317–23329. Fleck, J., Rains, C., Weeraratne, D., Nguyen, C., Brand, D., Klein, S., McGehee, J., Rincon, J., Martinez, C., Olson, P., 2018. Iron diapirs entrain silicates to the core and initiate thermochemical plumes. Nature communications 9, 71. Grunau, D., Chen, S., Eggert, K., 1993. A lattice boltzmann model for multiphase fluid flows. Physics of Fluids A: Fluid Dynamics 5, 2557–2562. Haghani, R., Erfani, H., McClure, J.E., Flekkøy, E.G., Berg, C.F., 2024. Color-gradient-based phase-field equation for multiphase flow. Physical Review E 109, 035301. Hashmi, A., Xu, J., 2014. On the quantification of mixing in microfluidics. Journal of laboratory automation 19, 488–491. He, X., Chen, S., Zhang, R., 1999. A lattice boltzmann scheme for incompressible multiphase flow and its application in simulation of rayleigh–taylor instability. Journal of computational physics 152, 642–663. Honarbakhsh, L., 2026. Metal-silicate segregation during planetary accretion: Limited iron emulsification through inter-mediate impacts. URL: https://doi.org/10.17632/g4c6fsk79t.2 , doi: 10.17632/g4c6fsk79t.2 .
+
+L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 42 of 44 Dynamics of Large Impactors in a Magma Ocean 
+
+Ichikawa, H., Labrosse, S., Kurita, K., 2010. Direct numerical simulation of an iron rain in the magma ocean. Journal of Geophysical Research: Solid Earth 115. Kandakure, M., Gaikar, V., Patwardhan, A., 2005. Hydrodynamic aspects of ejectors. Chemical Engineering Science 60, 6391–6402. Kazemzadeh, A., Turcotte, G., Ein-Mozaffari, F., Lohi, A., 2021. Analysis of the performance of a high-speed scott turbon mixer in immiscible liquid–liquid mixing through endoscopy, tomography, cfd, and statistical methods. Industrial & Engineering Chemistry Research 60, 14927–14947. Kendall, J.D., Melosh, H., 2016. Differentiated planetesimal impacts into a terrestrial magma ocean: Fate of the iron core. Earth and Planetary Science Letters 448, 24–33. Kriaa, Q., Landeau, M., Le Bars, M., 2024. Influence of planetary rotation on metal-silicate mixing and equilibration in a magma ocean. Physics of the Earth and Planetary Interiors 352, 107168. Landeau, M., Deguen, R., Olson, P., 2014. Experiments on the fragmentation of a buoyant liquid volume in another liquid. Journal of fluid mechanics 749, 478–518. Landeau, M., Deguen, R., Phillips, D., Neufeld, J.A., Lherm, V., Dalziel, S.B., 2021. Metal-silicate mixing by large earth-forming impacts. Earth and Planetary Science Letters 564, 116888. Latva-Kokko, M., Rothman, D.H., 2005a. Diffusion properties of gradient-based lattice boltzmann models of immiscible fluids. Physical Review E—Statistical, Nonlinear, and Soft Matter Physics 71, 056702. Latva-Kokko, M., Rothman, D.H., 2005b. Static contact angle in lattice boltzmann models of immiscible fluids. Physical Review E—Statistical, Nonlinear, and Soft Matter Physics 72, 046701. Levy, A., Kalman, C.J., 2001. Handbook of conveying and handling of particulate solids. volume 10. Elsevier. Lherm, V., Deguen, R., 2018. Small-scale metal/silicate equilibration during core formation: The influence of stretching enhanced diffusion on mixing. Journal of Geophysical Research: Solid Earth 123, 10–496. Liang, H., Li, Q., Shi, B., Chai, Z., 2016. Lattice boltzmann simulation of three-dimensional rayleigh-taylor instability. Physical Review E 93, 033113. Maas, C., Manske, L., Wünnemann, K., Hansen, U., 2021. On the fate of impact-delivered metal in a terrestrial magma ocean. Earth and Planetary Science Letters 554, 116680. Maller, A., Landeau, M., Allibert, L., Charnoz, S., 2024. Condition for metal fragmentation during earth-forming collisions. Physics of the Earth and Planetary Interiors 352, 107199. Mora, P., Morra, G., Honarbakhsh, L., Huttig, C., Tosi, N., 2024. Progress and perspectives on using the lattice boltzmann method for geodynamics simulation research. EGU24 . Mora, P., Morra, G., Yuen, D., 2023a. Hpc implementation and algorithm of the thermal lattice boltzmann method for geodynamics simulations in 2d and 3d, in: EGU General Assembly Conference Abstracts, pp. EGU–15888. Mora, P., Morra, G., Yuen, D., Honarbakhsh, L., 2023b. Exascale geodynamical simulations with the lattice boltzmann method, in: AGU 2023 Fall Meeting, American Geophysical Union. pp. NG43A–0698. Mora, P., Morra, G., Yuen, D.A., 2021. Optimal surface-tension isotropy in the rothman-keller color-gradient lattice boltzmann method for multiphase flow. Physical Review E 103, 033302. Mora, P., Morra, G., Yuen, D.A., Honarbakhsh, L., 2025. Computational geodynamics to model magma oceans and mantle convection via the thermal lattice boltzmann method on exascale hpc clusters. Physics of the Earth and Planetary Interiors Under review. Mora, P., Yuen, D.A., 2018. Simulation of regimes of convection and plume dynamics by the thermal lattice boltzmann method. Physics of the Earth and Planetary Interiors 275, 69–79. Morrison, H., Jeevanjee, N., Lecoanet, D., Peters, J.M., 2023. What controls the entrainment rate of dry buoyant thermals with varying initial aspect ratio? Journal of the Atmospheric Sciences 80, 2711–2728. Morton, B.R., Taylor, G.I., Turner, J.S., 1956. Turbulent gravitational convection from maintained and instantaneous sources. Proceedings of the Royal Society of London. Series A. Mathematical and Physical Sciences 234, 1–23. Nakajima, M., Golabek, G.J., Wünnemann, K., Rubie, D.C., Burger, C., Melosh, H.J., Jacobson, S.A., Manske, L., Hull, S.D., 2021. Scaling laws for the geometry of an impact-induced magma ocean. Earth and Planetary Science Letters 568, 116983. 
+
+L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 43 of 44 Dynamics of Large Impactors in a Magma Ocean 
+
+Nimmo, F., Kleine, T., 2015. Early differentiation and core formation: processes and timescales. The early Earth: accretion and differentiation , 83–102. Pilch, M., Erdman, C., 1987. Use of breakup time data and velocity history data to predict the maximum size of stable fragments for acceleration-induced breakup of a liquid drop. International journal of multiphase flow 13, 741–757. Poux, M., Fayolle, P., Bertrand, J., Bridoux, D., Bousquet, J., 1991. Powder mixing: some practical rules applied to agitated systems. Powder Technology 68, 213–234. Qaddah, B., Monteux, J., Clesi, V., Bouhifd, M.A., Le Bars, M., 2019. Dynamics and stability of an iron drop falling in a magma ocean. Physics of the Earth and Planetary Interiors 289, 75–89. Qaddah, B., Monteux, J., Le Bars, M., 2020. Thermal evolution of a metal drop falling in a less dense, more viscous fluid. Physical Review Fluids 5, 053801. Reis, T., Phillips, T.N., 2007. Lattice boltzmann model for simulating immiscible two-phase flows. Journal of Physics A: Mathematical and Theoretical 40, 4033. Röhlen, R., Wünnemann, K., Allibert, L., Maas, C., Hansen, U., 2025. Impactor core breakup during impact into a magma ocean: A parameter study. Icarus , 116464. Rothman, D.H., Keller, J.M., 1988. Immiscible cellular-automaton fluids. Journal of Statistical Physics 52, 1119–1127. Rubie, D., Melosh, H., Reid, J., Liebske, C., Righter, K., 2003. Mechanisms of metal–silicate equilibration in the terrestrial magma ocean. Earth and Planetary Science Letters 205, 239–255. Rubie, D.C., Jacobson, S.A., Morbidelli, A., O’Brien, D.P., Young, E.D., de Vries, J., Nimmo, F., Palme, H., Frost, D.J., 2015. Accretion and differentiation of the terrestrial planets with implications for the compositions of early-formed solar system bodies and accretion of water. Icarus 248, 89–108. Saito, S., Abe, Y., Koyama, K., 2017. Lattice boltzmann modeling and simulation of liquid jet breakup. Physical review E 96, 013317. Samuel, H., 2012. A re-evaluation of metal diapir breakup and equilibration in terrestrial magma oceans. Earth and Planetary Science Letters 313, 105–114. Succi, S., 2001. The lattice Boltzmann equation: for fluid dynamics and beyond. Oxford university press. Tonks, W.B., Melosh, H.J., 1993. Magma ocean formation due to giant impacts. Journal of Geophysical Research: Planets 98, 5319–5333. Tritton, D.J., 2012. Physical fluid dynamics. Springer Science & Business Media. Turner, J., 1986. Turbulent entrainment: the development of the entrainment assumption, and its application to geophysical flows. Journal of Fluid Mechanics 173, 431–471. Villermaux, E., Bossa, B., 2009. Single-drop fragmentation determines size distribution of raindrops. Nature physics 5, 697–702. Wacheul, J.B., Le Bars, M., Monteux, J., Aurnou, J.M., 2014. Laboratory experiments on the breakup of liquid metal diapirs. Earth and Planetary Science Letters 403, 236–245. van der Walt, S., Schönberger, J.L., Nunez-Iglesias, J., Boulogne, F., Warner, J.D., Yager, N., Gouillart, E., Yu, T., the scikit-image contributors, 2014. scikit-image: image processing in Python. PeerJ 2, e453. URL: https: //doi.org/10.7717/peerj.453 , doi: 10.7717/peerj.453 .Wang, R., Fan, L., 1977. Stochastic modeling of segregation in a motionless mixer. Chemical Engineering Science 32, 695–701. Zhu, L., Bi, J., Duan, J., Li, F., Chen, S., Wang, Z., 2024. Study of the mixing degree in the cyclone reactor for alkylation catalyzed by ionic liquid based on the information entropy. Industrial & Engineering Chemistry Research 63, 10561– 10570. 
+
+L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 44 of 44 Dynamics of Large Impactors in a Magma Ocean 
+
+> Figure A1: Linear regression results continued (Panel E).
+
+L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 45 of 44 Dynamics of Large Impactors in a Magma Ocean 
+
+Figure A2: Temporal evolution of an instant mixing for an impactor with a diameter of 50 km and aspect ratios of 1 and 5 (left panel), and an impactor with a diameter of 1100 km and an aspect ratio of 5 (right panel). Dashed lines mark the time at which the impactors initially reached the bottom of the MO. L. Honarbakhsh et al.: Preprint submitted to Elsevier Page 46 of 44

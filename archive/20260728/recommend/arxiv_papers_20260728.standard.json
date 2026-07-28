@@ -1,0 +1,656 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-28T21:43:12.920180+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 12,
+    "deep_cap": 6,
+    "deep_selected": 9,
+    "quick_candidates": 6,
+    "quick_skim_target": 11,
+    "quick_selected": 6
+  },
+  "deep_dive": [
+    {
+      "id": "2607.22754v1",
+      "source": "arxiv",
+      "title": "Jointly Modeling Roman Coronagraph Astrometry and Photometry Improves Orbital Parameter Estimates",
+      "abstract": "Launching in 2027, the Nancy Roman Grace Space Telescope (Roman) has the potential to directly image exoplanets in reflected light for the first time. Roman imaging will introduce new constraints on exoplanet orbital parameters, since reflected-light intensity depends on orbital phase. In this Note, we discuss an addition to the open-source Python package orbitize!, which allows users to model exoplanet orbits using joint constraints from astrometry and photometric variations due to orbital phase. To investigate the impact of adding photometric data into the orbital model, we simulated realistic measurements of partial orbits, both including and excluding photometry in our model, and computed orbital posteriors. We found that fitting both astrometry and photometry improves posterior precision relative to fitting astrometry alone. This effect was more pronounced for higher-SNR images; for example, photometric data with SNR=10 yielded 33% improvement in inclination precision when including photometry, while SNR=3 data yielded only 12% improvement.",
+      "authors": [
+        "Farrah Molina",
+        "Sarah Blunt",
+        "Jason Wang"
+      ],
+      "primary_category": "astro-ph.IM",
+      "categories": [
+        "astro-ph.IM",
+        "astro-ph.EP"
+      ],
+      "published": "2026-07-23T18:30:44+00:00",
+      "link": "https://arxiv.org/pdf/2607.22754v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Joint astrometry and photometry for Roman coronagraph to improve exoplanet orbital parameter estimates",
+      "llm_evidence_cn": "联合Roman日冕仪的天测和测光改善系外行星轨道参数估计",
+      "llm_evidence": "联合Roman日冕仪的天测和测光改善系外行星轨道参数估计",
+      "canonical_evidence": "联合Roman日冕仪的天测和测光改善系外行星轨道参数估计",
+      "llm_tldr_en": "Proposes joint modeling of astrometry and photometric variations from reflected light to improve orbital parameter estimates for directly imaged exoplanets with Roman, implemented in orbitize!.",
+      "llm_tldr_cn": "直接成像的系外行星轨道参数受限于数据种类。本文在orbitize!包中扩展方法，联合天测和由于轨道相位引起的反射光测光变化，对Roman日冕仪模拟数据建模。模拟表明加入测光数据可显著缩小轨道参数后验分布。该方法将提高Roman望远镜对系外行星轨道参数的测量精度。",
+      "llm_tldr": "直接成像的系外行星轨道参数受限于数据种类。本文在orbitize!包中扩展方法，联合天测和由于轨道相位引起的反射光测光变化，对Roman日冕仪模拟数据建模。模拟表明加入测光数据可显著缩小轨道参数后验分布。该方法将提高Roman望远镜对系外行星轨道参数的测量精度。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "new exoplanet discoveries and detection or characterization methods",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.22820v1",
+      "source": "arxiv",
+      "title": "SCoRE: the Surface Composition of Rocky Exoplanets",
+      "abstract": "Context. The crust composition of rocky exoplanets with a substantial atmosphere can not be observed directly. However, recent developments are starting to allow for the observation and characterisation of their atmospheres. Understanding the link between atmospheres and crusts could allow for constraints on the crusts' composition based on atmospheric observations. Aims. We aim to understand the link between the thermal stability of specific condensates and atmospheric compositions. This allows constraints on the mineralogical composition of the surface by potentially observable atmospheric features. In order to achieve this, a grid study of atmospheric and crustal compositions is conducted. Methods. We use a diverse range of total element abundances inspired by various rock compositions as the compositional base for our crust-atmosphere models, for which thermo-chemical and phase equilibrium is assumed. In this work, we investigate a temperature range of 500 K to 1000 K and a surface pressure of 1 bar. The resulting atmospheric compositions are classified using atmospheric types based on the most abundant gas-phase elements C, H, N, O, and S. Results. Some of the changes in surface mineralogy coincide with changes in atmospheric type, independent of the given total elemental abundances. In total, a link has been revealed between 23 thermally stable minerals and their corresponding atmospheric types, which is independent of the ratio of the refractory elements present. Especially, the sulphur chemistry of the minerals and the average iron oxidation state can be constrained by the corresponding atmospheric type.",
+      "authors": [
+        "Leon Sereinig",
+        "Oliver Herbort"
+      ],
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-07-24T18:00:11+00:00",
+      "link": "https://arxiv.org/pdf/2607.22820v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "links atmospheric composition to surface mineralogy via thermal stability of condensates",
+      "llm_evidence_cn": "通过冷凝物热稳定性将大气成分与表面矿物学联系",
+      "llm_evidence": "通过冷凝物热稳定性将大气成分与表面矿物学联系",
+      "canonical_evidence": "通过冷凝物热稳定性将大气成分与表面矿物学联系",
+      "llm_tldr_en": "SCoRE models the link between observable exoplanet atmospheric features and crustal mineralogy by computing condensate stability across a grid of element abundances, enabling indirect surface composition constraints.",
+      "llm_tldr_cn": "该研究提出SCoRE方法，通过计算不同元素丰度下冷凝物的热稳定性，建立可观测大气特征与岩石系外行星表面矿物组成的关联。使用网格大气-地壳模型，旨在通过未来大气观测间接约束表面成分，为理解岩石行星的岩石圈-大气相互作用提供新途径。",
+      "llm_tldr": "该研究提出SCoRE方法，通过计算不同元素丰度下冷凝物的热稳定性，建立可观测大气特征与岩石系外行星表面矿物组成的关联。使用网格大气-地壳模型，旨在通过未来大气观测间接约束表面成分，为理解岩石行星的岩石圈-大气相互作用提供新途径。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "observations and models of exoplanet atmospheres, climate, chemistry, and escape",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.22839v1",
+      "source": "arxiv",
+      "title": "The JDISC Survey: Inner Disk Chemistry of Class I/FS Disks and Tentative Evidence for Early Pebble Drift",
+      "abstract": "We present the first chemical survey of Class I and Flat-Spectrum (I/FS) disks using JWST MIRI/MRS, targeting sixteen sources in the Ophiuchus star-forming region. Through empirical line luminosity measurements and multi-component slab modeling, we characterize the molecular reservoir of these young systems and compare them to twelve Class II disks of similar stellar mass. Water, HCN, C$_2$H$_2$, and CO$_2$ are frequently detected in I/FS sources with inclinations $i < 70^{\\circ}$, whereas edge-on systems show significantly suppressed emission. Compared to Class II disks, I/FS sources show suggestive---though not yet statistically significant---evidence for elevated cold water ($\\sim$200\\,K) mass and lower CO$_2$ excitation temperatures. Statistical analyses identify accretion luminosity as the primary correlate of molecular mass across both evolutionary stages. Once this dependence is removed, cold water and CO$_2$ masses anti-correlate with mm-dust disk radius, while hot water remains insensitive to disk size. These patterns are qualitatively consistent with pebble drift models that predict early water enrichment followed by delayed CO$_2$ delivery, suggesting an evolutionary progression from molecular-poor Class 0 sources, through water-rich Class I/FS disks, to Class II disks with reduced cold water excess. This work provides an initial evolutionary framework for disk chemistry that requires larger, multi-region samples to confirm.",
+      "authors": [
+        "Ke Zhang",
+        "Andrea Banzatti",
+        "Colette Salyk",
+        "Abygail Waggoner",
+        "Klaus Pontoppidan",
+        "María José Colmenares",
+        "Ilaria Pascucci",
+        "Lucas A. Cieza",
+        "Miguel Vioque",
+        "Paola Pinilla",
+        "Geoffrey A. Blake",
+        "Joan Najita",
+        "Joe Williams",
+        "Sebastiaan Krijt",
+        "Till Kaeufer",
+        "Jane Huang",
+        "Feng Long",
+        "Chengyan Xie",
+        "Minjae Kim",
+        "Eshan Raul",
+        "Dary A. Ruíz-Rodríguez",
+        "Nicole Arulanantham",
+        "Benoît Tabone",
+        "Mayank Narang",
+        "Karina Mauco"
+      ],
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.GA",
+        "astro-ph.SR"
+      ],
+      "published": "2026-07-24T18:29:59+00:00",
+      "link": "https://arxiv.org/pdf/2607.22839v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "JWST survey of inner disk chemistry in Class I/FS disks with evidence for early pebble drift",
+      "llm_evidence_cn": "使用JWST对Class I/FS盘内区化学进行巡天，发现早期卵石漂移证据",
+      "llm_evidence": "使用JWST对Class I/FS盘内区化学进行巡天，发现早期卵石漂移证据",
+      "canonical_evidence": "使用JWST对Class I/FS盘内区化学进行巡天，发现早期卵石漂移证据",
+      "llm_tldr_en": "Presents first chemical survey of Class I/FS disks with JWST MIRI/MRS, detecting H2O, HCN, C2H2, CO2, and finding tentative evidence for elevated cold water and lower CO2 excitation, indicating early pebble drift.",
+      "llm_tldr_cn": "本论文利用JWST MIRI/MRS对蛇夫座恒星形成区中的Class I和平坦谱（I/FS）盘进行了首次化学巡天。通过经验谱线光度测量和多组分板层模型，表征了这些年轻系统的分子储库，并与Class II盘比较。发现I/FS盘中水、HCN、C2H2和CO2频繁探测，且存在冷水分质量升高和CO2激发降低的迹象，暗示了早期卵石漂移。结果对原行星盘化学演化和行星形成初始条件提供了重要约束。",
+      "llm_tldr": "本论文利用JWST MIRI/MRS对蛇夫座恒星形成区中的Class I和平坦谱（I/FS）盘进行了首次化学巡天。通过经验谱线光度测量和多组分板层模型，表征了这些年轻系统的分子储库，并与Class II盘比较。发现I/FS盘中水、HCN、C2H2和CO2频繁探测，且存在冷水分质量升高和CO2激发降低的迹象，暗示了早期卵石漂移。结果对原行星盘化学演化和行星形成初始条件提供了重要约束。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "observations and theoretical models of protoplanetary disks and disk evolution",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.22911v1",
+      "source": "arxiv",
+      "title": "Tracing outer planetary systems through white dwarf pollution in wide binaries",
+      "abstract": "White dwarf (WD) atmospheric metal pollution provides strong evidence for the presence of remnant planetary material and it can be used as an indirect tracer of outer planetary systems. We analyze whether the presence of a wide stellar companion affects the occurrence of outer planetary systems by comparing the incidence of calcium (Ca) pollution in hydrogen-atmosphere WDs in wide binaries and in apparently single stars. We construct two sample pairs: a large homogeneous SDSS low-resolution spectroscopic set and a smaller high-resolution sample. For each WD, we measure Ca abundances or upper limits and compute detectability-corrected cumulative pollution fractions that account for variations in effective temperature, signal-to-noise ratio, and spectral resolution. In the SDSS-based samples, we find pollution fractions <1%, defined as the fraction of WDs with detected Ca, for both single WDs and WDs in wide binaries. After correcting for detectability, the cumulative abundance distributions of the two populations are statistically consistent. The same conclusion is obtained for the higher-resolution samples, despite their different raw detection fractions. Our results indicate no statistically significant difference in the occurrence rate of remnant outer planetary systems between single stars and stars with wide (~200 au) companions, within the current uncertainties. These uncertainties are significant because the samples contain only a small number of polluted WDs. The corrected detectability cumulative fraction approach used here provides a framework for comparing samples with different detection sensitivities and can be extended to larger spectroscopic datasets. Such samples will be required to determine whether wide stellar companions affect the survival and delivery of planetary material and to search for more subtle trends, for example, as a function of companion separation.",
+      "authors": [
+        "Carolina Lizana-Vidal",
+        "Claudia Aguilera-Gómez",
+        "Laura K. Rogers",
+        "Amy Bonsor",
+        "María Ignacia Muñoz-Arriagada",
+        "Patrick Dufour",
+        "Constanza Bravo-Parra",
+        "Ema Salugova"
+      ],
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.SR"
+      ],
+      "published": "2026-07-24T20:54:56+00:00",
+      "link": "https://arxiv.org/pdf/2607.22911v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "White dwarf pollution as tracer of outer planetary systems in wide binaries",
+      "llm_evidence_cn": "宽双星中外行星系统的白矮星污染示踪",
+      "llm_evidence": "宽双星中外行星系统的白矮星污染示踪",
+      "canonical_evidence": "宽双星中外行星系统的白矮星污染示踪",
+      "llm_tldr_en": "Compares Ca pollution in white dwarfs in wide binaries vs single stars to test if binarity affects outer planetary system occurrence, finding no significant difference.",
+      "llm_tldr_cn": "为探究宽双星是否影响外行星系统的存在，本文比较了宽双星和单星中白矮星钙污染的发生率，使用SDSS和高端光谱样本。通过污染分数校正后，发现两组之间无显著差异，表明宽双星对行星系统的影响可能较小。",
+      "llm_tldr": "为探究宽双星是否影响外行星系统的存在，本文比较了宽双星和单星中白矮星钙污染的发生率，使用SDSS和高端光谱样本。通过污染分数校正后，发现两组之间无显著差异，表明宽双星对行星系统的影响可能较小。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "planetary dynamics, migration, stability, and population-level architectures",
+      "matched_requirement_id": "req-12",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.23035v1",
+      "source": "arxiv",
+      "title": "Metal-Silicate Segregation During Planetary Accretion: Limited Iron Emulsification through intermediate Impacts",
+      "abstract": "In this study, we investigate the post-collisional evolution of an impactor's iron core within a fully molten magma ocean using 2D numerical simulations with a novel Rothmann-Keller multiphase Lattice Boltzmann Method. The impactor's core diameter ranges from $152\\;\\text{km}$ to $552\\;\\text{km}$, with aspect ratios from $0.75$ to $5$. At Reynolds numbers up to $10^4$, our models reveal significant deformation and progressive fragmentation of the impactor into an iron cloud down to the smallest scale (several kilometers) that our method allows, which is then dispersed throughout the magma ocean by turbulent flow. We determined entrainment coefficients for a range of intermediate impactor sizes with various shapes, finding that larger impactors consistently exhibit higher entrainment coefficients. By extrapolating our mixing data, we anticipate incomplete iron-silicate mixing for kilometer-scale impactors in a real magma ocean, qualitatively consistent with previous predictions of partial equilibration. Additionally, our models highlight the mid- to lower magma ocean depths as critical zones for further iron fragment breakups and material transfer in the magma ocean.",
+      "authors": [
+        "L. Honarbakhsh",
+        "G. Morra",
+        "P. Mora",
+        "CRM. Jackson"
+      ],
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-07-25T04:19:06+00:00",
+      "link": "https://arxiv.org/pdf/2607.23035v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "numerical simulation of iron core segregation in magma ocean during planetary accretion",
+      "llm_evidence_cn": "行星吸积过程中岩浆洋内铁核分异的数值模拟",
+      "llm_evidence": "行星吸积过程中岩浆洋内铁核分异的数值模拟",
+      "canonical_evidence": "行星吸积过程中岩浆洋内铁核分异的数值模拟",
+      "llm_tldr_en": "Uses 2D multiphase LBM simulations to study iron core fragmentation and emulsification in magma oceans during planetary accretion, finding limited emulsification with implications for core formation.",
+      "llm_tldr_cn": "本研究利用二维Rothmann-Keller多相格子玻尔兹曼方法模拟了行星吸积过程中撞击体铁核在岩浆洋中的演化和碎裂过程。发现中等大小（152-552公里）的撞击体铁核会发生显著变形和碎裂形成铁云，但乳化程度有限。研究确定了不同形状撞击体的夹带系数，对理解行星金属-硅酸盐分异和核形成有重要启示。",
+      "llm_tldr": "本研究利用二维Rothmann-Keller多相格子玻尔兹曼方法模拟了行星吸积过程中撞击体铁核在岩浆洋中的演化和碎裂过程。发现中等大小（152-552公里）的撞击体铁核会发生显著变形和碎裂形成铁云，但乳化程度有限。研究确定了不同形状撞击体的夹带系数，对理解行星金属-硅酸盐分异和核形成有重要启示。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "formation and early evolution of planets, planetesimals, and planetary systems",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.23741v1",
+      "source": "arxiv",
+      "title": "Angular Momentum of Planet-Forming Disks: Implications for Infall Driven Misalignments",
+      "abstract": "Context. A significant fraction (>30%) of planet-forming disks and planetary are misaligned with respect to the rotational axis of their host stars, yet the dominant mechanism responsible for these misalignments remains unclear. Aims. We aim to observationally constrain the angular momentum of Class II protoplanetary disks and assess whether late-stage infall of material can bring sufficient angular momentum to tilt them. Methods. We first computed the angular momenta of 15 disks with surface density profiles inferred from dynamical modeling of high angular resolution ALMA observations. Based on this sample, we derived a relation linking disk angular momentum to stellar mass, disk mass, and the radius enclosing 90% of the 13CO flux and used it to estimate angular momenta of 18 more disks. We then compared disk values with theoretical predictions for late-stage accretion from clouds and observed streamers. Results. Angular momentum for most disks is lower than what theoretical models predict for late infall. This is also in qualitative agreement with comparison with streamer observations, however, characterization of mass of reservoirs feeding the streamers is needed to confirm this picture. Conclusions. Interactions with nearby clouds, resulting in late-stage infall of material onto Class II disks, can potentially explain the observed misalignments within disks and planetary systems.",
+      "authors": [
+        "Aashish Gupta",
+        "Cristiano Longarini",
+        "L. Ilsedore Cleeves",
+        "Giovanni P. Rosotti",
+        "Edwin A. Bergin",
+        "Cathie J. Clarke",
+        "Michael Küffmeier",
+        "Zhi-Yun Li"
+      ],
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.SR"
+      ],
+      "published": "2026-07-26T16:28:28+00:00",
+      "link": "https://arxiv.org/pdf/2607.23741v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Angular momentum of protoplanetary disks and infall-driven misalignments",
+      "llm_evidence_cn": "原行星盘的角动量与吸积驱动的错位",
+      "llm_evidence": "原行星盘的角动量与吸积驱动的错位",
+      "canonical_evidence": "原行星盘的角动量与吸积驱动的错位",
+      "llm_tldr_en": "Observationally constrains disk angular momentum using ALMA data, finding a relation between disk angular momentum and stellar/disk properties, and shows that late infall can provide sufficient angular momentum to tilt disks.",
+      "llm_tldr_cn": "针对原行星盘与恒星旋转轴错位的主导机制问题，本文利用ALMA高分辨率观测数据对15个Class II盘的角动量进行了动力学建模约束，推导出盘角动量与恒星质量、盘质量及半径的关系，并评估了晚期吸积事件能否提供足够的角动量使盘倾斜。结果表明，晚期吸积是导致盘错位的一个可行机制。",
+      "llm_tldr": "针对原行星盘与恒星旋转轴错位的主导机制问题，本文利用ALMA高分辨率观测数据对15个Class II盘的角动量进行了动力学建模约束，推导出盘角动量与恒星质量、盘质量及半径的关系，并评估了晚期吸积事件能否提供足够的角动量使盘倾斜。结果表明，晚期吸积是导致盘错位的一个可行机制。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "observations and theoretical models of protoplanetary disks and disk evolution",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.23781v1",
+      "source": "arxiv",
+      "title": "A uniform transit survey of 461 ExoFOP M-dwarf TOI hosts: Follow-up prioritization and new transit candidates",
+      "abstract": "Context. M dwarfs are favorable hosts for small transiting planets. A transit-detection and statistical-validation pipeline was previously developed and validated at the photometric noise frontier, on M3-M6 dwarfs observed in few sectors. Aims. That pipeline is applied uniformly to the full active ExoFOP M-dwarf TOI population, 461 hosts (M0-M6) each hosting a confirmed planet (CP) or planet candidate (PC), to test its recovery and classification of the cataloged signals and to prioritize the candidates for follow-up. Methods. The pipeline chains two complementary blind searches merged per host, a full-baseline transit-least-squares scan and a segmented, semi-coherent search across the gapped multiyear baseline. It adds an event-time-coherence test that rejects signals with incoherent per-transit timing (window-function aliases of stellar variability), all-sector TRICERATOPS false-positive probabilities, and Gaia DR3 background and aperture-localization analysis. Results. Of 193 in-range CP, 165 (85.5%) are re-detected, none rejected as a false positive, and 147 (76.2%) reach a Gaia-verified disposition. Of 286 in-range PC, 225 (78.7%) are re-detected, of which 11 are flagged as false positives and 87 ranked as planet candidates for follow-up. Beyond the catalog, 13 new transit candidates of 0.7-2.0 Earth radii emerge, including two new members of a compact, dynamically stable near-resonant three-planet candidate system; four cataloged single- or dual-transit TOIs have their orbital periods determined, two of them in the optimistic habitable zone. Conclusions. The recoveries and new candidates are released as a uniform, prioritized follow-up target list.",
+      "authors": [
+        "Yohann Tschudi"
+      ],
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-07-26T17:57:59+00:00",
+      "link": "https://arxiv.org/pdf/2607.23781v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Uniform transit survey of M-dwarf TOI hosts, new candidates and follow-up prioritization",
+      "llm_evidence_cn": "对M矮星TOI宿主进行均匀凌星调查，发现新候选体并优先排序",
+      "llm_evidence": "对M矮星TOI宿主进行均匀凌星调查，发现新候选体并优先排序",
+      "canonical_evidence": "对M矮星TOI宿主进行均匀凌星调查，发现新候选体并优先排序",
+      "llm_tldr_en": "Applies a validated transit-detection pipeline to 461 M-dwarf TOI hosts, recovering known signals and identifying new transit candidates, with a follow-up prioritization scheme.",
+      "llm_tldr_cn": "该论文将此前验证的凌星检测与统计验证管道系统应用于461颗M0-M6矮星的ExoFOP TOI宿主，统一测试了已知信号的恢复与分类。管道结合全基线凌星最小二乘扫描和分段半相干搜索，有效处理了多基线间隙。结果不仅验证了管道的稳健性，还发现了新的凌星候选体，并提供了后续观测的优先排序策略，为M矮星周围小行星的普查提供了重要支持。",
+      "llm_tldr": "该论文将此前验证的凌星检测与统计验证管道系统应用于461颗M0-M6矮星的ExoFOP TOI宿主，统一测试了已知信号的恢复与分类。管道结合全基线凌星最小二乘扫描和分段半相干搜索，有效处理了多基线间隙。结果不仅验证了管道的稳健性，还发现了新的凌星候选体，并提供了后续观测的优先排序策略，为M矮星周围小行星的普查提供了重要支持。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "new exoplanet discoveries and detection or characterization methods",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.23992v1",
+      "source": "arxiv",
+      "title": "JWST/NIRCam Imaging of Young Stellar Objects. IV. Detailed Imaging of the Protoplanetary Disk around TW Hya",
+      "abstract": "As the nearest protoplanetary disk to Earth ($d = 60.14$ pc), TW Hya is one of the most studied protoplanetary disks and a critical benchmark for testing planet formation theories. We present high-contrast coronagraphic imaging of the TW Hya disk from JWST/NIRCam across four filters (F187N, F200W, F356W, and F444W). We detect the disk's scattered-light emission in F200W, F356W, and F444W. An elliptical fit to the disk image yields an average inclination of $i = 8.74^{+1.03}_{-0.94}$ degrees and a position angle of $\\mathrm{PA} = 75.62^{+7.86}_{-6.56}$ degrees. We find tentative evidence for radial variations in these parameters, a trend consistent with a disk warp. Our companion search yields no new detections, placing the lowest mass limits yet on companions that might be responsible for carving out the dust gap. Assuming no local extinction and a system age of 10 Myr, the F444W data are sensitive to masses down to $\\sim 0.4\\,M_{\\rm Jup}$ at separations of $1$ arcsec ($\\sim 60$ AU). Accounting for local disk extinction analogous to the AS 209 system, our limits reach sub-Jupiter masses beyond $2$ arcsec. Furthermore, our analysis provides a detailed view of a previously detected feature in the outer disk at $\\sim 120$ AU, confirming its morphology as a distinct bifurcation structure. This feature may indicate the presence of complex substructures arising from dynamical planet-disk interactions. These results demonstrate JWST's ability to characterize the architecture of protoplanetary disks and constrain the properties of forming worlds.",
+      "authors": [
+        "Yu-Chia Lin",
+        "Jarron Leisenring",
+        "Schuyler G. Wolff",
+        "Justin Hom",
+        "Kellen Lawson",
+        "Ewan S. Douglas",
+        "George Rieke",
+        "Gabriele Cugno",
+        "John Debes",
+        "Ruobing Dong",
+        "Doug Johnstone",
+        "Camryn Mullin",
+        "Taylor L. Tobin",
+        "Kevin R. Wagner",
+        "Thomas P. Greene",
+        "Michael R. Meyer",
+        "Marcia Rieke"
+      ],
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.SR"
+      ],
+      "published": "2026-07-27T04:39:17+00:00",
+      "link": "https://arxiv.org/pdf/2607.23992v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "JWST/NIRCam high-contrast imaging of protoplanetary disk TW Hya",
+      "llm_evidence_cn": "JWST/NIRCam对原行星盘TW Hya的高对比度成像",
+      "llm_evidence": "JWST/NIRCam对原行星盘TW Hya的高对比度成像",
+      "canonical_evidence": "JWST/NIRCam对原行星盘TW Hya的高对比度成像",
+      "llm_tldr_en": "JWST/NIRCam coronagraphic imaging of the nearest protoplanetary disk TW Hya in four filters detects scattered light, revealing a low inclination (8.74 deg) and possible radial warp, with no new companion detections.",
+      "llm_tldr_cn": "本文利用JWST/NIRCam对最近的原行星盘TW Hya进行高对比度日冕成像，在四个滤光片中探测到盘的散射光。椭圆拟合得到倾角约8.74度、位置角约75.62度，并发现径向倾角变化的初步证据，与盘翘曲一致。伴星搜索未发现新天体，为行星形成模型提供了关键的盘结构约束。",
+      "llm_tldr": "本文利用JWST/NIRCam对最近的原行星盘TW Hya进行高对比度日冕成像，在四个滤光片中探测到盘的散射光。椭圆拟合得到倾角约8.74度、位置角约75.62度，并发现径向倾角变化的初步证据，与盘翘曲一致。伴星搜索未发现新天体，为行星形成模型提供了关键的盘结构约束。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "observations and theoretical models of protoplanetary disks and disk evolution",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.24733v1",
+      "source": "arxiv",
+      "title": "Atmospheric Escape Rates of Planets in Stellar Tidal Fields from 3-D Hydrodynamic Simulations1",
+      "abstract": "Thermally driven atmospheric escape, including photo-evaporation and core-powered mass-loss, plays a key role in shaping the evolution of close-in exoplanets, yet most current models rely on simplified one-dimensional descriptions of atmospheric escape. In this work, we perform 3D hydrodynamic simulations of atmospheric outflows from a Jupiter-sized planet embedded in the gravitational potential of a solar-type host star, and compare these results with 1D models to identify the regimes where they perform well and where they break down. We explore a range of configurations by varying the degree of Roche-lobe filling and the thermal state of the outflow. We find that systems with weak tidal influence and high-temperature winds produce nearly spherical and isotropic outflows, whereas more Roche-lobe-filling and cooler winds develop strong anisotropy and form two-tailed structures. We show that the commonly used 1D Parker wind model performs well only in the weak-tides regime, while including tidal corrections yields reasonable estimates of mass-loss rates and captures the mean radial density profile across all regimes, but fails to reproduce the intrinsically three-dimensional, angle-dependent nature of the flow as the outflow transitions from spherical to tidally structured tails. Motivated by these results, we develop a physically informed Mixture Model, calibrated using our 3D simulations, that accurately predicts mass-loss rates across the parameter space explored and outperforms 1D model with tidal corrections.",
+      "authors": [
+        "Ritika Sethi",
+        "Morgan MacLeod",
+        "Sarah Millholland"
+      ],
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-07-27T17:57:18+00:00",
+      "link": "https://arxiv.org/pdf/2607.24733v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "3D hydrodynamic simulations of atmospheric escape rates for planets in stellar tidal fields",
+      "llm_evidence_cn": "恒星潮汐场中行星大气逃逸率的三维流体模拟",
+      "llm_evidence": "恒星潮汐场中行星大气逃逸率的三维流体模拟",
+      "canonical_evidence": "恒星潮汐场中行星大气逃逸率的三维流体模拟",
+      "llm_tldr_en": "3D hydrodynamic simulations of Jupiter-sized planet atmospheric outflows compare with 1D models, identifying regimes where 1D models break down due to tidal and thermal effects.",
+      "llm_tldr_cn": "该研究利用三维流体动力学模拟，研究了木星大小行星在恒星潮汐场中的大气逃逸。通过改变洛希瓣填充度和热状态，系统比较了三维与一维模型的差异。结果表明在强潮汐影响和高温下，一维模型失效，三维模拟提供了更准确的逃逸率估计。",
+      "llm_tldr": "该研究利用三维流体动力学模拟，研究了木星大小行星在恒星潮汐场中的大气逃逸。通过改变洛希瓣填充度和热状态，系统比较了三维与一维模型的差异。结果表明在强潮汐影响和高温下，一维模型失效，三维模拟提供了更准确的逃逸率估计。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "observations and models of exoplanet atmospheres, climate, chemistry, and escape",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.23555v1",
+      "source": "arxiv",
+      "title": "ANDES, the high-resolution spectrograph of the ELT: simulated performance of the CORO module and overview of the high-contrast capabilities for exoplanet observations",
+      "abstract": "We present the simulated performance of the coronagraph (CORO) module for ANDES, the Extremely Large Telescope (ELT) high-resolution spectrograph. ANDES aims to address a broad range of science cases, including the characterization of the atmosphere of exoplanets. With a first light envisioned by 2035, the instrument baseline features a modular fiber-fed echelle spectrograph with visible and near-infrared ultra-stable spectral arms to provide a simultaneous spectral range of 0.4-1.8\\,$μ$m with a spectral resolving power up to 100,000. ANDES also includes an Integral Field Unit (IFU) mode-fed by a single-conjugate adaptive optics (SCAO) module and an insertable CORO module, enabling the combination of high-contrast imaging and high-dispersion spectroscopy (R=100,000) for the study of exoplanet properties. In this contribution, the ANDES CORO design, its main features and its simulated performance are detailed in the presence of SCAO residual errors to probe exoplanet atmospheres with the spectro-imager mode at high-spatial resolution and with unprecedented angular resolution. We show the preliminary simulation results on the predicted contrast and the expected detection performance with ANDES performance unfolded (APU), the simulation tool to determine the yield of exoplanets that will be detected in emitted and possibly reflected light. The characterization operation of the instrument will be discussed to assess the ANDES ability to detect atomic and molecular signatures connected to the exoplanet atmosphere characteristics.",
+      "authors": [
+        "M. N'Diaye",
+        "A. Simonnin",
+        "A. Spang",
+        "P. Berio",
+        "A. Chiavassa",
+        "G. Agapito",
+        "C. Bailet",
+        "G. Carlà",
+        "Y. Caujolle",
+        "O. Carrión-Gonzalez",
+        "G. Chauvin",
+        "S. Cuevas",
+        "O. Gabella",
+        "M. Houllé",
+        "S. Lagarde",
+        "P. Martinez",
+        "E. Pinna",
+        "B. Rajpoot",
+        "J. Seidel",
+        "C. Selmi",
+        "A. Vigan",
+        "P. Di Marcantonio"
+      ],
+      "primary_category": "astro-ph.IM",
+      "categories": [
+        "astro-ph.IM",
+        "astro-ph.EP"
+      ],
+      "published": "2026-07-26T09:13:41+00:00",
+      "link": "https://arxiv.org/pdf/2607.23555v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "simulated coronagraph performance for exoplanet atmosphere characterization",
+      "llm_evidence_cn": "模拟日冕仪模块用于系外行星大气表征的性能",
+      "llm_evidence": "模拟日冕仪模块用于系外行星大气表征的性能",
+      "canonical_evidence": "模拟日冕仪模块用于系外行星大气表征的性能",
+      "llm_tldr_en": "Simulates the coronagraph module for ANDES on ELT, demonstrating high-contrast capabilities in 0.4-1.8 micron with R=100,000, enabling exoplanet atmospheric characterization.",
+      "llm_tldr_cn": "本文模拟了ELT高分辨率光谱仪ANDES的日冕仪模块（CORO）的性能，展示了其在0.4-1.8微米波段、分辨率高达100,000条件下对系外行星大气表征的高对比度能力。该仪器计划于2035年首次观测，将为系外行星科学提供重要支持，为下一代系外行星大气研究奠定基础。",
+      "llm_tldr": "本文模拟了ELT高分辨率光谱仪ANDES的日冕仪模块（CORO）的性能，展示了其在0.4-1.8微米波段、分辨率高达100,000条件下对系外行星大气表征的高对比度能力。该仪器计划于2035年首次观测，将为系外行星科学提供重要支持，为下一代系外行星大气研究奠定基础。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "instruments and analysis methods enabling exoplanet and planetary science",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.22533v1",
+      "source": "arxiv",
+      "title": "LBT-MODS spectroscopy of young stellar objects in the distant metal-poor star forming region Sh2-284: Stellar and accretion properties",
+      "abstract": "We present a spectroscopic survey of young stellar objects (YSOs) in Sh2-284, a distant (~4.5 kpc), low-metallicity (Z~1/3 Zsun) star-forming region (SFR) toward the Galactic anticenter. Candidate YSOs were selected using mid-infrared Spitzer/IRAC data with optical and near-infrared photometry. Follow-up spectroscopy was conducted with MODS at the Large Binocular Telescope. We characterize the stellar and accretion properties of the disk-bearing population in a metal-poor environment, probing stellar masses from ~2.95 Msun to ~0.35 Msun. This work constitutes the first wide-field (~45'x45') spectroscopic investigation of YSOs in Sh2-284, providing a comprehensive view of star formation in this Galactic environment. We provide tentative first estimates of iron abundance for three low-mass targets and lithium abundance for a limited number of objects, offering an initial characterization of the chemical properties of these stars. We adopt a multi-diagnostic approach based on nine tracers, exploiting the spectral coverage of the instrument, using H_alpha, H_beta, H_gamma, CaII infrared triplet, Pa_eta, Pa_zeta, and Pa_epsilon emission lines. We derive key accretion properties and compare them with those measured in nearby, solar-metallicity SFRs to explore potential metallicity-driven differences in accretion behavior and disk evolution. We tentatively find indications of a flattening in the flux-flux relations of the metal-poor YSOs compared to solar-metallicity samples, a behavior that is recovered across diagnostics. Our observations indicate that the selected disk-bearing YSOs in this metal-poor environment exhibit resilient accretion activity, spanning from ~2.3x10^(-10) Msun/yr and ~1.0x10^(-6) Msun/yr, and a median rate of ~2.2x10^(-8) Msun/yr. Overall, this demonstrates that gas accretion can be efficiently sustained in sub-solar metallicity environments.",
+      "authors": [
+        "Katia Biazzo",
+        "Juan Manuel Alcalá",
+        "Felice Cusano",
+        "Mario Guarcello",
+        "Diego Paris",
+        "Ester Marini",
+        "Roberta Carini",
+        "Teresa Giannini",
+        "Brunella Nisini",
+        "Simone Antoniucci",
+        "Guido De Marchi",
+        "Maria Gabriela Navarro Ovando"
+      ],
+      "primary_category": "astro-ph.GA",
+      "categories": [
+        "astro-ph.GA",
+        "astro-ph.SR"
+      ],
+      "published": "2026-07-24T17:59:46+00:00",
+      "link": "https://arxiv.org/pdf/2607.22533v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "spectroscopic survey of YSOs with disk accretion properties in low-metallicity star-forming region",
+      "llm_evidence_cn": "低金属丰度恒星形成区中YSOs的光谱巡测，包括盘吸积特性",
+      "llm_evidence": "低金属丰度恒星形成区中YSOs的光谱巡测，包括盘吸积特性",
+      "canonical_evidence": "低金属丰度恒星形成区中YSOs的光谱巡测，包括盘吸积特性",
+      "llm_tldr_en": "LBT-MODS spectroscopy of YSOs in Sh2-284 reveals accretion properties and stellar masses in a metal-poor environment, providing insights into disk evolution under low metallicity.",
+      "llm_tldr_cn": "该论文利用LBT-MODS光谱仪对远距离低金属丰度恒星形成区Sh2-284中的年轻恒星物体进行光谱巡天，首次获得该区域的宽视场光谱。通过分析恒星参数和盘吸积特性，揭示了在金属丰度仅为太阳1/3的环境下，原行星盘吸积依然活跃。研究覆盖0.35至2.95太阳质量的恒星，为理解不同化学环境下盘演化和行星形成提供了重要观测约束。",
+      "llm_tldr": "该论文利用LBT-MODS光谱仪对远距离低金属丰度恒星形成区Sh2-284中的年轻恒星物体进行光谱巡天，首次获得该区域的宽视场光谱。通过分析恒星参数和盘吸积特性，揭示了在金属丰度仅为太阳1/3的环境下，原行星盘吸积依然活跃。研究覆盖0.35至2.95太阳质量的恒星，为理解不同化学环境下盘演化和行星形成提供了重要观测约束。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "observations and theoretical models of protoplanetary disks and disk evolution",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.24141v1",
+      "source": "arxiv",
+      "title": "The Payne Zero Project I: Stellar Spectra from Physical Models in Seconds",
+      "abstract": "Modern stellar surveys measure millions of spectra, yet one self-consistent atmosphere and spectrum can require tens of minutes. This cost has motivated grids, spectral emulators, and data-driven models. We present Payne Zero, which reorganizes one-dimensional LTE Kurucz calculations for GPU-native synthesis and multicore atmosphere iteration, and validate it against the original Fortran programs. A 300--1000 nm solar spectrum sampled at $R_{\\rm grid}=300{,}000$ takes about 14 s on an NVIDIA H100 GPU, while the APOGEE 1500--1700 nm interval takes about 1 s. Physical atmosphere iterations take 2--5 s on 16 AMD CPU threads, and learned initializers reduce the iterations required for convergence. Final spectra remain in practical parity across the tested dwarf and giant regimes. These speeds place direct synthesis inside an optimizer without a label-to-flux spectral emulator. We demonstrate direct many-element fitting of reduced APOGEE spectra and recover multi-element abundance trends broadly consistent with the survey catalog. GPU-resident velocity shifts, broadening, line-spread-function convolution, and detector sampling add negligible cost relative to synthesis. The direct-synthesis search takes less than one minute per star on an H100, while atmosphere verification runs independently on multicore CPUs. The same computational graph calibrates more than $10^5$ oscillator-strength and damping corrections jointly against the Sun and Arcturus in about one minute on an H100. Payne Zero therefore brings direct physical fitting and atomic-data calibration to survey scale. The code is available at https://github.com/tingyuansen/payne-zero.",
+      "authors": [
+        "Yuan-Sen Ting",
+        "Elliot M. Kim"
+      ],
+      "primary_category": "astro-ph.SR",
+      "categories": [
+        "astro-ph.SR",
+        "astro-ph.IM"
+      ],
+      "published": "2026-07-27T08:21:12+00:00",
+      "link": "https://arxiv.org/pdf/2607.24141v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Fast stellar spectra synthesis method applicable to exoplanet host star characterization",
+      "llm_evidence_cn": "快速恒星光谱合成方法，可用于系外行星宿主星表征",
+      "llm_evidence": "快速恒星光谱合成方法，可用于系外行星宿主星表征",
+      "canonical_evidence": "快速恒星光谱合成方法，可用于系外行星宿主星表征",
+      "llm_tldr_en": "Presents Payne Zero, a GPU-accelerated stellar spectrum synthesis code that generates physical spectra in seconds, enabling large-scale stellar parameter inference for surveys like APOGEE.",
+      "llm_tldr_cn": "现代恒星巡天产生数百万光谱，传统模型计算耗时数十分钟。本文提出Payne Zero，重新组织Kurucz模型，利用GPU原生合成和多核大气迭代，实现快速光谱计算。在H100 GPU上生成太阳光谱仅需14秒，与原始程序精度相当。这将加速恒星参数测量，对系外行星宿主星研究等高吞吐量应用具有重要价值。",
+      "llm_tldr": "现代恒星巡天产生数百万光谱，传统模型计算耗时数十分钟。本文提出Payne Zero，重新组织Kurucz模型，利用GPU原生合成和多核大气迭代，实现快速光谱计算。在H100 GPU上生成太阳光谱仅需14秒，与原始程序精度相当。这将加速恒星参数测量，对系外行星宿主星研究等高吞吐量应用具有重要价值。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "instruments and analysis methods enabling exoplanet and planetary science",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.23612v1",
+      "source": "arxiv",
+      "title": "Disc Candidates in IC 2395: A WISE Survey of the Kinematically Confirmed Membership",
+      "abstract": "Circumstellar disc dissipation timescales constrain the window available for planet formation. At approximately 9 Myr, IC 2395 lies at a critical epoch in primordial disc evolution, yet no kinematically selected disc census exists beyond the inner cluster core. A wide-field survey of IC 2395, extending to a 2 degree radius, establishes a kinematically selected disc census and evaluates the frequency of planet-forming environments in the outer cluster field. Using a high-purity catalogue of 173 members identified via Gaia DR3 kinematics, mid-infrared excesses are identified using AllWISE photometry. Candidates are classified into two tiers: Crossvalidated (corroborated by Gaia variability) and Single-band detections. Twenty-one disc candidates are identified, 90% of which lie beyond the footprint of prior Spitzer surveys. The candidates are concentrated among low-mass members (0.31-0.68M), with no significant correlation between mass and excess (Spearman rho = +0.07, p = 0.84). A secure disc fraction of 4.0 p/m 1.5% is established by the Cross-validated subsample, independently confirmed by Gaia DR3 YSO variability classification; a photometric 3 sigma significance cut yields a consistent estimate of 2.9 p/m 1.3%. An upper bound of 12.1 p/m 2.5% is derived from all 21 W1-W2 excess candidates, with a background subtracted value of approximately 10.1%. Gaia DR3 epoch photometry reveals diverse variability morphologies, including a dramatic dipper and multiple bursters, confirming ongoing magnetospheric accretion. By extending the survey radius, this work demonstrates that infrared excess sources indicative of inner-disc emission in IC 2395 are more abundant and widely distributed than previously recognised. The survival of these discs in the lower-density outer field provides a well-characterised sample for studying the final stages of disc evolution and planet formation.",
+      "authors": [
+        "Daniel Rose"
+      ],
+      "primary_category": "astro-ph.GA",
+      "categories": [
+        "astro-ph.GA"
+      ],
+      "published": "2026-07-26T11:35:29+00:00",
+      "link": "https://arxiv.org/pdf/2607.23612v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "circumstellar disk survey in young cluster IC 2395",
+      "llm_evidence_cn": "年轻星团IC 2395的星周盘巡天",
+      "llm_evidence": "年轻星团IC 2395的星周盘巡天",
+      "canonical_evidence": "年轻星团IC 2395的星周盘巡天",
+      "llm_tldr_en": "This paper presents a WISE survey of circumstellar disk candidates in IC 2395 using kinematically confirmed members, providing a census of disk evolution at ~9 Myr.",
+      "llm_tldr_cn": "该论文利用Gaia运动学确认的成员星，在IC 2395星团中进行了WISE盘候选体巡天。报告了21个盘候选体，其中包括在星团外围新发现的盘。该巡天填补了盘演化关键年龄（约9百万年）的观测空白，为行星形成时间窗口提供了约束。",
+      "llm_tldr": "该论文利用Gaia运动学确认的成员星，在IC 2395星团中进行了WISE盘候选体巡天。报告了21个盘候选体，其中包括在星团外围新发现的盘。该巡天填补了盘演化关键年龄（约9百万年）的观测空白，为行星形成时间窗口提供了约束。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "observations and theoretical models of protoplanetary disks and disk evolution",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.23501v1",
+      "source": "arxiv",
+      "title": "Physics-Informed Neural Networks for Discovering Periodic Orbits in the Gravitational Three-Body Problem",
+      "abstract": "Locating periodic solutions of chaotic dynamical systems normally requires an initial guess close enough to the target orbit for numerical continuation or gradient-based search to converge. We show that Physics-Informed Neural Networks (PINNs) trained on sparse, noisy observations \\emph{without} initial conditions recover periodic orbits of the gravitational three-body problem, including orbit families absent from the training data. The method rests on a second-order ODE formulation, fixed-frequency Fourier features, percentile-based adaptive refinement, and a trainable scaling parameter, each validated on forward problems. Across two 100-seed ensembles, $23$--$25\\%$ of runs converge to families not present in the training data. We then ask what determines which family emerges. Two $χ^2$ tests give a consistent answer: changing the training data source significantly shifts the distribution of recovered families ($p < 0.001$, Cramér's $V = 0.339$), whereas switching between the two initialization distributions tested does not ($p = 0.620$, $V = 0.094$). The random seed selects which family a given run recovers; the \\emph{distribution} the weights are drawn from does not shift the aggregate frequencies, but the training data does. The evidence is empirical: we do not characterize the loss landscape analytically, and PINNs remain slower than conventional integrators on well-posed initial-value problems. What the experiments establish is that the recovered orbits are verifiable rather than merely plausible: the identified ones refine to genuine periodic solutions, a network trained on Lagrange data recovers the figure-eight choreography (Li--Liao class I.A.1, matched to seven significant digits in $T^*$), and one trained on figure-eight data recovers a Broucke--Hadjidemetriou--Hénon orbit closing to $δ_T < 10^{-9}$.",
+      "authors": [
+        "Nikolaos Kollias",
+        "Nikolaos Matzakos"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "nlin.CD",
+        "physics.comp-ph"
+      ],
+      "published": "2026-07-26T07:07:29+00:00",
+      "link": "https://arxiv.org/pdf/2607.23501v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "PINNs for periodic orbits in the three-body problem, relevant to planetary dynamics and stability",
+      "llm_evidence_cn": "三体问题周期轨道的PINNs方法，与行星动力学和稳定性相关",
+      "llm_evidence": "三体问题周期轨道的PINNs方法，与行星动力学和稳定性相关",
+      "canonical_evidence": "三体问题周期轨道的PINNs方法，与行星动力学和稳定性相关",
+      "llm_tldr_en": "Uses Physics-Informed Neural Networks to discover periodic orbits in the gravitational three-body problem from sparse observations without initial guesses, achieving convergence to unseen families in 23-25% of runs.",
+      "llm_tldr_cn": "传统方法寻找混沌动力系统的周期轨道需要接近的初始猜想。本文提出物理信息神经网络（PINNs），利用稀疏噪声观测数据，无需初始条件即可恢复引力三体问题的周期轨道，包括未见过的轨道族。通过100个随机种子实验，23-25%的收敛到新轨道族。该方法为行星系统动力学和轨道稳定性研究提供了新工具。",
+      "llm_tldr": "传统方法寻找混沌动力系统的周期轨道需要接近的初始猜想。本文提出物理信息神经网络（PINNs），利用稀疏噪声观测数据，无需初始条件即可恢复引力三体问题的周期轨道，包括未见过的轨道族。通过100个随机种子实验，23-25%的收敛到新轨道族。该方法为行星系统动力学和轨道稳定性研究提供了新工具。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "planetary dynamics, migration, stability, and population-level architectures",
+      "matched_requirement_id": "req-12",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.24737v1",
+      "source": "arxiv",
+      "title": "Demonstrating the integration of a photonic lantern with an all-fiber-based nulling interferometer",
+      "abstract": "High-contrast imaging of Solar System scale exoplanets and protoplanets demands advancements in instrumentation to access deeper starlight suppression at smaller angular separations than today's state-of-the-art. The multi-mode to single-mode conversion capabilities of photonic lanterns (PLs) provide new avenues to implement techniques such as nulling interferometry due to the inherent spatial filtering of single-mode waveguides. In this work, we present laboratory results on an all-fiber-based focal plane nulling interferometer using off-the-shelf components operating at 1550 nm. We demonstrate the implementation of a PL for coupling light into the instrument, and compare it to the case when laser light is directly fed into the interferometer. The integration of a PL with the interferometer evidences their potential for feeding photonic-based science instruments. Additionally, we discuss expanding the concept of the instrument for the detection of accreting protoplanets.",
+      "authors": [
+        "Jordan Diaz",
+        "Rebecca Jensen-Clem",
+        "Philip M. Hinz",
+        "Daren Dillon",
+        "Pradip Gatkine",
+        "Aditya R. Sengupta",
+        "Dan Sirbu",
+        "Sarah Tedder",
+        "Kevin Bundy",
+        "Brian Vyhnalek",
+        "Steph Sallum",
+        "Matthew C. DeMartino",
+        "Stephen Eikenberry",
+        "Peter Delfyett",
+        "Rodrigo Amezcua-Correa"
+      ],
+      "primary_category": "astro-ph.IM",
+      "categories": [
+        "astro-ph.IM",
+        "physics.optics"
+      ],
+      "published": "2026-07-27T17:58:03+00:00",
+      "link": "https://arxiv.org/pdf/2607.24737v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Integration of photonic lantern with nulling interferometer for exoplanet direct imaging",
+      "llm_evidence_cn": "光子灯笼与零差干涉仪集成用于系外行星直接成像",
+      "llm_evidence": "光子灯笼与零差干涉仪集成用于系外行星直接成像",
+      "canonical_evidence": "光子灯笼与零差干涉仪集成用于系外行星直接成像",
+      "llm_tldr_en": "Demonstrates a fiber-based nulling interferometer with a photonic lantern for spatial filtering, achieving stable null depths relevant for high-contrast imaging of exoplanets.",
+      "llm_tldr_cn": "该论文为突破高对比度成像中恒星抑制的极限，实验演示了全纤维焦平面零差干涉仪与光子灯笼（PL）的集成。光子灯笼将多模光转换为单模光，利用单模波导的空间滤波特性提高干涉对比度。在1550 nm波长下，比较了直接输入激光和通过PL耦合的性能，展示了稳定的零差深度。该技术有望用于未来太阳系级系外行星直接成像任务。",
+      "llm_tldr": "该论文为突破高对比度成像中恒星抑制的极限，实验演示了全纤维焦平面零差干涉仪与光子灯笼（PL）的集成。光子灯笼将多模光转换为单模光，利用单模波导的空间滤波特性提高干涉对比度。在1550 nm波长下，比较了直接输入激光和通过PL耦合的性能，展示了稳定的零差深度。该技术有望用于未来太阳系级系外行星直接成像任务。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "instruments and analysis methods enabling exoplanet and planetary science",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    }
+  ]
+}

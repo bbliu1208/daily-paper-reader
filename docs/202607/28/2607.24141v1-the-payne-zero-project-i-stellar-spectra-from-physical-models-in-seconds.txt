@@ -1,0 +1,1246 @@
+Title: The Payne Zero Project I: Stellar Spectra from Physical Models in Seconds
+
+URL Source: https://arxiv.org/pdf/2607.24141v1
+
+Published Time: Tue, 28 Jul 2026 01:41:31 GMT
+
+Number of Pages: 32
+
+Markdown Content:
+> Draft version July 28, 2026
+> Typeset using L ATEX twocolumn style in AASTeX631
+
+The Payne Zero Project I Stellar Spectra from Physical Models in Seconds 
+
+Yuan-Sen Ting 1, 2, 3 and Elliot M. Kim 4
+
+> 1Department of Astronomy, The Ohio State University, 140 West 18th Avenue, Columbus, OH 43210, USA
+> 2Center for Cosmology and AstroParticle Physics (CCAPP), The Ohio State University, Columbus, OH 43210, USA
+> 3Max-Planck-Institut f¨ ur Astronomie, K¨ onigstuhl 17, D-69117 Heidelberg, Germany
+> 4Department of Computer Science, Cornell University, Ithaca, NY 14853, USA
+
+ABSTRACT Modern stellar surveys measure millions of spectra, yet one self-consistent atmosphere and spectrum can require tens of minutes. This cost has motivated grids, spectral emulators, and data-driven models. We present Payne Zero , which reorganizes one-dimensional LTE Kurucz calculations for GPU-native synthesis and multicore atmosphere iteration, and validate it against the original Fortran programs. A 300–1000 nm solar spectrum sampled at Rgrid = 300 ,000 takes about 14 s on an NVIDIA H100 GPU, while the APOGEE 1500–1700 nm interval takes about 1 s. Physical atmosphere iterations take 2–5 s on 16 AMD CPU threads, and learned initializers reduce the iterations required for convergence. Final spectra remain in practical parity across the tested dwarf and giant regimes. These speeds place direct synthesis inside an optimizer without a label-to-flux spectral emulator. We demonstrate direct many-element fitting of reduced APOGEE spectra and recover multi-element abundance trends broadly consistent with the survey catalog. GPU-resident velocity shifts, broadening, line-spread-function convolution, and detector sampling add negligible cost relative to synthesis. The direct-synthesis search takes less than one minute per star on an H100, while atmosphere verification runs independently on multicore CPUs. The same computational graph calibrates more than 10 5 oscillator-strength and damping corrections jointly against the Sun and Arcturus in about one minute on an H100. Payne Zero therefore brings direct physical fitting and atomic-data calibration to survey scale. The code is available at https://github.com/tingyuansen/payne-zero. 
+
+Keywords: Stellar atmospheres (1584), Stellar spectral lines (1630), Astronomy software (1855), As-tronomy data analysis (1858), Computational methods (1965) 
+
+1. INTRODUCTION Large spectroscopic surveys have measured, are mea-suring, or will soon measure spectra for hundreds of thousands to millions of stars. Major Milky Way pro-grams include APOGEE, GALAH, Gaia–ESO, LAM-OST, Gaia RVS, SDSS-V, DESI, WEAVE, 4MOST, and PFS (Cui et al. 2012; Dalton et al. 2012; Gilmore et al. 2012; Takada et al. 2014; De Silva et al. 2015; Kollmeier et al. 2017; Majewski et al. 2017; Chiappini et al. 2019; Cooper et al. 2023; Creevey et al. 2023). Their sci-entific return depends on turning each spectrum into stellar properties, including effective temperatures, sur-face gravities, chemical abundances, and radial veloci-ties. The speed and accuracy of the forward model set a basic limit on that analysis. A physical forward model combines three stages. Amodel atmosphere describes the temperature, pressure, electron density, and chemical populations with depth. Spectral synthesis combines this structure with a line list to calculate the emergent radiation. An instrument model maps the intrinsic spectrum to the observed pix-els. The atmosphere supplies the thermodynamic and chemical state used by synthesis, so the same compo-sition controls both the atmospheric structure and the emergent spectrum. The requested abundance pattern enters the equa-tion of state and opacity as a whole. Magnesium, for example, changes both its own lines and the electron supply, while electron donors alter the H − continuum and thereby features from other species (John 1988; M´ esz´ aros et al. 2012; Matsuno et al. 2024). Carbon, ni-trogen, and oxygen redistribute atoms among molecules such as CO, CN, and OH and can therefore change spectral features not belonging to the perturbed ele-arXiv:2607.24141v1 [astro-ph.SR] 27 Jul 2026 2 Ting & Kim 
+
+ment (Tsuji 1973; Ting et al. 2018). Line blanketing from many metals changes the radiation field and there-fore the temperature structure (Gustafsson et al. 2008). The opacity-sampling atmosphere solver recomputes the populations and opacity for the requested mixture (Ku-rucz 1996). Runtime has long determined which parts of this cal-culation enter an analysis. Classical equivalent-width work can obtain a model atmosphere by interpolation within a precomputed grid and synthesize a small re-gion around an isolated line (Castelli & Kurucz 2003). Long-standing and modern codes and analysis frame-works include MOOG, Turbospectrum, FERRE, iS-pec, Korg, SME, and PySME (Valenti & Piskunov 1996; Plez 2012; Sneden et al. 2012; Blanco-Cuaresma et al. 2014; Piskunov & Valenti 2017; Allende-Prieto & Apogee Team 2023; Wehrhahn et al. 2023; Wheeler et al. 2023). Full-spectrum survey analyses instead draw in-formation from broad wavelength intervals containing isolated lines, blends, and, in cool stars, molecular bands (Valenti & Fischer 2005; Ting et al. 2017a). For each new stellar state, the original Kurucz work-flow stages atmosphere and synthesis through serial pro-grams and intermediate files (Kurucz 2005). The vali-dated Python reimplementation of Kim & Ting (2026) provides the direct software and physics lineage for our redesign. In the benchmarks below, the label-dependent atmosphere setup, physical iterations, and broad synthe-sis in the original Fortran workflow together take tens of minutes. Repeating that calculation inside a full-spectrum optimizer can then take hours for one star. Spectral emulators avoid this cost by interpolat-ing synthetic libraries, a practice whose atmosphere-and flux-interpolation errors can be measured directly (M´ esz´ aros & Allende Prieto 2013). Their implementa-tions include probabilistic interpolation, as in Starfish, and neural interpolation, as in The Payne (Czekala et al. 2015; Ting et al. 2019). An emulator still has a finite training range and interpolation error, and a new phys-ical model or label set requires a new grid (R´ o˙ za´ nski et al. 2025). The training problem becomes harder when many individual abundances vary because the volume of label space grows rapidly (Casey et al. 2016; Ting et al. 2016). Data-driven models such as The Cannon and its reg-ularized and cross-survey extensions, StarNet, and as-troNN instead learn label–flux or label-inference rela-tions from observed reference spectra (Ness et al. 2015; Casey et al. 2016; Ho et al. 2017; Fabbro et al. 2018; Leung & Bovy 2019). Correlated training labels can mix physical sensitivity with astrophysical correlations (Ting et al. 2017b; Xiang et al. 2019). Related domain-adaptation methods such as Cycle-StarNet map syn-thetic and observed spectral domains to reduce repeat-able discrepancies (O’Briain et al. 2021). Neither a la-tent coordinate nor a domain mapping necessarily iden-tifies the atomic input responsible for a feature. We can instead use observed spectra to correct named physical inputs. Oscillator strengths set atomic line strengths, while damping parameters set their wings (Valenti & Piskunov 1996; Gray 2005). These quanti-ties combine laboratory measurements, theory, database evaluation, and calibration against benchmark stars (Piskunov et al. 1995; Lobel 2011; Jofr´ e et al. 2014; Ryabchikova et al. 2015; Laverick et al. 2019; Smith et al. 2021). A fast differentiable calculation allows many such inputs to be adjusted together while each correction re-mains tied to a physical parameter. This distinction is important when a model misses the data. A flexible flux model may absorb the resid-ual without deciding whether it came from an oscillator strength, a damping wing, the atmospheric structure, or a missing transition. Direct physical evaluation keeps these possibilities explicit and separately testable. It also allows a new abundance coordinate or atomic pa-rameter to enter the governing calculation without re-generating a synthetic flux grid. Direct physical inference therefore requires a much shorter calculation. An atmosphere calculation ad-vances a depth-coupled state through sequential phys-ical iterations. Once that structure is known, tens of thousands to millions of wavelength samples can be eval-uated together. Established frameworks such as Ku-rucz, MARCS, PHOENIX, and TLUSTY make different physical and numerical choices, including LTE cool-star and non-LTE hot-star grids (Hubeny & Lanz 1995; Lanz & Hubeny 2003; Kurucz 2005; Lanz & Hubeny 2007; Gustafsson et al. 2008; Husser et al. 2013). We focus on the original Kurucz programs, whose serial stages exchange intermediate files. 
+
+Payne Zero reorganizes the supported one-dimensional LTE Kurucz physics for GPU synthesis and multicore CPU atmosphere iteration. Fixed data remain resident, and large compiled operations expose the independent work. The resulting forward model can be evaluated inside an optimizer. The shorter runtime enables direct spectrum fitting and atomic-data calibration. After establishing syn-thesis, atmosphere iteration, and learned initialization, we first test a normalized-spectrum fitter whose final candidate is recalculated with a converged physical at-mosphere. We then calibrate atomic line parameters against the Sun and Arcturus and combine both pieces with the instrumental response, velocity, broadening, Stellar Spectra from Physical Models in Seconds 3continuum, and pixel uncertainties for the APOGEE ap-plication.  
+
+> 2.
+
+SPECTRAL SYNTHESIS Spectral synthesis turns a model atmosphere and a line list into an emergent spectrum. It calculates con-tinuous and line opacity through the atmosphere, then solves radiative transfer to determine the radiation that leaves the stellar surface. Payne Zero implements the supported Kurucz synthesis physics (Kurucz 2005) in a new wavelength-parallel calculation. Once the depth state is fixed, different wavelengths have little dependence on one another. A broad spec-trum can therefore replace one long wavelength loop with many copies of the same short depth calculation. This parallel structure is why the broad Kurucz synthe-sis benchmark below moves from more than ten minutes to seconds without an emulator. We begin with syn-thesis because it exposes the central computational idea directly. Before developing that calculation, Table 1 col-lects the notation used throughout the paper. 2.1. The physical calculation 
+
+We sample the synthesis grid uniformly in logarithmic wavelength, 
+
+λiλ = λ0
+
+
+
+1 + R−1grid 
+
+iλ
+
+. (1) The parameter Rgrid sets the model sampling, not the instrumental resolving power. The instrument model applies the line spread function through K, and several model samples can lie within one resolution element. The number of samples is approximately 
+
+Nλ ≃ ln( λmax /λ min )ln(1 + R−1grid ) ≃ Rgrid ln 
+
+ λmax 
+
+λmin 
+
+
+
+. (2) At each wavelength the mass extinction coefficient is the sum of continuous absorption, continuous scattering, and line absorption, 
+
+χν = κν, c + σν, c + X
+
+> l
+
+κν,l . (3) The continuous terms include the principal bound-free and free-free processes from hydrogen, helium, and met-als (Mihalas 1978; Gray 2005). H − dominates much of the optical and near-infrared continuum in cool stars (John 1988). Rayleigh and electron scattering remain separate because their source is not purely thermal. For a standard atomic transition with a frequency nor-malized profile, the LTE line opacity per unit mass is (Gray 2005) 
+
+κν,l = πe 2
+
+mecns,r 
+
+ρU s,r 
+
+(gf )l exp 
+
+
+
+− El
+
+kBT
+
+
+
+×
+
+
+
+1 − exp 
+
+
+
+− hν kBT
+
+ 
+
+ϕl(ν),
+
+with 
+
+Z
+
+ϕl(ν) d ν = 1 .
+
+(4) Here ns,r /U s,r is the partition-normalized number den-sity of ion stage r of species s, and ( gf )l includes the lower-level statistical weight. The profile width and damping scale can be summarized by ∆v2D = 2kBTml
+
++ ξ2,
+
+∆νD = νl
+
+c ∆vD,al = γrad + γSne + γvdW npert 
+
+4π∆νD
+
+.
+
+(5) Here npert is the effective neutral-collision density proxy used by the van der Waals prescription. The result-ing Voigt profile sets how the central opacity is dis-tributed in wavelength. At fixed population, the os-cillator strength scales the frequency-integrated opacity, while damping redistributes opacity from the core into the wings (Barklem et al. 2000; Gray 2005). Tempera-ture, electron density, abundance, and ionization change both the number of absorbers and their broadening envi-ronment. These direct connections permit stellar labels and atomic data to be optimized in spectrum space. The standard Voigt profile is not sufficient for every transition. We implement hydrogen fine structure, Stark profiles (Vidal et al. 1973), and the merging of high se-ries members into the continuum through occupation-probability physics (Hummer & Mihalas 1988). Sepa-rate Kurucz branches treat He I, 3He, He II, and asym-metric Shore–Fano autoionizing profiles (Fano 1961; Shore 1967). The specialized profiles follow Kurucz & Avrett (1981). Molecular line opacity uses populations from molecular equilibrium (Tsuji 1973) and molecular masses stored with the line data to set their Doppler widths. The extinction defines optical depth through d τν =
+
+χν dm, where m is column mass. In LTE the thermal source is the Planck function and line opacity is treated as thermal absorption. The continuum scattering source depends on the mean intensity (Mihalas 1978; Sobeck et al. 2011). The source function can therefore be writ-ten as 
+
+ϵν = κν, c + P 
+
+> l
+
+κν,l 
+
+χν
+
+, Sν = ϵν Bν (T ) + (1 − ϵν ) Jν .
+
+(6) 4 Ting & Kim 
+
+Table 1. Symbols and definitions used for the atmosphere, synthesis, line-calibration, and spectral-inference calculations. 
+
+Role Symbol Definition Stellar labels Teff , log g, g, ξ, [M /H], [ α/ M], [Fe /H], {[X /H] }, {[X /Fe] },
+
+{[X /M] }, A(X) Effective temperature, logarithmic surface-gravity label, physical acceleration 
+
+g = 10 log g in cgs, microturbulence, and abundances. [M /H] shifts all metals from the solar mixture, and [ α/ M] adds to O, Ne, Mg, Si, S, Ca, and Ti. Here [X /H] ≡ log 10 (nX/n H) − log 10 (nX/n H)⊙, nX and nH are elemental number densities, and the subscript ⊙ denotes the adopted solar reference. [Fe /H] is the same quantity for iron, [X /Fe] = [X /H] − [Fe /H], [X /M] = [X /H] − [M /H], and 
+
+A(X) = log 10 (nX/n H) + 12. An explicit element coordinate overrides bulk or group scaling 
+
+Depth coordinate m, τR Column mass increases inward. Rosseland optical depth obeys d τR = κR dm
+
+Atmosphere state T , ρ, Pgas , ne, κR, grad , ξ Temperature, mass density, gas pressure, electron density, Rosseland opacity, and radiative acceleration at each depth, plus the depth-independent microturbulent velocity 
+
+Pressure terms Prad , P0 Radiation pressure and the surface constant in Pgas + Prad = gm + P0 for the branch without turbulent pressure 
+
+Populations ns,r , Us,r , nmol , npert , Is,r , ∆ Is,r Ion-stage number density and partition function for species s and ion stage r,molecular number density, neutral-collision proxy, ionization energy, and its density-dependent lowering 
+
+Energy balance Frad , Fconv , σSB , ϵF Radiative and convective flux obey Frad + Fconv = σSB T 4eff . The fractional residual is ϵF
+
+Iteration n, j, ∆ T (n), ϵT Iteration index, depth index, temperature correction, and maximum deep layer relative temperature change 
+
+Fixed point x(n), p(n), G, JG , R, x⋆, e(n) Numerical state and its six-profile projection, one atmosphere cycle, local Jacobian and residual, converged fixed point and iteration error 
+
+Latent initializer u, u, su, bz, bc, bu, c, sc, BK , K, D,∆mj , Tgrey , sg
+
+Transformed profiles and their training mean and scale, standardized network prediction, de-standardized predicted PCA coefficients, decoded predicted transformed profiles, coefficient mean and scale, basis and dimension, decoder, and mass, temperature, and acceleration transforms 
+
+Training loss L, Lprof , L∇, Lτ , Lhse , λ∇, λτ ,
+
+λhse 
+
+Total initializer objective, its decoded-profile, depth-derivative, optical-depth, and hydrostatic terms, and their relative weights 
+
+Reduced solver T (τR), m(τR), RT , Rm Independent temperature and column mass profiles and their energy balance and optical depth residuals 
+
+Constants c, h, kB, e, me Speed of light, Planck and Boltzmann constants, elementary charge, and electron mass 
+
+Atomic line l, νl, ( gf )l, El, ml Transition index, frequency, statistically weighted oscillator strength, lower-level energy, and absorber mass 
+
+Broadening γrad , γS, γvdW Radiative damping rate and per-perturber Stark and van der Waals coefficients, which multiply the electron and neutral-collision densities 
+
+Line calibration q(l), β, δq,gf , δq,β Correction group assigned to line component l, damping-family index, and bounded corrections to oscillator strength and damping. A prime denotes a calibrated component value 
+
+Sampling ν, λiλ , λ0, λmin , λmax , Rgrid , Nλ Frequency, wavelength coordinate, first sample, and requested endpoints. At synthesis index iλ, the grid obeys λiλ+1 /λ iλ = 1 + R−1grid and contains Nλ
+
+samples 
+
+Profile ∆vD, ∆ νD, al, ϕl Doppler velocity and frequency widths, damping ratio, and line profile normalized by R ϕl(ν) d ν = 1 
+
+Opacity κν, c, σν, c, κν,l , χν Continuous absorption, continuous scattering, and line absorption combine as 
+
+χν = κν, c + σν, c + P 
+
+> l
+
+κν,l 
+
+Line selection b, νb, ηsel , Cjb , Qsrb , C0, Rl, T∗ Frequency-bin index and its reference frequency, selection fraction, continuum threshold, maximum population-to-continuum proxy, fixed conversion constant, and central line-strength proxy. T∗ is the deepest-layer temperature used by the conservative keep test 
+
+Transfer τν , ϵν , μ, Bν , Jν , Sν , Iν Optical depth, thermal absorption fraction, outward direction cosine, Planck function, mean intensity, source function, and specific intensity 
+
+Output Hν , Hλ, Fν , Fλ, Fλ, c, fnorm Hν and Hλ are first angular moments, with Fν = 4 πH ν and Fλ = 4 πH λ.
+
+Fν (m) is the monochromatic flux within the atmosphere. Its surface value and the emergent Fλ are the spectrum, Fλ, c its continuum, and fnorm their ratio 
+
+Instrument K Linear line-spread-function operator from intrinsic total and continuum flux to the observed grid 
+
+Spectrum fit θ, yp, wp, fp, ffast , fphys , ∆ f ,
+
+Q(f ), δQ min 
+
+Fitted stellar labels, observed normalized flux, inverse-variance weight, and modeled normalized flux at pixel p. ffast and fphys are the spectra before and after atmosphere convergence at the fast minimum, ∆ f = fphys − ffast , Q is the mean chi-square per valid pixel, and δQ min is the minimum predicted decrease required before another physical atmosphere calculation 
+
+Survey nuisance ψ, vr , vb, S, B Joint survey-fit state, residual velocity, effective Gaussian broadening, Doppler operator, and broadening operator Stellar Spectra from Physical Models in Seconds 5For each wavelength, after mapping the thermal source and scattering fraction to optical depth, we solve 
+
+μ dIν
+
+dτν
+
+= Iν − Sν . (7) The transfer calculation iterates the scattering contri-bution. Since wavelengths remain independent, the full wavelength grid can be solved in parallel. With μ mea-sured from the outward surface normal, the emergent Eddington flux is converted through 
+
+Fλ = Fν
+
+dν
+
+dλ = 4 πH ν
+
+cλ2 = 4 πH λ. (8) The reported absolute flux is Fλ per nanometer, with 
+
+c and λ evaluated in consistent nanometer units. We carry two transfer branches for each wavelength. One contains line and continuum opacity. The other contains only the continuum. We solve them together to produce the total flux Fλ and its physical continuum Fλ, c. When an instrument operator is present, we apply it to both before taking their ratio, 
+
+fnorm = KFλ
+
+KFλ, c
+
+. (9) This order matters whenever the continuum varies across a resolution element. It also lets an optimizer compare the model directly with observed pixels without moving a densely sampled spectrum back to CPU mem-ory between synthesis and convolution. These equa-tions define the physical calculation. The implementa-tion changes how the same operations are arranged and executed. 2.2. From staged files to wavelength-parallel execution 
+
+The original Kurucz calculation runs as a sequence of Fortran programs. Line readers first prepare a re-quested wavelength interval. The opacity stage then loops over atmosphere depth, rewinds the line records for each layer, accumulates line opacity, and writes depth-ordered records. Direct-access files transpose these records. The transfer stage reads the transposed opacity and advances through wavelength one point at a time. At every point it solves the continuum and total transfer problems. This organization was well matched to the memory available when the programs were writ-ten. It also creates intermediate input and output and leaves the largest independent dimension largely serial (Kurucz 2005). The opportunity for parallel execution follows from the physical dependencies. Radiative transfer couples the atmosphere depths at one wavelength, but it does not couple one wavelength to the next. The natural unit of work is therefore a large set of independent wave-length columns, each with a short calculation through depth. The historical depth-ordered records and file transpose obscure this structure. Keeping the complete depth and wavelength array in memory exposes it di-rectly. A GPU is effective when one compiled operation acts on many array elements at once. Such an operation is of-ten called a kernel. In Payne Zero , we pass each kernel a large group of wavelengths or active lines rather than one wavelength. We leave the physical equations un-changed, but repeated small calls become compiled ar-ray operations. Continuum opacity spans the full depth and wavelength array, active lines add their profiles in parallel, and we integrate optical depth along the short depth axis for all wavelengths. Total and continuum transfer share the same batch. We keep the arrays and fixed transfer geometry on the GPU until the kernel re-turns the final flux. The dominant narrow-line and wavelength calcula-tions therefore avoid Python loops over individual pro-files or wavelength samples. Specialized broad and au-toionizing profiles and bounded catalog chunks retain small Python-level dispatch loops. PyTorch sends their large array operations to CUDA or CPU kernels, while a cached Numba kernel prepares the molecular cata-log. The tested Apple Metal path makes synthesis available locally on Apple silicon. The reported tim-ings and throughput recommendations use dedicated NVIDIA V100, A100, and H100 accelerators. Since the Kurucz programs are also compiled, the speed difference comes from concurrency, larger kernels, and resident in-puts rather than compilation alone. Table 2 summa-rizes how these changes replace serial loops and inter-mediate files. During repeated fits, the fixed window, catalog, and transfer geometry remain resident, while atmosphere-dependent opacity and flux are recomputed for every label vector. No synthetic flux is cached or emulated. 2.3. Accuracy and performance 
+
+We test the final spectrum over 300–1000 nm on a logarithmic grid with Rgrid = 300 ,000. Figure 1 makes two comparisons. A shared atmosphere and line catalog isolate synthesis accuracy. Independent calculations at the same stellar labels test atmosphere and synthesis together. Both use the original Fortran Kurucz chain as the reference. 1 
+
+> 1https://github.com/tingyuansen/kurucz
+
+6 Ting & Kim 300 500 700 900 0.00 0.25 0.50 0.75 1.00 
+
+> Hot dwarf
+> fnorm
+
+652 .5 655 .0 657 .5 660 .00.40.60.81.0
+
+Hα
+
+300 500 700 900 
+
+−10 
+
+−50510 
+
+> 10 3 ∆f
+
+300 500 700 900 0.00 0.25 0.50 0.75 1.00 
+
+> Sun
+> fnorm
+
+516 518 520 0.00 0.25 0.50 0.75 1.00 
+
+Mg b 
+
+300 500 700 900 
+
+−10 
+
+−50510 
+
+> 10 3 ∆f
+
+300 500 700 900 0.00 0.25 0.50 0.75 1.00 
+
+> Red giant
+> fnorm
+
+850 860 870 0.00 0.25 0.50 0.75 1.00 
+
+Ca triplet 
+
+300 500 700 900 
+
+−10 
+
+−50510 
+
+> 10 3 ∆f
+
+300 500 700 900 
+
+Wavelength (nm) 
+
+0.00 0.25 0.50 0.75 1.00 
+
+> K dwarf
+> fnorm
+
+705 .0 707 .5 710 .0 712 .5 715 .0
+
+Wavelength (nm) 
+
+0.40.60.81.0
+
+TiO 
+
+300 500 700 900 
+
+Wavelength (nm) 
+
+−10 
+
+−50510 
+
+> 10 3 ∆f
+
+Original Kurucz Payne Zero synthesis only atmosphere + synthesis 
+
+Figure 1. Agreement with the original Kurucz calculation over 300–1000 nm at Rgrid = 300 ,000. Rows show a hot dwarf, the Sun, a red giant, and a K dwarf. Columns show the full normalized spectrum, a representative feature, and ∆ fnorm =
+
+f Payne Zero norm − f Kurucz norm . Black and orange compare the complete calculations. In the residual panels, blue holds the atmosphere fixed to isolate synthesis, while orange includes independently converged atmospheres at the same labels. Residuals are multiplied by 10 3. From top to bottom, the synthesis-only and complete 99th-percentile absolute residuals are, in units of 10 −3, (2 .0, 0.7), (2 .8, 2.2), (5 .8, 5.8), and (3 .0, 2.9). 
+
+Across the four stellar types, the pooled rms normalized-flux residual is 9 .1 × 10 −4 for synthesis alone and 8 .6 × 10 −4 for the complete calculation. For the hot dwarf, Sun, red giant, and K dwarf, respectively, the 99th-percentile absolute residuals are (2 .0, 2.8, 5.8, 3.0) ×
+
+10 −3 for synthesis alone and (0 .7, 2.2, 5.8, 2.9) × 10 −3 for the complete calculation. These residuals reflect small numerical differences between two implementations of the same physical calculation. Stellar Spectra from Physical Models in Seconds 7Hot dwarf Sun Red giant K dwarf 10 1
+
+> 10 2
+> 10 3
+> Synthesis time per spectrum (s)
+
+300–1000 nm    
+
+> 010 20 30
+
+Stage time (s) 
+
+> V100 A100 H100
+
+Sun, 300–1000 nm   
+
+> 020 40
+
+Stage time (s) 
+
+> V100 A100 H100
+
+K dwarf, 300–1000 nm        
+
+> 0.00.51.01.52.02.53.03.5
+
+Synthesis time (s) 
+
+> V100 A100 H100 3.06 s 3.06 s 1.39 s
+
+APOGEE Sun, 1500–1700 nm        
+
+> Original Kurucz V100 A100 H100 Continuum Atomic + H/He Molecular Transfer Return
+
+Figure 2. Synthesis runtime per spectrum at Rgrid = 300 ,000. The left panel compares 300–1000 nm calculations for four stellar types with the original serial Kurucz programs and Payne Zero on one NVIDIA V100, A100, or H100 GPU. The upper middle and right panels decompose the GPU wall for the Sun and K dwarf. The lower panel gives the total solar wall over 1500–1700 nm. Atomic and molecular line opacity dominate the GPU runtime. 
+
+Figure 2 measures repeated forward calculations af-ter one-time source-window preparation. Each wall in-cludes continuum opacity, atomic and molecular lines, 10 6 10 7
+
+Retained transitions 
+
+> 10 1
+> 10 2
+> Synthesis time per spectrum (s)  Hot dwarf Sun Red giant K dwarf Original Kurucz
+
+Figure 3. Synthesis scaling with wavelength span at Rgrid =300 ,000. All windows begin at 300 nm and end at 400, 500, 700, or 1000 nm. Colored curves show the four stellar types on one H100. The dashed curve and shaded band give the median and range of the original Kurucz times for the same stars. The shallower H100 scaling increases the speedup as the spectral interval and retained transition count grow. 
+
+total and continuum transfer, and the returned spec-trum. On the 300–1000 nm grid at Rgrid = 300 ,000, the solar medians are about 763 s for the original Kurucz programs, 32 s for one V100, 29 s for one A100, and 14 s for one H100. These correspond to speedups of 24, 26, and 54 on the V100, A100, and H100, respectively. For the same solar atmosphere over the narrower APOGEE 1500–1700 nm interval, the V100, A100, and H100 medians are about 3.1, 3.1, and 1.4 s. All use 
+
+Rgrid = 300 ,000 and are native-grid synthesis timings before any instrumental convolution or resampling. The APOGEE benchmark changes only the wavelength in-terval, not the synthesis resolution. The V100 runs use the V100S variant and 2,000-line chunks, while the A100 and H100 runs use 4,000- and 8,000-line chunks. The V100 and A100 walls are close because atomic and H/He opacity accounts for 80–92 percent of the profiled Sun and K-dwarf calculations, and their measured times for this dominant stage dif-fer by less than 10 percent. The H100 roughly halves the same stage. These profile-evaluation and indexed-accumulation kernels do not use dense tensor-core ma-trix multiplication. The GPUs ran in their available host, PyTorch, and CUDA environments. These are therefore achieved application timings rather than an isolated architecture comparison. 8 Ting & Kim 
+
+Table 2. Execution of the same synthesis stages in the original Kurucz workflow and Payne Zero . The final column summarizes how resident data and wavelength-parallel GPU kernels change the computational cost.       
+
+> Stage Original Kurucz execution Payne Zero execution Effect Window preparation
+> Line readers prepare wavelength-specific sequential records for the staged programs Numba compiles molecular source records into portable window-bound arrays. An in-process cache retains the grid, catalogs, tables, and fixed tensors for one device, dtype, and chunk configuration The retained measurements of repeated calls amortize this preparation without making the disk products device specific
+> Work layout Compiled Fortran routines retain serial outer loops over depth records and wavelengths PyTorch batches independent wavelengths and the dominant narrow-line and depth contributions. The retained V100, A100, and H100 measurements use CUDA. The same path also supports Metal and CPU execution The bulk work advances concurrently, while Python dispatch is limited to bounded chunks and specialized profiles
+> Line opacity Each depth rereads atomic and molecular line records and advances through profiles in record order Atomic and molecular catalogs are processed in bounded line chunks. A continuum-referenced center test rejects weak depth–line pairs, and survivors deposit only their required wing spans Cost and temporary memory follow retained-line scans and active profile deposits, not the full line-list–wavelength product
+> Memory and I/O
+> Depth-ordered opacity is written and transposed through intermediate files Depth–wavelength opacity, source, and transfer arrays stay on the device between stages, while line and active-pair chunks bound temporary memory Disk opacity staging and transfers of full arrays through CPU memory are removed without constructing a depth–line–wavelength array
+> Transfer Wavelengths advance serially, with separate total and continuum calls All wavelengths and the stacked total and continuum branches share one tensor calculation The largest independent dimension is evaluated together
+
+Synthesis time depends only weakly on grid sampling. Over the fixed 300–1000 nm interval, increasing Rgrid 
+
+by a factor of 30 raises the wall by factors of only 3.1– 5.0 across the four stars. Denser sampling adds trans-fer columns and pixels within each active profile, while scanning the retained catalog and the fixed per-call floor remain nearly unchanged. Figure 3 instead tests wavelength span. At fixed 
+
+Rgrid = 300 ,000, expanding the window from a 100 to a 400 nm span increases the retained catalog by a fac-tor of 25. The H100 wall rises by only factors of 1.5– 1.8, whereas the original Kurucz wall rises by factors of 16–18. The smaller GPU gain for the shortest window reflects less work to fill the accelerator. A fixed per-call floor is amortized as more wavelengths and profiles enter the batch. Moreover, the retained count is only an upper bound on opacity work because the contin-uum cutoff rejects most depth–line pairs and surviving profiles visit bounded pixel ranges. The H100 speedup therefore grows from about 3–6 for the 100 nm span to 36–54 over 300–1000 nm. 
+
+3. MODEL ATMOSPHERES The atmosphere calculation supplies the depth struc-ture used by synthesis. At specified effective temper-ature, surface gravity, composition, and microturbu-lence, it makes the pressure, populations, opacity, radi-ation field, and convection mutually consistent. Payne Zero implements the one-dimensional, plane-parallel LTE Kurucz atmosphere calculation used here (Kurucz 2005) with compiled array kernels. We do not include optional NLTE or turbulent-pressure branches. Atmospheric structure must be solved iteratively be-cause its variables form a feedback loop. Temperature and pressure set the populations, the populations set the opacity, and the opacity sets the radiative flux and heating. The resulting flux imbalance changes the tem-perature and depth structure used by the next iteration. Its computational cost is therefore set by both the work in each physical pass and the number of passes needed to reach a consistent structure. 3.1. The physical calculation 
+
+The production grid contains 80 layers in Rosseland optical depth. We summarize its physical structure with six principal profiles. These are column mass m, temper-ature T , gas pressure Pgas , electron density ne, Rosse-land opacity κR, and radiative acceleration grad . The iteration also carries the radiation-pressure and convec-tion state needed to update these profiles. Microturbu-lence ξ is fixed by the requested labels. The converged Stellar Spectra from Physical Models in Seconds 9
+
+Table 3. Execution of the same atmosphere stages in the original Kurucz workflow and Payne Zero . The final column summarizes how resident data, compiled kernels, and multicore frequency parallelism change the computational cost.       
+
+> Stage Original Kurucz execution Payne Zero execution Effect Physical inputs
+> Input decks and line catalogs use fixed-width or Fortran-unformatted records. Many numerical tables are compiled into the source Most fixed physics tables and the full line-source catalogs are retained as typed in-process arrays Cached tables and line catalogs avoid repeated parsing, although isotope and molecular-equilibrium inputs are still reloaded each pass
+> Line selection A separate first-pass scan writes the atmosphere-dependent selected-line file Once per atmosphere, fused parallel keep tests over each catalog family reuse cached columns and bin assignments and return the selected catalog in memory. Later passes reuse it Selection remains atmosphere dependent, without a selected-line file round trip
+> Populations and continuum
+> Population and continuum calculations advance through serial nested depth, species, and frequency loops Population and molecular-equilibrium kernels are compiled but depth-ordered, while continuum kernels parallelize over sampling frequency Continuum frequency work uses the configured CPU threads, whereas population work remains ordered
+> Line opacity Selected and detailed line records are scanned serially and deposited through nested depth and wavelength loops Compiled parallel chunks accumulate selected and detailed transitions on the opacity-sampling grid The dominant line-opacity work uses the configured CPU threads
+> Transfer Each of 30,000 wavelengths is solved and integrated before the next Compiled frequency chunks solve transfer in parallel into private accumulators, which are reduced after the parallel region Independent frequency work is parallel, while the outer physical cycle remains ordered
+
+product includes the populations and Doppler widths needed by synthesis. Hydrostatic equilibrium relates pressure to the weight of material above each layer. In the integrated plane parallel form used here, 
+
+Pgas (m) + Prad (m) = gm + P0. (10) Here Prad is the radiation pressure and P0 is the surface integration constant. This is the convention for the sup-ported branch, in which turbulent pressure is disabled. The equation of state then solves charge conservation, Saha ionization, Boltzmann populations, and molecu-lar equilibrium at each layer (Tsuji 1973; Mihalas 1978; Hubeny & Mihalas 2014). Adjacent ion stages obey 
+
+ns,r +1 ne
+
+ns,r 
+
+= 2Us,r +1 
+
+Us,r 
+
+ 2πm ekBTh2
+
+3/2
+
+× exp 
+
+
+
+− Is,r − ∆Is,r 
+
+kBT
+
+
+
+.
+
+(11) Here ∆ Is,r is the density-dependent lowering of the iso-lated ionization energy in the adopted prescription. Its partition functions include the corresponding occupa-tion correction. Charge conservation closes the elec-tron density, while molecular mass action closes the molecular populations (Tsuji 1973; Barklem & Collet 2016). Together these calculations produce the density and populations used by the opacity calculation. The atmosphere solver evaluates line blanketing by direct opacity sampling, a method that represents large atomic and molecular line ensembles at selected frequen-cies (Johnson & Krupp 1976). For each requested abun-dance mixture, the solver recomputes the equation of state and every represented atomic and molecular opac-ity (Kurucz 1996, 2013). These internal wavelength samples determine radiative heating and flux during at-mosphere iteration. At each sampling wavelength, the solver evaluates con-tinuous and line extinction through all depth layers (Mi-halas 1978). The Rosseland mean gives the opacity rel-evant to diffusive energy transport, 1
+
+κR
+
+=
+
+Z ∞
+
+> 0
+
+χ−1
+
+> ν
+
+∂B ν
+
+∂T dν
+
+Z ∞
+
+> 0
+
+∂B ν
+
+∂T dν, dτR = κR dm. (12) Here χν is the total mass extinction. Radiative trans-fer at the same sampling wavelengths supplies the monochromatic flux, radiation pressure, radiative accel-eration, and heating integrals. In particular, the accel-eration from the radiation field is 
+
+grad (m) = 1
+
+c
+
+Z ∞
+
+> 0
+
+χν (m)Fν (m) d ν. (13) In layers where convection is active, a mixing-length calculation supplies the convective flux (B¨ ohm-Vitense 10 Ting & Kim 
+
+1958; Mihalas 1978; Gustafsson et al. 2008). The target energy balance and its fractional residual are 
+
+Frad (m) + Fconv (m) = σSB T 4eff ,ϵF (m) = Frad (m) + Fconv (m)
+
+σSB T 4eff 
+
+− 1. (14) Let x(n) denote the full remapped atmosphere state en-tering pass n. Its principal profiles are m, T , Pgas , ne,
+
+κR, and grad . It also carries the pressure and convection quantities needed by the next pass. One physical solver iteration then has the schematic dependence 
+
+x(n) −→ (Pgas , n e, {ns,r }, {nmol })(n)
+
+−→ χ(n) 
+
+> ν
+
+−→ (Jν , F rad , g rad , κ R, τ R)(n)
+
+−→ (Fconv , ∆T )(n) −→ (T, m )(n+1) remap 
+
+−−−−−→ x(n+1) , T (n+1) = T (n) + ∆ T (n).
+
+(15) Thus hydrostatic balance and the equation of state set pressure and populations before the opacity and trans-fer calculation determines the fluxes, radiative acceler-ation, and temperature correction. The correction also updates column mass. Both corrected profiles, together with the other carried fields, are remapped to the stan-dard Rosseland grid. The next pass recomputes pressure and every population from this remapped state. We adapt the deep-layer successive-structure norm used by the external checker in the retained Kurucz workflow into a per-pass production stopping test, 
+
+ϵT = max 
+
+> j∈deep
+
+T (n+1)  
+
+> j
+
+− T (n)
+
+> j
+
+T (n+1) 
+
+> j
+
+< 5 × 10 −4. (16) Here deep = {40 , . . . , 75 } on the 80-layer production grid. This norm tests whether the deep structure has ceased changing appreciably. Because it is local, we check flux balance and the emergent spectrum sepa-rately. 3.2. From serial iteration to parallel CPU execution 
+
+The original Kurucz atmosphere program carries this physical cycle through a serial outer iteration. Within each iteration it loops through the depth layers to up-date pressure and populations, constructs line opacity, and then advances through the 30,000 opacity sampling wavelengths. At each wavelength it evaluates the contin-uous opacity, solves radiative transfer through all layers, and adds the result to the Rosseland, radiation pressure, and temperature correction integrals. Only after this frequency loop is complete can convection and the next temperature structure be calculated. Successive iterations cannot overlap because the tem-perature correction from pass n changes the popula-tions and opacity of pass n + 1. Within one pass, how-ever, work over depth, species, transitions, and opacity-sampling wavelengths is independent until the partial re-sults are reduced. Payne Zero parallelizes these blocks, reuses fixed inputs, and removes repeated parsing and staging. 
+
+Payne Zero keeps the physical ordering and correc-tion equations of the outer atmosphere cycle. In the re-tained original-program benchmark, the solver executes the requested number of iterations exactly. Each batch contains 30 iterations. A separate checker then com-pares the last two structures and launches another batch when needed. Payne Zero instead evaluates Equa-tion 16 after every pass following a three-pass minimum, stopping at the threshold or the configured cap. Within each pass, the performance-critical loops are written in Python. Numba’s just-in-time compiler turns functions marked njit into machine code, while 
+
+prange divides independent loop iterations among CPU threads. In the molecules-enabled production path, pop-ulation and molecular-equilibrium kernels remain depth-ordered, while continuum-frequency, line-opacity, and transfer work use this threaded execution. Most fixed physics tables and the full line-source catalogs remain in typed process arrays. Since the reference solver is al-ready compiled Fortran, JIT compilation alone does not explain the gain. Larger kernels, resident inputs, and re-moval of intermediate file staging supply the remaining reduction. Line selection illustrates these changes. The source catalog is fixed, but the subset retained for opacity sam-pling depends on the atmosphere. The keep test needs only a compact summary of the population and contin-uum opacity in each species and frequency bin, together with the temperature dependence of excitation. Let Cjb 
+
+be the continuum threshold at depth j and frequency bin b,
+
+Cjb = ηsel 
+
+κνb,c,j + σνb,c,j 
+
+1 − exp[ −hν b/(kBTj )] . (17) Here ηsel = 10 −3 is the fixed selection fraction. For ion stage r of species s, the depth dependence is reduced to 
+
+Qsrb = max 
+
+> j
+
+ (ns,r /U s,r )j
+
+ρj (∆ νD/ν )jsr Cjb 
+
+
+
+. (18) Up to fixed unit conversions, the central strength proxy for line l is 
+
+Rl = C0
+
+(gf )l Qs(l)r(l)b(l)
+
+νb(l)
+
+. (19) Here s(l), r(l), and b(l) are the species, ion stage, and frequency bin assigned to line l, and C0 contains fixed Stellar Spectra from Physical Models in Seconds 11 Hot dwarf Sun Red giant K dwarf 10 1     
+
+> Complete wall per iteration (s)
+> Original Kurucz, serial Payne Zero, 16 threads
+> 124816 32
+
+CPU threads     
+
+> 0510 15 20
+> Warm physical iteration (s)  Hot dwarf Sun Red giant K dwarf
+> 010 20 30 40
+
+Red-giant wall per iteration (s) 
+
+> Kurucz Payne Zero 16 threads
+> 33.6 s total 4.7 s total
+> catalog 22.4 s Catalog Kurucz cycle Population Opacity Transfer Correction Remap Other
+
+Figure 4. Atmosphere performance on an AMD EPYC 9B45 CPU. The left panel compares the mean wall per physical iteration from matched three-iteration runs for four stellar types. Payne Zero uses 16 threads. The middle panel shows its iteration wall from 1 to 32 threads. The right panel decomposes the red-giant iteration into physical stages for original Kurucz and 16-thread 
+
+Payne Zero . The latter is 6–7 times faster across the four stars, with line opacity the largest remaining stage. 
+
+line-opacity constants and unit conversions. The line is retained when both Rl ≥ 1 and Rl exp[ −El/(kBT∗)] ≥ 1, where T∗ is the deepest layer temperature. This conser-vative test avoids discarding a line that can matter in any layer. Compiled passes apply these tests once per atmo-sphere to the fixed source catalog and retain the selected records for subsequent iterations. The same pattern ex-tends across the physical cycle. Independent work is compiled and parallelized, reusable inputs remain resi-dent, and the physical sequence is preserved. Table 3 summarizes these execution changes. The atmosphere offers less GPU parallelism than syn-thesis. Frequency-parallel blocks are interleaved with the equation of state, reductions, convection, correc-tion, and remapping. These stages exchange a small depth state and must remain ordered, while the avail-able wavelength batch is much smaller than in broad spectral synthesis. The production solver therefore uses multicore CPU kernels. Thread scaling saturates when memory traffic and the ordered stages dominate, with the saturation point set by the processor. 3.3. Accuracy and performance 
+
+The first comparison in Figure 1 holds the atmosphere fixed to isolate synthesis. In the second, each atmo-sphere solver produces its own structure at the same stel-lar labels before synthesis, testing whether atmosphere differences remain negligible in the final observable. For the hot dwarf, Sun, red giant, and K dwarf over 300– 1000 nm, the 99th-percentile absolute normalized-flux differences are (0 .70 , 2.18 , 5.76 , 2.90) × 10 −3. The com-bined atmosphere and synthesis calculation is thus in practical spectral parity with the original Kurucz pro-grams across the tested regimes. To isolate the cost of one physical pass from initial-ization and stopping, both implementations begin from the same structure and execute three iterations with identical physical inputs on the same AMD EPYC 9B45 CPU. Figure 4 summarizes the matched iteration walls, thread scaling, and red-giant stage breakdown. This de-sign measures the execution of one physical pass rather than the choice of starting state or stopping policy. For the hot dwarf, Sun, red giant, and K dwarf, the original Kurucz walls are 15, 13, 34, and 38 s per iter-ation. The corresponding 16-thread Payne Zero walls are 2.1, 2.2, 4.7, and 5.3 s, giving factors of 6–7. The original program has no thread-parallel execution path, so its single-core measurement is its normal operating mode rather than an imposed restriction. Scaling in 
+
+Payne Zero saturates near 16 threads because mem-ory traffic and ordered stages begin to dominate. In the measured configuration, the CPUs advance the ordered atmosphere calculation while the GPU handles the much broader synthesis parallelism. The red-giant breakdown shows that the original wall is dominated by catalog input and line selection, while opacity is the largest remaining Payne Zero cost. The gain therefore combines resident data, a parallel keep test, and compiled opacity kernels within one CPU– 12 Ting & Kim 
+
+GPU workflow. Per-iteration acceleration leaves the number of iterations as the remaining multiplicative cost.  
+
+> 4.
+
+LEARNED ATMOSPHERE INITIALIZATION We reduce this remaining cost by learning the start-ing state while retaining the physical correction cycle. One cycle rebuilds pressure and populations, opacity, transfer, convection, and the remapped temperature and column-mass structure. It forms no global derivative matrix, so each iteration costs one physical pass. This economical update works well across the hot-dwarf, so-lar, red-giant, and K-dwarf tests. In our tests, more general root solvers improved robustness but required many physical passes. Convergence still depends on whether repeated up-dates from the starting state approach the physical so-lution. We therefore judge an initializer by its physical restart rather than profile accuracy alone. Every com-parison keeps the target labels and abundances fixed and changes only the starting atmosphere. The predic-tion is not accepted as an atmosphere. The physical solver must pass its convergence checks, while indepen-dent tests examine flux closure and the synthesized spec-trum. 4.1. Initialization as a fixed point problem 
+
+For fixed requested values of Teff , log g, ξ, and the abundances {[X /H] }, let x(n) denote the complete nu-merical state needed to begin iteration n. Its physical projection contains the six profiles on the 80-layer pro-duction grid, 
+
+p(n) = {mj , T j , P gas ,j , n e,j , κ R,j , g rad ,j }80  
+
+> j=1
+
+(20) while the complete solver state also carries the previous temperature correction, accumulated Rosseland-opacity information, and iteration controls. We use G for one complete Kurucz cycle acting on this augmented state, 
+
+x(n+1) = G
+
+
+
+x(n)
+
+. (21) It returns an updated state whose physical projection is the remapped six-field atmosphere at the same stellar labels. The converged solver state is its fixed point, 
+
+x⋆ = G (x⋆) . (22) Initialization means choosing x(0) . Near the fixed point, the error e(n) = x(n) − x⋆ evolves as 
+
+e(n+1) ≃ JG (x⋆)e(n). (23) Local convergence requires the spectral radius of JG to be below unity, so one pass reduces rather than ampli-fies a small error. This condition defines a local conver-gence basin. Its boundary can be complicated because temperature and pressure change the populations and opacity, opacity changes the next correction, remapping couples optical depth to column mass, and the convec-tive boundary can move. The fixed point residual 
+
+R(x) = G(x) − x (24) measures whether the complete carried state is consis-tent under one pass. Close agreement between the six starting and converged profiles does not guarantee that the complete state changes little under the next pass. Small profile errors can still combine into a large pres-sure, opacity, or convection response. A useful initializer must therefore lie inside the basin of the physical itera-tion, not merely minimize profile error. An Eddington grey atmosphere provides a generic starting structure, but it lacks the response to line blan-keting, molecular equilibrium, and convection (Mihalas 1978; Gustafsson et al. 2008). It can therefore lie out-side the useful basin. A precomputed atmosphere grid supplies nearby converged starting models (Castelli & Kurucz 2003), although a stored model is useful only when the physical iteration remains in the target solu-tion’s basin. Training an initializer first requires a set of converged physical atmospheres. Faster physical iteration makes this initial set affordable. Alternating physical solutions and retraining then expands the corpus, with only con-verged solutions retained as training targets. 4.2. A compact physical atmosphere representation 
+
+The central design choice is to predict all six fields together. Their raw values span many orders of magni-tude and obey positivity and monotonicity constraints. We therefore transform layer j to 
+
+uj =
+
+
+
+log 10 ∆mj , log 10 
+
+Tj
+
+Tgrey ,j 
+
+, log 10 Pgas ,j ,
+
+log 10 ne,j , log 10 κR,j , asinh grad ,j 
+
+sg
+
+
+
+,
+
+(25) where ∆ m1 = m1 and ∆ mj = mj − mj−1 for j > 1, and 
+
+Tgrey (τR) = Teff 
+
+ 34
+
+
+
+τR + 23
+
+ 1/4
+
+. (26) Positive mass increments enforce monotonicity, loga-rithms preserve positivity, and the grey scaling removes most of the global temperature trend. The family-specific scale sg is the median absolute radiative accel-eration in the training corpus. The signed transform retains both directions of radiative acceleration. Stellar Spectra from Physical Models in Seconds 13 
+
+Table 4. Learned atmosphere initializer families, sample sizes, input labels, and training envelopes. Ncorpus is the number of independently converged atmospheres retained before splitting. The next column gives the training, validation, and held-out test counts. The public direct-abundance input contains 81 [X /H] values, represented internally by [Fe /H] and 80 non-iron [X /Fe] coordinates.                                                                     
+
+> Family Ncorpus Training / validation / test Input labels Training envelope Five-label 52,199 50,000 / 2,000 / 199 Teff , log g, [M /H], [ α/ M], ξ4000 ≤Teff ≤10500 K, 0 .7≤log g≤5.3,
+> −2.5≤[M /H] ≤0.5,
+> −0.1≤[α/ M] ≤0.5, 0 .5≤ξ≤4.0 km s−1
+> Eight-label CNO
+> 53,824 51,625 / 2,000 / 199 Teff , log g, [M /H], [ α/ M], ξ, [C /M], [N /M], [O /M] Five-label bounds, with
+> −0.5≤[C /M] ,[N /M] ,[O /M] ≤0.5
+> Direct abundance
+> 82,016 71,660 / 9,733 / 623 Teff , log g,ξ, and 81 [X /H] abundances, represented by [Fe /H] and 80 non-iron [X /Fe] coordinates 4000 ≤Teff ≤10500 K, 0 .7≤log g≤5.3, 0.5≤ξ≤4.0 km s −1,
+> −2.5≤[Fe /H] ≤0.5, and
+> −0.5≤[X /Fe] ≤0.5∆mT /T grey
+> Pgas
+> ne
+> κR
+> grad
+
+10 −3
+
+10 −2
+
+> Standardized RMS
+
+Held-out atmosphere error 
+
+complete initializer PCA floor ( K = 160) 
+
+> hot Sun giant C-rich metal-rich O-rich
+
+012345
+
+> Spectral error (10 −3)
+
+Three-iteration spectra  
+
+> Adjacent Five-label Eight-label
+
+0
+
+5
+
+10 
+
+15 
+
+20 
+
+> Iterations  median 12.25 median 5.5 median 4
+
+Stopping distributions ( n = 16) 
+
+Five-label Eight-label 
+
+Figure 5. Accuracy and iteration cost of the five- and eight-label atmosphere initializers. The left panel compares the K = 160 PCA compression floor (dashed, open) with the complete held-out label-to-atmosphere error (solid, filled). Points are median standardized depth RMS values, with 16th–84th-percentile ranges. The middle panel gives a conservative spectral error bound after three physical-solver passes for six controls. By the triangle inequality, it sums the spectral change from passes three to five and the five-pass difference from the same stored reference. All lie below 5 .1 × 10 −3. The right panel compares iteration counts from nearby stored-atmosphere starts with the two learned starts. Horizontal segments mark medians of about 12, 5.5, and 4 iterations, respectively. 
+
+The transformed 80 ×6 atmosphere contains 480 coor-dinates. A joint principal component analysis, or PCA (Jolliffe & Cadima 2016), reduces it to K = 160 coeffi-cients while retaining more than 99.999 percent of the standardized training variance. A feedforward network maps the five- and eight-label inputs in Table 4 to standardized PCA coefficients. For the direct-abundance family, an element-aware set en-coder first combines each abundance with its element identity (Zaheer et al. 2017), then joins that summary to Teff , log g, and ξ, which denote effective temperature, surface gravity, and microturbulence, before predicting the same coefficient representation. If bz is the standard-ized network output, decoding reverses both coefficient and profile standardization, 
+
+bc = c + sc ⊙ bz,
+
+vec( bu) = u + su ⊙ BT 
+
+> K
+
+bc,
+
+p(0) = D(bu).
+
+(27) 14 Ting & Kim 
+
+Here c and sc are the training mean and scale of the PCA coefficients. The corresponding profile quantities are u
+
+and su, while BK is the retained K-component PCA basis. Hats identify network predictions. vec flattens the depth-by-field profile array, ⊙ denotes elementwise multiplication, and T denotes transpose. The decoder 
+
+D reverses the physical transforms and returns the six starting profiles p(0) . The solver constructs the remain-ing carried state around these profiles. A joint basis preserves correlated variations across fields and depth, which matters because the physical solver responds to all six profiles together. We evaluate the training loss after PCA decoding, so it constrains the full depth structure rather than coef-ficient errors alone. Four terms address distinct restart errors. Lprof matches the values of all six decoded pro-files. L∇ matches their changes between adjacent layers, which prevents a profile with the correct overall level from retaining the wrong depth dependence. Lτ checks the mapping between column mass and Rosseland op-tical depth, while Lhse checks hydrostatic pressure bal-ance. The coefficients λ set the relative weight of the last three terms, 
+
+L = Lprof + λ∇L∇ + λτ Lτ + λhse Lhse . (28) The profile and gradient terms use a robust smooth-L1 mismatch on the transformed fields. The optical-depth and hydrostatic terms are evaluated after reconstruct-ing temperature, pressure, opacity, and column mass in physical units. They measure departures from dτR
+
+dm = κR, dPgas 
+
+dm ≃ g − grad . (29) The optical-depth term compares the integrated κR dm
+
+relation with the converged target. The hydrostatic term compares the gas-pressure gradient with g − grad 
+
+and also penalizes decreasing gas pressure. These choices preserve the profile shape and two structural bal-ances that strongly affect a physical restart. They do not replace radiative and convective equilibrium, which the physical solver must still establish. The five- and eight-label models use λ∇ = 0 .1 and λτ = λhse = 0 .05. The direct-abundance model uses λ∇ = 0 .2 with the same weights on the physical-consistency terms. 4.3. Bootstrap, label coverage, and validation 
+
+We seeded a first label block with starting guesses from the Kurucz-A1 initializer (Li et al. 2025). Only atmospheres that converged with the physical solver en-tered the corpus. Those solutions trained a provisional initializer, whose predictions reduced the physical passes needed for the next block. Repeating physical solves and retraining produced the corpora summarized in Table 4. A prediction never served as a training target. The three released families are practical defaults rather than restrictions on the method. With each train-ing atmosphere taking seconds to tens of seconds, a sur-vey can generate tens of thousands in parallel for its own label range or abundance parameterization. The five-label family covers broad stellar work in which a bulk metallicity and an alpha pattern describe the atmosphere adequately. Latin-hypercube marginals (McKay et al. 1979) stratify every label range without an exponentially large tensor grid. A small imposed cor-relation between the Teff and log g ranks samples com-mon dwarf and giant structures more densely without restricting the corpus to an evolutionary track. The eight-label family addresses abundance applica-tions in evolved stars, where dredge-up changes surface C and N independently of the bulk metal and alpha patterns (Salaris et al. 2015; Martig et al. 2016). These changes redistribute atoms among CO, CN, and OH and can alter molecular opacity and atmospheric structure (Tsuji 1973; Gustafsson et al. 2008). Conditional Latin-hypercube panels in C, N, and O are attached to sam-pled five-label parent states, and every resulting eight-label atmosphere is solved independently. In both lower-dimensional families, [ α/ M] adds to the bulk [M /H] scal-ing for the alpha elements. The explicit [O /M] coordi-nate replaces that scaling for oxygen in the CNO family, while [ α/ M] continues to set Ne, Mg, Si, S, Ca, and Ti. The direct-abundance family accepts 81 indepen-dently variable [X /H] abundances. It covers Li through Bi except Tc and Pm, together with Th and U. It has no bulk metallicity or alpha coordinate. The network re-expresses the same requested mixture as [Fe /H] and 80 non-iron [X /Fe] values, but this change of coordinates does not alter the abundances passed to the physical solver. We first validate the five- and eight-label families on six spectral controls spanning a hot dwarf, the Sun, a red giant, and C-enhanced, metal-rich, and O-enhanced mixtures. Individual abundance overrides are absolute [X /H] values and replace the bulk scaling for that ele-ment. The left panel of Figure 5 separates two errors. Open symbols show the K = 160 PCA compression floor, whose median standardized-coordinate RMS is 6 .3 ×
+
+10 −4 for the five-label family and 4 .9 × 10 −4 for the eight-label family. Thus compressing the 480 profile co-ordinates to 160 coefficients and decoding them discards little of the atmosphere structure. Filled symbols in-clude the complete prediction from stellar labels through the network and PCA decoder. Their corresponding er-Stellar Spectra from Physical Models in Seconds 15 −50         
+
+> log 10  ∆m
+> −0.25 0.00
+> log 10 (T /T grey )
+> 05
+> log 10  Pgas
+> 10 15
+> log 10  ne
+> −2.50.02.5
+> log 10  κR
+> −5005
+> asinh( grad /s g )
+> −50−50−50−50
+> 5365 10197
+
+Teff (K)  
+
+> 1.88 5.24
+
+log g 
+
+> -2.04 0.15
+
+[M /H]  
+
+> -0.09 0.34
+
+[α/ M]  
+
+> 1.14 3.38
+
+ξ (km s −1)
+
+log 10 τR
+
+converged physical atmosphere learned initializer ( K = 160) 
+
+Figure 6. Physical atmosphere structure and learned initialization. Columns vary Teff , log g, [M /H], [ α/ M], or microturbulence as encoded by their color scales. Rows show six transformed depth profiles on a common Rosseland optical-depth grid. Dashed curves are converged physical atmospheres, and solid curves are the eight-label predictions used to initialize the physical solver. 
+
+rors are 1 .5 × 10 −2 and 1 .1 × 10 −2, more than an order of magnitude larger than the compression floor. The learned label-to-atmosphere relation, rather than PCA compression, therefore sets the current accuracy. The middle panel asks how much spectral error can remain after starting from each five- and eight-label prediction and taking three solver passes. If f3, f5,and fref are the spectra after three passes, after five passes, and from the stored reference, then |f3 − fref | ≤ |f3 − f5| + |f5 − fref |. We report the maximum of this conservative bound. All six controls lie below 5 .1 × 10 −3
+
+for both released initializers. Three passes are a progress diagnostic rather than a stopping rule. The right panel isolates the effect of the starting atmo-sphere in 16 matched held-out cases. To emulate start-ing from a nearby node in a precomputed grid, we se-lected converged structures near two sets of predeclared offsets. They are ±250 K in Teff , ±0.25 dex in log g, and 
+
+±0.20 dex in metallicity. Only the stored structure ini-tializes the calculation. Every atmosphere is then solved at the exact target labels and abundances. The median of the two grid-like starts is about 12 it-erations, compared with 5.5 for the five-label initializer and 4 for the eight-label initializer. The learned starts therefore reduce the iteration count by factors of about two and three. Combined with the measured six- to seven-fold per-iteration gain, the eight-label calculation 16 Ting & Kim 
+
+is about 20 times faster in these matched cases. The retained original-program benchmark requests 30 iter-ations per batch. Four physical passes and the faster iteration give a gain of about 50 relative to that bench-mark, while a nearby grid atmosphere gives the smaller and more realistic matched comparison above. Figure 6 provides a direct profile-space check of the eight-label initializer. Solid predictions are compared with dashed converged physical profiles for 25 atmo-spheres whose C, N, and O values follow the correspond-ing bulk mixture. Each column varies one stellar label while the six rows trace the coupled temperature, pres-sure, density, opacity, and depth responses. This com-parison tests the complete mapping from labels through the network and PCA decoder. Pooling the standard-ized residuals over all profiles, atmospheres, and depth points gives an RMS of 0.028 over the full depth range and 0.027 for log τR ≥ 1. For the direct-abundance family, the 623-object test split contains 313 internal and 310 external atmospheres. The internal atmospheres were excluded from network fitting and have 95th-percentile temperature and gas-pressure errors of 0.67 percent and 0.034 dex. A sepa-rate 16-case restart diagnostic converges in 8–14 phys-ical passes, with a median near 9. In the application below, this network supplies the starting state and ev-ery retained atmosphere is then solved and validated physically. This family presents a harder interpolation problem because three stellar parameters and 81 independently varying abundances define an 84-dimensional input. Its training corpus samples that space much more sparsely than the five- and eight-label corpora. Coordinates that group abundances by their chemical or opacity response may reduce the effective dimension in future initializers.  
+
+> 5.
+
+NORMALIZED SPECTRUM FITTING If atmosphere and synthesis calculations are fast enough, the physical forward model itself can be evalu-ated inside a spectrum optimizer. Direct synthesis can explore labels repeatedly, while converging a new atmo-sphere at every trial would dominate the calculation. We therefore use the initializer to supply the starting depth structure, recompute populations, line opacity, and ra-diative transfer at every trial, and reserve atmosphere convergence for the candidate minimum and any mate-rial correction. No label-to-flux spectral emulator enters the fit. We first test this strategy on a controlled normal-ized spectrum whose generating and fitted models are identical. The test isolates label recovery and at-                                                                             
+
+> Algorithm 1. Controlled direct spectrum fit Require: flux yp, weights wp, initial labels θ0, threshold
+> δQ min
+> Ensure: labels θ⋆, atmosphere state x⋆, spectrum f⋆
+> 1: Define Q(f)←N−1good
+> P
+> p∈good wp(yp−fp)2
+> 2: θ←θ0
+> 3: repeat
+> 4: Evaluate direct ffast and its local response
+> 5: Propose a bounded least-squares step
+> 6: Retain it only if direct synthesis lowers Q
+> 7: until no bounded trial lowers Q
+> 8: θf←θ
+> 9: Solve xphys at θfand synthesize fphys
+> 10: Set ( θ⋆,x⋆, f ⋆)←(θf,xphys , f phys )
+> 11: Fix ∆ f←fphys −ffast
+> 12: Rebuild the response
+> 13: Propose bounded correction θp
+> 14: if its predicted decrease exceeds δQ min then
+> 15: Solve xprop at θpand synthesize fprop
+> 16: if Q(fprop )< Q (fphys )then
+> 17: Set ( θ⋆,x⋆, f ⋆)←(θp,xprop , f prop )
+> 18: end if
+> 19: end if
+> 20: return (θ⋆,x⋆, f ⋆)
+
+mosphere correction before introducing line-data and survey-instrument mismatch. The fast search begins at the initial label vector. One direct spectrum and one bounded perturbation per la-bel define a local spectral response. A weighted linear least-squares step proposes a bounded label update, and a direct-synthesis line search retains it only when the objective improves (Nocedal & Wright 2006). The re-leased fitter rebuilds this response at each iteration. The short Figure 7 diagnostic reuses its initial response be-tween successive accepted steps. We obtain the response by finite differences because the complete atmosphere-to-spectrum calculation does not yet form one PyTorch computational graph. An analytic response could re-place these differences without changing the physical atmosphere calculation. Here Ngood is the number of retained pixels. The objective Q is the mean chi-square per valid pixel. The fast loop stops when no bounded line-search trial lowers Q.The first converged atmosphere does more than test this candidate. Let ffast and fphys denote the spectra before and after physical atmosphere convergence at the fast minimum. We hold ∆ f = fphys − ffast fixed over one bounded local step and rebuild the spectral response for every active label. A Gauss–Newton step then solves the weighted linear least-squares problem for the com-bination of label changes predicted to reduce the pixel Stellar Spectra from Physical Models in Seconds 17 4450 4500 4550 4600 4650 
+
+Teff (K)       
+
+> 1.2
+> 1.3
+> 1.4
+> 1.5
+> log  g
+> −0.90 −0.85 −0.80 −0.75 −0.70 −0.65 −0.60
+
+[M /H]      
+
+> 0.10
+> 0.15
+> 0.20
+> 0.25
+> [α/ M]
+> mock observation final physical model
+> 0.40.60.81.0
+> Normalized flux
+> 1570 1575 1580 1585 1590
+
+Wavelength (nm)        
+
+> −303
+> Standardized residual
+> 020 40 60 80 100 120 140
+
+Cumulative model time (s)    
+
+> truth fast synthesis candidates optional correction final physical result
+
+Figure 7. Controlled five-label fit to a normalized mock spectrum with S /N = 100 and known truth. The upper panels trace accepted fast-search candidates (circles), the optional correction informed by the first converged atmosphere (diamond), and the final solution from a converged atmosphere and synthesis (square) in the Teff –log g and [M /H]–[ α/ M] planes. Color gives cumulative model time, and the hollow star marks the truth. The lower panels compare the mock observation with the final physical model over a representative wavelength interval, with shaded 1 σ noise bands. The recovered spectrum and labels use direct synthesis without a label-to-flux emulator. 
+
+residuals. Every active label participates in this correc-tion. Fits that expose element-by-element abundance coordinates may therefore adjust them after the first physical calculation. This local correction assumes only that ∆ f varies slowly across the local trust region. We send the pro-posal to a second converged atmosphere only when its predicted decrease in Q exceeds δQ min . For this con-trolled diagnostic, δQ min = 0 .005 in mean chi-square per valid pixel. We accept the proposal only when that phys-ical spectrum lowers the same objective. Algorithm 1 summarizes the single-correction path used for this con-trolled diagnostic. The released refinement repeats this calculation only when the predicted decrease in Q ex-ceeds δQ min and can continue bounded corrections up to its cap on physical evaluations. The controlled example is a held-out non-solar K gi-ant with offsets in all five initial labels and indepen-dent Gaussian noise at S /N = 100. It uses a normal-ized 1500–1700 nm spectrum on a logarithmic grid with 
+
+Rgrid = 20 ,000, with no instrumental line-spread func-tion or other broadening. The fit minimizes the mean chi-square per valid pixel and omits the masks, con-tinuum, velocity, broadening, and varying inverse vari-ances needed for observed spectra. Its noiseless truth comes from a converged atmosphere and direct synthe-sis, so both label recovery and the fast-stage approxima-tion are known. The final physical model recovers Teff 18 Ting & Kim 
+
+Table 5. Reduction relative to the original line data in the telluric-downweighted mean squared atlas–model flux differ-ence. The first five rows fit each standard independently. The final row fits the Sun and Arcturus with one common set of line-parameter corrections.                
+
+> Calibration case Sun Arcturus
+> log( gf )78.2% 56.8% van der Waals damping 36.9% 7.7% radiative damping 19.0% 5.4% Stark damping 26.6% 2.7% all four types 90.1% 64.9% shared Sun–Arcturus fit 83.5% 56.0%
+
+Table 6. Contents and application of the released common Sun–Arcturus line-list calibration. Source identities bind the corrections to the intended catalog. Each linked transition group stores four logarithmic corrections, from which the calibrated component values are obtained.                 
+
+> Quantity Application Physical role
+> source identity catalog digest and component map selects the exact source transitions linked group component →
+> fitted group shares one correction among linked lines log( gf )log( gf )cal =log( gf )base +δq,gf
+> integrated line opacity van der Waals damping
+> γcal =
+> γbase 10 δq, vdW
+> neutral-collision wings radiative damping
+> γcal =
+> γbase 10 δq, rad
+> natural line width Stark damping γcal =
+> γbase 10 δq, S
+> electron-pressure wings
+
+within 2 K, log g and both abundance coordinates within 0.003 dex, and microturbulence within 0.04 km s −1.Figure 7 traces the accepted label trajectory in the upper panels and compares the final physical spectrum with the mock observation in the lower panels, where the residuals match the injected noise. The first con-verged atmosphere is already close to the mock truth. To demonstrate the correction path, this diagnostic nev-ertheless takes one bounded label step and confirms it with a second converged atmosphere. In routine use, the refinement takes such a step only when its predicted decrease in Q exceeds δQ min . The five-label search takes about 20 s on one H100, while the converged-atmosphere checks run on multicore CPUs and dominate the remain-ing wall time. This near-exact recovery establishes the optimizer on a known physical model. We next address the model–data mismatch present in observed spectra through line-list calibration. 
+
+6. LINE LIST CALIBRATION The controlled mock establishes recovery when the forward model is internally consistent. Observed spec-tra also test the physical inputs to that model. Follow-ing established near-infrared astrophysical line calibra-tion, we ask whether the differentiable calculation can update oscillator strength and the three damping fam-ilies jointly (Mel´ endez & Barbuy 1999; Shetrone et al. 2015; Smith et al. 2021). Each proposed correction is constrained to change the spectrum through line opac-ity and radiative transfer. We evaluate the corrections against high-resolution Fourier transform spectrometer (FTS) atlases of the Sun and Arcturus. For line component l assigned to correction group q(l), we write the calibrated quantities as (gf )′ 
+
+> l
+
+= ( gf )l10 δq(l),gf ,γ′ 
+
+> l,β
+
+= γl,β 10 δq(l),β , β ∈ { vdW , rad , S}. (30) Here γl,β is the original damping coefficient for line com-ponent l and family β. The three families are van der Waals, radiative, and Stark damping, while the prime denotes the calibrated value. The fourth fitted atomic-parameter type is log( gf ). At fixed population, oscil-lator strength scales the frequency-integrated opacity, while damping redistributes opacity from the core into the wings (Barklem et al. 2000; Gray 2005). Their re-sponses overlap in saturated and blended features. PyTorch records the path from each atomic correction through opacity, radiative transfer, broadening, sam-pling, continuum profiling, and the final objective. Areverse pass gives derivatives for every active correction together, without finite differences (Gunes Baydin et al. 2015). Independent line-by-line radiative-transfer work demonstrates the same computational principle in spec-tral inference (Kawahara et al. 2022). The fixed atmo-sphere, continuous and molecular opacity, and catalog geometry remain resident on the GPU. Because line centers enter opacity deposition through integer grid placement, the graph does not yet provide a valid wavelength derivative. Wavelengths are therefore fixed. Lower excitation energies also remain outside this four-parameter proof of concept, which calibrates the quantities in Equation 30. We use the 1500–1700 nm interval to connect directly to the APOGEE wavelength range. We perform the cali-Stellar Spectra from Physical Models in Seconds 19 0.51.0Normalized flux 1500 1510 1520 1530 -0.10 00.10 Atlas -model 0.51.0Normalized flux 1540 1550 1560 -0.10 00.10 Atlas -model 0.51.0Normalized flux 1570 1580 1590 1600 -0.10 00.10 Atlas -model 0.51.0Normalized flux 1600 1610 1620 1630 -0.10 00.10 Atlas -model 0.51.0Normalized flux 1640 1650 1660 -0.10 00.10 Atlas -model 0.51.0Normalized flux 1670 1680 1690 1700 -0.10 00.10 Atlas -model 0.51.01500 1510 1520 1530 -0.12 00.12 0.51.01540 1550 1560 -0.12 00.12 0.51.01570 1580 1590 1600 -0.12 00.12 0.51.01600 1610 1620 1630 -0.12 00.12 0.51.01640 1650 1660 -0.12 00.12 0.51.01670 1680 1690 1700 -0.12 00.12 
+
+Sun Arcturus Wavelength (nm)   
+
+> FTS atlas baseline independent four-type fit
+
+Figure 8. Full-band calibration of the solar and Arcturus FTS atlases in six contiguous wavelength strips. For each strip, the upper panel shows normalized flux and the lower panel shows atlas minus model. Black is the atlas, grey dashed uses the original line data, and orange dashed uses the independent four-parameter line fit for that standard. Residual panels share a fixed range within each star. The Arcturus column shows the winter atlas, while its fit weights the summer and winter epochs equally. The calibration contracts the residual forest across the full interval for both standards. 
+
+bration against these FTS atlases rather than APOGEE pixels. The synthesis calculation uses Rgrid = 300 ,000 before sampling onto each atlas grid. We use the Liv-ingston and Wallace solar center-of-disk atlas and two Hinkle et al. Arcturus epochs (Livingston & Wallace 1991; Hinkle et al. 1995; Smith et al. 2021). For the so-lar calculation we adopt Teff = 5777 K, log g = 4 .44, and 
+
+ξ = 0 .7 km s −1. For Arcturus we adopt Teff = 4286 K, log g = 1 .66, [M /H] = −0.52, [ α/ M] = 0 .30, and ξ = 1 .7km s −1 (Ram´ ırez & Allende Prieto 2011; Smith et al. 2021). We adopt the element-by-element Arcturus mixture tabulated by Smith et al. (2021). That compila-tion draws most values from Ram´ ırez & Allende Pri-eto (2011) and supplements them from other element-specific studies. Each standard’s converged physical atmosphere re-mains fixed during the inner calibration. We adopt a Gaussian dispersion of 1.55 km s −1 for the Sun. For Arcturus we adopt a Gaussian dispersion of 2.5 km s −1
+
+and v sin i = 2 .0 km s −1. The supplied Doppler factors and a residual registration correction place the atlases in the model rest frame. 20 Ting & Kim 0.00 0.05 0.10 0.15 0.20 
+
+> Absolute atlas −model residual
+> 10 −4
+> 10 −3
+> 10 −2
+> 10 −1
+> 10 0
+> Fraction with  |residual | above value
+
+Sun     
+
+> 0.00 0.05 0.10 0.15 0.20
+> Absolute atlas −model residual
+
+Arcturus    
+
+> baseline line strength only independent four-type fit shared Sun–Arcturus
+
+Figure 9. Absolute normalized-flux residual distributions for the Sun and Arcturus. At each horizontal value, the vertical axis is the fraction of retained atlas pixels with a larger absolute atlas–model residual. Grey dashed uses the original line data, blue dash-dotted fits oscillator strength alone, orange solid fits all four line parameters independently for each standard, and magenta dotted uses the shared Sun–Arcturus fit. All calibrations contract the residual tail, with the four-parameter fits giving the largest reduction. Fractions are unweighted over pixels retained after telluric masking. 0.925 0.950 0.975                  
+
+> S I 1529.557 nm
+> 0.70.80.91.0
+> Fe I 1568.180 nm
+> 0.40.60.8
+> Si I 1589.275 nm
+> −0.08 0.00 0.08
+> λ−λ0(nm)
+> 0.95 1.00
+> C I 1603.379 nm
+> −0.08 0.00 0.08
+> λ−λ0(nm)
+> 0.80.91.0
+> Ca I 1615.517 nm
+> −0.08 0.00 0.08
+> λ−λ0(nm)
+> 0.80.91.0
+> Ni I 1687.189 nm
+> Normalized flux solar FTS atlas original line data shared Sun–Arcturus fit
+
+Figure 10. Six solar center-of-disk FTS line profiles evaluated with the retained shared Sun–Arcturus calibration. Wavelength is measured from the labeled transition’s catalog laboratory center. Black is the atlas, grey dashed uses the original line data, and magenta dotted uses the shared fit of oscillator strength and three damping terms. The examples span six atomic species and show improvements in both line depth and profile shape. 
+
+At every evaluation we profile a smooth multiplicative continuum using pixels near the continuum in both the atlas and the baseline model. Tight coefficient bounds prevent this adjustment from absorbing line-profile mis-match. Companion telluric-transmission arrays define relative pixel weights and mask unreliable wavelengths. For each atlas, we minimize the mean squared flux dif-ference after telluric downweighting and continuum pro-filing. The independent Arcturus solution fits the sum-mer and winter epochs with equal weight, while the in-dependent solar solution uses only the solar atlas. These fits measure the calibration capacity of each standard. We then fit one shared Sun–Arcturus solution, giving equal total weight to each star and equal weight to the two Arcturus epochs. We use this common calibration for APOGEE. We include neutral and singly ionized atomic records in the interval for every species represented in the Stellar Spectra from Physical Models in Seconds 21 adopted abundance vector. We first preserve a small set of curated anchor complexes. A strength-ordered greedy pass then groups each remaining component with unused lines of the same species and ion stage within 2.0 cm −1 in lower excitation and 0.035 nm in wave-length. The 42,886 catalog records form 25,281 groups and give 101,124 fitted scalar corrections. All compo-nents in one group share its four corrections. We optimize the complete 200 nm interval jointly with PyTorch L-BFGS (Nocedal & Wright 2006). This gradient-based method uses recent gradients to esti-mate curvature, while a strong-Wolfe line search ac-cepts steps that lower the objective with a consistent local slope. Smooth parameter transforms enforce the physical bounds. Joint optimization lets blended pixels constrain several transitions and avoids splitting a line profile among independently fitted wavelength windows. Table 5 compares the single-parameter controls with each standard’s independent four-parameter fit. The reductions are not additive because the parameter types can explain part of the same residual. Oscil-lator strength carries most of the gain in both stars, while the four-parameter fit improves further in each case. Damping adds more leverage in the solar spec-trum, where the higher photospheric pressure produces stronger pressure-broadened wings (Barklem et al. 2000; Gray 2005). In Arcturus, the fit empirically assigns most of the gain to line strength. Its crowded molecular spec-trum provides fewer isolated wing constraints. With 101,124 active corrections, the reverse pass avoids synthesizing one perturbed spectrum per param-eter. Starting from the key-aligned mean of the inde-pendent solutions, 40 shared Sun–Arcturus updates take 64 s on one H100. Figure 8 shows that the objective reduction is not confined to a few isolated features. The residual for-est contracts across the displayed interval for both at-lases. The change is stronger for the Sun, while Arcturus retains larger structured residuals in its more crowded spectrum. Figure 9 shows unweighted residual distributions for the solar atlas and the displayed Arcturus winter epoch. Table 5 instead reports telluric-weighted mean-square reductions over the calibration data, including both Arc-turus epochs. Both the independent and shared fits con-tract the long residual tail. Figure 10 zooms in on six individual line profiles. The solar examples are selected algorithmically from the shared Sun–Arcturus fit and are not refitted locally. They are attributable, wavelength-separated transitions from different species. The shared calibration improves both line depths and profile shapes across these exam-ples. We distribute the shared Sun–Arcturus calibra-tion as a compact correction file. Applying it to the matching base catalog produces the cali-brated line parameters summarized in Table 6. The 
+
+write substituted catalog helper can write those values as a complete replacement catalog, while the de-fault catalog remains unchanged. Independent solar and Arcturus fits remain available as diagnostic products. These are model-dependent standard-star calibra-tions, not laboratory measurements (Heiter et al. 2021), and each standard-star atmosphere remains fixed dur-ing the inner fit. A production calibration should share information across several standards (Heiter et al. 2015; Jofr´ e et al. 2015; Smith et al. 2021). After a substan-tial opacity update, it should also repeat the atmosphere and line-list solutions. Some large residuals remain because the current pa-rameterization cannot move line centers or create miss-ing transitions. We explored a residual-guided subset of predicted atomic transitions, but held-out tests did not justify promotion. Predicted transitions therefore require validation across independent stars before inclu-sion in a general line list.  
+
+> 7.
+
+APPLICATION TO APOGEE We now ask whether the same calculation can fit re-duced survey spectra directly. We combine physical fitting with the retained standard-star line calibration and apply it to APOGEE Data Release 14 (DR14). The fiber-fed near-infrared spectrograph and its deliv-ered resolution are described by Wilson et al. (2019). We use this release because it provides the combined spectra, instrument calibrations, and giant-star analysis products needed for the controlled comparison (Abol-fathi et al. 2018; Holtzman et al. 2018). Labels from the APOGEE Stellar Parameters and Chemical Abun-dances Pipeline (ASPCAP) provide the external com-parison (Garc´ ıa P´ erez et al. 2016; J¨ onsson et al. 2018). For the survey demonstration, DR14 calibrates its raw spectroscopic Teff to a low-reddening photometric scale and giant log g to asteroseismic gravities and fits micro-turbulence as a separate giant-star coordinate (Holtz-man et al. 2018). We do not derive a new relation be-tween spectroscopic and photometric temperature. For this proof of concept, we retain the published Teff , log g,and ξ to isolate the many-element and instrument prob-lem. A production analysis could instead fit the spec-trum jointly with a broadband spectral energy distri-bution and parallax (Cargile et al. 2020). Appendix A repeats the synthesis search with Teff , log g, and ξ free to 22 Ting & Kim 0.70.80.91.01.1       
+
+> normalized flux
+> 1525 1550 1575 1600 1625 1650 1675 1700
+
+wavelength (nm)   
+
+> −2.50.02.5
+> residual /  σ
+> 0.60.81.0
+> normalized flux
+> 0.60.81.0
+> 0.60.81.0
+> 1576 .01576 .81577 .6
+
+wavelength (nm)   
+
+> −2.50.02.5
+> residual /  σ
+> 1588 .81589 .61590 .4
+
+wavelength (nm)   
+
+> −2.50.02.5
+> 1674 .41675 .21676 .0
+
+wavelength (nm)        
+
+> −2.50.02.5
+> DR14 spectrum Payne Zero fit 1σuncertainty
+> Figure 11. Representative APOGEE DR14 fit after the converged atmosphere calculation. Black is the observed normalized spectrum, orange dashed is the profiled Payne Zero model after velocity shift, broadening, line-spread function convolution, and pixel sampling, and grey bands show the adopted 1 σuncertainty. The upper spectrum and residual panels cover all three detectors. The three lower pairs expand one line-rich interval per detector. Residuals are shown in units of the pixel uncertainty.
+
+test the sensitivity of the giant-branch, red-clump, and abundance morphology to this choice. We fit [Fe /H], [X /Fe] for C, N, O, Mg, Al, Si, S, Ca, Ti, Mn, and Ni, residual velocity vr , and effective Gaussian broadening vb. For every retained element, [X /H] = [Fe /H] + [X /Fe], while unselected metals follow [Fe /H]. The fitted width vb combines rotation, macro-scopic broadening, and residual profile width not repre-sented by the mean instrument model. Synthesis returns native-grid total and continuum fluxes. We map both to the observed pixels before nor-malization, 
+
+fp(ψ) = {KS (vr )B(vb)Fλ(θ)}p
+
+{KS (vr )B(vb)Fλ, c(θ)}p
+
+, ψ = ( θ, v r , v b).
+
+(31) where B acts on the logarithmic synthesis grid, S ap-plies the Doppler shift, and K applies the wavelength-dependent line-spread function and native APOGEE sampling. Convolving both before division preserves the nonlinear normalization. For this experiment, we use a DR14 calibration-derived LSF (Nidever et al. 2015; Holtzman et al. 2018), averaged over six representative fibers. A one-time build folds interpolation from the Rgrid = 300 ,000 syn-thesis grid into compact wavelength-dependent weights that remain on the GPU. The operator maps directly onto the APOGEE pixels without constructing a dense convolution matrix. A fiber-, exposure-, or detector-specific LSF requires only a different prepared GPU as-set. Broadening, shifting, LSF convolution, and sam-pling take about 240 μs per total–continuum flux pair on an H100, compared with 1 .4 s for native synthesis. The instrument model therefore adds negligible cost. The public fitter also provides a GPU-resident rotational ker-nel, although this demonstration retains one Gaussian width. Smooth continuum differences remain in the pseudo-continuum-normalized DR14 spectra (Holtzman et al. Stellar Spectra from Physical Models in Seconds 23 −1.0 −0.5 0.0                
+
+> APOGEE DR14 [Fe /H]
+> −0.10.00.10.20.30.4
+> APOGEE DR14 [Mg /Fe]
+> −1.0−0.50.0
+> Payne Zero [Fe /H]
+> −0.10.00.10.20.30.4
+> Payne Zero [Mg /Fe]
+> −1.0−0.50.0
+> APOGEE DR14 [Fe /H]
+> −1.0
+> −0.8
+> −0.6
+> −0.4
+> −0.20.00.2
+> Payne Zero [Fe /H]
+> APOGEE high-αsample APOGEE low-αsample
+> Figure 12. Chemical structure of the balanced 1,600-target APOGEE sample. The first two panels show [Mg /Fe]– [Fe /H] from the calibrated DR14 catalog and the corresponding Payne Zero fits. Orange and blue mark the APOGEE high- and low-α
+> samples. The third panel compares Payne Zero and APOGEE DR14 iron abundances. The dashed line denotes equality. Contours enclose 50, 80, and 95 percent of the inverse-selection-weighted density. The direct fits retain the two chemical sequences while allowing an abundance zero-point shift.
+
+2018). At every nonlinear trial, weighted linear least squares profiles a fourth-order Legendre basis indepen-dently on each detector (Golub & Pereyra 2003). The likelihood uses the published uncertainties and masks (Holtzman et al. 2018) with a 0.5 percent model floor. Because the combined spectra are assembled on a com-mon rest-wavelength grid (Nidever et al. 2015), the fit begins at vr = 0 and solves only a local residual shift. Initialized atmospheres and direct synthesis drive the observed-spectrum search. Each additional abundance requires one response spectrum, so this cost grows ap-proximately linearly rather than combinatorially with the label count. The physical solver then converges an atmosphere at the selected mixture, and a fresh GPU spectrum supplies any final local correction. The ac-cepted model always uses a physically converged atmo-sphere and direct synthesis. For this 12-abundance fit, the H100 search takes about 40 s per star, and atmo-sphere convergence adds about 30 s on multicore CPUs. As a proof of concept, we select 1,600 giants, balanced across the high- and low-α APOGEE sequences and metallicity (Nidever et al. 2014; Hayden et al. 2015), and reweight the population contours to represent the par-ent sample. Figure 11 first tests the calculation in pixel space. Across all three detectors, the forward model follows the line forest while the profiled continuum ab-sorbs only smooth residual structure. This establishes that the instrument operators and many-element spec-trum can be fitted together. We then test whether the independently fitted abun-dances preserve population structure. Figure 12 retains the two principal [Mg /Fe] sequences over the sampled metallicity range rather than collapsing them into one bulk-metallicity trend. Figure 13 extends the compar-ison element by element. O, Si, S, Ca, and Ti retain chemical separation between the two input populations, although their absolute zero points differ. The nearly rigid Si offset is consistent with a scale difference because DR14 applies empirical temperature and zero-point calibrations to individual abundances, with Si among its larger adjustments, while we ap-ply no APOGEE zero-point correction (Holtzman et al. 2018). Mn rises toward higher metallicity, consis-tent with metallicity-dependent yields and a substan-tial Type Ia supernova contribution, while Ni broadly tracks Fe (Weinberg et al. 2019). C and N remain sepa-rately constrained, preserving the mass- and evolution-dependent C/N information measured in APOGEE red giants (Charbonnel & Lagarde 2010; Masseron & Gilmore 2015; Martig et al. 2016). The final abundance corrections are typically at the hundredth-dex level and leave this population morphology unchanged. The line-list transfer is independently measurable. In a matched control sample, the calibration lowers the mean chi-square per valid pixel, Q, for every star. The median Q falls from 3.32 to 1.56, with a median paired reduction of 53 percent. 24 Ting & Kim −1.0 −0.5 0.0
+
+> −0.50
+> −0.25 0.00 0.25 0.50
+> [X /Fe]
+
+C  
+
+> −1.0−0.50.0
+> −0.50
+> −0.25 0.00 0.25 0.50
+
+N  
+
+> −1.0−0.50.0
+> −0.50
+> −0.25 0.00 0.25 0.50
+
+O  
+
+> −1.0−0.50.0
+> −0.50
+> −0.25 0.00 0.25 0.50
+
+Mg   
+
+> −1.0−0.50.0
+> −0.50
+> −0.25 0.00 0.25 0.50
+> [X /Fe]
+
+Al   
+
+> −1.0−0.50.0
+> −0.50
+> −0.25 0.00 0.25 0.50
+
+Si   
+
+> −1.0−0.50.0
+> −0.50
+> −0.25 0.00 0.25 0.50
+
+S  
+
+> −1.0−0.50.0
+> −0.50
+> −0.25 0.00 0.25 0.50
+
+Ca   
+
+> −1.0−0.50.0
+
+[Fe /H] (dex) 
+
+> −0.50
+> −0.25 0.00 0.25 0.50
+> [X /Fe]
+
+Ti   
+
+> −1.0−0.50.0
+
+[Fe /H] (dex) 
+
+> −0.50
+> −0.25 0.00 0.25 0.50
+
+Mn   
+
+> −1.0−0.50.0
+
+[Fe /H] (dex) 
+
+> −0.50
+> −0.25 0.00 0.25 0.50
+
+Ni   
+
+> Payne Zero high-αPayne Zero low-αAPOGEE DR14
+
+Figure 13. Elemental-abundance distributions from the balanced 1,600-target Payne Zero fit. Each panel shows one [X /Fe] ratio against [Fe /H]. The element is named above the panel. Orange and blue points and contours denote stars drawn from the APOGEE high- and low-α samples, respectively. Colored contours enclose 50, 80, and 95 percent of the inverse-selection-weighted fitted density. Grey dashed contours show the corresponding APOGEE DR14 sample at 50 and 80 percent, computed from the same stars and weights. The fitted abundance planes show coherent element-dependent sequences rather than a single bulk metallicity coordinate. 
+
+The calibrated line list improves the pixel-level ob-jective without forcing agreement with the ASPCAP abundance scale. The remaining zero-point differences can reflect the atmosphere physics, solar mixture, line selection, masks, and continuum treatment. Together, the spectral fit and the element-by-element sequences show that a direct physical forward model can recover coherent survey chemistry without a spectral emulator. Establishing a calibrated abundance scale would require a broader standard-star set and survey-specific line cu-ration beyond this proof of concept. 
+
+8. DISCUSSION Direct ab initio fitting changes the role of two learned approaches in stellar inference. Spectral emulators in-terpolate libraries of physical spectra, while data-driven flux models learn from survey observations. Both classes insert a learned label-to-flux relation between the stellar labels and the spectrum being evaluated. When syn-thesis takes seconds and a converged atmosphere takes Stellar Spectra from Physical Models in Seconds 25 seconds to tens of seconds, the physical forward model can instead remain inside inference, line calibration, and validation. Learned atmosphere models can acceler-ate exploration while physical convergence still deter-mines the accepted atmosphere and spectrum. This changes how we use emulators and how we investigate the observation–model gap. 8.1. Direct synthesis and the role of spectral emulators 
+
+A physically consistent abundance analysis should vary the relevant stellar labels together and fit the full spectrum. An element changes more than the lines as-signed to it. Magnesium changes the electron supply and therefore the H − continuum. Molecular balance and line blanketing redistribute flux among species and can alter the atmospheric structure (John 1988; Gustafsson et al. 2008; M´ esz´ aros et al. 2012; Ting et al. 2018; Matsuno et al. 2024). Measuring each abundance only from its named features while holding the rest of the model fixed misses these coupled responses. The difficulty is dimensionality. Each abundance ex-pands the label space, and regular interpolation grids become rapidly sparse (Ting et al. 2016). Probabilis-tic and neural emulators such as Starfish, The Payne, and later neural architectures replaced that grid with smooth interpolation of physical spectra (Czekala et al. 2015; Ting et al. 2019; R´ o˙ za´ nski et al. 2025). We intro-duced The Payne to make simultaneous full-spectrum inference from self-consistent ab initio models compu-tationally practical. A neural emulator was the means of accelerating that calculation, not its scientific objec-tive. The name nevertheless became shorthand for the emulator rather than the physical fitting framework. 
+
+Payne Zero returns to that original goal without a learned label-to-flux interpolator. “Zero” denotes zero spectral-emulation layers. Every trial spectrum is cal-culated by direct synthesis for the requested labels and mixture, and the accepted solution is checked with a physically converged atmosphere. Full-spectrum fitting can therefore retain the coupled response of all labels without constructing a high-dimensional spectral train-ing grid. 8.2. From learned flux relations to physical calibration 
+
+Data-driven label-to-flux relations address the observation–model gap from the other direction. The Cannon, for example, learns directly from spectra and reference labels rather than evaluating an explicit phys-ical forward model. This empirical route can reproduce repeatable structure missing from a synthetic library. Its caveat is attribution. Correlated labels in the training sample can produce a useful spectral predictor without necessarily identifying the physical process responsible for a feature. When the goal is to improve the forward model, direct ab initio fitting tests the proposed physical cause. Struc-tured residuals can arise from line data, missing opac-ity, and broader synthetic–observed mismatch (Czekala et al. 2015; O’Briain et al. 2021). Atmosphere, con-tinuum, telluric, and reduction errors can produce re-lated residuals, but they enter the calculation in differ-ent places. A differentiable physical model exposes these inputs and tests a proposed cause through opacity and radiative transfer. The line-list calibration demonstrates this route. We optimize more than 10 5 coupled oscillator-strength and damping corrections at once, including blended tran-sitions, and obtain the shared Sun–Arcturus solution in about one minute on one H100. These values are effective standard-star calibrations rather than labora-tory measurements. Their performance on a frozen APOGEE control set tests transfer without using AS-PCAP labels to determine the corrections. A production calibration could use several benchmark standards (Heiter et al. 2015; Jofr´ e et al. 2015; Smith et al. 2021). We propose solving their shared line pa-rameters while allowing each star’s labels, continuum, and instrument response to vary. The appropriate bal-ance among standards is not determined by the opti-mizer. The Sun and Arcturus probe different pressure and molecular regimes, so the equal weighting used here demonstrates capacity rather than defining a universal calibrated catalog. A production analysis should choose its standards, weights, laboratory priors, and held-out tests for the stellar population being analyzed. Large opacity revisions would then trigger a new atmosphere calculation and another line-data update. This outer iteration preserves physical coupling and re-veals discrepancies that line calibration cannot repair, including failures of the atmosphere iteration itself. 8.3. Atmosphere boundaries and reduced solvers 
+
+The parity tests span hot-dwarf, solar, red-giant, and K-dwarf regimes, while the survey fit is restricted to giants. These results do not imply that one numerical strategy will remain efficient across every stellar regime. Two edge cases identify where a different representation or solver may be needed. The first is the sampling dimension of the atmosphere initializer. The direct-abundance model compresses six correlated depth profiles into a compact PCA represen-tation, but its input still spans three stellar parame-ters together with 81 independently varied abundances. The resulting 84-coordinate input is sparse relative to 26 Ting & Kim 
+
+its dimension. The same sampling problem limits high-dimensional model grids. Correlated atmospheric re-sponses nevertheless make the initializer useful. Future initializers could use coordinates tied more closely to electron donation, molecular balance, and line blanket-ing, or learn such groupings with a chemistry-aware en-coder. The initializer need only propose a starting state because the physical solver still establishes the accepted atmosphere at the requested individual abundances. The second is a change of numerical regime in cold molecular atmospheres. Some cooler high-gravity con-trols develop growing flux and heating residuals even from a nearby initial profile, while other nearby starts converge. Convergence therefore becomes more sensi-tive to the initial structure across this regime. Both the original Kurucz calculation and Payne Zero fail the same convergence criterion in some of these controls, which points to the physical iteration rather than an emulator-specific error. Small temperature changes in this regime reorganize molecular equilibrium (Barklem & Collet 2016), opac-ity, the equation of state, and the adiabatic gradient together. Convection can also reach the layers that set the emergent flux (Gustafsson et al. 2008). One itera-tion can then shift the Rosseland opacity, column-mass mapping, and convective boundary enough that the next correction grows rather than shrinks. The usual fixed-point iteration has lost local stability. For a reduced plane-parallel formulation, we choose temperature T (τR) and monotonic column mass m(τR)as the two iterated profiles. At fixed Teff , log g, ξ,abundances, and Rosseland grid, hydrostatic balance and the equation of state then recover pressure, den-sity, electron density, and populations (Hubeny & Mi-halas 2014). Opacity sets the relation between column mass and Rosseland depth, while radiative transfer sets the acceleration. A reduced solver would enforce two coupled root conditions, energy balance and consistency between column mass and Rosseland optical depth, 
+
+RT [T, m ] = Frad [T, m ] + Fconv [T, m ] − σSB T 4eff = 0 ,
+
+Rm[T, m ] = dτR
+
+dm − κR[T, m ] = 0 .
+
+(32) These residuals motivate a solver in T and m rather than an initializer for all six stored profiles. Recomputing the other four fields did not restore convergence from learned cool-dwarf T and m profiles, so the instability is not simply caused by predicting too many fields. A native two-profile solver must recompute the equa-tion of state, opacity, transfer, and convection for each trial T and m, then solve both residuals together. In exploratory calculations, nearby physical models esti-mated how both residuals change with T and m and supplied local corrections. The residuals fell, but the calculation required more complete atmosphere evalu-ations than the learned six-field start followed by the physical solver iteration. We therefore retain the latter as the default. A two-profile solver remains a possible fallback if its response can be estimated without many full physical evaluations. Different stellar regimes may ultimately require different validated correctors. Choos-ing when to switch regimes, while preserving the same physical acceptance tests, becomes a workflow problem. It motivates software boundaries that expose physical state, convergence, and validation rather than hiding them inside one opaque calculation. 8.4. Readable software as a scientific interface 
+
+Switching safely between numerical regimes requires the physical state, residuals, and acceptance tests to re-main visible. The original Kurucz workflow encodes ex-tensive physics in compact Fortran programs connected by staged files (Kurucz 2005). During reimplementation, we found that terse identifiers, long routines, and im-plicit shared state made individual conventions difficult to isolate. Assumptions about line placement, opacity accumulation, or state transfer can therefore be difficult to audit and extend even when they change the final spectrum. 
+
+Payne Zero replaces terse identifiers and implicit handoffs with named physical arrays, explicit units, and stage-local interfaces. These choices expose numerical conventions for audit, reproduction, teaching, and ex-tension. The same explicit interfaces make Payne Zero suit-able for future agentic workflows. Model Context Proto-col tools or task-specific skills could expose atmosphere solving, spectrum synthesis, line calibration, and valida-tion as typed operations with recorded inputs, outputs, and provenance. 2 An agent could inspect convergence and flux residuals, recognize that a cool high-gravity model has entered a different numerical regime, select a prevalidated solver or parameterization, and launch the relevant diagnostic tests. The agent would orches-trate these routes rather than certify its own result. De-terministic physical, numerical, and provenance gates would still decide acceptance.  
+
+> 9.
+
+CONCLUSION Spectral emulators and data-driven flux models ad-dressed two longstanding problems in stellar spec-        
+
+> 2See the Model Context Protocol specification at https:// modelcontextprotocol.io/specification/2025-06-18/server/index.
+
+Stellar Spectra from Physical Models in Seconds 27 troscopy. Physical calculations were too slow to repeat inside inference, and their spectra did not reproduce ev-ery observed feature. The resulting label-to-flux rela-tions made survey analysis practical, but spectral emu-lators add interpolation error, while data-driven models can inherit correlations among their training labels. We show that this intermediate layer is no longer required for computational tractability in the demonstrated one-dimensional LTE regime. 
+
+Payne Zero changes this tradeoff by reorganizing the calculation for modern processors without chang-ing its physical target. GPU-native synthesis reduces a 300–1000 nm solar calculation at Rgrid = 300 ,000 from about 760 s in the original Kurucz programs to 14 s on one H100, while the APOGEE interval takes about 1 s. Multicore atmosphere kernels make each physical iteration six to seven times faster, and a learned start-ing atmosphere reduces the required iteration count by about another factor of three in the controlled tests. The resulting spectra remain in practical parity with the original calculations. The atmosphere and synthesis calculation can therefore remain inside inference, where their assumptions and residuals are evaluated directly. The same computational structure turns the observation–model gap into a tractable physical op-timization problem. Automatic differentiation updates more than 10 5 coupled oscillator strengths and damp-ing parameters together. The shared Sun–Arcturus calibration takes about one minute on one H100, re-placing a transition-by-transition task with one joint radiative-transfer calculation. These capabilities meet in our APOGEE demon-stration. GPU-resident velocity shifting, broadening, wavelength-dependent LSF convolution, and detector sampling add negligible cost to synthesis. For APOGEE giants, the fit solves 12 abundance coordinates together with the instrument and continuum terms directly from reduced one-dimensional spectra. The H100 search takes about 40 s per star, while physical atmosphere con-vergence runs independently on multicore CPUs. The recovered chemistry shows coherent element-dependent trends across all eleven fitted abundance ratios for stars spanning the giant branch and red clump. The resulting computational scale changes what is practical for a survey. The measured direct-synthesis search for 10 5 spectra corresponds to about one thou-sand GPU-hours and a few thousand US dollars at typ-ical academic cloud rates. Independent stars can be dis-tributed without changing the calculation. Atmosphere convergence uses multicore CPU workers and can run in-dependently of the GPU synthesis tasks. GPU demand is therefore set mainly by the direct-synthesis search and direct spectra rather than by the atmosphere iteration. Stellar spectroscopy has moved from individually op-erated physical programs, through precomputed grids and learned approximations, to surveys of millions of stars. Modern hardware now allows the physical cal-culation to return to the inference loop at that scale. This does not remove departures associated with three-dimensional convection or non-LTE line formation (As-plund 2005; Nordlund et al. 2009; Magic et al. 2013; Bergemann & Nordlander 2014; Amarsi et al. 2019), nor limitations in line data or instrument modeling. It makes them visible targets for improvement. At-mospheres can be recomputed at the requested mix-ture, spectra can be synthesized inside the optimizer, and atomic data can be calibrated through the same radiative-transfer calculation. Physical forward models can again be the working foundation of stellar inference rather than only the training source for an intermediate learned flux model. ACKNOWLEDGMENTS For YST, this project was also a hobby and an infor-mal test of the Pareto frontier of modern large-language-model agents for scientific software. Attempts beginning in 2024 could translate isolated files but could not pre-serve the logic of a large coupled codebase. A practi-cal turning point came in December 2025, when Claude Opus 4.5 made careful translation of Kurucz routines into Python tractable. EK carried out much of the ini-tial painstaking translation into PyKurucz and devel-oped its early Numba implementation, leading to the pyKurucz study of Kim & Ting (2026). YST led the subsequent GPU-native redesign, optimization experi-ments, and Payne Zero development. Progress beyond a brute-force rewrite depended on YST’s experience with the Kurucz codes to identify the resident data, kernel boundaries, line selection, and parallel structure. Later development used Claude Opus 4.8 and sustained GPT-5.5 Codex agents, with independent criticism from Gem-ini 3.1 Pro and GLM 5.2. A rewrite at this scale would not have been practical on the same timescale without these tools. The unsuccessful experiments, including the alternate two-profile atmosphere solver, were equally useful reminders that current agents still require close domain guidance. Artificial general intelligence (AGI) would have made this hobby considerably shorter. The agents contributed code translation, refactoring, tests, diagnostics, research-log maintenance, and prose revision. The scientific framing, Introduction, Discus-sion, and Conclusion began from human drafts. Some technical passages began from agent summaries of the 28 Ting & Kim 
+
+code and research logs. The authors reviewed the re-tained code, calculations, figures, citations, and text and take responsibility for the results. Unexpected per-sonal circumstances also gave YST the uninterrupted time needed to finish this project. YST acknowledges support from a Humboldt Re-search Fellowship from the Alexander von Humboldt Foundation. APPENDIX  
+
+> A.
+
+SENSITIVITY TO FITTING THE STELLAR PARAMETERS The main APOGEE experiment retains the photometrically calibrated Teff and asteroseismically calibrated giant log g published in DR14, and fixes ξ to isolate the chemical and instrumental fit (Holtzman et al. 2018). We test that choice with the same official spectra, sample, line calibration, instrument operator, masks, uncertainties, and continuum treatment. Starting from the main abundance solution, we fit those three stellar parameters together with the same 12 abundance coordinates and converge the final physical atmosphere. Figures 14 and 15 compare the resulting stellar and chemical distributions with the fixed-parameter solution and APOGEE DR14. The full physical refit gives inverse-selection-weighted median changes of −200 K in Teff , +0 .17 dex in log g,
+
+−0.32 km s −1 in ξ, and −0.06 dex in [Fe /H]. Among the 694 stars in the initial red-clump concentration, the median changes are −220 K and +0 .17 dex. The giant-branch ridge and red-clump concentration remain visible, but their absolute location moves with the adopted stellar-parameter scale. The median abundance changes range from −0.23 dex for nitrogen and −0.22 dex for oxygen to +0 .22 dex for sulfur. Magnesium changes by −0.03 dex. The abundance sequences persist while their zero points respond to the stellar parameters. The cooler spectroscopic temperature scale therefore propagates into element-dependent abundance zero points. A joint fit to the spectrum, broadband spectral energy distribution, and parallax can anchor Teff and log g and absorb this scale difference in a production analysis (Cargile et al. 2020). We do not include that external information in this proof of concept. Stellar Spectra from Physical Models in Seconds 29 3800 4000 4200 4400 4600 4800 5000 5200 
+
+Teff (K) 
+
+1.01.52.02.53.03.5
+
+> log  g (dex)
+
+fixed stellar parameters fitted stellar parameters 
+
+−1.0 −0.5 0.0
+
+APOGEE DR14 [Fe /H] (dex) 
+
+−1.0
+
+−0.8
+
+−0.6
+
+−0.4
+
+−0.20.00.2
+
+> Payne Zero [Fe /H] (dex)
+
+fixed stellar parameters fitted high-α sample fitted low-α sample 
+
+Figure 14. Sensitivity to fitting Teff , log g, and ξ together with the 12 abundance coordinates. Left, inverse-selection-weighted contours for the combined sample. Gray dashed curves retain the DR14 stellar parameters and dark solid curves show the final physically converged fit. Right, fixed-parameter iron abundances are gray open circles and the final values are colored by the APOGEE high- and low-α samples. −1.0 −0.5 0.0
+
+−0.50 
+
+−0.25 0.00 0.25 0.50 
+
+> [X /Fe]
+
+C
+
+−1.0 −0.5 0.0
+
+−0.50 
+
+−0.25 0.00 0.25 0.50 
+
+N
+
+−1.0 −0.5 0.0
+
+−0.50 
+
+−0.25 0.00 0.25 0.50 
+
+O
+
+−1.0 −0.5 0.0
+
+−0.50 
+
+−0.25 0.00 0.25 0.50 
+
+Mg 
+
+−1.0 −0.5 0.0
+
+−0.50 
+
+−0.25 0.00 0.25 0.50 
+
+> [X /Fe]
+
+Al 
+
+−1.0 −0.5 0.0
+
+−0.50 
+
+−0.25 0.00 0.25 0.50 
+
+Si 
+
+−1.0 −0.5 0.0
+
+−0.50 
+
+−0.25 0.00 0.25 0.50 
+
+S
+
+−1.0 −0.5 0.0
+
+−0.50 
+
+−0.25 0.00 0.25 0.50 
+
+Ca 
+
+−1.0 −0.5 0.0
+
+[Fe /H] (dex) 
+
+−0.50 
+
+−0.25 0.00 0.25 0.50 
+
+> [X /Fe]
+
+Ti 
+
+−1.0 −0.5 0.0
+
+[Fe /H] (dex) 
+
+−0.50 
+
+−0.25 0.00 0.25 0.50 
+
+Mn 
+
+−1.0 −0.5 0.0
+
+[Fe /H] (dex) 
+
+−0.50 
+
+−0.25 0.00 0.25 0.50 
+
+Ni 
+
+Payne Zero high-α Payne Zero low-α APOGEE DR14 
+
+Figure 15. Elemental-abundance distributions from the final physically converged fit of Teff , log g, ξ, and the abundances. The layout and scales match Figure 13. Colored points and contours show the final values for the two APOGEE samples. Gray dashed contours show the corresponding 50 and 80 percent density levels from APOGEE DR14. 30 Ting & Kim 
+
+REFERENCES 
+
+Abolfathi, B., Aguado, D. S., Aguilar, G., et al. 2018, ApJS, 235, 42, doi: 10.3847/1538-4365/aa9e8a Allende-Prieto, C., & Apogee Team. 2023, FERRE: Match physical models to measurements, Astrophysics Source Code Library, record ascl:2301.016. http://ascl.net/2301.016 Amarsi, A. M., Nissen, P. E., & Sk´ ulad´ ottir, ´A. 2019, A&A, 630, A104, doi: 10.1051/0004-6361/201936265 Asplund, M. 2005, ARA&A, 43, 481, doi: 10.1146/annurev.astro.42.053102.134001 Barklem, P. S., & Collet, R. 2016, A&A, 588, A96, doi: 10.1051/0004-6361/201526961 Barklem, P. S., Piskunov, N., & O’Mara, B. J. 2000, A&AS, 142, 467, doi: 10.1051/aas:2000167 Bergemann, M., & Nordlander, T. 2014, in Determination of Atmospheric Parameters of B-, A-, F- and G-Type Stars, ed. E. Niemczura, B. Smalley, & W. Pych, 169–185, doi: 10.1007/978-3-319-06956-2 16 Blanco-Cuaresma, S., Soubiran, C., Heiter, U., & Jofr´ e, P. 2014, A&A, 569, A111, doi: 10.1051/0004-6361/201423945 B¨ ohm-Vitense, E. 1958, ZA, 46, 108 Cargile, P. A., Conroy, C., Johnson, B. D., et al. 2020, ApJ, 900, 28, doi: 10.3847/1538-4357/aba43b Casey, A. R., Hogg, D. W., Ness, M., et al. 2016, arXiv e-prints, arXiv:1603.03040, doi: 10.48550/arXiv.1603.03040 Castelli, F., & Kurucz, R. L. 2003, in IAU Symposium, Vol. 210, Modelling of Stellar Atmospheres, ed. N. Piskunov, W. W. Weiss, & D. F. Gray, A20, doi: 10.48550/arXiv.astro-ph/0405087 Charbonnel, C., & Lagarde, N. 2010, A&A, 522, A10, doi: 10.1051/0004-6361/201014432 Chiappini, C., Minchev, I., Starkenburg, E., et al. 2019, The Messenger, 175, 30, doi: 10.18727/0722-6691/5122 Cooper, A. P., Koposov, S. E., Allende Prieto, C., et al. 2023, ApJ, 947, 37, doi: 10.3847/1538-4357/acb3c0 Creevey, O. L., Sordo, R., Pailler, F., et al. 2023, A&A, 674, A26, doi: 10.1051/0004-6361/202243688 Cui, X.-Q., Zhao, Y.-H., Chu, Y.-Q., et al. 2012, Research in Astronomy and Astrophysics, 12, 1197, doi: 10.1088/1674-4527/12/9/003 Czekala, I., Andrews, S. M., Mandel, K. S., Hogg, D. W., & Green, G. M. 2015, ApJ, 812, 128, doi: 10.1088/0004-637X/812/2/128 Dalton, G., Trager, S. C., Abrams, D. C., et al. 2012, in Society of Photo-Optical Instrumentation Engineers (SPIE) Conference Series, Vol. 8446, Ground-based and Airborne Instrumentation for Astronomy IV, ed. I. S. McLean, S. K. Ramsay, & H. Takami, 84460P, doi: 10.1117/12.925950 De Silva, G. M., Freeman, K. C., Bland-Hawthorn, J., et al. 2015, MNRAS, 449, 2604, doi: 10.1093/mnras/stv327 Fabbro, S., Venn, K. A., O’Briain, T., et al. 2018, MNRAS, 475, 2978, doi: 10.1093/mnras/stx3298 Fano, U. 1961, Physical Review, 124, 1866, doi: 10.1103/PhysRev.124.1866 Garc´ ıa P´ erez, A. E., Allende Prieto, C., Holtzman, J. A., et al. 2016, AJ, 151, 144, doi: 10.3847/0004-6256/151/6/144 Gilmore, G., Randich, S., Asplund, M., et al. 2012, The Messenger, 147, 25 Golub, G., & Pereyra, V. 2003, Inverse Problems, 19, R1, doi: 10.1088/0266-5611/19/2/201 Gray, D. F. 2005, The Observation and Analysis of Stellar Photospheres, doi: 10.1017/CBO9781316036570 Gunes Baydin, A., Pearlmutter, B. A., Andreyevich Radul, A., & Siskind, J. M. 2015, arXiv e-prints, arXiv:1502.05767, doi: 10.48550/arXiv.1502.05767 Gustafsson, B., Edvardsson, B., Eriksson, K., et al. 2008, A&A, 486, 951, doi: 10.1051/0004-6361:200809724 Hayden, M. R., Bovy, J., Holtzman, J. A., et al. 2015, ApJ, 808, 132, doi: 10.1088/0004-637X/808/2/132 Heiter, U., Jofr´ e, P., Gustafsson, B., et al. 2015, A&A, 582, A49, doi: 10.1051/0004-6361/201526319 Heiter, U., Lind, K., Bergemann, M., et al. 2021, A&A, 645, A106, doi: 10.1051/0004-6361/201936291 Hinkle, K., Wallace, L., & Livingston, W. 1995, PASP, 107, 1042, doi: 10.1086/133660 Ho, A. Y. Q., Rix, H.-W., Ness, M. K., et al. 2017, ApJ, 841, 40, doi: 10.3847/1538-4357/aa6db3 Holtzman, J. A., Hasselquist, S., Shetrone, M., et al. 2018, AJ, 156, 125, doi: 10.3847/1538-3881/aad4f9 Hubeny, I., & Lanz, T. 1995, ApJ, 439, 875, doi: 10.1086/175226 Hubeny, I., & Mihalas, D. 2014, Theory of Stellar Atmospheres Hummer, D. G., & Mihalas, D. 1988, ApJ, 331, 794, doi: 10.1086/166600 Husser, T.-O., Wende-von Berg, S., Dreizler, S., et al. 2013, A&A, 553, A6, doi: 10.1051/0004-6361/201219058 Jofr´ e, P., Heiter, U., Soubiran, C., et al. 2014, A&A, 564, A133, doi: 10.1051/0004-6361/201322440 Stellar Spectra from Physical Models in Seconds 31 
+
+—. 2015, A&A, 582, A81, doi: 10.1051/0004-6361/201526604 John, T. L. 1988, A&A, 193, 189 Johnson, H. R., & Krupp, B. M. 1976, ApJ, 206, 201, doi: 10.1086/154371 Jolliffe, I. T., & Cadima, J. 2016, Philosophical Transactions of the Royal Society of London Series A, 374, 20150202, doi: 10.1098/rsta.2015.0202 J¨ onsson, H., Allende Prieto, C., Holtzman, J. A., et al. 2018, AJ, 156, 126, doi: 10.3847/1538-3881/aad4f5 Kawahara, H., Kawashima, Y., Masuda, K., et al. 2022, ApJS, 258, 31, doi: 10.3847/1538-4365/ac3b4d Kim, E. M., & Ting, Y.-S. 2026, arXiv e-prints, arXiv:2603.11693, doi: 10.48550/arXiv.2603.11693 Kollmeier, J. A., Zasowski, G., Rix, H.-W., et al. 2017, arXiv e-prints, arXiv:1711.03234, doi: 10.48550/arXiv.1711.03234 Kurucz, R. L. 1996, in IAU Symposium, Vol. 176, Stellar Surface Structure, ed. K. G. Strassmeier & J. L. Linsky, 523 Kurucz, R. L. 2005, Memorie della Societa Astronomica Italiana Supplementi, 8, 14 —. 2013, ATLAS12: Opacity sampling model atmosphere program, Astrophysics Source Code Library, record ascl:1303.024. http://ascl.net/1303.024 Kurucz, R. L., & Avrett, E. H. 1981, SAO Special Report, 391 Lanz, T., & Hubeny, I. 2003, ApJS, 146, 417, doi: 10.1086/374373 —. 2007, ApJS, 169, 83, doi: 10.1086/511270 Laverick, M., Lobel, A., Royer, P., et al. 2019, A&A, 624, A60, doi: 10.1051/0004-6361/201833553 Leung, H. W., & Bovy, J. 2019, MNRAS, 483, 3255, doi: 10.1093/mnras/sty3217 Li, J., Jian, M., Ting, Y.-S., & Green, G. M. 2025, arXiv e-prints, arXiv:2507.06357, doi: 10.48550/arXiv.2507.06357 Livingston, W., & Wallace, L. 1991, An atlas of the solar spectrum in the infrared from 1850 to 9000 cm-1 (1.1 to 5.4 micrometer) Lobel, A. 2011, Canadian Journal of Physics, 89, 395, doi: 10.1139/p11-030 Magic, Z., Collet, R., Asplund, M., et al. 2013, A&A, 557, A26, doi: 10.1051/0004-6361/201321274 Majewski, S. R., Schiavon, R. P., Frinchaboy, P. M., et al. 2017, AJ, 154, 94, doi: 10.3847/1538-3881/aa784d Martig, M., Fouesneau, M., Rix, H.-W., et al. 2016, MNRAS, 456, 3655, doi: 10.1093/mnras/stv2830 Masseron, T., & Gilmore, G. 2015, MNRAS, 453, 1855, doi: 10.1093/mnras/stv1731 Matsuno, T., Amarsi, A. M., Carlos, M., & Nissen, P. E. 2024, A&A, 688, A72, doi: 10.1051/0004-6361/202450057 McKay, M. D., Beckman, R. J., & Conover, W. J. 1979, Technometrics, 21, 239, doi: 10.1080/00401706.1979.10489755 Mel´ endez, J., & Barbuy, B. 1999, ApJS, 124, 527, doi: 10.1086/313261 M´ esz´ aros, S., & Allende Prieto, C. 2013, MNRAS, 430, 3285, doi: 10.1093/mnras/stt130 M´ esz´ aros, S., Allende Prieto, C., Edvardsson, B., et al. 2012, AJ, 144, 120, doi: 10.1088/0004-6256/144/4/120 Mihalas, D. 1978, Stellar atmospheres Ness, M., Hogg, D. W., Rix, H.-W., Ho, A. Y. Q., & Zasowski, G. 2015, ApJ, 808, 16, doi: 10.1088/0004-637X/808/1/16 Nidever, D. L., Bovy, J., Bird, J. C., et al. 2014, ApJ, 796, 38, doi: 10.1088/0004-637X/796/1/38 Nidever, D. L., Holtzman, J. A., Allende Prieto, C., et al. 2015, AJ, 150, 173, doi: 10.1088/0004-6256/150/6/173 Nocedal, J., & Wright, S. J. 2006, Numerical Optimization, 2nd edn., Springer Series in Operations Research and Financial Engineering (Springer New York), doi: 10.1007/978-0-387-40065-5 Nordlund, ˚ A., Stein, R. F., & Asplund, M. 2009, Living Reviews in Solar Physics, 6, 2, doi: 10.12942/lrsp-2009-2 O’Briain, T., Ting, Y.-S., Fabbro, S., et al. 2021, ApJ, 906, 130, doi: 10.3847/1538-4357/abca96 Piskunov, N., & Valenti, J. A. 2017, A&A, 597, A16, doi: 10.1051/0004-6361/201629124 Piskunov, N. E., Kupka, F., Ryabchikova, T. A., Weiss, W. W., & Jeffery, C. S. 1995, A&AS, 112, 525 Plez, B. 2012, Turbospectrum: Code for spectral synthesis, Astrophysics Source Code Library, record ascl:1205.004. http://ascl.net/1205.004 Ram´ ırez, I., & Allende Prieto, C. 2011, ApJ, 743, 135, doi: 10.1088/0004-637X/743/2/135 R´ o˙ za´ nski, T., Ting, Y.-S., & Jablo´ nska, M. 2025, ApJ, 980, 66, doi: 10.3847/1538-4357/ad9b99 Ryabchikova, T., Piskunov, N., Kurucz, R. L., et al. 2015, PhyS, 90, 054005, doi: 10.1088/0031-8949/90/5/054005 Salaris, M., Pietrinferni, A., Piersimoni, A. M., & Cassisi, S. 2015, A&A, 583, A87, doi: 10.1051/0004-6361/201526951 Shetrone, M., Bizyaev, D., Lawler, J. E., et al. 2015, ApJS, 221, 24, doi: 10.1088/0067-0049/221/2/24 Shore, B. W. 1967, Reviews of Modern Physics, 39, 439, doi: 10.1103/RevModPhys.39.439 Smith, V. V., Bizyaev, D., Cunha, K., et al. 2021, AJ, 161, 254, doi: 10.3847/1538-3881/abefdc 32 Ting & Kim 
+
+Sneden, C., Bean, J., Ivans, I., Lucatello, S., & Sobeck, J. 2012, MOOG: LTE line analysis and spectrum synthesis, Astrophysics Source Code Library, record ascl:1202.009. http://ascl.net/1202.009 Sobeck, J. S., Kraft, R. P., Sneden, C., et al. 2011, AJ, 141, 175, doi: 10.1088/0004-6256/141/6/175 Takada, M., Ellis, R. S., Chiba, M., et al. 2014, PASJ, 66, R1, doi: 10.1093/pasj/pst019 Ting, Y.-S., Conroy, C., & Rix, H.-W. 2016, ApJ, 826, 83, doi: 10.3847/0004-637X/826/1/83 Ting, Y.-S., Conroy, C., Rix, H.-W., & Asplund, M. 2018, ApJ, 860, 159, doi: 10.3847/1538-4357/aac6c9 Ting, Y.-S., Conroy, C., Rix, H.-W., & Cargile, P. 2017a, ApJ, 843, 32, doi: 10.3847/1538-4357/aa7688 —. 2019, ApJ, 879, 69, doi: 10.3847/1538-4357/ab2331 Ting, Y.-S., Rix, H.-W., Conroy, C., Ho, A. Y. Q., & Lin, J. 2017b, ApJL, 849, L9, doi: 10.3847/2041-8213/aa921c Tsuji, T. 1973, A&A, 23, 411 Valenti, J. A., & Fischer, D. A. 2005, ApJS, 159, 141, doi: 10.1086/430500 Valenti, J. A., & Piskunov, N. 1996, A&AS, 118, 595 Vidal, C. R., Cooper, J., & Smith, E. W. 1973, ApJS, 25, 37, doi: 10.1086/190264 Wehrhahn, A., Piskunov, N., & Ryabchikova, T. 2023, A&A, 671, A171, doi: 10.1051/0004-6361/202244482 Weinberg, D. H., Holtzman, J. A., Hasselquist, S., et al. 2019, ApJ, 874, 102, doi: 10.3847/1538-4357/ab07c7 Wheeler, A. J., Abruzzo, M. W., Casey, A. R., & Ness, M. K. 2023, AJ, 165, 68, doi: 10.3847/1538-3881/acaaad Wilson, J. C., Hearty, F. R., Skrutskie, M. F., et al. 2019, PASP, 131, 055001, doi: 10.1088/1538-3873/ab0075 Xiang, M., Ting, Y.-S., Rix, H.-W., et al. 2019, ApJS, 245, 34, doi: 10.3847/1538-4365/ab5364 Zaheer, M., Kottur, S., Ravanbakhsh, S., et al. 2017, arXiv e-prints, arXiv:1703.06114, doi: 10.48550/arXiv.1703.06114
