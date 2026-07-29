@@ -1,0 +1,446 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-29T21:41:37.845402+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 6,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 3,
+    "quick_skim_target": 11,
+    "quick_selected": 3
+  },
+  "deep_dive": [
+    {
+      "id": "2607.25259v1",
+      "source": "arxiv",
+      "title": "KMT-2025-BLG-0975Lb and KMT-2025-BLG-1160Lb: Two Uranus-Mass Planets Beyond the Snow Line Discovered by Microlensing",
+      "abstract": "We present the analysis of two planetary microlensing events, KMT-2025-BLG-0975 and KMT-2025-BLG-1160, discovered during the 2025 Galactic bulge microlensing season through high-cadence survey observations. In both events, short-duration anomalies near the peaks of the lensing light curves reveal the presence of planetary companions. Light-curve modeling yields planet-to-host mass ratios of $q = 8.6 \\times 10^{-4}$ for KMT-2025-BLG-0975 and $1.3 \\times 10^{-4}$ for KMT-2025-BLG-1160. For KMT-2025-BLG-0975, finite-source effects are detected, enabling a measurement of the angular Einstein radius, whereas only a lower limit on this quantity is obtained for KMT-2025-BLG-1160. We estimate the physical parameters of the lens systems through Bayesian analyses constrained by the measured microlensing observables. The results indicate that the planetary companions have masses of $M_{\\rm p}=29.8^{+50.5}_{-16.0}~M_\\oplus$ for KMT-2025-BLG-0975Lb and $25.4^{+15.5}_{-14.1}~M_\\oplus$ for KMT-2025-BLG-1160Lb. Both planets have masses comparable to that of Uranus. The host stars are inferred to be a low-mass M dwarf with a mass of $M_{\\rm h}=0.10^{+0.18}_{-0.06}~M_\\odot$ for KMT-2025-BLG-0975L and a late K dwarf with a mass of $M_{\\rm h}=0.58^{+0.35}_{-0.32}~M_\\odot$ for KMT-2025-BLG-1160L. The projected planet--host separations are $a_\\perp=0.81^{+0.10}_{-0.11}$~au for KMT-2025-BLG-0975Lb and $a_\\perp=2.56^{+0.48}_{-0.71}$~au and $3.29^{+0.61}_{-0.92}$~au for the inner and wide solutions, respectively, of KMT-2025-BLG-1160Lb. In both systems, the planets are located beyond the expected snow-line distances of their hosts, placing them in the cold ice-giant regime.",
+      "authors": [
+        "Cheongho Han",
+        "Chung-Uk Lee",
+        "Andrzej Udalski",
+        "Andrew Gould",
+        "Michael D. Albrow",
+        "Sun-Ju Chung",
+        "Youn Kil Jung",
+        "Kyu-Ha Hwang",
+        "Yoon-Hyun Ryu",
+        "Yossi Shvartzvald",
+        "In-Gu Shin",
+        "Jennifer C. Yee",
+        "Weicheng Zang",
+        "Hongjing Yang",
+        "Doeon Kim",
+        "Dong-Jin Kim",
+        "Byeong-Gon Park",
+        "Richard W. Pogge",
+        "Przemek Mróz",
+        "Michał K. Szymański",
+        "Jan Skowron",
+        "Radosław Poleskim Igor Soszyński",
+        "Paweł Pietrukowicz",
+        "Szymon Kozłowski",
+        "Krzysztof A. Rybicki",
+        "Patryk Iwanek",
+        "Krzysztof Ulaczyk",
+        "Marcin Wrona",
+        "Mariusz Gromadzki",
+        "Mateusz J. Mróz"
+      ],
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.GA"
+      ],
+      "published": "2026-07-28T04:01:13+00:00",
+      "link": "https://arxiv.org/pdf/2607.25259v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "discovery of two Uranus-mass exoplanets via microlensing",
+      "llm_evidence_cn": "通过微引力透镜发现两颗天王星质量系外行星",
+      "llm_evidence": "通过微引力透镜发现两颗天王星质量系外行星",
+      "canonical_evidence": "通过微引力透镜发现两颗天王星质量系外行星",
+      "llm_tldr_en": "Reports discovery of two Uranus-mass exoplanets beyond the snow line via microlensing, with mass ratio and Einstein radius measurements.",
+      "llm_tldr_cn": "微引力透镜是探测遥远行星的有效方法。本文报道了2025年银河系核球微引力透镜季节中两个行星事件的分析，发现了两个质量比分别为8.6e-4和1.3e-4的伴星，其质量约为天王星质量，位于雪线之外。KMT-2025-BLG-0975Lb还检测到有限源效应，从而测定了爱因斯坦半径。这些发现增加了冷行星样本，对行星形成理论有重要约束。",
+      "llm_tldr": "微引力透镜是探测遥远行星的有效方法。本文报道了2025年银河系核球微引力透镜季节中两个行星事件的分析，发现了两个质量比分别为8.6e-4和1.3e-4的伴星，其质量约为天王星质量，位于雪线之外。KMT-2025-BLG-0975Lb还检测到有限源效应，从而测定了爱因斯坦半径。这些发现增加了冷行星样本，对行星形成理论有重要约束。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "new exoplanet discoveries and detection or characterization methods",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.25550v1",
+      "source": "arxiv",
+      "title": "The Influence of Dust Composition on Accretion Outbursts",
+      "abstract": "Context: Episodic accretion outbursts have been shown to occur in protoplanetary discs due to thermal instability at the inner edge of the dead zone. These outbursts periodically heat up the dead zone, significantly altering the composition/chemistry and accretion onto the star. Aims: We investigate how these accretion outbursts affect the inner disc composition and how different dust compositions and properties affect the outbursts' dynamics. Methods: We run vertically integrated axis-symmetric dust and gas evolution models using the TriPoD method, including dust opacity dependent heating and cooling, a dead zone model, and compositional tracking of dust, including the evaporation and condensation of volatiles. Results: When considering dust to be made up of a condensation sequence of silicates and volatiles, the outburst evaporates most of the dust within 0.5 au. The fast re-condensation and subsequent viscous evolution reset the disc between bursts. Additionally, we find that the burst cycle period and maximal accretion rate directly correlate with the dust sublimation temperature.",
+      "authors": [
+        "Nicolas Kaufmann",
+        "Anna B. T. Penzlin",
+        "Alfie Robinson",
+        "Alexandros Ziampras",
+        "Tilman Birnstiel",
+        "Richard Booth"
+      ],
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-07-28T10:31:12+00:00",
+      "link": "https://arxiv.org/pdf/2607.25550v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Modeling accretion outbursts in protoplanetary disks with dust composition effects",
+      "llm_evidence_cn": "在模型中考虑尘埃成分对原行星盘吸积爆发的影响",
+      "llm_evidence": "在模型中考虑尘埃成分对原行星盘吸积爆发的影响",
+      "canonical_evidence": "在模型中考虑尘埃成分对原行星盘吸积爆发的影响",
+      "llm_tldr_en": "Investigates how dust composition affects episodic accretion outbursts in protoplanetary disks, using coupled dust and gas evolution models with composition tracking.",
+      "llm_tldr_cn": "该论文通过耦合尘埃和气体演化的数值模型，研究原行星盘中尘埃成分如何影响间歇性吸积爆发。模型考虑了尘埃不透明度依赖的加热冷却、死区模型和挥发分的蒸发冷凝。结果表明，尘埃成分（如水冰和有机物）会改变爆发温度与持续时间。该工作揭示了盘演化理论中尘埃成分的重要性，为观测提供了新的可检验预测。",
+      "llm_tldr": "该论文通过耦合尘埃和气体演化的数值模型，研究原行星盘中尘埃成分如何影响间歇性吸积爆发。模型考虑了尘埃不透明度依赖的加热冷却、死区模型和挥发分的蒸发冷凝。结果表明，尘埃成分（如水冰和有机物）会改变爆发温度与持续时间。该工作揭示了盘演化理论中尘埃成分的重要性，为观测提供了新的可检验预测。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "observations and theoretical models of protoplanetary disks and disk evolution",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.25770v1",
+      "source": "arxiv",
+      "title": "JWST/MIRI Detection of Molecular H$_2$ Winds from an Edge-on Class II Source HV Tau C",
+      "abstract": "The evolution of protoplanetary disks is regulated by accretion onto the central star and mass loss through jets and winds. While atomic and ionized outflows are commonly observed, molecular winds in evolved Class II disks remain rarely detected. We characterize the spatial, thermal, kinematic, and dynamical properties of molecular hydrogen (H$_2$) emission from the nearly edge-on Class II disk HV Tau C and assess the impact of its molecular wind. We also constrain accretion using H I recombination lines detected in the same mid-infrared spectrum. Using JWST/MIRI-MRS data from the MINDS Cycle 1 GTO program, we analyze spatially resolved pure-rotational H$_2$ emission. Rotational and position-velocity diagrams constrain excitation and kinematics, from which we estimate wind properties. We detect extended H$_2$ emission tracing a wide-angled, biconical molecular wind extending beyond the near-infrared scattered-light disk, ALMA 887 $μ$m dust continuum, and compact $^{12}$CO ($J=3$-$2$) gas disk. The H$_2$ rotational diagram requires warm ($\\sim$600K) and hot ($\\sim$2000K) components, similar to those in younger protostars. The gas shows outward motions of a few tens of km s$^{-1}$ and dynamical timescales of tens to hundreds of years. The inferred mass-loss rate is $\\sim10^{-8}$ M$_\\odot$ yr$^{-1}$, while accretion rates derived from H I lines are $10^{-10}$-$10^{-8}$ M$_\\odot$ yr$^{-1}$. The accretion rate may be underestimated because of the edge-on geometry. Our results show that wide-angled molecular H$_2$ winds can persist into the Class II phase, with outflow rates comparable to some protostellar systems, suggesting that such winds may remain important for angular momentum removal, disk evolution, and dispersal. (Abstract modified; see the paper for the full version.)",
+      "authors": [
+        "Vinod Chandra Pathak",
+        "P. Manoj",
+        "Himanshu Tyagi",
+        "B. Shridharan",
+        "Th. Henning",
+        "I. Kamp",
+        "A. Caratti o Garatti",
+        "B. Banerjee",
+        "Mayank Narang",
+        "E. F. van Dishoeck",
+        "Kamber Schwarz",
+        "Manuel Güdel",
+        "Alice Somigliana",
+        "Giulia Perotti",
+        "Aditya M. Arabhavi",
+        "Sujay Vijay Jadhav",
+        "Göran Olofsson"
+      ],
+      "primary_category": "astro-ph.SR",
+      "categories": [
+        "astro-ph.SR",
+        "astro-ph.EP",
+        "astro-ph.GA"
+      ],
+      "published": "2026-07-28T14:29:23+00:00",
+      "link": "https://arxiv.org/pdf/2607.25770v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "JWST/MIRI observation of molecular hydrogen winds from a Class II protoplanetary disk, directly addressing disk evolution",
+      "llm_evidence_cn": "JWST/MIRI观测到Class II原行星盘的分子氢风，直接涉及盘演化",
+      "llm_evidence": "JWST/MIRI观测到Class II原行星盘的分子氢风，直接涉及盘演化",
+      "canonical_evidence": "JWST/MIRI观测到Class II原行星盘的分子氢风，直接涉及盘演化",
+      "llm_tldr_en": "Reports JWST/MIRI detection of molecular H2 winds from the edge-on Class II disk HV Tau C, characterizing spatial, thermal, kinematic, and dynamical properties, and constraining accretion. Provides rare direct evidence for molecular winds in evolved protoplanetary disks.",
+      "llm_tldr_cn": "针对演化后期Class II原行星盘中分子风罕见探测的问题，利用JWST/MIRI-MRS数据对边缘盘HV Tau C进行分析。通过纯转动H2发射线的空间分辨观测，提取了分子风的空间、热、运动学和动力学性质，并利用HI复合线约束吸积。结果表明分子风对盘演化有重要影响，为理解盘质量损失机制提供了关键观测证据。",
+      "llm_tldr": "针对演化后期Class II原行星盘中分子风罕见探测的问题，利用JWST/MIRI-MRS数据对边缘盘HV Tau C进行分析。通过纯转动H2发射线的空间分辨观测，提取了分子风的空间、热、运动学和动力学性质，并利用HI复合线约束吸积。结果表明分子风对盘演化有重要影响，为理解盘质量损失机制提供了关键观测证据。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "observations and theoretical models of protoplanetary disks and disk evolution",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.25845v1",
+      "source": "arxiv",
+      "title": "Constraining the lives and times of exoplanets through evolutionary Bayesian retrievals",
+      "abstract": "Static retrieval frameworks are leading tools for interpreting exoplanet observations, yet time-independent modelling leaves them prone to degeneracy and unable to resolve exoplanets' histories. The compositions and structures of surveyed super-Earth and sub-Neptune sub-populations remain unclear, but are shaped by physics acting across Gyr timescales. Interpreting these planets as static non-evolving snapshots allows multiple degenerate scenarios to explain their observed properties. We develop a generalised parameter retrieval framework, built on asynchronous Bayesian optimisation to efficiently dispatch a multi-physics forward-model, resolving exoplanets' evolving properties from their initial magma ocean conditions to the present day. By building Bayesian retrievals into the PROTEUS framework, sensitive coupled interior-atmosphere interactions are naturally resolved and interpretations are constrained to physically permissible scenarios. We test evolutionary retrievals with three exoplanet prototypes: a young sub-Neptune, an older super-Earth, and a warm terrestrial planet - representative of the surveyed exoplanet population. Evolutionary retrieval jointly infers their mantle redox conditions, metallic core fractions, and early volatile inventories from spectroscopically accessible observables. Some scenarios remain subject to well-established degeneracies between core fractions and volatile budgets. Terrestrial-mass exoplanets benefit from strong observable-parameter correlations that lift these degeneracies; we recover post-formation volatile inventories with <20 percent error. Exoplanet science is primed for incoming JWST, PLATO, Roman, and ELT data - observations which necessitate careful interpretation. Adoption of time-evolved models lifts interpretive degeneracies, providing the means to understand the deep interiors and lifetime histories of worlds throughout our galaxy.",
+      "authors": [
+        "Harrison Nicholls",
+        "Tim Lichtenberg",
+        "Ben Riegler",
+        "Robb Calder",
+        "Vincent Fortuin"
+      ],
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.IM"
+      ],
+      "published": "2026-07-28T15:19:43+00:00",
+      "link": "https://arxiv.org/pdf/2607.25845v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "evolutionary Bayesian retrieval framework for exoplanet atmospheres",
+      "llm_evidence_cn": "演化贝叶斯反演框架用于系外行星大气",
+      "llm_evidence": "演化贝叶斯反演框架用于系外行星大气",
+      "canonical_evidence": "演化贝叶斯反演框架用于系外行星大气",
+      "llm_tldr_en": "Develops a Bayesian retrieval framework incorporating planetary evolution from magma ocean to present to break degeneracies in atmospheric characterization.",
+      "llm_tldr_cn": "现有静态反演框架无法解析系外行星的演化历史，导致大气成分与结构的多重简并。本文提出一种基于异步贝叶斯优化的演化参数反演框架，将系外行星从初始岩浆海洋状态到当前状态的物理演化过程纳入正向模型。该方法可有效区分不同演化场景，揭示超级地球和亚海王星子群的结构与组成。这一框架为利用观测数据约束行星的形成与演化历史提供了新途径。",
+      "llm_tldr": "现有静态反演框架无法解析系外行星的演化历史，导致大气成分与结构的多重简并。本文提出一种基于异步贝叶斯优化的演化参数反演框架，将系外行星从初始岩浆海洋状态到当前状态的物理演化过程纳入正向模型。该方法可有效区分不同演化场景，揭示超级地球和亚海王星子群的结构与组成。这一框架为利用观测数据约束行星的形成与演化历史提供了新途径。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "observations and models of exoplanet atmospheres, climate, chemistry, and escape",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.24894v1",
+      "source": "arxiv",
+      "title": "Disk-averaged spectrum generation for spherically symmetric planets and moons",
+      "abstract": "Here I present a simple and efficient method for generating a disk-averaged planetary spectrum. The technique uses a weighted average of component spectra generated on an irregular grid of offsets from the planet center. This accounts for variations in center to limb brightness and emission from beyond the limb, which is important for bodies with extended atmospheres such as Saturn's moon Titan. The method assumes spherically symmetric emission and requires a grid of component spectra fine enough to faithfully capture radial radiance variations. An example application to Titan's 7.7 $μ$m methane emission demonstrates the method.",
+      "authors": [
+        "Nicholas A. Teanby"
+      ],
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.IM"
+      ],
+      "published": "2026-07-27T15:22:46+00:00",
+      "link": "https://arxiv.org/pdf/2607.24894v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "method for generating disk-averaged spectra of planets and moons, directly applicable to exoplanet atmosphere characterization",
+      "llm_evidence_cn": "提出生成行星和卫星盘平均光谱的方法，直接用于系外行星大气表征",
+      "llm_evidence": "提出生成行星和卫星盘平均光谱的方法，直接用于系外行星大气表征",
+      "canonical_evidence": "提出生成行星和卫星盘平均光谱的方法，直接用于系外行星大气表征",
+      "llm_tldr_en": "Presents a simple and efficient method to generate disk-averaged planetary spectra using weighted averages of component spectra, accounting for center-to-limb variations and extended atmospheres, demonstrated on Titan. Enables accurate spectral modeling for exoplanets.",
+      "llm_tldr_cn": "针对系外行星大气光谱建模中盘平均光谱难以准确计算的问题，提出了一种基于不规则网格加权平均的高效方法，考虑了中心到临边亮度变化以及延伸大气的影响。该方法假设球对称辐射，需要足够精细的组分光谱网格。以土卫六的7.7微米甲烷发射为例进行了验证。该技术可广泛应用于未来系外行星大气观测数据的解释。",
+      "llm_tldr": "针对系外行星大气光谱建模中盘平均光谱难以准确计算的问题，提出了一种基于不规则网格加权平均的高效方法，考虑了中心到临边亮度变化以及延伸大气的影响。该方法假设球对称辐射，需要足够精细的组分光谱网格。以土卫六的7.7微米甲烷发射为例进行了验证。该技术可广泛应用于未来系外行星大气观测数据的解释。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "observations and models of exoplanet atmospheres, climate, chemistry, and escape",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.25342v1",
+      "source": "arxiv",
+      "title": "GRaTer-JAX: An Accelerated Package for Debris Disk Modeling",
+      "abstract": "GRaTer-JAX is a Python package for modeling debris disks, disks of dust around stars that pro- vide important clues about the formation, structure, and evolution of planetary systems. GRaTer (Generator of Ring-like, axisymmetric, optically Thin dust disks for regularized fitting) is a debris disk modeling framework originally developed for generating and fitting models of optically thin, ax- isymmetric dust disks. JAX is a Python package for high-performance computing that implements just-in-time compilation and auto-differentiation, enabling significant speedups in forward modeling workflows.   GRaTer-JAX delivers a more powerful, efficient, and robust debris disk modeling framework than previous tools. Its JAX-based backend provides orders-of-magnitude speedups and analytic gradients, while its intuitive and extensible API unifies forward modeling, optimization, and inference within a single workflow. Combined with key additions to its disk model, it is capable of more advanced debris disk modeling, enabling research that was previously computationally impractical such as explorations of additional morphological parameters and disk composition via scattering phase functions.",
+      "authors": [
+        "Mihir Kondapalli",
+        "Briley L. Lewis",
+        "Jaren N. Ashcraft",
+        "Maxwell A. Millar-Blanchaer"
+      ],
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.IM"
+      ],
+      "published": "2026-07-28T06:44:50+00:00",
+      "link": "https://arxiv.org/pdf/2607.25342v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "accelerated debris disk modeling package for planetary system evolution",
+      "llm_evidence_cn": "加速的碎片盘建模包，用于行星系统演化研究",
+      "llm_evidence": "加速的碎片盘建模包，用于行星系统演化研究",
+      "canonical_evidence": "加速的碎片盘建模包，用于行星系统演化研究",
+      "llm_tldr_en": "GRaTer-JAX is a Python package for modeling debris disks using JAX acceleration, providing orders-of-magnitude speedups for fitting optically thin dust disk models, crucial for understanding planetary system formation and evolution.",
+      "llm_tldr_cn": "GRaTer-JAX是一个基于JAX的碎片盘建模包，解决了传统碎片盘建模计算缓慢的问题。该包利用即时编译和自动微分实现数量级加速，能够高效生成和拟合光学薄、轴对称的碎片盘模型。碎片盘作为行星系统演化的示踪物，该工具为理解行星形成和结构提供了强大的模拟能力。",
+      "llm_tldr": "GRaTer-JAX是一个基于JAX的碎片盘建模包，解决了传统碎片盘建模计算缓慢的问题。该包利用即时编译和自动微分实现数量级加速，能够高效生成和拟合光学薄、轴对称的碎片盘模型。碎片盘作为行星系统演化的示踪物，该工具为理解行星形成和结构提供了强大的模拟能力。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "observations and theoretical models of protoplanetary disks and disk evolution",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.24460v1",
+      "source": "arxiv",
+      "title": "A survey for variable young stars with small telescopes - XI. Spot Lifetimes and Coverage Distributions",
+      "abstract": "We present a homogeneous analysis of rotational variability and spot properties in young stellar objects across multiple star-forming regions observed by the Hunting Outbursting Young Stars (HOYS) project. From over 2000 candidate members, we identify 144 YSOs with robust periodic signals and well-constrained multi-band amplitudes. The sample has a median age of $\\sim$1~Myr, effective temperatures of 3500--6500~K (masses $\\sim$0.6--2~M$_\\odot$), and is dominated by Class~2 objects, one third of which exhibit inner disc dust emission. The rotation period distribution is strongly bimodal, with 55 percent fast rotators ($P<5.5$~d) and 45 percent slow rotators. Fast rotators are predominantly inner disc-less, whereas slow rotators include both disc-bearing and disc-free systems, indicating that disc braking alone cannot explain the observed rotational states. We derive spot properties from multi-band amplitudes and find that, after correcting for observational biases, the intrinsic cold-spot coverage distribution of fast rotators is well described by an exponential function. This implies that small spot coverages are intrinsically much more common than large ones, consistent with stochastic magnetic flux emergence governing spot formation. In contrast, slow rotators show a pronounced deficit of small cold spots. After considering observational biases and alternative physical explanations, we conclude that small spots on slowly rotating YSOs have significantly shorter lifetimes. These results provide new evidence that magnetic surface structure and its evolution depend on stellar rotation, placing new empirical constraints on models of magnetic activity and angular momentum evolution in young stars.",
+      "authors": [
+        "Dirk Froebrich",
+        "Carys Herbert",
+        "Aleks Scholz",
+        "Benjamin W. Ryan",
+        "Siegfried Vanaverbeke",
+        "Jochen Eislöffel",
+        "Cledison Marcos da Silva",
+        "Michel Michaud",
+        "Kathy Griffiths",
+        "Ari M. Siqueira",
+        "Thomas Urtly",
+        "Francisco C. Soldán Alfaro",
+        "George Fleming",
+        "Gregg L. Ruppel",
+        "Domenico Licchelli",
+        "Stephen R. L. Futcher",
+        "Ivan L. Walton",
+        "Matthias Kolb",
+        "Mario Morales Aimar",
+        "Geoffrey Stone",
+        "Yenal Öğmen",
+        "Simon Francis Dawes",
+        "Franz-Josef Hambsch",
+        "Nick J. Quinn",
+        "Juan-Luis González-Carballo",
+        "Franky Dubois",
+        "José Luis Salto González",
+        "Adam Popowicz",
+        "Krzysztof Bernacki",
+        "Slawomir Bednarz",
+        "Tim Nelson",
+        "Tony Vale",
+        "Tonny Vanmunster",
+        "Georg Piehler",
+        "Stephen C. Percy",
+        "Jordi Berenguer Amatller",
+        "Jacopo Fallai",
+        "Amritanshu Vajpayee",
+        "Faustino García de la Cuesta",
+        "Rafael Castillo García",
+        "Dawid Moździerski",
+        "Krzysztof Kotysz",
+        "Przemysław J. Mikołajczyk",
+        "Holly Stokes-Geddes",
+        "Matthew D. Dickers",
+        "Ivana I. Grozdanova",
+        "Chiara F. Kawohl",
+        "Aashini L. Patel",
+        "James S. Urquhart",
+        "Tim M. Kinnear"
+      ],
+      "primary_category": "astro-ph.SR",
+      "categories": [
+        "astro-ph.SR"
+      ],
+      "published": "2026-07-27T14:01:34+00:00",
+      "link": "https://arxiv.org/pdf/2607.24460v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Survey of young stellar objects providing rotation periods and spot properties linked to disk evolution",
+      "llm_evidence_cn": "年轻恒星自转与黑子巡天，与原行星盘演化相关",
+      "llm_evidence": "年轻恒星自转与黑子巡天，与原行星盘演化相关",
+      "canonical_evidence": "年轻恒星自转与黑子巡天，与原行星盘演化相关",
+      "llm_tldr_en": "Homogeneous analysis of rotational variability and spot lifetimes in ~1 Myr young stellar objects across star-forming regions, revealing bimodal rotation periods linked to inner disk presence.",
+      "llm_tldr_cn": "对多个恒星形成区的~1百万年年轻恒星进行均匀分析，获取144颗YSO的自转周期和黑子参数。发现自转周期呈双峰分布，快速自转者普遍缺乏内盘，慢速自转者则多有内盘尘埃发射。结果为原行星盘与恒星自转演化耦合提供了重要观测约束。",
+      "llm_tldr": "对多个恒星形成区的~1百万年年轻恒星进行均匀分析，获取144颗YSO的自转周期和黑子参数。发现自转周期呈双峰分布，快速自转者普遍缺乏内盘，慢速自转者则多有内盘尘埃发射。结果为原行星盘与恒星自转演化耦合提供了重要观测约束。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "observations and theoretical models of protoplanetary disks and disk evolution",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.24926v1",
+      "source": "arxiv",
+      "title": "Syntriod: A Robust Initial Parameter Estimator for Radial Velocity Curve Solutions Beyond Conventional Sampling Limits",
+      "abstract": "We present Syntriod, an orbital-phase domain radial velocity (RV) template-based algorithm designed to provide robust initial orbital parameter estimates for spectroscopic binaries across diverse observational sampling conditions. Rather than performing full orbital inference, Syntriod constrains the parameter space with physically consistent solutions to guide subsequent optimization procedures.   We evaluate its performance using 10,000 synthetic Keplerian orbits spanning diverse configurations and sampling regimes. For well-sampled datasets ($N_{obs} \\ge 8$), Syntriod recovers orbital periods with relative accuracies of order $10^{-3}$. At the theoretical sampling limit ($N_{obs} = 6$), the method maintains a ~94% success rate, while classical period-search techniques like Lomb-Scargle become increasingly affected by aliasing. Even below this limit ($N_{obs} = 5$), Syntriod recovers the correct orbital solution in ~83% of cases, showing gradual degradation rather than catastrophic failure.   We further evaluate the method on 12 real spectroscopic binary systems (HD 160934, Phi Cyg, Capella A, Kepler 16, KIC 3858884, KIC 6867766, KIC 2445134, KIC 3003991, DU Boo, HL Dra, FP Boo, and AK Her) spanning broad orbital periods and eccentricities. Syntriod consistently reproduces literature solutions even when datasets are randomly subsampled to sparse regimes. Where a full Keplerian solution becomes underconstrained ($N_{obs} \\le 4$), the algorithm transitions to linear dynamical relations, recovering parameters such as mass ratio ($q$) and systemic velocity ($γ$) with success rates exceeding 99%.   These results demonstrate that Syntriod provides reliable, computationally efficient initial parameter estimates across well-sampled and sparse regimes, making it a practical pre-solver for modern orbit-fitting pipelines and large spectroscopic surveys.",
+      "authors": [
+        "Emre Barbaros",
+        "Hasan Ak",
+        "N. Filiz Ak"
+      ],
+      "primary_category": "astro-ph.SR",
+      "categories": [
+        "astro-ph.SR",
+        "astro-ph.IM"
+      ],
+      "published": "2026-07-27T18:00:04+00:00",
+      "link": "https://arxiv.org/pdf/2607.24926v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Radial velocity curve analysis method applicable to exoplanet detection",
+      "llm_evidence_cn": "适用于系外行星探测的径向速度曲线分析方法",
+      "llm_evidence": "适用于系外行星探测的径向速度曲线分析方法",
+      "canonical_evidence": "适用于系外行星探测的径向速度曲线分析方法",
+      "llm_tldr_en": "Syntriod provides robust initial orbital parameter estimates for spectroscopic binaries, with accuracy up to 10^-3 for well-sampled data, offering a transferable method for exoplanet radial velocity analysis.",
+      "llm_tldr_cn": "该论文提出Syntriod算法，用于从径向速度观测中初步估计双星轨道参数，即使在采样有限的条件下也能给出物理上合理的解。该方法在合成数据上验证，可达千分之一的周期精度。由于径向速度法同样是系外行星探测的关键手段，Syntriod可被直接迁移用于行星候选体的参数初猜，加速后续精确拟合流程。",
+      "llm_tldr": "该论文提出Syntriod算法，用于从径向速度观测中初步估计双星轨道参数，即使在采样有限的条件下也能给出物理上合理的解。该方法在合成数据上验证，可达千分之一的周期精度。由于径向速度法同样是系外行星探测的关键手段，Syntriod可被直接迁移用于行星候选体的参数初猜，加速后续精确拟合流程。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "instruments and analysis methods enabling exoplanet and planetary science",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.24934v1",
+      "source": "arxiv",
+      "title": "Using Scattered Near-Infrared Light to Map Water Ice in Prestellar Cores with SPHEREx",
+      "abstract": "We present the first coreshine-derived, spatially-resolved maps of the 3 $μ$m H$_2$O ice absorption feature in four prestellar cores, using SPHEREx spectra. Ices are a key component of dense cores in molecular clouds, playing a central role in the chemistry of planet formation around young stars. However, spatially resolved abundance studies remain limited, typically relying on unevenly distributed background star sightlines. Here, we take advantage of the all-sky spectrophotometric capabilities of SPHEREx to construct ice absorption maps with uniform spatial resolution using the illumination of dense cores by scattered Galactic radiation, or coreshine. To demonstrate proof of concept, we analyse the spatially varying H$_2$O ice absorption in four nearby (~140 pc) prestellar cores - L1544, CrA 151, L260 and L1512. Two cores follow the expected spatial trend of ice absorption peaking at the centre, but the two densest cores show a surprising drop in observed ice absorption in the innermost regions. To interpret the absorption maps, we construct analytical and simulated models of a Bonnor-Ebert sphere illuminated by scattering. We study the effects of different geometric configurations, ice mass fractions, and spatial differences in ice composition. None of these can explain the reduced central absorption, pointing to an unexplained physical or chemical effect operating in the densest prestellar regions. Our simulations further show that spectra derived from coreshine provide a robust tracer of spatially varying ice density and composition, establishing SPHEREx scattered-light spectroscopy as a powerful new probe of ice in dense cores.",
+      "authors": [
+        "Tamojeet Roychowdhury",
+        "Jennifer B. Bergner",
+        "Jens Kauffmann",
+        "Thushara G. S. Pillai",
+        "Silvia Spezzano"
+      ],
+      "primary_category": "astro-ph.GA",
+      "categories": [
+        "astro-ph.GA"
+      ],
+      "published": "2026-07-27T18:00:06+00:00",
+      "link": "https://arxiv.org/pdf/2607.24934v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "mapping water ice in prestellar cores with SPHEREx, relevant to planet formation chemistry",
+      "llm_evidence_cn": "利用SPHEREx映射前恒星核中的水冰，与行星形成化学相关",
+      "llm_evidence": "利用SPHEREx映射前恒星核中的水冰，与行星形成化学相关",
+      "canonical_evidence": "利用SPHEREx映射前恒星核中的水冰，与行星形成化学相关",
+      "llm_tldr_en": "Uses SPHEREx coreshine to produce first spatially resolved maps of water ice in prestellar cores, important for planet formation chemistry.",
+      "llm_tldr_cn": "水冰是分子云致密核的重要成分，对行星形成化学至关重要，但空间分辨的冰丰度研究有限。本文利用SPHEREx的全天分光光度能力，通过散射的银河辐射（核心辉光）首次获得四个前恒星核中3微米水冰吸收特征的空间分辨图。该方法提供了均匀的空间分辨率，克服了背景星视线不均匀的局限。结果展示了水冰在前恒星核中的分布，为理解行星形成初始条件提供了关键数据。",
+      "llm_tldr": "水冰是分子云致密核的重要成分，对行星形成化学至关重要，但空间分辨的冰丰度研究有限。本文利用SPHEREx的全天分光光度能力，通过散射的银河辐射（核心辉光）首次获得四个前恒星核中3微米水冰吸收特征的空间分辨图。该方法提供了均匀的空间分辨率，克服了背景星视线不均匀的局限。结果展示了水冰在前恒星核中的分布，为理解行星形成初始条件提供了关键数据。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "formation and early evolution of planets, planetesimals, and planetary systems",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
