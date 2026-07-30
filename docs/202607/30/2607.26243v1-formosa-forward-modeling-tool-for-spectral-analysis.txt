@@ -1,0 +1,175 @@
+Title: 2607.26243v1.pdf
+
+URL Source: https://arxiv.org/pdf/2607.26243v1
+
+Published Time: Thu, 30 Jul 2026 00:10:01 GMT
+
+Number of Pages: 8
+
+Markdown Content:
+# ForMoSA: Forward Modeling tool for Spectral Analysis 
+
+## ForMoSA Collaboration 1,2,3,4,5,6,7,8,9,10* , Simon Petrus 1,2,3,4* , Paulina Palma-Bifani 5,6* , Matthieu Ravet 6,4,7* , Allan Denis 8* , Bhavesh Rajpoot 7,9* , Mickaël Bonnefoy 4, Gaël Chauvin 7,6 , Arthur Vigan 8,Alice Radcliffe 5, Pablo Requeijo 5, and Kevin Hoy 2,3,10 
+
+1 NASA-Goddard Space Flight Center, Greenbelt, MD 20771, USA 2 Instituto de Estudios Astrofísicos, Facultad de Ingeniería y Ciencias, Uni. Diego Portales, Av. Ejército 441, Santiago, Chile 3 Millennium Nucleus on Young Exoplanets and their Moons 4 Univ. Grenoble Alpes, CNRS, IPAG, F-38000 Grenoble, France 5 LIRA, Observatoire de Paris, Université PSL, Sorbonne Université, Université de Paris, 5 place Jules Janssen, 92195 Meudon, France 6 Laboratoire J. L. Lagrange, Université Côte d’Azur, Observatoire de la Côte d’Azur, CNRS, 06304 Nice, France 7 Max-Planck-Institut für Astronomie, Königstuhl 17, 69117 Heidelberg, Germany 8 Aix Marseille Univ, CNRS, CNES, LAM, Marseille, France 9 Department of Physics and Astronomy, Heidelberg University, Im Neuenheimer Feld 226, D-69120 Heidelberg, Germany 10 European Southern Observatory, Alonso de Cordova 3107, Vitacura, Santiago, Chile *
+
+These authors contributed equally. 
+
+DOI: N/A 
+
+Software 
+
+• Review • Repository • Archive 
+
+Editor: Open Journals 
+
+Reviewers: 
+
+• @openjournals 
+
+Submitted: 01 January 1970 
+
+Published: 01 January 1970 
+
+License 
+
+Authors of papers retain copyright and release the work under a Creative Commons Attribution 4.0 International License (CC BY 4.0). 
+
+# Summary  
+
+> ForMoSA
+
+(FORward MOdeling tool for Spectral Analysis) is an open-source Python package to fit spectroscopic and photometric observations using a Bayesian framework. It can utilize different self-consistent atmospheric models to perform robust parameter space exploration. It has been mainly designed for fitting directly imaged young planetary-mass brown dwarfs and exoplanets. The developments within ForMoSA are supported by an international collaboration of several laboratories in France (IPAG, LIRA, LAM, and Lagrange), Germany (MPIA), USA (NASA Goddard), and Chile (FCLA, Universidad Diego Portales, and Universidad de Chile). The evolution of the code and the growing interest from the scientific community has led to the need for this dedicated publication alongside the release of ForMoSA v2.0 , which has been refactored into a class architecture with user-friendly features and extended functionalities. 
+
+# Statement of need 
+
+Recent advances in ground- and space-based observatories now enable routine, high-quality observations of exoplanet atmospheres across a wide range of wavelengths and resolutions. In practice, ForMoSA was designed to bridge the gap between these observations and atmospheric models by providing a Bayesian framework to robustly compare the two. ForMoSA adopts a forward-modeling approach based on exploring through a nested sampling (Skilling, 2004) the parameter space of pre-computed, self-consistent atmospheric model grids. The code ForMoSA addresses the following needs: • Data modularity: It allows the simultaneous analysis of diverse datasets, even when they overlap in wavelength coverage. This includes multiple datasets taken at different times and with different setups. • Computational efficiency: It leverages xarray 1, enabling fast interpolation and manipulation of large model grids.    
+
+> 1xarray documentation: https://docs.xarray.dev/en/stable Collaboration et al. (1970). ForMoSA: Forward Modeling tool for Spectral Analysis. Journal of Open Source Software ,¿VOL? (¿ISSUE?), ¿PAGE? https://doi.org/N/A.
+
+1• Flexible likelihood mappings: Users can choose from various likelihood metrics to account for specific observational uncertainties (Ruffio et al., 2019). • Extensive parameterization: Beyond the atmospheric model parameters, a comprehensive suite of extra-grid parameters, such as radial velocity, rotational broadening, and scaling factors, can be incorporated into the fit. • High-Contrast module: It incorporates the method of (Landman et al., 2024), allowing users to include reference stellar, atmospheric transmission, and systematics spectra to accurately fit contrast-limited data. 
+
+# State of the field 
+
+The landscape of exoplanetary atmospheric modeling is broadly divided into two categories: “free retrieval” frameworks, which compute radiative transfer on the fly to fit parameterized atmospheric structures, and “forward modeling” codes, which interpolate pre-computed grids of self-consistent physical models. The codes in the first category are CHIMERA (Line et al., 2013), petitRADTRANS (Mollière et al., 2019), NEMESIS (Irwin et al., 2008), CROCODILE (Hayoz et al., 2023), and Pyrat Bay 
+
+(Cubillos & Blecic, 2021). These tools are very flexible but also computationaly expensive. Other specialized tools can handle specific niche problems, such as opacity management and radiative transfer calculations ( Exo_k , Leconte, 2021), high-resolution autodifferentiation (ExoJAX , Kawahara et al., 2022), 1D disequilibrium chemistry ( HOMER , Himes et al., 2022), or models for rocky planet emission spectra ( rfast , Robinson, 2023).  
+
+> ForMoSA
+
+complement these on-the-fly radiative transfer or free-retrieval codes by offering a faster, grid-interpolated alternative for parameter estimation. Our code’s closest existing counterparts are species (Stolker et al., 2020) and SEDA (Suarez et al., 2025), which also facilitate Bayesian inference between spectro-photometric observations and pre-computed atmospheric grids.  
+
+> species
+
+is a generalized, all-in-one toolkit for direct imaging that encompasses everything from flux calibration to color-magnitude diagrams. SEDA is more similar to ForMoSA , but it was only introduced early 2025 to the community, and has not yet been widely adopted. We chose to build ForMoSA as a standalone package to provide a highly specialized, modular inversion framework expressly optimized for data heterogeneity and statistical flexibility. Integrating these new capabilities into existing tools would have required fundamental rewriting, leading to a new code.   
+
+> Collaboration et al. (1970). ForMoSA: Forward Modeling tool for Spectral Analysis. Journal of Open Source Software ,¿VOL? (¿ISSUE?), ¿PAGE? https://doi.org/N/A.
+
+2Software design   
+
+> Figure 1: ForMoSA
+
+workflow diagram. The shaded gray area on the right represents the core functionalities required to run the Nested Sampling. The left dark-gray area represents utility and support functions. The small boxes contain the modules, and the dashed boxes represent the contents of each folder. 
+
+The Python-based code of ForMoSA is organized into several modules, as shown in Figure 1. In practice, ForMoSA v2.0 has a class-based architecture, with some main modules (config, observation, filter, grid, parameter, nested_sampling), and support modules (core, utils, and transform). Because ForMoSA is an end-to-end Bayesian tool that handles all stages of the analysis, its installation requires several Python packages, as well as downloading the model grids needed for the fit. All information required for installation, access to available grids, and the tutorials material is available at the ForMoSA documentation 2.In summary, to start an analysis, the user must first provide an atmospheric model grid, the observations, and a .ini configuration file. This .ini file contains all of ForMoSA ’s input parameters, including the paths, grid adaptation keys, nested sampling keys, and the free parameters priors configuration. ForMoSA ’s main modules are centralized through a main Analysis class, which creates and handles sub-grids of atmospheric models tailored to each observation, before launching the nested sampling algorithm. At each iteration of the nested sampling, random parameter values are drawn from the prior distributions. The sampled parameters are used to interpolate model spectra from the sub-grids, before comparing them to each observation by computing the log-likelihood function. For a given run, the data, sub-grids, parameters, and results are automatically saved to paths specified by the user, and can be easily recovered for subsequent analysis and visualized through the Plotting class. 
+
+# Research impact statement 
+
+Initiated in 2020, ForMoSA has become a highly adaptable tool for the atmospheric characterization of substellar objects. Its computational efficiency and compatibility with diverse physical models have enabled the standard analysis of targets across a wide range of spectral resolutions, from broadband photometry to high-resolution spectroscopy.    
+
+> 2ForMoSA documentation: https://ForMoSA.readthedocs.io/en/latest/index.html Collaboration et al. (1970). ForMoSA: Forward Modeling tool for Spectral Analysis. Journal of Open Source Software ,¿VOL? (¿ISSUE?), ¿PAGE? https://doi.org/N/A.
+
+3A major strength of ForMoSA lies in its capacity to jointly fit multi-instrument, heterogeneous datasets to maximize wavelength coverage. Because combining data from diverse instruments often introduces biases, ForMoSA features the dedicated MOSAIC module. This framework utilizes customized likelihood scaling and parametric covariance models to mitigate inter-calibration offsets and complex noise structures, which can be tuned for each specific target and dataset. Altogether, these features allow for the accurate characterization and publication of atmospheric properties of various benchmark companions such as HIP 65426 (Carter et al., 2023; Petrus et al., 2021), AB Pic b (Palma-Bifani et al., 2023), VHS 1256 b (Petrus et al., 2023, 2024; Radcliffe et al., 2026), AF Lep b (Palma-Bifani et al., 2024), 𝛽 Pic b (Houllé et al., 2025; Ravet et al., 2025), YSES 1 b and c (Hoch et al., 2025), and COCONUTS-2 b (Ravet et al., 2026). Furthermore, ForMoSA ’s speed allows for the homogeneous analysis of large spectral libraries, such as those of brown dwarfs and planetary-mass companions (Palma-Bifani et al., 2025; Petrus et al., 2020, 2025), resulting in the identification of parameter trends and structural systematics in atmospheric models. Finally, ForMoSA also includes a high-contrast, high-resolution (HCHR) module applied to contrast-limited, stellar-contaminated data (e.g. VLT/HiRISE) to extract precise radial velocities and detailed orbital constraints (Denis et al., 2025, 2026).  
+
+> ForMoSA
+
+is an active project, and its scientific production is growing rapidly, therefore a list of peer-reviewed publications is maintained on our NASA ADS public library 3. Our code will continue to evolve over time, with new functionalities being added to meet the requirements of data from future observatories (ELTs, HWO, etc.), updates to the state-of-the-art atmospheric models, and the parametrization of additional physics to better fit the data (e.g., disks, extinction laws, multiple columns, time variability). For this reason, the official documentation is regularly updated at ReadTheDocs , and should be considered the reference description of the code. 
+
+# AI usage disclosure 
+
+Our team fully designed and authored the core architecture, logic, and implementation of the code without AI generation. We used AI strictly as an auxiliary tool for debugging and managing documentation. Additionally, we utilized Gemini to refine the English and Gemini coupled with Antigravity to format and compile the main text and the bibliography. 
+
+# Acknowledgements 
+
+The authors express their sincere thanks to the Code/Astro Workshop 4, which provided the foundational training necessary to transform ForMoSA into a professional, open-source Python 
+
+package. We gratefully acknowledge the funding and support for the ForM-X workshops held in Nice (2023), Heidelberg (2024/2025), and Grenoble (2025). These collaborative sessions were instrumental in the development and refinement of the code. We also thank the various laboratories and institutions, especially IPAG, Lagrange, and MPIA, for their continued support. Furthermore, this work has been supported by the French National Research Agency (ANR) through the MIRAGES project (PI: A. Vigan, ANR-20-CE31-0017). 
+
+# Appendix A: Performance 
+
+The computational cost of ForMoSA is primarily driven by the number of forward model evaluations required for the nested sampling algorithm to converge. While absolute execution time (inversion time) depends on the specific hardware, Figure 2 provides a comparative analysis to guide users in defining the configuration file. The total inversion time is a multi-dimensional   
+
+> 3NASA ADS Library: https://ui.adsabs.harvard.edu/user/libraries/PekELjOGR4yl3XOnGwOAng
+> 4Code/Astro Workshop: https://semaphorep.github.io/codeastro/ Collaboration et al. (1970). ForMoSA: Forward Modeling tool for Spectral Analysis. Journal of Open Source Software ,¿VOL? (¿ISSUE?), ¿PAGE? https://doi.org/N/A.
+
+4function depending on several factors, including the spectral resolution ( 𝑅 𝜆 ), the signal-to-noise ratio (S/N), the number of live points, the dimensionality of the parameter space, and the machine used. 10 100 1000 10 4       
+
+> R
+> 10
+> 100
+> 1000
+> 10 4
+> Inversion time (s)  Nparam = 1
+> Nparam = 2
+> Nparam = 3
+> Nparam = 4
+> Nparam = 5
+> 10 100
+> S/N
+> 10
+> 100
+> 1000
+> 10 4
+> 100 1000
+> live points
+> 1
+> 10
+> 100
+> 1000
+> 10 4
+
+Figure 2: Performance comparison between the nested sampling algorithms PyMultiNest (squares) and  
+
+> Nestle
+
+(crosses). Different colors show the number of free parameters used (from 1 to 5). From left to right: Inversion time as a function of spectral resolution ( 𝑅 𝜆 ), signal-to-noise (S/N), and number of live points. The default setup is 𝑅 𝜆 = 368, S/N = 22, and 215 live points. 
+
+In the left panel of Figure 2, we observe that the main driver of computational cost is indeed the spectral resolution. As the spectral resolution increases, the number of data points also increases, and the number of points to be compared in the likelihood function grows, directly increasing the computational cost of each forward model call. In the middle panel, we observe the dependence on the S/N. Here, noise is applied using the following formula: ⃗𝑛 ∼ 𝒩 (0, 𝜎 2) , with 𝜎 = mean (𝑑) 
+
+S/N ,
+
+where 𝑑 is the synthetic flux. As the S/N increases, the error bars become smaller, which leads to a more sharply peaked likelihood function. This tighter posterior distribution requires the sampler to explore the parameter space with finer precision and typically increases the number of likelihood evaluations, thereby lengthening the total inversion time. In the right panel, we observe that the inversion time scales approximately linearly with the number of live points. The different colors in Figure 2 indicate how the dimensionality of the parameter space (number of free parameters) strongly drives the inversion time. As the complexity of the model increases, the “volume” of the prior space grows, requiring more iterations to isolate the high-likelihood regions. In addition, we also provide a comparison between PyMultiNest (squares) and nestle 
+
+(crosses). While nestle is a convenient pure-Python implementation, PyMultiNest (leveraging the Fortran MultiNest library) generally demonstrates superior scaling and efficiency. To optimize the integration time of a ForMoSA inversion, we advise users to: • Start low and run initial tests with a reduced number of live points (<100) to verify the model setup. • Use a spectral resolution that matches the physical information content of the data; over-sampling the spectrum increases the inversion time without improving accuracy. • Select the right algorithm for the inversion. For high-dimensional fits (>5 parameters),  
+
+> PyMultiNest
+
+is the recommended default. 
+
+# References 
+
+Carter, A. L., Hinkley, S., Kammerer, J., Skemer, A., Biller, B. A., Leisenring, J. M., Millar-Blanchaer, M. A., Petrus, S., Stone, J. M., Ward-Duong, K., Wang, J. J., Girard, J.   
+
+> Collaboration et al. (1970). ForMoSA: Forward Modeling tool for Spectral Analysis. Journal of Open Source Software ,¿VOL? (¿ISSUE?), ¿PAGE? https://doi.org/N/A.
+
+5H., Hines, D. C., Perrin, M. D., Pueyo, L., Balmer, W. O., Bonavita, M., Bonnefoy, M., Chauvin, G., … Zhang, Z. (2023). The JWST Early Release Science Program for Direct Observations of Exoplanetary Systems I: High-contrast Imaging of the Exoplanet HIP 65426 b from 2 to 16 𝜇 m. The Astrophysical Journal Letters , 951 (1), L20. https: //doi.org/10.3847/2041-8213/acd93e Cubillos, P. E., & Blecic, J. (2021). The PYRAT BAY framework for exoplanet atmospheric modelling: a population study of Hubble/WFC3 transmission spectra. Monthly Notices of the Royal Astronomical Society , 505 (2), 2675–2702. https://doi.org/10.1093/mnras/ stab1405 Denis, A., Vigan, A., Chauvin, G., Lacquement, A., Beust, H., Ravet, M., Costes, J., Radcliffe, A., Martos, S., Balmer, W., Stolker, T., Palma-Bifani, P., Rajpoot, B., Simonnin, A., Petrus, S., Forveille, T., Janson, M., Reiners, A., Godoy, N., … Zins, G. (2026). Eccentric and cool: A high-spectral-resolution view of 51 Eri b with VLT/HiRISE. Astronomy & Astrophysics , 707 , L13. https://doi.org/10.1051/0004-6361/202658862 Denis, A., Vigan, A., Costes, J., Chauvin, G., Radcliffe, A., Ravet, M., Balmer, W., Palma-Bifani, P., Petrus, S., Parmentier, V., Martos, S., Simonnin, A., Bonnefoy, M., Cadet, R., Forveille, T., Charnay, B., Kiefer, F., Lagrange, A.-M., Chiavassa, A., … Zins, G. (2025). Characterization of AF Lep b at high spectral resolution with VLT/HiRISE. Astronomy & Astrophysics , 696 , A6. https://doi.org/10.1051/0004-6361/202453108 Hayoz, J., Cugno, G., Quanz, S., Patapis, P., Alei, E., Bonse, M., Dannert, F., Garvin, E., Gebhard, T., Konrad, B., & Sartori, L. (2023). CROCODILE. Incorporating medium-resolution spectroscopy of close-in directly imaged exoplanets into atmospheric retrievals via cross-correlation. Astronomy & Astrophysics , 678 , A178. https://doi.org/10.1051/0004-6361/202245752 Himes, M. D., Harrington, J., Cobb, A. D., Güneş Baydin, A., Soboczenski, F., O’Beirne, M. D., Zorzan, S., Wright, D. C., Scheffer, Z., Domagal-Goldman, S. D., & Arney, G. N. (2022). Accurate Machine-learning Atmospheric Retrieval via a Neural-network Surrogate Model for Radiative Transfer. The Planetary Science Journal , 3(4), 91. https: //doi.org/10.3847/PSJ/abe3fd Hoch, K., Rowland, M., Petrus, S., Nasedkin, E., Ingebretsen, C., Kammerer, J., Perrin, M., D’Orazi, V., Balmer, W., Barman, T., Bonnefoy, M., Chauvin, G., Chen, C., De Rosa, R., Girard, J., Gonzales, E., Kenworthy, M., Konopacky, Q., Macintosh, B., … Zhang, Y. (2025). Silicate clouds and a circumplanetary disk in the YSES-1 exoplanet system. Nature ,
+
+643 (8073), 938–942. https://doi.org/10.1038/s41586-025-09174-w Houllé, M., Millour, F., Berio, P., Scigliuto, J., Lacour, S., Lopez, B., Allouche, F., Augereau, J.-C., Blain, D., Bonnefoy, M., Carbillet, M., Chauvin, G., Leftley, J., Matter, A., Milli, J., Mollière, P., Nasedkin, E., Nowak, M., Palma-Bifani, P., … Weigelt, G. (2025). The mid-infrared spectrum of 𝛽 Pictoris b: First VLTI/MATISSE interferometric observations of an exoplanet. Astronomy & Astrophysics , 704 , A182. https://doi.org/10.1051/0004-6361/202453323 Irwin, P., Teanby, N., Kok, R. de, Fletcher, L., Howett, C., Tsang, C., Wilson, C., Calcutt, S., Nixon, C., & Parrish, P. (2008). The NEMESIS planetary atmosphere radiative transfer and retrieval tool. Journal of Quantitative Spectroscopy and Radiative Transfer , 109 ,1136–1150. https://doi.org/10.1016/j.jqsrt.2007.11.006 Kawahara, H., Kawashima, Y., Masuda, K., Crossfield, I., Bekerom, D. van den, Kitzmann, D., Morris, B., Pannier, E., Nugroho, S., & Ishikawa, T. (2022). ExoJAX: Spectrum modeling of exoplanets and brown dwarfs . Astrophysics Source Code Library, record ascl:2206.003. Landman, R., Stolker, T., Snellen, I., Costes, J., Regt, S. de, Zhang, Y., Gandhi, S., Molliere, P., Kesseli, A., Vigan, A., & Sanchez-López, A. (2024). 𝛽 Pictoris b through the eyes of the upgraded CRIRES+. Atmospheric composition, spin rotation, and radial velocity.   
+
+> Collaboration et al. (1970). ForMoSA: Forward Modeling tool for Spectral Analysis. Journal of Open Source Software ,¿VOL? (¿ISSUE?), ¿PAGE? https://doi.org/N/A.
+
+6Astronomy & Astrophysics , 682 , A48. https://doi.org/10.1051/0004-6361/202347846 Leconte, J. (2021). Spectral binning of precomputed correlated-k coefficients. Astronomy & Astrophysics , 645 , A20. https://doi.org/10.1051/0004-6361/202039040 Line, M. R., Wolf, A. S., Zhang, X., Knutson, H., Kammer, J. A., Ellison, E., Deroo, P., Crisp, D., & Yung, Y. L. (2013). A Systematic Retrieval Analysis of Secondary Eclipse Spectra. I. A Comparison of Atmospheric Retrieval Techniques. The Astrophysical Journal , 775 (2), 137. https://doi.org/10.1088/0004-637X/775/2/137 Mollière, P., Wardenier, J., Boekel, R. van, Henning, T., Molaverdikhani, K., &Snellen, I. (2019). petitRADTRANS. A Python radiative transfer package for exoplanet characterization and retrieval. Astronomy & Astrophysics , 627 , A67. https://doi.org/10.1051/0004-6361/201935470 Palma-Bifani, P., Bonnefoy, M., Chauvin, G., Rojo, P., Baudoz, P., Charnay, B., Denis, A., Hoch, K., Petrus, S., Ravet, M., Simonnin, A., & Vigan, A. (2025). The planetary-mass-limit VLT/SINFONI library: Spectral extraction and atmospheric characterization via forward modeling. Astronomy & Astrophysics , 701 , A51. https://doi.org/10.1051/0004-6361/202554894 Palma-Bifani, P., Chauvin, G., Bonnefoy, M., Rojo, P., Petrus, S., Rodet, L., Langlois, M., Allard, F., Charnay, B., Desgrange, C., Homeier, D., Lagrange, A.-M., Beuzit, J.-L., Baudoz, P., Boccaletti, A., Chomez, A., Delorme, P., Desidera, S., Feldt, M., … Zhang, Y. (2023). Peering into the young planetary system AB Pic. Atmosphere, orbit, obliquity, and second planetary candidate. Astronomy & Astrophysics , 670 , A90. https://doi.org/10.1051/0004-6361/202244294 Palma-Bifani, P., Chauvin, G., Borja, D., Bonnefoy, M., Petrus, S., Mesa, D., De Rosa, R., Gratton, R., Baudoz, P., Boccaletti, A., Charnay, B., Desgrange, C., Tremblin, P., & Vigan, A. (2024). Atmospheric properties of AF Lep b with forward modeling. Astronomy & Astrophysics , 683 , A214. https://doi.org/10.1051/0004-6361/202347653 Petrus, S., Bonnefoy, M., Chauvin, G., Babusiaux, C., Delorme, P., Lagrange, A.-M., Florent, N., Bayo, A., Janson, M., Biller, B., Manjavacas, E., Marleau, G.-D., & Kopytova, T. (2020). A new take on the low-mass brown dwarf companions on wide orbits in Upper-Scorpius. 
+
+Astronomy & Astrophysics , 633 , A124. https://doi.org/10.1051/0004-6361/201935732 Petrus, S., Bonnefoy, M., Chauvin, G., Charnay, B., Marleau, G.-D., Gratton, R., Lagrange, A.-M., Rameau, J., Mordasini, C., Nowak, M., Delorme, P., Boccaletti, A., Carlotti, A., Houllé, M., Vigan, A., Allard, F., Desidera, S., D’Orazi, V., Hoeijmakers, H., … Lavie, B. (2021). Medium-resolution spectrum of the exoplanet HIP 65426 b. Astronomy & Astrophysics , 648 , A59. https://doi.org/10.1051/0004-6361/202038914 Petrus, S., Chauvin, G., Bonnefoy, M., Tremblin, P., Charnay, B., Delorme, P., Marleau, G.-D., Bayo, A., Manjavacas, E., Lagrange, A.-M., Mollière, P., Palma-Bifani, P., Biller, B., Jenkins, J.-S., Goyal, J.-M., & Hoch, K. (2023). X-SHYNE: X-shooter spectra of young exoplanet analogs. I. A medium-resolution 0.65-2.5 𝜇 m one-shot spectrum of VHS 1256 −1257 b. Astronomy & Astrophysics , 670 , L9. https://doi.org/10.1051/0004-6361/202244494 Petrus, S., Chauvin, G., Bonnefoy, M., Tremblin, P., Morley, C., Charnay, B., Suarez, G., Gagné, J., Palma-Bifani, P., Denis, A., Ravet, M., Bayo, A., Bézard, B., Biller, B., Delorme, P., Faherty, J., Goyal, J.-M., Hoch, K., Hoy, K., … Zurlo, A. (2025). X-SHYNE: X-Shooter spectra of young exoplanet analogs: II. Presentation and analysis of the full library. 
+
+Astronomy & Astrophysics , 701 , A208. https://doi.org/10.1051/0004-6361/202554986 Petrus, S., Whiteford, N., Patapis, P., Biller, B. A., Skemer, A., Hinkley, S., Suárez, G., Palma-Bifani, P., Morley, C. V., Tremblin, P., Charnay, B., Vos, J. M., Wang, J. J., Stone, J. M., Bonnefoy, M., Chauvin, G., Miles, B. E., Carter, A. L., Lueber, A., …   
+
+> Collaboration et al. (1970). ForMoSA: Forward Modeling tool for Spectral Analysis. Journal of Open Source Software ,¿VOL? (¿ISSUE?), ¿PAGE? https://doi.org/N/A.
+
+7Zhou, Y. (2024). The JWST Early Release Science Program for Direct Observations of Exoplanetary Systems. V. Do Self-consistent Atmospheric Models Represent JWST Spectra? A Showcase with VHS 1256–1257 b. The Astrophysical Journal Letters , 966 (1), L11. https://doi.org/10.3847/2041-8213/ad3e7c Radcliffe, A., Charnay, B., Lagrange, A.-M., Kiefer, F., Bézard, B., Petrus, S., Palma-Bifani, P., Ravet, M., Leconte, J., & Marleau, G.-D. (2026). Next-generation Exo-REM atmospheric models: application to VHS 1256 b to emulate patchy clouds. arXiv e-Prints ,arXiv:2605.29070. https://doi.org/10.48550/arXiv.2605.29070 Ravet, M., Bonnefoy, M., Chauvin, G., Lacour, S., Nowak, M., Charnay, B., Tremblin, P., Homeier, D., Morley, C., Fortney, J., Denis, A., Petrus, S., Palma-Bifani, P., Landman, R., Parker, L., Houllé, M., Chomez, A., Worthen, K., Kiefer, F., … Shangguan, J. (2025). Multimodal atmospheric characterization of 𝛽 Pictoris b: Adding high-resolution continuum spectra from GRAVITY. Astronomy & Astrophysics , 704 , A325. https://doi.org/10.1051/ 0004-6361/202553885 Ravet, M., Bonnefoy, M., Chauvin, G., Zhang, Z., Faherty, J. K., Voyer, M., Phillips, M. W., Tremblin, P., Kiman, R., Copeland, J., Mang, J. J., Morley, C. V., Kühnle, H., Charnay, B., Regt, S. de, Mollière, P., Petrus, S., Denis, A., Radcliffe, A., … Henning, T. K. (2026). Panchromatic View of the Frigid Jovian Exoplanet COCONUTS-2 b. arXiv e-Prints , arXiv:2604.07176. https://doi.org/10.48550/arXiv.2604.07176 Robinson, T. D. (2023). rfast: Planetary spectral forward and inverse modeling tool. In 
+
+Astrophysics Source Code Library . Astrophysics Source Code Library, record ascl:2306.028. Ruffio, J.-B., Macintosh, B., Konopacky, Q. M., Barman, T., De Rosa, R. J., Wang, J. J., Wilcomb, K. K., Czekala, I., & Marois, C. (2019). Radial Velocity Measurements of HR 8799 b and c with Medium Resolution Spectroscopy. The Astronomical Journal , 158 (5), 200. https://doi.org/10.3847/1538-3881/ab4594 Skilling, J. (2004). Nested Sampling. AIP Conference Proceedings , 735 , 395–405. https: //doi.org/10.1063/1.1835238 Stolker, T., Quanz, S., Todorov, K., Kühn, J., Mollière, P., Meyer, M., Currie, T., Daemgen, S., & Lavie, B. (2020). MIRACLES: atmospheric characterization of directly imaged planets and substellar companions at 4-5 𝜇 m. I. Photometric analysis of 𝛽 Pic b, HIP 65426 b, PZ Tel B, and HD 206893 B. Astronomy & Astrophysics , 635 , A182. https: //doi.org/10.1051/0004-6361/201937159 Suarez, G., Faherty, J., Cruz, K., Metchev, S., Kiman, R., Alejandro Merchan, S., Rothermich, A., Bardalez Gagliuffi, D., Whiteford, N., & Parrish, S. (2025). Spectral Energy Distribution Analyzer (SEDA) for Forward Modeling of Ultracool Objects. American Astronomical Society Meeting Abstracts #245 , 245 , 319.01.   
+
+> Collaboration et al. (1970). ForMoSA: Forward Modeling tool for Spectral Analysis. Journal of Open Source Software ,¿VOL? (¿ISSUE?), ¿PAGE? https://doi.org/N/A.
+
+8

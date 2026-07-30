@@ -6,51 +6,59 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-29
-- 运行时间：2026-07-29 21:47:18 UTC
+- 最新运行日期：2026-07-30
+- 运行时间：2026-07-30 21:32:48 UTC
 - 运行状态：成功
-- 本次总论文数：9
+- 本次总论文数：13
 - 精读区：6
-- 速读区：3
+- 速读区：7
 
 ### 今日简报（AI）
-今天梳理了9篇论文，重点精读了两项发现：微引力透镜揭示两颗雪线外的天王星质量行星，以及尘埃成分如何调控恒星吸积爆发。
-
-最值得关注的是KMT-2025-BLG-0975Lb和KMT-2025-BLG-1160Lb，它们刷新了我们对雪线外冷行星形成机制的认识。
-
-建议普通读者可留意后续对这类行星大气成分的模拟，以及SPHEREx用近红外光测绘原恒星核水冰的进展。
-- 详情：[/202607/29/README](/202607/29/README)
+今日精读6篇论文，聚焦DART撞击Didymos系统碎片演化与AU Mic行星-尘埃盘结构复现。最值得关注的是DART撞击的动力学演化模型及AU Mic倾斜偏心行星+内盘可解释观测特征。建议深入阅读这两篇高分论文，结合系外行星系统形成与碰撞动力学的交叉视角。
+- 详情：[/202607/30/README](/202607/30/README)
 
 ### 精读区论文标签
-1. [KMT-2025-BLG-0975Lb and KMT-2025-BLG-1160Lb: Two Uranus-Mass Planets Beyond the Snow Line Discovered by Microlensing](/202607/29/2607.25259v1-kmt-2025-blg-0975lb-and-kmt-2025-blg-1160lb-two-uranus-mass-planets-beyond-the-snow-line-discovered-by-microlensing)  
+1. [Dynamical evolution and surface accretion of DART impact ejecta in the (65803) Didymos system](/202607/30/2607.26342v1-dynamical-evolution-and-surface-accretion-of-dart-impact-ejecta-in-the-65803-didymos-system)  
    标签：评分：9.0/10、query:ep
-   evidence：通过微引力透镜发现两颗天王星质量系外行星
-2. [The Influence of Dust Composition on Accretion Outbursts](/202607/29/2607.25550v1-the-influence-of-dust-composition-on-accretion-outbursts)  
+   evidence：DART抛射物在Didymos双小行星系统中的动力学模拟
+2. [An Inclined, Eccentric Planet and an Inner Debris Disk Could Reproduce AU Mic Structure](/202607/30/2607.27186v1-an-inclined-eccentric-planet-and-an-inner-debris-disk-could-reproduce-au-mic-structure)  
    标签：评分：9.0/10、query:ep
-   evidence：在模型中考虑尘埃成分对原行星盘吸积爆发的影响
-3. [JWST/MIRI Detection of Molecular H$_2$ Winds from an Edge-on Class II Source HV Tau C](/202607/29/2607.25770v1-jwstmiri-detection-of-molecular-h2-winds-from-an-edge-on-class-ii-source-hv-tau-c)  
-   标签：评分：9.0/10、query:ep
-   evidence：JWST/MIRI观测到Class II原行星盘的分子氢风，直接涉及盘演化
-4. [Constraining the lives and times of exoplanets through evolutionary Bayesian retrievals](/202607/29/2607.25845v1-constraining-the-lives-and-times-of-exoplanets-through-evolutionary-bayesian-retrievals)  
-   标签：评分：9.0/10、query:ep
-   evidence：演化贝叶斯反演框架用于系外行星大气
-5. [Disk-averaged spectrum generation for spherically symmetric planets and moons](/202607/29/2607.24894v1-disk-averaged-spectrum-generation-for-spherically-symmetric-planets-and-moons)  
+   evidence：碎屑盘与行星-盘相互作用再现AU Mic结构
+3. [The FastrSHWFS Development & Test Results](/202607/30/2607.21768v1-the-fastrshwfs-development--test-results)  
    标签：评分：8.0/10、query:ep
-   evidence：提出生成行星和卫星盘平均光谱的方法，直接用于系外行星大气表征
-6. [GRaTer-JAX: An Accelerated Package for Debris Disk Modeling](/202607/29/2607.25342v1-grater-jax-an-accelerated-package-for-debris-disk-modeling)  
+   evidence：用于系外行星成像的仪器：改进波前传感器
+4. [Orbital Motion and History of Sungrazing Comet C/2026 A1 (MAPS)](/202607/30/2607.25939v1-orbital-motion-and-history-of-sungrazing-comet-c2026-a1-maps)  
    标签：评分：8.0/10、query:ep
-   evidence：加速的碎片盘建模包，用于行星系统演化研究
+   evidence：掠日彗星C/2026 A1的轨道运动和历史
+5. [Tricouplers for nulling interferometry with photonic integrated circuits](/202607/30/2607.26168v1-tricouplers-for-nulling-interferometry-with-photonic-integrated-circuits)  
+   标签：评分：8.0/10、query:ep
+   evidence：使用光子集成电路的零差干涉技术用于系外行星探测
+6. [The JWST weather report: Unravelling the atmospheric variability of isolated worlds using principal component analysis](/202607/30/2607.26182v1-the-jwst-weather-report-unravelling-the-atmospheric-variability-of-isolated-worlds-using-principal-component-analysis)  
+   标签：评分：8.0/10、query:ep
+   evidence：JWST光谱观测褐矮星作为系外行星类比
 
 ### 速读区论文标签
-1. [A survey for variable young stars with small telescopes - XI. Spot Lifetimes and Coverage Distributions](/202607/29/2607.24460v1-a-survey-for-variable-young-stars-with-small-telescopes---xi-spot-lifetimes-and-coverage-distributions)  
+1. [ForMoSA: Forward Modeling tool for Spectral Analysis](/202607/30/2607.26243v1-formosa-forward-modeling-tool-for-spectral-analysis)  
+   标签：评分：8.0/10、query:ep
+   evidence：系外行星光谱正向建模工具
+2. [HARMONI@ELT: instrument design, performance, and science capabilities](/202607/30/2607.26537v1-harmonielt-instrument-design-performance-and-science-capabilities)  
+   标签：评分：8.0/10、query:ep
+   evidence：用于系外行星表征的HARMONI光谱仪设计
+3. [Exploring the radial velocity variations of RY Lup with VLT/ESPRESSO: Binary versus spot hypotheses](/202607/30/2607.26803v1-exploring-the-radial-velocity-variations-of-ry-lup-with-vltespresso-binary-versus-spot-hypotheses)  
+   标签：评分：8.0/10、query:ep
+   evidence：原行星盘子结构和恒星多星系统
+4. [Characterization and on-sky testing of photonic, AWG-based astronomical spectrographs](/202607/30/2607.26954v1-characterization-and-on-sky-testing-of-photonic-awg-based-astronomical-spectrographs)  
+   标签：评分：8.0/10、query:ep
+   evidence：用于系外行星表征的AWG光谱仪表征
+5. [The Effects of Magnetic Accretion on the Spatial Extent of White Dwarf Pollution](/202607/30/2607.20747v1-the-effects-of-magnetic-accretion-on-the-spatial-extent-of-white-dwarf-pollution)  
    标签：评分：7.0/10、query:ep
-   evidence：年轻恒星自转与黑子巡天，与原行星盘演化相关
-2. [Syntriod: A Robust Initial Parameter Estimator for Radial Velocity Curve Solutions Beyond Conventional Sampling Limits](/202607/29/2607.24926v1-syntriod-a-robust-initial-parameter-estimator-for-radial-velocity-curve-solutions-beyond-conventional-sampling-limits)  
+   evidence：建立白矮星磁吸积行星碎屑模型，关联行星系统演化
+6. [BOSS-CLAM: Utilizing a Constrained Linear Absorption Model to Infer Stellar Parameters from BOSS Spectra](/202607/30/2607.22822v1-boss-clam-utilizing-a-constrained-linear-absorption-model-to-infer-stellar-parameters-from-boss-spectra)  
    标签：评分：7.0/10、query:ep
-   evidence：适用于系外行星探测的径向速度曲线分析方法
-3. [Using Scattered Near-Infrared Light to Map Water Ice in Prestellar Cores with SPHEREx](/202607/29/2607.24934v1-using-scattered-near-infrared-light-to-map-water-ice-in-prestellar-cores-with-spherex)  
+   evidence：用于系外行星宿主星表征的恒星参数推断方法
+7. [A tale of two isotopes: Spatial variation in HCN fractionation toward young cores](/202607/30/2607.26187v1-a-tale-of-two-isotopes-spatial-variation-in-hcn-fractionation-toward-young-cores)  
    标签：评分：7.0/10、query:ep
-   evidence：利用SPHEREx映射前恒星核中的水冰，与行星形成化学相关
+   evidence：年轻核心中HCN同位素分馏作为行星形成化学的示踪剂
 
 
 <div class="dpr-home-promo-card">

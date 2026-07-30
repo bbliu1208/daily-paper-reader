@@ -1,0 +1,373 @@
+Title: A tale of two isotopes: Spatial variation in HCN fractionation toward young cores
+
+URL Source: https://arxiv.org/pdf/2607.26187v1
+
+Published Time: Thu, 30 Jul 2026 00:09:39 GMT
+
+Number of Pages: 17
+
+Markdown Content:
+Astronomy & Astrophysics manuscript no. H13CN_HC15N_maps ©ESO 2026 July 30, 2026 
+
+# A tale of two isotopes 
+
+# Spatial variation in HCN fractionation toward young cores 
+
+S. S. Jensen 1⋆, S. Spezzano 1, O. Sipilä 1, P. Caselli 1, L. Colzi 2, and E. Redaelli 3 
+
+> 1
+
+Max-Planck-Institut für extraterrestrische Physik, Giessenbachstrasse 1, D-85748 Garching, Germany  
+
+> 2
+
+Centro de Astrobiología (CAB), CSIC-INTA, Carretera de Ajalvir km 4, Torrejón de Ardoz, 28850 Madrid, Spain  
+
+> 3
+
+European Southern Observatory, Karl-Schwarzschild-Strasse 2, D-85748 Garching, Germany Draft date: July 30, 2026 
+
+ABSTRACT 
+
+Context. Isotopic fractionation can serve as a powerful tracer of the chemical evolution during star and planet formation. To accurately interpret observations, it is crucial to identify the dominant pathways of nitrogen and carbon fractionation at di ff erent evolutionary stages. 
+
+Aims. We aim to study nitrogen and carbon fractionation in a sample of young cores at the onset of star formation. 
+
+Methods. We map H 13 CN and HC 15 N around one starless and three pre-stellar cores. We compute the N(H 13 CN) /N(HC 15 N) column density ratio across the cores and compare the distribution with N(H 2) maps from Herschel /SPIRE. In addition, we calculate 14 N/15 Nmaps using the double isotope method for comparison with earlier studies. The results are compared with astrochemical modeling of carbon and nitrogen fractionation for a one-dimensional pre-stellar core model. 
+
+Results. The computed N(H 13 CN) /N(HC 15 N) ratio exhibit clear spatial variation across the maps. This variation is correlated with 
+
+N(H 2) in three out of four cores. 
+
+Conclusions. Our analysis reveals a correlation between the H 13 CN /HC 15 N ratios and the N(H 2) maps. According to the astrochemical model, the correlation is mainly due to variations in the 12 C/13 C ratio. Consequently, the results caution against applying the double-isotope method to derive 14 N/15 N ratios without independently assessing possible spatial variations in the 12 C/13 C ratio. Furthermore, the leading cause of the isotopic variation in the model is not isotope-selective photodissociation, but rather more e ffi cient fractionation through exchange reactions at lower temperatures in the denser regions of the cores. 
+
+Key words. astrochemistry — stars: formation — ISM: abundances — submillimeter: stars — ISM: individual objects: HMM-1, L429, L1521E, L694–2 
+
+1. Introduction 
+
+Isotopic fractionation is one of the principal tools in astrochem-ical studies of chemical evolution during star and planet for-mation (e.g., Caselli & Ceccarelli 2012; Nomura et al. 2023). Among the prominent fractionation systems, nitrogen fraction-ation ( 14 N/15 N) and carbon fractionation ( 12 C/13 C) are of par-ticular interest for several reasons. First, both nitrogen and car-bon are amongst the most abundant elements, which means that molecules containing nitrogen and carbon are abundantly avail-able at each stage of star and planet formation, making them strong tracers of chemical evolution (e.g., Mumma & Charnley 2011; Hily-Blant et al. 2017, 2019; Redaelli et al. 2023). Sec-ond, both elements are key to the Earth’s biosphere: nitrogen is the main constituent of the atmosphere and crucial for synthe-sizing prebiotic molecules, including RNA (Rivilla et al. 2020; Sandford et al. 2020), while carbon is the backbone of organic chemistry. Third, the 14 N/15 N ratio is also an important tracer of nucleosynthesis on Galactic scales (e.g., Colzi et al. 2022). Despite its numerous applications, the fundamental path-ways to nitrogen and carbon fractionation remain uncertain. Like other isotopic fractionation systems, nitrogen fractionation can occur through exchange reactions in the cold phases of the inter-stellar medium (ISM) (e.g., Adams & Smith 1981; Roue ff et al.  
+
+> ⋆
+
+e-mail: sigurdsj@mpe.mpg.de 
+
+2015). However, additional processes – such as nucleosynthetic variations and isotope-selective photodissociation – may also contribute substantially in shaping the complex pattern of ni-trogen fractionation observed in star-forming regions and in the Solar System (Matteucci 2012; Heays et al. 2014; Romano et al. 2019). Similarly, carbon fractionation can occur through im-balances in chemical exchange reactions and may also be in-fluenced by isotope-selective photodissociation (Bally & Langer 1982; Visser et al. 2009). Isotope-selective photodissociation of nitrogen occurs be-cause N 2 undergoes e ff ective self-shielding (Heays et al. 2014; Furuya & Aikawa 2018). At moderate column densities, the self-shielding of N 2 reduces the impact of photochemistry, whereas the rarer isotopolog 15 N14 N attains e ff ective self-shielding only at higher column densities due to its lower abundance. Conse-quently, photodissociation of 15 NN in denser regions of the ISM can decrease the atomic 14 N/15 N ratio in the gas-phase and in molecules formed within these regions. Similarly, 12 CO self-shields at lower column densities with respect to 13 CO. It is an open question whether isotope-selective photodisso-ciation plays a major role in the fractionation of nitrogen and car-bon or whether other pathways dominate the fractionation pro-cess. Spezzano et al. (2022) recently reported observational ev-idence of isotope-selective photodissociation of nitrogen in the pre-stellar core L1544. That study was the first to show this e ff ect in a dynamically evolved core. However, astrochemical models 
+
+Article number, page 1 arXiv:2607.26187v1 [astro-ph.SR] 28 Jul 2026 A&A proofs: manuscript no. H13CN_HC15N_maps 
+
+have suggested that the observed trends could also result from variations in the 12 C/13 C ratio across the core (Sipilä et al. 2023). Therefore, further study of the spatial variation in the nitrogen and carbon fractionation in young cores is needed. At present, the main molecular carriers of nitrogen during the early stages of star formation remain unknown. Fractiona-tion studies suggest that several reservoirs with distinct fraction-ation levels may contribute to the present-day distribution, both in the Solar System and in protoplanetary disks (Hily-Blant et al. 2017, 2019). To identify the principal nitrogen carriers during star and planet formation, we need a better understanding of the processes that drive nitrogen fractionation: are di ff erent fraction-ation levels the result of chemical reactions or of environmental influences, such as isotope-selective photodissociation? In this work, we present observations of H 13 CN and HC 15 Ntoward four young cores. We look for evidence of isotope-selective photodissociation by deriving the HCN fractionation ratios at multiple regions of the core, with varying column densi-ties and inferred visual extinctions. We compare the results with an astrochemical model including both 14 N/15 N and 12 C/13 Cfractionation networks and the e ff ects of isotope-selective pho-todissociation. The astrochemical model is run on a pre-stellar core structure to assess how the fractionation ratios vary with radius and how this may impact the observations reported here. 
+
+2. Observations 
+
+The targets presented here include the starless core L1521E, and three pre-stellar cores: L429, L694-2, and HMM-1. The classi-fication of the cores is based on Crapsi et al. (2005). The four sources are located in diverse environments: L1521E is located in a quiescent part of the Taurus molecular cloud, without nearby sources of incident radiation. L694–2 and L429 are both consid-ered isolated cores associated with the Aquila Rift, and HMM-1 is located in a dynamic star-forming environment in the Ophi-uchus molecular cloud (Nagy et al. 2019; Spezzano et al. 2020; Taillard et al. 2023; Redaelli et al. 2025; Taillard et al. 2025). In this context, ‘isolated’ cores are sources for which no nearby objects have been identified, which could a ff ect the core either through strong irradiation or dynamical perturbations. To the west of HMM-1, an OB association including ρ Oph may in-crease the irradiation. An overview of the sources is presented in Table 1. All sources have been observed with the Herschel Space Ob-servatory /SPIRE instrument. From the SPIRE continuum maps at 250 μm, 350 μm, and 500 μm, H 2 column density maps have been derived toward each of the sources by fitting the spectral energy distribution of the cores (Spezzano et al. 2020). The data presented in this study were obtained with the Eight MIxer Receiver (EMIR) E090 instrument on IRAM 30m tele-scope at Pico Veleta. We used the Fourier Transform Spectrom-eter (FTS) with a resolution of 50 kHz, achieving a spectral res-olution of ∼ 0.17 km s −1 at 86 GHz. Each source was mapped over a region of 2.5 ′
+
+x2.5 ′
+
+using On-the-fly (OTF) mapping with position switching. The receiver was tuned to observe the H 13 CN (1–0) and HC 15 N (1–0) transitions in a single spectral setup. The observations were carried out over three observing ses-sions in varying weather conditions. An rms noise level of 20-25 mK was achieved for all maps. The observations were re-duced using the class software as part of the GILDAS software suite 1. Gridding was performed with a pixel size of 5 ′′ 
+
+, corre-sponding to 5 pixels per beam at 3 mm. Pointing calibrations  
+
+> 1https://www.iram.fr/IRAMFR/GILDAS
+
+were carried out every ∼1.5 hours, and the focus was checked every ∼3 hours. 
+
+3. Results 
+
+> 3.1. Observational data
+
+Figure 1 shows the integrated intensity map of H 13 CN (1–0) for HMM–1 and the extracted spectra towards 8 positions in the map. For H 13 CN (1–0), the hyperfine structure of the transition is resolved, and the central, brightest component is used for the in-tegration. Similar figures for the remaining three cores are shown in Appendix A. To derive the column densities of H 13 CN and HC 15 N, we se-lected between five and nine positions in each map (see Fig. 2). For each position, the spectra were averaged over a 5 ×5 pixel region, comparable to the beam size, to improve the signal-to-noise ratio (S /N). In doing so, all positions achieved a peak S /N
+
+≥ 5. The excitation temperature was obtained by fitting the re-solved hyperfine 1–0 transition of H 13 CN. The fit was performed using the class HFS fitting method. We utilized the excitation temperature derived for the position with the highest S /N ra-tio. A common excitation temperature was assumed for both isotopologs, motivated by the assumption of co-spatiality and the close similarities between the transition characteristics for the two isotopologs. In addition, we adopted a single excitation temperature across the maps, similar to Spezzano et al. (2022). Moreover, we performed an analysis in which the excitation tem-perature was derived for each position individually. This ap-proach did not alter any of the trends discussed in this work; the isotopic ratios derived with a uniform excitation temperature di ff er by ∼5–10% from those obtained using position-dependent excitation temperatures. The derived excitation temperatures are listed in Table 2. The spectroscopic parameters are listed in Table 3, originally provided by Fuchs et al. (2004) and retrieved from the CDMS catalog (Müller et al. 2001; Endres et al. 2016) 2.Column densities were derived following: 
+
+Ntot = WQ (Tex ) 8πν 3
+
+Aul guc3
+
+exp( Eu 
+
+> kT ex
+
+)
+
+J(Tex ) − J(Tbg )
+
+τ
+
+1 − exp( −τ) , (1) where Aul is the Einstein coe ffi cient for the transitions from up-per state u to lower state l, gu is the degeneracy of the upper state, Q is the partition function, W is the integrated line inten-sity, c is the speed of light, ν is the transition frequency, h is the Planck constant, and k is the Boltzmann constant. The last fac-tor, τ 
+
+> 1−exp( −τ)
+
+corrects for the optical depth (Goldsmith & Langer 1999). The optical depth τ was derived for the individual com-ponents as: 
+
+τ = ln J(Tex ) − J(Tbg )
+
+J(Tex ) − J(Tbg ) − Tmb 
+
+!
+
+, (2) where J(T ) = hν 
+
+> k
+
+(exp( hν 
+
+> kT
+
+)−1) −1 is the Rayleigh-Jeans equivalent temperature. For H 13 CN, we selected the weakest of the hyperfine lines with a peak S /N > 7.5 and computed the column density based on this component , instead of using the hyperfine structure fit. This approach was motivated by the high optical depth of the brightest component in the hyperfine ( τ ≳ 1). Using this ap-proach, the optical depths of the fitted lines for both H 13 CN and   
+
+> 2https://cdms.astro.uni-koeln.de/
+> Article number, page 2 S. S. Jensen et al.: A tale of two isotopes
+> Table 1. Summary of the sources observed.
+
+Source R.A. (J2000) DEC (J2000) 3LSR (km /s) Isolated /Clustered Starless /Pre-stellar L1521E 04:29:15.7 26:14:05.0 6.7 Isolated Starless HMM–1 16:27:58.3 -24:33:42.0 4.3 Clustered Pre-stellar L429 18:17:06.4 -08:14:00.0 6.7 Isolated Pre-stellar L694–2 19:41:04.5 10:57:02.0 9.6 Clustered Pre-stellar   
+
+> Notes. Isolated refers to the characterization of the local cloud environment. The evolutionary classification follows Crapsi et al. (2005).
+> Table 2. Excitation temperatures derived from fits of the H 13 CN 1–0 hyperfine lines toward the brightest position for each source.
+
+Source Tex (K) L429 3.3 ±0.1L694–2 4.1 ±0.1L1521E 3.2 ±0.1 HMM–1 3.7 ±0.1   
+
+> Notes. The hyperfine lines were fitted using class HFS fitting tool.
+
+HC 15 N are in the range τ ≤ 0.6, except for L1521E. An overview of the derived optical depths and column densities toward each position is provided in Appendix B. Figure 2 shows maps of the derived H 13 CN /HC 15 N ratio for HCN at each position toward the four sources. The black con-tours in the figure indicate the N(H 2) levels derived from Her-schel /SPIRE, presented in Spezzano et al. (2020). In the maps, the fractionation ratios show considerable spa-tial variation. Toward L694–2, the nitrogen fractionation ratio is highest at the center of the core (P3) and lowest in positions P1, P2, and P7 at the edge of the core. Positions P5 and P6 also show higher fractionation ratios. The latter two positions coincide with an enhanced H 2 column density (see Fig. 3). For L1521E, a sim-ilar trend is observed, with higher fractionation ratios in the cen-ter of the core. The H 2 column density drops sharply on the south side of the core (points P7, P8), which would expose this side of the core to greater irradiation from external sources. This coin-cides with the points exhibiting the lowest fractionation ratios (P6–P8). Conversely, in the central region and on the northern border (P1, P4, P5), fractionation ratios are higher. For L429 and HMM-1, patterns are weaker. Nonetheless, the lowest fractiona-tion ratios toward L429 are derived toward the south of the core (P6, P8), which is more exposed to external radiation, as indi-cated by the N(H 2) column density maps. Similarly, for HMM-1, lower fractionation ratios are again seen on the edge of the core (P1, P3, P4, and P7) compared to the central position (P5). Overall, the patterns observed in the maps are broadly con-sistent with the expectations for isotope-selective photodissoci-ation. Nevertheless, the observed patterns may also arise from higher local densities, which influence the fractionation process through enhanced isotopic exchange reactions. To quantify the trends observed in the maps presented in Fig. 2, we computed Spearman’s Rank correlation coe ffi cients, 
+
+rs, between the column density ratios and the H 2 column den-sities. Although the H 2 column density is not a perfect tracer for embeddedness, several studies have inferred an approxi-mately linear relation between N(H 2) and Av (Bohlin et al. 1978; Güver & Özel 2009). Figure 3 shows scatter plots of H 13 CN /HC 15 N and 14 N/15 Ncolumn density ratios versus N(H 2) for each of the four cores. Note that the 14 N/15 N ratios are derived using the double-isotope method for comparison with previous studies, which used this method. Assuming a fixed 12 C/13 C = 68 (Milam et al. 2005), the column density of the main HCN isotopolog was computed as 
+
+N(HCN) = 68 × N(H 13 CN). The H 2 column density was aver-aged over the same region as the HCN spectra for consistency. The Spearman correlation coe ffi cients were computed for each core individually. For L694-2, the analysis shows a strong posi-tive correlation between N(H 2) (and, consequently, Av by proxy) and the 14 N/15 N ratio. L429 and HMM-1 show a weaker, but still noticeable, positive correlation. No apparent correlation is present toward L1521E. The lack of correlation in L1521E can be attributed to the early evolutionary stage of the core, as ev-idenced by the lower N(H 2) column densities toward this core with respect to the others. When the points from all four cores are combined, the cor-relation remains high ( rs ≃ 0.73, p-value = 2×10 −4)3, indicating a general relationship between the 14 N/15 N and H 13 CN /HC 15 Nratios and the integrated H 2 column density. The p-value is es-timated using a permutation analysis, given the low number of samples. The results of the combined-source analysis are shown in Fig. 4. 
+
+3.2. Chemical modeling of nitrogen and carbon fractionation in a pre-stellar core. 
+
+To investigate which physical and chemical processes may ex-plain the observed spatial variations of the H 13 CN /HC 15 N ra-tios, we performed simulations using the astrochemical network presented in Sipilä et al. (2023). The simulation was carried out on a one-dimensional model of the pre-stellar core L1544 from Keto et al. (2015). The physical structure of the one-dimensional model is shown in Fig 5. The model was chosen because it provides a well-constrained one-dimensional representation of a pre-stellar core. It is not intended to be directly comparable to any of the cores observed in this work; rather, it serves to illus-trate the temporal evolution of the 12 C/13 C and 14 N/15 N fraction-ation in an embedded, young core with a radial density profile resembling a Bonnor-Ebert sphere. Figure 6 shows the simulated radial profiles of the HCN /HC 15 N, HCN /H13 CN, H 13 CN /HC 15 N ratios for a three dif-ferent evolutionary times (0.5 Myr, 1 Myr, and 2 Myr). The fig-ure includes both models with (dotted lines) and without (solid lines) the e ff ects of isotope-selective photodissociation. Figure 6 illustrates the impact of isotope-selective pho-todissociation of CO and N 2 on the isotopic ratios. The top panel shows that including isotope-selective photodissociation has only a limited e ff ect on the 14 N/15 N ratio; furthermore, the nitrogen fractionation ratio also exhibits little spatial variation in the one-dimensional model. In contrast, the middle panel reveals  
+
+> 3The p-value indicates the probability of the null hypothesis, which in this case is no correlation between the two parameters. Article number, page 3
+
+A&A proofs: manuscript no. H13CN_HC15N_maps 
+
+Table 3. Molecular transition data for HC 15 N 1–0 and H 13 CN 1–0. Spectral data extracted from CDMS. 
+
+Transition Freq. (GHz) Eup (K) gup log(A ji ) (s −1)HC 15 N J =1–0 86.05497 4.13 3 -4.65693 H13 CN J =1–0,F =2–1 86.33874 4.14 3 -4.65258 H13 CN J =1–0,F =1–1 86.34017 4.14 5 -4.65262 H13 CN J =1–0,F =0–1 86.34225 4.14 1 -4.65254 
+
+Fig. 1. Moment-zero map toward HMM–1 for the central hyperfine component of H 13 CN (1–0). White rectangles indicate the regions over which the spectra are averaged. The H 13 CN and HC 15 N spectra for each of the 8 positions are plotted in black, the latter o ff set for clarity. The hyperfine fit for H 13 CN is shown in red, and the Gaussian fit for HC 15 N is shown in blue. The beam size is shown in the lower right corner. 
+
+a pronounced variation of the 12 C/13 C ratio. This ratio depends strongly on radial distance and also shows an additional contri-bution from isotope-selective photodissociation at larger radii. Moreover, the 12 C/13 C ratio evolves moderately over time. We note that the astrochemical model has several caveats. First, the model is not dynamical and therefore cannot cap-ture any e ff ects arising from the dynamical formation of the core. Specifically, dynamical accretion may lead to a more pronounced impact of isotope-selective photodissociation at 
+
+Article number, page 4 S. S. Jensen et al.: A tale of two isotopes       
+
+> Fig. 2. Derived H 13 CN /HC 15 N column density ratios. Black contours indicate the 10 22 cm −2, 2 .5×10 22 cm −2, and 5 ×10 22 cm −2levels in the H 2
+> column density maps derived from Herschel /SPIRE observations. The colormap shows the integrated emission of the central hyperfine transition for H 13 CN. For L694–2, positions P2 and P6 are shifted closer to the core center to achieve su ffi cient S /N.
+
+shorter radii, since material would be transported radially in-wards as the cores evolve (Furuya et al. 2018). Secondly, the isotope-selective photodissociation processes are not fully self-consistent in the current model. The self-shielding coe ffi cients for CO /13 CO from Visser et al. (2009) and N2/15 NN from Li et al. (2013) and Heays et al. (2014) are calculated assuming fixed 12 C/13 C and 14 N/15 N ratios, which especially for the for-mer is not accurate. This may lead to an underestimation of the eff ects of the isotope-selective photodissociation. Furthermore, it should be noted that the radii at which the e ff ects of isotope-selective photodissociation are e ffi cient depend on the exter-nal extinction assumed around the core. In a three-dimensional model, with an anisotropic structure, this could lead to enhanced photodissociation deeper into the core. Overall, however, we do not anticipate that the stronger radial variation in 12 C/13 C relative to 14 N/15 N will be significantly a ff ected by these limitations. 
+
+4. Discussion 
+
+4.1. Carbon or nitrogen fractionation? 
+
+The maps in Figure 2 indicate a substantial variation in H13 CN /HC 15 N column density ratios across the maps of the four cores presented here. Combined with the correlation anal-ysis in Figs. 3 and 4, this supports a general trend of higher H13 CN /HC 15 N ratios toward the centers of the cores and toward the more shielded regions of the core. However, from these data alone, it is not immediately clear whether the observed gradients in the maps are the result of nitrogen or carbon fractionation. Recent astrochemical models of carbon fractionation suggest a notable degree of carbon fractionation under cold core con-ditions (e.g., Roue ff et al. 2015; Colzi et al. 2020; Loison et al. 2020). Indeed, using astrochemical models which treat both car-bon and nitrogen fractionation, Sipilä et al. (2023) found that the carbon fractionation ratio evolves significantly over time, while nitrogen fractionation is limited ( ≲ 15%). This is also the case when running the same model for a one-dimensional 
+
+> Article number, page 5
+
+A&A proofs: manuscript no. H13CN_HC15N_maps 
+
+Fig. 3. The H 13 CN /HC 15 N column density ratio (left y-axis) and inferred 14 N/15 N ratio (right y-axis) as a function of N(H 2) derived from the 
+
+Herschel /SPIRE maps. The 14 N/15 N ratios were calculated by naively assuming a constant 12 C/13 C = 68 across the maps. The computed Spearman correlation coe ffi cients are included in the top-left corner. Points are denoted according to the numbers in Figures C.1 and 2. 
+
+Fig. 4. The H 13 CN /HC 15 N column density ratio (left y-axis) and in-ferred 14 N/15 N ratio (right y-axis) as a function of N(H 2) for all four cores. The 14 N/15 N ratios were calculated by naively assuming a con-stant 12 C/13 C = 68 across the maps. The computed Spearman correlation coe ffi cient is shown in the top-left corner. 
+
+pre-stellar core model, as presented in this work. In the model, the HCN /H13 CN ratio shows a stronger radial variation and a stronger impact of isotope-selective photodissociation, com-pared with the limited variation in the HCN /HC 15 N ratio. This result is significant, as it directly challenges the basic assump-tion of the double isotope method: the 12 C/13 C ratio is not stable, whereas the 14 N/15 N ratio remains roughly constant, at least for HCN. 
+
+Fig. 5. Radial profiles for the number density n H of total hydrogen nu-clei, column density N(H), velocity (positive means contraction), and gas temperature for the one-dimensional L1544 model. The top axis shows the column density of total hydrogen nuclei at each radius. 
+
+The results of these astrochemical models are supported by several observational studies. In an earlier work, using single-pointing observations, Ikeda et al. (2002) studied the H13 CN /HC 15 N ratios toward the center of three young cores in Taurus, including L1521E, which is also presented here. They found di ff erent H 13 CN /HC 15 N ratios for each of the cores and concluded that the variation is more likely the result of vary-
+
+Article number, page 6 S. S. Jensen et al.: A tale of two isotopes     
+
+> Fig. 6. Radial profiles of the HCN /HC 15 N (top panel), HCN /H13 CN (middle panel), H 13 CN /HC 15 N (bottom panel) ratios for the one-dimensional L1544 model. The model without self-shielding is repre-sented by the solid line, and the model with self-shielding for N 2and CO is represented by the dotted lines. Horizontal dashed lines represent the ISM values for each ratio (440, 68, 6.5). The top axis shows the col-umn density through the cloud, that is, the column density an observer would see at each impact parameter. An external extinction of Av,ext =
+> 1 mag is assumed.
+
+ing 12 C/13 C ratios, rather than 14 N/15 N ratios. That conclusion was based on observations of the 13 C18 O/12 C18 O ratios toward the same sources, as well as theoretical considerations, and is consistent with the results of the model presented here. More re-cently, a number of studies employing non-LTE radiative trans-fer modeling of HCN and H 13 CN emission lines have derived HCN /H13 CN ratios that deviate from the ISM value of 68, typi-cally being lower by factors of 2–3 in young cores (Daniel et al. 2013; Magalhães et al. 2018; Jensen et al. 2024). Studies of the carbon fractionation of complex organic molecules (COMs), including CH 3OH and CH 3CN, have also shown a notable fractionation. Hsieh et al. (2023, 2025) found a CH 12 3 CN /CH 13 3 CN ratio of 25–35 toward the binary protostellar system SVS13A. Similarly, Busch et al. (2025) found 12 C/13 C in the range from 4–30 for CH 3OH and CH 3CN toward seven pro-tostars as part of the PRODIGE program. Comparable 12 C/13 Cratios have also been found in the ALMA-PILS survey toward the protostellar multiple system IRAS16293–2422, notable for larger COMs such as glycolaldehyde (CH 2OHCHO), and tenta-tively for C 2H5OH, CH 3OCHO, and CH 3OCH 3 (Jørgensen et al. 2016, 2018). Hence, there is growing evidence for carbon frac-tionation in both simpler species, such as nitriles, and in more complex molecules. Historically, the double isotope method, namely a fixed 
+
+> 12
+
+C/13 C ratio, has been used extensively in the literature. Under that assumption, the observed variation would indicate higher 
+
+> 14
+
+N/15 N ratios in denser and more shielded parts of the core. This is similar to the trend observed in L1544 by Spezzano et al. (2022) and is consistent with isotope-selective photodissocia-tion playing a significant role in the nitrogen fractionation in these cores. It is important to note that the analysis of CN and 
+
+> 13
+
+CN maps presented in Spezzano et al. (2022) suggests that the variation in H 13 CN and HC 15 N in L1544 cannot be fully ex-plained by 12 C/13 C variations alone and hence the results here do not change the overall conclusions of that paper. Addition-ally, Redaelli et al. (2023) reported a spatial trend in the nitro-gen fractionation of NH 3 in L1544, consistent with the trend seen in HCN and CN. Furthermore, evidence of isotope-selective photodissociation has been observed in protoplanetary disks. Hily-Blant et al. (2019) reported a notable radial evolution in the HCN /HC 15 N ratio for TW Hya, with a lower ratio in the inner disk, gradually increasing at larger radii. This is consistent with isotope-selective photodissociation driven by the UV radiation in the inner disk from the T Tauri star (Visser et al. 2018). In this work, we do not have maps of CN and 13 CN and hence rely on the astrochemical modeling to investigate the source of the ob-served variations across the maps. From Fig. 6, we see that the H13 CN /HC 15 N ratio in the model is expected to increase from 
+
+∼5 at 30,000–60,000 au to >10 at ∼2,000–3,000 au. This trend is qualitatively similar to the increase seen in the observations as presented in Figs. 3 and 4, although the highest values fall short of 10 in the observed data. This di ff erence may be a result of the limited spatial resolution of the observations, which sample the positions on scales of ∼25 ′′ 
+
+, corresponding to linear scales of ∼4,000–6,000 au at distances of 150 pc to 250 pc, where the sources presented here are located. To summarize, the observed variations in the H 13 CN /HC 15 Nratio are likely driven by carbon fractionation. However, some degree of nitrogen fractionation may also be present, influencing the observed trends. To assess this, observations of a broader range of molecules are necessary to better constrain the extent of carbon and nitrogen fractionation. 
+
+4.2. Origin of the fractionation 
+
+By combining the data points from all four sources in Figure 4, we see that the observed trend of increasing H 13 CN /HC 15 N ra-tios with N(H 2) persists when the individual cores are merged. This indicates that local variations in the cloud environment (e.g., variable irradiation of the sources) are not the main driver of the observed trend. The sources are located in di ff erent clouds and experience di ff erent irradiation. If variation in irra- 
+
+> Article number, page 7 A&A proofs: manuscript no. H13CN_HC15N_maps
+
+diation were the dominant factor, this variability should intro-duce greater scatter and tend to obscure any correlation when data points from all sources are combined. Instead, the appar-ent correlation in Fig. 4 is consistent with intrinsic e ff ects be-ing the main driver of the observed trend. Both carbon and ni-trogen fractionation proceed through exchange reactions, which promote more e ffi cient fractionation at lower temperatures and higher densities. Consequently, such regions will experience en-hanced carbon fractionation rates, matching the observed trend with N(H 2). Indeed, the correlation in Fig. 4 appears to start at a cuto ff of log 10 (N(H 2)) ≳ 22.2. This may suggest that the path-ways driving the correlation remain ine ffi cient below this thresh-old, which would explain the lack of correlation observed toward L1521E, since that core does not exceed the N(H 2) threshold. We stress that we do not exclude secondary e ff ects driven by envi-ronmental factors, including isotope-selective photodissociation, playing a role in the fractionation in these cores. These e ff ects may indeed be a major contributor to the scatter among points with similar N(H 2) in Fig. 4 and in the individual cores in Fig. 3. To provide stronger constraints on the underlying chemistry and environmental e ff ects, observations of additional sources and of more molecular tracers are required. Based on the modeling presented here, the main source of the radial variation in the H 13 CN /HC 15 N ratio is chemical frac-tionation of carbon through isotopic exchange reactions. H 13 CN (HC 15 N) is primarily formed through electron recombination of H13 CNH + (HC 15 NH +) in the gas-phase. The second most im-portant pathway is grain-surface formation through H + xCxN
+
+→ HxCxN at higher densities (shorter radii). For both pathways, chemical fractionation occurs in the gas phase via various ex-change reactions, thereby enriching the reactants in 13 C and 
+
+> 15
+
+N before HCN formation. In the one-dimensional core model, the e ff ect of isotope-selective photodissociation is negligible at radii below ∼8000 au, whereas the e ff ect is strongest at radii of 
+
+≳ 20,000 au (Fig. 6, middle panel). Compared with the obser-vations, the modeling suggests that isotope-selective photodis-sociation should have only a limited impact on the correlations presented in Figs. 3 and 4, since the correlation extends to col-umn densities above N(H 2) ≳ 3 × 10 22 cm −2, where the e ff ect is limited in the astrochemical model. However, this does not rule out isotope-selective photodissociation, since the e ff ects may be enhanced at shorter radii in a realistic three-dimensional core with uneven irradiation, especially if dynamic accretion trans-ports fractionated material inwards. Nonetheless, both the model and the observations show a clear trend toward higher fractiona-tion at higher H 2 column densities, driven by chemical fraction-ation processes. In future work, we will investigate nitrogen and carbon fractionation in a dynamical three-dimensional model of a young core embedded in a realistic star-forming environment. That work will address several caveats of the model presented here and provide a better understanding of the impact of isotope-selective photodissociation. The chemical distribution of c–C 3H2 and CH 3OH was previously studied in the cores presented in this work by Spezzano et al. (2020). That work explored the origins of the ob-served molecular segregation between the two species based on the influence of external irradiation and the local structure of the core regions. In the more shielded regions, carbon is locked in CO, and CH 3OH is formed after CO freeze-out through grain-surface chemistry. Hence, the emission of CH 3OH in young cores typically traces denser and more shielded regions of the core. Meanwhile, c–C 3H2 formation is enhanced through atomic carbon, which is more present in regions more exposed to the interstellar radiation field (Spezzano et al. 2016; Jensen et al. 2023, 2026). By comparing our maps with those of c–C 3H2
+
+and CH 3OH presented in Spezzano et al. (2020), we can assess whether trends in chemical segregation are consistent with those in the observed fractionation ratios. Through isotope-selective photodissociation, the HCN /HC 15 N and H 13 CN /HC 15 N ratios should decrease in regions with lower shielding or stronger ir-radiation due to (sub)stellar objects (Furuya & Aikawa 2018). Hence, we look for an overlap in the c–C 3H2 emission and lower H13 CN /HC 15 N ratio. A comparison between the H 13 CN /HC 15 Nratios and the integrated intensity maps of c–C 3H2 and CH 3OH is shown in Fig. 7. An apparent overlap in lower H 13 CN /HC 15 Nratios and stronger c–C 3H2 emission is seen in HMM–1 (P4, P7). These points also coincide with the side of the core exposed to irradiation from an OB association (Preibisch & Mamajek 2008). For L1521E, no clear spatial segregation was reported in Spezzano et al. (2020). This was attributed to the core’s early evolutionary stage, as indicated by the lower H 2 column densi-ties toward the core. As the fractionation processes through ex-change reactions are accelerated at higher column densities and lower temperatures, the low densities might also explain the ap-parent lack of correlation between N(H 2) and H 13 CN /HC 15 N in this core, seen in Fig. 3. If isotope-selective photodissociation is active in this core, this could explain the lower H 13 CN /HC 15 Nratios observed across it, specifically toward the south-east of the core (P6, P8), which also shows the strongest drop in H 2 column densities. For L429, c–C 3H2 and CH 3OH emission overlap and coincide with the dust peak. Toward L694–2, c–C 3H2 emission coincides with the dust peak, while CH 3OH is notably o ff set to-wards the south-west direction (P6 in this work, see Fig. 7). This direction also shows a shallower drop in N(H 2), indicating that the south-western region is denser and more shielded from the interstellar radiation field. Given the correlation shown in Fig. 4, the enhanced H 13 CN /HC 15 N ratio in P6 could result from the denser and more shielded conditions. This is consistent with an increased CH 3OH emission from this region. While this compar-ison between the c–C 3H2 and CH 3OH maps of Spezzano et al. (2020) and this work is qualitative in nature, the similarities could suggest that photochemical e ff ects do play a role in the fractionation morphology, even if they are not expected to be the primary mechanism. More sources and additional molecular tracers are necessary to shed more light on this. 
+
+5. Conclusions 
+
+In this work, we have studied the spatial variation in the ni-trogen and carbon fractionation around four young, embedded cores. The observations reveal a correlation: regions with higher H2 column densities exhibit larger H 13 CN /HC 15 N column den-sity ratios. This corresponds to an increase in the 14 N/15 N ratio when the double isotope method is applied. The correlation also persists when data across all four cores are combined. A priori, two mechanisms can generate the observed trend: i) enhanced self-shielding of N 2 or CO leading to isotope-selective photodis-sociation e ff ects which influence the fractionation processes, or ii) increased fractionation through isotopic exchange reactions, which are more e ffi cient at higher densities and lower tempera-tures. To distinguish between these scenarios, we simulated car-bon and nitrogen fractionation using a one-dimensional, time-dependent astrochemical model of a pre-stellar core. The model predicts limited nitrogen fractionation at all times and radii, whereas carbon fractionation varies substantially as a function of both radius and time. This is in direct contrast to the fun-damental assumption of the double isotope method, namely a 
+
+> Article number, page 8
+
+S. S. Jensen et al.: A tale of two isotopes 4h29 m21 s 18 s 15 s 12 s
+
+26 ◦15 ′00 ′′ 
+
+14 ′30 ′′ 
+
+00 ′′ 
+
+13 ′30 ′′ 
+
+00 ′′ 
+
+L1521E 
+
+3.2 2.4 2.3 3.3 2.6 1.9 2.5 1.9 
+
+18 h17 m10 s 08 s 06 s 04 s 02 s
+
+−8◦13 ′00 ′′ 
+
+30 ′′ 
+
+14 ′00 ′′ 
+
+30 ′′ 
+
+15 ′00 ′′ 
+
+30 ′′ 
+
+L429 
+
+7.6 7.3 8.1 10.2 8.2 7.1 8.6 7.2 
+
+0.00.20.40.60.81.0
+
+> c-C 3H2 relative intensity
+
+19 h41 m09 s 06 s 03 s 00 s
+
+10 ◦58 ′00 ′′ 
+
+57 ′30 ′′ 
+
+00 ′′ 
+
+56 ′30 ′′ 
+
+00 ′′ 
+
+## RA (J2000) Dec (J2000) 
+
+L694-2 
+
+2.8 4.2 3.6 5.4 5.8 6.2 3.9 
+
+16 h28 m03 s 00 s 27 m57 s 54 s
+
+−24 ◦32 ′30 ′′ 
+
+33 ′00 ′′ 
+
+30 ′′ 
+
+34 ′00 ′′ 
+
+30 ′′ 
+
+HMM-1 
+
+2.8 5.9 5.5 4.0 6.2 6.5 4.8 5.4 
+
+Fig. 7. Comparison of the observed H 13 CN /HC 15 N ratios, the c-C 3H2 emission (colormap) and the CH 3OH emission (black contours) for the four cores. Observational c-C 3H2 and the CH 3OH emission maps are from Spezzano et al. (2020). The colormap is scaled to the peak c-C 3H2 intensity for the specific core. Note that errors on the H 13 CN /HC 15 N ratios have been removed for clarity. 
+
+fixed 12 C/13 C ratio. Isotope-selective photodissociation remains modest in the astrochemical model and is limited to the outer parts of the cores. Instead, chemical fractionation through iso-topic exchange reactions is the primary driver of fractionation. We note, however, that a full three-dimensional treatment that includes dynamical accretion, anisotropic radiation fields, and realistic envelope structure could amplify the e ff ects of isotope-selective photodissociation, especially in strongly irradiated en-vironments. The observed correlation between the N(H 13 CN) /N(HC 15 N) ratios and N(H 2) suggests that the fractionation of carbon in these young cores follows a fairly continuous evolution above a threshold of log 10 (N(H 2)) ≳ 22.2, with increasing fractiona-tion at higher densities and lower temperatures, in line with the expectation for chemical fractionation. Our results, along with other recent studies, indicate that the fundamental assumption underlying the double isotope method is incorrect. Hence, we caution future work not to rely on the double isotope method when possible. This caution not only ap-plies to young cores, but should also be considered at later stages of the star and planet formation process, where the assumption of a spatially and temporally invariant 12 C/13 C ratio may lead to systematic errors. Future observations, including additional molecules (e.g., HNC, CN, and complex organic molecules) toward more sources, would provide stronger constraints on the observed cor-relation. In addition, more comprehensive modeling, including dynamical accretion and a realistic three-dimensional structure, would provide a clearer understanding of how much this mech-anism influences the fractionation process in these cores.   
+
+> Acknowledgements. The authors wish to thank the anonymous referee for their comments which improved the manuscript. S.S.J. and S.S. wish to thank the Max Planck Society for the Max Planck Research Group funding. O.S. and P.C. gratefully acknowledge the funding by the Max Planck Society. The project that gave rise to these results received the support of a fellowship from the “la Caixa” Foundation (ID 100010434). The fellowship code is LCF /BQ /PR25 /12110012. L.C. acknowledges funding from grant PID2022-136814NB-I00 funded by the Spanish Ministry of Science, Innovation and Universities /State Agency of Re-search MICIU /AEI /10.13039 /501100011033 and by “ERDF /EU”. This work is based on observations carried out under project numbers 117-22, 121-24, and 023-25 with the IRAM NOEMA Interferometer [30m telescope]. IRAM is sup-ported by INSU /CNRS (France), MPG (Germany) and IGN (Spain). We wish to
+
+Article number, page 9 A&A proofs: manuscript no. H13CN_HC15N_maps 
+
+thank the telescope sta ff for their superb assistance during the observations. This paper makes use of matplotlib (Hunter 2007) and scipy (Virtanen et al. 2020). 
+
+References 
+
+Adams, N. G. & Smith, D. 1981, ApJ, 247, L123 Bally, J. & Langer, W. D. 1982, ApJ, 255, 143 Bohlin, R. C., Savage, B. D., & Drake, J. F. 1978, ApJ, 224, 132 Busch, L. A., Pineda, J. E., Sipilä, O., et al. 2025, A&A, 699, A359 Caselli, P. & Ceccarelli, C. 2012, A&A Rev., 20, 56 Colzi, L., Romano, D., Fontani, F., et al. 2022, A&A, 667, A151 Colzi, L., Sipilä, O., Roue ff , E., Caselli, P., & Fontani, F. 2020, A&A, 640, A51 Crapsi, A., Caselli, P., Walmsley, C. M., et al. 2005, ApJ, 619, 379 Daniel, F., Gérin, M., Roue ff , E., et al. 2013, A&A, 560, A3 Endres, C. P., Schlemmer, S., Schilke, P., Stutzki, J., & Müller, H. S. P. 2016, Journal of Molecular Spectroscopy, 327, 95 Fuchs, U., Bruenken, S., Fuchs, G. W., et al. 2004, Zeitschrift Naturforschung Teil A, 59, 861 Furuya, K. & Aikawa, Y. 2018, ApJ, 857, 105 Furuya, K., Watanabe, Y., Sakai, T., Aikawa, Y., & Yamamoto, S. 2018, A&A, 615, L16 Goldsmith, P. F. & Langer, W. D. 1999, ApJ, 517, 209 Güver, T. & Özel, F. 2009, MNRAS, 400, 2050 Heays, A. N., Visser, R., Gredel, R., et al. 2014, A&A, 562, A61 Hily-Blant, P., Magalhaes, V., Kastner, J., et al. 2017, A&A, 603, L6 Hily-Blant, P., Magalhaes de Souza, V., Kastner, J., & Forveille, T. 2019, A&A, 632, L12 Hsieh, T.-H., Pineda, J. E., Segura-Cox, D. M., et al. 2025, A&A, 696, A1 Hsieh, T.-H., Segura-Cox, D. M., Pineda, J. E., et al. 2023, A&A, 669, A137 Hunter, J. D. 2007, Computing in Science & Engineering, 9, 90 Ikeda, M., Hirota, T., & Yamamoto, S. 2002, ApJ, 575, 250 Jensen, S. S., Spezzano, S., Caselli, P., Grassi, T., & Haugbølle, T. 2023, A&A, 675, A34 Jensen, S. S., Spezzano, S., Caselli, P., et al. 2026, A&A, 708, A279 Jensen, S. S., Spezzano, S., Caselli, P., et al. 2024, A&A, 685, A149 Jørgensen, J. K., Müller, H. S. P., Calcutt, H., et al. 2018, A&A, 620, A170 Jørgensen, J. K., van der Wiel, M. H. D., Coutens, A., et al. 2016, A&A, 595, A117 Keto, E., Caselli, P., & Rawlings, J. 2015, MNRAS, 446, 3731 Li, X., Heays, A. N., Visser, R., et al. 2013, A&A, 555, A14 Loison, J.-C., Wakelam, V., Gratier, P., & Hickson, K. M. 2020, MNRAS, 498, 4663 Magalhães, V. S., Hily-Blant, P., Faure, A., Hernandez-Vera, M., & Lique, F. 2018, A&A, 615, A52 Matteucci, F. 2012, Chemical Evolution of Galaxies ( ) Milam, S. N., Savage, C., Brewster, M. A., Ziurys, L. M., & Wycko ff , S. 2005, ApJ, 634, 1126 Müller, H. S. P., Thorwirth, S., Roth, D. A., & Winnewisser, G. 2001, A&A, 370, L49 Mumma, M. J. & Charnley, S. B. 2011, ARA&A, 49, 471 Nagy, Z., Spezzano, S., Caselli, P., et al. 2019, A&A, 630, A136 Nomura, H., Furuya, K., Cordiner, M. A., et al. 2023, in Astronomical Society of the Pacific Conference Series, Vol. 534, Protostars and Planets VII, ed. S. Inutsuka, Y. Aikawa, T. Muto, K. Tomida, & M. Tamura, 1075 Preibisch, T. & Mamajek, E. 2008, in Handbook of Star Forming Regions, Vol-ume II, ed. B. Reipurth, Vol. 5, 235 Redaelli, E., Bizzocchi, L., Caselli, P., & Pineda, J. E. 2023, A&A, 674, L8 Redaelli, E., Bovino, S., Sabatini, G., et al. 2025, A&A, 702, A210 Rivilla, V. M., Martín-Pintado, J., Jiménez-Serra, I., et al. 2020, ApJ, 899, L28 Romano, D., Matteucci, F., Zhang, Z.-Y., Ivison, R. J., & Ventura, P. 2019, MN-RAS, 490, 2838 Roue ff , E., Loison, J. C., & Hickson, K. M. 2015, A&A, 576, A99 Sandford, S. A., Nuevo, M., Bera, P. P., & Lee, T. J. 2020, Chemical Reviews, 120, 4616 Sipilä, O., Colzi, L., Roue ff , E., et al. 2023, A&A, 678, A120 Spezzano, S., Bizzocchi, L., Caselli, P., Harju, J., & Brünken, S. 2016, A&A, 592, L11 Spezzano, S., Caselli, P., Pineda, J. E., et al. 2020, A&A, 643, A60 Spezzano, S., Caselli, P., Sipilä, O., & Bizzocchi, L. 2022, A&A, 664, L2 Taillard, A., Wakelam, V., Gratier, P., et al. 2025, A&A, 698, A278 Taillard, A., Wakelam, V., Gratier, P., et al. 2023, A&A, 670, A141 Virtanen, P., Gommers, R., Oliphant, T. E., et al. 2020, Nature Methods, 17, 261 Visser, R., Bruderer, S., Cazzoletti, P., et al. 2018, A&A, 615, A75 Visser, R., van Dishoeck, E. F., & Black, J. H. 2009, A&A, 503, 323 
+
+Article number, page 10 S. S. Jensen et al.: A tale of two isotopes 
+
+Appendix A: Extracted spectra 
+
+Figures A.1-A.3 show the extracted spectra and fitted profiles for L429, L1521E, and L694–2, similar to Fig. 1. 
+
+> Article number, page 11
+
+A&A proofs: manuscript no. H13CN_HC15N_maps 
+
+Fig. A.1. Moment-zero map toward L429 for the central hyperfine component of H 13 CN (1–0). White rectangles indicate the regions over which the spectra are averaged. The H 13 CN and HC 15 N spectra for each of the 8 positions are plotted in black, the latter o ff set for clarity. The hyperfine fit for H 13 CN is shown in red, and the Gaussian fit for HC 15 N is shown in blue. The beam size is shown in the lower right corner. Article number, page 12 S. S. Jensen et al.: A tale of two isotopes 
+
+Fig. A.2. Moment-zero map toward L1521E for the central hyperfine component of H 13 CN (1–0). White rectangles indicate the regions over which the spectra are averaged. The H 13 CN and HC 15 N spectra for each of the 8 positions are plotted in black, the latter o ff set for clarity. The hyperfine fit for H 13 CN is shown in red, and the Gaussian fit for HC 15 N is shown in blue. The beam size is shown in the lower right corner. Article number, page 13 A&A proofs: manuscript no. H13CN_HC15N_maps 
+
+Fig. A.3. Moment-zero map toward L694–2 for the central hyperfine component of H 13 CN (1–0). White rectangles indicate the regions over which the spectra are averaged. The H 13 CN and HC 15 N spectra for each of the 8 positions are plotted in black, the latter o ff set for clarity. The hyperfine fit for H 13 CN is shown in red, and the Gaussian fit for HC 15 N is shown in blue. The beam size is shown in the lower right corner. Article number, page 14 S. S. Jensen et al.: A tale of two isotopes 
+
+Appendix B: Overview of derived properties. 
+
+Tables B.1-B.4 list the derived column densities and optical depths τ for each position toward the four cores. For H 13 CN, the listed optical depth corresponds to the component used to derive the column density. One source, L1521E, shows notably higher optical depth for both H 13 CN and HC 15 N. 
+
+> Article number, page 15
+
+A&A proofs: manuscript no. H13CN_HC15N_maps 
+
+Table B.1. Derived properties toward L694–2. 
+
+Position N(H 13 CN) (cm −2) N(HC 15 N) (cm −2) τH13 CN τHC 15 N
+
+P1 (7.0 ± 0.6) ×10 11 (2.5 ± 0.4) ×10 11 0.09 ± 0.01 0.08 ± 0.01 P2 (6.7 ± 0.6) ×10 11 (1.6 ± 0.3) ×10 11 0.09 ± 0.01 0.06 ± 0.01 P3 (5.8 ± 0.5) ×10 11 (1.6 ± 0.3) ×10 11 0.10 ± 0.01 0.07 ± 0.01 P4 (1.6 ± 0.1) ×10 12 (2.9 ± 0.4) ×10 11 0.08 ± 0.01 0.12 ± 0.01 P5 (5.3 ± 0.5) ×10 11 (9.0 ± 2.0) ×10 10 0.09 ± 0.01 0.05 ± 0.01 P6 (7.6 ± 0.7) ×10 11 (1.2 ± 0.3) ×10 11 0.12 ± 0.01 0.06 ± 0.01 P7 (4.3 ± 0.4) ×10 11 (1.1 ± 0.2) ×10 11 0.09 ± 0.01 0.04 ± 0.01 
+
+Table B.2. Derived properties toward L1521E. 
+
+Position N(H 13 CN) (cm −2) N(HC 15 N) (cm −2) τH13 CN τHC 15 N
+
+P1 (4.1 ± 0.6) ×10 12 (1.3 ± 0.3) ×10 12 0.8 ± 0.1 0.3 ± 0.2P2 (3.4 ± 0.4) ×10 12 (1.5 ± 0.4) ×10 12 0.4 ± 0.1 0.8 ± 0.4P3 (5.6 ± 0.9) ×10 12 (2.5 ± 0.5) ×10 12 0.92 ± 0.1 1.0 ± 0.3P4 (1.10 ± 0.04) ×10 13 (3.3 ± 0.7) ×10 12 0.61 ± 0.02 1.3 ± 0.4P5 (1.02 ± 0.03) ×10 13 (3.9 ± 0.6) ×10 12 0.48 ± 0.01 1.6 ± 0.4P6 (4.5 ± 0.6) ×10 12 (2.3 ± 0.5) ×10 12 0.6 ± 0.1 1.1 ± 0.4P7 (5.6 ± 0.8) ×10 12 (2.3 ± 0.4) ×10 12 0.8 ± 0.1 0.9 ± 0.2P8 (3.2 ± 0.4) ×10 12 (1.7 ± 0.4) ×10 12 0.5 ± 0.1 0.9 ± 0.4
+
+Table B.3. Derived properties toward L429. 
+
+Position N(H 13 CN) (cm −2) N(HC 15 N) (cm −2) τH13 CN τHC 15 N
+
+P1 (3.5 ± 0.6) ×10 12 (4.6 ± 0.5) ×10 11 0.34 ± 0.04 0.14 ± 0.05 P2 (4.0 ± 0.8) ×10 12 (5.5 ± 0.6) ×10 11 0.3 ± 0.1 0.14 ± 0.02 P3 (8.5 ± 1.3) ×10 12 (1.1 ± 0.1) ×10 12 0.28 ± 0.03 0.28 ± 0.04 P4 (3.9 ± 0.6) ×10 12 (3.8 ± 0.6) ×10 11 0.29 ± 0.03 0.14 ± 0.04 P5 (4.3 ± 0.7) ×10 12 (5.2 ± 0.6) ×10 11 0.6 ± 0.1 0.15 ± 0.03 P6 (5.5 ± 1.2) ×10 12 (7.8 ± 0.9) ×10 11 0.3 ± 0.1 0.21 ± 0.04 P7 (1.7 ± 0.3) ×10 12 (2.0 ± 0.3) ×10 11 0.21 ± 0.02 0.10 ± 0.20 P8 (3.2 ± 0.5) ×10 12 (4.5 ± 0.5) ×10 11 0.44 ± 0.05 0.08 ± 0.02 
+
+Appendix C: 14 N/ 15 N maps derived from double 10 
+
+isotope method. 
+
+Figure C.1 presents maps of the 14 N/15 N ratios for the four cores under the assumption of the double isotope method. 
+
+Table B.4. Derived properties toward HMM–1. 
+
+Position N(H 13 CN) (cm −2) N(HC 15 N) (cm −2) τH13 CN τHC 15 N
+
+P1 (1.1 ± 0.2) ×10 12 (3.9 ± 0.5) ×10 11 0.29 ± 0.03 0.24 ± 0.09 P2 (4.3 ± 0.9) ×10 12 (7.3 ± 0.8) ×10 11 0.3 ± 0.2 0.31 ± 0.05 P3 (1.5 ± 0.3) ×10 12 (2.7 ± 0.3) ×10 11 0.25 ± 0.03 0.14 ± 0.05 P4 (1.4 ± 0.3) ×10 12 (3.4 ± 0.4) ×10 11 0.27 ± 0.03 0.15 ± 0.03 P5 (5.5 ± 0.9) ×10 12 (9.0 ± 1.0) ×10 11 0.30 ± 0.03 0.38 ± 0.06 P6 (2.1 ± 0.5) ×10 12 (3.3 ± 0.4) ×10 11 0.22 ± 0.05 0.16 ± 0.07 P7 (1.8 ± 0.3) ×10 12 (3.7 ± 0.4) ×10 11 0.26 ± 0.03 0.11 ± 0.05 P8 (3.6 ± 0.5) ×10 12 (6.5 ± 0.7) ×10 11 0.46 ± 0.05 0.21 ± 0.03 
+
+Article number, page 16 S. S. Jensen et al.: A tale of two isotopes 
+
+Fig. C.1. Derived 14 N/15 N ratios, assuming a fixed 12 C/13 C ratio of 68. Black contours indicate the 10 22 cm −2, 2 .5×10 22 cm −2, and 5 ×10 22 cm −2
+
+levels in the H 2 column density maps derived from Herschel /SPIRE observations. The colormap shows the integrated emission of the central hyperfine transition for H 13 CN (1–0). For L694–2, positions P2 and P6 are shifted closer to the core center to achieve su ffi cient S /N. Article number, page 17
