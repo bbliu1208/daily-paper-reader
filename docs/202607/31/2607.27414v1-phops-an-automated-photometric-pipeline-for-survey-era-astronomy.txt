@@ -1,0 +1,309 @@
+Title: PhoPS: An automated photometric pipeline for survey-era astronomy
+
+URL Source: https://arxiv.org/pdf/2607.27414v1
+
+Published Time: Fri, 31 Jul 2026 00:14:36 GMT
+
+Number of Pages: 11
+
+Markdown Content:
+Astronomy & Astrophysics manuscript no. PhoPS_arxiv_version ©ESO 2026 July 31, 2026 
+
+# PhoPS: An automated photometric pipeline for survey-era astronomy 
+
+O. Erece 1, 2 and Y. Kilic 3, 4⋆ 
+
+> 1
+
+Türkiye National Observatories, TUG, 07070 Antalya, Türkiye  
+
+> 2
+
+The Scientific and Technological Research Council of Türkiye (TÜB˙ ITAK), 06680 Ankara, Türkiye  
+
+> 3
+
+Instituto de Astrofísica de Andalucía (IAA-CSIC), Glorieta de la Astronomía s /n, 18008 Granada, Spain  
+
+> 4
+
+LIRA, CNRS UMR8254, Observatoire de Paris, Meudon, France Received 23 March, 2026 / Accepted 27 July, 2026 
+
+ABSTRACT 
+
+Context. Modern astronomical surveys generate large volumes of data and provide precise astrometric and photometric reference catalogues. E ffi cient use of these datasets requires automated, robust, and instrument-independent reduction pipelines. 
+
+Aims. We introduce PhoPS (Photometry and Astrometry of Point Sources), a fully automated Python-based pipeline for photometric reduction with integrated astrometric calibration. It supports homogeneous reduction of stellar and moving Solar System objects, independent of telescope aperture or detector type. 
+
+Methods. PhoPS performs astrometric calibration by dynamically generating local Gaia Data Release 3 (DR3) reference index files propagated to the epoch of observation, avoiding the need for a pre-installed index collection. For photometry, it adopts a field-dependent calibration strategy in which the zero point (ZP) is modelled across the detector plane using Random Sample Consensus (RANSAC)-based linear regression, thereby accounting for spatial systematics such as vignetting and detector non-uniformities. 
+
+Results. The astrometric contribution was evaluated by comparing solutions obtained with epoch-propagated and non-propagated local Gaia DR3 index files. Using 141 672 matched measurements from 840 images obtained with the 1-m TUG100 telescope, the propagated solution improves the clipped N-weighted total root-mean-square (RMS) residual from 0.284 ′′ to 0.241 ′′ , a 15.0% improvement. The photometric uncertainty model was validated using 203 reference stars and 92 980 measurements. The normalised residuals are centred close to zero. However, the residual width is magnitude dependent: the limited bright-star bin (10 ≤ G < 13) shows excess scatter with σz = 2.069, the intermediate bin (13 ≤ G < 16) is closest to unit variance with σz = 1.129, and the faintest bin (16 ≤ G < 18) is conservative with σz = 0.698. Thus, the validation reveals a magnitude-dependent uncertainty behaviour rather than a globally consistent error model. 
+
+Conclusions. PhoPS provides an open-source, lightweight, cross-platform solution for astronomical image reduction. It is suited to asteroid light-curve analysis and stellar variability studies and can diagnose systematics related to telescope tracking, focus stability, and vignetting. 
+
+Key words. methods: data analysis – techniques: photometric – astrometry – catalogs – minor planets, asteroids: general – software: development 
+
+1. Introduction 
+
+The rapid expansion of large-scale astronomical surveys over the past decade has significantly transformed observational as-tronomy. Ground-based programmes such as Two Micron All Sky Survey (2MASS; Skrutskie et al. 2006), Sloan Digital Sky Survey (SDSS; York et al. 2000), and the Vera C. Rubin Obser-vatory Legacy Survey of Space and Time (LSST; Ivezi´ c et al. 2019) have significantly enriched our view of the sky, provid-ing catalogues containing billions of sources. Together with ground-based observatories, space-based missions have further increased the level of accuracy. While Hipparcos (ESA 1997) es-tablished the first high-quality, all-sky astrometric framework, its successor, Gaia (Gaia Collaboration et al. 2016a,b, 2018, 2023), has had a significant impact on the field. By providing high-precision astrometric and multi-band photometric measurements for nearly two billion sources, Gaia now delivers an extremely precise astrometric reference frame that serves as the standard for celestial calibration.  
+
+> ⋆
+
+Corresponding author: ykilic@iaa.es 
+
+The large number of Gaia DR3 sources ensures that most astronomical fields contain a su ffi cient number of well-characterised reference stars. This abundance allows for a di-rect astrometric plate solving between raw pixel coordinates and the International Celestial Reference System (ICRS), as well as magnitude transformation to standard photometric sys-tems. However, e ff ectively utilising the potential of such a large amount of data requires algorithms capable of e ffi ciently querying, handling, and exploiting source information for tasks such as plate solving, source matching, magnitude transforma-tion, and the characterisation of instrumental e ff ects (e.g., field-dependent sensitivity and optical distortions). While professional observatories develop dedicated and highly optimised reduction pipelines (e.g. Freudling et al. 2013, 2024; Labrie et al. 2023; Ivezi´ c et al. 2019; Magnier et al. 2020), these systems are typically developed for specific instru-ments or surveys and are therefore not always straightfor-ward to apply to heterogeneous datasets. Examples of more portable alternatives include open-source Astropy-based work-flows (Astropy Collaboration et al. 2013, 2018, 2022), STDPipe 
+
+(Karpov 2021), PHOTOMETRYPIPELINE (Mommert 2017), and 
+
+Article number, page 1 arXiv:2607.27414v1 [astro-ph.IM] 29 Jul 2026 A&A proofs: manuscript no. PhoPS_arxiv_version 
+
+PRAIA (Assafin 2023). These tools di ff er in design philosophy, particularly in whether they are tied to dedicated infrastruc-tures or intended to be portable, whether they are instrument-specific or more broadly applicable, and in their astrometric indexing and photometric calibration strategies. STDPipe is a modular set of Python routines for astrometry, photometry, and transient-detection-related tasks, intended for the implementa-tion of custom pipelines as well as interactive data analysis. 
+
+PHOTOMETRYPIPELINE , by contrast, is a more explicitly end-to-end automated pipeline aimed at calibrated point-source pho-tometry, particularly for small- to medium-sized observatories and moving target observations. PRAIA is a mature package for the automatic reduction of heterogeneous astronomical images, with a strong emphasis on high-precision astrometry for Solar System applications, including natural satellites, near-Earth as-teroids, trans-Neptunian objects, and stellar occultation predic-tions. In this context, the emphasis of PhoPS is complementary and is not intended to replace these existing tools: it combines portable Gaia-based astrometric index generation with field-dependent photometric calibration in a single automated work-flow. In particular, its use of dynamically generated local Gaia DR3-based astrometric indexes and a spatially dependent zero point (ZP) model distinguishes it from workflows based primar-ily on static astrometric references or a single global photometric zero point. On the other hand, the development and maintenance of IRAF 1 (Tody 1986, 1993), once one of the most widely used tools for astronomical image reduction, was discontinued by the National Optical Astronomy Observatories (NOAO) in 2013. Following this, NOAO recommended that new projects adopt al-ternative solutions such as Astropy. Although IRAF was highly capable for data reduction tasks, it was not well suited to large-scale automated pipelines (Magnier et al. 2020). Many of the al-gorithms originally implemented in IRAF are still referenced by newly developed software, including the present work. Together with the widespread adoption of the Python programming lan-guage and significant recent developments in Astropy, there are many ongoing e ff orts to develop both global and instrument-specific data processing pipelines. As astronomical imaging is increasingly performed across a wide range of applications, not only in astrophysics but also in fields such as space surveillance, there is an increasing demand for flexible and automated tools for astrometry and photometry. In this context, integrated and portable workflows that combine astrometric calibration with field-dependent photometric mod-elling remain comparatively uncommon, especially for hetero-geneous datasets obtained with di ff erent optical systems. Such tools must be automated, scalable, and robust enough to sup-port data from small-aperture telescopes and robotic systems to large-scale professional observatories. In this paper, we introduce PhoPS (Photometry and Astrom-etry of Point Sources), an open-source and cross-platform soft-ware package designed to provide consistent and precise astro-metric and photometric reductions. PhoPS is suitable for both stellar and Solar System objects. It supports astrometric and pho-tometric measurements of any detectable point source within the image, such as stellar sources or asteroids. Although di ff erent databases can be utilised, PhoPS uses, by default, the Gaia Data Release 3 (DR3) catalogue, not only as a static reference cat-alogue but also as a dynamic source for local astrometric in-dex generation and field-dependent photometric zero-point mod- 
+
+> 1https://iraf-community.github.io/
+
+elling. Gaia DR3 provides a comprehensive set of stellar pa-rameters, including coordinates, proper motions, parallaxes, and multi-band photometry, making it well suited for this purpose. In the following sections, we describe the overall architec-ture and workflow of PhoPS (Sect. 2), present validation re-sults (Sect. 3), discuss the implications of the algorithm’s field-dependent calibration (Sect. 4), and summarise our conclusions (Sect. 5). 
+
+2. Software description and algorithm  
+
+> 2.1. Overview of
+
+PhoPS 
+
+PhoPS is an automated data reduction pipeline developed for astrometric and photometric analysis of astronomical images in Flexible Image Transport System (FITS) format (Wells et al. 1981) and is publicly available online 2, where the source code, documentation, and usage examples are provided. The pipeline is written in Python, making it cross-platform, and relies on several open-source libraries, including Astropy and its coordi-nated packages Photutils (Bradley et al. 2025) and Astroquery (Ginsburg et al. 2019). Source detection is performed using the DAOStarFinder algorithm (Stetson 1987), while astromet-ric solutions are obtained through Astrometry.net (Lang et al. 2010). By combining these widely used tools within a unified framework, PhoPS performs both astrometric and photometric reductions in an automated workflow. One of the main objectives of PhoPS is to derive both as-trometric and photometric solutions using Gaia DR3 sources as the reference frame. Using a single reference catalogue for both calibrations simplifies the workflow and keeps the pipeline lightweight. PhoPS is organised in a modular way, where key processing steps such as astrometry, photometry, and target iden-tification are implemented as independent modules and con-trolled through a configuration file. The pipeline operates in two di ff erent modes, depending on the type of target: 
+
+– In star mode, the pipeline performs standard reductions for stellar sources. After the World Coordinate System (WCS) solution is obtained, targets are identified using their right ascension (RA) and declination (Dec) rather than fixed pixel positions. This approach allows the target to be located even if there are o ff sets between images. 
+
+– In asteroid mode, the pipeline queries the JPL Horizons 3
+
+service to obtain ephemerides corresponding to the mid-exposure Julian Date (JD) and the observer’s location for each image. These ephemerides are then used to locate mov-ing Solar System objects in the images. The subsequent re-duction steps are identical to those used in the star mode. The pipeline is designed to operate across a wide range of instruments and observing configurations and can be applied to any FITS-compliant dataset. The overall workflow of the algo-rithm is illustrated in Fig. 1. 
+
+> 2.2. Dynamic astrometric index generation
+
+PhoPS uses the Astrometry.net (Lang et al. 2010) software suite for astrometric calibration. Traditional implementations of As-trometry.net rely on locally stored, static index files contain-ing positional patterns derived from reference catalogues. These           
+
+> 2https://github.com/orhanerece/PhoPS
+> 3https://ssd.jpl.nasa.gov/horizons/app.html
+> Article number, page 2 O. Erece and Y. Kilic: PhoPS: An automated photometric pipeline for survey-era astronomy
+> Fig. 1. Workflow of PhoPS . JD denotes the Julian date; mag inst , instrumental magnitude; mag calib , calibrated magnitude; S /N, signal-to-noise ratio; mag err , total photometric uncertainty; xcenter and ycenter , physical coordinates of the target; BG, background value; ZP, zero-point magnitude; mag red ,reduced magnitude of the asteroid; r, heliocentric distance of the asteroid; ∆, geocentric distance of the asteroid; and α, phase angle of the asteroid.
+
+files often occupy significant storage and must be pre-matched to the specific field of view (FoV) of the instrument, limit-ing the portability of the software. To overcome these limita-tions, PhoPS introduces a dynamic workflow that generates lo-calised reference indexes on-the-fly. In this workflow, PhoPS 
+
+prepares a local Gaia DR3-based reference dataset propagated to the epoch of observation, and then orchestrates the subsequent index-generation and plate-solving steps using the hpsplit ,
+
+build-astrometry-index , and solve-field commands of Astrometry.net. Thus, PhoPS extends the standard Astrome-try.net workflow by dynamically constructing field-specific ref-erence inputs from Gaia DR3, while the index construction, pat-tern matching, and WCS derivation are performed by Astrome-try.net. The process begins by extracting the central coordinates and FoV geometry from the FITS header. Using these param-eters, the pipeline issues an asynchronous Astronomical Data Query Language (ADQL) query to the Gaia DR3 archive. This query retrieves essential parameters, including magnitudes, 
+
+GBP − GRP colours, coordinates, proper motions, and paral-laxes, ordered by the brightness of sources. While Gaia DR3 datasets are at the epoch J2016.0, PhoPS propagates the sources using proper motions and parallaxes (neglecting radial veloc-ity when unavailable) to the desired epoch to ensure high as-trometric accuracy. The retrieved data are then stored locally as a FITS file, hereafter referred to as the Gaia reference file (gaia_reference_{unique_id}.fits ). This file is used for multiple purposes: for temporary astrometric index generation, for source crossmatching (see Sect. 2.3), and for magnitude transformation (see Sect. 2.4). Generating index files starts by selecting a spatially uniform and relatively bright subset of stars from the Gaia reference file. The data are then divided into equal-area HEALPix tiles (Górski et al. 2002), with a resolution defined by the NSIDE pa-rameter, using the hpsplit utility. This ensures a uniform spa-tial sampling of reference stars across the field. The tiles are con-structed with overlapping boundaries to allow reliable pattern matching for sources located near tile edges. Subsequently, the 
+
+build-astrometry-index command is run for each tile across a range of quad scales defined in the configuration file. To allow for the simultaneous storage of multiple observation fields with-out collision, each generated index is assigned a unique identifier and filename su ffi x based on its celestial coordinates. Thus, in-dex files can be reused for subsequent images covering the same field and requiring the same epoch-propagated reference solu-tion, reducing repeated archive queries and avoiding unneces-sary regeneration of local reference inputs within a given ob-serving sequence. Finally, the solve-field utility of Astrom-etry.net uses these index files to perform the blind plate-solving step and derive the WCS solution. Once a solution is successful, the reference pixels and related values are written directly into the FITS header. In the present workflow, the primary motivation for con-structing local astrometric indexes dynamically is to build them from Gaia DR3 source positions propagated to the epoch of each observation. Since Gaia DR3 astrometry is referenced to epoch J2016.0, neglecting proper motions can introduce non-negligible positional o ff sets in datasets acquired several years away from the catalogue epoch, especially for narrow-field instruments and multi-epoch observations. By querying the relevant field directly and propagating the source positions before index construction, 
+
+PhoPS provides an epoch-consistent local astrometric reference for the subsequent Astrometry.net workflow. A practical advantage of this approach is that the pipeline re-mains portable and self-contained, requiring no permanent pre-installed astrometric index collection beyond the images being  
+
+> Article number, page 3 A&A proofs: manuscript no. PhoPS_arxiv_version
+
+processed. Once the approximate pointing and field of view are obtained from the FITS header, or supplied by the user when necessary, the required local Gaia DR3-based reference inputs can be generated on demand on any machine. Thus, this strategy is not presented as a speed or storage advantage over a complete precomputed Astrometry.net installation, but as a way to pro-vide an epoch-consistent and portable astrometric reference con-struction based on Gaia DR3 positions propagated to the obser-vation epoch. The locally generated indexes are stored and can be reused for subsequent observations of the same field, which provides an additional practical benefit for repeated time-series reductions. 
+
+> 2.3. Source extraction and Gaia-based crossmatching
+
+Following a successful astrometric solution, PhoPS performs source extraction on the WCS-calibrated image. Source detec-tion is carried out using the DAOStarFinder implementation of the DAOFind algorithm (Stetson 1987) available in the Photu-tils package, which is widely used for point-source detection in stellar fields. The detection parameters are defined in the con-figuration file, most importantly the detection threshold and the expected full width at half maximum (FWHM) of stellar pro-files. Although a relatively low threshold increases the number of initial source detections, subsequent crossmatching and qual-ity filtering remove spurious sources before photometric calibra-tion. Once the sources are detected, their centroid positions are refined using a two-dimensional quadratic centroiding method described by Vakili & Hogg (2016). The refined source positions are then crossmatched with sources in the Gaia reference file. To obtain a clean set of reference sources within the image, the raw detections are filtered in several stages: 1. Saturation and edge filtering: Detections exceeding the de-tector linearity limit are removed to avoid unreliable centroid and photometric measurements. Sources located close to the physical edges of the charge-coupled device (CCD) are also discarded, as aperture measurements may be incomplete and the photometric response can be less reliable near the detec-tor boundaries. 2. Positional crossmatching: The remaining detections are crossmatched with the Gaia reference file generated locally during the astrometric stage (Sect. 2.2). The matching is performed using the SkyCoord functionality of Astropy, which computes the two-dimensional angular separation be-tween sources. A default matching radius of 2 arcseconds is adopted, which is appropriate given the typical astromet-ric precision and pixel scales of the datasets considered. Be-cause the Gaia catalogue subset is stored locally, the cross-matching is performed without additional archive queries, improving computational e ffi ciency. 3. Isolation and quality control: An isolation criterion is ap-plied to reduce flux contamination in crowded regions. Any detected source with a neighbouring object within a user-defined radius (typically 10 pixels) is excluded from the ref-erence sample. In addition, only Gaia sources with measured 
+
+G-band magnitudes and available GBP −GRP colours are used since both quantities are required for the photometric calibra-tion described in Sect. 2.4. After these filtering steps, PhoPS produces a list of unsatu-rated and well-isolated crossmatched reference stars suitable for photometric calibration (see Fig. 2). The calculation of the pho-tometric zero-point model is described in the next section.     
+
+> Fig. 2. An example of a frame demonstrating the automated source detection and Gaia DR3 crossmatching performance of PhoPS . Blue circles mark the 180 sources detected by DAOStarFinder above the adopted detection threshold, while red circles mark the 133 sources suc-cessfully matched to the local Gaia DR3 reference catalogue. The target objects, asteroid (201) Penelope and UCAC4 532-045441, are indicated by white circles.
+> 2.4. Photometric calibration
+
+The photometric calibration begins by converting the Gaia G
+
+magnitudes of the crossmatched reference stars to the filter of the image. PhoPS performs this transformation using the equa-tion: 
+
+mref = G −
+
+> p
+
+X
+
+> i=0
+
+ai (GBP − GRP )i, (1) where mref is the transformed magnitude of a reference star in the observed passband, G is the Gaia DR3 magnitude, 
+
+GBP − GRP is the colour, and the coe ffi cients ai are taken from Carrasco & Bellazzini (2022) for the specific filter correspond-ing to the dataset. After transforming the reference stars to the appropriate pho-tometric system, we need to measure their instrumental mag-nitudes directly from the image. PhoPS performs circular aper-ture photometry on all sources using the Photutils package. The user specifies the aperture size in the configuration file, choos-ing between a fixed pixel radius, a fixed angular radius in arc-seconds, or a scaling factor applied to the stellar FWHM. When the FWHM-factor method is selected, PhoPS calculates a rep-resentative FWHM for the image and multiplies it by the given factor to determine the aperture radius. Local background is es-timated via a sigma-clipped median within an annulus around each source, and the background-subtracted flux F yields the in-strumental magnitude as minst = −2.5 log 10 (F). The resulting in-strumental magnitudes and propagated formal photometric un-certainties, σformal , are retained for both the science target and the reference stars, allowing the reference-star population to be used later for time-series validation of the photometric uncer-tainty model. Atmospheric extinction is not explicitly modelled and is assumed to be approximately constant across the field for 
+
+> Article number, page 4 O. Erece and Y. Kilic: PhoPS: An automated photometric pipeline for survey-era astronomy
+
+a given exposure, such that its e ff ect is absorbed into the zero-point term. This assumption is generally valid for small fields of view and short exposure times. For each reference star, we define the individual zero point as the di ff erence ∆m = mref − minst . If the detector were perfectly flat and all reference stars standard, these ∆m values would be constant across the image. In practice, they show spatial struc-ture due to vignetting, detector non-uniformities, and intrinsic variability in some sources. To see how ∆m behaves across the field, PhoPS models it as a function of the radial distance r from the detector centre ( x0, y0): 
+
+r =
+
+q
+
+(x − x0)2 + (y − y0)2. (2) We adopt a linear model for this radial dependence: 
+
+f (r | θ) = α + βr, (3) where θ = (α, β ) is the vector of fitted parameters. However, the sample may contain outliers due to astrophysical and instrumen-tal e ff ects, such as variable stars, bad pixels, and crossmatching errors, which would bias a standard least-squares fit. To mitigate this, we employ the Random Sample Consensus (RANSAC) algorithm (Fischler & Bolles 1981). RANSAC iter-atively identifies a robust inlier set, ˆI, by selecting the largest subset of data points consistent with the assumed model within a defined residual threshold and over a fixed number of itera-tions. In the general pipeline configuration, the RANSAC resid-ual threshold can either be specified by the user or calculated au-tomatically from the data. In the automatic mode, PhoPS tests a set of candidate thresholds and records the number of inliers ob-tained for each value. The final threshold is chosen using a knee criterion applied to the threshold–inlier-count relation. This pro-vides a practical balance between rejecting outliers and retain-ing a su ffi cient number of useful reference stars for the radial zero-point fit. For time-series data, the threshold is determined from the first valid frame and then kept fixed for the remaining frames, ensuring a homogeneous rejection criterion throughout the sequence. ˜θ = arg min 
+
+> θ
+
+X 
+
+> i∈ˆI
+
+∆mi − f (ri | θ)2. (4) The radial distance-dependent zero-point magnitude is then de-fined as ZP (r) = f (r | ˜θ), which characterises the spatial varia-tion of the zero point across the detector plane. This RANSAC-based radial modelling e ff ectively accounts for large-scale sys-tematic variations across the field, such as field-dependent sensi-tivity changes due to optical vignetting (see Fig. 3). For a target object located at a radial distance rtarget from the detector centre, the calibrated magnitude in the adopted photometric system is finally computed as: 
+
+mstandard = minst ,target + ZP (rtarget ). (5) This field-dependent calculation of zero-point magnitude de-pends on where the target is located on the detector, ensuring accurate results instead of using a single zero-point magnitude for the entire FoV. The uncertainty associated with the field-dependent zero point is estimated by bootstrap resampling of the final RANSAC inlier set, ˆI. In each bootstrap realisation, the inlier pairs ( ri, ∆mi) are randomly resampled with replacement,  
+
+> Fig. 3. Photometric zero-point modelling for a representative frame. Blue points show the final RANSAC inlier set, while red points denote rejected outliers. The solid black line represents the nominal RANSAC-refined radial zero-point model. Thin grey lines show linear zero-point models obtained from bootstrap resampling of the final inlier set, illus-trating the uncertainty of the field-dependent zero-point fit.
+
+and the linear radial model is fitted again. This produces a set of bootstrap zero-point models: 
+
+ZP (k)(r) = α(k) + β(k)r, (6) where k denotes the bootstrap realisation. The adopted zero-point correction used in Eq. 5 is obtained from the nominal RANSAC-refined fit to the full final inlier set. The bootstrap re-alisations provide a distribution of zero-point estimates at each source position, which is used to quantify the uncertainty of the adopted correction. For a source located at radial distance r j, this uncertainty is defined as 
+
+σZP ,boot (r j) = std k
+
+hZP (k)(r j)i . (7) The total photometric uncertainty reported by PhoPS is then computed by adding the formal aperture-photometry uncertainty and the bootstrap zero-point uncertainty in quadrature: 
+
+σtotal , j = hσ2formal , j + σ2
+
+> ZP ,boot
+
+(r j)i1/2
+
+. (8) The resulting total uncertainty, σtotal , is reported as mag_err 
+
+for both the science target and the reference-star measurements, which are used for the population-level validation presented in Sect. 3. 
+
+3. Validation and results 
+
+We performed a series of validation tests to assess the astromet-ric and photometric performance of PhoPS . The analysis focuses on (i) astrometric residuals relative to the Gaia DR3 reference frame, (ii) the stability of the spatially dependent photometric zero-point model, and (iii) the scientific quality of the resulting light curves for both stellar and moving targets. 
+
+3.1. Observations and dataset 
+
+To evaluate the performance of PhoPS , we used datasets ob-tained with two di ff erent optical systems operated at the Türkiye  
+
+> Article number, page 5 A&A proofs: manuscript no. PhoPS_arxiv_version
+
+National Observatories, namely the 1-m TUG100 telescope and the 0.6-m TUG060 robotic telescope. In addition, the pipeline has already been applied to data from other facilities in previ-ous studies. The main characteristics of the observing systems on which PhoPS has been used are summarised in Table 1. The dataset used in this study includes time-series imaging obtained with the standard Johnson-Cousins V filter for TUG100 and with the B, V, R, and I filters for TUG060. Before be-ing processed with PhoPS , all raw frames were bias- and dark-subtracted and corrected using flat-field images. The use of data from di ff erent instruments allows us to assess the performance of the pipeline under di ff erent pixel scales, fields of view, and detector characteristics. The main quantitative validation presented in this section is based on a TUG100 time series of (201) Penelope consist-ing of 840 CCD frames obtained in the Johnson-Cousins V fil-ter. In addition to the moving-target photometry, PhoPS records calibrated measurements for the Gaia-matched reference stars in each frame. This makes it possible to use the same dataset both for representative target light curves and for a population-level validation of the reported photometric uncertainties. The same aperture-photometry configuration was applied consis-tently to the moving target and to the reference-star measure-ments throughout the final validation. The reference-star uncertainty validation was restricted to calibration-inlier measurements in the range 10 ≤ G < 18. Ref-erence stars with fewer than ten valid measurements were ex-cluded. To remove candidate variable or unstable sources, we applied a stability filter based on the ratio between each star’s ro-bust calibrated magnitude scatter and its mean reported total un-certainty, evaluated separately within each magnitude bin. Stars with outlying ratios were rejected from the validation sample. The final stability-filtered calibration-inlier sample contains 203 reference stars and 92 980 individual measurements from 839 frames. In order to evaluate both the stellar and moving-object re-duction capabilities of PhoPS , we considered several represen-tative targets observed with these systems. The main exam-ple presented in this section is the asteroid (201) Penelope, which has a published rotation period of 3 .7474 ± 0.0001 h (e.g. Shevchenko et al. 2002). In addition, to assess the photo-metric stability of the reduction within the same (201) Penelope dataset, we also analyse the field star UCAC4 532-045441 as an internal comparison source. Its catalogued V-band magnitude is 15.421 mag 4 (Zacharias et al. 2013), and its calibrated light curve is examined together with that of (201) Penelope in order to test whether the reduction preserves the intrinsic variability of the moving target without introducing correlated trends in a field source. Additional examples based on TUG060 data of the short-period eclipsing binary V523 Cas (e.g. Samec et al. 2004; Köse et al. 2009; Mohammadi et al. 2016) and TUG100 data of asteroid 19184 (1991 TB6) (Kim et al. 2014) are provided in Ap-pendix A. These supplementary cases are included to illustrate the applicability of the pipeline to both stellar variability and moving-object studies, as well as the main validation example discussed here. An additional example of a frame a ff ected by a transient tracking error case is also presented in Appendix A.  
+
+> 4https://simbad.cds.unistra.fr/simbad/sim-id?Ident= %4027049349&Name=UCAC4%20532-045441
+> 3.2. Astrometric accuracy
+
+The Gaia DR3 catalogue provides comprehensive astrometric solutions for approximately 1.8 billion sources, with uncertain-ties typically ranging from 0.01 to 1 mas depending on source magnitude (Gaia Collaboration et al. 2021; Lindegren et al. 2021). PhoPS queries the gaiadr3.gaia_source table via ADQL to obtain Gaia DR3 references, as described in Sect. 2.3. The astrometric contribution of PhoPS lies in the dynamic gen-eration of Gaia DR3 index files tailored to each observed field, while the actual plate-solving is performed by the solve-field 
+
+utility of Astrometry.net using these index files. In the present workflow, Simple Imaging Polynomial (SIP) distortion terms were included through the built-in Astrometry.net tweak_order 
+
+parameter. Polynomial orders from 2 to 6 were tested, and order 5 was adopted because it produced the lowest astrometric scatter across the dataset used in this analysis. No additional external high-order astrometric refinement step was applied beyond that stage. To evaluate the contribution of PhoPS ’s epoch propagation, we calculated the positional residuals ( ∆α cos δ and ∆δ) between sources detected in the observed frames and the corresponding Gaia DR3 positions under two conditions: (i) using dynamically generated index files with positions propagated to the observa-tion epoch via proper motions and parallax (hereafter “propa-gated”), and (ii) using the same dynamically generated index files without epoch propagation, retaining the native J2016.0 Gaia DR3 positions (hereafter “non-propagated”). This compar-ison isolates the e ff ect of epoch propagation within PhoPS while keeping the plate-solving engine and index-generation proce-dure identical in both cases. To ensure a strictly controlled com-parison, only sources present in both solutions were retained. In total, we analysed 141 672 matched measurements from 840 im-ages obtained with the TUG100 telescope, restricted to the mag-nitude range 10 ≤ G < 18. The images were taken at di ff erent sky positions and covered a range of observing conditions; no images were rejected based on poor tracking or focus errors, pro-viding a realistic assessment of the expected performance under typical observing conditions. Sources were grouped into three magnitude bins — 10 ≤ G < 13, 13 ≤ G < 16, and 16 ≤ G < 18 — and root-mean-square (RMS) values were computed after ap-plying a 3 σ clipping algorithm within each bin to reduce the im-pact of outliers arising from source mismatches and transient ob-serving artefacts. The propagated solution yields lower residuals in all magnitude regimes. For bright sources (10 ≤ G < 13), the RMS values are 0 .173 ′′ in RA and 0 .059 ′′ in Dec, corresponding to a total RMS of 0 .183 ′′ , compared with 0 .193 ′′ in RA, 0 .096 ′′ 
+
+in Dec, and 0 .215 ′′ total for the non-propagated case, repre-senting an improvement of 15.1%. For intermediate magnitudes (13 ≤ G < 16), the propagated solution gives 0 .161 ′′ in RA and 0.068 ′′ in Dec, corresponding to a total RMS of 0 .175 ′′ , whereas the non-propagated solution yields 0 .186 ′′ in RA, 0 .126 ′′ in Dec, and 0 .225 ′′ total, corresponding to an improvement of 22.2%. For fainter sources (16 ≤ G < 18), the propagated solution gives 0.269 ′′ in RA and 0 .142 ′′ in Dec, corresponding to a total RMS of 0 .304 ′′ , compared with 0 .297 ′′ in RA, 0 .176 ′′ in Dec, and 0.345 ′′ total in the non-propagated case, corresponding to an im-provement of 11.9%. The clipped N-weighted total RMS over all bins decreases from 0 .284 ′′ in the non-propagated case to 0 .241 ′′ 
+
+in the propagated case, corresponding to an overall improvement of 15.0%. The magnitude-binned and overall astrometric results are summarised in Table 2. As shown in Fig. 4, the residual distributions show a slight elongation along the RA axis. This elongation is present at com-
+
+> Article number, page 6
+
+O. Erece and Y. Kilic: PhoPS: An automated photometric pipeline for survey-era astronomy 
+
+Table 1. Observing systems and datasets used with PhoPS .
+
+System Diameter (m) Instrument Format (pixels) Pixel scale Field of view Studies TUG100 1.0 SI 1100 2048 × 2048 0.62 ′′ 21.5 ′× 21.5 ′ This work; previous study a
+
+TUG060 0.6 Andor DZ936 2048 × 2048 0.456 ′′ 15.6 ′× 15.6 ′ This work RTT150 1.5 TFOSC 2048 × 2048 0.39 ′′ 13 ′× 13 ′ Previous study a
+
+NTT 3.58 EMMI 1038 × 2055 0.27 ′′ 9.1 ′× 8.6 ′ Previous study b
+
+VLT UT2 8.2 FORS1 2048 × 1034 0.126 ′′ 4.30 ′× 2.17 ′ Previous study b
+
+Notes. TUG100 values are given for 2 × 2 binning as used in the referenced studies. The NTT /EMMI and VLT /FORS1 entries correspond to the image configurations used in the referenced study. (a) Erece et al. (2023). (b) Kilic et al. (2026). 
+
+Table 2. Comparison of astrometric residuals obtained with propagated and non-propagated Gaia DR3 index files. Propagated Non-propagated 
+
+G bin Nclip RMS RA RMS Dec RMS tot RMS RA RMS Dec RMS tot Improvement in RMS tot 
+
+10 ≤ G < 13 8 415 0.173 0.059 0.183 0.193 0.096 0.215 15.1% 13 ≤ G < 16 68 182 0.161 0.068 0.175 0.186 0.126 0.225 22.2% 16 ≤ G < 18 59 970 0.269 0.142 0.304 0.297 0.176 0.345 11.9% Overall 136 567 0.216 0.107 0.241 0.241 0.149 0.284 15.0% 
+
+Notes. Only measurements of sources common to both solutions are included. RMS values are given in arcseconds after 3 σ clipping within each magnitude bin. Percentage improvements were calculated from the unrounded RMS values. 
+
+parable levels in both the propagated and non-propagated solu-tions, confirming that it is unrelated to epoch propagation. PhoPS 
+
+does not model or correct for this e ff ect; it is therefore treated here as a telescope- or instrument-specific systematic e ff ect out-side the scope of the current pipeline. 
+
+3.3. Photometric accuracy and zero-point magnitude 
+
+We evaluated the photometric performance of PhoPS using the TUG100 dataset through both a population-level analysis and representative individual examples. The primary validation is based on the reference-star population retained for the photomet-ric calibration, while the asteroid (201) Penelope and the field star UCAC4 532-045441 are used as illustrative cases of the pipeline performance for a moving target and a stellar source, respectively. Additional test cases are presented in Appendix A. For the population-level uncertainty validation, residuals were computed for each retained reference star with respect to its weighted mean calibrated magnitude and were normalised by the total photometric uncertainty reported by PhoPS :
+
+zi j = mi j − ¯mi
+
+σtotal ,i j 
+
+, (9) where mi j and σtotal ,i j are the calibrated magnitude and total un-certainty of star i in frame j, and ¯ mi is the weighted mean cal-ibrated magnitude of that star over the sequence. For complete-ness, the full-sample normalised residual distribution of the fi-nal stability-filtered calibration-inlier sample has ⟨z⟩ = 0.014, 
+
+σz = 1.106, and Var( z) = 1.222. The mean value close to zero indicates that the calibrated magnitudes are unbiased on av-erage. The aggregate width, however, combines magnitude in-tervals with di ff erent residual behaviour and therefore should not be interpreted as evidence for a globally well-scaled uncer-tainty model. The uncertainty model is instead evaluated primar-ily from the magnitude-binned distributions discussed below. The residual distribution is magnitude dependent. The brightest bin, 10 ≤ G < 13, has σz = 2.069, indicating that the reported uncertainties underestimate the observed scatter for 
+
+Fig. 4. Astrometric residual distributions for 141 672 matched measure-ments of sources common to both the propagated and non-propagated solutions. Each panel corresponds to a Gaia G-magnitude bin, and RMS values are derived after 3 σ clipping. The colour scale is identical across all panels. Article number, page 7 A&A proofs: manuscript no. PhoPS_arxiv_version                                                          
+
+> Table 3. Population-level validation of the photometric uncertainties.
+> Gbin N⋆Nmeas ⟨z⟩σzVar( z)σz,3σVar( z)3σ
+> Overall 203 92 980 0.014 1.106 1.222 1.091 1.190 10–13 97 188 -0.020 2.069 4.282 2.018 4.071 13–16 75 52 168 0.013 1.129 1.274 1.118 1.249 16–18 119 33 624 0.023 0.698 0.487 0.697 0.485
+> Notes. The normalised residual is defined as zi j =(mi j −¯mi)/σ total ,i j . The columns headed by 3 σgive the corresponding statistics after applying per-star 3 σclipping. The magnitude bins correspond to 10 ≤G<13, 13 ≤G<16, and 16 ≤G<18.
+
+the brightest reference stars. Because this bin contains only nine stars, the magnitude of the bright-end excess should be inter-preted cautiously. The intermediate-magnitude bin, 13 ≤ G <
+
+16, is closest to unit variance, with σz = 1.129, although this result alone does not demonstrate that the uncertainty model is globally consistent. The faintest bin, 16 ≤ G < 18, is conserva-tive, with σz = 0.698, indicating that the reported uncertainties exceed the observed scatter in this magnitude range. Thus, the validation reveals a magnitude-dependent uncertainty behaviour rather than a single globally consistent error model. Applying a per-star three-sigma clipping changes the full-sample standard deviation only slightly, from 1.106 to 1.091, showing that the aggregate width is not driven by a small number of extreme measurements. The corresponding full-sample and magnitude-binned statistics are summarised in Table 3, while the residual distributions are shown in Fig. 5. The resulting calibrated light curves of (201) Penelope and UCAC4 532-045441, together with the frame-by-frame varia-tion of the photometric zero point, are shown in Fig. 6. These examples are used only as representative checks of the pipeline behaviour for a moving target and a non-moving field source ob-served in the same frames; the quantitative uncertainty validation is given above using the full reference-star population. For (201) Penelope, PhoPS gives a mean calibrated magni-tude of 13.165 mag over 837 frames. The calibrated time series spans a peak-to-peak range of 0.345 mag, while the mean total photometric uncertainty is 0.0091 mag. According to JPL Hori-zons, the predicted visual magnitude at the time of observation was V = 13 .315 mag; the measured time series is of the expected order and clearly resolves the asteroid’s variability. For the field star UCAC4 532-045441, measured in the same observing sequence, PhoPS gives a mean calibrated magnitude of 15.421 mag over the 837 frames common to the Penelope analysis. This is in excellent agreement with its catalogued V-band magnitude of 15.421 mag. The mean total photometric un-certainty is 0.0250 mag. The absence of a coherent trend in the UCAC4 light curve provides a qualitative check that the vari-ability observed for (201) Penelope is not caused by frame-level photometric artefacts. The zero point shown in the bottom panel is evaluated at the position of (201) Penelope using the field-dependent radial model described in Sect. 2.4. Across the sequence, the mean zero point is 0.363 mag, with a standard deviation of 0.045 mag. Although moderate frame-to-frame zero-point variations are present, they do not introduce correlated features into the calibrated light curves. This indicates that PhoPS maintains a stable calibrated photometric scale in the presence of short-term degradations in observing conditions and that such zero-point fluctuations do not appear as coherent spurious features in the calibrated light curves. 
+
+4. Discussion 
+
+The PhoPS algorithm has already been applied in indepen-dent observational studies targeting both near-Earth and trans-Neptunian objects. In Erece et al. (2023), time-series photometry of the slow-rotating asteroid (2059) Baboquivari was analysed using data from the TUG100 and the RTT150 telescopes, while Kilic et al. (2026) applied PhoPS to observations of the trans-Neptunian object (28978) Ixion obtained with the ESO New Technology Telescope (NTT) and the ESO VLT UT2 telescope, deriving its absolute magnitude and broadband colours. Together with the validation results presented in this work, these applica-tions demonstrate that the calibration strategy implemented in 
+
+PhoPS provides consistent results across datasets obtained with di ff erent telescopes, detectors, and observing conditions. A key element of this approach is the use of the Gaia DR3 catalogue as a unified reference for both astrometric and photometric cal-ibration, enabling a homogeneous reduction procedure without requiring manual reference star selection or the combination of multiple catalogues with di ff erent photometric systems. This unified calibration scheme is particularly advantageous for large time-series datasets, where small systematic inconsistencies be-tween reduction steps can otherwise propagate into the final sci-entific products. The results obtained for both stellar and moving targets indicate that the adopted strategy provides reliable cali-bration while preserving the scientific integrity of the resulting light curves. Another key feature of PhoPS is the dynamic generation of local Gaia DR3-based astrometric index files propagated to the epoch of observation. This strategy provides an epoch-consistent reference for the Astrometry.net workflow, which is particularly useful for multi-year datasets and fields containing stars with non-negligible proper motions. In addition, the pipeline remains portable because it does not require a permanent pre-installed astrometric index collection. When multiple images of the same field are processed, these locally generated index files are identi-fied through coordinate-based flags and reused, improving the effi ciency of sequential reductions. In parallel, PhoPS models spatial variations in the photometric zero point across the detec-tor plane. The RANSAC-based radial model provides a robust and computationally e ffi cient way to characterise large-scale systematics, such as vignetting and detector non-uniformities, using the distribution of matched reference stars. Validation tests show that this approach supports a stable photometric solu-tion and helps mitigate the impact of instrumental e ff ects and short-term atmospheric variations. The population-level valida-tion also shows that photometric calibration accuracy and uncer-tainty calibration should be considered separately. Although the normalised residuals are centred close to zero, indicating unbi-ased calibrated magnitudes on average, their width depends on source brightness. The reported uncertainties underestimate the observed scatter for the limited bright-star sample and are con-servative for the faintest reference stars, while the intermediate-magnitude bin is closest to unit variance. Consequently, the full-sample value of Var( z) = 1.222 should not be interpreted as evi-dence for a single globally consistent uncertainty model. In addition to its scientific reduction capabilities, PhoPS 
+
+can also serve as a diagnostic tool for telescope systems. The pipeline outputs, including astrometric residuals and spatially varying photometric zero-point models, provide quantitative in-formation about the optical and mechanical performance of the instrument. Systematic patterns in these quantities can reveal issues related to collimation, tracking, focus stability, or vi-gnetting. The modular design of the pipeline further allows it 
+
+> Article number, page 8
+
+O. Erece and Y. Kilic: PhoPS: An automated photometric pipeline for survey-era astronomy 
+
+Fig. 5. Population-level validation of the total photometric uncertainties using the final stability-filtered calibration-inlier reference-star sample. Panel (a) shows the distribution of the normalised residuals for the full sample, where zi j = (mi j − ¯mi)/σ total ,i j . The solid orange curve represents the unit Gaussian expected for a perfectly scaled uncertainty model, while the dashed green curve shows the Gaussian corresponding to the measured mean and standard deviation of the sample. Panels (b)–(d) show the same distribution separately for the three Gaia G-magnitude bins used in the analysis. The comparison reveals magnitude-dependent uncertainty behaviour: the intermediate-magnitude bin is closest to unit variance, the reported uncertainties are conservative for the faintest bin, and they underestimate the observed scatter for the limited bright-star bin. 
+
+Fig. 6. Time-series photometric analysis of UCAC4 532-045441, (201) Penelope, and the frame-by-frame photometric zero point. Top panel: calibrated light curve of UCAC4 532-045441; the dashed red line indicates its catalogued V-band magnitude. Middle panel: calibrated light curve of (201) Penelope. Bottom panel: field-dependent photometric zero point evaluated at the asteroid position for each frame. Article number, page 9 A&A proofs: manuscript no. PhoPS_arxiv_version 
+
+to be adapted for targeted verification tasks, making it suitable for routine quality control. Despite these advantages, the current implementation of 
+
+PhoPS has several limitations. When observations are obtained with filters lacking well-established transformations to stan-dard photometric systems, the pipeline cannot provide calibrated magnitudes and instead defaults to di ff erential photometry. This also applies to unfiltered (clear) observations. Furthermore, the transformation from Gaia photometry to standard passbands re-lies on empirical colour relations, which may introduce system-atic uncertainties for sources with unusual spectral energy dis-tributions or in regions a ff ected by strong and spatially vari-able extinction. In such cases, these e ff ects may manifest as out-liers in the calibration process, which are mitigated through the RANSAC-based fitting procedure, although residual systemat-ics may still persist under extreme conditions. The current field-dependent calibration also assumes that the spatial variation of the zero point can be represented by a linear function of radial distance from the detector centre. This radial model is intended as a first-order description for the moderate fields of view consid-ered in this work, but it may not capture asymmetric or higher-order two-dimensional structures in very wide-field instruments, residual flat-field patterns, spatially variable transparency, or severely degraded observing conditions. Such datasets may re-quire a higher-order or fully two-dimensional zero-point model supported by a su ffi ciently dense reference-star distribution. 
+
+5. Conclusions 
+
+In this work, we presented PhoPS , an automated pipeline for photometric reduction with integrated astrometric calibration of astronomical imaging data. The pipeline combines Gaia DR3-based reference extraction, dynamic astrometric index genera-tion, and a field-dependent photometric zero-point model within a unified reduction framework. This design enables homoge-neous processing without requiring manually selected reference stars or a permanent pre-installed astrometric index collection. Validation tests performed on data from di ff erent telescope systems show that PhoPS provides consistent astrometric so-lutions and calibrated photometric measurements under a va-riety of observing conditions, while also revealing magnitude-dependent limitations in the reported photometric uncertainties. In particular, the dynamic indexing strategy provides epoch-consistent local Gaia DR3-based astrometric references and im-proves portability, while the RANSAC-based radial zero-point model accounts for large-scale spatial systematics across the de-tector plane. The photometric tests further show that, in the ex-amined tracking-error case, short-term image degradation did not propagate into the final calibrated light curves. Together with its successful application in previous observational studies, these results indicate that PhoPS is well suited to the routine reduc-tion of both stellar and moving target observations, especially in time-series datasets where homogeneous calibration and re-sistance to systematic e ff ects are essential. Future developments may include support for additional photometric systems and op-tional higher-order astrometric refinement, further extending the applicability of the pipeline in the survey era. 
+
+Acknowledgements. We express our gratitude to the Türkiye National Observa-tories and its sta ff for the valuable contributions provided through the infrastruc-ture usage and additional data sharing support o ff ered at the TUG (TÜB˙ ITAK National Observatory, Antalya) site in the realisation of this study. Y.K. ac-knowledges financial support from the Severo Ochoa grant CEX2021-001131-S (MCIN /AEI /10.13039 /501100011033). Y.K. also acknowledges support from the Spanish I +D+i project PID2022-139555NB-I00 (TNO-JWST) funded by MCIN /AEI /10.13039 /501100011033. This research has made use of data from the European Space Agency (ESA) mission Gaia 5, processed by the Gaia Data Processing and Analysis Consortium 6, with funding provided by institutions par-ticipating in the Gaia Multilateral Agreement. This work is based in part on observations collected at the European Southern Observatory under ESO pro-grammes 075.C-0431(A) and 178.C-0036(N), including data obtained from the ESO Science Archive Facility. We also thank the anonymous referee for a care-ful and constructive review that helped improve the clarity and robustness of the manuscript. 
+
+References 
+
+Assafin, M. 2023, Planetary and Space Science, 238, 105801 Astropy Collaboration, Price-Whelan, A. M., Lim, P. L., et al. 2022, ApJ, 935, 167 Astropy Collaboration, Price-Whelan, A. M., Sip˝ ocz, B. M., et al. 2018, AJ, 156, 123 Astropy Collaboration, Robitaille, T. P., Tollerud, E. J., et al. 2013, A&A, 558, A33 Bradley, L., Sip˝ ocz, B., Robitaille, T., et al. 2025, Zenodo Carrasco, J. M. & Bellazzini, M. 2022, Relationships with other photometric sys-tems, https://gea.esac.esa.int/archive/documentation/GDR3/ Data_processing/chap_cu5pho/cu5pho_sec_photSystem/cu5pho_ ssec_photRelations.html#Ch5.T8 , [Online; accessed 29-July-2026] Erece, O., Khamitov, I. M., Kaplan, M., et al. 2023, Planet. Space Sci., 232, 105698 ESA, ed. 1997, ESA Special Publication, Vol. 1200, The HIPPARCOS and TY-CHO catalogues. Astrometric and photometric star catalogues derived from the ESA HIPPARCOS Space Astrometry Mission Fischler, M. A. & Bolles, R. C. 1981, Communications of the ACM, 24, 381 Freudling, W., Romaniello, M., Bramich, D. M., et al. 2013, A&A, 559, A96 Freudling, W., Zampieri, S., Coccato, L., et al. 2024, A&A, 681, A93 Gaia Collaboration, Brown, A. G. A., Vallenari, A., et al. 2018, A&A, 616, A1 Gaia Collaboration, Brown, A. G. A., Vallenari, A., et al. 2021, A&A, 649, A1 Gaia Collaboration, Brown, A. G. A., Vallenari, A., et al. 2016a, A&A, 595, A2 Gaia Collaboration, Prusti, T., de Bruijne, J. H. J., et al. 2016b, A&A, 595, A1 Gaia Collaboration, Vallenari, A., Brown, A. G. A., et al. 2023, A&A, 674, A1 Ginsburg, A., Sip˝ ocz, B. M., Brasseur, C. E., et al. 2019, AJ, 157, 98 Górski, K. M., Banday, A. J., Hivon, E., & Wandelt, B. D. 2002, in Astronom-ical Society of the Pacific Conference Series, Vol. 281, Astronomical Data Analysis Software and Systems XI, ed. D. A. Bohlender, D. Durand, & T. H. Handley, 107 Ivezi´ c, Ž., Kahn, S. M., Tyson, J. A., et al. 2019, ApJ, 873, 111 Karpov, S. 2021, STDPipe: Simple Transient Detection Pipeline, Astrophysics Source Code Library, record ascl:2112.006 Kilic, Y., Braga-Ribas, F., Pereira, C. L., et al. 2026, A&A, 707, A70 Kim, M.-J., Choi, Y.-J., Moon, H.-K., et al. 2014, AJ, 147, 56 Köse, O., Keskin, V., & Yakut, K. 2009, Ap&SS, 323, 75 Labrie, K., Simpson, C., Cardenes, R., et al. 2023, Research Notes of the Amer-ican Astronomical Society, 7, 214 Lang, D., Hogg, D. W., Mierle, K., Blanton, M., & Roweis, S. 2010, The Astro-nomical Journal, 139, 1782–1800 Lindegren, L., Klioner, S. A., Hernández, J., et al. 2021, A&A, 649, A2 Magnier, E. A., Chambers, K. C., Flewelling, H. A., et al. 2020, ApJS, 251, 3 Mohammadi, M., Abedi, A., & Riazi, N. 2016, New A, 44, 78 Mommert, M. 2017, Astronomy and Computing, 18, 47 Samec, R. G., Faulkner, D. R., & Williams, D. B. 2004, AJ, 128, 2997 Shevchenko, V. G., Belskaya, I. N., Krugly, Y. N., Chiomy, V. G., & Gaftonyuk, N. M. 2002, Icarus, 155, 365 Skrutskie, M. F., Cutri, R. M., Stiening, R., et al. 2006, AJ, 131, 1163 Stetson, P. B. 1987, PASP, 99, 191 Tody, D. 1986, in Society of Photo-Optical Instrumentation Engineers (SPIE) Conference Series, Vol. 627, Instrumentation in astronomy VI, ed. D. L. Crawford, 733 Tody, D. 1993, in Astronomical Society of the Pacific Conference Series, Vol. 52, Astronomical Data Analysis Software and Systems II, ed. R. J. Hanisch, R. J. V. Brissenden, & J. Barnes, 173 Vakili, M. & Hogg, D. W. 2016, arXiv e-prints, arXiv:1610.05873 Wells, D. C., Greisen, E. W., & Harten, R. H. 1981, A&AS, 44, 363 York, D. G., Adelman, J., Anderson, Jr., J. E., et al. 2000, AJ, 120, 1579 Zacharias, N., Finch, C. T., Girard, T. M., et al. 2013, AJ, 145, 44  
+
+> 5
+
+https://www.cosmos.esa.int/gaia  
+
+> 6
+
+https://www.cosmos.esa.int/web/gaia/dpac/consortium 
+
+Article number, page 10 O. Erece and Y. Kilic: PhoPS: An automated photometric pipeline for survey-era astronomy  
+
+> Fig. A.1. Example of a frame a ff ected by a transient tracking error dur-ing the observations of (201) Penelope. The distorted source profiles are visible, and (201) Penelope and UCAC4 532-045441 are marked.
+
+Appendix A: Additional photometric examples 
+
+This appendix provides supplementary examples that extend the validation presented in Sect. 3. We first show a frame a ff ected by a transient tracking error during the observations of (201) Pene-lope, and then present two additional applications of PhoPS :multi-band stellar photometry of the eclipsing binary V523 Cas and time-series photometry of the asteroid 19184 (1991 TB6). These examples illustrate the behaviour of the pipeline in repre-sentative stellar and moving-target datasets, including one non-ideal observing case. 
+
+A.1. Tracking-error case in the (201) Penelope dataset 
+
+Figure A.1 shows a frame a ff ected by a short tracking error dur-ing the TUG100 observations of (201) Penelope. The source pro-files are visibly distorted, and faint secondary images are present next to su ffi ciently bright objects. Despite this temporary degra-dation, the corresponding calibrated photometric measurements remain consistent with the neighbouring points in the final light curves. 
+
+A.2. Multi-band photometry of V523 Cas 
+
+To evaluate the performance of PhoPS on stellar time-series photometry, we reduced TUG060 observations of the eclips-ing binary V523 Cas, which has a period of about 5.6 h (e.g. Samec et al. 2004; Köse et al. 2009; Mohammadi et al. 2016), obtained in multiple Johnson-Cousins filters. Figure A.2 shows the resulting light curves. The expected variability pattern is clearly recovered in all bands, indicating that the pipeline can also be successfully applied to multi-band stellar time-series data.     
+
+> Fig. A.2. Multi-band calibrated light curves of the eclipsing binary V523 Cas derived from TUG060 observations reduced with PhoPS .
+> Fig. A.3. Light curve of the asteroid 19184 (1991 TB6) obtained from TUG100 observations and reduced with PhoPS .
+
+A.3. Photometry of 19184 (1991 TB6) 
+
+As an additional moving target example, we applied PhoPS to TUG100 observations of the asteroid 19184 (1991 TB6). Us-ing the same dataset, Kim et al. (2014) derived a rotational pe-riod of 4.99 h for this object. The resulting light curve is shown in Fig. A.3. The measured photometric behaviour is consistent with the expected rotational variability of the asteroid and shows that the pipeline can also be applied successfully to indepen-dent moving target datasets beyond the main validation case of (201) Penelope.

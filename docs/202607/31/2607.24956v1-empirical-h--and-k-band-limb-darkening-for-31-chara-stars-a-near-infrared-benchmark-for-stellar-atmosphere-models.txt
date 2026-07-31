@@ -1,0 +1,616 @@
+Title: Empirical H- and K-band Limb Darkening for 31 CHARA Stars: A Near-Infrared Benchmark for Stellar-Atmosphere Models
+
+URL Source: https://arxiv.org/pdf/2607.24956v1
+
+Published Time: Wed, 29 Jul 2026 00:13:11 GMT
+
+Number of Pages: 28
+
+Markdown Content:
+> Draft version July 29, 2026
+> Typeset using L ATEX twocolumn style in AASTeX7.0.1
+
+Empirical H- and K-band Limb Darkening for 31 CHARA Stars: A Near-Infrared Benchmark for Stellar-Atmosphere Models 
+
+Narsireddy Anugu, 1 John D. Monnier, 2 Antoine M´ erand, 3 Becky Flores, 1 Alexandre Gallenne, 4
+
+Douglas R. Gies, 1 Mayra Gutierrez, 2 Robert Klement, 5, 6, 1 Stefan Kraus, 7 Jayadev Rajagopal, 8
+
+Rachael M. Roettenbacher, 2 and Gail H. Schaefer 1
+
+> 1The CHARA Array of Georgia State University, Mount Wilson Observatory, Mount Wilson, CA 91023, USA
+> 2Department of Astronomy, University of Michigan, Ann Arbor, MI 48109, USA
+> 3European Southern Observatory, Karl-Schwarzschild-Str. 2, 85748 Garching, Germany
+> 4Instituto de Alta Investigaci´ on, Universidad de Tarapac´ a, Casilla 7D, Arica, Chile
+> 5European Organisation for Astronomical Research in the Southern Hemisphere (ESO) Casilla 19001, Santiago 19, Chile
+> 6Universit´ e Cˆ ote d’Azur, Observatoire de la Cˆ ote d’Azur, CNRS, Boulevard de l’Observatoire, CS 34229, 06304 Nice Cedex 4, France
+> 7Astrophysics Group, Department of Physics & Astronomy, University of Exeter, Stocker Road, Exeter, EX4 4QL, UK
+> 8NSF’s National Optical-Infrared Astronomy Research Laboratory, 950 N. Cherry Ave., Tucson, AZ 85719, USA
+
+ABSTRACT Limb darkening, the decrease in stellar intensity from the disk center to the limb, encodes the temperature structure and opacity of stellar atmospheres. Direct spatially resolved measurements of this center-to-limb variation remain scarce, especially in the near-infrared. We present interferometric limb-darkening measurements for 31 stars observed simultaneously in the H and K bands with the CHARA Array. The sample spans spectral types F–M and luminosity classes IV–I. The targets are well resolved in H and, for most targets, also in K. This coverage constrains the visibility curvature associated with limb darkening in joint H + K fits. We fit the combined H+K squared visibilities with four analytic limb-darkening laws and compare the resulting coefficients with bandpass-matched predictions from five stellar-atmosphere grids (Kurucz, MPS1, MPS2, Stagger, and spherical SATLAS, with reported coefficients placed on the Rosseland-radius convention) spanning one-dimensional plane-parallel, three-dimensional radiation–hydrodynamic, and spherical low-gravity models. The associated limb-darkened angular diameters are measured with median formal precisions of ≃ 0.2–0.3%. The CHARA results show expected weaker limb darkening at longer wavelengths and also with increasing 
+
+Teff . The clearest discrepancy with the atmosphere grids is in the wavelength dependence: the median fractional decrease in the power-law coefficient from H to K is ≃ 39% in the CHARA sample, com-pared with only ≃ 17–22% with model predictions. Relative to the MPS2 comparison, the empirical coefficients are higher by ≃ 21% in H and lower by ≃ 5% in K. Synthetic recovery tests indicate that the excess scatter is unlikely to be explained solely by incomplete spatial-frequency coverage or numer-ical instability in the fitting pipeline. These results provide multi-band interferometric limb darkening as a near-infrared benchmark for stellar-atmosphere models. 
+
+Keywords: Limb darkening (922) – Stellar atmospheres (1584) – Fundamental parameters of stars (555) – Long baseline interferometers (931) – High angular resolution (2167) 
+
+1. INTRODUCTION Limb darkening (LD), the center-to-limb intensity variation (CLV), is a direct manifestation of the temper-ature gradient, opacity structure, and geometric exten-sion of a stellar atmosphere. Because it shapes the emer-gent intensity profile across the stellar disk, limb dark-ening enters a wide range of astrophysical inferences, in-cluding interferometric angular diameters, eclipsing bi-nary analyses, exoplanet transit light curves, and high-
+
+> Corresponding author: Narsireddy Anugu Email: nanugu@gsu.edu
+
+precision stellar characterization. In practice, most of these applications rely on model-atmosphere predictions (e.g. A. Claret 2000; I. D. Howarth 2011) rather than direct empirical measurements, especially in the near-infrared where spatially resolved constraints remain lim-ited. The need for accurate limb-darkening prescriptions has become more pressing in the era of precision space-based photometry and spectroscopy. Observations from facilities such as JWST (e.g., Z. Rustamkulov et al. 2023) can reach a level of precision at which systematic uncertainties in the adopted limb-darkening law are no longer negligible (L.-P. Coulombe et al. 2024; K. Verma arXiv:2607.24956v1 [astro-ph.SR] 27 Jul 2026 2 Anugu et al. 
+
+et al. 2024). At the same time, widely used stellar-atmosphere grids do not always agree with one another, and in several cases empirical measurements have shown mismatch with model predictions (e.g., A. Claret & S. Bloemen 2011; Z. Magic et al. 2015; P. Kervella et al. 2017). Most empirical constraints on limb darkening have come from transit, eclipsing binaries, and microlensing event observations. These methods probe the stellar disk indirectly, either by occulting part of the star or by differentially magnifying the stellar surface (e.g., J. Southworth 2008; C. Afonso et al. 2000). Long-baseline optical interferometry provides a complementary and more direct test for sufficiently resolved stars. The complex visibility is the Fourier transform of the sky brightness distribution, so the measured squared visibil-ity V 2 samples the radial brightness profile of the stellar disk (e.g., J. P. Aufdenberg et al. 2005; S. Lacour et al. 2008; A. M´ erand et al. 2010; P. Kervella et al. 2017; A. Chowhan et al. 2026). Once a star is resolved beyond the first visibility null, the curvature of the V 2 profile becomes especially sensitive to the underlying CLV, with different degeneracies from transit or eclipse light-curve analyses. Direct near-infrared interferometric limb-darkening measurements remain relatively scarce, especially for evolved stars, with only a small number of dedicated case studies (e.g., M. Wittkowski et al. 2001; S. Lacour et al. 2008; A. M´ erand et al. 2010; P. Kervella et al. 2017). Many previous interferometric studies measured angular diameters while adopting fixed, model-based limb-darkening corrections rather than fitting the coeffi-cients directly in the visibility domain (e.g., R. Hanbury Brown et al. 1974; G. T. van Belle & K. von Braun 2009; T. S. Boyajian et al. 2012; E. K. Baines et al. 2025). A systematic comparison between visibility-domain limb darkening and modern stellar-atmosphere predictions, using matched passbands and stellar parameters, has not yet been made for a larger target sample. In this paper, we measure limb darkening for a sample of 31 resolved bright stars (Table 1) spanning spectral types F–M and luminosity classes IV–I with the Cen-ter for High Angular Resolution Astronomy (CHARA) Array (T. A. ten Brummelaar et al. 2005). We use simul-taneous H- and K-band observations with MIRC-X (N. Anugu et al. 2020) and MYSTIC (B. R. Setterholm et al. 2023). We fit analytic limb-darkening laws in the visi-bility domain, derive empirical coefficients and angular diameters, and compare them to bandpass-matched pre-dictions from five atmosphere-model grids (see Tables 2 and 3): Kurucz ATLAS (R. Kurucz 1993), Merged Parallelised Simplified-ATLAS set 1 (MPS1) and set 2 (MPS2) (N. M. Kostogryz et al. 2022), Stagger (Z. Magic et al. 2013, 2015), and spherical ATLAS/SATLAS (H. R. Neilson & J. B. Lester 2011, 2013). These grids span one-dimensional plane-parallel, three-dimensional radiation–hydrodynamic, and spherical low-gravity at-mosphere models. Our goal is to ask a direct question: do the limb-darkening profiles measured by CHARA agree with current atmosphere models, especially in how they change from H to K band? The paper is organized as follows. In Section 2, we describe the target selection. Section 3 describes the observations and data reduction. In Section 4, we present the visibility-domain fitting of CHARA data, the adopted limb-darkening laws, the atmosphere-grid coefficients, and the fixed-CLV diameter fits. In Sec-tion 5, we compare the empirical CHARA coefficients with the model predictions, quantify the wavelength-dependent residuals, assess possible systematics, and compare the analytic-law and fixed-CLV fit angular di-ameters. In Section 6, we summarize the implications for stellar-atmosphere models and for applications that rely on model-based limb-darkening coefficients. Con-clusions are given in Section 7.           
+
+> Figure 1. Hertzsprung–Russell diagram of the CHARA limb-darkening target sample. Points are colored by effec-tive temperature and scaled by the physical star radius (see Table 1). Targets span Teff ∼3690 −6570 K and include subgiants, giants and supergiants. 2.
+
+TARGET SAMPLE Our observed target sample consists of 31 bright and nearby stars. Table 1 summarizes the target stellar properties, including spectral type, effective tempera-ture Teff , surface gravity log g, and metallicity [M /H]. It also lists the combined H+K power-law limb-darkened angular diameter, θPL , from our primary CHARA fit, and the stellar radius derived from θPL and Gaia EDR3 distance estimates (see Section 4). The final 31-target sample spans Teff ≈ 3690–6570 K, log g = 0 .32–4 .04, and [M /H] ≈ −0.54 to +0 .25 dex. The full radius range is 2 .05–309 .12 R⊙, but the sample is dominated by stars with R < 50 R⊙; 25 of the 31 targets lie be-tween 2 .05 and 44 .79 R⊙. Figure 1 places the targets in CHARA Near-IR Limb Darkening Benchmark 3the Hertzsprung–Russell diagram. The literature values of Teff , log g, and [M /H] listed in Table 1 are taken from E. K. Baines et al. (2025) and C. Soubiran et al. (2016), while the listed stellar radii are recomputed here from our fitted θPL values and Gaia EDR3 distances. The sample is a benchmark set, selected for reliable visibility-domain sensitivity to the CLV rather than for complete-ness. The targets span spectral types F through M and are primarily subgiants and giants. The sample is there-fore intended as a benchmark set covering a range of atmospheric regimes. The evolved subset is especially favorable for interferometry because its larger apparent diameters and more extended atmospheres provide sen-sitive tests of stellar-atmosphere grids (e.g., H. R. Neil-son & J. B. Lester 2013; Z. Magic et al. 2015; N. M. Kostogryz et al. 2024; P. H. Hauschildt et al. 2025). We selected targets that are both bright enough ( H < 
+
+3 mag) for stable fringe tracking and for calibrated CHARA V 2 measurements at the ∼ 10 −3 precision level, and sufficiently resolved in both H and K to constrain the curvature of the squared-visibility function. We therefore prioritized nearby large stars with angular di-ameters large enough for the data to extend beyond the first visibility null and into the second visibility lobe (example, Figure 2). In the final sample, all 31 targets have two-null coverage in the H band, and 24 have two-null coverage in the K band. Here the null/lobe cov-erage is referenced to the fitted angular diameter θPL 
+
+reported later in Table 4. Our synthetic data analysis shows that a diameter threshold of about 1.7 mas is re-quired to recover the limb-darkening coefficients reliably (Appendix A); all targets in the final sample are larger than 2.1 mas (see Table 4). This spatial-frequency cov-erage allows us to distinguish between limb-darkening profiles, rather than merely measuring a uniform-disk angular diameter. The initial candidate list was assembled using the JMMC Stellar Diameters Catalogue version 2 (JSDC; A. Chelli et al. 2016; L. Bourg´ es et al. 2017). We chose stars with diameters between 2 and 6 mas, with H or 
+
+K < 4 mag, |H − R| < 4 mag, and declination > −15 ◦.We kept stars with clean JSDC calibrator flags, allowing only unflagged entries with a high diameter-fit χ2, while rejecting known close doubles and object types that in-dicate possible binarity or pulsation. These cuts yield 744 potential CHARA-observable targets. We observed 50 candidate targets with CHARA. From the observed sample, 19 targets were excluded for the following rea-sons: 5 showed evidence for surface-brightness structure, 2 showed signatures consistent with binarity, and 12 lacked sufficient data quality and/or spatial-frequency leverage to provide robust limb-darkening constraints. For the retained sample, the closure-phase companion search shows no evidence for companions within an interferometric field of view of roughly 100–270 mas, nor for large-scale surface-brightness asymmetries at the level of ≳ 1% of the total flux (see Section 5). A sep-arate manuscript will present the subsample of targets showing evidence for binarity or resolved surface struc-ture.                                                                                                                                                         
+
+> Table 1 . Target properties with a shared index ( ID ). Targets are sorted by effective temperature (hot to cool). Stellar parameters are taken from E. K. Baines et al. (2025) and C. Soubiran et al. (2016). The Mass column lists the adopted stellar masses used for the SATLAS model selection; bracketed numbers are references for masses. Radii ( R/R ⊙) are computed from the power-law angular diameters (Table 4) and Gaia EDR3 distance estimates (C. A. L. Bailer-Jones et al. 2021).
+> ID Target HD Spectral type Teff (K) log g[M/H] Mass θPL (mas) R/R ⊙
+> 1αCMi HD 61421 F5IV-V+DQZ 6570 4.04 -0.04 1.478 [1] 5.417 ±0.005 2.05 ±0.01 2αPer HD 20902 F5Ib 6193 1.02 0.14 6.5 [2] 3.226 ±0.003 53.76 ±1.39 3ηBoo HD 121370 G0IV 5901 3.78 0.25 1.71 [3] 2.222 ±0.006 2.72 ±0.05 4ϵLeo HD 84441 G1II 5576 2.34 -0.09 3.71 [4] 2.662 ±0.004 19.94 ±0.36 5βDra HD 159181 G2Ib-IIa 5184 1.66 0.06 6.0 [5] 3.342 ±0.005 42.82 ±0.50 6γTau HD 27371 G9.5IIIabCN0.5 5124 2.63 0.12 2.7 [6] 2.399 ±0.006 11.94 ±0.12 7ηHer HD 150997 G7IIIFe-1 4994 2.53 -0.22 2.01 [7] 2.526 ±0.006 9.28 ±0.05 8ηSer HD 168723 K0III-IV 4948 3.18 -0.19 1.6 [4] 2.968 ±0.004 6.08 ±0.02 9ϵTau HD 28305 K0III 4921 2.47 0.14 2.458 [8] 2.596 ±0.008 12.46 ±0.10 10 δBoo HD 135722 G8IIIFe 4880 2.48 -0.36 1.5 [4] 2.756 ±0.003 10.93 ±0.06
+> Table 1 continued
+
+4 Anugu et al. 
+
+Table 1 (continued) 
+
+ID Target HD Spectral type Teff (K) log g [M/H] Mass θPL (mas) R/R ⊙
+
+11 ϕ2 Ori HD 37160 G9IV 4823 2.61 -0.54 1.07 [9] 2.251 ± 0.008 8.45 ± 0.06 12 ι Cep HD 216228 K0III 4779 2.61 0.01 2.15 [4] 2.843 ± 0.007 11.20 ± 0.06 13 ι Gem HD 58207 G9IIIb 4779 2.40 -0.10 1.89 [4] 2.472 ± 0.005 11.02 ± 0.09 14 η Cyg HD 188947 K0III 4770 2.64 0.02 0.9 [9] 2.287 ± 0.005 10.43 ± 0.05 15 γ Cep HD 222404 K1III-IVCN1 4684 3.20 0.15 1.27 [10] 3.201 ± 0.004 4.75 ± 0.01 16 α Cas HD 3712 K0IIICN+1 4625 1.19 -0.10 4.98 [11] 5.664 ± 0.010 43.14 ± 1.50 17 ξ Dra HD 163588 K2III 4504 2.31 -0.01 1.45 [4] 3.078 ± 0.003 11.40 ± 0.05 18 μ Leo HD 85503 K2IIIb CN1 Ca1 4433 2.50 0.25 1.5 [12] 2.854 ± 0.004 11.74 ± 0.08 19 109 Her HD 169414 K2III 4387 2.24 -0.06 1.05 [4] 2.996 ± 0.003 11.93 ± 0.06 20 υ Per HD 9927 K3-III 4374 2.06 0.05 1.75 [4] 3.615 ± 0.003 20.91 ± 0.20 21 δ And HD 3627 K3III 4347 2.04 0.21 1.3 [13] 4.160 ± 0.008 14.45 ± 0.03 22 ϵ Gem HD 48329 G8Ib 4315 0.76 0.11 5.29 [7] 4.780 ± 0.009 136.39 ± 6.33 23 11 Lac HD 214868 K2.5III 4310 1.93 -0.20 1.38 [4] 2.633 ± 0.009 30.24 ± 0.34 24 σ Per HD 21552 K3III 4159 1.60 -0.23 1.32 [4] 3.125 ± 0.005 35.28 ± 0.77 25 ζ Cep HD 210745 K1.5Ib 4151 0.77 0.07 10.1 [5] 5.239 ± 0.013 171.55 ± 7.40 26 HD 220369 HD 220369 K3II 4131 1.24 0.11 1.5 [9] 2.542 ± 0.008 96.14 ± 67.13 27 λ Her HD 158899 K3.5III 4070 1.89 -0.04 1.18 [4] 3.109 ± 0.003 40.28 ± 0.48 28 V424 Lac HD 216946 K5Ib 4013 0.32 -0.02 6.8 [12] 4.049 ± 0.008 304.30 ± 23.98 29 ρ Ser HD 141992 K4.5III 3920 1.68 -0.17 1.0 3.371 ± 0.004 44.79 ± 0.57 30 υ Aur HD 38944 M0III 3912 1.16 -0.23 1.64 [7] 4.316 ± 0.007 80.46 ± 2.66 31 α Vul HD 183439 M0III 3690 1.30 -0.38 0.97 [9] 4.339 ± 0.004 41.48 ± 0.41 
+
+Note —Mass references: 1–H. E. Bond et al. (2015); 2–G. Wade et al. (2025); 3–D. B. Guenther et al. (2005); 4–A. Massarotti et al. (2008); 5–M. M. Hohle et al. (2010); 6–L. da Silva et al. (2006); 7–E. K. Baines et al. (2018); 8–T. Arentoft et al. (2019); 9–C. Allende Prieto & D. L. Lambert (1999); 10–E. Knudstrup et al. (2023); 11–J. Rudrasingam et al. (2026); 12–B.-C. Lee et al. (2014); 13–M. Bottom et al. (2015). For ρ Ser, no suitable literature mass was found; we adopt 1 .0 M⊙ only for SATLAS grid selection. 3. OBSERVATIONS AND DATA REDUCTION To compare limb darkening in H and K-bands, we obtained simultaneous H- and K-band interferometric observations of each target with MIRC-X and MYSTIC at the CHARA Array. The CHARA Array consists of six 1 m telescopes (S1, S2, W1, W2, E1, and E2) arranged in a Y-shaped configuration. This yields an angular res-olution of approximately λ/ 2B, corresponding to spatial scales of ∼ 0.5 mas and ∼ 0.7 mas in the near-infrared 
+
+H and K bands, respectively. The long baselines up to 331 m and dense ( u, v ) coverage make CHARA well suited for this program. With the six-telescope MIRC-X and MYSTIC beam combiners, each exposure provides 15 V 2 measurements and 10 independent closure-phase (T3 ϕ) measurements per wavelength band. The observations were acquired simultaneously, with MYSTIC operating as the fringe tracker while MIRC-X recorded science data simultaneously. We used the stan-dard observing procedures to reduce detector-correlated noise in MIRC-X, including hot-pixel correction and fre-quent dark exposures taken approximately every 5 min-utes. MIRC-X was used at spectral resolving power R ∼ 
+
+180 in 2025, providing 31 spectral channels across the H
+
+band (1.5–1.75 μm), and at R ∼ 102 in 2026, providing 14 spectral channels. MYSTIC was used at R ∼ 272 in 2025, providing 61 spectral channels across the K
+
+band (2.0–2.37 μm), and at R ∼ 102 in 2026, provid-ing 22 spectral channels. The lower spectral resolution mode in 2026 was adopted as an observing-setup choice to increase per-channel sensitivity by concentrating the flux into fewer spectral channels, improving the signal-CHARA Near-IR Limb Darkening Benchmark 5
+
+Figure 2. Squared visibility V 2 and residuals for the limb-darkening fits of α CMi (HD 61421, Procyon, angular diameter 5.417 ± 0.005 mas) in the H band (top row; MIRC-X) and K band (bottom row; MYSTIC). For each band, V 2 is shown as a function of spatial frequency ( Bmax /λ ) on linear (left) and logarithmic (right) scales. The linear-scale panels highlight the short-baseline V 2 quality. The E1 telescope was unavailable for this observation because of delay-line constraints. Observed data are plotted in black with 1 σ uncertainties, and best-fit models are overplotted for the uniform-disk baseline and the analytic limb-darkening laws considered in this work (see Eq. 1). Residuals are shown in the bottom panel. Multi-lobe coverage makes the visibility curvature sensitive to limb darkening, allowing different prescriptions to be distinguished directly in the measurement domain, although the laws can still look very similar for some targets because they share the same null structure and overall envelope. The complete figure set (42 target/epoch pairs; 84 band-specific plots) is available in the online version of the article and in the Zenodo figure-set archive (N. Anugu 2026). 6 Anugu et al. 
+
+to-noise ratio for faint or low-contrast detections. The lower-resolution mode increases the per-channel signal-to-noise ratio while preserving the bandpass-integrated visibility information used for the limb-darkening fits. Depending on nightly conditions and array availability, observations were conducted with five or six available telescopes. Science targets and calibrators were observed in a repeated SCI1–CAL–SCI2–CAL cadence (see Ap-pendix B). Each observing sequence consisted of a 5-minute coherent (on-fringe) scan sampled at 4 ms ca-dence, paired with a 10 ms coherent integration used to estimate and subtract instrumental bias. These settings follow the standard MIRC-X/MYSTIC observing pro-cedure and were applied uniformly across the program rather than adjusted target by target for magnitude or expected signal-to-noise ratio. The raw MIRC-X and MYSTIC data 1 were reduced using the standard MIRC-X data-reduction pipeline (version 1.5.0; N. Anugu et al. 2020; J.-B. Le Bouquin et al. 2024) 2, which produces calibrated V 2, closure phases (T3 ϕ), and photometric fluxes. The final cal-ibrated OIFITS files are available through the OIDB database 3. For each target, we produced calibrated OIFITS files using 30 s averages and 10, 15, and 20 minute averages. To assess calibrator-related sys-tematics, we also calibrated the calibrators against other calibrators observed on the same nights, allowing us to refine effective calibrator diameters and propagate real-istic calibrator-size uncertainties into the transfer func-tion (see Appendix B and Table 6). Some calibrators have angular diameters larger than ∼ 0.5 mas and are therefore not strictly unresolved on the longest baselines, particularly in the H band; we accordingly treat calibra-tor size as a contributor to the calibration error budget rather than assuming all calibrators are point-like. As a final calibration-stability check, we inspected the nightly transfer functions separately for each baseline, calibra-tor, and spectral band (see Appendix B.1). The transfer functions show the expected scatter from seeing, residual delay-line errors, and vibrations, but no large disconti-nuities or systematic wavelength-dependent offsets. We therefore find no evidence that the calibrated V 2 data are dominated by a transfer-function artifact. We adopt instrument-specific wavelength-scale correc-tion factors (see Appendix B.2). For MIRC-X in the H
+
+band, we use sλ = 0 .999 ± 0.001 for the 2025 data and 1.0054 ± 0.0006 for the 2026 data. The difference be-tween the 2025 and 2026 wavelength-scale factors arose because the instrument focus was changed in 2026. For MYSTIC in the K band, we use 1 .0067 ±0.0007 (J. Mon-nier, private communication; T. Gardner et al. 2022). In    
+
+> 1Available at https://www.chara.gsu.edu/observers/database
+> 2Available at https://gitlab.chara.gsu.edu/lebouquj/mircx pipeline.git
+> 3Available at https://oidb.jmmc.fr
+
+all cases, the corrected wavelength scale is computed as 
+
+λcorr = λpipeline /s λ. 
+
+> 4.
+
+METHODS We present here our methodology for compar-ing CHARA limb-darkening measurements with atmosphere-model predictions matched to the MIRC-X and MYSTIC H and K passbands. The main analysis steps are summarized in Table 2. Rather than adopting precomputed coefficient tables, we use the underlying model intensity or CLV profiles, integrate them over the individual H and K-band passbands, fit the same analytic laws used for the CHARA data, and propagate the adopted stellar-parameter uncertainties. We fit four analytic limb-darkening laws (Section 4.2) and use the one-parameter power law as the refer-ence prescription for comparisons between CHARA and atmosphere-model predictions. This law provides a sta-ble coefficient summary across the sample, including tar-gets with uneven higher-lobe V 2 coverage. More flexible laws, especially the power–2 and four-parameter forms, can reproduce realistic near-infrared CLVs more accu-rately (K. Verma et al. 2024; A. Claret et al. 2025); we therefore include those laws as consistency checks, and their fitted coefficients are provided in the machine-readable table in the Zenodo archive (N. Anugu 2026) and Appendix C. We use θlaw for empirical analytic-law angular diam-eters, with θPL denoting the power-law angular diame-ter from the joint H+K fit. The coefficients αb, with 
+
+b ∈ { H, K }, denote the empirical CHARA power-law limb-darkening coefficients measured independently in the H and K bands, i.e., αH and αK . For model com-parisons, αgI,b is the coefficient obtained by fitting the same analytic law directly to the passband-integrated model intensity profile, Ib(μ), where g denotes the atmo-sphere grid. We use I(μ) for a generic center-normalized CLV or analytic-law form. The coefficient αg 
+
+> SVAM ,b
+
+is computed from synthetic CHARA-sampled visibilities generated from the same model CLV. Fixed-CLV angu-lar diameters are denoted by θg
+
+> CLV
+
+.The analysis proceeds in three steps. First, we fit analytic laws directly to the calibrated CHARA V 2 data using PMOIRED 4 (A. M´ erand 2022) (see Section 4.2). Second, we compute atmosphere-model coefficients both from direct fits to Ib(μ) (Section 4.3) and from synthetic CHARA visibility sampling (Section 4.4). Third, we fit the CHARA V 2 data directly with fixed atmosphere-model CLV profiles to test the effect on angular diameter (Section 4.5). 4.1. Analytic limb-darkening laws 
+
+We describe the stellar CLV with the center-normalized specific intensity I(μ), such that I(1) = 
+
+> 4https://github.com/amerand/PMOIRED
+
+CHARA Near-IR Limb Darkening Benchmark 71. For a circular disk of angular diameter θ,
+
+μ =
+
+√
+
+1 − (2 r/θ )2, where r is the projected angu-lar distance from the disk center. We fit the V 2 data with a uniform-disk (UD) baseline and four analytic limb-darkening laws: linear (K. Schwarzschild 1906), quadratic (Z. Kopal 1950), power law (D. Hestroffer 1997), and power–2 (P. F. L. Maxted 2018): 
+
+Ilin (μ) = 1 − a(1 − μ),Ipow (μ) = μα,Iquad (μ) = 1 − u1(1 − μ) − u2(1 − μ)2,Ip2 (μ) = 1 − p1 (1 − μα1 ) .
+
+(1) The fitted coefficients are a, α, ( u1, u 2), and ( p1, α 1); band-specific values use subscripts, e.g., aH and aK .4.2. Analytic laws: visibility-domain fitting of CHARA 
+
+V 2 data with PMOIRED 
+
+For a circularly symmetric CLV, the monochromatic complex visibility is the normalized zeroth-order Han-kel transform of the intensity profile (e.g., R. Hanbury Brown et al. 1974; A. M´ erand 2022): 
+
+V (q) = 
+
+∫ 10 I(μ) J0
+
+(
+
+πqθ √1 − μ2
+
+)
+
+μ dμ 
+
+∫ 10 I(μ) μ dμ , (2) where q = Bp/λ is the projected spatial frequency, Bp
+
+is the projected baseline length, J0 is the zeroth-order Bessel function of the first kind, and θ is the angular di-ameter. Eq. 2 shows explicitly how the CLV enters the visibility curve; the fitted observable is |V |2 after band-pass integration and sampling at the observed CHARA spatial frequencies. We fit the calibrated CHARA V 2 data (Figure 2) using PMOIRED, a widely used Python package for parametric interferometric model fitting. For clarity, we describe the fitting procedure using the one-parameter power law; the other limb-darkening laws are treated analogously. For each target, we jointly fit the H- and 
+
+K-band V 2 data with one shared power-law angular diameter, θPL , and one shared visibility-normalization term, V 20 . The power-law coefficient is allowed to vary by band through independent αH and αK . The band-specific uniform-disk diameters θUD ,H and θUD ,K are re-ported as baseline references. The fitted visibility model is scaled as V 2fit = V 20 V 2LD ,where the normalized limb-darkened model satisfies 
+
+V 2LD (B = 0) = 1. Thus V 20 represents a multiplicative visibility-scale correction, with the ideal value equal to unity. Separate H- and K-band fits yield consistent val-ues of V 20 , so we adopt a single shared value for each target in the joint H+K fit. This is appropriate be-cause MIRC-X and MYSTIC share the same calibrators, upstream optics, and optical table. The normalization term accounts for baseline-independent visibility offsets, while residual baseline- or wavelength-dependent struc-ture is treated as calibration variance. The resulting fitting residuals are shown in Figure 2. In V 2 space, different analytic laws can give similar residuals because they share nearly the same null struc-ture and overall visibility envelope. The degree of dis-crimination depends on angular diameter, lobe coverage, and measurement precision. Appendix C therefore also compares the fitted laws in intensity space, where their differences are more apparent. As a check on possible fit degeneracies, we compared the fitted coefficients αH and αK against both θPL and 
+
+V 20 (Appendix B.3). No strong monotonic dependence is evident. Closure phases are not included in the limb-darkening fits but are used to vet epochs and targets for asym-metries or companions (Section 5.2). All benchmark targets, including the evolved stars, are consistent with centro-symmetry within the uncertainties of the closure-phase measurements. Consequently, no targets were ex-cluded on the basis of closure phases alone. Parameter uncertainties are estimated from PMOIRED bootstrap covariances computed by resam-pling the 10-minute averaged scans within each target and band. Table 4 presents the compact power-law summary, while the machine-readable version in Zenodo additionally includes the results for the other analytic limb-darkening laws and the direct fixed-CLV diameter fits (Section 4.5). 4.3. Analytic laws: intensity-domain fitting of stellar-atmosphere predictions 
+
+We compute bandpass-matched model limb-darkening coefficients from five stellar-atmosphere model sets: Ku-rucz ATLAS, MPS1, MPS2, Stagger, and spherical ATLAS/SATLAS. These model sets differ in physi-cal assumptions, geometry, and stellar-parameter cov-erage. Kurucz (R. Kurucz 1993) provides a classical one-dimensional ATLAS grid. MPS1 and MPS2 are newer one-dimensional MPS-ATLAS grids (N. M. Kos-togryz et al. 2022; N. Kostogryz et al. 2023), which differ in their adopted abundance mixture and mixing-length treatment. Stagger provides the three-dimensional radiation–hydrodynamic comparison, with spatially in-homogeneous convection and velocity fields (Z. Magic et al. 2013, 2015). SATLAS provides the spherical low-gravity comparison, for which atmospheric extension can affect both the CLV and the interferometric angular-diameter correction (H. R. Neilson & J. B. Lester 2013). The grid sizes and parameter ranges are summarized in Table 3. For each model set, we fit the same analytic limb-darkening laws to the bandpass-integrated model inten-sity profiles, Ib(μ), so that the model coefficients can be compared consistently with the empirical CHARA visibility-domain coefficients. 8 Anugu et al. 
+
+Table 2. Schematic summary of the main analysis steps in Section 4. Representative results from these steps are shown in Figures 2, 3, 4, 5 and 6, with tabulated empirical power-law results in Table 4. The full set of CHARA visibility-domain analyt-ic-law fits, model-grid limb-darkening coefficients, and fixed-CLV angular diameters is provided in the online machine-readable table. Method What is fitted Main output Empirical analytic-law fits (Section 4.2) The calibrated CHARA V 2 data are fit with a chosen ana-lytic limb-darkening law (Section 4.1). For the joint power-law fit, the free parameters are θPL , V 20 , αH , and αK .Empirical angular diameters and limb-darkening coef-ficients (Tables 4 and 5; Figures 2 and 3). Intensity-domain model limb-darkening coefficients (Section 4.3) Bandpass-integrated model CLV profiles, Ib(μ), are com-puted from the atmosphere grids and fit directly with the same analytic laws in intensity space. Model intensity-domain coeffi-cients, αgI,b (Figure 4). Synthetic-visibility atmosphere-model co-efficients (Section 4.4) The same model CLV profiles are converted to synthetic V 2
+
+values, sampled at the observed CHARA ( u, v, λ ) points, and refit with the same analytic laws in the visibility domain. Model visibility-domain coeffi-cients, αg 
+
+> SVAM ,b
+
+(Figure 5). Fixed-grid CLV fitting (Section 4.5) The CHARA V 2 data are fit directly with fixed bandpass-integrated model CLV profiles from the atmosphere grids, solving only for θg 
+
+> CLV
+
+and V 20 while keeping the model CLV shape fixed. Model-dependent CLV angular diameters (Table 4). 
+
+Figure 3. Comparison of H- and K-band power-law coefficients from CHARA data and atmosphere-model predictions. The filled colored points show the empirical CHARA coefficients, ( αH , α K ), measured by fitting the CHARA V 2 data and color-coded by Teff . The gray sequences show the corresponding model-grid predictions. Left: direct intensity-domain model coefficients, (αgI,H , α gI,K ), obtained by fitting the analytic law to the passband-integrated model intensity profiles Ib(μ) (Section 4.3). Right: SVAM coefficients, ( αg 
+
+> SVAM ,H
+
+, α g 
+
+> SVAM ,K
+
+), recovered by fitting the same law to synthetic CHARA-sampled visibilities generated from each model CLV (Section 4.4). The dashed line marks equality between the H- and K-band coefficients. The systematic separation between the colored CHARA and the gray model points shows the model–data discrepancy discussed in the text. CHARA Near-IR Limb Darkening Benchmark 9
+
+Figure 4. CHARA power-law coefficients compared with intensity-domain coefficients predicted by the atmosphere-model grids. Top: H-band coefficients, αH and αgI,H , as a function of Teff (left), and K-band coefficients, αK and αgI,K , as a function of Teff 
+
+(right). Filled colored circles show the empirical CHARA V 2 fit coefficients, color-coded by Teff , while open symbols and gray curves show the corresponding model predictions from Stagger, Kurucz, MPS1, MPS2, and SATLAS. Bottom: fractional offsets of the empirical CHARA coefficients relative to the MPS2 intensity-domain predictions, shown as 100( αb − αMPS2  
+
+> I,b
+
+)/α MPS2  
+
+> I,b
+
+, with 
+
+b ∈ { H, K } and CHARA 1 σ error bars. Apparent discontinuities in some model tracks reflect edge-limited grid coverage for parts of the target sample. The limitations differ by grid: Stagger is limited for the coolest targets and some low-gravity/metal-rich stars, Kurucz and MPS1/MPS2 are mainly limited by their high-log g coverage for evolved stars, and SATLAS assumes solar composition (Table 3). 
+
+Table 3. Atmosphere-model grids used for model limb-darkening comparisons. The first row gives the parameter range of the observed CHARA sample for reference. 
+
+Model set Type Inputs Coverage CHARA sample (31 targets) Observed sample Teff , log g, [M /H] T = 3690–6570 K; log g = 0 .32–4.04; Z = −0.54 to +0 .25 Kurucz ATLAS (741) 1D ATLAS Teff , log g, [M /H] T = 3500–6500 K; log g = 4 .0–5.0; Z = −5.0 to +1 .0MPS1 (34160) 1D MPS-ATLAS Teff , log g, [M /H] T = 3500–9000 K; log g = 3 .0–5.0; Z = −5.0 to +1 .5MPS2 (34160) 1D MPS-ATLAS Teff , log g, [M /H] T = 3500–9000 K; log g = 3 .0–5.0; Z = −5.0 to +1 .5Stagger (99) 3D RHD Teff , log g, [M /H] T = 4000–7000 K; log g = 1 .5–5.0; Z = −3.0 to 0 .0SATLAS 1D spherical Teff , log g, M T = 3000–8000 K; log g = −1 to 3; M = 0 .5, 1, 2.5–20 M⊙
+
+Note — Here T ≡ Teff and Z denotes [M /H] for compactness. The CHARA-sample row gives the range spanned by the targets in Table 1. Kurucz, MPS1, MPS2, and Stagger are accessed through ExoTiC-LD; SATLAS CLV profiles are accessed through PMOIRED and placed on the Rosseland-radius scale. SATLAS assumes solar composition; therefore no metallicity dimension is varied for that grid. The listed ranges refer to the grid coverage used for the model comparisons. 10 Anugu et al.    
+
+> Figure 5. Same format as Figure 4, but comparing the empirical CHARA coefficients with SVAM coefficients, αg
+> SVAM ,b ,computed from synthetic CHARA-sampled visibilities generated from each model CLV (see Section 4.4). Target labels are shown on the upper CHARA panels.
+
+The Kurucz, MPS1, MPS2, and Stagger grids are ac-cessed through ExoTiC-LD (D. Grant & H. Wakeford 2024), which distributes the underlying atmosphere-grid files through the ExoTiC-LD stellar-grid archive. 5
+
+For these four grids, the input stellar parameters are (Teff , log g, [M /H]). ExoTiC-LD interpolates the model specific-intensity profiles to the adopted stellar param-eters, integrates them over the MIRC-X and MYS-TIC passbands, and fits the resulting bandpass-matched 
+
+Ib(μ) profiles with the specified analytic limb-darkening laws. ExoTiC-LD natively supports several common an-alytic laws, including the linear, quadratic, square-root, Kipping, three-parameter, four-parameter, and power– 2 laws; for this work, we additionally implemented the one-parameter power law used in the CHARA V 2 fits. The SATLAS models are treated separately as they take ( Teff , log g, M ) as input parameters. The SATLAS CLV profiles are those of H. R. Neilson & J. B. Lester (2013), distributed through the CDS/VizieR archive, 6
+
+and accessed in this work through the PMOIRED im-plementation. The grid assumes solar composition and spans Teff = 3000–8000 K, log g = −1 to 3, and stellar masses from 0 .5 to 20 M⊙. For each target, we adopt a literature-based mass as listed in Table 1. These masses are used only to select the spherical CLV profile and are not fitted to the CHARA data.   
+
+> 5https://www.star.bris.ac.uk/exotic-ld-data/
+> 6http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/554/A98
+
+For SATLAS, all coefficients and angular diameters reported in this paper are placed on the Rosseland-radius scale (H. R. Neilson & J. B. Lester 2013). The native SATLAS CLV profiles are tabulated relative to the model outer radius, Rout . We convert the native SATLAS coordinate from the outer-radius scale to the Rosseland-radius scale using the tabulated RRoss /R out 
+
+ratio. For the analytic-law coefficient fits, only rays with projected impact parameter p ≤ RRoss are used after rescaling to the Rosseland-radius coordinate. In the fixed-CLV visibility fits, we retain the full spheri-cal SATLAS intensity profile, including the layers out-side RRoss , but report the fitted angular scale as the Rosseland angular diameter. Thus θSATLAS CLV denotes the Rosseland angular diameter. For each target, we propagate the uncertainties in the adopted stellar parameters into the model limb-darkening coefficients using a Monte Carlo procedure. For the ExoTiC-LD grids, we draw 10 4 realizations of (Teff , log g, [M /H]) around the adopted values in Table 1, assuming independent Gaussian uncertainties of σT =100 K, σlog g = 0.20 dex, and σ[M /H] = 0.20 dex. These perturbations are used only to propagate stellar-parameter uncertainties into the model predictions and are not fitted to the CHARA data. For each star and band, we adopt the median coefficient as the model pre-diction and the 16th–84th percentile range as the model-based uncertainty. For SATLAS, the adopted mass is used only to select the spherical CLV profile; mass un-CHARA Near-IR Limb Darkening Benchmark 11 certainties are not propagated into the coefficient uncer-tainties. We fit each analytic law over the full tabulated CLV range down to the native grid limit, μmin , which is typically ∼ 0.01. We adopt this convention because the CHARA V 2 measurements are sensitive to the full center-to-limb profile, including the treatment of the outer stellar limb. We therefore retain the native model limit rather than truncating the fit at a critical value such as μcrit to regularize the analytic-law coefficients (A. Claret 2018). Truncated-μ coefficient tables can be useful for other applications, but they are not strictly like-for-like with the CHARA visibility-domain measure-ments considered here. Our benchmark sample includes evolved stars with log g values below the formal gravity coverage of the Kurucz and MPS grids, so predictions from those grids for the lowest-gravity targets should be interpreted as edge-limited comparisons rather than fully matched at-mosphere predictions. Stagger reaches lower gravities but is sparse and non-uniform in Teff , log g, and [M /H]. SATLAS provides the most directly matched low-gravity spherical comparison, but the grid assumes solar com-position and uses stellar mass rather than metallicity as an input parameter. We therefore interpret inter-grid differences as model sensitivity rather than as a strict ranking of atmosphere-grid accuracy. Although PHOENIX models are available through ExoTiC-LD, we exclude them from the final comparison set because the full-μ analytic-law fits were not stable for the present visibility-domain comparison. Models like MARCS (B. Gustafsson et al. 2008) and NewEra (P. H. Hauschildt et al. 2025) would be a natural future extension for cool evolved stars. For the main residual plots, we use MPS2 as a ho-mogeneous reference grid because it provides dense and regular parameter-space coverage across the sample. Figures 3 and 4 compare the coefficients computed from the five model sets. 4.4. Analytic laws: like-for-like model comparison of intensity-domain and synthetic-visibility coefficients 
+
+Limb-darkening coefficients depend on the adopted law, fitting weights, and fitting domain (I. D. Howarth 2011; N. Espinoza & A. Jord´ an 2015). A coefficient fit directly to Ib(μ) need not match one measured from interferometric observables, because visibility fit-ting weights the CLV after transformation into Fourier space and sampling at the observed spatial frequencies. We therefore compute two model coefficient sets. The first, αgI,b , is obtained by fitting the analytic law directly to Ib(μ). The second, αg
+
+> SVAM ,b
+
+, is obtained by transform-ing the same model CLV into synthetic V 2, sampling it at the observed CHARA ( u, v, λ ) points with the em-pirical OIFITS uncertainties and flags, and evaluated at the empirical power-law angular diameter θPL . We then refit those synthetic visibilities with PMOIRED. Figures 3, 4 and 5 show the corresponding compar-isons. Unless stated otherwise, we interpret model–data differences using the SVAM coefficients and retain the direct Ib(μ) coefficients as context. For each target, band, law, and grid we define 
+
+σcomb ,g =
+
+√
+
+σ2CHARA + σ2 
+
+> g
+
+, (3) where σCHARA is the visibility-fit bootstrap uncertainty and σg is the corresponding model-coefficient uncer-tainty from the Monte Carlo propagation of the adopted stellar-parameter uncertainties, where available. Multi-epoch measurements are averaged. For each band b ∈ { H, K } and atmosphere grid g, we quantify the empirical H–K coefficient contrast as 
+
+Cα 
+
+> HK
+
+= 100 αH − αK
+
+αH
+
+, (4) and the corresponding model contrast as 
+
+Cα,g  
+
+> HK
+
+= 100 αg 
+
+> SVAM ,H
+
+− αg
+
+> SVAM ,K
+
+αg
+
+> SVAM ,H
+
+. (5) When needed below, we distinguish the correspond-ing direct intensity-domain contrast, Cα,g  
+
+> HK
+
+(I), from the synthetic-visibility contrast, Cα,g  
+
+> HK
+
+(SVAM). We define the absolute CHARA–model coefficient off-set as 
+
+δα gb = αb − αg
+
+> SVAM ,b
+
+, (6) and the corresponding fractional offset as ∆gb = 100 αb − αg
+
+> SVAM ,b
+
+αg
+
+> SVAM ,b
+
+. (7) To compare coefficients obtained directly from the model intensity profile with those recovered from syn-thetic CHARA-sampled visibilities, we define ∆gI−SVAM ,b = 100 αgI,b − αg
+
+> SVAM ,b
+
+αgI,b 
+
+. (8) 4.5. Fixed Model Grid CLV Fitting: Angular Diameters 
+
+After comparing empirical and model-based limb-darkening coefficients, we implement a complemen-tary diameter measurement by fitting the CHARA V 2
+
+data directly with fixed atmosphere-model CLV profiles. Here “fixed-CLV” means that the bandpass-integrated model Ib(μ) profile is held fixed, while only the angular diameter, θg
+
+> CLV
+
+, and visibility normalization, V 20 , are fit-ted. The Kurucz, MPS1, MPS2, and Stagger CLVs are generated with ExoTiC-LD as described in Section 4.3; the SATLAS CLVs are obtained through PMOIRED. 12 Anugu et al. 
+
+Figure 6. Illustrative data-vs-model comparison for the well-resolved star υ Per (HD 9927, θPL = 3 .615 ± 0.003 mas, 
+
+Teff = 4374 ± 17), shown in the H band (top) and K band (bottom). This target is shown because it is a cool giant with clear multi-lobe coverage, so the visibility curvature beyond the first null and the model–data discrepancy are both easy to see visually. The empirical CHARA power-law fit and model-based CLV predictions projected into the same observed ( u, v, λ ) sampling are over-plotted on the data. The Stagger CLV predictions come from the ExoTiC-LD interpolated I(μ) profiles and the SATLAS predictions from H. R. Neilson & J. B. Lester (2011, 2013); in both cases the CLV shape is held fixed while the angular diameter and V 20 are fitted. The right panels zoom into the regime beyond the first null, where the visibility curvature is most sensitive to limb darkening. For this target, the empirical power-law fit better reproduces the higher-lobe visibility structure than the model-based CLV predictions. The complete figure set (42 target/epoch pairs; 84 band-specific plots) is available in the online version of the article and in the Zenodo figure-set archive (N. Anugu 2026). CHARA Near-IR Limb Darkening Benchmark 13 For the fixed-CLV visibility fits, we retain the full spherical SATLAS CLV, including its outer atmospheric extension, but report the fitted angular scale as the Rosseland angular diameter. These fits therefore yield model-dependent diameters, 
+
+θg
+
+CLV . Because each grid predicts a different CLV shape, the fitted diameter is the angular scale required for that specific model profile to reproduce the same observed visibility curve. Inter-grid diameter differences therefore measure the systematic effect of the adopted CLV shape on the inferred angular diameter. We compare θg
+
+CLV 
+
+with θPL to quantify the effect of using analytic laws instead of full model CLVs. Figure 6 illustrates the model–data comparison di-rectly in the visibility domain for υ Per. We use υ Per as an illustrative example because it has clear sam-pling of the visibility curvature beyond the first null, observations at multiple epochs, and Teff < 5000 K. It also shows the main wavelength dependent behavior discussed in this work: a larger CHARA–model discrep-ancy in H and closer agreement in K.
+
+Table 4 . Uniform-disk ( θUD ,H and θUD ,K ) angular diameters in the H (MIRC-X) and K (MYSTIC) bands, the combined H+K power-law limb-darkened angular diameter ( θPL ), the MPS2 fixed-CLV angular diameter ( θMPS2 CLV ), the fitted visibility scale factor ( V 20 ), and the corresponding empirical CHARA band-dependent power-law coefficients (αCHARA  
+
+> H
+
+and αCHARA  
+
+> K
+
+). Same ID and order as Table 1. 
+
+ID Target θUD ,H (mas) θUD ,K (mas) θPL (mas) θMPS2 CLV (mas) V 20 αCHARA  
+
+> H
+
+αCHARA 
+
+> K
+
+1 α CMi 5.337 ± 0.006 5.333 ± 0.006 5.417 ± 0.005 5.422 ± 0.004 1.023 0.150 ± 0.009 0.093 ± 0.005 2 α Per 3.148 ± 0.004 3.143 ± 0.003 3.226 ± 0.003 3.216 ± 0.003 1.025 0.229 ± 0.010 0.121 ± 0.005 3 η Boo 2.167 ± 0.006 2.164 ± 0.002 2.222 ± 0.006 2.226 ± 0.002 1.024 0.171 ± 0.018 0.116 ± 0.016 4 ϵ Leo 2.596 ± 0.003 2.603 ± 0.003 2.662 ± 0.004 2.672 ± 0.002 1.111 0.174 ± 0.013 0.108 ± 0.008 5 β Dra 3.255 ± 0.006 3.263 ± 0.004 3.342 ± 0.005 3.354 ± 0.002 1.067 0.196 ± 0.010 0.129 ± 0.009 6 γ Tau 2.317 ± 0.011 2.305 ± 0.003 2.399 ± 0.006 2.386 ± 0.003 1.047 0.311 ± 0.016 0.183 ± 0.015 7 η Her 2.426 ± 0.006 2.445 ± 0.002 2.526 ± 0.006 2.519 ± 0.005 1.161 0.283 ± 0.022 0.141 ± 0.016 8 η Ser 2.868 ± 0.010 2.890 ± 0.004 2.968 ± 0.004 2.979 ± 0.003 1.136 0.206 ± 0.016 0.134 ± 0.007 9 ϵ Tau 2.491 ± 0.007 2.484 ± 0.003 2.596 ± 0.008 2.573 ± 0.003 1.102 0.340 ± 0.022 0.209 ± 0.019 10 δ Boo 2.671 ± 0.004 2.675 ± 0.002 2.756 ± 0.003 2.761 ± 0.002 1.075 0.215 ± 0.006 0.146 ± 0.006 11 ϕ2 Ori 2.161 ± 0.013 2.143 ± 0.002 2.251 ± 0.008 2.224 ± 0.003 0.981 0.332 ± 0.022 0.225 ± 0.018 12 ι Cep 2.765 ± 0.008 2.756 ± 0.006 2.843 ± 0.007 2.853 ± 0.005 1.105 0.235 ± 0.018 0.130 ± 0.017 13 ι Gem 2.398 ± 0.009 2.365 ± 0.002 2.472 ± 0.005 2.480 ± 0.002 1.099 0.205 ± 0.017 0.150 ± 0.012 14 η Cyg 2.193 ± 0.004 2.205 ± 0.002 2.287 ± 0.005 2.283 ± 0.002 0.988 0.256 ± 0.012 0.178 ± 0.011 15 γ Cep 3.078 ± 0.012 3.108 ± 0.009 3.201 ± 0.004 3.213 ± 0.006 1.128 0.276 ± 0.025 0.135 ± 0.006 16 α Cas 5.502 ± 0.023 5.529 ± 0.007 5.664 ± 0.010 5.659 ± 0.006 1.094 0.278 ± 0.027 0.180 ± 0.016 17 ξ Dra 2.969 ± 0.011 2.983 ± 0.007 3.078 ± 0.003 3.068 ± 0.003 1.109 0.288 ± 0.008 0.202 ± 0.008 18 μ Leo 2.756 ± 0.006 2.765 ± 0.005 2.854 ± 0.004 2.860 ± 0.003 1.052 0.282 ± 0.012 0.177 ± 0.009 19 109 Her 2.906 ± 0.009 2.895 ± 0.003 2.996 ± 0.003 2.998 ± 0.002 1.024 0.272 ± 0.012 0.182 ± 0.008 20 υ Per 3.495 ± 0.007 3.508 ± 0.004 3.615 ± 0.003 3.616 ± 0.002 1.011 0.312 ± 0.010 0.177 ± 0.005 21 δ And 4.035 ± 0.014 4.043 ± 0.013 4.160 ± 0.008 4.165 ± 0.005 1.032 0.293 ± 0.015 0.180 ± 0.014 22 ϵ Gem 4.625 ± 0.015 4.633 ± 0.012 4.780 ± 0.009 4.767 ± 0.006 1.083 0.339 ± 0.017 0.206 ± 0.011 23 11 Lac 2.547 ± 0.007 2.537 ± 0.003 2.633 ± 0.009 2.641 ± 0.003 0.978 0.270 ± 0.027 0.167 ± 0.019 24 σ Per 3.029 ± 0.007 3.024 ± 0.006 3.125 ± 0.005 3.137 ± 0.005 1.123 0.271 ± 0.011 0.163 ± 0.009 25 ζ Cep 5.066 ± 0.017 5.099 ± 0.011 5.239 ± 0.013 5.244 ± 0.009 1.028 0.348 ± 0.038 0.180 ± 0.024 26 HD 220369 2.453 ± 0.011 2.448 ± 0.003 2.542 ± 0.008 2.556 ± 0.003 0.966 0.300 ± 0.022 0.170 ± 0.019 27 λ Her 3.004 ± 0.013 3.006 ± 0.004 3.109 ± 0.003 3.114 ± 0.002 1.049 0.289 ± 0.008 0.185 ± 0.007 28 V424 Lac 3.922 ± 0.022 3.929 ± 0.007 4.049 ± 0.008 4.066 ± 0.005 0.928 0.328 ± 0.020 0.178 ± 0.013 29 ρ Ser 3.253 ± 0.011 3.253 ± 0.009 3.371 ± 0.004 3.374 ± 0.002 1.132 0.303 ± 0.009 0.208 ± 0.006 30 υ Aur 4.140 ± 0.029 4.181 ± 0.014 4.316 ± 0.007 4.314 ± 0.007 1.067 0.337 ± 0.010 0.189 ± 0.011 31 α Vul 4.193 ± 0.016 4.230 ± 0.004 4.339 ± 0.004 4.356 ± 0.003 1.068 0.325 ± 0.008 0.172 ± 0.009 
+
+5. RESULTS We report the fitting results and address three ques-tions: how the CHARA V 2 data constrain limb dark-ening, how the empirical coefficients compare with bandpass-matched atmosphere-model predictions, and how the adopted CLV prescription affects angular di-ameters. Unless stated otherwise, model–data offsets 14 Anugu et al. 
+
+are computed using the like-for-like SVAM coefficients defined in Section 4.4. 5.1. CHARA visibility-domain limb-darkening fits 
+
+We fitted the calibrated V 2 with a uniform-disk base-line and four analytic limb-darkening laws: linear, power law, quadratic, and power–2 (Section 4.2). Figure 2 shows the well-resolved target α CMi as an illustrative example. Across the sample, the limb-darkened-law fits give lower χ2 values than the uniform-disk approxima-tion, confirming that the data constrain CLV curvature in addition to angular diameter. The angular diameter is primarily anchored by the vis-ibility nulls, whereas the visibility curvature beyond the first null provides the strongest constraint on the CLV shape. Higher-lobe V 2 coverage therefore helps in two related ways: it reduces the covariance between the fit-ted angular diameter and limb-darkening coefficient, and it provides the main leverage for distinguishing among analytic laws. Targets with extended higher-lobe cov-erage consequently yield more precise and robust limb-darkening coefficients. Because different analytic laws can still produce sim-ilar V 2 residuals, we also compare the fitted laws in in-tensity space in Appendix C. Those comparisons show where different coefficient prescriptions correspond to visibly different CLV shapes despite similar visibility-domain fits. 5.2. Checks for companions and non-centrosymmetric structure 
+
+Companions or surface asymmetries could perturb the visibility curvature and bias the inferred coefficients, so we used the 10 independent closure phases, T 3ϕ, from each six-telescope observation to vet the sample. With PMOIRED, we searched for the full interferometric field of view, approximately λR/B ≃ 100–270 mas, in both bands for close companions and non-centrosymmetric structure (e.g., J. D. Monnier et al. 2007; R. M. Roet-tenbacher et al. 2016; N. Anugu et al. 2024). The search jointly fit V 2 and T3 ϕ so that spurious solutions driven by only one observable were rejected. Target-by-target closure-phase residuals are provided in the Zen-odo archive (N. Anugu 2026). Figure 7 shows one ex-ample for υ Per. No companion candidate was detected in either the 
+
+H- or K-band data with consistent astrometry and con-trast at a significance of ≥ 3σ after accounting for sys-tematics. For this search, we adopted a power-law limb-darkening model for the primary and added a companion at position ( cx, c y ), exploring separations from θPL /2 to the maximum field of view. The band-averaged detec-tion limit is ∆ m ≃ 5 mag, implying that any companion in the searched region must be fainter than about 1% of the primary flux. We also fit a single-spot model on the stellar surface, again using a power-law limb-darkened primary. With the present data, we would detect an isolated spot-like asymmetry if it contributed at the ≳ 1% level of the stellar flux and were larger than the angular resolution limit, λ/ (2 Bmax ). We did not detect any such feature. Thus, within these contrast and angular-scale limits, we find no evidence that companions or large isolated spots dominate the sample-level trends. Fainter, smaller-scale, or nearly centro-symmetric surface structure cannot be excluded. As a complementary visual check, we generated PMOIRED model images of the best-fit limb-darkened stellar disks. These images provide a direct visualization of the symmetric photospheric models used in the com-panion and spot searches, and help illustrate the angular scales probed by the data. Figure 8 shows an example for υ Per. 5.3. H- and K-band empirical behavior 
+
+Before comparing the empirical coefficients with atmosphere-model predictions, we first check whether the measured H–K behavior is driven by parameters of the joint visibility fit. The fitted power-law coefficients, 
+
+αH and αK , show no strong dependence on either the fitted angular diameter θPL or the visibility normaliza-tion V 20 (Appendix B.3). Thus the systematic separation between αH and αK is not primarily a by-product of covariance with the angular scale or the visibility-scale factor. Figure 3 compares the empirical and model-predicted power-law coefficients in the αH –αK plane. The colored CHARA points lie systematically below the one-to-one line, showing that the fitted limb darkening is weaker in K than in H, as expected for near-infrared stellar atmospheres. The gray model sequences show the cor-responding atmosphere-grid predictions. However, the empirical H-to-K change is substantially larger than predicted by the atmosphere grids. Using Equation 4, the CHARA sample has a median 
+
+H–K coefficient contrast of Cα 
+
+> HK
+
+= 38 .15%, with a 16– 84% range of 33–46%. The gray model sequences in Figure 3 show the cor-responding atmosphere-grid predictions. For the SVAM coefficients, the ExoTiC-LD grids give Cα,g  
+
+> HK
+
+(SVAM) = 17 .12–21 .68%, while SATLAS gives 19 .10% (Table 5). The MPS2 reference grid predicts Cα, MPS2 HK (SVAM) = 19 .78%, roughly half of the empirical CHARA value. 5.4. Band-dependent empirical–model coefficient offsets 
+
+Figures 4 and 5 compare the empirical CHARA power-law coefficients with atmosphere-model predictions as a function of Teff . The direct intensity-domain compari-son uses αgI,b , while the preferred like-for-like compari-son uses the SVAM coefficients, αg
+
+> SVAM ,b
+
+, recovered from synthetic CHARA-sampled visibilities. We quantify the fractional CHARA–model coefficient offsets in Table 5. CHARA Near-IR Limb Darkening Benchmark 15 
+
+Table 5. Median H-to-K power-law coefficient chromaticity and CHARA–model coefficient offsets. For the empirical CHARA coefficients, the median over the sample is αCHARA  
+
+> H
+
+− αCHARA  
+
+> K
+
+= 0 .1050, corresponding to Cα 
+
+> HK
+
+= 38 .15% (Equation 4). The second and third columns give the model H–K coefficient contrast for coefficients fit directly to the passband-integrated model profiles, αgI,b , and for SVAM coefficients, αg
+
+> SVAM ,b
+
+, respectively. The final two columns give the CHARA–SVAM fractional coefficient offsets, ∆ gb (Equation 7), for b ∈ { H, K }.Grid Cα,g  
+
+> HK
+
+(I) (%) Cα,g  
+
+> HK
+
+(SVAM) (%) ∆gH (%) ∆gK (%) Stagger 24.90 21.68 +28.81 +1.04 Kurucz 21.58 17.12 +26.89 -5.22 MPS1 23.00 20.02 +21.23 -6.09 MPS2 23.07 19.78 +21.04 -5.38 SATLAS 22.19 19.10 +13.11 -12.46 
+
+Across the sample, the CHARA–model offsets exceed the combined empirical and model-propagated uncer-tainties at the sample level. To test whether this be-havior is driven by different H- and K-band spatial-frequency coverage, we carried out a matched-resolution robustness test. As discussed in Section 5.7, the sample-level H-band trends are unchanged within uncertain-ties when the H-band data are restricted to the spatial-frequency range sampled in K.The largest effective offset occurs in H, where the CHARA coefficients are systematically larger than all five atmosphere-model predictions. Using Equation 6, the median SVAM absolute offsets are δα gH = +0 .0648, +0 .0609, +0 .0448, +0 .0465, and +0 .0304 for Stagger, Kurucz, MPS1, MPS2, and SATLAS, respectively. The corresponding fractional offsets, defined by Equation 7, are ∆ gH = +28 .81%, +26 .89%, +21 .23%, +21 .04%, and +13 .11%. In the K band, the SVAM offsets are smaller and more grid-dependent. The median absolute offsets are δα gK = +0 .0019, −0.0102, −0.0107, −0.0107, and 
+
+−0.0222 for Stagger, Kurucz, MPS1, MPS2, and SAT-LAS, respectively, with corresponding fractional offsets of ∆gK = +1 .04%, −5.22%, −6.09%, −5.38%, and 
+
+−12 .46%. Thus, relative to the MPS2 SVAM reference, CHARA is higher in H by 21 .04% but lower in K by 5.38%. SATLAS gives the smallest absolute H-band offset among the model families considered, but it overshoots in K and still does not reproduce the observed H–
+
+K chromaticity (Figures 3 and 5). The H-band dis-crepancy is systematic across model families, whereas in K the inter-grid differences are comparable to the empirical–model coefficient offsets. These offsets are therefore effective, law-dependent diagnostics of model– data mismatch, not direct measurements of the under-lying atmosphere structure. The corresponding diameter-level effect is discussed separately in Section 5.6. 
+
+Figure 7. Illustrative closure-phase example for υ Per, shown for MIRC-X in the H band (left) and MYSTIC in the K band (right). The closure phases are wrapped modulo 180 ◦ so that a centro-symmetric source maps to 0 ◦. Within the measurement uncertainties, the data are consistent with centro-symmetry in both bands. The complete figure set (82 images) is available in the online version of the article and in the Zenodo figure-set archive (N. Anugu 2026). 
+
+Figure 8. Illustrative power-law model images fitted with PMOIRED for υ Per, shown on a physical-radius scale in the 
+
+H and K bands. The weaker limb darkening in K produces a slightly flatter center-to-limb intensity profile than in H.The complete figure set (31 images) is available in the online version of the article and in the Zenodo figure-set archive (N. Anugu 2026). 16 Anugu et al. 
+
+Figure 9. Angular diameters from the power-law fit com-pared with other laws. Panel (a) shows diameter from other fitting methods ( θother ) versus θPL ; the black dashed diago-nal is the one-to-one relation θother = θPL . Panel (b) shows the fractional difference, ( θother − θPL )/θ PL , in percent. The colored solid curves in panel (b) are running-median trends for each law, computed from the same point sets shown in panel (a). Power–2 and quadratic diameters remain clos-est to θPL , typically within 0 .5%. The quadratic law often gives higher χ2 when fewer than two visibility nulls are sam-pled, reflecting parameter degeneracy. Linear-law and uni-form-disk diameters are smaller because they underrepresent or ignore limb-darkening curvature, with the largest unifor-m-disk offsets in H.
+
+5.5. Intensity-domain versus visibility-domain model coefficients 
+
+Figures 3 and 5 compare model coefficients obtained from direct fits to the passband-integrated intensity profiles, Ib(μ), with those recovered from synthetic CHARA-sampled visibilities. Thus, transforming the model CLVs into the vis-ibility domain and sampling them at the observed CHARA ( u, v, λ ) points changes the recovered coef-ficients at a measurable 10 −2 level. This effect is smaller than the CHARA–model coefficient offsets re-ported in Section 5.4. Finite spatial-frequency sampling and visibility-domain fitting therefore do not by them-selves explain the dominant discrepancies. 
+
+Figure 10. Comparison of the MPS2 fixed-CLV fit diam-eter, θMPS2 CLV , with θPL and with θg 
+
+> CLV
+
+from Stagger, Kurucz, and MPS1. The upper panel shows the one-to-one compar-ison; the lower panel shows fractional residuals relative to MPS2. Fixed-CLV fit diameters from different grids agree closely, while θPL shows larger target-to-target scatter rela-tive to MPS2. 
+
+5.6. Angular Diameters from Analytic-Law and Fixed-CLV Fits 
+
+Figure 9 compares angular diameters obtained with different analytic laws. The power–2 and quadratic di-ameters remain close to the power-law values, typically within 0 .5%. Linear-law diameters are systematically smaller by ∼ 1.1%, consistent with underestimated CLV curvature, and uniform-disk diameters are smaller still, especially in H, where limb darkening is stronger. The corresponding law-to-law comparison in intensity space is shown in Appendix C. Figure 10 compares the empirical analytic-law diam-eters with fixed-CLV diameters from the atmosphere grids. In the fixed-CLV fits, the model CLV shape is held fixed while the common H+K angular diameter and visibility normalization V 20 are fitted (Section 4.5). We compare the MPS2 fixed-CLV diameter, θMPS2 CLV , with fixed-CLV diameters from Stagger, Kurucz, MPS1, and SATLAS, and with the empirical analytic-law diameters. CHARA Near-IR Limb Darkening Benchmark 17 
+
+Figure 11. Uniform-disk to limb-darkened diameter cor-rections in the H and K bands. For each target and band ( H
+
+or K), the ordinate gives 100 ( θ − θUD ,b)/θ UD ,b, where θUD ,b
+
+is the band-specific uniform-disk diameter and θ is either the empirical joint-fit power-law diameter, θPL , or the MPS2 fixed-CLV diameter, θMPS2 CLV . The correction is larger in H
+
+than in K, consistent with stronger limb darkening at shorter wavelengths. The empirical power-law and MPS2 fixed-CLV corrections are similar in amplitude, showing that the overall diameter correction is stable even where the limb-darkening coefficients differ between CHARA and the models. 
+
+The main result is that the limb-darkened angular di-ameters are much more stable than the limb-darkening coefficients. Replacing the empirical power-law profile with the MPS2 fixed CLV changes the diameter by only a few tenths of a percent: ( θMPS2 CLV − θPL )/θ MPS2 CLV has a median of 0 .08% and an RMS scatter of 0 .61%. Other analytic laws produce larger law-dependent shifts, espe-cially the linear law, whose median offset is 1 .11%. The quadratic and power–2 laws remain closer to the power-law diameters, with median offsets of 0 .30% and 0 .48%, respectively. These differences are therefore best inter-preted as the diameter response to the assumed CLV shape, not as evidence for a large bias in θPL .Similar small differences are seen when comparing fixed-CLV fits across atmosphere grids. Using 100( θ −
+
+θMPS2 CLV )/θ MPS2 CLV , the median offsets are −0.365% for SAT-LAS, −0.153% for Stagger, −0.003% for Kurucz, and 
+
+−0.004% for MPS1; the corresponding RMS scatters are 0 .446%, 0 .235%, 0 .207%, and 0 .022%. Thus, the adopted atmosphere grid changes the fitted diameter only weakly. However, agreement in the fitted angular diameters does not mean that the model CLV profiles reproduce the observed visibility curvature equally well. The fixed-CLV fits use one common H+K diameter, and the weaker limb darkening in K helps anchor the diam-eter scale. The stronger model–data differences in H,especially for the cooler stars, therefore appear mainly in the fitted limb-darkening coefficients and in the resid-ual visibility curvature rather than as a large shift in 
+
+Figure 12. CHARA power-law limb-darkened diameters compared with literature. The upper panel compares θPL 
+
+with JMMC catalog diameters (A. Chelli et al. 2016; L. Bourg´ es et al. 2017), NPOI R-band diameters from E. K. Baines et al. (2025), and literature CHARA diameters (T. S. Boyajian et al. 2009; E. K. Baines et al. 2009, 2010; P. Berio et al. 2011; A. M´ erand et al. 2010); the dashed line marks equality. The lower panel shows ( θext − θPL )/θ PL in per-cent. The comparison is generally broadly consistent with 
+
+θPL , with scatter dominated by source-to-source literature differences. 
+
+the combined angular diameter. The fixed-CLV fits are therefore a useful diameter consistency check, but they do not remove the larger coefficient-level discrepancy. Figure 11 shows the wavelength dependence from the angular-diameter perspective. Both θPL and θMPS2 CLV are larger than the band-specific uniform-disk diameters, as expected when limb darkening is included. The median correction is slightly larger in H than in K, consistent with stronger near-infrared limb darkening at shorter wavelengths. The corrections also tend to decrease to-ward higher Teff , following the same qualitative tem-perature dependence seen in the fitted power-law co-efficients. The close agreement between the empirical power-law and MPS2 fixed-CLV diameter corrections shows that the gross angular-diameter correction be-haves normally. Thus, the stronger CHARA–model ten-sion appears mainly in the fitted coefficients and residual higher-lobe visibility curvature, rather than as a large shift in the combined angular diameter. 18 Anugu et al. 
+
+5.7. Assessment of systematic effects 
+
+We examined whether the observed H–K chromatic-ity and CHARA–model coefficient offsets could be pro-duced by observational or methodological systematics rather than by differences between the empirical and model CLVs. 
+
+• The closure-phase checks do not support con-tamination from companions or strong non-centrosymmetric surface structure (Section 5.2). 
+
+• We tested whether the coefficient-fitting frame-work itself could produce the observed off-sets. For the CHARA data, the fitted αH
+
+and αK coefficients are reproducible within un-certainties when using both 10-minute and 30-second averaged datasets. Synthetic datasets generated with PMOIRED using CHARA-like (u, v, λ ) coverage and MPS2-based input CLVs recover the input power-law coefficients within the quoted uncertainties (Appendix A). In ad-dition, the intensity-domain model coefficients, (αgI,H , α gI,K ), and the synthetic-visibility coeffi-cients, ( αg 
+
+> SVAM ,H
+
+, α g 
+
+> SVAM ,K
+
+), are generally consis-tent within uncertainties (Figures 3, 4 and 5). These tests indicate that numerical instability, av-eraging choices, and incomplete spatial-frequency sampling are unlikely to explain the observed star-to-star scatter or the mean CHARA–model coeffi-cient offsets. 
+
+• Calibration checks do not indicate that calibrator-size errors drive the chromatic discrepancy. Nearly all 42 calibrators are unresolved in K, while about half are unresolved in H, where calibrator-size un-certainties are more important (Appendix B); we therefore used same-night cross-calibration to re-fine the effective calibrator diameters. A subset of eight targets were observed on 2026 April 4. This night used calibrators with diameters < 0.4 mas, and those data reproduce the same H–K behav-ior. Restricting the MIRC-X data to the MYSTIC spatial-frequency range ( B < 240 m) and refitting the power-law coefficients also leaves the sample-level trends unchanged. Thus, neither partially resolved calibrators nor the longest H-band base-lines explain the chromatic discrepancy. 
+
+• MIRC-X and MYSTIC operate simultaneously on the same CHARA beams, share the upstream op-tical train and science–calibrator cadence, and are reduced within the same calibration framework. We found no night-dependent differential offset that would reproduce the sample-wide H–K be-havior. 
+
+• We studied the impact of delay line tracking er-rors. N. Anugu et al. (2026) showed that delay-line tracking errors can produce systematic V 2 losses. Our observations were obtained in 2025–2026 (Ap-pendix B), after the delay-line time-jitter problem was corrected in early 2025. During these observa-tions, the residual delay-line tracking errors were below 20 nm, corresponding to instrumental V 2
+
+losses of < 1% in both H and K. Delay-line track-ing errors are therefore unlikely to drive the ob-served H–K discrepancy. 
+
+• Multi-epoch observations of α Per, υ Per, α Vul, 
+
+λ Her, 109 Her, δ Boo, and β Dra show that power-law diameters are repeatable at the few-tenths-of-a-percent level, while the coefficients are repeatable within their quoted uncertainties. The individual epoch-by-epoch fitted values and cor-responding visibility-fit comparisons are provided in the machine-readable table and the Zenodo archive (N. Anugu 2026).  
+
+> 6.
+
+DISCUSSION 6.1. Physical interpretation of the model–data power-law coefficient offsets 
+
+The results in Section 5 show that the main tension with the atmosphere grids is the wavelength dependence of the limb darkening. The empirical H–K change is larger than predicted by all five grids, while the single-band empirical–model coefficient offsets are largest in H
+
+and weaker or more model-dependent in K.The empirical–model coefficient offsets in Figure 5 suggest that the largest H-band discrepancies oc-cur preferentially among cooler and/or more evolved stars. Several of the largest offsets are found for stars with Teff ≲ 5000 K, qualitatively similar to the behavior found in TESS transit analyses, where em-pirical quadratic limb-darkening coefficients for stars cooler than ∼ 5000 K deviate systematically from PHOENIX/ATLAS predictions (J. A. Patel & N. Es-pinoza 2022). However, the prominent offset of hot and F-type supergiant α Per ( Teff = 6193 K; see Figures 4 and 5) shows that effective temperature alone cannot explain the discrepancy. Luminosity class, surface grav-ity, atmospheric extension, and surface inhomogeneity are also likely relevant. A pure analytic-law effect is unlikely to explain the observed pattern. Changing the adopted law can shift the absolute coefficient scale, but such a shift would be expected to act more uniformly across bands and stel-lar types. Instead, the largest discrepancies are concen-trated in H and among the cooler and/or more evolved targets, while the K-band agreement is generally bet-ter. The persistence of the same qualitative trend in the alternative-law and SVAM comparisons suggests that the discrepancy is not driven solely by the one-parameter power-law parameterization. SATLAS provides a useful limiting comparison be-cause it is the only spherical, low-gravity atmosphere CHARA Near-IR Limb Darkening Benchmark 19 grid in our model set. It gives the smallest absolute 
+
+H-band coefficient offset among the model sets consid-ered, but it does not correct the H–K chromaticity: the predicted coefficient contrast remains far smaller than the empirical CHARA value. Moreover, SATLAS gives the most negative K-band offset. Thus, spherical low-gravity geometry affects the absolute coefficient scale but does not solve the wavelength-dependent discrep-ancy. For cooler and more evolved stars, empirical–model coefficient offsets are expected to be more sensitive to atmospheric extension, convection, molecular opacity, magnetic surface structure, and the breakdown of sim-ple one-dimensional or plane-parallel assumptions (e.g., H. R. Neilson & J. B. Lester 2011, 2013; Z. Magic et al. 2015; N. M. Kostogryz et al. 2024; P. H. Hauschildt et al. 2025). The concentration of larger offsets among cool and/or highly evolved stars is therefore suggestive, but the present sample does not isolate a single controlling stellar parameter. Independent empirical studies point to the same broad conclusion that model CLVs can differ measurably from direct limb-darkening constraints. The VLTI/PIONIER study of alf Cen A and B found weaker H-band power-law limb darkening than predicted by both 1D and 3D atmosphere models (P. Kervella et al. 2017). Re-cent CHARA/PAVO measurements of κ Cyg likewise found that Stagger predictions overestimated the R-band limb darkening relative to direct interferomet-ric fits (A. Chowhan et al. 2026). Similar empirical– model coefficient offsets have also been reported in high-precision Kepler, TESS, and JWST transit analyses (e.g., P. F. L. Maxted 2023; Z. Rustamkulov et al. 2023; N. M. Kostogryz et al. 2024). The present CHARA 
+
+H- and K-band measurements therefore add a near-infrared, evolved-star benchmark to these empirical tests of stellar-atmosphere CLVs. 6.2. Interpreting empirical diameters and limb-darkening coefficients 
+
+Although the coefficient-level CHARA–model coeffi-cient offsets are significant, the fixed-CLV fits show no corresponding large systematic bias in the empirical power-law diameters relative to full atmosphere-model CLVs (Figure 10). The remaining target-to-target scat-ter between θPL and θMPS2 CLV shows that individual di-ameters retain some sensitivity to whether the visibility profile is represented by a fixed model CLV or by an empirical power-law fit. The spread among θg 
+
+> CLV
+
+val-ues from different atmosphere grids is also larger than the offset between θPL and any single reference grid (see Figure 10). We therefore treat the fixed-CLV diameters as a model-dependent systematic check, rather than as a replacement for the empirical θPL scale. We interpret the fitted power-law coefficients, αH and 
+
+αK , as compact empirical summaries of the visibility-curve curvature constrained by the data, not as unique physical atmosphere descriptions. The corresponding power-law diameters provide a practical internal diame-ter scale and remain broadly consistent with previous in-terferometric and catalog estimates after accounting for wavelength band, spatial-frequency coverage, and limb-darkening prescription differences (Figure 12). Thus, the coefficient-level CHARA–model discrepancy should not be interpreted as a comparably large diameter bias. The angular diameter is mainly anchored by the visibil-ity nulls, whereas the limb-darkening coefficient is more sensitive to the higher-lobe curvature and therefore to the detailed CLV shape. 6.3. Scope of the benchmark and future tests 
+
+The present benchmark is complementary to transit limb-darkening studies, which usually constrain com-pact main-sequence stars with short-period planets. The CHARA sample instead provides direct near-infrared CLV constraints for evolved stars with luminosity classes IV–I. For subgiants and giants, larger radii, lower tran-sit probabilities, and shallower transit depths make limb darkening more difficult to constrain from transits (e.g., I. D. Howarth 2011; P. F. L. Maxted 2023). Eclips-ing binaries can also constrain limb darkening, but evolved-star systems often require additional modeling for tidal distortion, gravity darkening, reflection, and non-spherical geometry. To our knowledge, there are no published transit-based limb-darkening constraints from TESS or JWST for the targets in this sample. CHARA therefore provides direct CLV constraints for evolved stars that are difficult to test by occultation methods. The same fits also provide a homogeneous H/K diam-eter scale for bright giants and supergiants, which can be combined with parallaxes and bolometric fluxes for radius and effective temperature work. A subset of the targets was observed at multiple epochs. For these stars, the power-law angular diam-eters are repeatable at the few-tenths-of-a-percent level, and the fitted power-law coefficients remain consistent within their quoted uncertainties across nights (Sec-tion 5.7). This repeatability, seen for targets such as 
+
+α Per, υ Per, α Vul, λ Her, 109 Her, δ Boo, and β Dra, supports the internal consistency of the measurements and is much smaller than the sample-wide star-to-star dispersion discussed in this paper. An important limitation is that we do not yet have contemporaneous photometric or spectroscopic monitor-ing for the full sample to quantify surface activity or time variability on timescales relevant for low-contrast convection, spots, or pulsation. While our closure-phase checks reject strong non-centrosymmetric structure and companions (Section 5.2), they do not rule out low-contrast or nearly axisymmetric surface structure that could influence the inferred CLV and contribute to the observed star-to-star dispersion. A useful next step is targeted time-domain analysis of available TESS light curves for these bright targets, following the approach 20 Anugu et al. 
+
+of J. Rudrasingam et al. (2026), to search for signa-tures of convection, spots, or pulsation that can be com-pared with the interferometric limb-darkening measure-ments. Combined with additional multi-epoch inter-ferometric monitoring, such data would help separate intrinsic target-to-target differences from time-variable behavior. Future work should also extend the comparison to cooler, lower-gravity evolved stars and to broader wave-length coverage. Cool red giants occupy the regime where spherical extension, molecular opacity, and con-vective surface structure can make the CLV especially sensitive to the adopted atmosphere model; recent spherical model grids emphasize that center-to-limb dif-ferences from plane-parallel models are especially large for giants (P. H. Hauschildt et al. 2025). Simultaneous 
+
+J+H+K coverage with MIRC-X and MYSTIC would test whether the empirical–model mismatch strength-ens toward shorter near-infrared wavelengths. A split-band test within the existing H and K coverage already suggests the expected sense of this wavelength depen-dence, with the shorter-wavelength sub-bands generally yielding stronger fitted limb darkening (Appendix D). Visible-band interferometry (SPICA, D. Mourard et al. 2022), where limb darkening is intrinsically stronger, would provide an even more sensitive test of these CHARA–model differences.  
+
+> 7.
+
+CONCLUSIONS We have presented a dual-band ( H and K) interfero-metric study of stellar limb darkening for 31 bright stars observed with the CHARA Array. We fitted the com-bined H + K squared visibilities with four analytic laws. Among them, the one-parameter power-law provides the most uniform coefficient-level summary for this dataset, with higher-order laws used as consistency checks. We used closure-phase data to search for compan-ions or isolated non-centrosymmetric surface structures and found no detections brighter than 1% of the pri-mary stellar flux (Figure 7). The closure-phase non-detections do not indicate companions or large isolated non-centrosymmetric structures at the tested contrast level, which is consistent with interpreting the dominant visibility-curvature signal as limb darkening. We compared the resulting CHARA fitted coeffi-cients with bandpass-matched model-grid predictions. The strongest discrepancy lies in the wavelength de-pendence: the empirical H–K decrease in the power-law coefficient is nearly twice the model-predicted de-crease. Relative to MPS2 in the preferred SVAM com-parison, the empirical CHARA coefficients are higher by 
+
+δα MPS2  
+
+> H
+
+= +0 .0465 (∆ MPS2  
+
+> H
+
+= +21 .04%) in the H band and lower by δα MPS2  
+
+> K
+
+= −0.0107 (∆ MPS2  
+
+> K
+
+= −5.38%) in the K band. Among the model families consid-ered, SATLAS gives the smallest absolute H-band off-set, δα SATLAS  
+
+> H
+
+= +0 .0304 (∆ SATLAS  
+
+> H
+
+= +13 .11%), but overpredicts the K-band coefficient, leaving δα SATLAS  
+
+> K
+
+=
+
+−0.0222 (∆ SATLAS  
+
+> K
+
+= −12 .46%) and still failing to re-produce the observed chromatic contrast. The target-to-target scatter in the empirical–model coefficient offsets exceeds the formally propagated un-certainties. Synthetic recovery tests, closure-phase com-panion checks, and matched H- and K-band spatial-frequency tests indicate that the excess scatter is un-likely to be explained primarily by numerical instability, unresolved companions, or simple cross-band resolution mismatch. We therefore interpret the coefficient offsets as evidence that the observed and model CLV shapes differ in the adopted analytic-law representation, rather than as direct measurements of a specific atmospheric parameter. In addition to the limb-darkening comparison, this work provides a homogeneous set of H/K limb-darkened angular diameters for 31 bright evolved stars. The for-mal diameter uncertainties are typically below 0.3%, and the coefficients and diameters are provided in machine-readable form to support future atmosphere-model and calibration tests. Future CHARA measurements extending this visibility-domain framework to cooler red giants, ad-ditional epochs, and broader wavelength coverage from 
+
+R through K will test whether the empirical–model discrepancy strengthens toward lower Teff , lower log g,and shorter wavelengths. ACKNOWLEDGMENTS We thank the anonymous referee for the careful read-ing and constructive suggestions, which improved the clarity and presentation of the paper. We thank the CHARA support staff for their invaluable support dur-ing observations. We thank E. K. Baines and S. Ma-hadevan for helpful discussions about this project. This work is based upon observations obtained with the Geor-gia State University Center for High Angular Resolu-tion Astronomy Array at Mount Wilson Observatory. The CHARA Array is supported by the National Sci-ence Foundation under Grant No. AST-2034336 and AST-2407956. Institutional support has been provided from the GSU College of Arts and Sciences, Office of the Provost, and Office of the Vice President for Research and Economic Development. SK acknowledges fund-ing for MIRC-X from the European Research Council (ERC) under the European Union’s Horizon 2020 re-search and innovation programme (Starting Grant No. 639889 and Consolidated Grant No. 101003096). JDM acknowledges funding for the development of MIRC-X (NASA-XRP NNX16AD43G, NSF-AST 2009489) and MYSTIC (NSF-ATI 1506540, NSF-AST 1909165). AG acknowledges support from the Agencia Nacional de In-vestigaci´ on y Desarrollo (ANID) through FONDECYT Regular grant 1241073. This research has made use of the Jean-Marie Mariotti Center Aspro and SearchCal services. ChatGPT (GPT-5.1) was used to assist with CHARA Near-IR Limb Darkening Benchmark 21 language editing and readability improvements in parts of the manuscript text. AUTHOR CONTRIBUTIONS Anugu developed the project, obtained the CHARA ob-servations, led the data analysis and interpretation, and wrote the manuscript. All authors discussed the results, reviewed the manuscript, and provided feedback. 
+
+## Facilities: CHARA (MIRC-X & MYSTIC) 
+
+## Software: PMOIRED (A. M´ erand 2022), ExoTiC-LD (D. Grant & H. Wakeford 2024), MIRC-X pipeline (N. Anugu et al. 2020), JMMC OIFITS and Aspro (I. Tallon-Bosc et al. 2024) APPENDIX The appendices provide supporting material for the main results, including a test of the minimum angular diameter required to recover the limb-darkening coeffi-cient reliably (Appendix A), the full observing log and calibration steps (Appendix B), a direct intensity-space comparison of the analytic-law profiles (Appendix C), and an internal split-band wavelength diagnostic within the existing H and K coverage (Appendix D).  
+
+> A.
+
+STAR DIAMETER DEPENDENCE OF LIMB DARKENING POWER-LAW COEFFICIENT RECOVERY ACCURACY To directly test the practical meaning of the 1.5-V 2
+
+null requirement, we performed an additional CHARA-like synthetic data simulations using the same six-telescope configuration. We adopted a fixed limb-darkening setup ( Teff = 5772 K, log g = 4 .438, M =1.0 M⊙) based on a spherical SATLAS atmosphere model (H. R. Neilson & J. B. Lester 2011, 2013), imple-mented in PMOIRED. We varied only the input angular diameter. Synthetic-data generation and coefficient re-covery were carried out with PMOIRED. For each input diameter, we generated synthetic visibilities on the same representative ( u, v, λ ) coverage and fit the power-law prescription in H, K, and in a combined fit. Figure 13 summarizes the behavior of the recovered power-law coefficients and their bootstrap uncertain-ties. At small diameters ( ≲ 1.0 mas), the recovered coefficients are unstable and the uncertainties are large, consistent with insufficient sampling of visibility cur-vature. The synthetic scan indicates band-dependent thresholds: H-band recovery is robust from θ ≳ 1.8 mas (about 1.5 V 2 nulls), whereas independent K-only re-covery becomes robust at θ ≳ 2.3 mas. The higher K
+
+threshold is expected because, at longer wavelength, a fixed projected baseline samples lower spatial frequency and therefore covers less of the visibility curvature. In joint H+K fits, the recovered K-band coefficient sta-bilizes near θ ∼ 1.8 mas because the shared diameter is constrained by the stronger H-band curvature signal, reducing the K-band α–diameter degeneracy. We there-fore adopt θ ≳ 2.3 mas as a conservative threshold for independent K-band limb-darkening constraints, while joint H+K inference remains effective at smaller diam-eter at 1.75 mas.  
+
+> B.
+
+CHARA OBSERVING LOG AND CALIBRATIONS Table 6 lists the calibrators used for each target and epoch. Calibrator selection is particularly im-portant because unrecognized multiplicity or partially resolved calibrators can imprint baseline-dependent transfer-function errors. Before the observations, we screened candidate calibrators for binarity using Gaia EDR3 astrometric indicators as defined by P. Kervella et al. (2022) (RUWE < 1.4 and snrPMaH2EG2b < 2, 
+
+snrPMaH2EG3b < 2). As an additional empirical safe-guard, we verified that calibrator closure phases are con-sistent with zero (i.e., a centro-symmetric brightness dis-tribution) within our measurement precision. All observations analyzed here were obtained in 2025 and 2026, after correcting timing-jitter-related delay-line tracking errors ( < 20 nm) and subsequent system improvements that enabled stable fringe tracking (N. Anugu et al. 2026). We verified stable instrument per-formance across the observing runs via standard pipeline quality diagnostics and conservative calibrator propaga-tion, as described below. B.1. Transfer-function calibration and calibrator sizes 
+
+The calibration of V 2 followed the standard MIRC-X/MYSTIC pipeline. Initial estimates of the calibra-tor diameters were adopted from the JMMC Stellar Diameters Catalogue (JSDC; A. Chelli et al. 2016; L. Bourg´ es et al. 2017). We then refined these values by calibrating calibrators against other calibrators observed on the same nights and fitting power-law limb-darkened diameters (LDDs) for the calibrators. The calibrator– calibrator fits were carried out separately by each night so that the diameter refinement used only calibrators sharing the same instrumental transfer function. For calibrators observed in multiple epochs, the adopted value is the mean of the fitted epoch-level LDDs. The calibrator diameters listed in Table 6 are these final adopted recalibrated LDDs, not the original JSDC start-ing values. The standard MIRC-X/MYSTIC calibration scripts normally read and use JSDC uniform-disk calibrator diameters, but for this analysis we manually supplied the fitted calibrator LDDs as the angular-size inputs used in the calibration. The LDDs were fitted in the 22 Anugu et al.               
+
+> Figure 13. Synthetic recovery test for the power-law limb-darkening coefficient as a function of input angular diameter. The left panel shows the recovered H- and K-band coefficients for independent and joint H+Kfits, with 1 σuncertainties; points at θ < 1.5 mas are de-emphasized because the recovery is unstable. The right panel shows the corresponding coefficient uncertainties, with σα= 0 .02 marked for reference. Vertical lines at θ= 1 .8 and 2 .3 mas indicate the approximate transition to robust H-band and independent K-band recovery, respectively.
+
+H band and adopted for both the H- and K-band cal-ibration, because the limb-darkened angular diameter represents the physical stellar disk scale. The center-to-limb profile is wavelength dependent, but for these mostly unresolved calibrators the resulting difference in the diameter-to-visibility correction between H and K
+
+is negligible compared with the adopted diameter un-certainties. Calibrator diameter uncertainties are prop-agated into the transfer function so that the calibrated 
+
+V 2 uncertainties capture both statistical and calibra-tion terms. This propagation is especially important in the H band, where a subset of calibrators are partially resolved on the longest baselines. For each calibrator and scan, the contribution of diameter uncertainty is computed from the derivative of the calibrator visibility model, 
+
+∂V 2cal 
+
+∂θ 
+
+∣∣∣∣B,λ 
+
+= 2 Vcal 
+
+∂V cal 
+
+∂θ 
+
+∣∣∣∣B,λ 
+
+, (B1) and added in quadrature to the statistical terms. B.2. Wavelength calibration 
+
+Accurate wavelength calibration is important because the spatial frequency ( B/λ ) sets the location of the vis-ibility lobes and nulls and thus propagates directly into angular-diameter and limb-darkening inferences. For MIRC-X, we took standard datasets for wavelength-monitoring approach described by T. Gardner et al. (2022). In that scheme, a custom six-beam optical etalon module (named ARMADA) is inserted into the CHARA beams to generate interference packets that mimic a binary-star signal. The etalon data are reduced with the same pipeline and spectral-channel definition as the science data, and a per-night multiplicative cor-rection is derived for the channel wavelengths by fitting the etalon signal and bringing each night to a common wavelength scale. We apply the resulting wavelength correction to the channel wavelengths used to compute spatial frequencies and to perform bandpass integration in the forward modeling. B.3. Diagnostic checks on fitted power-law parameters 
+
+Figure 14 checks whether the fitted power-law coeffi-cients are driven by either the fitted angular diameter or the visibility-normalization term. The H-band coef-ficients remain systematically larger than the K-band coefficients, while no strong monotonic dependence on 
+
+θPL or V 20 is apparent.  
+
+> C.
+
+INTENSITY-SPACE COMPARISON OF ANALYTIC LAWS As an additional diagnostic, we compare the analytic-law fits directly in intensity space using the same coeffi-cients derived from the visibility-domain fits. This com-plements the V 2 residual and reduced-χ2 comparisons in the main text by showing how each fitted law maps onto the corresponding center-to-limb intensity profile. Figure 15 shows an illustrative example for υ Per in the H and K bands. The figure compares the model CLV with analytic-law profiles reconstructed from both the model-law coefficients and the empirical CHARA visibility-domain coefficients. In this representation, the linear law is more visibly offset from the model CLV, whereas the power-law and power–2 prescriptions track the model profile more closely over most of the disk. For targets with V 2 sampling beyond the second null, the two-parameters of the power–2 law matches better than the one-parameter power law. The two-parameter quadratic law is unstable. The corresponding plots for CHARA Near-IR Limb Darkening Benchmark 23                          
+
+> Figure 14. Checks on the fitted power-law coefficients. Left: fitted H- and K-band coefficients, αHand αK, plotted against the fitted power-law angular diameter, θPL .Right: the same coefficients plotted against the fitted visibility scale factor, shown as V20−1. In both panels, the H-band co-efficients are systematically larger than the K-band coeffi-cients, consistent with stronger limb darkening at shorter wavelengths. No strong monotonic dependence of αHand
+> αKon either θPL or V20is evident over the sample, indi-cating that the measured limb-darkening coefficients are not primarily driven by the overall angular scale or by the visi-bility normalization term.
+
+the remaining targets are provided in the online Zenodo archive.  
+
+> D.
+
+SPLIT-BAND WAVELENGTH TRENDS WITHIN H AND K
+
+The simultaneous MIRC-X/MYSTIC data allow a finer check of how the empirical limb-darkening coef-ficients vary with wavelength inside the broad H and K
+
+bands. We subdivided each passband into lower- and higher-wavelength sub-bands and refit the same power-law limb-darkening prescription in each case. Figure 16 shows the difference between each split-band coefficient and the corresponding full-band coefficient. The effect is clearest in the H band, where the lower-wavelength subset tends to give larger α than the higher-wavelength subset. In K, the split-band differences are smaller and consistent with weak or undetected wavelength depen-dence within the measurement scatter. This is expected: near-infrared limb darkening is weaker at longer wave-lengths. We use this split-band exercise only as an in-ternal test of wavelength sensitivity; a full multi-band analysis will require broader simultaneous coverage. 24 Anugu et al. 
+
+Figure 15. Illustrative intensity-space comparison for υ Per in the H band (left) and K band (right). The parent MPS2 model CLV is shown along with the analytic-law profiles reconstructed from the model coefficients and from the CHARA visibility-domain fits. This view makes the law-to-law differences more apparent than in the fitted V 2 curves alone. The complete figure set (42 target/epoch pairs; 84 band-specific plots) is available in the online version of the article and in the Zenodo figure-set archive (N. Anugu 2026). 
+
+Figure 16. Empirical power-law limb-darkening coefficients as a function of wavelength within the broad H and K bands. Panel (a) shows the offsets between the lower- and higher-wavelength H-band fits and the full-H fit; panel (b) shows the analogous offsets for K. Circles show individual targets, and diamonds show median residuals in broad Teff bins, with error bars spanning the 16th–84th percentile range. The split-band fits provide an internal check on wavelength sensitivity within each passband. CHARA Near-IR Limb Darkening Benchmark 25 
+
+Table 6 . Calibrators used for each target and epoch. The entries in parentheses are the final adopted recalibrated limb-darkened calibrator diameters and uncertainties used in the visibility calibration, in mas. Initial diameter estimates were taken from the JMMC/JSDC catalog (A. Chelli et al. 2016; L. Bourg´ es et al. 2017) and then refined as described in Appendix B. 
+
+ID Target Date Calibrators, θPL ,cal (mas) 1 α CMi 2026-04-04 ξ Vir (0 .442 ± 0.032), HD 57006 (0 .473 ± 0.016) 1 β Leo (0 .447 ± 0.035) 2 α Per 2025-07-25 HD 13137 (0 .669 ± 0.048), 7 And (0 .693 ± 0.068) 2 2025-08-27 HD 25056 (0 .626 ± 0.050), 36 Per (0 .529 ± 0.043) 2 HD 50384 (0 .645 ± 0.054) 3 η Boo 2026-04-04 π Ser (0 .381 ± 0.035), HD 159332 (0 .517 ± 0.044) 3 101 Her (0 .429 ± 0.032) 4 ϵ Leo 2026-04-04 b Leo (0 .447 ± 0.035), 16 Com (0 .401 ± 0.027) 4 9 Leo (0 .364 ± 0.009) 5 β Dra 2025-06-05 HD 132254 (0 .539 ± 0.013), 53 Her (0 .481 ± 0.013) 5 2025-07-20 HD 173920 (0 .611 ± 0.049), HD 222932 (0 .656 ± 0.017) 5 7 And (0 .693 ± 0.068), HD 212136 (0 .631 ± 0.047) 5 2026-03-23 HD 161053 (0 .545 ± 0.014), HD 191195 (0 .426 ± 0.038) 5 HD 152306 (0 .478 ± 0.049) 6 γ Tau 2025-09-07 HD 31294 (0 .681 ± 0.016), HD 29038 (0 .670 ± 0.016) 6 HD 19903 (0 .565 ± 0.018), HD 28424 (0 .595 ± 0.014) 7 η Her 2025-06-05 53 Her (0 .481 ± 0.013), HD 132254 (0 .539 ± 0.013) 7 HD 167472 (0 .647 ± 0.053) 8 η Ser 2026-05-01 10 Ser (0 .424 ± 0.012), HD 115539 (0 .501 ± 0.012) 8 60 Her (0 .376 ± 0.030) 9 ϵ Tau 2025-09-07 HD 28424 (0 .595 ± 0.014), HD 29038 (0 .670 ± 0.016) 9 HD 19903 (0 .565 ± 0.018), HD 31294 (0 .681 ± 0.016) 10 δ Boo 2026-04-04 HD 185999 (0 .553 ± 0.046), HD 173417 (0 .433 ± 0.011) 10 53 Her (0 .481 ± 0.013) 10 2026-05-01 HD 152306 (0 .478 ± 0.049), pi. Ser (0 .381 ± 0.035) 10 101 Her (0 .429 ± 0.032) 11 ϕ2 Ori 2025-09-07 HD 29038 (0 .670 ± 0.016), HD 19903 (0 .565 ± 0.018) 11 HD 28424 (0 .595 ± 0.014) 12 ι Cep 2025-06-04 HD 212136 (0 .631 ± 0.047), HD 2589 (0 .685 ± 0.060) 12 HD 193556 (0 .643 ± 0.056), HD 189671 (0 .681 ± 0.052) 13 ι Gem 2025-09-09 HD 59684 (0 .604 ± 0.014), HD 46277 (0 .564 ± 0.013) 13 HD 26972 (0 .508 ± 0.011) 14 η Cyg 2026-04-04 HD 189108 (0 .543 ± 0.013), 53 Her (0 .481 ± 0.013) 14 HD 173417 (0 .433 ± 0.011) 15 γ Cep 2025-06-04 HD 2589 (0 .685 ± 0.060), HD 212136 (0 .631 ± 0.047) 15 HD 193556 (0 .643 ± 0.056), HD 189671 (0 .681 ± 0.052) 16 α Cas 2025-07-20 HD 13137 (0 .669 ± 0.048), HD 212136 (0 .631 ± 0.047) 16 HD 222932 (0 .656 ± 0.017), 7 And (0 .693 ± 0.068) 17 ξ Dra 2026-03-23 HD 161053 (0 .545 ± 0.014), HD 191195 (0 .426 ± 0.038) 17 HD 152306 (0 .478 ± 0.049) 18 μ Leo 2026-04-04 9 Leo (0 .364 ± 0.009), 16 Com (0 .401 ± 0.027) 18 b Leo (0 .447 ± 0.035) 19 109 Her 2025-06-05 HD 167472 (0 .647 ± 0.053), 53 Her (0 .481 ± 0.013) 19 HD 132254 (0 .539 ± 0.013) 19 2026-04-04 101 Her (0 .429 ± 0.032), HD 189108 (0 .543 ± 0.013) 19 HD 159332 (0 .517 ± 0.044) 19 2026-05-01 101 Her (0 .429 ± 0.032), pi. Ser (0 .381 ± 0.035) 
+
+Table 6 continued 26 Anugu et al. 
+
+Table 6 (continued) 
+
+ID Target Date Calibrators, θPL ,cal (mas) 19 60 Her (0 .376 ± 0.030) 20 υ Per 2025-07-20 HD 13137 (0 .669 ± 0.048), 7 And (0 .693 ± 0.068) 20 HD 173920 (0 .611 ± 0.049), HD 222932 (0 .656 ± 0.017) 20 2025-07-22 HD 212136 (0 .631 ± 0.047), HD 13137 (0 .669 ± 0.048) 20 7 And (0 .693 ± 0.068) 20 2025-10-20 HD 20675 (0 .415 ± 0.040), HD 11151 (0 .420 ± 0.011) 20 7 And (0 .693 ± 0.068) 21 δ And 2025-09-07 HD 29038 (0 .670 ± 0.016), 7 And (0 .693 ± 0.068) 21 HD 28424 (0 .595 ± 0.014), HD 31294 (0 .681 ± 0.016) 22 ϵ Gem 2025-09-09 HD 59684 (0 .604 ± 0.014), HD 46277 (0 .564 ± 0.013) 22 HD 26972 (0 .508 ± 0.011) 23 11 Lac 2025-07-25 7 And (0 .693 ± 0.068), HD 13137 (0 .669 ± 0.048) 24 σ Per 2025-08-27 36 Per (0 .529 ± 0.043), HD 25056 (0 .626 ± 0.050) 25 ζ Cep 2025-07-20 HD 212136 (0 .631 ± 0.047), HD 222932 (0 .656 ± 0.017) 25 HD 173920 (0 .611 ± 0.049) 26 HD 220369 2025-07-25 7 And (0 .693 ± 0.068), HD 13137 (0 .669 ± 0.048) 27 λ Her 2026-04-04 pi. Ser (0 .381 ± 0.035), HD 185999 (0 .553 ± 0.046) 27 HD 173417 (0 .433 ± 0.011) 27 2026-05-01 pi. Ser (0 .381 ± 0.035), 101 Her (0 .429 ± 0.032) 27 HD 152306 (0 .478 ± 0.049) 28 V424 Lac 2025-07-25 7 And (0 .693 ± 0.068), HD 13137 (0 .669 ± 0.048) 29 ρ Ser 2026-05-01 HD 115539 (0 .501 ± 0.012), HD 152306 (0 .478 ± 0.049) 29 pi. Ser (0 .381 ± 0.035) 30 υ Aur 2025-08-27 36 Per (0 .529 ± 0.043), HD 50384 (0 .645 ± 0.054) 31 α Vul 2025-06-04 HD 189671 (0 .681 ± 0.052), HD 193556 (0 .643 ± 0.056) 31 HD 212136 (0 .631 ± 0.047) 31 2026-04-04 pi. Ser (0 .381 ± 0.035), HD 159332 (0 .517 ± 0.044) 31 101 Her (0 .429 ± 0.032) 31 2026-05-01 HD 138039 (0 .546 ± 0.080), HD 187923 (0 .480 ± 0.046) 31 101 Her (0 .429 ± 0.032) 
+
+REFERENCES 
+
+Afonso, C., et al. 2000, The Astrophysical Journal, 532, 340, doi: 10.1086/308537 Allende Prieto, C., & Lambert, D. L. 1999, A&A, 352, 555 Anugu, N. 2026, Software and Figures for “Empirical H-and K-band Limb Darkening for 31 CHARA Stars: A Near-Infrared Benchmark for Stellar-Atmosphere Models”, v1.0.0 Zenodo, doi: 10.5281/zenodo.21285841 Anugu, N., Le Bouquin, J.-B., Monnier, J. D., et al. 2020, AJ, 160, 158, doi: 10.3847/1538-3881/aba957 Anugu, N., Gies, D. R., Roettenbacher, R. M., et al. 2024, ApJL, 973, L5, doi: 10.3847/2041-8213/ad736c Anugu, N., Turner, N. H., ten Brummelaar, T. A., et al. 2026, Journal of Astronomical Telescopes, Instruments, and Systems, 12, 015008, doi: 10.1117/1.JATIS.12.1.015008 Arentoft, T., Grundahl, F., White, T. R., et al. 2019, A&A, 622, A190, doi: 10.1051/0004-6361/201834690 Aufdenberg, J. P., Ludwig, H. G., & Kervella, P. 2005, ApJ, 633, 424, doi: 10.1086/452622 Bailer-Jones, C. A. L., Rybizki, J., Fouesneau, M., Demleitner, M., & Andrae, R. 2021, AJ, 161, 147, doi: 10.3847/1538-3881/abd806 Baines, E. K., Armstrong, J. T., Schmitt, H. R., et al. 2018, AJ, 155, 30, doi: 10.3847/1538-3881/aa9d8b Baines, E. K., Clark, J. H., Kingsley, B. I., Schmitt, H. R., & Stone, J. M. 2025, AJ, 169, 293, doi: 10.3847/1538-3881/adc930 Baines, E. K., et al. 2009, ApJ, 701, 154 Baines, E. K., et al. 2010, ApJ, 710, 1365 Berio, P., et al. 2011, A&A, 535, A59 CHARA Near-IR Limb Darkening Benchmark 27 
+
+Bond, H. E., Gilliland, R. L., Schaefer, G. H., et al. 2015, ApJ, 813, 106, doi: 10.1088/0004-637X/813/2/106 Bottom, M., Kuhn, J., Mennesson, B., et al. 2015, ApJ, 809, 11, doi: 10.1088/0004-637X/809/1/11 Bourg´ es, L., Mella, G., Lafrasse, S., et al. 2017, VizieR Online Data Catalog, II/346 Boyajian, T. S., et al. 2009, ApJ, 691, 1243 Boyajian, T. S., von Braun, K., van Belle, G., et al. 2012, The Astrophysical Journal, 757, 112, doi: 10.1088/0004-637X/757/2/112 Chelli, A., Duvert, G., Bourg` es, L., et al. 2016, A&A, 589, A112, doi: 10.1051/0004-6361/201527484 Chowhan, A., Bedding, T. R., Huber, D., et al. 2026, MNRAS, 548, stag719, doi: 10.1093/mnras/stag719 Claret, A. 2000, Astronomy and Astrophysics, 363, 1081, doi: 10.1051/0004-6361:20000073 Claret, A. 2018, arXiv e-prints, arXiv:1804.10135. https://arxiv.org/abs/1804.10135 Claret, A., & Bloemen, S. 2011, Astronomy and Astrophysics, 529, A75, doi: 10.1051/0004-6361/201116451 Claret, A., Hauschildt, P. H., & Torres, G. 2025, A&A, 699, A97, doi: 10.1051/0004-6361/202554770 Coulombe, L.-P., Roy, P.-A., & Benneke, B. 2024, AJ, 168, 227, doi: 10.3847/1538-3881/ad7aef da Silva, L., Girardi, L., Pasquini, L., et al. 2006, A&A, 458, 609, doi: 10.1051/0004-6361:20065105 Espinoza, N., & Jord´ an, A. 2015, MNRAS, 450, 1879, doi: 10.1093/mnras/stv744 Gardner, T., Monnier, J. D., Fekel, F. C., et al. 2022, AJ, 164, 184, doi: 10.3847/1538-3881/ac8eae Grant, D., & Wakeford, H. 2024, The Journal of Open Source Software, 9, 6816, doi: 10.21105/joss.06816 Guenther, D. B., Kallinger, T., Reegen, P., et al. 2005, ApJ, 635, 547, doi: 10.1086/497387 Gustafsson, B., Edvardsson, B., Eriksson, K., et al. 2008, A&A, 486, 951, doi: 10.1051/0004-6361:200809724 Hanbury Brown, R., Davis, J., & Allen, L. R. 1974, MNRAS, 167, 121, doi: 10.1093/mnras/167.1.121 Hauschildt, P. H., Barman, T., Baron, E., Aufdenberg, J. P., & Schweitzer, A. 2025, A&A, 698, A47, doi: 10.1051/0004-6361/202554171 Hestroffer, D. 1997, A&A, 327, 199 Hohle, M. M., Neuhaeuser, R., & Schutz, B. F. 2010, Astron. Nachr., 331, 349, doi: 10.1002/asna.200911355 Howarth, I. D. 2011, MNRAS, 418, 1165, doi: 10.1111/j.1365-2966.2011.19568.x Kervella, P., Arenou, F., & Th´ evenin, F. 2022, A&A, 657, A7, doi: 10.1051/0004-6361/202142146 Kervella, P., Bigot, L., Gallenne, A., & Th´ evenin, F. 2017, A&A, 597, A137, doi: 10.1051/0004-6361/201629505 Knudstrup, E., Lund, M. N., Fredslund Andersen, M., et al. 2023, A&A, 675, A197, doi: 10.1051/0004-6361/202346707 Kopal, Z. 1950, Harvard College Observatory Circular, 454, 1Kostogryz, N., Shapiro, A. I., Witzke, V., et al. 2023, Research Notes of the American Astronomical Society, 7, 39, doi: 10.3847/2515-5172/acc180 Kostogryz, N. M., Witzke, V., Shapiro, A. I., et al. 2022, A&A, 666, A60, doi: 10.1051/0004-6361/202243722 Kostogryz, N. M., Shapiro, A. I., Witzke, V., et al. 2024, Nature Astronomy, 8, 929, doi: 10.1038/s41550-024-02252-5 Kurucz, R. 1993, Robert Kurucz CD-ROM, 13 Lacour, S., Meimon, S., Thi´ ebaut, E., et al. 2008, A&A, 485, 561, doi: 10.1051/0004-6361:200809611 Le Bouquin, J.-B., Anugu, N., Davies, C. L., et al. 2024, CHARA MIRC-X and MYSTIC Data Reduction Pipeline, Zenodo, doi: 10.5281/zenodo.12735292 Lee, B.-C., Han, I., Park, M.-G., Mkrtichian, D. E., & Kim, K.-M. 2014, A&A, 566, A124, doi: 10.1051/0004-6361/201321863 Magic, Z., Chiavassa, A., Collet, R., & Asplund, M. 2015, A&A, 573, A90, doi: 10.1051/0004-6361/201423804 Magic, Z., Collet, R., & Asplund, M. 2013, in EAS Publications Series, Vol. 63, EAS Publications Series, ed. G. Alecian, Y. Lebreton, O. Richard, & G. Vauclair, 367–371, doi: 10.1051/eas/1363041 Massarotti, A., Latham, D. W., Stefanik, R. P., & Fogel, J. 2008, AJ, 135, 209, doi: 10.1088/0004-6256/135/1/209 Maxted, P. F. L. 2018, A&A, 616, A39, doi: 10.1051/0004-6361/201832944 Maxted, P. F. L. 2023, MNRAS, 519, 3723, doi: 10.1093/mnras/stac3741 M´ erand, A. 2022, in Society of Photo-Optical Instrumentation Engineers (SPIE) Conference Series, Vol. 12183, Optical and Infrared Interferometry and Imaging VIII, ed. A. M´ erand, S. Sallum, & J. Sanchez-Bermudez, 121831N, doi: 10.1117/12.2626700 M´ erand, A., Kervella, P., Barban, C., et al. 2010, A&A, 517, A64, doi: 10.1051/0004-6361/200912103 Monnier, J. D., Zhao, M., Pedretti, E., et al. 2007, Science, 317, 342, doi: 10.1126/science.1143205 Mourard, D., Berio, P., Pannetier, C., et al. 2022, in Society of Photo-Optical Instrumentation Engineers (SPIE) Conference Series, Vol. 12183, Optical and Infrared Interferometry and Imaging VIII, 1218308, doi: 10.1117/12.2628881 28 Anugu et al. 
+
+Neilson, H. R., & Lester, J. B. 2011, A&A, 530, A65, doi: 10.1051/0004-6361/201116623 Neilson, H. R., & Lester, J. B. 2013, A&A, 554, A98, doi: 10.1051/0004-6361/201321502 Patel, J. A., & Espinoza, N. 2022, AJ, 163, 228, doi: 10.3847/1538-3881/ac5f55 Roettenbacher, R. M., Monnier, J. D., Korhonen, H., et al. 2016, Nature, 533, 217, doi: 10.1038/nature17444 Rudrasingam, J., Bedding, T. R., Pope, B. J. S., et al. 2026, MNRAS, 547, doi: 10.1093/mnras/stag413 Rustamkulov, Z., Sing, D. K., Mukherjee, S., et al. 2023, Nature, 614, 659, doi: 10.1038/s41586-022-05677-y Schwarzschild, K. 1906, Nachrichten von der Gesellschaft der Wissenschaften zu G¨ ottingen, Mathematisch-Physikalische Klasse, 41 Setterholm, B. R., Monnier, J. D., Le Bouquin, J.-B., et al. 2023, Journal of Astronomical Telescopes, Instruments, and Systems, 9, 025006, doi: 10.1117/1.JATIS.9.2.025006 Soubiran, C., Le Campion, J.-F., Brouillet, N., & Chemin, L. 2016, A&A, 591, A118, doi: 10.1051/0004-6361/201628497 Southworth, J. 2008, MNRAS, 386, 1644, doi: 10.1111/j.1365-2966.2008.13145.x Tallon-Bosc, I., Berger, J.-P., Matter, A., et al. 2024, in SF2A-2024: Proceedings of the Annual meeting of the French Society of Astronomy and Astrophysics, ed. M. B´ ethermin, K. Bailli´ e, N. Lagarde, J. Malzac, R. M. Ouazzani, J. Richard, O. Venot, & A. Siebert, 215–216 ten Brummelaar, T. A., McAlister, H. A., Ridgway, S. T., et al. 2005, The Astrophysical Journal, 628, 453, doi: 10.1086/430729 van Belle, G. T., & von Braun, K. 2009, The Astrophysical Journal, 694, 1085, doi: 10.1088/0004-637X/694/2/1085 Verma, K., Maxted, P. F. L., Singh, A., Ludwig, H.-G., & Sable, Y. 2024, MNRAS, 534, 3893, doi: 10.1093/mnras/stae2344 Wade, G., Oksala, M., Neiner, C., Boucher, E., & Barron, J. 2025, arXiv e-prints. https://arxiv.org/abs/2507.00282 Wittkowski, M., Hummel, C. A., Johnston, K. J., et al. 2001, A&A, 377, 981, doi: 10.1051/0004-6361:20011124

@@ -1,0 +1,1235 @@
+Title: Statistical Constraints on Albedo Structure in Asteroid Families from NEOWISE Measurements
+
+URL Source: https://arxiv.org/pdf/2607.28084v1
+
+Published Time: Fri, 31 Jul 2026 00:57:10 GMT
+
+Number of Pages: 21
+
+Markdown Content:
+# Statistical Constraints on Albedo Structure in Asteroid Families from NEOWISE Measurements 
+
+## Murat Kaplan 
+
+Akdeniz University, Department of Space Sciences and Technologies, Antalya, 07058, Türkiye 
+
+A R T I C L E I N F O 
+
+Keywords :Asteroids Asteroid families Main belt asteroids Data reduction techniques 
+
+A B S T R A C T 
+
+Interpreting asteroid family albedo distributions as compositional signatures requires distinguishing intrinsic structure from measurement artifacts—but this is rarely quantified. We analyze 102 families using NEOWISE data with AKARI cross-validation and SDSS-based photometric checks, establish-ing detection limits for bimodality and quantifying selection bias in size–albedo correlations. We work primarily in logarithmic albedo space ( log 10 𝑝 𝑉 ), which more accurately resolves the asymmetric dark/bright mixtures characteristic of compositionally mixed families. NEOWISE albedos are error-dominated. Measurement uncertainties rival observed spreads (median 𝜎 obs ∕𝜎 err ≈ 0 .99 in log space). AKARI cross-validation on 1,498 matched asteroids confirms NEOWISE measurements broadly (slope = 1.03 , 𝑅 2 = 0.76 , median |Δ𝑝 𝑉 | = 0.015 ), with a known spectral-type-dependent offset of +11% on average. Genuine bimodality meeting conservative criteria is found in 6 of 102 families (5.9%); the two most secure detections (Nysa-Polana, Juno) are recovered in both linear and logarithmic albedo, the other four only in log. Monte Carlo simulations show that a dark/bright bimodality at the characteristic separation ( Δ𝜇 ≈ 0 .64 dex) is recovered with high probability for the intrinsic scatter present in the families, so the low rate reflects genuine compositional homogeneity rather than limited sensitivity. Size–albedo correlations largely reflect magnitude-limited selection bias. Only 2 of 63 families survive diameter-limited controls. These results indicate that many apparent compositional trends in family-level analyses using NEOWISE albedos are statistically indistinguishable from measurement scatter and observational selection effects within current NEOWISE uncertainties. Our detection limits and bias tests provide quantitative criteria for deciding when compositional inferences drawn from NEOWISE family albedos are statistically defensible. 
+
+## 1. Introduction 
+
+Asteroid families—groups of asteroids sharing common orbital elements from the collisional disruption of parent bodies (Hirayama, 1918; Zappalà et al., 1990; Nesvorný et al., 2015)—offer unique opportunities to study aster-oid interior compositions. The albedo distributions of fam-ily members potentially encode information about parent body differentiation, compositional heterogeneity, and post-disruption evolutionary processes such as space weathering (Vernazza et al., 2009; Masiero et al., 2012; DeMeo and Carry, 2014). Previous studies have generally found that asteroid fam-ilies exhibit homogeneous albedo distributions, with devia-tions often attributed to interloper contamination—asteroids from other populations misidentified as family members (Parker et al., 2008; Slyusarev et al., 2017; Novaković et al., 2022; Chiorny et al., 2023; Erasmus et al., 2020). No-table exceptions include families derived from differentiated parent bodies, such as Vesta, and the well-studied Nysa-Polana complex, which shows clear bimodality reflecting its composite origin (Cellino et al., 2002; Masiero et al., 2012). Some studies have reported albedo bimodality in connection with family ages (Spoto et al., 2015) or young family identi-fication (Carruba et al., 2024), and at the broader main-belt scale (Usui et al., 2013), while comprehensive family-level  
+
+> muratkaplan@akdeniz.edu.tr
+
+(M. Kaplan) 
+
+> ORCID
+
+(s): 0000-0003-2595-5463 (M. Kaplan) 
+
+cataloging has not consistently detected bimodality (Masiero et al., 2011). The NEOWISE mission has provided thermal infrared measurements for over 100,000 asteroids (Mainzer et al., 2011; Masiero et al., 2011), enabling systematic studies of albedo distributions across asteroid families. However, the NEOWISE thermal modeling pipeline involves multiple band combinations depending on data availability. While 4-band observations enable full NEATM (Near-Earth Asteroid Thermal Model) modeling, these constitute only ∼2% of results. Most asteroids are analyzed with 2-band or single-band data using simplified thermal models (Mainzer et al., 2011; Myhrvold, 2018a). Furthermore, several studies have identified systematic and random errors in NEOWISE diam-eters and albedos that may impact compositional interpreta-tions (Hanuš et al., 2015; Myhrvold, 2018b; Alí-Lagoa and Delbó, 2017; Myhrvold et al., 2022; Moeyens et al., 2020; Whittaker et al., 2023; Myers et al., 2024, 2025). These uncertainties are large enough that they can easily obscure real compositional trends, or in some cases create the illusion of trends that are not there. This study addresses several questions: 1. What fraction of asteroid families show bimodal albedo distributions, and what is our detection effi-ciency? 2. What systematic effects—measurement errors, se-lection biases, population mixing—create apparent trends? 
+
+M. Kaplan: Preprint submitted to Elsevier Page 1 of 21 arXiv:2607.28084v1 [astro-ph.EP] 30 Jul 2026 Albedo Structure in Asteroid Families 
+
+3. How do observed spreads compare to measurement uncertainties, and what can we reliably infer about intrinsic compositional diversity? 4. How well do NEOWISE measurements agree with independent AKARI thermal modeling, and what does this imply for our error budget and bimodality detec-tion limits? Our goal is not to make definitive claims about parent body compositions. Instead, we want to establish the sta-tistical baselines needed for family-level interpretations of NEOWISE albedos. Narrow albedo spreads could be mis-interpreted as compositional homogeneity, and size-albedo correlations could be attributed to space weathering, when in fact measurement errors and selection biases can produce similar signatures. By quantifying these effects, we establish detection limits, bias controls, and error budgets that define what can and cannot be reliably inferred from NEOWISE albedos in family studies. The remainder of this paper is organized as follows. Section 2 describes the datasets and analysis methods. Sec-tion 3 presents results on bimodality detection, selection bias in size–albedo correlations, and the relationship between observed and intrinsic albedo spreads. Section 4 cross-validates these findings against AKARI thermal modeling and SDSS taxonomic classifications. Section 5 discusses methodological limitations, a logarithmic-space robustness check, and recommendations for future NEOWISE -based family studies. Section 6 concludes. 
+
+## 2. Data and Methods 
+
+2.1. Datasets 
+
+2.1.1. Asteroid Families 
+
+Family memberships and synthetic proper orbital ele-ments are taken from the PDS Small Bodies Node 1, which hosts both the 2015 family catalog of Nesvorný et al. (2015) and the 2024 V2.0 update (Nesvorný, 2024). We combined both catalogs and retained families with ≥30 members hav-ing valid NEOWISE albedo measurements ( 𝑛 denotes sample size throughout), yielding 102 families total (82 from 2015, 20 from 2024). The minimum threshold of 30 members ensures sufficient statistics for kernel density estimation (KDE)-based bimodality detection. 
+
+2.1.2. NEOWISE Albedos 
+
+V-band geometric albedos are derived from NEOWISE 
+
+W1 (3.4 𝜇 m) and W2 (4.6 𝜇 m) observations using the NEATM thermal model (Mainzer et al., 2011; Masiero et al., 2021). The NEOWISE Reactivation mission uses a single thermal band (W2), requiring a fixed beaming parameter (𝜂 = 0 .95 ± 0 .2) for the Main Belt (Masiero et al., 2021). Observations where W2 flux includes > 10% reflected sunlight are filtered to ensure reliable thermal modeling (Masiero et al., 2021). This removes 29% of Main Belt observations. High-albedo objects are more likely to exceed 
+
+> 1https://sbn.psi.edu/pds/resource/nesvornyfam.html
+
+the 10% threshold due to stronger reflected light relative to thermal emission. Our sample includes 124,091 asteroids with 0 < 𝑝 𝑉 < 1. The mean reported uncertainty is 𝜎 err 
+
+= 0 .041 .
+
+2.1.3. AKARI Albedos 
+
+The AKARI Asteroid Catalog (Usui et al., 2011) pro-vides independent thermal measurements at 9 and 18 𝜇 m— wavelengths that sample purely thermal emission without reflected light contamination. We matched 1,498 asteroids between the AKARI and NEOWISE catalogs. The family-level cross-validation (Section 4.1) uses the subset belonging to Nesvorný families. 
+
+2.1.4. SDSS Photometric Classifications 
+
+Taxonomic types from SDSS multi-band photometry (Sergeyev and Carry, 2021) are available for over 56,000 asteroids, including classification probabilities that we use to evaluate classification reliability. The photometric classifica-tion follows the scheme of DeMeo and Carry (2013), build-ing on the original SDSS Moving Object Catalog (Ivezić et al., 2001). We note that these are color-based classifica-tions from broadband photometry, not spectroscopic obser-vations. 
+
+2.2. Analysis Methods 
+
+2.2.1. Bimodality Detection 
+
+We use four criteria to define genuine bimodality, all of which must be satisfied: 1. Sarle’s bimodality coefficient (SAS Institute Inc., 1990) 𝑏 = ( 𝛾 2 + 1)∕( 𝜅 + 3) > 0.556 , where 𝛾 is skewness and 𝜅 is excess kurtosis 2. KDE-based valley prominence > 0.25 
+
+3. Secondary peak height > 20% of primary peak 4. Peak separation > 1.2𝜎 , where 𝜎 is the family log 10 𝑝 𝑉 
+
+standard deviation Our primary bimodality analysis is performed on the base-10 logarithm of the geometric albedo, log 10 𝑝 𝑉 , rather than on 𝑝 𝑉 directly. Asteroid albedos are approximately log-normal (Wright et al., 2016), and the dark and bright compositional populations (primitive/C-complex near 𝑝 𝑉 ≈0.05 and silicaceous/S-complex near 𝑝 𝑉 ≈ 0 .25 ) are more nearly symmetric and comparably dispersed in log 10 𝑝 𝑉 than in linear 𝑝 𝑉 , where the bright component carries a much longer tail. Working in log space therefore helps in two ways. It makes the two-Gaussian mixture model used in our detection-efficiency simulations (Section 3.1.3) a better fit, and it lets the four criteria detect the asymmetric dark/bright mixtures that the moment-based Sarle coefficient tends to miss in linear space. The criteria are applied to log 10 𝑝 𝑉 
+
+throughout. Linear-space results are reported in Section 5.3 as a robustness cross-check. A ΔBIC > 10 (Bayesian In-formation Criterion; two- vs. one-component Gaussian mix-ture) indicates strong evidence for two populations (Kass and Raftery, 1995) and is required for the genuine classification of families that fail the Sarle criterion.   
+
+> M. Kaplan: Preprint submitted to Elsevier Page 2 of 21 Albedo Structure in Asteroid Families
+
+Sarle’s coefficient (SAS Institute Inc., 1990) provides a simple moment-based test for bimodality, but it has a known weakness. It assumes symmetric bimodality and misses asymmetric two-component mixtures (cf. Ashman et al., 1994). We tested Hartigan’s dip test (Hartigan and Hartigan, 1985) on several large families (Phocaea, Gefion, Themis, Eos, Flora; n=748–3953) but found no significant deviations from unimodality (all p >0.09), despite clear vi-sual evidence of two-peak structure in KDE analysis (see Appendix A for detailed results). We independently validate these classifications with four formal modality tests from the R multimode package (Ameijeiras-Alonso et al., 2021); the procedure and results are reported in Section 3.1.1 (Table 3). For KDE, we use Scott’s rule for bandwidth selection (Scott, 1979, 1992). Parameter sensitivity is assessed in Ap-pendix B. Valley prominence is simply 𝑉 = 1 − 𝑑 valley ∕𝑑 avg ,where 𝑑 valley is the minimum density between the two high-est peaks and 𝑑 avg is their average height. We identify peaks in the smoothed KDE (Gaussian filter with 𝜎 = 3 grid points) using a 5% prominence threshold. These numerical thresholds (Sarle > 0.556 , valley prominence > 0.25 , secondary peak > 20% , separation 
+
+> 1.2𝜎 ) are operational choices calibrated to avoid false positives under NEOWISE -like noise. The Sarle cut is the exception with a distributional basis, since 𝑏 = 5∕9 ≈ 0 .556 
+
+is the coefficient’s value for a uniform distribution, so larger values indicate a distribution flatter-topped or more two-peaked than uniform (SAS Institute Inc., 1990; Ashman et al., 1994). The remaining, density-based thresholds are not physically motivated boundaries. We use kernel density estimation (KDE) rather than Gaussian Mixture Models (GMM) because GMM always fits two components even to unimodal data, potentially creating misleading valleys. BIC analysis (Schwarz, 1978) confirms this concern. It favors two-component models for skewed unimodal distributions (e.g., Themis, ΔBIC = +247 ) despite the absence of a second KDE peak. Our secondary peak criterion ensures we detect genuine modes, not just statistical fluctuations or skewness. Families meeting the Sarle criterion ( > 0.556 ) but lack-ing sufficient structural support are classified as “Weak Bimodal” (Table 1). We need one further category only for the linear-space cross-check (Section 5.3). In linear 𝑝 𝑉 , some families fail the Sarle criterion but still show clear two-peak KDE structure. We flag these as “Hidden Bimodal” when they meet tighter thresholds (valley prominence > 0.3,separation > 1.5𝜎 ) and have parametric support ( ΔBIC 
+
+> 10 , Section 2.2.1). In our primary log 10 𝑝 𝑉 classification these same families pass or fail the Sarle criterion directly and are classified as genuine or weak, so the Hidden Bimodal class does not appear in log space (Table 1). In the linear cross-check, the tighter thresholds make up for the missing moment-based confirmation and reduce skewness-driven false positives. This same ΔBIC > 10 threshold also serves as a required consistency check for families that fail the Sarle criterion but exhibit KDE two-peak structure. Before assigning genuine status in log space or “Hidden Bimodal” status in the linear cross-check (Section 5.3), we require parametric support from a Bayesian Information Criterion comparison between one- and two-component Gaussian mixtures. This guards against a KDE-identified two-peak structure being strongly rejected by the parametric model comparison. 
+
+2.2.2. Size-Albedo Correlations 
+
+We test for size-albedo correlations using Spearman rank correlation ( 𝜌 ), which is robust to outliers and non-linear re-lationships. Statistical significance is assessed via two-tailed tests, with 𝑝 -values indicating the probability of obtaining the observed correlation under the null hypothesis of no correlation. We report correlations for both the full sample (all diameters) and diameter-limited subsamples ( 𝐷 > 5 km) to identify selection bias effects. 
+
+2.2.3. Detection Efficiency and False-Positive Simulations 
+
+To quantify detection efficiency across parameter space, we perform a systematic grid scan in log 10 𝑝 𝑉 over peak separation ( Δ𝜇 = 0 .10 –0.65 dex) and per-component intrin-sic scatter ( 𝜎 int = 0 .05 –0.25 dex). For each configuration we generate 500 independent synthetic families, each a 500-object realisation of a two-component log-normal mixture with the dark component at 𝜇 1 = log 10 (0 .06) ≈ −1 .22 
+
+and the bright component at 𝜇 2 = 𝜇 1 + Δ 𝜇 . We test both symmetric ( 𝑤 1∶𝑤 2 = 50∶50 ) and asymmetric ( 𝑤 1∶𝑤 2 =15∶85 ) population weights. NEOWISE -like measurement errors (linear 𝜎 ≈ 0 .04 ) are applied in linear 𝑝 𝑉 and then transformed to log space, faithfully reproducing the albedo-dependent log-space error. We then apply our four-criterion detection threshold. Results are presented in Section 3.1.3. A complementary concern is whether measurement er-rors could transform genuinely unimodal distributions into apparent (spurious) bimodality. To test this, we performed Monte Carlo simulations with 500 synthetic families per configuration, testing 9 unimodal distribution types (Gaus-sian, skewed, log-normal with various parameters) across 
+
+NEOWISE -like error levels ( 𝜎 = 0.03 –0.06 ) and family sizes ( 𝑛 = 100 –1000 ). The false positive rate for spurious bimodal classification was 0.1%, with a maximum of 2.2% in worst-case configurations (narrow C-type distributions with high errors). Specific tests matching the parameters of our asymmetric dark/bright families (Gefion-like, Phocaea-like, etc.) yielded false positive rates of 0.0–0.1%. This confirms that our bimodal detections are unlikely to be error-induced artifacts. 
+
+2.2.4. Selection Bias Test 
+
+The 𝐷 > 5 km threshold for testing size-albedo cor-relations was chosen based on completeness analysis. The ratio of low-albedo ( 𝑝 𝑉 < 0.1) to high-albedo ( 𝑝 𝑉 > 0.2)objects increases from ∼0.4 at 𝐷 < 2 km to ∼6 at 𝐷 > 
+
+7 km, stabilizing above 5 km. This indicates that magnitude-limited detection tends to miss faint (low-albedo, small-diameter) objects below this threshold. Additionally, Pravec   
+
+> M. Kaplan: Preprint submitted to Elsevier Page 3 of 21 Albedo Structure in Asteroid Families
+
+et al. (2012) demonstrated that absolute magnitude ( 𝐻 )values for small asteroids are systematically overestimated (too bright), leading to artificially high albedo estimates. This systematic bias provides a physical motivation for the size cutoff beyond statistical completeness alone. To test robustness, we tested alternative thresholds of 3, 5, 7, and 10 km. Results are qualitatively stable. Correla-tions systematically weaken or reverse above all thresholds. While some families shift between adjacent classification categories (e.g., robust ↔ candidate) when the threshold changes by ±1 km, no family transitions directly from “ro-bust weathering signal” to “no signal” or vice versa. We prefer 𝐷 > 5 km as a balance between completeness and sample size. 
+
+2.2.5. Intrinsic Variance Estimation 
+
+Where possible, we estimate intrinsic variance as: 
+
+𝜎 2int = 𝜎 2obs − 𝜎 2err (1) where 𝜎 obs is the observed albedo dispersion within each family and 𝜎 err is the mean of the individual measurement uncertainties reported by NEOWISE. This quantity 𝜎 2int rep-resents the compositional variance remaining after account-ing for measurement noise, and we use it to assess whether observed family spreads reflect genuine compositional di-versity or are dominated by measurement error (Section 3.3; see also Section 5.2 for discussion of the limitations of this simple variance-subtraction approach). 
+
+NEOWISE reports measurement uncertainties in linear 
+
+𝑝 𝑉 . We propagate them into log space for each object as 
+
+𝜎 log ,𝑖 ≈ 0 .434 𝜎 𝑝 𝑉 ,𝑖 ∕𝑝 𝑉 ,𝑖 , the first-order transformation of a linear error to log 10 . We take 𝜎 err to be the root-mean-square of 𝜎 log ,𝑖 over the family, and 𝜎 obs to be the standard deviation of log 10 𝑝 𝑉 within the family. We use the RMS rather than the mean error because 𝜎 obs is itself a root-mean-square (standard-deviation) quantity, so the comparison and the subtraction 𝜎 2int = 𝜎 2obs − 𝜎 2err are dimensionally consistent. This simple variance subtraction assumes equal mea-surement errors for all objects and provides a first-order es-timate. For many families 𝜎 obs ≲ 𝜎 err , making this estimate unreliable with NEOWISE data alone. More sophisticated approaches (hierarchical Bayesian modeling, size-dependent error treatment) are beyond our scope but would be valu-able for families with larger sample sizes. Independent con-straints (e.g., from higher-precision thermal measurements or spectroscopic surveys) would be needed to reliably char-acterize intrinsic compositional spreads. 
+
+## 3. Results 
+
+3.1. Bimodality 
+
+3.1.1. Observed Bimodality Rate 
+
+Working in log 10 𝑝 𝑉 , 6 of 102 families with 𝑛 ≥ 30 
+
+(5.9%) satisfy all four bimodality criteria: Nysa-Polana, Pho-caea, Tirela, Juno, Henan, and Telramund (Table 2). All six are dark/bright mixtures, with component peaks near 𝑝 𝑉 ≈0.05 –0.06 (primitive) and 𝑝 𝑉 ≈ 0.21 –0.29 (silicaceous).                   
+
+> Table 1
+> Bimodality Classification Classification 𝑁 %Genuinely Bimodal 65.9 Weak Bimodal 15 14.7 Wide Unimodal 76.9 Skewed Unimodal 17 16.7 Unimodal 57 55.9 Classification in log 10 𝑝 𝑉 . Genuinely bimodal requires all four criteria. “Weak Bimodal” has Sarle >0.556 but fails at least one structural criterion. Most lack a resolved second peak, and a few show a KDE valley whose secondary peak lies below the 20% height threshold. The hidden-bimodal class required in linear space (clear KDE structure but low Sarle) does not arise in log space, where such families are classified directly as genuine; see Section 5.3.
+
+In log space their Sarle coefficients cluster tightly at 𝑏 ≈0.69 –0.71 , whereas in linear 𝑝 𝑉 the same families span 
+
+𝑏 ≈ 0 .32 –0.70 . The asymmetric dark/bright mixtures that the moment-based coefficient underweights in linear space become unambiguous once the long bright tail is removed by the log transform. Two of the six, Nysa-Polana and Juno, are bimodal in both representations. The other four are resolved specifically in log space (Section 5.3). A further 15 families have high Sarle but fail at least one structural criterion (weak bimodal; Section 3.1.4), and the remainder are unimodal (Table 1). The six genuinely bimodal families are listed in Ta-ble 2. Figure 1 illustrates the classification and representative 
+
+log 10 𝑝 𝑉 distributions for families genuinely bimodal in both representations (Nysa-Polana, Juno) and one that is genuine only in log space (Telramund). We validated our classification using Ameijeiras-Alonso, Crujeiras & Rodríguez-Casal’s R multimode package (Ameijeiras-Alonso et al., 2021), accessed from Python via the rpy2 
+
+bridge. For each family we ran four tests at both mod 0 =1 and mod 0 = 2: Silverman’s critical bandwidth test (Silverman, 1981), Hall & York’s calibrated test (Hall and York, 2001), the Fisher–Marron excess mass test (Müller and Sawitzki, 1991), and the ACR test (named for the package authors’ initials) (Ameijeiras-Alonso et al., 2019). Hall & York’s calibration is defined only for testing unimodality (mod 0 = 1 ). For tractability, families with 𝑛 > 500 members were randomly subsampled to 𝑛 used = 500 (random seed 42 for reproducibility). We use 𝐵 = 200 bootstrap repli-cates throughout. Results (Table 3) confirm our four best-populated genuine families—Nysa-Polana, Phocaea, Tirela, and Juno—as bimodal. All four tests reject unimodality but not bimodality ( 𝑝 < 0.05 at 𝑘 = 1, 𝑝 > 0.05 at 
+
+𝑘 = 2 ). The two smaller genuine families, Henan ( 𝑛 = 187 )and Telramund ( 𝑛 = 104 ), are supported by the Hall– York and Fisher–Marron tests but not by Silverman’s test or ACR, consistent with their smaller samples and strongly asymmetric mixtures. Control families Koronis and Themis   
+
+> M. Kaplan: Preprint submitted to Elsevier Page 4 of 21
+
+Albedo Structure in Asteroid Families (a) Bimodality Classification (log 10 space) 
+
+(n=102 families) 
+
+> Genuine
+> Bimodal
+> (5.9%)
+> Weak
+> Bimodal
+> (14.7%)
+> Wide
+> Unimodal
+> (6.9%)
+> Skewed
+> Unimodal
+> (16.7%)
+> Unimodal
+> (55.9%)
+
+1.50 1.25 1.00 0.75 0.50 0.25 
+
+log 10 pV
+
+0.0 
+
+0.5 
+
+1.0 
+
+1.5 
+
+2.0 
+
+> Density
+
+(b) Nysa-Polana (GENUINE) 
+
+b=0.69, V=0.84, n=3184 
+
+1.50 1.25 1.00 0.75 0.50 0.25 
+
+log 10 pV
+
+0.0 
+
+0.5 
+
+1.0 
+
+1.5 
+
+2.0 
+
+2.5 
+
+> Density
+
+(c) Juno (GENUINE) 
+
+b=0.70, V=0.67, n=355 
+
+1.50 1.25 1.00 0.75 0.50 
+
+log 10 pV
+
+0.0 
+
+0.5 
+
+1.0 
+
+1.5 
+
+2.0 
+
+2.5 
+
+3.0 
+
+> Density
+
+(d) Telramund (GENUINE in log) 
+
+b=0.70, V=0.78, n=104 
+
+1.50 1.25 1.00 0.75 0.50 0.25 0.00 
+
+log 10 pV
+
+0.0 
+
+0.5 
+
+1.0 
+
+1.5 
+
+2.0 
+
+> Density
+
+(e) Flora (UNIMODAL) 
+
+b=0.51, n=3364 
+
+1.4 1.2 1.0 0.8 
+
+log 10 pV
+
+0
+
+1
+
+2
+
+3
+
+> Density
+
+Linear: high Sarle 
+
+Log: unimodal 
+
+(f) Phaeo (UNIMODAL in log) 
+
+b=0.39, V=0.00, n=137 
+
+Figure 1: Bimodality analysis of 102 asteroid families in log 10 𝑝 𝑉 . (a) Classification summary: 6 genuinely bimodal (5.9%), 15 weak bimodal (high Sarle but incomplete structural support, 14.7%), and 81 unimodal-class families (wide/skewed/ unimodal). (b) Nysa-Polana and (c) Juno, genuinely bimodal in both linear and log space. (d) Telramund, resolved as genuinely bimodal in log space ( 𝑏 ≈ 0 .70 ) though classified wide-unimodal in linear 𝑝 𝑉 . (e) Flora, a representative unimodal S-complex family. (f) Phaeo, whose high linear Sarle reflects skewness alone and resolves to unimodal in log space. All distributions are shown in log 10 𝑝 𝑉 .M. Kaplan: Preprint submitted to Elsevier Page 5 of 21 Albedo Structure in Asteroid Families 
+
+Table 2 
+
+Genuinely Bimodal Families Family 𝑛 Sarle Valley 2nd/1st Sep ( 𝜎 ) 𝜇 1 𝜇 2 Δ𝜇 𝑤 1∶𝑤 2
+
+Nysa-Polana 3184 0.69 0.84 0.74 1.95 −1 .24 −0 .56 0.68 56:44 Phocaea 925 0.71 0.89 0.27 2.20 −1 .24 −0 .54 0.70 21:79 Tirela 376 0.70 0.72 0.31 2.26 −1 .24 −0 .64 0.60 26:74 Juno 355 0.70 0.67 0.50 1.86 −1 .26 −0 .61 0.65 40:60 Henan 187 0.71 0.69 0.28 2.33 −1 .22 −0 .65 0.57 25:75 Telramund 104 0.70 0.78 0.23 2.39 −1 .37 −0 .67 0.70 17:83 Genuinely bimodal families in log 10 𝑝 𝑉 . Columns: 𝑛 = members; Sarle = bimodality coefficient; Valley = KDE valley prominence; 2nd/1st = ratio of secondary to primary KDE peak height; Sep = peak separation in units of the family log 10 𝑝 𝑉 standard deviation; 𝜇 1, 𝜇 2 = two-component Gaussian-mixture means in log 10 𝑝 𝑉 (dark, bright); Δ𝜇 = |𝜇 2 − 𝜇 1|; 𝑤 1∶𝑤 2 = component weights. Weights range from near-balanced (Nysa-Polana, Juno) to strongly bright-dominated (Phocaea, Telramund). Nysa-Polana is a complex of overlapping families (Nysa, Polana, Eulalia, Hertha; Walsh et al. 2013; Dykhuis and Greenberg 2015), so its bimodality reflects mixing of distinct parent bodies; population-mixing and interloper explanations apply to all six and not only to the linear-space detections (cf. Section 3.2). 
+
+Table 3 
+
+Modality Test Results Family 𝑛 (𝑛 used ) Silverman Hall-York Fisher-Marron ACR Our Class Nysa-Polana 3184 (500) B B B B GENUINE Phocaea 925 (500) B B B B GENUINE Tirela 376 B B B B GENUINE Juno 355 B B B B GENUINE Henan 187 U B B U GENUINE Telramund 104 U B B U GENUINE Gefion 748 (500) B B B B WEAK Rafita 283 U B B U WEAK Witt 89 U U B U WEAK Koronis 1014 (500) U U U U UNIMODAL Themis 2202 (500) U U U U UNIMODAL U = Unimodal (fail to reject 𝑘 = 1 at 𝛼 = 0 .05 ); B = Bimodal (reject 𝑘 = 1 , fail to reject 𝑘 = 2 ); M = Multimodal (reject both 𝑘 = 1 and 𝑘 = 2 ). HY columns at 𝑘 = 2 are not reported as Hall & York’s calibration is defined only for 𝑘 = 1 .
+
+are correctly identified as unimodal by all four tests ( 𝑝 > 
+
+0.24 for all 𝑘 = 1 tests). 
+
+3.1.2. Asymmetric bimodals resolved in log space 
+
+Four of the six genuine families (Phocaea, Tirela, Henan, and Telramund) are not flagged by Sarle’s coefficient in linear 𝑝 𝑉 (𝑏 = 0.31 –0.53 ; Table 12); full linear-space diagnostics for three of these (Phocaea, Tirela, Henan) are given in Table 4. Their dark/bright mixtures are strongly asymmetric, with a numerically dominant bright population (𝑝 𝑉 ≈ 0 .22 –0.29 ) and a minor dark component ( 𝑝 𝑉 ≈ 0 .05 –
+
+0.07 ). The long bright tail therefore suppresses the moment-based signal. In log 10 𝑝 𝑉 the same families satisfy all four criteria ( 𝑏 ≈ 0 .70 ; Table 2), with KDE valley prominences of 0.69–0.89 and peak separations of 2.2–2.4 𝜎 (classifications robust to KDE parameter variations; Appendix B). Figure 2 shows three of them (Phocaea, Tirela, Henan) in linear 𝑝 𝑉 
+
+(top row) and log 10 𝑝 𝑉 (bottom row). The second peak, marginal or absent to the moment test in linear space, is unambiguous in log. This is the main methodological reason for using the logarithmic representation (Section 5.3). The same statistical structure has more than one possible physical cause. It could reflect structured interloper con-tamination, error-convolved tails of skewed distributions, or incomplete dynamical mixing of distinct source regions. These alternatives apply to all six genuine detections, not only to these four asymmetric cases. The three remaining linear-hidden families (Gefion, Rafita, Witt) retain high Sarle in log space but lack a sufficiently resolved second peak and are classified weak bimodal (Table 12). In every case the bright population dominates numeri-cally (weights 74–83%; Table 2), so these are dominant pop-ulations with a ∼17–26% dark component rather than bal-anced mixtures like Nysa-Polana. The dark component may represent primordial heterogeneity in the parent body, C-type interlopers from dynamical mixing, or family-membership misclassification. Distinguishing these requires independent spectral data. 
+
+3.1.3. Detection Efficiency 
+
+To estimate how many bimodal families our method might miss, we perform systematic parameter space simu-lations (Figure 3). Results reveal strong dependence on both 
+
+M. Kaplan: Preprint submitted to Elsevier Page 6 of 21 Albedo Structure in Asteroid Families 
+
+Table 4 
+
+Asymmetric Dark/Bright Families: Linear-Space Metrics Family 𝑛 Sarle Valley 2nd/1st Sep ( 𝜎 ) 𝜇 1 𝑤 1 ∶ 𝑤 2 ΔBIC Gefion 748 0.34 0.76 0.37 2.10 0.054 13:87 +198 Phocaea 925 0.31 0.69 0.61 1.75 0.057 19:81 +340 Witt 89 0.46 0.60 0.32 2.07 0.062 15:85 +12 Rafita 283 0.38 0.60 0.35 1.86 0.066 14:86 +34 Tirela 376 0.45 0.48 0.71 1.78 0.056 22:78 +116 Henan 187 0.53 0.33 0.66 1.92 0.053 18:82 +45 Linear-space metrics for the six asymmetric dark/bright families; their low linear Sarle reflects the asymmetric mixture. Columns: 𝑛 = members; Sarle = bimodality coefficient; Valley = KDE valley prominence; 2nd/1st = ratio of secondary to primary KDE peak height; Sep = peak separation in units of the family standard deviation; 𝜇 1 = dark-component mean; 
+
+𝑤 1∶𝑤 2 = component weights. Log-space classification of each family (genuine vs. weak bimodal) is given in Table 12. ΔBIC 
+
+> 10 indicates strong preference for a two-component model; Massalia was excluded ( ΔBIC = −12 ). 0.00 0.25 0.50 0.75 
+
+pV  
+
+> 0
+> 1
+> 2
+> 3
+> 4
+> Density
+> Phocaea (linear)
+> b=0.31, V=0.69
+> 1.5 1.0 0.5
+
+log 10 pV  
+
+> 0
+> 1
+> 2
+> 3
+> Density
+> Phocaea (log 10 )
+> b=0.71, V=0.89, n=925
+> 0.0 0.2 0.4
+
+pV  
+
+> 0
+> 2
+> 4
+> 6
+> Density
+> Tirela (linear)
+> b=0.45, V=0.48
+> 1.5 1.0 0.5
+
+log 10 pV  
+
+> 0.0
+> 0.5
+> 1.0
+> 1.5
+> 2.0
+> 2.5
+> Density
+> Tirela (log 10 )
+> b=0.70, V=0.72, n=376
+> 0.0 0.2 0.4
+
+pV  
+
+> 0
+> 2
+> 4
+> 6
+> Density
+> Henan (linear)
+> b=0.53, V=0.33
+> 1.5 1.0 0.5
+
+log 10 pV
+
+> 0
+> 1
+> 2
+> 3
+> Density
+> Henan (log 10 )
+> b=0.71, V=0.69, n=187
+
+Asymmetric bimodality resolved in log space (top: linear, low Sarle; bottom: log 10 , genuine bimodal) 
+
+Figure 2: Three asymmetric dark/bright families (Phocaea, Tirela, and Henan) in linear 𝑝 𝑉 (top row) and log 10 𝑝 𝑉 (bottom row). Each panel shows the histogram and KDE fit with the Sarle coefficient ( 𝑏 ); exact values are given in Table 4. In linear space the dark component appears mainly as a tail and Sarle stays below threshold. In log space the two components separate cleanly and all three satisfy the genuine-bimodality criteria. 
+
+peak separation and population asymmetry. At the separa-tion characteristic of dark/bright (C/S) mixtures ( Δ𝜇 ≈ 0 .64 
+
+dex), detection rises to ∼100% when the per-component intrinsic scatter is small ( 𝜎 int ≲ 0.10 dex) and falls to <12% once 𝜎 int ≳ 0.20 dex, for both symmetric and asymmetric (15:85) configurations. The false-positive rate established by the unimodal-control simulations (Section 2.2.3; 0.1%, rising to 2.2% only in worst-case high-scatter configura-tions) confirms conservative classification. Bootstrap sta-bility analysis (Appendix C) reveals median classification stability of 77%, with the six genuine families showing 91% mean stability (individually 67–100%). This detectability ceiling ( 𝜎 int ≈ 0.15 –0.18 dex at the characteristic separation) sits above the intrinsic scatter present in the families. The family-averaged observed log dispersion is 𝜎 obs ≈ 0 .16 (C-complex) to 0.21 (S-complex), and because measurement error accounts for nearly all of it (median 𝜎 obs ∕𝜎 err ≈ 0.99 ; Section 3.3), the intrinsic per-component scatter is small. The genuine families thus lie inside the regime where a dark/bright bimodality at the 
+
+M. Kaplan: Preprint submitted to Elsevier Page 7 of 21 Albedo Structure in Asteroid Families 0.10 0.20 0.30 0.40 0.50 0.65                                                                
+
+> (log 10 peak separation, dex)
+> 0.05
+> 0.10
+> 0.15
+> 0.20
+> 0.25
+> int  (log 10  intrinsic scatter, dex)
+> 74% 74% 90% 100% 100% 100%
+> 71% 63% 62% 72% 89% 100%
+> 53% 24% 14% 5% 13% 55%
+> 16% 4% 0% 0% 0% 3%
+> 5% 1% 0% 0% 1% 2%
+> A) Symmetric Populations (50:50)
+> 0.10 0.20 0.30 0.40 0.50 0.65
+> (log 10 peak separation, dex)
+> 0.05
+> 0.10
+> 0.15
+> 0.20
+> 0.25
+> int  (log 10  intrinsic scatter, dex)
+> 71% 60% 73% 99% 100% 100%
+> 64% 55% 52% 79% 100% 100%
+> 42% 24% 15% 16% 39% 98%
+> 11% 3% 1% 0% 0% 12%
+> 3% 0% 0% 0% 0% 0%
+> B) Asymmetric Populations (15:85)
+> 0.0
+> 0.2
+> 0.4
+> 0.6
+> 0.8
+> 1.0 Detection probability
+> 0.0
+> 0.2
+> 0.4
+> 0.6
+> 0.8
+> 1.0 Detection probability
+> Detection Efficiency in log 10 albedo space ( obs = 0.04 linear, 500 trials/cell)
+
+Figure 3: Bimodality detection efficiency in log 10 𝑝 𝑉 from Monte Carlo simulations of synthetic families. The grid varies log peak separation ( Δ𝜇 = 0 .10 –0.65 dex) and per-component intrinsic scatter ( 𝜎 int = 0 .05 –0.25 dex). (a) Symmetric populations (𝑤 1∶𝑤 2 = 50∶50 ). (b) Asymmetric populations ( 𝑤 1∶𝑤 2 = 15∶85 ). Numerical values within cells give the detection percentage from 500 simulations. The characteristic dark/bright separation is Δ𝜇 ≈ 0 .64 dex (rightmost column). 
+
+characteristic separation would be detected with high proba-bility, so the scarcity of genuine bimodality (six of 102 fam-ilies) reflects genuine compositional structure, not limited sensitivity. The elevated detection at very small separations combined with large 𝜎 int (lower-left of Figure 3) does not represent genuine resolving power. There, the broad scatter occasionally produces noise-induced apparent structure, so the high-𝜎 int rows are treated as an extreme edge case. Families with intrinsically lower albedo contrast (e.g., X-complex, K-type) may still remain undetectable within the 
+
+NEOWISE error regime. The genuine bimodality rate in log space is therefore 5.9% (6 of 102 families), with no separate “hidden” category required. Our 15:85 mixture ratio represents the most asymmetric configuration we can reliably probe at NEOWISE noise levels. Even at this ratio, detection exceeds ∼98% at the char-acteristic separation ( Δ𝜇 ≈ 0 .65 dex) for 𝜎 int ≤ 0.10 dex, but collapses below ∼15% once 𝜎 int ≥ 0.20 dex (Figure 3b). More extreme asymmetries (e.g., 𝑤 1∶𝑤 2 ≈ 5∶95 or lower) would require deeper or higher-precision surveys to detect. We discuss this implication in Section 5.5. 
+
+3.1.4. Weak-bimodal families 
+
+Fifteen families are classified weak bimodal in log 10 𝑝 𝑉 
+
+(Table 1). They satisfy the Sarle criterion ( 𝑏 = 0 .57 –0.74 )but fail at least one of the structural criteria (Section 2.2.1), and we do not treat them as two-population systems. Only three—Gefion, Massalia, and Chimaera—show a KDE val-ley in log space at all, and in all three the secondary peak lies below the 20% height threshold (secondary-to-primary ratios of 0.12 –0.18 ), so none has a fully resolved second component and none is promoted to genuine. The remaining twelve show no resolved second peak at all. Their elevated Sarle coefficients arise from distribution skewness and heavy tails ( |𝛾 | = 0.4–2.9 in log) rather than from a distinct dark or bright component. The independent modality tests point the same way. Among the weak families only Gefion is flagged bimodal by all four multimode tests—consistent with its KDE valley and sub-threshold secondary peak— whereas Rafita and Witt are predominantly unimodal (Ta-ble 3). These fifteen families originate from a range of linear-space classes (seven unimodal, three “hidden”, three weak, and two skewed unimodal), so the weak-bimodal category is not an artifact of either representation but the buffer that absorbs skewed single populations and marginal cases. Its existence is what keeps the genuine class conservative. The full list, with log-space diagnostics and the linear-space clas-sification of each family, is given in Appendix E (Table 16). 
+
+3.2. Population Mixing and Selection Bias: Juno as Case Study 
+
+We present Juno as an illustrative case study of how population mixing and selection bias can create spurious correlations (Figure 4). Juno shows a strong global size-albedo correlation ( 𝜌 = −0 .63 ) that might be interpreted as space weathering evidence. However, this correlation has two non-physical origins: 
+
+Population mixing: Juno contains two nearly equal albedo populations with different size distributions. When analyzed separately, neither population shows significant correlation (Table 5). 
+
+Selection bias: Magnitude-limited detection favors high-albedo objects at small sizes. Restricting to 𝐷 > 5 km— where detection is more complete—reverses the correlation to 𝜌 = +0 .09 .
+
+M. Kaplan: Preprint submitted to Elsevier Page 8 of 21 Albedo Structure in Asteroid Families 10 0 10 1 10 2
+
+Diameter (km) 
+
+> 0.0
+> 0.1
+> 0.2
+> 0.3
+> 0.4
+> 0.5
+> pV
+
+(a) Juno: All Data  
+
+> all
+
+= -0.63  
+
+> 10 110 2
+
+Diameter (km) 
+
+> 0.05
+> 0.10
+> 0.15
+> 0.20
+> 0.25
+> pV
+
+(b) Juno: D > 5 km   
+
+> D> 5 km
+
+= 0.09 (n=57) 
+
+> Juno
+> Vesta
+> Flora
+> Koronis
+> Eos
+> Themis
+> 0.6
+> 0.4
+> 0.2
+> 0.0
+> 0.2
+> Spearman
+
+(c) Correlation Comparison  
+
+> All Data
+> D > 5 km
+> 10 110 2
+
+Diameter (km) 
+
+> 0.0
+> 0.2
+> 0.4
+> 0.6
+> 0.8
+> pV
+
+(d) Vesta 
+
+> all
+
+=-0.18, D > 5 km =-0.37 
+
+> All
+> D > 5 km
+
+Figure 4: Selection bias in size–albedo correlations, illustrated using the Juno family. (a) Global Spearman correlation, 
+
+𝜌 = −0 .63 . (b) Restricted to 𝐷 > 5 km, 𝜌 = +0 .09 . (c) Comparison across multiple families: global correlations (blue) vs 
+
+𝐷 > 5 km (orange). (d) Vesta size–albedo relation: unlike Juno, the correlation strengthens when restricted to 𝐷 > 5 km (𝜌 global = −0 .18 → 𝜌 𝐷> 5 km = −0 .37 ), opposite to the selection-bias trend, marking it as a weathering candidate. 
+
+Note that Juno may represent an extreme case. Other bimodal families (e.g., Nysa-Polana) retain correlations even after restricting to 𝐷 > 5 km ( 𝜌 = −0 .31 ), suggesting some may reflect genuine physical processes. Nevertheless, this example demonstrates the importance of testing for these effects before interpreting correlations as evidence for space weathering. 
+
+3.2.1. Weathering Signatures in Unimodal Families 
+
+We extend the selection bias test to all families with sufficient data. For each family with > 50 members and ≥ 20 
+
+objects with 𝐷 > 5 km (63 families total), we compare the global size-albedo Spearman correlation coefficient ( 𝜌 global )to the correlation restricted to large objects ( 𝜌 𝐷> 5km ). A “robust” weathering signature requires all four criteria: (1) 
+
+𝜌 global < −0 .2, (2) 𝜌 𝐷> 5km < −0 .15 , (3) 𝑛 𝐷> 5km ≥ 20 ,and (4) 𝑝 global < 0.01 (two-tailed 𝑝 -value for the global correlation). The requirement that |𝜌 global | > |𝜌 𝐷> 5km | is not ex-plicitly enforced but is expected if selection bias drives the correlation: small asteroids amplify apparent trends due to magnitude-limited sampling. If the correlations were equal, 
+
+M. Kaplan: Preprint submitted to Elsevier Page 9 of 21 Albedo Structure in Asteroid Families 
+
+Table 5 
+
+Juno Family: Correlation Analysis Sample 𝑛 𝜌 Interpretation Global 355 −0 .63 Apparent correlation Population 0 178 −0 .39 Reduced Population 1 177 −0 .02 None 
+
+𝐷 > 5 km 57 +0 .09 Selection bias removed 
+
+𝜌 = Spearman rank correlation between diameter and 𝑝 𝑉 ; 𝑛 
+
+= sample size. Population 0 and Population 1 are the two albedo subpopulations identified within Juno (Section 3.2); 
+
+𝐷 > 5 km is the full sample restricted to the diameter-limited cut. 
+
+the trend would be uniform across sizes, suggesting a real physical effect. Vesta shows the opposite pattern ( 𝜌 𝐷> 5km =−0 .37 vs 𝜌 global = −0 .18 ), strengthening at large diameters, which merits further investigation. Of 63 tested families, only 2 pass all four criteria: Nysa-Polana ( 𝜌 global = −0 .40 , 𝜌 𝐷> 5km = −0 .31 ) and Phaeo (𝜌 global = −0 .32 , 𝜌 𝐷> 5km = −0 .20 ). Nysa-Polana is a well-known bimodal family where the correlation likely reflects population mixing. Phaeo (n=137, X-type) has a high linear 
+
+Sarle coefficient (0.57) arising from skewness, but shows no KDE valley structure (valley prominence = 0) and re-solves to unimodal in log space (Figure 1f). As a genuinely unimodal family, it is the only unimodal family passing our robust weathering test, marking it as a weathering candidate worth follow-up. Several families show statistically significant global cor-relations (e.g., Vesta: 𝜌 global = −0 .18 , 𝑝 < 10 −15 ), but fail Criterion 1 ( 𝜌 global > −0 .2). Vesta’s correlation strengthens 
+
+at large diameters ( 𝜌 𝐷> 5km = −0 .37 ), opposite to selection bias expectations, making it a compelling weathering candi-date despite failing our conservative threshold. Note that strengthening correlations at large diameters can also arise from “population filtering”—if a family con-tains an undetected low-albedo subpopulation that is more likely to be lost at large sizes, the remaining high-albedo members may show artificially strong correlations. We ver-ified that Vesta has minimal low-albedo contamination ( <
+
+0.5% outliers, all high-albedo), supporting a genuine weath-ering interpretation. Other families with similar patterns (e.g., Watsonia) have wider albedo distributions that suggest unresolved population structure and need careful interpreta-tion. Telramund shows a comparable pattern and is in fact genuinely bimodal in log space (Section 3, Table 2). In most families, correlations weaken or reverse at large diameters, suggesting that apparent size-albedo correlations in NEOWISE data are predominantly artifacts of magnitude-limited selection. 
+
+3.2.2. Exploratory Analysis: Candidate Weathering and Differentiation Signals 
+
+While no unimodal family unambiguously passes our conservative four-criterion test, several show suggestive sig-nals that merit further study with independent data. Vesta, 0.0 0.1 0.2 0.3 0.4   
+
+> Mean Measurement Error ( err , log 10 )
+> 0.00
+> 0.05
+> 0.10
+> 0.15
+> 0.20
+> 0.25
+> 0.30
+> 0.35
+> 0.40
+> Observed Dispersion (  obs , log 10 )
+> Nysa-Polana
+> Phocaea
+> Flora
+> Eos
+> Eunomia
+> Vesta
+> Maria
+> Hygiea
+> Themis
+> Koronis
+> (a) Error Dominance (log 10 space)
+> 1:1 line
+> C-type
+> S-type
+> V-type
+> Themis
+> Hygiea
+> Flora
+> Koronis
+> Eos
+> Nysa-Polana
+> Eunomia
+> Maria
+> Phocaea
+> Vesta
+> 0
+> 2
+> 4
+> 6
+> 8
+> 10
+> 12
+> 14
+> Detected Interloper Rate (%)
+> (b) Interloper Detection
+> (errors mask outliers)
+> Literature expectation (5-15%)
+
+Figure 5: NEOWISE error analysis in log 10 𝑝 𝑉 . (a) Observed standard deviation ( 𝜎 obs ) vs mean measurement error ( 𝜎 err ) for nine major C- and S-complex families (the C- and S-type fami-lies of Table 8 together with Nysa-Polana, Eunomia, Maria, and Phocaea); dashed line is 1:1. (b) Interloper detection rates from 
+
+𝜎 -clipping (blue bars); shaded band is the literature-expected range (5–15%). 
+
+with its strengthening correlation at large diameters, is a notable exception candidate. We present these as exploratory findings with explicit caveats about selection bias contami-nation (Tables 6 and 7). We also tested for size-dependent composition by com-paring mean albedos of small ( 𝐷 < 5 km) versus large (𝐷 > 5 km) members (Table 7). Significant differences could indicate parent body differentiation (Weiss and Elkins-Tanton, 2012), though selection bias remains a concern. 
+
+3.3. Albedo Spreads: Observed vs Intrinsic 
+
+3.3.1. Comparison with Measurement Uncertainty 
+
+Across the 102 families the median observed-to-error dispersion ratio in log 10 𝑝 𝑉 is 𝜎 obs ∕𝜎 err ≈ 0.99 (mean 1.10; Table 8, Figure 5). For 52% of families (53/102) the measurement error alone equals or exceeds the observed spread. Within-family albedo scatter is therefore dominated by measurement error rather than intrinsic compositional diversity. This holds in both linear ( ≈ 1 .03 ) and logarithmic (≈ 0 .99 ) representations, so it does not depend on the choice of albedo scale. The error dominance also suppresses inter-loper detection. Our 𝜎 -clipping flags only 1–4% of members as outliers, well below the 5–15% expected from the litera-ture (Figure 5b), because measurement errors inflate within-family scatter and hide true compositional outliers. We therefore report observed spreads ( 𝜎 obs ) rather than attempting to infer intrinsic compositional variance. Com-parisons between families should be interpreted in terms of measured albedo distributions rather than as estimates of intrinsic compositional spread. 
+
+3.3.2. C-complex vs S-complex 
+
+In log 10 𝑝 𝑉 , C-complex and S-complex families show 
+
+comparable observed spreads. The mean log dispersion is 
+
+𝜎 obs ≈ 0 .16 (C-complex) versus 0.21 (S-complex; Figure 6), a ratio of ≈ 1.3. This is far smaller than the ≈ 3.6× 
+
+M. Kaplan: Preprint submitted to Elsevier Page 10 of 21 Albedo Structure in Asteroid Families 
+
+Table 6 
+
+Candidate Weathering Signals in Unimodal Families Family 𝑛 Type 𝜌 global 𝜌 𝐷> 5𝑘𝑚 𝑝 Caveat Vesta 1891 V −0 .18 −0 .37 < 10 −15 𝜌 global > −0 .2
+
+Gersuind 201 D −0 .21 — 3 × 10 −3 𝑛 𝐷> 5𝑘𝑚 < 20 
+
+Maria 892 S −0 .11 −0 .11 1 × 10 −3 Weak 𝜌 
+
+Euphrosyne 1520 C −0 .12 — 2 × 10 −6 Weak 𝜌 
+
+Families with significant global correlations ( 𝑝 < 0.01 ) but failing the robust four-criterion test. “—” indicates insufficient sample at 𝐷 > 5 km. 
+
+Table 7 
+
+Size-Dependent Albedo: Candidate Differentiation Signals Family 𝑛 Type ⟨𝑝 𝑉 ⟩small ⟨𝑝 𝑉 ⟩large Δ𝑝 𝑉 Note 
+
+Unimodal Families 
+
+Vesta 1891 V 0.365 0.310 +0 .055 Weathering? Eunomia 2166 S 0.267 0.247 +0 .020 Weathering? Flora 3364 S 0.240 0.255 −0 .015 Unexpected Eos 3953 S 0.146 0.159 −0 .013 Unexpected Themis 2202 C 0.067 0.077 −0 .009 Unexpected 
+
+Bimodal Families (likely mixing artifact) 
+
+Nysa-Polana 3184 S+C 0.221 0.100 +0 .120 Mixing Phocaea 925 S 0.302 0.225 +0 .077 Mixing Mean albedos ⟨𝑝 𝑉 ⟩ and Δ𝑝 𝑉 are in linear 𝑝 𝑉 (this analysis concerns absolute albedo differences, for which the linear scale is the natural one). All differences significant at 𝑝 < 10 −3 . Positive Δ𝑝 𝑉 (small brighter) is consistent with space weathering; negative 
+
+Δ𝑝 𝑉 (large brighter) is unexpected and may indicate selection bias or unknown systematic effects. For bimodal families, the difference more likely reflects population mixing than physical processes. Note: Independent verification required. 
+
+Table 8 
+
+Observed vs Intrinsic Spreads Family Type 𝜎 obs 𝜎 err 𝜎 int 𝜎 int /𝜎 obs 
+
+Themis C 0.143 0.141 0.028 0.20 Hygiea C 0.150 0.158 0.000 0.00 Flora S 0.233 0.162 0.168 0.72 Koronis S 0.141 0.151 0.000 0.00 Vesta V 0.180 0.155 0.091 0.51 Eos S 0.195 0.162 0.108 0.56 Spreads in log 10 𝑝 𝑉 . 𝜎 err is the RMS of the per-object prop-agated log error 0.434 𝜎 𝑝 𝑉 ,𝑖 ∕𝑝 𝑉 ,𝑖 ; 𝜎 int =
+
+√
+
+max(0 , 𝜎 2obs − 𝜎 2err ).Across all 102 families the median 𝜎 obs /𝜎 err = 0 .99 (mean 1.10; 53/102 families have 𝜎 obs ≤ 𝜎 err ). Hygiea and Koronis have 𝜎 obs ≲ 𝜎 err , yielding 𝜎 int ≈ 0 .
+
+ratio in linear 𝑝 𝑉 (median 𝜎 obs = 0.024 vs 0.086 ). The large linear difference is therefore primarily a consequence of the two complexes’ different mean albedos, not of in-trinsically tighter C-complex distributions. A roughly con-stant fractional spread maps to a linear standard deviation proportional to the mean, so the low-albedo C-complex necessarily shows the smaller linear 𝜎 obs (Section 3.3.3). In log space, which removes this mean-albedo scaling, only a modest residual difference remains, with S-complex families slightly more dispersed. We therefore do not interpret the linear C/S contrast as evidence that C-complex families are intrinsically more homogeneous. 
+
+3.3.3. Coefficient of Variation Interpretation 
+
+The similar coefficients of variation (CV = 𝜎 ∕𝜇 , the ratio of standard deviation to mean) for C-complex and S-complex families (CV ≈ 0 .4) require careful interpretation. In an error-dominated regime where 𝜎 obs ≈ 𝜎 err , the CV becomes approximately 𝜎 err ∕𝜇 . Since measurement errors are roughly constant but mean albedos vary considerably (𝜇 𝐶 ≈ 0 .07 vs 𝜇 𝑆 ≈ 0 .23 ), the similar CVs partly reflect this mathematical relationship rather than comparable intrinsic diversity. Simulations confirm this effect. Populations with iden-tical true CV ( ∼0.21) but different mean albedos show divergent observed CVs ( ∼0.55 for low-𝜇 vs ∼0.27 for high-
+
+𝜇 ) after adding realistic measurement errors. The logarithmic analysis makes this explicit. In log 10 𝑝 𝑉 ,where the mean-albedo scaling is removed, the C- and S-complex spreads are comparable ( 0.16 vs 0.21 ; Section 3.3). The threefold difference in linear space is thus largely a coefficient-of-variation/mean-albedo effect rather than a dif-ference in intrinsic compositional diversity. 
+
+M. Kaplan: Preprint submitted to Elsevier Page 11 of 21 Albedo Structure in Asteroid Families 0.10 0.15 0.20 0.25 0.30 0.35                         
+
+> log 10 Albedo Std ( log )
+> 0
+> 5
+> 10
+> 15
+> 20
+> Density
+> (a) C- and S-type Spreads Comparable
+> C (mean=0.16)
+> S (mean=0.21)
+> 0.1 0.2 0.3 0.4 0.5 0.6 0.7
+> Mean Albedo ( )
+> 0.10
+> 0.15
+> 0.20
+> 0.25
+> 0.30
+> 0.35
+> log 10  Albedo Std (  log  )
+> (b) Mean vs Spread (log 10 )
+> C
+> S
+> V
+> 1.8 1.6 1.4 1.2 1.0 0.8 0.6
+> log 10 pV
+> 0.0
+> 0.5
+> 1.0
+> 1.5
+> 2.0
+> 2.5
+> 3.0
+> Density
+> (c) Themis (C-type)
+> log =0.143
+> 1.50 1.25 1.00 0.75 0.50 0.25 0.00
+> log 10 pV
+> 0.0
+> 0.5
+> 1.0
+> 1.5
+> 2.0
+> Density
+> (d) Flora (S-type)
+> log =0.233
+
+Figure 6: Homogeneity comparison by spectral type in log 10 𝑝 𝑉 .(a) Distribution of log-albedo standard deviations for C-complex (blue) and S-complex (orange) families; the means are comparable (0.16 vs 0.21). (b) Mean albedo vs. standard deviation per family. (c, d) Representative examples: Themis (C-complex) and Flora (S-complex). 
+
+## 4. Validation 
+
+4.1. AKARI Cross-Validation 
+
+AKARI provides truly independent validation using dif-ferent wavelengths and thermal models without relying on spectral classifications. We matched 1,498 asteroids between catalogs (Figure 7), of which 436 belong to Nesvorný fam-ilies, spanning 134 distinct families. Seven major families have sufficient AKARI sample ( 𝑛 ≥ 8 matches per family) for the family-level cross-validation in Figure 8. Direct per-asteroid comparison of the 1,498 matched objects (Figure 7) shows broad agreement: the best-fit relation is 𝑝 NEOWISE 
+
+𝑉 = 1.03 × 𝑝 AKARI 
+
+𝑉 + 0 .006 with 
+
+𝑅 2 = 0.76 . The median per-asteroid absolute difference is 0.015 (mean 0.027), and relative differences are centered at +11 .4% (median +4 .8% ) with standard deviation 40 .4% .This scatter reflects measurement errors in both catalogs and the well-documented spectral-type-dependent offset. The offset is albedo dependent: low-albedo families (Nysa-Polana, Themis, Hygiea) agree to within |Δ| ≤ 0.011 in their mean albedos, whereas several high-albedo families show larger mean offsets up to ∼ 0 .07 (Table 9), consistent with NEOWISE overestimating high albedos relative to AKARI (the documented spectral-type dependence in NEOWISE thermal modeling; Myhrvold, 2018b). The near-unity best-fit slope confirms that NEOWISE and AKARI broadly agree on the same objects, with no large systematic skew that would create spurious albedo structure. 
+
+4.1.1. Family-Level Distribution Agreement and Sampling Effects 
+
+To assess cross-survey consistency at the family level, we compare AKARI and NEOWISE 𝑝 𝑉 distributions for 0.0 0.2 0.4 0.6 0.8                 
+
+> AKARI pV
+> 0.0
+> 0.2
+> 0.4
+> 0.6
+> 0.8
+> NEOWISE  pV
+> n = 1498
+> R2= 0.76
+> (a) Per-asteroid comparison
+> 1:1 line
+> Best fit: y= 1.03 x+ 0.006
+> 150 100 50 050 100 150 200
+> Relative difference (pN
+> VpA
+> V)/ pA
+> V[%]
+> 0
+> 20
+> 40
+> 60
+> 80
+> 100
+> 120
+> Number of asteroids
+> Mean: +11.4%
+> Median: +4.8%
+> Std: 40.4%
+> (2 outliers off-scale)
+> (b) Distribution of differences
+> Zero offset
+> Mean = +11.4%
+
+Figure 7: NEOWISE versus AKARI visible albedo comparison for the 1,498 matched asteroids. (a) Per-asteroid scatter with 1:1 line (dashed) and best-fit line (solid); fit parameters are reported in Section 4.1. (b) Distribution of relative differences, 
+
+(𝑝 NEOWISE  
+
+> 𝑉
+
+− 𝑝 AKARI  
+
+> 𝑉
+
+)∕ 𝑝 AKARI  
+
+> 𝑉
+
+; vertical line marks the mean offset. 
+
+Table 9 
+
+AKARI vs NEOWISE per-family agreement on matched aster-oids Family 𝑛 ⟨𝑝 N 
+
+> 𝑉
+
+⟩ ⟨𝑝 A 
+
+> 𝑉
+
+⟩ Offset Offset (%) Nysa-Polana 18 0.075 0.073 +0 .002 +2 .7
+
+Themis 43 0.077 0.066 +0 .011 +16 .7
+
+Hygiea 10 0.095 0.097 −0 .002 −2 .1
+
+Eos 43 0.140 0.133 +0 .007 +5 .3
+
+Flora 22 0.237 0.225 +0 .012 +5 .3
+
+Koronis 6 0.235 0.220 +0 .015 +6 .8
+
+Eunomia 9 0.179 0.139 +0 .040 +28 .8
+
+Phocaea 15 0.226 0.171 +0 .055 +32 .2
+
+Maria 5 0.264 0.198 +0 .066 +33 .3
+
+All matched 1498 – – – +11 .4
+
+Mean NEOWISE ( ⟨𝑝 N 
+
+> 𝑉
+
+⟩) and AKARI ( ⟨𝑝 A 
+
+> 𝑉
+
+⟩) albedos for the matched asteroids in each family, ordered by AKARI albedo. “Offset” is ⟨𝑝 N 
+
+> 𝑉
+
+⟩ − ⟨𝑝 A 
+
+> 𝑉
+
+⟩. Agreement is good for low-albedo families ( |offset | ≤ 0.011 ) and larger for several high-albedo families, consistent with the known spectral-type dependence of the NEOWISE–AKARI offset. The small per-family samples ( 𝑛 = 5 –43 ) limit the precision of individual offsets; Eunomia, Phocaea, and Maria have both small samples and (for Eunomia) non-representative compositions, and should be interpreted with care. 
+
+individual families using the matched subsets (Figure 8). Restricting both surveys to the identical asteroids is es-sential, because some AKARI family-level samples are not representative of the full NEOWISE families they belong to. Three of the nine families show significant AKARI sampling bias relative to their full NEOWISE membership: Nysa-Polana (AKARI matched subset 94% low-albedo ver-sus 55% in the full family), Hygiea (30% high-albedo in the matched subset versus 5% in the full family), and Eunomia (33% low-albedo versus 6%). The remaining six families have AKARI subsets whose albedo composition matches the full family to within a few percentage points. The biased families are precisely those where naive family-level 𝜎 com-parisons between the two surveys are most misleading, since 
+
+M. Kaplan: Preprint submitted to Elsevier Page 12 of 21 Albedo Structure in Asteroid Families 
+
+the AKARI subset samples a different part of the albedo distribution than the full family. When the comparison is restricted to identical aster-oids (Figure 8b,c), the AKARI and NEOWISE distributions overlap closely for both Nysa-Polana and Hygiea, confirm-ing that the two surveys agree on the objects they jointly sample. The faint dashed reference curves showing the full NEOWISE family distributions make the AKARI sampling bias explicit: the matched-subset distributions deviate from the reference not because the surveys disagree on measure-ment values, but because the AKARI-matched asteroids are themselves a non-representative subset. Secondary effects— wavelength coverage ( AKARI ’s 9–18 𝜇 m thermal bands ver-sus NEOWISE ’s 3.4–4.6 𝜇 m bands, which include reflected sunlight; Alí-Lagoa et al. 2018) and differing beaming-parameter treatments—may contribute additional scatter but are subdominant to sample selection at the family level. Hygiea’s apparently wider AKARI spread reflects AKARI’s preferential sampling of high-albedo objects within the family region: 30% of the AKARI-matched Hygiea subset has 𝑝 𝑉 > 0.12 , versus only 5% in the full NEOWISE family. AKARI and NEOWISE measurements of these specific high-albedo objects agree closely (Figure 8c), supporting their interpretation as genuine interlopers rather than mea-surement artifacts. 
+
+4.1.2. Confirmed Results 
+
+AKARI cross-validation supports our conclusions in three ways. First, broad cross-survey agreement on the 1,498 matched asteroids (slope 1.03, 𝑅 2 = 0 .76 , median |Δ𝑝 𝑉 | =0.015 ; Figure 7) confirms that NEOWISE 𝑝 𝑉 measurements are not subject to large systematic skews that would create false bimodal structure. Second, AKARI independently supports the Nysa-Polana bimodal classification ( 𝑏 = 0 .99 
+
+in AKARI data), validating our primary detection. Third, the apparent bimodal structure in the small AKARI Hygiea subset ( 𝑛 = 10 ; Figure 8c) reflects AKARI’s preferential matching of high-albedo objects in the Hygiea family region rather than a true bimodal Hygiea family. AKARI and NEOWISE agree on these specific objects, supporting their interpretation as interlopers. The two surveys agree on Nysa-Polana as bimodal, pro-viding independent confirmation of our primary detection. Juno’s bimodality is not recovered in the AKARI data, but the AKARI Juno sample is too small ( 𝑛 < 5 matches) to test for the asymmetric secondary population identified in the NEOWISE data. The absence of detection in AKARI thus reflects statistical power, not disagreement. More generally, asymmetric bimodality is difficult to detect reliably with current data, and results near detection thresholds depend on survey-specific sample sizes and error properties.                                                                                                          
+
+> Table 10
+> Taxonomic Composition of Bimodal vs Unimodal Families Family 𝑛 spec S% C% X% Dom Mixing
+> Genuinely Bimodal (log space)
+> Nysa-Polana 1321 35.7 26.8 2.3 S64.3% Juno 171 32.7 26.9 7.0 S67.3% Phocaea 325 56.9 11.4 4.6 S43.1% Tirela 168 17.3 7.1 7.1 D70.2% Henan 76 53.9 9.2 10.5 S46.1% Telramund 43 65.1 2.3 11.6 S34.9%
+> Unimodal S-type
+> Koronis 474 81.0 0.8 2.7 S19.0% Eunomia 1061 75.1 2.1 2.9 S24.9% Flora 1426 57.6 8.0 13.7 S42.4% Maria 417 67.6 2.4 2.9 S32.4% Hansa 145 76.6 0.7 1.4 S23.4%
+> Unimodal C-type
+> Themis 940 1.5 49.4 8.8 C50.6% Hygiea 957 1.4 47.1 8.9 C52.9% Veritas 377 3.2 49.1 24.7 C50.9% Adeona 713 5.3 55.7 9.7 C44.3% Mixing index = 100% −dominant type fraction (Dom = dominant spectral complex; X% includes X-complex and other minor types not shown individually). Higher values indicate more taxonomic diversity. Sample sizes (𝑛 spec ) reflect asteroids with assigned SDSS-photometric classifications. For families also listed in Appendix Table 15, counts may differ by up to ∼1%, as that table requires both the classification and its associated probability to be defined. Mean mixing indices quoted in the text are averaged over all classified families in each category, not only the representative families listed here.
+
+4.2. SDSS Photometric Consistency 
+
+4.2.1. The Circularity Problem 
+
+Both NEOWISE albedos and SDSS-based photomet-ric classifications (Sergeyev and Carry, 2021) reflect sur-face composition, creating potential circularity in cross-validation. Classification confidence correlates with mea-sured albedo ( 𝜌 = 0 .42 , 𝑝 < 10 −15 ), indicating these are not fully independent. We therefore interpret SDSS-NEOWISE comparisons as consistency checks rather than independent validations. 
+
+4.2.2. Taxonomic Validation of Bimodality 
+
+To validate that albedo bimodality reflects composi-tional mixing rather than measurement artifacts, we exam-ined SDSS photometric classifications for bimodal and uni-modal families (Table 10). The “mixing index” (100% minus dominant type fraction) quantifies taxonomic diversity. The six genuinely bimodal families show substantially higher spectral mixing (mean 54.3%) than either unimodal S-type (28.4%) or unimodal C-type (49.7%) families. Nysa-Polana contains both S-type (35.7%) and C-type (26.8%) objects, confirming that its albedo bimodality corresponds to real taxonomic diversity. Juno, Phocaea, and Henan show a similar S/C mixture. Tirela is a notable exception: its   
+
+> M. Kaplan: Preprint submitted to Elsevier Page 13 of 21
+
+Albedo Structure in Asteroid Families 0.000 0.025 0.050 0.075 0.100 0.125 
+
+AKARI family pV
+
+0.00 
+
+0.02 
+
+0.04 
+
+0.06 
+
+0.08 
+
+0.10 
+
+0.12 
+
+0.14  
+
+> NEOWISE family  pV
+> Phocaea
+> Eunomia
+> Flora Nysa-Polana
+> Hygiea Eos
+> Themis
+
+(a) Family-Std Comparison 
+
+> 1:1 line
+> AKARI sample
+> n=10
+> n=25
+> n=50
+
+0.0 0.1 0.2 0.3 0.4 0.5 
+
+pV
+
+0
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+> Density (KDE)
+
+(b) Nysa-Polana 
+
+> NEOWISE full (n=3184)
+> NEOWISE matched (n=18)
+> AKARI matched (n=18)
+
+0.00 0.05 0.10 0.15 0.20 0.25 0.30 
+
+pV
+
+0.0 
+
+2.5 
+
+5.0 
+
+7.5 
+
+10.0 
+
+12.5 
+
+15.0 
+
+17.5 
+
+> Density (KDE)
+
+(c) Hygiea 
+
+> NEOWISE full (n=2146)
+> NEOWISE matched (n=10)
+> AKARI matched (n=10)
+
+AKARI CROSS-VALIDATION 
+
+----------------------------------
+
+Matched asteroids: 436 
+
+(family-tagged subset) 
+
+Families compared: 134 
+
+PER-ASTEROID AGREEMENT: 
+
+Mean |NEOWISE-AKARI|: 0.032 
+
+Median: 0.016 
+
+FAMILY-SUBSET OFFSET: 
+
+NEOWISE - AKARI: +10.6% 
+
+(object-weighted, n=436 
+
+spectral-type dependent; 
+
+largest for V-types, 
+
+smallest for C-types) 
+
+INDEPENDENT VALIDATION: 
+
+- Different thermal model 
+
+- No spectral types used 
+
+- Slope near unity, no major 
+
+systematic skew (Fig 7) 
+
+- Per-asteroid scatter is 
+
+consistent with NEOWISE 
+
+error budget 
+
+(d) Summary 
+
+Figure 8: AKARI–NEOWISE family-level cross-validation. (a) Within-family albedo standard deviations: AKARI vs NEOWISE, for the seven families with 𝑛 ≥ 8 AKARI matches. Marker area scales with AKARI sample size. (b) Nysa-Polana albedo distributions: full NEOWISE family (dashed gray, 𝑛 = 3 ,184 ), NEOWISE restricted to the AKARI-matched subset (blue, 𝑛 = 18 ), and AKARI for the same asteroids (orange). Rug ticks below the axis mark individual AKARI measurements. (c) Same overlay for Hygiea (matched 𝑛 = 10 ). (d) Summary statistics for the family-tagged matched subset (Section 4.1). 
+
+dominant spectral type is D (primitive, low-albedo), not C, and S+C types together account for only 24% of its classified members—suggesting its dark component may be a D-type instead of a C-type population, a compositional pathway distinct from the other five genuine families. This validates that our bimodality detections reflect genuine compositional structure rather than measurement artifacts, while showing that not all dark/bright mixtures share the same taxonomic origin. 
+
+4.2.3. V-type Bias Decomposition 
+
+The apparent V-type albedo deficit decomposes into two components when separated by the SDSS-photometric classification probability 𝑝 (from Sergeyev and Carry 2021; 
+
+M. Kaplan: Preprint submitted to Elsevier Page 14 of 21 Albedo Structure in Asteroid Families                                       
+
+> Table 11
+> V-type Albedo by Classification Confidence Confidence 𝑛 Mean 𝑝 𝑉 Bias
+> 𝑝 < 0.33335 0.10 −75% 0.3≤𝑝 < 0.5276 0.24 −41% 0.5≤𝑝 < 0.7267 0.31 −23% 0.7≤𝑝 < 0.9323 0.34 −14%
+> 𝑝 ≥0.9418 0.35 −13%
+> Literature –0.40 –
+> 𝑝 denotes the SDSS-photometric classification probability for V-type assignment from Sergeyev and Carry (2021). Bias is computed as (mean 𝑝 𝑉 −0.40)/0.40, with 0.40 the literature mean V-type albedo for the Vesta family.
+
+higher values indicate more reliable V-type identification) shown in Table 11. 
+
+Misclassification contribution ( ∼46%): Low-confidence “V-type” classifications (which are likely S-type or X-type asteroids misidentified based on ambiguous colors) account for most of the apparent deficit. 
+
+Thermal model contribution ( ∼13%): High-confidence V-types still show a significant deficit, consistent with known limitations of NEATM for high-albedo objects (Mainzer et al., 2011; Masiero et al., 2011). During the NEOWISE Reactivation mission, the beaming parameter ( 𝜂 ) must be held fixed at 0.95 ± 0 .2 due to the availability of only a single thermal band (W2; Masiero et al. 2021). The model’s assumption of constant beaming parameter and infrared-to-visible albedo ratio can systematically underestimate albe-dos for bright, basaltic surfaces whose thermal properties differ from the assumed value. Contributing factors include: 
+
+• Inappropriate beaming parameters ( 𝜂 ) for basaltic vs silicate surfaces 
+
+• Different thermal inertia of basaltic materials 
+
+• Observation geometry effects from the concentration of V-types in the high-inclination Vesta family We report the V-type bias as ranging from −13% (ther-mal model only) to −59% (combined with misclassification). 
+
+## 5. Discussion 
+
+5.1. What Can We Reliably Conclude? 
+
+Based on our analysis, we classify conclusions by ro-bustness. All findings are limited to what we can infer from albedo distributions alone, without independent spec-troscopic or compositional constraints. 
+
+Robust findings (independent of SDSS taxonomic clas-sifications and supported by AKARI or consistency checks): 
+
+• Genuine bimodality is found in 5.9% of families (6 of 102) in log-albedo space, meeting all four criteria 
+
+• Two families (Nysa-Polana, Juno) are genuinely bi-modal in both linear and logarithmic albedo space and are our most secure detections; four more (Phocaea, Tirela, Henan, Telramund) are resolved specifically in log space, where the asymmetric dark/bright mixture is no longer underweighted by the moment-based test (Section 5.3) 
+
+• Monte Carlo simulations in log space show that a dark/bright bimodality at the characteristic separation (Δ𝜇 ≈ 0 .64 dex) is recovered with high probability for the intrinsic scatter present in the families; detection collapses only for per-component scatter ≳ 0.2 dex, so the low rate reflects compositional homogeneity rather than limited sensitivity 
+
+• Measurement errors dominate observed spreads for most families (median 𝜎 obs ∕𝜎 err ≈ 0 .99 in log space) 
+
+• Apparent size-albedo correlations largely vanish un-der conservative bias controls. Interpreting them as space weathering without independent spectral con-firmation remains speculative 
+
+• C-complex and S-complex families show comparable observed spreads in log space ( 0.16 vs 0.21 ); the larger difference in linear space is a mean-albedo (coefficient-of-variation) effect 
+
+Tentative findings (dependent on SDSS taxonomic clas-sifications; see Appendix D for reliability assessment): 
+
+• S-type albedos match literature expectations ( +2% )
+
+• V-types show systematic deficits ( −13% to −59% )from thermal model limitations and classification un-certainties 
+
+5.2. Methodological Limitations 
+
+Our analysis uses simple variance subtraction ( 𝜎 2int =
+
+𝜎 2obs − 𝜎 2err ) to estimate intrinsic spreads. This approach as-sumes equal measurement errors for all objects and does not account for potential correlations between albedo and mea-surement uncertainty (e.g., size-dependent error scaling). More sophisticated methods—hierarchical Bayesian mod-eling, size-dependent error treatment, or measurement er-ror deconvolution—would provide better uncertainty quan-tification but require larger sample sizes than most fam-ilies offer. For the error-dominated regime we document (𝜎 obs ∕𝜎 err ≈ 0 .99 in log space), these refinements would not change our primary conclusion: observed spreads largely re-flect measurement scatter rather than intrinsic compositional diversity. 
+
+5.3. Robustness to albedo representation 
+
+We use log 10 𝑝 𝑉 as the primary representation through-out Section 2.2.1, and we compare with the linear-𝑝 𝑉 analy-sis to characterise how the choice of scale affects the results. Using identical criteria in both spaces, overall classification agreement is 22.5% (23/102 families). The transform mate-rially alters which families are flagged.                                                                 
+
+> M. Kaplan: Preprint submitted to Elsevier Page 15 of 21 Albedo Structure in Asteroid Families
+> Table 12
+> Bimodality Classification: Linear vs. Logarithmic Space Family 𝑛 Linear log 10 Sarle lin Sarle log Robust
+> Genuine in both representations
+> Nysa-Polana 3184 GENUINE GENUINE 0.70 0.69 Yes Juno 355 GENUINE GENUINE 0.58 0.70 Yes
+> Resolved in log space (linear →GENUINE)
+> Phocaea 925 HIDDEN GENUINE 0.31 0.71 —Tirela 376 HIDDEN GENUINE 0.45 0.70 —Henan 187 HIDDEN GENUINE 0.53 0.71 —Telramund 104 WIDE GENUINE 0.43 0.70 —
+> Linear-hidden, not promoted (remain weak in log)
+> Gefion 748 HIDDEN WEAK 0.34 0.74 —Rafita 283 HIDDEN WEAK 0.38 0.67 —Witt 89 HIDDEN WEAK 0.46 0.74 —Family-by-family classification underlying the comparison discussed above. “Robust” (Yes) indicates GENUINE classification in both representations. Massalia (unimodal in linear, weak in log) is omitted.
+
+Two effects operate in opposite directions. The log transform removes the positive skew of linear albedo dis-tributions, so high-Sarle families with no genuine second peak fall below threshold. The number satisfying any multi-peaked category drops from 41 in linear space to 21 in log. More importantly, the transform symmetrises genuine but asymmetric dark/bright mixtures, raising their Sarle coeffi-cients above threshold, so four families become genuinely bimodal in log, namely Phocaea, Tirela, and Henan (hidden in linear space) together with Telramund (wide-unimodal in linear; Table 12). Log space is thus simultaneously more selective against skewness-driven false positives and more sensitive to real asymmetric bimodality, yielding 6 genuine detections versus 2 in linear space. Nysa-Polana and Juno are genuine in both representa-tions and are our most secure detections. Recovering only these two near-symmetric mixtures in linear space, versus six in log, is the empirical basis for using the logarithmic representation rather than treating the linear result as a conservative default. The choice is also physically moti-vated, since albedos are approximately log-normal/double-Rayleigh (Wright et al., 2016) and the two-Gaussian mixture underlying our criteria and simulations is therefore better specified in log space. The three remaining linear-hidden families (Gefion, Rafita, Witt; Section 2.2.1, Table 4) illus-trate the boundary case: elevated Sarle without a sufficiently resolved structural peak, so they remain weak bimodal rather than genuine in either representation. 
+
+5.4. Additional Limitations 
+
+Several additional limitations warrant mention: 
+
+5.4.1. Heliocentric distance bias 
+
+Our 𝐷 > 5 km completeness threshold addresses magnitude-limited bias against small dark asteroids, but does not fully correct for distance-dependent effects. Dark asteroids at larger heliocentric distances may still be under-represented (cf. DeMeo and Carry, 2013). However, the bias correction methodology of DeMeo and Carry (2013) was developed for population-wide taxonomic distributions, applying corrections to 13,211 asteroids drawn from a sample of 34,503. Our analysis differs fundamentally. We examine within-family albedo distributions using 124,091 asteroids across 102 families, where members of each family share similar heliocentric distances by definition. To test whether distance-dependent bias affects our con-clusions, we compared bimodality rates (genuine plus weak) across Main Belt zones in log 10 𝑝 𝑉 . The rate declines with heliocentric distance, from 35.3% (6/17) in the inner belt (𝑎 < 2.5 AU) through 23.8% (10/42) in the middle to 11.6% (5/43) in the outer belt ( 𝑎 > 2.82 AU), but a Fisher’s exact test on the inner-versus-outer comparison gives 𝑝 =0.06 (odds ratio 4.1), so the difference is not significant at the 𝛼 = 0.05 level. The six genuine detections are, by contrast, distributed evenly across the three zones, with Nysa-Polana and Phocaea in the inner belt, Juno and Henan in the middle, and Tirela and Telramund in the outer. The residual gradient is therefore confined to the weak-bimodal families, predominantly skewness artifacts (Section 3), and does not affect the genuine detections that constitute our primary result. The lower outer-belt rate is also consistent with the darker, more C-complex-dominated composition of outer families (mean family 𝑝 𝑉 ≈ 0 .09 versus ≈ 0 .20 in the inner belt), which offers less dark/bright contrast for two-population structure, rather than with a detection bias against dark asteroids. Heliocentric distance bias therefore does not substantially affect our bimodality conclusions. 
+
+5.4.2. Space weathering saturation 
+
+Our null result for size-albedo correlations could partly reflect space weathering saturation in old families. If weath-ering effects saturate on timescales shorter than family ages, large asteroids would show no correlation even if weather-ing operates, because all surfaces—regardless of exposure time—reach the same equilibrium state. This interpretation   
+
+> M. Kaplan: Preprint submitted to Elsevier Page 16 of 21 Albedo Structure in Asteroid Families
+
+does not conflict with our selection bias findings but repre-sents an alternative physical explanation for the absence of detectable trends. 
+
+5.5. Recommendations for Future Studies 
+
+For NEOWISE -based family studies, we recommend: 1. Report observed spreads. Do not claim compositional homogeneity. 2. Test size-albedo correlations with diameter-limited subsamples to catch selection bias 3. Be aware of pipeline filtering effects: during NE-OWISE Reactivation, observations where W2 band flux contains > 10% reflected sunlight are excluded (Masiero et al., 2021). This filtering removes 29% of Main Belt observations and may introduce bias in datasets containing high-albedo asteroids (S-type, E-type). 4. Analyze bimodal families with population-specific methods 5. Report spectral-type biases as ranges reflecting clas-sification uncertainty 6. Use AKARI or independent data for validation when possible 7. Interpret CV values cautiously in error-dominated regimes 8. Treat candidate weathering/differentiation signals (Ta-bles 6 and 7) as hypotheses requiring independent confirmation, not established results 9. Detecting more asymmetric compositional subpopu-lations ( 𝑤 1∶𝑤 2 ≪ 15∶85 ; Section 3.1.3) requires deeper or higher-precision surveys: NEOWISE cannot reliably resolve such configurations within current error budgets, even when present 
+
+## 6. Conclusions 
+
+Our analysis of 102 asteroid families reveals that NEO-WISE albedo distributions are dominated by measurement uncertainties, requiring careful interpretation: 1. Genuine bimodality is found in 6 of 102 families (5.9%) in log-albedo space. Nysa-Polana and Juno are bimodal in linear space as well, and thus our most secure detections; Phocaea, Tirela, Henan, and Telramund are asymmetric dark/bright mixtures re-solved specifically in log space, where their Sarle coefficients rise from 𝑏 = 0 .31 –0.53 to 𝑏 ≈ 0 .70 .Detection-efficiency simulations place these families in the high-detection regime and indicate they are not error-induced artifacts. The scarcity of bimodality therefore reflects genuine compositional homogeneity and not limited sensitivity. 2. Measurement errors dominate observed spreads (me-dian 𝜎 obs ∕𝜎 err ≈ 0 .99 in log space), limiting inference of intrinsic compositional variance; the conclusion is independent of linear vs. logarithmic representation.                              
+
+> Table 13
+> Hartigan Dip Test Results Family 𝑛 Dip 𝑝 -value Our Classification Phocaea 925 0.112 Genuine (log) Gefion 748 0.092 Weak (log) Themis 2202 0.166 Unimodal Eos 3953 0.234 Unimodal Flora 3364 0.198 Unimodal Eunomia 2166 0.160 Unimodal Vesta 1891 0.118 Unimodal All 𝑝 -values >0.05 indicate failure to reject unimodality. Hartigan’s test does not detect the two-peak structure visible in KDE analysis for Phocaea and Gefion, likely because these families have asymmetric population weights (15:85) and moderate peak separation. This motivated our combination of moment-based and density-based metrics.
+
+3. Apparent size-albedo correlations largely reflect se-lection bias rather than space weathering; only 2 of 63 tested families survive conservative diameter-limited tests. Vesta is a notable candidate that warrants follow-up with independent methods. 4. Spectral-type albedo biases are significant: V-types show −13% to −59% systematic deficit due to thermal model limitations and classification uncertainties. These findings establish detection limits, bias controls, and error budgets for interpreting NEOWISE family albedos in error-dominated regimes. 
+
+## Appendix A. Hartigan’s Dip Test Comparison 
+
+To validate our choice of combining Sarle and KDE met-rics, we tested Hartigan’s dip test on several asymmetric two-peak families—Phocaea (genuinely bimodal in log space) and Gefion (weak bimodal in log; “hidden” in the linear-space cross-check). Hartigan’s test evaluates unimodality by measuring the maximum difference between the empirical distribution and the best-fitting unimodal distribution. The failure of Hartigan’s test to detect bimodality in fam-ilies with clear two-peak KDE structure (Phocaea, Gefion; Table 13) shows the benefit of combining moment-based and density-based metrics. Hartigan’s test is optimized for detecting departures from strict unimodality but may miss asymmetric or low-contrast bimodal structures that are nonetheless statistically resolvable. 
+
+## B. KDE Parameter Sensitivity 
+
+To verify that our bimodality classifications are not arti-facts of specific KDE parameter choices, we tested the sen-sitivity of valley prominence to bandwidth and smoothing variations. For three representative families (Nysa-Polana, Gefion, Koronis), we varied the bandwidth multiplier (0.7,                                    
+
+> M. Kaplan: Preprint submitted to Elsevier Page 17 of 21 Albedo Structure in Asteroid Families
+> Table 14
+> Bootstrap Stability by Bootstrap-Dominant Classification Bootstrap-Dominant Class 𝑛 Families Mean Stability Median Stability Range Genuinely Bimodal 786.1% 97.6% 100.0–55.5% Weak Bimodal 15 72.6% 70.6% 99.6–43.3% Wide Unimodal 856.0% 55.4% 95.2–24.9% Skewed Unimodal 26 75.8% 75.6% 100.0–33.0% Unimodal 46 80.1% 88.2% 100.0–39.5% All Families 102 76.4% 77.1% 100.0–24.9% Bootstrap stability quantifies classification robustness under resampling (1,000 iterations per family) in log 10 𝑝 𝑉 , using the same five-class scheme as the point classification (Table 1); no residual “hidden bimodal” category arises. The “Bootstrap-Dominant Class” is the most frequent classification across iterations and may differ from the point classification for borderline families (seven bootstrap-dominant genuine families versus six in Table 1; the additional family, Juliana ( 𝑛 = 43 ), has a bootstrap-dominant classification of Genuinely Bimodal at only 55.5% stability, reflecting its small sample size and marginal position near the classification boundary). In total, 42 families (41.2%) fall below 70% stability. Wide unimodal families show the lowest median stability (55.4%), including the single least-stable family in the full sample (24.9%), reflecting their ambiguous position near the bimodality threshold.
+
+1.0, 1.3 × Scott’s rule) and Gaussian smoothing parameter (𝜎 = 2 , 3, 4 grid points). Classifications are stable under reasonable parameter variations: 
+
+• Nysa-Polana (genuine bimodal): Valley prominence ranges from 0.94 to 0.95 across all parameter com-binations, remaining well above the 0.25 threshold; classification unchanged. 
+
+• Gefion (weak bimodal in log space; “hidden” in the linear cross-check): Valley prominence ranges from 0.15 to 0.33 depending on parameters. While this crosses our 0.25 threshold in some configurations, the family consistently shows two-peak structure in KDE analysis. This illustrates that such borderline families occupy a transitional regime where classification de-pends on parameter choices. 
+
+• Koronis (unimodal): Although valley prominence ranges from 0.28 to 0.44, the secondary peak height remains below 20% of the primary peak across all con-figurations, maintaining its unimodal classification. These results show that our four-criterion approach (re-quiring Sarle > 0.556 , valley > 0.25 , secondary peak >
+
+20% , and separation > 1.2𝜎 ) provides more robust classifi-cations than any single metric. Genuine bimodals like Nysa-Polana are stable across all parameters, while edge cases like Gefion appropriately receive a weak-bimodal designation reflecting their ambiguous status. 
+
+## C. Bootstrap Stability Analysis 
+
+To test the robustness of bimodality classifications, we performed bootstrap resampling analysis (1,000 iterations per family). For each iteration, we resample the family’s albedo measurements with replacement and apply the four-criterion classification. We report the dominant classifica-tion (most frequent across iterations) and stability percent-age (fraction of iterations yielding the dominant class). These results (Table 14) demonstrate that: (1) the six genuine families are highly robust, with mean stability 91% (individually 67–100%; the lowest, Telramund, reflects its small size, 𝑛 = 104 ), (2) the families that are weak bi-modal in log space but were “hidden” in linear space— Gefion, Rafita, and Witt—remain stable ( > 88% ), (3) clas-sification uncertainty is concentrated in families with weak signals or ambiguous distributions (wide unimodal, some skewed unimodal), and (4) the four-criterion approach suc-cessfully identifies clear cases while flagging borderline families through lower stability. 
+
+## D. Taxonomic Classification Reliability 
+
+We evaluated the reliability of SDSS-based photomet-ric classifications by comparing binary (counting) versus probability-weighted fractions for each family (Table 15). The weighted fraction accounts for classification uncertainty by weighting each asteroid’s contribution by its classifica-tion probability. Systematic differences between methods reveal classifi-cation reliability: 
+
+• C-complex: Mean difference −0 .22 , indicating sub-stantial classification uncertainty (effective reliability 
+
+∼34%) 
+
+• S-complex: Mean difference −0 .10 , moderate reliabil-ity ( ∼68%) 
+
+• V-type: Mean difference −0 .06 , higher reliability (∼75%) Dominant taxonomic type agrees between methods for 88% of families (60/68 families having sufficient SDSS tax-onomic coverage for this comparison). Discrepancies occur   
+
+> M. Kaplan: Preprint submitted to Elsevier Page 18 of 21
+
+Albedo Structure in Asteroid Families 
+
+Table 15 
+
+Probability-Weighted Taxonomic Fractions for Major Families Family 𝑛 Dom 𝑓 bin  
+
+> 𝑆
+
+𝑓 wgt  
+
+> 𝑆
+
+𝑓 bin  
+
+> 𝐶
+
+𝑓 wgt  
+
+> 𝐶
+
+Note Koronis 473 S 0.81 0.55 0.01 0.00 Pure S Eunomia 1050 S 0.76 0.54 0.02 0.00 Pure S Gefion 367 S 0.76 0.52 0.04 0.01 S-dom Vesta 795 V 0.20 0.13 0.02 0.00 Pure V Flora 1416 S 0.58 0.41 0.08 0.02 S-dom Themis 937 C 0.01 0.00 0.50 0.17 Pure C Hygiea 954 C 0.01 0.00 0.47 0.14 Pure C Nysa-Polana 1314 S 0.36 0.23 0.27 0.08 Bimodal Eos 1956 S 0.36 0.15 0.06 0.01 K-type 𝑎 
+
+𝑓 bin = binary counting fraction; 𝑓 wgt = probability-weighted fraction. 𝑎 Eos is known as K-type but appears S-dominated in SDSS photometric classifications, likely reflecting spectral overlap between K and S types in broadband photometry. Sample sizes are restricted to asteroids with both a classification and a defined classification probability, and are therefore slightly smaller than the corresponding counts in Table 10. 
+
+primarily in families with ambiguous or mixed composi-tions. Notable findings include: 1. Koronis shows the highest S-type purity ( 𝑓 wgt  
+
+> 𝑆
+
+=0.55 ), consistent with its reputation as a homogeneous S-type family. 2. Nysa-Polana shows mixed composition ( 𝑓 𝑆 = 0 .23 ,
+
+𝑓 𝐶 = 0 .08 ), consistent with its known bimodality. 3. Eos appears S-dominant in SDSS but is known as K-type from spectroscopy; this likely reflects spectral overlap between K and S types in SDSS broadband photometry. 4. C-type families (Themis, Hygiea) show large binary-weighted differences, indicating that C-complex clas-sifications have lower confidence than S-complex. 
+
+## E. Weak-Bimodal Families 
+
+Table 16 lists the fifteen families classified weak bi-modal in log 10 𝑝 𝑉 (Section 3.1.4), together with their log-space diagnostics and their classification in the linear cross-check. Only Gefion, Massalia, and Chimaera show a KDE valley. In each the secondary peak is below the 20% height threshold, so none meets the genuine criteria. The remaining twelve have no resolved second peak, and their high Sarle coefficients reflect skewness rather than a distinct second component. 
+
+## Declaration of generative AI and AI-assisted technologies in the writing process 
+
+During the preparation of this work, the author used ChatGPT-4, Claude Opus 4.5, and Gemini AI to assist with language editing and readability improvements, and to help generate Python code for stress tests and related analyses. After using these tools/services, the author reviewed and edited the content as needed and takes full responsibility for the content of the publication. 
+
+## Declaration of competing interest 
+
+The authors of the article declare they have no competing interests. 
+
+## CRediT authorship contribution statement 
+
+Murat Kaplan: Writing – original draft, Software, Methodology, Conceptualization. 
+
+## Acknowledgments 
+
+This work uses data from NASA’s NEOWISE mission, and JAXA’s AKARI mission. Family classifications are from the Nesvorný et al. (2015) catalog and the 2024 V2.0 update (Nesvorný, 2024) via the Planetary Science Institute PDS Small Bodies Node. This research has made use of the VizieR catalogue access tool, CDS, Strasbourg, France (DOI: 10.26093/cds/vizier). The original description of the VizieR service was published in A&AS 143, 23. We thank the anonymous referees whose constructive comments substantially improved this work, including the contextualization of prior work in the Introduction, the for-mal multimode statistical validation of bimodality classifica-tions, the analyses of detection efficiency and selection bias in size–albedo correlations, the treatment of measurement-error dominance, the heliocentric-distance and logarithmic-albedo robustness checks, and the V-type bias decomposi-tion. 
+
+Software Python 3, NumPy (Harris et al., 2020), SciPy (Virtanen et al., 2020), Matplotlib (Hunter, 2007), scikit-learn (Pedregosa et al., 2011), Pandas (McKinney, 2010) 
+
+## References  
+
+> Alí-Lagoa, V., Delbó, M., 2017. Sizes and albedos of Mars-crossing asteroids from WISE/NEOWISE data. Astronomy & Astrophysics 603, A55. doi: 10.1051/0004-6361/201629917 .Alí-Lagoa, V., Müller, T.G., Usui, F., Hasegawa, S., 2018. The AKARI IRC asteroid flux catalogue: updated diameters and albedos. Astronomy & Astrophysics 612, A85. doi: 10.1051/0004-6361/201731806 .
+
+M. Kaplan: Preprint submitted to Elsevier Page 19 of 21 Albedo Structure in Asteroid Families 
+
+Table 16 
+
+Weak-Bimodal Families in Log Space Family 𝑛 Sarle log Valley log 2nd/1st Sep log Linear class Gefion 748 0.74 0.91 0.15 2.72 Hidden Massalia 293 0.69 0.86 0.18 2.59 Unimodal Rafita 283 0.67 – – – Hidden Agnia 128 0.67 – – – Unimodal Merxia 115 0.65 – – – Unimodal Witt 89 0.74 – – – Hidden Chimaera 82 0.57 0.92 0.12 2.73 Weak Euterpe 61 0.70 – – – Skewed Industria 60 0.62 – – – Unimodal Marcello 51 0.68 – – – Unimodal Gallia 45 0.64 – – – Unimodal Juliana 43 0.64 – – – Weak Tercidina 34 0.57 – – – Skewed Patsy 32 0.57 – – – Unimodal Helwerthia 30 0.63 – – – Weak Families classified weak bimodal in log 10 𝑝 𝑉 (Sarle > 0.556 but failing at least one structural criterion). Columns: 𝑛 = members; Sarle log , Valley log , 2nd/1st (ratio of secondary to primary KDE peak height), and Sep log (peak separation in units of the family 
+
+log 10 𝑝 𝑉 standard deviation) are the log-space diagnostics; “Linear class” is the classification of the same family in the linear cross-check (Section 5.3), abbreviated Hidden (hidden bimodal), Weak (weak bimodal), Skewed (skewed unimodal), and Unimodal. A dash indicates that no second KDE peak is resolved. Gefion, Massalia, and Chimaera have a KDE valley but a secondary peak below the 20% threshold, so none is promoted to genuine. 
+
+Ameijeiras-Alonso, J., Crujeiras, R.M., Rodríguez-Casal, A., 2019. Mode testing, critical bandwidth and excess mass. TEST 28, 900–919. doi: 10. 1007/s11749-018-0611-5 .Ameijeiras-Alonso, J., Crujeiras, R.M., Rodríguez-Casal, A., 2021. mul-timode: An R package for mode assessment. Journal of Statistical Software 97, 1–32. doi: 10.18637/jss.v097.i09 .Ashman, K.M., Bird, C.M., Zepf, S.E., 1994. Detecting bimodality in astronomical datasets. The Astronomical Journal 108, 2348–2361. doi: 10.1086/117248 .Carruba, V., Aljbaae, S., Knežević, Z., Mahlke, M., Masiero, J.R., Roig, F., Domingos, R.C., Huaman, M., Alves, A., Martins, B.S., Caritá, G., Lourenço, M., Destouni, S.C., 2024. On the identification of the first two young asteroid families in g-type non-linear secular resonances. Monthly Notices of the Royal Astronomical Society 528, 796–814. doi: 10.1093/mnras/stad3968 .Cellino, A., Bus, S.J., Doressoundiram, A., Lazzaro, D., 2002. Spectro-scopic properties of asteroid families. Asteroids III , 633–643. Chiorny, V.G., Shevchenko, V.G., Slyusarev, I.G., Mikhalchenko, O.I., Krugly, Y.N., Oszkiewicz, D., 2023. Photometry of small asteroids of different families and dynamical groups with a short rotation period. Planetary and Space Science 237, 105779. doi: 10.1016/j.pss.2023. 105779 .DeMeo, F.E., Carry, B., 2013. The taxonomic distribution of asteroids from multi-filter all-sky photometric surveys. Icarus 226, 723–741. doi: 10.1016/j.icarus.2013.06.027 .DeMeo, F.E., Carry, B., 2014. Solar system evolution from compositional mapping of the asteroid belt. Nature 505, 629–634. doi: 10.1038/ nature12908 .Dykhuis, M.J., Greenberg, R., 2015. Collisional family structure within the nysa-polana complex. Icarus 252, 199–211. doi: 10.1016/j.icarus.2015. 01.012 .Erasmus, N., Navarro-Meza, S., McNeill, A., Trilling, D.E., Sickafoose, A.A., Denneau, L., Flewelling, H., Heinze, A., Tonry, J.L., 2020. Inves-tigating taxonomic diversity within asteroid families through ATLAS dual-band photometry. The Astrophysical Journal Supplement Series 247, 13. doi: 10.3847/1538-4365/ab5e88 .Hall, P., York, M., 2001. On the calibration of Silverman’s test for multimodality. Statistica Sinica 11, 515–536. Hanuš, J., Delbó, M., Ďurech, J., Alí-Lagoa, V., 2015. Thermophysical modeling of asteroids from WISE thermal infrared data – significance of the shape model and the pole orientation uncertainties. Icarus 256, 101–116. doi: 10.1016/j.icarus.2015.04.014 .Harris, C.R., Millman, K.J., van der Walt, S.J., et al., 2020. Array programming with NumPy. Nature 585, 357–362. doi: 10.1038/ s41586-020-2649-2 .Hartigan, J.A., Hartigan, P.M., 1985. The dip test of unimodality. The Annals of Statistics 13, 70–84. doi: 10.1214/aos/1176346577 .Hirayama, K., 1918. Groups of asteroids probably of common origin. The Astronomical Journal 31, 185–188. Hunter, J.D., 2007. Matplotlib: A 2d graphics environment. Computing in Science & Engineering 9, 90–95. doi: 10.1109/MCSE.2007.55 .Ivezić, Ž., Tabachnik, S., Rafikov, R., Lupton, R.H., Quinn, T., Hammer-gren, M., Eyer, L., Chu, J., Armstrong, J.C., Fan, X., et al., 2001. Solar system objects observed in the Sloan Digital Sky Survey commissioning data. The Astronomical Journal 122, 2749–2784. doi: 10.1086/323452 .Kass, R.E., Raftery, A.E., 1995. Bayes factors. Journal of the American Sta-tistical Association 90, 773–795. doi: 10.1080/01621459.1995.10476572 .Mainzer, A., Grav, T., Bauer, J., Masiero, J., McMillan, R.S., Cutri, R.M., Walker, R., Wright, E., Eisenhardt, P., Tholen, D.J., et al., 2011. NE-OWISE observations of near-Earth objects: Preliminary results. The Astrophysical Journal 743, 156. doi: 10.1088/0004-637X/743/2/156 .Masiero, J.R., Mainzer, A.K., Bauer, J.M., Cutri, R.M., Grav, T., Kramer, E., Pittichová, J., Wright, E.L., 2021. Asteroid diameters and albedos from NEOWISE reactivation mission years six and seven. The Planetary Science Journal 2, 162. doi: 10.3847/PSJ/ac15fb .Masiero, J.R., Mainzer, A.K., Grav, T., Bauer, J.M., Cutri, R.M., Dailey, J., Eisenhardt, P.R.M., McMillan, R.S., Spahr, T.B., Skrutskie, M.F., et al., 2011. Main belt asteroids with WISE/NEOWISE. I. preliminary albedos and diameters. The Astrophysical Journal 741, 68. doi: 10.1088/ 0004-637X/741/2/68 .Masiero, J.R., Mainzer, A.K., Grav, T., Bauer, J.M., Cutri, R.M., Nugent, C., Cabrera, M.S., 2012. Preliminary analysis of WISE/NEOWISE 3-band cryogenic and post-cryogenic observations of main belt asteroids. The Astrophysical Journal Letters 759, L8. doi: 10.1088/2041-8205/759/1/L8 .McKinney, W., 2010. Data structures for statistical computing in Python, in: Proceedings of the 9th Python in Science Conference, pp. 56–61. 
+
+M. Kaplan: Preprint submitted to Elsevier Page 20 of 21 Albedo Structure in Asteroid Families 
+
+doi: 10.25080/Majora-92bf1922-00a .Moeyens, J., et al., 2020. ATM: An open-source tool for asteroid thermal modeling and its application to NEOWISE data. Icarus 341, 113575. doi: 10.1016/j.icarus.2019.113575 .Müller, D.W., Sawitzki, G., 1991. Excess mass estimates and tests for multimodality. Journal of the American Statistical Association 86, 738– 746. doi: 10.1080/01621459.1991.10475099 .Myers, S.A., Howell, E.S., Fernández, Y.R., Marshall, S.E., Magri, C., Vervack, Jr., R.J., Hinkle, M.L., 2025. NEOWISE data processing and color corrections for near-earth asteroid observations. The Planetary Science Journal 6, 80. doi: 10.3847/PSJ/adbc9f .Myers, S.A., Howell, E.S., Magri, C., Vervack, Jr., R.J., Fernández, Y.R., Hinkle, M.L., Marshall, S.E., 2024. Inconsistencies in simple thermal model results for near-earth asteroids between Infrared Telescope Facil-ity SpeX and NEOWISE data. The Planetary Science Journal 5, 238. doi: 10.3847/psj/ad8157 .Myhrvold, N., 2018a. Asteroid thermal modeling in the presence of reflected sunlight. Icarus 303, 91–113. doi: 10.1016/j.icarus.2017.12. 024 .Myhrvold, N., 2018b. An empirical examination of WISE/NEOWISE asteroid analysis and results. Icarus 314, 64–97. doi: 10.1016/j.icarus. 2018.05.004 .Myhrvold, N., Pinchuk, P., Margot, J.L., 2022. Analysis of four-band WISE observations of asteroids. The Planetary Science Journal 3, 30. doi: 10.3847/PSJ/ac3232 .Nesvorný, D., 2024. Nesvorny HCM Asteroid Families V2.0. doi: 10.26033/ 5hyq-6k90 . urn:nasa:pds:ast.nesvorny.families::2.0. Nesvorný, D., Brož, M., Carruba, V., 2015. Identification and dynamical properties of asteroid families. Asteroids IV , 297–321doi: 10.2458/azu_ uapress_9780816532131-ch016 .Novaković, B., Vokrouhlický, D., Spoto, F., Nesvorný, D., 2022. As-teroid families: properties, recent advances, and future opportunities. Celestial Mechanics and Dynamical Astronomy 134, 34. doi: 10.1007/ s10569-022-10091-7 .Parker, A., Ivezić, Ž., Jurić, M., Lupton, R., Sekora, M.D., Kowalski, A., 2008. The size distributions of asteroid families in the SDSS moving object catalog 4. Icarus 198, 138–155. doi: 10.1016/j.icarus.2008.07. 002 .Pedregosa, F., Varoquaux, G., Gramfort, A., et al., 2011. Scikit-learn: Machine learning in Python. Journal of Machine Learning Research 12, 2825–2830. Pravec, P., Harris, A.W., Kusnirák, P., Galád, A., Hornoch, K., 2012. Absolute magnitudes of asteroids and a revision of asteroid albedo estimates from WISE thermal observations. Icarus 221, 365–387. doi: 10.1016/j.icarus.2012.07.026 .SAS Institute Inc., 1990. SAS/STAT User’s Guide, Version 6, Fourth Edition, Volume 1. SAS Institute Inc., Cary, NC. Schwarz, G., 1978. Estimating the dimension of a model. The Annals of Statistics 6, 461–464. doi: 10.1214/aos/1176344136 .Scott, D.W., 1979. On optimal and data-based histograms. Biometrika 66, 605–610. doi: 10.1093/biomet/66.3.605 .Scott, D.W., 1992. Multivariate Density Estimation: Theory, Practice, and Visualization. John Wiley & Sons, New York. doi: 10.1002/ 9780470316849 .Sergeyev, A.V., Carry, B., 2021. A million asteroid observations in the Sloan Digital Sky Survey. Astronomy & Astrophysics 652, A59. doi: 10. 1051/0004-6361/202140430 .Silverman, B.W., 1981. Using kernel density estimates to investigate multimodality. Journal of the Royal Statistical Society. Series B (Methodological) 43, 97–99. doi: 10.1111/j.2517-6161.1981.tb01155.x .Slyusarev, I.G., et al., 2017. Analysis of homogeneity of the main belt asteroid families using albedo and color data, in: European Planetary Science Congress, pp. EPSC2017–909. Spoto, F., Milani, A., Knežević, Z., 2015. Asteroid family ages. Icarus 257, 275–289. doi: 10.1016/j.icarus.2015.04.041 .Usui, F., Kasuga, T., Hasegawa, S., Ishiguro, M., Kuroda, D., Müller, T.G., Ootsubo, T., Matsuhara, H., 2013. Albedo properties of Main Belt asteroids based on the infrared all-sky survey of the astronomical satellite AKARI. The Astrophysical Journal 762, 56. doi: 10.1088/ 0004-637X/762/1/56 .Usui, F., Kuroda, D., Müller, T.G., Hasegawa, S., Ishiguro, M., Ootsubo, T., Ishihara, D., Kataza, H., Takita, S., Oyabu, S., et al., 2011. Asteroid catalog using AKARI: AKARI/IRC mid-infrared asteroid survey. Pub-lications of the Astronomical Society of Japan 63, 1117–1138. doi: 10. 1093/pasj/63.5.1117 .Vernazza, P., Binzel, R.P., Thomas, C.A., DeMeo, F.E., Bus, S.J., Rivkin, A.S., Tokunaga, A.T., 2009. Compositional differences between me-teorites and near-Earth asteroids. Nature 458, 993–995. doi: 10.1038/ nature07956 .Virtanen, P., Gommers, R., Oliphant, T.E., et al., 2020. SciPy 1.0: Fundamental algorithms for scientific computing in Python. Nature Methods 17, 261–272. doi: 10.1038/s41592-019-0686-2 .Walsh, K.J., Delbó, M., Bottke, W.F., Vokrouhlický, D., Lauretta, D.S., 2013. Introducing the Eulalia and new Polana asteroid families: Re-assessing primitive asteroid families in the inner Main Belt. Icarus 225, 283–297. doi: 10.1016/j.icarus.2013.03.005 .Weiss, B.P., Elkins-Tanton, L.T., 2012. Differentiated planetesimals and the parent bodies of chondrites. Annual Review of Earth and Planetary Sciences 40, 1–43. doi: 10.1146/annurev-earth-042711-105504 .Whittaker, E.A., Margot, J.L., Lam, A.L.H., Myhrvold, N., 2023. Thermal models of asteroids with two-band combinations of Wide-field Infrared Survey Explorer cryogenic data. The Planetary Science Journal 4, 64. doi: 10.3847/PSJ/acc6d2 .Wright, E.L., Mainzer, A., Masiero, J., Grav, T., Bauer, J., 2016. The albedo distribution of Near Earth Asteroids. The Astronomical Journal 152, 79. doi: 10.3847/0004-6256/152/4/79 .Zappalà, V., Cellino, A., Farinella, P., Knežević, Z., 1990. Asteroid families. I. identification by hierarchical clustering and reliability assessment. The Astronomical Journal 100, 2030–2046. doi: 10.1086/115658 .
+
+M. Kaplan: Preprint submitted to Elsevier Page 21 of 21
