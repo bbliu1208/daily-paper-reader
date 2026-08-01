@@ -1,0 +1,792 @@
+Title: The X-ray catalogue of FGK stars within 10 pc: The coronal temperature-brightness relation explained with the RTV scaling law
+
+URL Source: https://arxiv.org/pdf/2607.27832v1
+
+Published Time: Fri, 31 Jul 2026 00:40:22 GMT
+
+Number of Pages: 17
+
+Markdown Content:
+Astronomy & Astrophysics manuscript no. main ©ESO 2026 July 31, 2026 
+
+# The X-ray catalogue of FGK stars within 10 pc 
+
+# The coronal temperature-brightness relation explained with the RTV scaling law 
+
+M.M. Bennedik 1, B. Stelzer 1, M. Caramazza 1, S. Orlando 2, A. Binks 1, and J. Robrade 3
+
+> 1
+
+Institut für Astronomie und Astrophysik, Eberhard Karls Universität Tübingen, Sand 1, 72076 Tübingen, Germany e-mail: bennedik@astro.uni-tuebingen.de  
+
+> 2
+
+INAF – Osservatorio Astronomico di Palermo “G.S. Vaiana”, Piazza del Parlamento 1, 90134 Palermo, Italy  
+
+> 3
+
+Hamburger Sternwarte, University of Hamburg, Gojenbergsweg 112, 21029 Hamburg, Germany Received ; accepted 
+
+ABSTRACT 
+
+A comprehensive measurement of stellar X-ray emission has important implications for our understanding of stellar dynamos, ex-oplanet atmosphere loss, and evaporation of protoplanetary disks. However, the samples discussed in the literature are often biased and the X-ray properties reported in published catalogues are often not homogeneously derived. We present a volume-limited cat-alogue of X-ray detections of the FGK-type main-sequence stars within 10 pc, which properly accounts for stellar multiplicity and considers the instrumental e ff ect of optical loading of the X-ray detectors. The FGK 10pc sample derives from a recent Gaia -based catalog of all stars in a sky volume of 10 pc around the Sun from which we extract all stars of spectral type F, G and K. To build the X-ray catalogue, we retrieved and analysed all observations from SRG (Spectrum Roentgen Gamma) /eROSITA and XMM-Newton 
+
+for stars in the FGK 10pc sample, and we cross-matched the sample with ROSAT catalogues. After accounting for optical loading, flares, and multiplicity, we fit thermal plasma models to the X-ray spectra to derive X-ray fluxes and coronal temperatures. The FGK 10 pc sample comprises 60 stars and has an X-ray completeness of 95%. We present a detailed investigation of the relation between coronal temperature and X-ray surface flux and we find the result to be consistent with the ranges covered by di ff erent types of coronal magnetic structures observed on the Sun. The lower end of the temperature-brightness relation is defined by the Maunder minimum star HD 166620 and three other stars whose positions identify them as possible Maunder minimum candidates. We identify systematic di ff erences between the temperature-brightness law derived from XMM-Newton and eROSITA data that we attribute to their di ff erent instrumental response functions. For the first time, we study the impact of variability, both short-term flaring and long-term activity cycles, on the evolution of coronal temperature along with X-ray brightness. With the exception of three stars, a remarkably small scatter is observed in the temperature-brightness relation across the whole FGK 10pc sample. A natural explanation of the empirical 
+
+kT -FX relation is provided by the RTV scaling law defined for solar hydrostatic magnetic loops. In this framework, the small spread of the observed relation indicates a universal scaling between the length and the filling factor of coronal loops. Three observed outliers to the relation are stars which deviate from this invariance of the ratio of loop length to filling factor for an as of yet unknown reason. 
+
+Key words. X-rays: stars, stars: activity, stars: coronae, stars: magnetic field 
+
+1. Introduction 
+
+The X-ray emission from late-type stars has been recognised to be a key diagnostic of the stellar dynamo in analogy to our Sun (Rosner et al. 1985). More recently, stellar coronal X-rays have also emerged as an important driver of photoevaporation in protoplanetary disks (see e.g. Owen et al. 2012; Ercolano et al. 2021) and of exoplanet atmospheric escape (see e.g. Lammer et al. 2003; Sanz-Forcada et al. 2011). As a result of the dy-namo’s dependence on stellar interior structure (Pallavicini et al. 1981; Brun & Browning 2017), coronal X-ray properties depend on the stellar mass (see e.g. Preibisch et al. 2005). Statistical studies of coronal X-ray characteristics (see e.g. Vaiana et al. 1981; Pizzolato et al. 2002; Wright et al. 2011) as well as studies that evaluate the impact of stellar X-ray emis-sion on disks (e.g. Monsch et al. 2018) and planets (e.g. Foster et al. 2022) usually rely on flux-limited X-ray observations. By definition, flux-limited samples are a ff ected by the Malmquist bias, where brighter stars are visible at greater distances and thus over-represented. Numerous case studies on the X-ray proper-ties of individual known exoplanet systems have been published (see e.g. Poppenhaeger et al. 2020; Pillitteri et al. 2022; Maggio et al. 2023; Acharya et al. 2023, for recent examples). Clearly, this approach is unfeasible for every single planet system that gets discovered. Assessing the full range of X-ray activity lev-els spanned by stars of a given spectral type (SpT) or mass is, therefore, critical to understand the mass-dependent evolution of stellar spin, which rules the dynamo, and to identify the condi-tions for planet formation and evolution. This can be achieved only by volume-limited samples. Since the sky volume acces-sible to sensitive enough X-ray observations is small, general conclusions rely on the assumption that such nearby samples are representative for the broader environment of our Galaxy. With this assumption, the X-ray properties of a volume-limited sam-ple can constrain the range of conditions under which disks and planets evolve (e.g. Zhu & Preibisch 2025; Zheng et al. 2026). During the ROSAT era, the NEXXUS data base by Schmitt & Liefke (2004) contained the first volume-limited X-ray sam-ples of stars of SpT F and G up to distances of d = 14 pc, and K- and M-type stars up to distances of d = 12 pc and 
+
+d = 6 pc, respectively. With newer facilities like XMM-Newton 
+
+and eROSITA, more sensitive X-ray data has become available. 
+
+Article number, page 1 of 17 arXiv:2607.27832v1 [astro-ph.SR] 30 Jul 2026 A&A proofs: manuscript no. main 
+
+Using data from these missions combined with the Gaia census of the solar neighborhood, Caramazza et al. (2023) presented the X-ray properties of the volume-limited sample of M dwarfs within 10 pc, with the faintest X-ray emitters shown to share properties with solar coronal holes. Expanding this sample with 
+
+Chandra data, Zhu & Preibisch (2025) (henceforth ZP25) de-fined samples containing the “best” X-ray measurements for G stars ( d = 20 pc), K stars ( d = 16 pc), and M stars ( d = 10 pc). In Bennedik et al. (2026), we have defined a sample of all FGK-type stars within 10 pc as a comparison sample for our X-ray study of the Maunder Minimum star HD 166620. In this arti-cle, we present a comprehensive multi-mission catalog of X-ray measurements and ancillary stellar parameters for the FGK 10pc sample. As database we use ROSAT, eROSITA, and XMM-Newton observations and include a systematic assessment of un-resolved binary stars and optical loading of the X-ray detectors. Our scientific focus is on the coronal temperature-brightness re-lation. Quantifying the connection between these two parame-ters serves to estimate the plasma temperature for more distant emitters for which X-ray observations yield too few counts for a spectral analysis. Thus, it constitutes an important piece in the assessment of the impact of X-ray irradiation on exoplanets and protoplanetary disks. An apparently universal power law scaling relation between X-ray temperature and X-ray surface flux was established by Johnstone & Güdel (2015) (henceforth JG15) on a sample of 24 nearby stars of SpT F to M based on high-resolution X-ray spectral data from XMM-Newton and Chandra . However, from a study of nearby M dwarfs detected in the eROSITA eFEDS field, Magaudda et al. (2022) found a systematic deviation from the JG15 law. While the overall correlation between coronal bright-ness and temperature appears solid, the suspicion is that di ff er-ent instrumental properties and analysis methods may influence the derived power law parameters. Since the majority of stellar X-ray observations are carried out with low-resolution instru-ments, an instrument-specific calibration of the relation is essen-tial for applications on X-ray faint and distant stars. Here, we construct this empirical X-ray temperature-brightness relation based on CCD-resolution X-ray spectra from XMM-Newton ’s EPIC /pn and eROSITA from the FGK 10pc sample and compare the result to that obtained by JG15. Observations of stellar coronae are unresolved. Due to this limitation, our understanding of stellar corona rely on the Sun, the only corona that can be resolved in detail. In this context, the solar measurements presented by JG15 are particularly rele-vant, as they showed that the solar minimum and maximum of the solar 11-year cycle are roughly consistent with their stellar temperature-brightness power law relation. We extend this solar-stellar comparison to the X-ray properties of individual mag-netic structures in the solar corona. Previous studies (see e.g. Caramazza et al. 2023; Joseph et al. 2026) demonstrated that so-lar coronal structures, which are classified on the basis of their intensity in X-ray images Orlando et al. (2001), can be used to characterise the coronae of other stars. Comparing the typ-ical plasma temperature and surface flux of such structures on the Sun to the same parameters from surface-averaged measure-ments for other stars, thus, allows us to estimate which type of magnetic regions are present in their coronae. It is widely accepted that coronal magnetic structures are fundamentally composed of coronal loops (e.g Reale 2014). Rosner et al. (1978) introduced the Rosner-Tucker-Vaiana (RTV) scaling laws to describe the properties governing quasi-static coronal loops. Under the assumption of a balance between volu-metric heating, thermal conduction, and radiative losses, one of the RTV scaling laws relates coronal loop length, temperature, and pressure. In this article we show for the first time that the em-pirically observed slopes in the coronal temperature-brightness relation naturally arise from this RTV scaling law. Our article is structured as follows. In Sect. 2 we define the FGK 10pc sample. The X-ray database, data extraction and spectrum and light curve analysis are described in Sect. 3. In Sect. 4, we present the empirical temperature-brightness rela-tion, its instrument-specific power law fits derived from our sam-ple, and compare it to coronal magnetic structures observed on the Sun. Furthermore, we identify possible Maunder minimum candidates and discuss the evolution of coronal flux and temper-ature throughout activity cycles. In Sect. 5, we show that the temperature-brightness relation derives from the RTV scaling law. We summarise our findings in Sect. 6. 
+
+2. Sample 
+
+> 2.1. Sample definition
+
+In this study, we build upon the 10 pc catalog which was pub-lished by Reylé et al. (2021) and updated by Reylé et al. (2023). The subsample we study in this work has been defined by Bennedik et al. (2026). In brief, we selected all stars of SpT F, G, and K according to the SpT given in Reylé et al. (2021). To achieve completeness when combining our sample with the M10 pc -gaia sample sample defined by Caramazza et al. (2023), we additionally include the M0 dwarf HD 232979 as it is a K9 dwarf according to its Gaia G BP − GRP in the table maintained by E. Mamajek 1 and is, therefore, not considered in the M10 pc -
+
+gaia sample . Due to the proximity of the sample and the sen-sitivity of Gaia , no stars are expected to be missing from the 10 pc catalog by Reylé et al. (2021). Four stars of the sample selected as described above are identified as subgiants by Reylé et al. (2021) and are excluded from our analysis. Furthermore, we exclude α CMi A as a known subgiant (Bond et al. 2015). A total of 60 stars are contained in the FGK 10pc sample, of which 7 stars do not have photometry in the Gaia Data Re-lease 3 (Gaia Collaboration et al. 2023) either because they are too bright or because they are unresolved companions. In Fig. 1 we present the FGK 10pc sample in the Gaia colour-magnitude diagram displaying for context the full 10 pc catalogue by Reylé et al. (2021) for all stars with Gaia photometry. L- and T-type stars with G BP ≥ 20 .3 mag have unreliable Gaia photometry (Riello et al. 2021) and are marked in grey. To determine the bolometric luminosities and e ff ective tem-peratures of stars in the FGK 10pc sample, we used isochrones from the parsec v 2.0 database (Nguyen et al. 2022, 2025). We described the procedure in detail in Bennedik et al. (2026). The stellar radii are then computed with the Stefan-Boltzmann law. 
+
+> 2.2. Multiplicity
+
+Some of the stars within the FGK 10pc sample are part of mul-tiple star systems. Identifying these systems is important for the interpretation of the X-ray data, especially since – depend-ing on the system separation and the resolution of the instru-ment – it might not be possible to separate the observed X-ray emission into the contributions of the individual stars. We deter-mine the multiplicity for each system with the updated catalogue by Reylé et al. (2023). Comparison with the recent study by                   
+
+> 1See https://www.pas.rochester.edu/~emamajek/EEM_ dwarf_UBVIJHK_colors_Teff.txt
+> Article number, page 2 of 17 M.M. Bennedik et al.: The X-ray catalogue of FGK stars within 10 pc 0123456
+> GBP −GRP (mag)
+> 2.5
+> 5.0
+> 7.5
+> 10.0
+> 12.5
+> 15.0
+> 17.5
+> 20.0
+> 22.5
+> MG (mag)
+> Reylé et al. 2021
+> FGK 10pc sample
+> Subgiants
+> GBP ≥20 .3
+> HD 232979
+> Fig. 1. Gaia colour-magnitude diagram for the complete 10 pc catalogue by Reylé et al. (2021) with the FGK 10pc sample. Excluded from the sample are the subgiants. The M0-dwarf HD 232979 is included in the sample. Faint sources with MG≲17 mag have unreliable photometry.
+
+González-Payo et al. (2026) shows agreement for all systems in the FGK 10pc sample, except for HD 50281, where the close bi-nary low-mass companion of the M2 dwarf HD 50281 B is ques-tioned. The A and B components of this system are resolved in the X-ray observations, and as the B component is not part of the sample, this di ff erence is not relevant for our analysis. For the following counts we reject the companion of HD 50281 B. In total, 36 out of 60 stars within the FGK 10pc sample are part of multiple systems. Some companions in these systems are not themselves part of the sample. Accounting for this, the sam-ple contains 20 stars in 13 binaries, 12 stars in 8 triples, one star in a quadruple system, and three stars in one quintuple system. 
+
+3. X-ray data and analysis 
+
+3.1. X-ray database 
+
+In Bennedik et al. (2026) we had compiled X-ray data for the FGK 10pc sample. This comprised data from the Second ROSAT All-Sky Survey Point Source Catalogue (2RXS) (Boller et al. 2016), the Second ROSAT Source Catalogue of Pointed Obser-vations (2RXP) (ROSAT Consortium 2000), the eROSITA Data Release 1 (Merloni et al. 2024) and the 4XMM-DR14 catalogues (Webb et al. 2020). Here we extend the X-ray database and its analysis. We extracted data from the first five eROSITA all-sky surveys (eRASS1–5), instead of using the products from the eROSITA Data Release 1, which is limited to eRASS1. These are limited to the western Galactic hemisphere for which the German eROSITA consortium has data rights. eRASS5 was dis-continued and is therefore only available for a part of the sam-ple. Regarding XMM-Newton , we do not use the products of the 4XMM-DR14 catalogue for this study in order to perform a customised data extraction taking account of variability (see Sect. 3.4) and to measure plasma temperatures through spec-tral analysis. To this end, we acquire publicly available data for all EPIC /pn observations covering the FGK 10pc sample. For the otherwise undetected star GJ 53 A, we adopt the count rate from Schmitt & Liefke (2004) from a ROSAT HRI detection. Additionally, we conducted one XMM-Newton observation for HD 192310 (ObsID 0960700101; PI Bennedik). The extraction of data from eROSITA and XMM-Newton is detailed below. 
+
+3.1.1. eROSITA 
+
+For FGK 10pc stars in the galactic hemisphere with Ger-man eROSITA data rights located at 359 .9442 ◦ > l > 179 .9442 ◦
+
+(Merloni et al. 2024), we downloaded the eRASS sky tiles (ap-proximately 3 ◦ × 3◦ regions) produced with pipeline configura-tion 030 from the internal archive of the Max-Planck-Institut für extraterrestrische Physik (MPE) (Brunner et al. 2022). These contain merged event files of the seven telescopes on board eROSITA with observations from eRASS1–5 and the com-bined data for the first four and, where applicable, five sur-veys (eRASS:4 and eRASS:5). To extract the data, we use the eROSITA Science Analysis Software System (eSASS) user ver-sion 240410.0.4. We limit the analysis to an energy band of 0.2–4.5 keV. For lower energies, the sensitivity of eROSITA de-creases steeply (see Predehl et al. 2021), and previous stud-ies showed that stellar coronae produce negligible emission at higher energies with the exception of very large flares (see e.g. Magaudda et al. 2022; Stelzer et al. 2022). In fact, in the eRASS data of our sample we do not detect any photons with energies above 4 keV above the background. We generate exposure maps, detection masks, and back-ground maps with the erbackmap task with a value of 15 for the Gaussian sigma of the smallest smoothing kernel. These are used as input for the ermldet source detection task, which produces a source catalogue. We use a detection likelihood threshold of 5. Then, we select the X-ray source with the smallest angular sep-aration to the optical Gaia coordinates of each sample star. For this, we propagate the optical coordinates to the average epoch of the corresponding eRASS using the Gaia proper motion of the star. In some cases, no X-ray source is found within 30 ′′ , imply-ing that the star was too faint for a detection. For each successful match of an X-ray source to an FGK 10pc star, we extract spectra with the srctool task with the built-in automatic determination of source and background regions. Many stars are too faint when removing time intervals with increased activity to o ff er good count statistics for time-resolved spectral analysis in individual eROSITA surveys. Moreover, flares are more di ffi cult to identify in eRASS data due to the low data cadence (see Sect. 3.4) and thus we do not extract and analyse light curves for the individual surveys. GJ 570 A and GJ 166 A are partially blended with their M type companions in eROSITA images. Therefore, we manu-ally select their extraction regions as described in Appendix A. 
+
+3.1.2. XMM-Newton 
+
+For the extraction of XMM-Newton data, we use the XMM-Newton Science Analysis Software (SAS) version 22.0.0. The analysis is performed on EPIC /pn data in the 0.2–12.0 keV en-ergy band. The lower bound is set due to unreliable calibration of the instrument. XMM-Newton observations can be a ff ected by solar particle flux, which causes high energy events. To iden-tify the corresponding “bad time intervals”, we inspect the light curves for photon counts with energies ≥ 10 keV on the whole detector by eye and filter out time intervals with significantly higher count rates than the quiescent baseline. Additionally, we retain events with pattern ≤ 4 and mask bad pixels (flag = 0). Then, we run the source detection. We account for proper motion at the time of observation when matching the optical Gaia coor-dinates of the objects with the detected X-ray sources, which all match well within 10 ′′ . To extract light curves, spectra, and in-strumental response files for a given star and observation, we de-fine a circular source region centered at the position determined by the source detection and a circular background in an adjacent  
+
+> Article number, page 3 of 17 A&A proofs: manuscript no. main
+
+quiet region void of any sources. The radius of both regions and the position of the background are manually set by visual inspec-tion of the images. The radius of the source region ranges from 11 ′′ for sources with nearby system partners up to 50 ′′ for very bright sources with extended point spread functions (PSF). The background region has a minimum radius of 30 ′′ and is chosen with equal size of the source region if it is larger. 
+
+3.1.3. Optical loading 
+
+Due to the proximity of the stars in the FGK 10pc sample, some are optically very bright. Large numbers of optical or UV pho-tons can cause erroneous signals in X-ray detectors, which is commonly known as optical loading. Optical loading does not significantly a ff ect ROSAT observations which used a propor-tional gas counter as the detector. Most XMM-Newton observations are not significantly af-fected by optical loading due to the appropriate selection of fil-ters and readout modes. In the FGK 10pc sample, the majority of the observations used the thick filter, which absorbs the major-ity of the low-energy photons and thus reduces optical loading. For the five stars in the FGK 10pc sample which were observed with the medium filter, we examine the X-ray spectra for opti-cal loading. We presume that a power law model describes the contribution of optical loading based on the study on eROSITA data by Robrade et al. (2026, A&A subm.). We add a power law component to the model fit of the spectra outlined in Sect. 3.3. If the power law fit yields better statistics than a fit without a power law component, we define the observation as a ff ected by optical loading. In some cases, the power law component yields compa-rable fitting statistics to an additional thermal model component. If this thermal component has a low temperature ( kT ≲ 0.1 keV), we consider it likely that it is caused by optical loading. We find that the XMM-Newton observation of HD 219134 is a ff ected by optical loading, as is presented in Appendix B.1. With a V-band magnitude of 5 .37, this is the optically brightest among the five stars observed with the medium filter. For the other stars, we do not find evidence of optical loading. We discard the observation of HD 219134 from further analysis. eROSITA observations are more commonly a ff ected by op-tical loading because the whole survey is conducted homoge-neously without change of filters. To quantify which eROSITA observations are a ff ected, we use the empirical prediction of the optical contribution to the X-ray count rate, Rate opt = 0.00525 × 12 .05−G (ct s −1), (1) determined by Robrade et al. (2026, A&A subm.) for sources with a Gaia G band magnitude of G < 5 mag. They suggest that observations are significantly contaminated by optical loading if the contribution of Rate opt is at least one fourth of the total observed count rate Rate obs or if Rate obs − Rate opt < 0.05 ct s −1.The analysis of Robrade et al. (2026, A&A subm.) is limited to G > 2.25 mag. For the observations of α Cen A&B, we ex-trapolate the relation to lower magnitudes. We present the ex-clusion range in Fig. 2. For multiple stars that are not resolved by eROSITA, we use the sum of the individual G band fluxes and show the earliest SpT that dominates the flux. We conser-vatively examine all stars for optical loading if they are within one order of magnitude of the cuto ff range. We examine whether adding a power law component to the model improves the model fit as described for XMM-Newton observations above. The X-ray spectrum of 61 Vir is consistent with that of an X-ray detection of a star exclusively caused by optical loading as described by 0 2 4 6
+
+G (mag) 
+
+10 1
+
+10 0
+
+10 1    
+
+> Rate obs  (ct s −1)
+> Partially affected
+> Excluded objects
+> Rate opt , (Eq. 1)
+> Exclusion range
+> Uncertain range
+> 61 Vir
+> GJ 166 A
+> GJ 216 A
+> HD 102365 AB
+> HD 20794
+> αCen AB
+> γPav
+> π3Ori
+> ζTuc
+
+F0 
+
+F5 
+
+G0 
+
+G5 
+
+K0 
+
+K5 
+
+M0     
+
+> SpT
+> Fig. 2. eRASS:5 count rate versus Gmagnitude in the FGK 10pc sam-ple. For unresolved multiple systems, we show the sum of the G-band flux and the earliest SpT of the unresolved stars. We discard eRASS data within the purple striped area due to optical loading and examine stars within the grey striped area (see text in Sect. 3.1.3 for details). Red and black annuli indicate discarded and partially a ff ected objects.
+
+Robrade et al. (2026, A&A subm.). We additionally find that the observations of π3 Ori are partially a ff ected by optical loading in the soft regime of its spectra. While we keep these detections in the sample, we exclude them from subsequent analysis. We show spectral model fits for both stars in Appendix B.1. In total, 7 of 24 X-ray sources detected in eRASS are dis-carded. All of these sources contain stars with SpT K0 or earlier. On average, spectral model fits (see Sect. 3.3) of these source have a coronal temperature of 0 .10 keV. In comparison, sources that were retained in the sample show an average coronal tem-perature of 0 .34 keV. This suggests that the discarded sources are, indeed, significantly a ff ected by optical loading. 
+
+3.2. X-ray emission from multiple star systems 
+
+For the eROSITA and XMM-Newton observations, we determine whether sources in multiple systems as described in Sect. 2.2 are resolved by inspecting the images and the output of the source detection, whereas for ROSAT observations we adopt a mini-mum separation of 40 ′′ (see e.g. Neuhäuser et al. 1995) for two stars to be reliably resolved. For multiple systems that are not resolved in X-ray observations, we treat them based on the SpT of the stars in the system. If multiple system components are expected to be significant X-ray emitters, we treat them as a sin-gle source and use a combined identifier (e.g. “GJ 66 AB”). This includes all stars with SpT F–M. We exclude earlier-type stars as no X-ray emission is expected (Stelzer et al. 2006; Schröder & Schmitt 2007) and later-type stars because of their low X-ray emission caused by high resistivity in their largely neutral pho-tospheres (see e.g. Mohanty et al. 2002), which would make a negligible contribution to the combined X-ray source. For more details on individual unresolved companions see Appendix C. We find that 24 stars in 15 systems of the FGK 10pc sam-ple are unresolved with all available X-ray instruments. Con-sidering the ROSAT, eROSITA and XMM-Newton observations, the FGK 10pc sample contains X-ray detections for 57 out of 60 stars, resulting in an X-ray completeness of 95%. There are 54 stars with ROSAT detections, 23 stars with eROSITA detections, and 18 stars with XMM-Newton detections. 
+
+> Article number, page 4 of 17 M.M. Bennedik et al.: The X-ray catalogue of FGK stars within 10 pc
+> 3.3. Spectral analysis
+
+We performed the spectral analysis for observations from XMM-Newton and eROSITA with XSPEC 2 version 12.14.1 interfaced with PyXSPEC (Gordon & Arnaud 2021). We bin the spectra in various ways, each time with a di ff erent number of minimum counts imposed for each bin. The number of minimum counts is varied in the range of 10–40 with a step size of 5 for XMM-Newton . For eROSITA, we decrease the lower limit to 5 due to the low number of total counts in some detections. We systematically fit each spectrum in the 0 .2 − 10 keV en-ergy range with thermal models ( APEC , Smith et al. 2001) with one, two, and three components and all bin sizes (i.e. 21 fits per spectrum for XMM-Newton and 24 fits for eROSITA). Ex-tinction is negligible at the small distances of the stars and thus we set it to zero. We adopt the abundance library of Asplund et al. (2009) and use a global abundance of Z = 0.3 Z⊙, a value typically found for stellar coronae (see e.g. Robrade & Schmitt 2005; Maggio et al. 2007). This leaves the coronal plasma tem-peratures ( kT ) and the emission measures ( EM ) of each spectral component free to be fit, from which we get the best-fit param-eters with uncertainties. To obtain the flux in the 0.1–2.4 keV ROSAT energy band, we convolve the best-fit model with the 
+
+cflux model component. This is done instead of using the flux 
+
+routine of XSPEC because it yields more accurate confidence intervals. The emission measure is degenerate with the flux, and therefore we freeze the best-fit emission measure values. Then, we re-run the fit to obtain the uncertainty of the total flux. For the XMM-Newton spectrum of β Com, a model fit with a reduced chi-squared χ2red < 3 was not achieved with any of the APEC models and we used a variable abundance model (vapec ) with two temperature components instead. Following Zheng et al. (2026), we left the abundances of Fe and the α-elements O, Ne, and Si variable while fixing the abundance of other elements to the same Z = 0.3 Z⊙ as above. To decide how many thermal components are needed to fit a given spectrum requires quantifying whether there is a statis-tical improvement when adding an additional component to the model. To this end, starting with the single-temperature model we use the Fisher test (Fisher 1922) to determine whether in-creasing the number of model parameters leads to a significant improvement of the fit. The Fisher test returns a p-value cor-responding to the significance of the improvement. In general, we only add thermal components to the model if there is an improvement with a significance of at least 3 σ. Otherwise, the lower-complexity model is kept. A few cases with significances between 3 σ–3.5 σ have badly constrained model parameters and we adopt the simpler model instead. This procedure is performed separately for the sets of spectra with di ff erent bin size. Finally, we determine which spectral bin size yields the best model fit. Generally, we choose the model fit with the χ2red that is closest to one. However, there are some exceptions to this which were manually selected either by visual inspection of the X-ray spectra or due to more well-constrained model parameters. For a model with N thermal components i, we compute the logarithm of the mean coronal thermal energy of the coronal plasma, kT , by weighting the logarithm of the thermal energy of each component with its EM (Johnstone & Güdel 2015; Binder et al. 2026), such that log kT =
+
+PNi=1 log kT i · EM i
+
+PNi=1 EM i
+
+. (2)          
+
+> 2See: https://heasarc.gsfc.nasa.gov/xanadu/xspec/ 02500 5000 7500 10000 12500
+> t(s)
+> 0
+> 1
+> 2
+> 3
+> 4
+> 5
+> Rate ( ct s −1)
+> Source, quiescent
+> Source, flaring
+> Background
+> Fig. 3. EPIC /pn light curve of 61 Cyg B as an example for our by-eye separation of quiescent and flaring time intervals. The blue points define the quiescent state and the red points are ascribed to the flaring state.
+
+The lower and upper errors are computed as the 16th and 84th percentiles of Monte-Carlo simulations with 10 000 iterations where each sample is drawn from a two-piece normal distribu-tion of the uncertainties of each EM i and kT i.For individual and stacked eRASS detections of 41 Ara A and individual eRASS detections of HD 100623 A, the number of net source counts is <30 and thus too low for a reliable spec-tral analysis. For these detections, we use the 0.2–4.5 keV count rates from the source detection pipeline and multiply them with the conversion factor CF = 1.06 · 10 −12 erg cm −2 cts −1 derived by Bennedik et al. (2026) to obtain the flux in the 0.1–2.4 keV ROSAT energy band. While the energy band for our count rates is extending to higher energies than the range used by Bennedik et al. (2026), the di ff erence is negligible, because the flux with energies above 2.3 keV in eROSITA spectra contributes less than 1% even for the hottest coronae in our sample. We use the dis-tances derived from Gaia parallaxes to convert the fluxes to X-ray luminosities, LX.
+
+> 3.4. Light curve analysis
+
+For each XMM-Newton EPIC /pn observation we extract a light curve with a bin size of 100 s. To identify the quiescent emission, we select time intervals with flares by visual inspection. Then we repeat the data extraction excluding these time intervals, result-ing in count rates and spectra only containing quiescent states. Similarly, we extract data containing only the flare intervals. As an example, a light curve of 61 Cyg B is presented in Fig. 3. eROSITA light curves have a much lower time resolution compared to XMM-Newton due to the scanning strategy during the eRASS. While eROSITA rotates around its axis with a period of 4 h (one “eRODay”), it observes a given source for up to 40 s per visit (Merloni et al. 2024). X-ray flares are often shorter than an eRODay. Reliably identifying flares in eRASS light curves is, therefore, not trivial and we leave this task for a future work. 
+
+> 3.5. X-ray catalogues
+
+We present the fundamental properties and mean X-ray parame-ters of the stars in the FGK 10pc sample in Table D.1. To deter-mine the mean X-ray parameters, we only use the observations in which the components in multiple systems are resolved in the X-ray image. If they are not resolved in any of the available ob-servations, we specify this in the X-ray source column and  
+
+> Article number, page 5 of 17 A&A proofs: manuscript no. main
+
+normalise the flux with the sum of the surface areas of both stars. From eROSITA we use data from individual eRASS, unless the stacked catalog (eRASS:5 if the star is included in eRASS5 and eRASS:4 otherwise) is the only available data with su ffi cient counts for analysis. We only include the quiescent phases during 
+
+XMM-Newton observations as described in Sect. 3.4. Only one star from the FGK 10pc sample, HD 102365 A, does not have a measured X-ray flux and an additional two stars do not have reliable X-ray fluxes, that is from observations not a ff ected by optical loading. Since by definition the ROSAT All-Sky Survey has observed the whole sky, and hence also these stars, we use the standard flux limit of fX = 10 −13 erg s −1 cm −2 (Freund et al. 2022) as an upper limit to the X-ray flux of these three stars. Each individual observation, the used spectral model for 
+
+XMM-Newton and eROSITA observations with su ffi cient counts for spectral analysis, and the derived X-ray parameters are pro-vided in Table D.2. Here, the X-ray flux and luminosity represent direct results from spectral fitting and are not corrected for multi-plicity. All observations that were dropped due to optical loading (see Sect. 3.1.3) are listed in Appendix B.2. 
+
+> 3.6. Comparison with ZP25
+
+The X-ray properties of late-type stars in the solar neighborhood have recently been discussed by ZP25 using multi-mission data that strongly overlaps with our data base. However, di ff erences in the sample and analysis distinguish their study from ours that we discuss in the following. While ZP25 study GKM-type stars, we include 7 stars with spectral types F, but we defer the study of M stars to a sepa-rate work (Stelzer et al., in prep.). As can be seen from Fig. 4 of ZP25, our restriction to the 10 pc volume limits the number of stars with respect to their study. However, the increased sky volume used by ZP25 comes at the expense of completeness as can be seen from their Fig. 3. We homogeneously treat the data from all observations. Namely, we have analysed all individual eROSITA and XMM-Newton observations of our sample stars, including data from all five eRASS. ZP25 relied on published values with inhomo-geneous treatment and they use only a single observation per star choosing the data set with the highest sensitivity and angu-lar resolution or with the longest observation. This impedes an assessment of the role of variability in the overall sample X-ray properties. Contrary to our work they include Chandra data, but they use only the first of the eRASS. We systematically identify unresolved multiple systems and assign the observed X-ray emission based on plausibility argu-ments to the individual components. In contrast, ZP25 exclude such systems. Furthermore, we excluded observations a ff ected by optical loading (see Sect. 3.1.3). ZP25 do not discuss opti-cal loading, which leads to inclusion of wrong values for the X-ray parameters (e.g. for 61 Vir and HD 102365). Finally, there are di ff erences in the calculation of the fluxes. For observa-tions without published fluxes, ZP25 rely on published values for plasma temperatures to compute count rate to flux conversion factors from 1T-APEC models with WebPIMMS. If no tempera-ture is published, an assumption for typical values for the SpT is made. As is discussed by ZP25, this leads to uncertainties for the determined X-ray luminosities. For XMM-Newton and eROSITA observations, we avoid uncertainties introduced by conversion factors by measuring the X-ray flux directly with spectral fitting. 
+
+4. Empirical coronal temperature-brightness relation 
+
+Our systematic analysis of multi-epoch X-ray spectra for the FGK 10pc sample enables us to revisit the coronal temperature-brightness relation. As discussed by JG15, for samples spanning a broad range of stellar masses (and hence radii), the X-ray sur-face flux, FX, is the best parameter to characterize the intrin-sic emission level, because it removes the dependence on stellar size. For the same reason, FX enables a direct comparison be-tween stellar and solar activity levels. We display the double-logarithmic distribution of FX and kT 
+
+for the FGK 10 pc sample in Fig. 4. Both eROSITA and XMM-Newton observations are included, and for each star all individ-ual X-ray detections with a spectrum analysed by us are shown. This means that for XMM-Newton we consider separately quies-cent and flaring states, while for eROSITA our spectral fits av-erage over all activity states within a given eRASS. Besides the FGK 10pc sample, we show in Fig. 4 the typical ranges measured for the solar corona (see Sect. 4.3) and the only confirmed Maun-der Minimum star, HD 166620 (see discussion in Sect. 4.4). The sample of 24 bright, nearby stars spanning masses from 0 .1 to 1.2 M ⊙, and hence SpT F to M, presented by JG15 and their best-fit relation is shown in black. A clear correlation is seen between log FX and log kT for the FGK 10pc sample. It spans more than two orders of magnitude in surface flux and nearly a factor 10 in X-ray temperature. Despite the overall well-defined correlation some substructure is seen. First, when only the XMM-Newton data is considered, a large cluster of outliers upwards /leftwards can be noticed. Almost all of these outliers represent the resolved binary stars 61 Cyg A&B. We mark these stars as well as the only other quiescent outlier, GJ 783 A, in grey. We also find that the majority of the remain-ing XMM-Newton data is dominated by two systems, α Cen AB (blue symbols in the lower left) and ϵ Eri (blue symbols in the up-per right). Both stars are part of a dedicated discussion of stars with X-ray activity cycles in Sect. 4.5. Comparing the XMM-Newton and eRASS data sets it seems that eRASS defines a relation that is slightly o ff set to the upper left with respect to EPIC /pn. We discuss this di ff erence in Sect. 4.2. 
+
+> 4.1. Power law fit
+
+As the data have errors in both dimensions, we fit the temperature-brightness relation with a Monte-Carlo simulation where samples are drawn from a two-piece normal distribution. In each of the 1000 iterations, the sample is fit with an orthogo-nal distance regression where the weights are determined by the root mean square of the asymmetrical errors. As the best-fit pa-rameters we use the median values and as the uncertainties we use the central 68% band. In the fit we exclude the flares identi-fied in XMM-Newton observations and the two systems marked as outliers in Fig. 4. We treat XMM-Newton and eROSITA data separately because of our by-eye suspicion of a di ff erent distri-bution. To enable a direct comparison with JG15, we fit the data in linear space and adopt the relation 
+
+T cor = a · Fb
+
+> X
+
+, (3) where T cor is the mean coronal temperature in MK. We show the best fit relation and its central 68% uncertainty band overlaid on the fitted subsample of data points in purple and orange for 
+
+XMM-Newton and eROSITA data in the upper panel of Fig. 5. In the lower panel we display the same data points, but data from unresolved multiple systems are represented with open plotting 
+
+> Article number, page 6 of 17
+
+M.M. Bennedik et al.: The X-ray catalogue of FGK stars within 10 pc 3.0 3.5 4.0 4.5 5.0 5.5 6.0 6.5 
+
+# log FX (erg s −1 cm −2)
+
+# 0.1 
+
+# 0.2 
+
+# 0.5 
+
+> kT  (keV)
+
+# CH BKC AR CO 
+
+eRASS1 5 
+
+XMM-Newton, quiescent 
+
+XMM-Newton, flaring 
+
+XMM-Newton outlier, quiescent 
+
+XMM-Newton outlier, flaring 
+
+HD 166620 (grand minimum) 
+
+Sun 
+
+Johnstone & Güdel 2015 
+
+Fig. 4. Coronal mean temperature versus X-ray surface flux for all XMM-Newton and eROSITA observations. For XMM-Newton data representing quiescent and flaring states are distinguished. For eRASS the individual surveys are shown. Two stars that appear as clear outliers in their quiescent phase are marked in grey. Typical FX and kT ranges for di ff erent types of magnetic structures on the Sun are shown as colored boxes. The range of the Sun during its 11 yr cycle adopted from Peres et al. (2000) is shown as a grey dashed line and the Maunder minimum star HD 166620 with values determined by Bennedik et al. (2026) is shown in pink. For details see Sect. 4. 
+
+Table 1. Fit parameters for the T cor - FX relation (Eq. 3) shown in Fig. 5. 
+
+Instrument Includes unre-solved multiples? 
+
+a bXMM-Newton Y 0.081 +0.003  
+
+> −0.003
+
+0.290 +0.003 
+
+> −0.003
+
+eROSITA Y 0.190 +0.024  
+
+> −0.025
+
+0.242 +0.011 
+
+> −0.009
+
+XMM-Newton N 0.050 +0.016  
+
+> −0.012
+
+0.326 +0.021 
+
+> −0.021
+
+eROSITA N 0.352 +0.083  
+
+> −0.077
+
+0.191 +0.020 
+
+> −0.018
+
+symbols and they are not included in the fit. The fit parameters for all four data sets are given in Table 1. The fits confirm the slight o ff set identified by eye between the temperature-brightness relation measured with eROSITA and EPIC /pn. The fits for eROSITA are slightly o ff set and have a shallower slope. For a given surface flux eROSITA yields a higher temperature, or for a given temperature eROSITA yields a lower surface flux. Overall, the unresolved multiple stars do not appear to deviate from the single and resolved multiple stars, in-dicating that our approach to split the observed X-ray flux among the surface area of the components is appropriate. In the fit that excludes the unresolved multiples we find that the di ff erence be-tween the eROSITA and EPIC /pn data persists but the relations are now overlapping within their 1 σ uncertainties. This is mainly due to the loss of the well-constrained data points at the low end of the XMM-Newton distribution when α Cen A&B is removed from the fit. Our analysis indicates that the di ff erences in the in-strumental response of the two instruments has a measurable but small impact on the relation. 
+
+4.2. Comparison between high and low resolution spectra 
+
+JG15 discussed the X-ray temperature-brightness relation based on high-resolution X-ray spectra. We show their best fit rela-tion in Eq. 3 with values a = 0.11 and b = 0.26 in black in Figs. 4 and 5. Our fit for the EPIC /pn observations of the FGK 3.5 4.0 4.5 5.0 5.5 6.0 6.5             
+
+> log FX(erg s −1cm −2)
+> 0.1
+> 0.2
+> 0.5
+> kT  (keV)
+> eRASS1 5
+> XMM-Newton, quiescent
+> Johnstone & Güdel 2015
+> Best fit (XMM-Newton)
+> 68% band
+> Best fit (eRASS)
+> 68% band 3.5 4.0 4.5 5.0 5.5 6.0 6.5
+> log FX(erg s −1cm −2)
+> 0.1
+> 0.2
+> 0.5
+> kT  (keV)
+> eRASS1 5
+> eRASS1 5, unresolved
+> XMM-Newton, quiescent
+> XMM-Newton, quiescent, unresolved
+> Johnstone & Güdel 2015
+> Best fit (XMM-Newton)
+> 68% band
+> Best fit (eRASS)
+> 68% band
+
+Fig. 5. X-ray temperature-brightness relation excluding two systems with peculiar behavior marked in grey in Fig 4. Upper panel: Fit includ-ing unresolved multiple stars. Lower panel: Fit excluding unresolved multiple stars (open symbols). 
+
+10 pc sample agrees with the relation found by JG15. This agree-ment is remarkable considering the di ff erent ways in which low-and high-resolution X-ray spectra are analysed. In particular, the temperature obtained from high-resolution X-ray spectra derives from a (near)-continuous emission measure distribution, while in low-resolution spectra a model with few discrete tempera-tures (in our case one to three) is used. Also, more reliable constraints on elemental abundances are extracted from high-resolution spectra while in low-resolution spectra abundances are notoriously degenerate with the emission measure. The ex-
+
+Article number, page 7 of 17 A&A proofs: manuscript no. main 
+
+cellent match between the X-ray temperature-brightness relation of XMM-Newton’s EPIC /pn and RGS implies that the calibra-tion we provide in Table 1 for the FGK 10 pc sample is not ham-pered by the limited spectral resolution. The values from Table 1, or alternatively those by JG15, can therefore be used to estimate the plasma temperature for a given low-luminosity object for which no spectral analysis, not even at low spectral resolution, is possible but the X-ray flux can be determined. The eROSITA observations place the FGK 10 pc sample sys-tematically above the relation defined by the XMM-Newton data, i.e. the y-axis o ff set of the fit is higher. An o ff set to the JG15 relation was already noticed by Magaudda et al. (2022) for a small sample of M dwarfs observed in the eROSITA CalPV field eFEDS. The good agreement between XMM-Newton high-and low-resolution data suggests di ff erences in the spectral re-sponses as a cause for the o ff set with respect to eROSITA. The instrument-specific calibration should, therefore, be used when coronal temperatures are determined from the flux for stars too faint for spectral analysis. 
+
+> 4.3. Comparison with solar coronal structures
+
+To implement the aforementioned comparison of the 10 pc kT -
+
+FX relation with our Sun, we display in Fig. 4 the range of ob-served solar values given by JG15 (grey dashed line). These val-ues were originally provided by Peres et al. (2000) in the frame-work of the Sun as an X-ray star (SaXS) project in which the solar corona is “reduced” to its appearance in a hypothetical ob-servation without spatial resolution, by estimating the surface-averaged X-ray properties of the Sun. Fig. 4 shows that the aver-age Sun covers the lowest part of the flux and temperature range represented by the FGK 10 pc sample at a slightly smaller slope. We extend the comparison with the Sun by highlighting the areas covered by the di ff erent types of magnetic structures known to be present on the Sun. Most of the region types we consider have been defined within the SaXS project (Orlando et al. 2001, 2004). Based on the intensity seen in Yohkoh (Ac-ton et al. 1992) images, the solar corona was divided into back-ground corona (BKC), active regions (AR), and cores of active regions (CO). An additional typical type of coronal structure on the Sun are coronal holes (CH), regions that are devoid of X-ray emission and often related to open magnetic field lines where plasma can escape into space. We adopt the ROSAT en-ergy band FX values for the solar coronal structures derived by Caramazza et al. (2023). To determine the range of plasma tem-peratures found in each coronal structure, we use their emission measure distributions (EMD) presented by Joseph et al. (2026) as the range which is covered within one order of magnitude of the peak of their Yohkoh EMD. If this limit lies between two bins of the EMD, we linearly interpolate the temperature. The EMD for CH are not provided by Joseph et al. (2026), and there-fore we instead use the temperature range from Heinemann et al. (2021) derived from EUV observations of 707 solar CH. Since the methodology for deriving the temperatures of CH is di ff er-ent they are not fully consistent with the temperatures for the other coronal structures. However, the accuracy is su ffi cient for a qualitative comparison. The ranges of surface X-ray flux and temperature for all types of solar coronal structure that we dis-play in Fig. 4 are listed in Table 2. From Fig. 4 we can see that the FGK 10pc sample stars cover the full range of temperature-brightness combinations defined by the solar coronal structures. Evidently, on a given star at a given time there can be di ff erent fractions of the coronal sur-face covered by di ff erent region types, just like observed on the  
+
+> Table 2. Ranges of temperatures and X-ray surface fluxes of typical solar coronal magnetic structures with values adopted from Caramazza et al. (2023), Joseph et al. (2026), Heinemann et al. (2021).
+
+Structure log FX,min log FX,min Tmin Tmax 
+
+(erg cm −2 s−1) (erg cm −2 s−1) (MK) (MK) CH 3.00 3.78 0.76 1.12 BKC 3.37 4.30 0.57 1.93 AR 4.97 5.36 0.79 4.56 CO 5.89 6.86 1.44 8.26 Sun, where e.g. the surface-average ( kT ,FX) combination during the solar cycle maximum is between that of the regions covered by solar BKC and AR. The comparison of our surface-averaged values for the FGK 10 pc sample to the solar magnetic regions should, therefore, be taken as a rough measure for the activity level of these stars in relation to our Sun. In this sense, e.g. the absence of any star in the CH region indicates that no star in the FGK 10pc sample is fully covered by coronal holes. In an XMM-Newton observation, Caramazza et al. (2023) found an upper limit of the X-ray surface flux of the M dwarf GJ 745 A (d = 8.8 pc) within the range covered by CH. The lack of stars in this range in the FGK 10pc sample does not exclude that some stars may have a fraction of their surface in a CH-like state, which however contributes only marginally to the X-ray emis-sion. Similarly, on the high-activity end the location of stellar flares in the area of fainter solar region types is due to the fact that flares cover a very small fraction of the corona despite dom-inating the X-ray output (Joseph et al. 2026). 
+
+> 4.4. Identification of possible Maunder minimum stars
+
+We include in Fig. 4 also the only confirmed star which is known to be in a Maunder minimum-like extended low-activity state, HD 166620, with values derived by Bennedik et al. (2026) that place the star in the solar BKC region. At a distance of 11 .10 pc (Gaia Collaboration et al. 2023), HD 166620 is just slightly outside the 10 pc boundary. Within the FGK 10pc sam-ple, there are three objects within the parameter range of solar BKC at log FX(erg s −1 cm −2) < 4, namely τ Ceti, γ Pavionis, and HD 20794. Their low X-ray temperature and flux shared with HD 166620 could make these objects possible Maunder mini-mum candidates. In Table E.1, we summarise their SpT, metal-licity, rotation periods ( Prot ), age estimates, and chromospheric Ca II H&K flux characterised by the S HK -index. Compared to HD 166620, the other stars have earlier SpT and are somewhat younger. As far as known, these stars are slow rotators. In fact, τ Ceti has a flat SHK time series (Isaacson et al. 2024) and was proposed as a Maunder minimum candidate (see e.g. Judge et al. 2004). Its low metallicity, high rotation period, and high age point to an intrinsically low coronal activity instead. The latter also applies for γ Pav, however it has a higher SHK .Without long-term activity monitoring, it is ambiguous whether these stars are intrinsically inactive due to their high age or are truly in an extended cycle minimum. Only for HD 20794, Nari et al. (2025) report evidence for an ∼ 8 yr cycle from various activity indicators. Its S-index amplitude is, however, very low. 
+
+> 4.5. Impact of X-ray variability on coronal temperatures
+
+A few stars in the FGK 10pc sample have numerous observa-tions because they had dedicated XMM-Newton observing pro-grams with the aim to search for an X-ray activity cycle. Specif-
+
+> Article number, page 8 of 17 M.M. Bennedik et al.: The X-ray catalogue of FGK stars within 10 pc
+
+ically, this regards α Cen A&B (see e.g. Ayres 2023; Robrade et al. 2012), 61 Cyg A&B (Robrade et al. 2012) and ϵ Eri (Cof-faro et al. 2020; Fuhrmeister et al. 2023). Their X-ray cycles were identified based on the variation of their X-ray luminosi-ties. Here, we add a study of the evolution of coronal temper-ature and its relation to the evolution of coronal brightness. In Fig. 6 we display for each of these systems the time series of 
+
+FX, kT , and their relation, the latter being a zoomed version of the temperature-brightness relation from Fig. 4. Data points are connected according to their chronological order. Flares identi-fied by us and analysed separately from the quiescent emission are highlighted as grey data points. In the following we discuss the results for the individual objects. The binary α Cen A&B is unresolved with XMM-Newton ’s EPIC /pn and therefore, we treat it as a single source. Special data treatment involving a customised photon extraction using the smaller PSFs of the MOS detectors by Robrade et al. (2012) showed that the X-ray light is dominated by α Cen B. Further-more, α Cen A has a low cycle amplitude (Ayres 2023). While the cyclic behavior of FX was expected considering the previ-ous studies of these data, we demonstrate in the middle panel of Fig. 6 a) that the X-ray temperature follows the same behavior, that is the corona is getting hotter during the cycle maxima and cooler during the minima. The flares have low amplitudes when compared to the other stars discussed in this section and thus they cause a strong increase of temperature but not FX.The K2 dwarf ϵ Eri was observed 17 times with XMM-Newton . It is located in the western Galactic sky and therefore, it provides an excellent cross-calibration point for eROSITA and EPIC /pn. Although the observations with both instruments are not strictly simultaneous, the multi-epoch data available for both data sets allows us to examine systematic trends. The eROSITA data (green circles in Fig. 6 b)) clearly follows the cyclic trend where the time-evolution of flux mimics that seen with EPIC /pn. The comparison of eRASS data with the EPIC /pn time series in the top and middle panels of Fig. 6 b) illustrates the enhanced temperature measured by eRASS with respect to EPIC /pn at sim-ilar, or even lower, flux level. This manifests in the o ff set of the two fit relations discussed in Sect. 4.1. We defer a more detailed study of the combined XMM-Newton and eROSITA data base for the X-ray cycle of ϵ Eri to a future work. The binary 61 Cyg A&B is resolved with EPIC /pn. There-fore, we present the results for 61 Cyg A&B individually in Fig. 6 c) and d). While 61 Cyg B does not show an unambigu-ous activity cycle (Ayres 2025), the cycle of 61 Cyg A presented by Robrade et al. (2012) and Ayres (2025) is reproduced by the coronal temperature. Both stars have exhibited high-amplitude flares. This explains the much higher X-ray surface fluxes seen during their flares when compared with the flares of α Cen A&B. 
+
+5. Physical interpretation of the temperature-brightness relation 
+
+> 5.1. Explanation with the Rosner-Tucker-Vaiana scaling law
+
+In this section, we show that the slope of the empirical power law representing the X-ray temperature-brightness relation dis-cussed in Sect. 4 can be derived from fundamental assumptions of the underlying physics of the stellar coronae expressed in one of the Rosner-Tucker-Vaiana (RTV) scaling laws (Rosner et al. 1978), namely the relation between coronal loop length, loop temperature, and loop pressure. This scaling law results from the assumption that the thermodynamic properties of a coronal loop are governed by the balance between volumetric heating, thermal conduction, and radiative losses. In the following we provide an order-of-magnitude argument which illustrates that the RTV scaling law naturally predicts the empirically observed slope of the coronal temperature-brightness relation. For fully ionised coronal plasma, the X-ray luminosity scales with the emission measure, EM , as 
+
+LX ≈ EM · Λ(Tcor ), (4) where Λ(Tcor ) is the temperature dependent coronal cooling function. If we assume that coronal loops with a characteristic length L occupy a surface filling factor f of the stellar corona, the definition of the emission measure can be expressed by 
+
+EM =
+
+Z
+
+n2e dV ≈ n2e · 4πR2 · f · L, (5) with ne as the electron particle density. Using the ideal gas equa-tion ne ∝ p/T where p is the pressure, we can rearrange to obtain the X-ray surface flux 
+
+FX ∝ EM 
+
+4πR2 · Λ(Tcor ) ≈ f · pTcor 
+
+!2
+
+· L · Λ(Tcor ). (6) We approximate the cooling function as a power law, 
+
+Λ(Tcor ) ∝ T −m 
+
+> cor
+
+, where the value of m depends on the coro-nal elemental abundances and temperature. We justify this ap-proximation in Sect. 5.3.1. The RTV scaling law states that 
+
+Tcor ∝ (p · L)1/3. Inserting both relations in Eq. 6 gives an ex-pression that relates Tcor and FX:
+
+Tcor ∝ FX · Lf
+
+! 14−m
+
+. (7) For a fixed loop length and coronal filling factor the ex-ponent represents the fit parameter b in Eq. 3. For a wide range of coronal temperatures between 0.4–30 MK, m has val-ues approximately between 0.2–0.8 (see e.g. Raymond et al. 1976; Raymond & Smith 1977; Orlando et al. 2005). We dis-cuss the cooling function and its power law approximations in Sect. 5.3. For m = [0 .2, 0.5, 0.8] this yields an exponent of 
+
+b = [0 .26 , 0.29 , 0.31] respectively. These values are in remark-able agreement with the empirical slopes we obtained for the FGK 10pc sample (see Table 1) and that were found in previ-ous studies of the X-ray temperature-brightness relation (JG15; Binder et al. 2026). In this framework, the scatter in the observed distribution can be explained by varying loop lengths, filling fac-tors, and coronal abundances between the di ff erent stars. We emphasise that the predicted temperature-brightness re-lation depends only weakly on the value of m. Even when vary-ing m between the two extreme cases considered here, the expo-nent of the resulting power law changes by less than 20%. Thus, although we adopt a crude approximation for the cooling func-tion, the resulting uncertainty in the predicted slope is small. The close agreement between the predicted and observed slopes sug-gests that the empirical temperature-brightness relation is largely governed by the RTV scaling law linking pressure, temperature and length of the coronal loop, while the detailed shape of the radiative loss function introduces only a secondary correction. In this interpretation, the observed relation represents the sta-tistical manifestation of the underlying physics of magnetically confined structures in the stellar coronae. 
+
+> Article number, page 9 of 17
+
+A&A proofs: manuscript no. main 4.25 
+
+> 4.50
+> 4.75
+> log  FX (erg s −1 cm −2)
+
+# a)           
+
+> 2005.0 2007.5 2010.0 2012.5 2015.0 2017.5
+> Year
+> 0.1
+> 0.2
+> 0.3
+> kT  (keV)
+> 4.2 4.4 4.6
+> log FX(erg s −1cm −2)
+> 0.15
+> 0.20
+> kT  (keV)
+> 0.12
+> 0.15
+> 0.18
+> 0.21
+> kT  (keV)
+> 4.2
+> 4.4
+> 4.6
+> log  FX (erg s −1 cm −2)
+> 2008
+> 2012
+> 2016
+> Year
+> 5.8
+> 6.0
+> log  FX (erg s −1 cm −2)
+
+# b)            
+
+> 2005 2010 2015 2020
+> Year
+> 0.3
+> 0.4
+> 0.5
+> kT  (keV)
+> 5.70 5.75 5.80 5.85 5.90 5.95
+> log FX(erg s −1cm −2)
+> 0.35
+> 0.40
+> 0.45
+> 0.50
+> kT  (keV)
+> 0.33
+> 0.36
+> 0.39
+> 0.42
+> kT  (keV)
+> 5.76
+> 5.84
+> 5.92
+> log  FX (erg s −1 cm −2)
+> 2005
+> 2010
+> 2015
+> 2020
+> Year
+> 4.50
+> 4.75
+> 5.00
+> 5.25
+> log  FX (erg s −1 cm −2)
+
+# c)         
+
+> 2005 2010 2015 2020
+> Year
+> 0.2
+> 0.3
+> 0.4
+> 0.5
+> kT  (keV)
+> 4.6 4.8 5.0
+> log FX(erg s −1cm −2)
+> 0.2
+> 0.3
+> 0.4
+> kT  (keV)
+> 0.24
+> 0.32
+> 0.40
+> kT  (keV)
+> 4.6
+> 4.8
+> 5.0
+> log  FX (erg s −1 cm −2)
+> 2005
+> 2010
+> 2015
+> 2020
+> Year
+> 4.5
+> 5.0
+> 5.5
+> log  FX (erg s −1 cm −2)
+
+# d)         
+
+> 2005 2010 2015 2020
+> Year
+> 0.2
+> 0.4
+> 0.6
+> 0.8
+> kT  (keV)
+> 4.6 4.8 5.0
+> log FX(erg s −1cm −2)
+> 0.3
+> 0.4
+> kT  (keV)
+> 0.24
+> 0.32
+> 0.40
+> 0.48
+> kT  (keV)
+> 4.6
+> 4.8
+> 5.0
+> log  FX (erg s −1 cm −2)
+> 2005
+> 2010
+> 2015
+> 2020
+> Year
+
+Fig. 6. Time series of spectral parameters from XMM-Newton observations (squares) for a) α Cen A&B, b) ϵ Eri, c) 61 Cyg A, and d) 61 Cyg B. Flares are shown with grey crosses. eRASS detections of ϵ Eri are shown with green circles. Upper panels: X-ray surface flux. Middle panels: 
+
+Mean coronal temperature. Lower panels: Evolution of kT -FX. Flares and error bars not shown in lower panels for clarity. 
+
+5.2. Explanation for the outliers 
+
+By visual inspection, we have identified in Fig. 4 three outliers, GJ 783 A and 61 Cyg A&B. Their observed o ff set from the well-defined temperature-brightness relation formed by the major-ity of the stars cannot be explained by instrumental di ff erences since we are only comparing XMM-Newton observations. Since 61 Cyg A&B have multi-epoch data, we can measure the slope of the temperature-brightness relation separately for these stars alone and find an interpretation in terms of the RTV scaling law. Fitting for the outlier star 61 Cyg B, analogously to our ap-proach for the main sample in Sect. 4.1, only the XMM-Newton 
+
+observations representing the quiescent state (see Fig. 7), we find an o ff set of a = 0.19 +0.07  
+
+> −0.05
+
+and a slope of b = 0.26 +0.03 
+
+> −0.03
+
+. While the slope is consistent with the fit of the EPIC /pn observations of the bulk of the FGK 10pc sample listed in Table 1, the o ff set is substantially higher. To explain this o ff set, we can express Eq. 7 in its double-logarithmic form: log Tcor ∝ 14 − m · log FX + 14 − m · log Lf
+
+!
+
+, (8) where it becomes obvious that the ratio L/ f defines the o ff set for a given slope. At a fixed X-ray surface flux, we obtain (L/ f )61 Cyg B 
+
+(L/ f )bulk FGK 
+
+= T61 Cyg B 
+
+Tbulk FGK 
+
+!1/b
+
+, (9) ignoring the slight di ff erences in the observed slope b, and hence 
+
+m. At the observed values of FX, the coronal temperatures of 
+
+Article number, page 10 of 17 M.M. Bennedik et al.: The X-ray catalogue of FGK stars within 10 pc 4.50 4.75 5.00 5.25 5.50 
+
+log FX (erg s −1 cm −2)
+
+0.2 
+
+0.5    
+
+> kT  (keV)
+> 61 Cyg B, quiescent
+> 61 Cyg B, flaring
+> Best fit for FGK 10pc; XMM-Newton
+> Best fit
+> 68% band
+> Fig. 7. X-ray temperature-brightness relation for XMM-Newton obser-vations of 61 Cyg B, best fit over its quiescent periods (grey), and fit for EPIC /pn observations of FGK 10pc sample from Fig. 5 (black, dashed).
+
+61 Cyg B imply an approximately 4–7 times larger ratio L/ f for the star than for the bulk of the FGK 10pc sample, considering the range of value for m from Sect. 5.1 and Fig. 8. This indicates that 61 Cyg B either has longer coronal loops or a smaller fill-ing factor. 61 Cyg B frequently exhibits high-amplitude flares, of which an example is shown in Fig. 3. As more active stars exhibit larger coronal filling factors (see e.g. Co ff aro et al. 2020; Drake & Stelzer 2023), it is unlikely that the o ff set of 61 Cyg B could be explained with a smaller value of f . Thus, evidence points towards increased loop lengths when compared to the other stars within the FGK 10pc sample. For 61 Cyg A, the best-fit kT -FX pairs yield a significantly shallower slope b = 0.17 +0.03  
+
+> −0.03
+
+and a high o ff set a = 0.44 +0.16 
+
+> −0.12
+
+. The slope would require an unphysical negative value for m. A pos-sible interpretation could be a change of the o ff set over time due to a changing ratio L/ f . With Eq. 9 and an assumed b = 0.29, we compute an approximately 3–5 times larger ratio L/ f for 61 Cyg A compared to the FGK 10pc sample at the upper end at log FX (erg cm −2 s−1) = 5.10 and at the lower end of the relation with log FX (erg cm −2 s−1) = 4.50, respectively. GJ 783 A has only one XMM-Newton observation (ObsID: 0670380401) and is in the Russian eROSITA sky half. The EPIC /pn light curve contains one short low-amplitude flare which was removed as described in Sect. 3.4. The X-ray spectrum of GJ 783 A has a marked high-energy tail. Therefore its high coronal temperature is physical and not a result of the fitting procedure. Analogous to 61 Cyg B, a di ff erent value for 
+
+L/ f off ers a plausible explanation for its o ff set from the global temperature-brightness relation. 
+
+5.3. Assumptions and limitations of the RTV-based derivation 
+
+The derivation presented in Sect. 5.1 is an order-of-magnitude argument to illustrate that the observed temperature-brightness relation naturally follows from the scaling laws governing mag-netically confined plasma structures of the corona. It is not in-tended as a rigorous derivation for a realistic corona, which con-sists of a multi-thermal ensemble of magnetic structures span-ning a broad range of sizes, temperatures, heating conditions, etc. In the following, we discuss the main assumptions and limi-tations underlying the derivation and its application to the data. 10 5 10 6 10 7 10 8    
+
+> 10 -23
+> 10 -22
+> 10 -21
+> 10 510 610 710 8
+> Temperature [ K ]
+> 10 -23
+> 10 -22
+> 10 -21
+> Λ(T) [ erg cm 3 s-1  ]
+> m = 0.2 m = 0.5 m = 0.8
+> Fig. 8. Coronal cooling function (solid line) and approximations with power laws with varied exponents.
+
+5.3.1. Approximation of the radiative loss function 
+
+Our parametrisation of the radiative loss function of the corona as a power law in temperature is only a coarse description of the actual cooling function which changes continuously with tem-perature (e.g. Raymond et al. 1976; Raymond & Smith 1977). As a result, there is no unique value of the exponent m in the approximation Λ(T ) ∝ T −m.Fig. 8 compares the radiative loss function with three rep-resentative power law approximations. The temperature range [4 · 10 5, 3 · 10 7] K relevant for our study, that is the range which includes the coronal temperatures of the FGK stars in our sam-ple, is represented by the white area. By visual inspection the case m = 0.5 provides a reasonable description of the cooling function across the entire temperature range. The values m = 0.2and m = 0.8 were considered as representative lower and upper limits that approximately bracket the cooling function over the same range. These values, that we associated in Sect. 5.1 with the observed slope in the temperature-brightness relation, are there-fore not the result of a formal fit, but merely illustrate the range of plausible e ff ective slopes that may be adopted for the analyti-cal approximation of the cooling function. 
+
+5.3.2. Applicability of the RTV scaling law 
+
+The RTV scaling law relates the maximum temperature of an individual static coronal loop to its pressure and length (see Sect 5.1). By contrast, the temperature in the observed temperature-brightness relation is measured from unresolved stellar X-ray spectra and, therefore, it is an emission measure weighted average over the entire stellar corona. Clearly this does not correspond to the apex temperature of any individual loop composing the corona. The comparison between the empirical temperature-brightness relation and the RTV prediction should, therefore, be considered as statistical. In fact, it implies that the average prop-erties of the dominant X-ray emitting loop population can be represented by characteristic values of loop pressure and length. 
+
+5.3.3. Loop length and filling factor 
+
+Under the simplifying assumption that the characteristic loop length and filling factor do not vary systematically, Eq. 7 derived in Sect. 5.1 reduces to a universal relation 
+
+Tcor ∝ (FX)1/(4 −m), (10)  
+
+> Article number, page 11 of 17 A&A proofs: manuscript no. main
+
+while large independent variations of the characteristic loop length and the filling factor would be expected to produce a sub-stantial spread in Fig. 4. The coronal filling factor, defined here as the fraction of the surface covered with magnetic loops, can also be identified with the fractional coronal surface covered with the di ff erent types of magnetic structures inferred from analogy with the Sun. These can be measured in the framework of the SaXS methodology (see Sect. 4.3). In such studies it was found that more active stars exhibit larger coronal filling factors (Co ff aro et al. 2022; Drake & Stelzer 2023). At the same time, flare analyses in-dicate that late-type stars can host magnetic loops spanning a broad range of sizes, from compact structures to loops compa-rable to or even exceeding the stellar radius (e.g. Favata et al. 2005; Mitra-Kraev et al. 2005; Reale 2014). However, similar measurements are generally not feasible for the much fainter quiescent coronal structures that dominate the X-ray emission of most stars. The characteristic loop length entering our ana-lytical derivation should, therefore, be regarded as an e ff ective parameter describing the dominant X-ray-emitting loop popula-tion rather than the size of individual magnetic structures. Conse-quently, deviations from the power law that best fits the observed temperature-brightness relation are expected and they likely re-flect genuine di ff erences in coronal magnetic structure rather than observational uncertainties alone. The relatively small intrinsic scatter, therefore, suggests that the spread of the quantity ( L/ f ) entering the analytical deriva-tion remains confined to a relatively narrow range across the FGK 10pc sample with the exception of the “outliers” marked in grey in Fig. 4 and discussed in Sect. 5.2. This does not necessar-ily imply that individual loop lengths or filling factors are nearly the same on all stars and constant in time. Rather, it indicates that the characteristic properties of the X-ray-emitting loop popula-tion are not independent but correlated among each other, such that di ff erences in loop length and filling factor largely com-pensate each other. Specifically, more active stars (characterized by higher Tcor and higher FX) that are generally known to have larger coronal filling factors also must have larger loop lengths in the dominating type of coronal structure. The above interpretation is supported by the results of the SaXS analysis presented by Co ff aro et al. (2022), where the very active star Kepler-63 required a corona with a significant exten-sion above the photosphere to keep the filling factor within the limit of 100% surface coverage. Within the framework proposed here, this naturally suggests that stars with larger e ff ective filling factors also possess larger characteristic coronal loop lengths, corresponding to more vertically extended coronae. The con-sistency between these independent observational results sup-ports the idea that the stellar dynamo regulates not only the total amount of magnetic flux emerging at the stellar surface, but also the characteristic geometry of the X-ray-emitting coronal struc-tures. The changes in loop size and surface coverage associated with variations of the activity level appear to occur in a corre-lated way, maintaining a nearly invariant e ff ective ratio ( L/ f ). 
+
+6. Summary and conclusions 
+
+We have constructed a comprehensive X-ray catalog for the volume-limited sample of the FGK-type stars within 10 pc. Un-like previous studies, we do not rely on rate-to-flux conversion factors because we perform spectral analysis on all detections with su ffi cient count numbers with XMM-Newton and eROSITA. Together with careful handling of multiplicity and optical load-ing of the X-ray detector, this allowed us to build a homogeneous catalogue of X-ray fluxes and coronal temperatures derived from spectral fitting. This data set allows us to systematically address instrumental aspects relevant in the analysis of stellar X-ray data and to sample a broad range of coronal properties. For the mean coronal temperature kT , calculated from a log-arithmic weighting with emission measures, we confirm previ-ous evidence (JG15; Binder et al. 2026) for a power law rela-tion with the surface X-ray flux. We find di ff erent values for the power law parameters, slope and o ff set, between the eRASS and the EPIC /pn data sets, quantifying previous suspicions by Mag-audda et al. (2022) that this empirical law is instrument-specific. Interestingly, the relation we derive from the low-resolution EPIC /pn data is in excellent agreement with the one obtained by JG15 from high-resolution X-ray observations, establishing that detailed modelling of the emission measure distribution is not necessary to retrieve the average coronal properties of stars. The temperature-brightness relation of the FGK 10pc sam-ple closely follows the ranges of temperatures and X-ray surface fluxes observed in solar coronal structures, implying that their properties are universal across late-type main sequence stars. The low end of the relation is consistent with the Maunder min-imum star HD 166620 (Bennedik et al. 2026). Three stars in the FGK 10pc sample have similar properties. While evidence for a cycle was found for one star, the other two stars could potentially be in a Maunder minimum state. Further long-term monitoring of their chromospheric activity is required to unambiguously de-termine whether they are in such a Grand Minimum. We present the first dedicated study of the joint variability of X-ray temperature and brightness. For three systems with long-term XMM-Newton observing programs, the coronal tem-perature closely follows the evolution of the X-ray flux over the course of the X-ray cycle which was identified in previous liter-ature through the variation of their X-ray luminosity. This indi-cates as the origin for the X-ray cycle a periodic change of the coronal filling factors of individual types of solar-like magnetic structures as suggested by Joseph et al. (2026). Analogous to the Sun, the coronae appear to be dominated by BKC during activ-ity cycle minima and towards the cycle maxima the contribution from AR and CO increases. Furthermore, flares are more preva-lent near cycle maxima and lead to transient increases in coronal temperatures as discussed in Sect. 4.5. We showed that the temperature-surface flux relation can be derived from the RTV scaling law. This suggests that the ob-served relation reflects the fundamental physics governing mag-netically confined coronal plasma. Fig. 4 provides an impor-tant observational link supporting this interpretation. The var-ious classes of solar coronal structures (including CH 3, BKC, AR, and CO) occupy the same temperature-surface flux plane as the stellar sample. Since these structures are all composed of magnetic loops that approximately obey the RTV scaling law, their location along the observed relation of global parameters indicates that the same underlying physical processes regulate plasma pressure, temperature, and magnetic geometry over a wide range of spatial scales and activity levels. The position of an unresolved star in the kT -FX diagram is determined by the integrated emission from all magnetic struc-tures present in its corona. Consequently, the observed star-to-star variations do not necessarily imply fundamentally di ff erent     
+
+> 3CH are dominated by open magnetic fields, which are not described by the RTV scaling laws. However, their X-ray emission arises from embedded small-scale closed loops that are approximately in hydro-static equilibrium and thus expected to follow RTV-like scaling (e.g. Hudson 2002; Cranmer 2009). Their lower position in the kT -FXdia-gram reflects the reduced filling factor and pressure of these structures. Article number, page 12 of 17
+
+M.M. Bennedik et al.: The X-ray catalogue of FGK stars within 10 pc 
+
+types of stellar coronae. Instead, they can be interpreted as re-flecting di ff erent statistical mixtures of solar-like magnetic struc-tures (see also Orlando et al. 2001, 2004, 2017). In relatively inactive stars, the X-ray emission is expected to be dominated by quiet-corona and network-like loops, whereas progressively more active stars become increasingly dominated by AR and CO (e.g. Co ff aro et al. 2020, 2022). The resulting increase in plasma pressure, filling factor, and loop size shifts the integrated coronal properties toward higher temperatures and larger X-ray surface fluxes while preserving the same underlying RTV scaling. As we presented in Fig. 4, the temperature-brightness relation from more sensitive XMM-Newton observations ex-tends towards lower luminosities and temperatures compared to eROSITA. Similarly, future more sensitive instrumentation like the NewAthena mission (Cruise et al. 2024) will improve the statistics at the low end of the relation and enable an extension to even fainter coronal emitters, such as brown dwarfs. 
+
+Acknowledgements. During the writing of this paper, we lost our dear colleague Jan Robrade, who made substantial contributions to the eROSITA mission. He is greatly missed by many. MB acknowledges support by the Bundesministerium für Forschung, Technologie und Raumfahrt through the Deutsches Zentrum für Luft- und Raumfahrt (DLR) under grant number FKZ 50 OR 2505. This work is based on observations obtained with XMM-Newton , an ESA science mission with instruments and contributions directly funded by ESA Member States and NASA; and of archival data of the ROSAT space mission. This work is also based on data from eROSITA, the soft X-ray instrument aboard SRG, a joint Russian-German science mission supported by the Russian Space Agency (Roskosmos), in the interests of the Russian Academy of Sciences represented by its Space Research Institute (IKI), and DLR. The SRG spacecraft was built by Lavochkin Association (NPOL) and its subcontractors, and is operated by NPOL with sup-port from the MPE. The development and construction of the eROSITA X-ray instrument was led by MPE, with contributions from the Dr. Karl Remeis Ob-servatory Bamberg & ECAP (FAU Erlangen-Nürnberg), the University of Ham-burg Observatory, the Leibniz Institute for Astrophysics Potsdam (AIP), and the Institute for Astronomy and Astrophysics of the University of Tübingen, with the support of DLR and the Max Planck Society. The Argelander Institute for Astronomy of the University of Bonn and the Ludwig Maximilians Universität Munich also participated in the science preparation for eROSITA. The eROSITA data shown here were processed using the eSASS software system developed by the German eROSITA consortium. This research has made use of data and software provided by the High Energy Astrophysics Science Archive Research Center (HEASARC), which is a service of the Astrophysics Science Division at NASA /GSFC. This work has made use of data from the ESA mission Gaia 
+
+(https://www.cosmos.esa.int/gaia ), processed by the Gaia Data Process-ing and Analysis Consortium (DPAC, https://www.cosmos.esa.int/web/ gaia/dpac/consortium ). Funding for the DPAC has been provided by na-tional institutions, in particular the institutions participating in the Gaia Mul-tilateral Agreement. 
+
+References 
+
+Acharya, A., Kashyap, V. L., Saar, S. H., Singh, K. P., & Cuntz, M. 2023, ApJ, 951, 152 Acton, L., Bruner, M., Lemen, J., et al. 1992, Science, 258, 618 Asplund, M., Grevesse, N., Sauval, A. J., & Scott, P. 2009, ARA&A, 47, 481 Ayres, T. 2023, AJ, 166, 212 Ayres, T. 2025, AJ, 169, 281 Baum, A. C., Wright, J. T., Luhn, J. K., & Isaacson, H. 2022, AJ, 163, 183 Bennedik, M. M., Stelzer, B., Isaacson, H., et al. 2026, A&A, 706, L3 Binder, B. A., Schwieterman, E. W., Farrish, A., et al. 2026, ApJ, 1006, 53 Boller, T., Freyberg, M. J., Trümper, J., et al. 2016, A&A, 588, A103 Bond, H. E., Gilliland, R. L., Schaefer, G. H., et al. 2015, ApJ, 813, 106 Boro Saikia, S., Marvin, C. J., Je ff ers, S. V., et al. 2018, A&A, 616, A108 Brewer, J. M., Fischer, D. A., Valenti, J. A., & Piskunov, N. 2016, ApJS, 225, 32 Brun, A. S. & Browning, M. K. 2017, LRSP, 14 Brunner, H., Liu, T., Lamer, G., et al. 2022, A&A, 661, A1 Caramazza, M., Stelzer, B., Magaudda, E., et al. 2023, A&A, 676, A14 Co ff aro, M., Stelzer, B., & Orlando, S. 2022, A&A, 661, A79 Co ff aro, M., Stelzer, B., Orlando, S., et al. 2020, A&A, 636, A49 Cranmer, S. R. 2009, LRSP, 6 Cruise, M., Guainazzi, M., Aird, J., et al. 2024, Nature Astronomy, 9, 36 Drake, J. J. & Stelzer, B. 2023, Stellar Coronae (Springer), 1–72 Ercolano, B., Picogna, G., Monsch, K., Drake, J. J., & Preibisch, T. 2021, MN-RAS, 508, 1675 Favata, F., Flaccomio, E., Reale, F., et al. 2005, ApJS, 160, 469 Fisher, R. A. 1922, J. Roy. Stat. Soc., 85, 87 Foster, G., Poppenhaeger, K., Ilic, N., & Schwope, A. 2022, A&A, 661, A23 Freund, S., Czesla, S., Robrade, J., Schneider, P. C., & Schmitt, J. H. M. M. 2022, A&A, 664, A105 Fuhrmeister, B., Co ff aro, M., Stelzer, B., et al. 2023, A&A, 672, A149 Gaia Collaboration, Vallenari, A., Brown, A. G. A., et al. 2023, A&A, 674, A1 González-Payo, J., Caballero, J. A., Cifuentes, C., Cortés-Contreras, M., & Rica, F. 2026, MNRAS Gordon, C. & Arnaud, K. 2021, PyXspec: Python interface to XSPEC spectral-fitting program, Astrophysics Source Code Library, record ascl:2101.014 Gáspár, A., Rieke, G. H., & Ballering, N. 2016, ApJ, 826, 171 Heinemann, S. G., Saqri, J., Veronig, A. M., Hofmeister, S. J., & Temmer, M. 2021, SoPh, 296 Hudson, H. S. 2002, in ESA Special Publication, Vol. 508, From Solar Min to Max: Half a Solar Cycle with SOHO, ed. A. Wilson, 341–349 Isaacson, H., Howard, A. W., Fulton, B., et al. 2024, ApJS, 274, 35 Johnstone, C. P. & Güdel, M. 2015, A&A, 578, A129 Joseph, W. M., Stelzer, B., Orlando, S., & Klawin, M. 2026, A&A, 708, A151 Judge, P. G., Saar, S. H., Carlsson, M., & Ayres, T. R. 2004, ApJ, 609, 392 Korolik, M., Roettenbacher, R. M., Fischer, D. A., et al. 2023, AJ, 166, 123 König, B., Fuhrmann, K., Neuhäuser, R., Charbonneau, D., & Jayawardhana, R. 2002, A&A, 394, L43 Lammer, H., Selsis, F., Ribas, I., et al. 2003, ApJ, 598, L121 Luhn, J. K., Wright, J. T., Henry, G. W., Saar, S. H., & Baum, A. C. 2022, ApJ, 936, L23 Magaudda, E., Stelzer, B., Raetz, S., et al. 2022, A&A, 661, A29 Maggio, A., Flaccomio, E., Favata, F., et al. 2007, ApJ, 660, 1462 Maggio, A., Pillitteri, I., Argiro ffi , C., et al. 2023, ApJ, 951, 18 Marfil, E., Tabernero, H. M., Montes, D., et al. 2021, A&A, 656, A162 Medhi, M., Deka, M., Saha, K., Thapa, V. B., & Mahanta, U. 2026, MNRAS, 548 Merloni, A., Lamer, G., Liu, T., et al. 2024, A&A, 682, A34 Mitra-Kraev, U., Harra, L. K., Williams, D. R., & Kraev, E. 2005, A&A, 436, 1041 Mohanty, S., Basri, G., Shu, F., Allard, F., & Chabrier, G. 2002, ApJ, 571, 469 Monsch, K., Ercolano, B., Picogna, G., Preibisch, T., & Rau, M. M. 2018, MN-RAS, 483, 3448 Mosser, B., Deheuvels, S., Michel, E., et al. 2008, A&A, 488, 635 Nari, N., Dumusque, X., Hara, N. C., et al. 2025, A&A, 693, A297 Neuhäuser, R., Sterzik, M. F., Schmitt, J. H. M. M., Wichmann, R., & Krautter, J. 1995, A&A, 297, 391 Nguyen, C. T., Costa, G., Bressan, A., et al. 2025, A&A, 701, A258 Nguyen, C. T., Costa, G., Girardi, L., et al. 2022, A&A, 665, A126 Orlando, S., Favata, F., Micela, G., et al. 2017, A&A, 605, A19 Orlando, S., Peres, G., & Reale, F. 2001, ApJ, 560, 499 Orlando, S., Peres, G., & Reale, F. 2004, A&A, 424, 677 Orlando, S., Peres, G., Reale, F., et al. 2005, A&A, 444, 505 Owen, J. E., Clarke, C. J., & Ercolano, B. 2012, MNRAS, 422, 1880 Pallavicini, R., Golub, L., Rosner, R., et al. 1981, ApJ, 248, 279 Peres, G., Orlando, S., Reale, F., Rosner, R., & Hudson, H. 2000, ApJ, 528, 537 Pillitteri, I., Micela, G., Maggio, A., Sciortino, S., & Lopez-Santiago, J. 2022, A&A, 660, A75 Pizzolato, N., Maggio, A., Micela, G., Sciortino, S., & Ventura, P. 2002, A&A, 397, 147 Poppenhaeger, K., Ketzer, L., & Mallonn, M. 2020, MNRAS, 500, 4560 Predehl, P., Andritschke, R., Arefiev, V., et al. 2021, A&A, 647, A1 Preibisch, T., Kim, Y., Favata, F., et al. 2005, ApJS, 160, 401 Raymond, J. C., Cox, D. P., & Smith, B. W. 1976, ApJ, 204, 290 Raymond, J. C. & Smith, B. W. 1977, ApJS, 35, 419 Reale, F. 2014, LRSP, 11 Reylé, C., Jardine, K., Fouqué, P., et al. 2021, A&A, 650, A201 Reylé, C., Jardine, K., Fouqué, P., et al. 2023 Riello, M., De Angeli, F., Evans, D. W., et al. 2021, A&A, 649, A3 Robrade, J., Dennerl, K., Freyberg, M. J., & Schmitt, J. H. M. M. 2026, A&A, submitted Robrade, J. & Schmitt, J. H. M. M. 2005, A&A, 435, 1073 Robrade, J., Schmitt, J. H. M. M., & Favata, F. 2012, A&A, 543, A84 ROSAT Consortium. 2000, The Second ROSAT Source Catalog of Pointed Ob-servations, VizieR Online Data Catalog: IX /30 Rosner, R., Golub, L., & Vaiana, G. S. 1985, ARA&A, 23, 413 Rosner, R., Tucker, W. H., & Vaiana, G. S. 1978, ApJ, 220, 643 Sanz-Forcada, J., Micela, G., Ribas, I., et al. 2011, A&A, 532, A6 Schmitt, J. H. M. M. & Liefke, C. 2004, A&A, 417, 651 Schröder, C. & Schmitt, J. H. M. M. 2007, A&A, 475, 677 Smith, R. K., Brickhouse, N. S., Liedahl, D. A., & Raymond, J. C. 2001, ApJ, 556, L91 Soubiran, C., Brouillet, N., & Casamiquela, L. 2022, A&A, 663, A4 Sousa, S. G., Santos, N. C., Mayor, M., et al. 2008, A&A, 487, 373 Stelzer, B., Caramazza, M., Raetz, S., Argiro ffi , C., & Co ff aro, M. 2022, A&A, 667, L9 Stelzer, B., Huélamo, N., Micela, G., & Hubrig, S. 2006, A&A, 452, 1001 Tang, Y. K. & Gai, N. 2010, A&A, 526, A35 Tokovinin, A. 2025, AJ, 169, 124 Vaiana, G. S., Fabbiano, G., Giacconi, R., et al. 1981, ApJ, 245, 163 Webb, N. A., Coriat, M., Traulsen, I., et al. 2020, A&A, 641, A136 Wright, N. J., Drake, J. J., Mamajek, E. E., & Henry, G. W. 2011, ApJ, 743, 48 Zheng, X., Ponti, G., Locatelli, N., et al. 2026, A&A, 709, A275 Zhu, E. & Preibisch, T. 2025, A&A, 694, A93 
+
+Article number, page 13 of 17 A&A proofs: manuscript no. main 
+
+Appendix A: Special cases in source extraction 
+
+Two stars required a customised definition of the source extrac-tion due to partial blending with a companion star in a multiple system. In the following, we present both cases in detail. 
+
+A.1. GJ 570 A 
+
+In the individual eRASS, the GJ 570 system was observed with too few counts to separate GJ 570 A from its two M dwarf com-panions GJ 570 B & C. However, two separate sources are de-tected eRASS:5 as depicted in Fig. A.1. While the PSFs overlap, the separation is large enough for extraction of individual spectra and light curves. We manually select the source and background regions.  
+
+> Fig. A.1. Source (green) and background (cyan, dashed) regions used for extracting the eRASS:5 spectrum and light curve of GJ 570 A cen-tered on the positions from source detection. The extent of the PSF of its companions is shown in magenta and diamond symbols show the position of the optical counterparts after correcting for proper motion to the mean eRASS:5 epoch. The colour bar codes the number of counts in each pixel.
+
+A.2. GJ 166 A 
+
+While GJ 166 A is is detected as a separate source from its companions, the extraction region automatically defined by the pipeline include both sources in each survey. The companions are a binary with a white dwarf, which is not expected to emit X-ray radiation, and an M dwarf. Thus, we manually define the extraction regions as presented in Fig. A.2.  
+
+> Fig. A.2. Same as Fig. A.1, but for GJ 166 A.
+
+Appendix B: Sources affected by optical loading 
+
+B.1. Spectra with contributions from optical loading 
+
+HD 219134 As the optically brightest star in the FGK 10pc sample that was observed with XMM-Newton (ObsID: 0784920201) using the medium filter, the K3-dwarf HD 219134 is a ff ected by optical loading. In Fig. B.1, we present the X-ray spectrum together with a model fit containing a power law and a single-temperature APEC-component. While a two-temperature APEC model without a power law component yields a slightly lower χ2reduced , the cooler APEC component has a very low temperature and is badly constrained. Thus, we decide that the model containing a power law is a more appropriate description of the spectrum; with the caveat that the intrinsic coronal temperature and X-ray flux of the star are not well constrained.    
+
+> Fig. B.1. Upper panel: XMM-Newton EPIC /pn spectrum of HD 219134 and model fit with power law and 1T-APEC components. Lower panel:
+> residuals.
+
+61 Vir With an eRASS count rate very close to the limit defined used to discard stars due to optical loading as shown in Fig. 2, we suspect the G7-dwarf 61 Vir to be likely a ff ected by optical loading. To examine this, we fit the X-ray spectrum of the star with a power law (green) and compare it to a fit with a single-temperature APEC model (blue), as depicted in Fig. B.2. We find that the spectrum is better described by a power law with a slope of α = 6.0 ± 0.8. This is consistent with the value of 
+
+α = 6.1 ± 0.1 found by Robrade et al. (2026, A&A subm.) for detections caused by optical loading. The eRASS observations of the star are thus discarded. 
+
+π3 Ori The F6-dwarf π3 Ori was observed in eRASS1–4 and is in the “uncertain range” regarding optical loading shown in Fig.2. In an e ff ort to retrieve spectral information from the star without the e ff ects of optical loading, we model the X-ray spec-tra with a power law component. As is depicted in Fig. B.3, the spectrum is well-described ( χ2reduced = 1.34) by a model with a single-temperature APEC component and a power law with a slope of α = 7.1 ± 0.6. However, the model is equally well-described ( χ2reduced = 1.32) with a two-temperature APEC model without a power law as presented in Fig. B.4. In the latter case, the temperature of the cooler APEC component is very low at kT = 0.04 keV. Due to the optical loading, we cannot con-    
+
+> Article number, page 14 of 17 M.M. Bennedik et al.: The X-ray catalogue of FGK stars within 10 pc
+> Fig. B.2. Upper panel: eRASS:5 spectrum of 61 Vir and power law fit (green) or 1T-APEC fit (blue). Lower panel: residuals.
+
+strain how much of the low-energy regime is attributed to low-temperature plasma.         
+
+> Fig. B.3. Upper panel: eRASS4 spectrum of π3Ori and model fit with power law and 1T-APEC components. Lower panel: residuals.
+> Fig. B.4. Same as Fig. B.3, but with 2T-APEC model instead.
+> Table B.1. Observations which were discarded from the analysis due to contamination from optical loading.
+
+X-ray source Mission Observation 
+
+α Cen AB eROSITA eRASS1–5 HD 20794 eROSITA eRASS1–5 HD 219134 XMM-Newton 0784920201 61 Vir eROSITA eRASS1–5 
+
+ζ Tuc eROSITA eRASS1–4 GJ 216 A eROSITA eRASS1–4 
+
+γ Pav eROSITA eRASS1–4 HD 102365 AB eROSITA eRASS1–5 
+
+B.2. Data affected by optical loading 
+
+In Table B.1, we list the observations which we discarded due to contamination from optical loading as discussed in Sect. 3.1.3. 
+
+Appendix C: Unresolved companions 
+
+In Table C.1, we present the companions of FGK 10pc stars which are unresolved within X-ray observations (see Sect. 3.2). For our analysis, we determine the radii of these companion stars. If Gaia photometry is available, we use isochrones from the parsec v 2.0 database (Nguyen et al. 2022, 2025) where possi-ble. The procedure was described by Bennedik et al. (2026). We adopt the metallicities from the parent star listed in Table D.1 to constrain the parsec isochrones. If no Gaia photometry is available, we instead adopt the radii listed in the table maintained by E. Mamajek, for which we adopt the SpT of the star from the catalogue by Reylé et al. (2021). However, a few stars do not have a SpT listed in this catalogue: For GJ 570 C we use the SpT of M3 as listed in the catalogue by González-Payo et al. (2026). For 41 Ara Bb we assume a SpT of M2.5 due to its estimated mass of 0 .41 M⊙ (Tokovinin 2025). For χ1 Ori B we assume a SpT of M5 due to its mass of 0 .15 M⊙
+
+(König et al. 2002). The SpT, radii and the method used for de-termining the radii are given in Table C.1. 
+
+Appendix D: Catalogue tables 
+
+Here we provide the tables for the FGK 10pc sample as de-scribed in Sect. 3.5. Table D.1 presents the fundamental prop-erties and X-ray parameters. Individual observations are given in Table D.2. 
+
+Appendix E: Properties of Maunder minimum candidates 
+
+In Table E.1, we provide the fundamental properties of the Maunder minimum star HD 166620 along with the three poten-tial Maunder minimum candidates within the FGK 10pc sample for our discussion in Sect. 4.4. 
+
+> Article number, page 15 of 17
+
+A&A proofs: manuscript no. main 
+
+Table C.1. Companion stars which are unresolved in X-ray observations. See text for descriptions of methods used to derive R.
+
+Star Primary SpT R Method Resolved from primary by: 
+
+(R⊙) ROSAT eROSITA XMM-Newton 
+
+61 Cyg B 61 Cyg A K7 0.57 PARSEC No Undetected Yes 70 Oph B 70 Oph A K4 0.68 PARSEC No Undetected No GJ 570 B GJ 570 A M1 0.57 PARSEC No Yes Undetected GJ 570 C GJ 570 A M3 0.57 Mamajek No Yes Undetected 
+
+η Cas B η Cas A K7 0.56 PARSEC No Undetected Undetected 36 Oph B 36 Oph A K1 0.72 PARSEC No No Undetected GJ 783 B GJ 783 A M3.5 0.30 Mamajek No Undetected No 
+
+ξ Boo B ξ Boo A K5 0.62 PARSEC No Undetected Undetected GJ 105 C GJ 105 A K7 0.12 Mamajek No Undetected Undetected GJ 53 B GJ 53 A M4 0.27 Mamajek No Undetected Undetected 
+
+χ Dra B χ Dra A K0 0.81 PARSEC No Undetected Undetected GJ 66 B GJ 66 A K2 0.72 PARSEC No No Undetected 
+
+χ1 Ori B χ1 Ori A M5 0.20 Mamajek No No Undetected 
+
+ξ UMa Ab ξ UMa Aa G2 0.36 Mamajek No No Undetected 
+
+ξ UMa Ba ξ UMa Aa K7 0.88 PARSEC No No Undetected 
+
+ξ UMa Bb ξ UMa Aa K7 0.77 Mamajek No No Undetected 41 Ara Ba 41 Ara A K9 0.51 PARSEC No No Undetected 41 Ara Bb 41 Ara A M2.5 0.42 Mamajek No No Undetected HD 102365 B HD 102365 A M4 0.21 PARSEC Undetected No; optical loading Undetected 
+
+α Cen B α Cen A K1 0.87 PARSEC No No; optical loading No GJ 667 B GJ 667 A K3 0.64 PARSEC No No Undetected GJ 667 C GJ 667 A K5 0.54 PARSEC No No Undetected 
+
+Table D.1. Fundamental properties and mean X-ray parameters for the FGK 10pc sample. ROSAT upper limits are marked with an asterisk. 
+
+Name SpT Plx [Fe /H] ref Lbol R log LX log FX kT Multiplicity X-ray source (mas) (dex) (L⊙) (R⊙) (erg s −1) (erg cm −2 s−1) (keV) 
+
+ϵ Eri K2V 310.58 -0.08 a -0.48 0.75 28.35 5.82 0.35 161 Cyg A K5V 285.99 -0.13 a -0.85 0.64 27.20 4.81 0.25 261 Cyg B K7V 286.01 -0.21 a -1.06 0.57 27.11 4.81 0.27 2
+
+ϵ Ind A K5V 274.84 -0.13 a -0.68 0.68 27.47 5.02 0.24 3
+
+τ Cet G8.5V 273.81 -0.51 a -0.34 0.73 26.67 4.16 0.09 1
+
+... ... ... ... ... ... ... ... ... ... ... ...
+
+Notes. This table is available in its entirety at the CDS. 
+
+References. a Soubiran et al. (2022); b Sousa et al. (2008); c Marfil et al. (2021); d Gáspár et al. (2016) 
+
+Table D.2. X-ray parameters from individual observations. All XMM-Newton observations are using EPIC /pn. For ROSAT detections without uncertainties for the flux ( fX), the uncertainties for log LX are computed only from parallax uncertainties. 
+
+X-ray source Mission Observation Mode Epoch Analysis log fX log LX kT 
+
+(MJD) (erg cm −2 s−1) (erg s −1) (keV) 
+
+τ Cet ROSAT 2RXS 48165.0 Count rate −12 .37 0.08 0.10 26 .83 0.08 0.10 
+
+τ Cet XMM-Newton 0670380501 Thick, Q 55916.080 1T-APEC −12 .79 0.20 0.20 26 .41 0.20 0.20 0.09 0.01 0.01 
+
+HD 88230 ROSAT 2RXS 48165.0 Count rate −11 .89 0.04 0.05 27 .56 0.04 0.05 
+
+HD 88230 ROSAT 2RXP 48387.0 Count rate −12 .03 27 .43 0.00 0.00 
+
+GJ 166 A eROSITA eRASS:5 59232.5 1T-APEC −12 .31 0.04 0.04 27 .16 0.04 0.04 0.27 0.02 0.01 
+
+... ... ... ... ... ... ... ... ...
+
+Notes. This table is available in its entirety at the CDS. Article number, page 16 of 17 M.M. Bennedik et al.: The X-ray catalogue of FGK stars within 10 pc 
+
+Table E.1. Properties of stars in the lower BKC area. Metallicities from Soubiran et al. (2022). 
+
+Star SpT [Fe /H] Prot ref age ref SHK ref (dex) (d) (Gyr) median HD 166620 K2 −0.18 ± 0.02 45 (1) 12.4 (2) 0.170 (3) 
+
+τ Cet G8.5 −0.51 ± 0.01 46 ± 4 (4) 9.0 ± 1.0 (5) 0.167 (6) HD 20794 G8 −0.39 ± 0.01 ∼39 (7) ∼9 (8) 0.168 (7) 
+
+γ Pav F9 −0.70 ± 0.02 Unknown 7.25 ± 0.07 (9) 0.265 (10) 
+
+References. (1) Luhn et al. (2022); (2) Brewer et al. (2016); (3) Baum et al. (2022) (data 2004 onward); (4) Korolik et al. (2023); (5) Tang & Gai (2010); (6) Isaacson et al. (2024); (7) Nari et al. (2025); (8) Medhi et al. (2026); (9) Mosser et al. (2008); (10) Boro Saikia et al. (2018) (mean SHK )Article number, page 17 of 17

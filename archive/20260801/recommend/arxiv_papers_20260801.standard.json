@@ -1,0 +1,127 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-01T21:23:22.183745+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 1,
+    "deep_cap": 6,
+    "deep_selected": 1,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2607.28562v1",
+      "source": "arxiv",
+      "title": "Upgrading LBTI/NOMIC with a quadruple annular groove phase mask and GeoSnap detector for imaging nearby, habitable-zone exoplanets",
+      "abstract": "The Large Binocular Telescope Interferometer (LBTI)'s Nulling-Optimized Mid-Infrared Camera (NOMIC) is among the most capable thermal-infrared imaging systems available for high-contrast, high-angular-resolution astronomical observations. Here we describe two in-progress upgrades to LBTI/NOMIC: (1) the design, fabrication, and installation of a quadruple annular groove phase mask (Q-AGPM) coronagraph, and (2) the installation of a 13 micron-cutoff Teledyne GeoSnap array. The Q-AGPM is the first coronagraph to be installed within NOMIC and one of the first optimized for N-band (~11 micron) observations. It places four annular groove phase masks on a single diamond substrate so that, in the LBTI dual-aperture imaging mode, each of the two telescope beams can be chopped between a pair of masks without loss of observing efficiency. The GeoSnap array will replace NOMIC's original AQUARIUS array, delivering higher quantum efficiency, larger well depth, faster and more linear readout, and freedom from the excess low-frequency noise that requires aggressive chopping. Together these upgrades substantially improve the achievable contrast and sensitivity at small angular separations. We also present a high-contrast Fizeau imaging sequence obtained with LBTI's new FFTCam fringe tracker, which confirms the interferometric gain over a single aperture through injection/recovery tests: relative to an equal-time single aperture exposure, the S/N = 3 contrast is a factor of ~2-4 deeper across 0.2-1 arcsec, spanning the contrast- and background-limited regimes. Finally, we describe the role of the upgraded LBTI/NOMIC instrument within the Breakthrough Watch program at the University of Arizona, which aims to perform the deepest observations yet of the habitable zones of the nearest single Sun-like stars.",
+      "authors": [
+        "Kevin Wagner",
+        "Manny Montoya",
+        "Steve Ertel",
+        "Jarron Leisenring",
+        "Pontus Forsberg",
+        "Samuel Ronayette",
+        "Andre Wong",
+        "Mikael Karlsson",
+        "Olivier Absil",
+        "Denis Defrère",
+        "Markus Kasper",
+        "Jordan Stone",
+        "Dániel Apai",
+        "Laird Close",
+        "Jamie Dietrich",
+        "Ewan Douglas",
+        "Jamie Drew",
+        "Olivier Durney",
+        "Marina Fetisova",
+        "Kyran Grattan",
+        "Olivier Guyon",
+        "Jacob Isbell",
+        "Sebastián Jorquera",
+        "Petri Karvinen",
+        "Markku Kuittinen",
+        "Hervé Le Coroller",
+        "Jared Males",
+        "Brittany Miles",
+        "Dillon O'Reilly",
+        "Eric Pantin",
+        "Sascha P. Quanz",
+        "Eckhart Spalding",
+        "Vivek Vijayakumar",
+        "Zach Werber",
+        "S. Pete Worden"
+      ],
+      "primary_category": "astro-ph.IM",
+      "categories": [
+        "astro-ph.IM",
+        "astro-ph.EP"
+      ],
+      "published": "2026-07-30T17:27:41+00:00",
+      "link": "https://arxiv.org/pdf/2607.28562v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Instrument upgrades for high-contrast imaging of habitable-zone exoplanets",
+      "llm_evidence_cn": "面向宜居带系外行星高对比度成像的仪器升级",
+      "llm_evidence": "面向宜居带系外行星高对比度成像的仪器升级",
+      "canonical_evidence": "面向宜居带系外行星高对比度成像的仪器升级",
+      "llm_tldr_en": "This paper describes upgrades to LBTI/NOMIC: installing a quadruple annular groove phase mask coronagraph (Q-AGPM) and a 13 micron-cutoff GeoSnap detector. These upgrades will significantly enhance NOMIC's capability for thermal-infrared high-contrast imaging of nearby habitable-zone exoplanets, enabling improved detection and characterization.",
+      "llm_tldr_cn": "NOMIC是热红外高对比度成像的关键仪器。本文介绍对其的两项升级：设计、制造和安装四重环形凹槽相位掩模日冕仪(Q-AGPM)，以及安装13微米截止的GeoSnap探测器。Q-AGPM是NOMIC中首个日冕仪，也是首批针对N波段观测优化的日冕仪之一。这些升级将提升NOMIC对邻近宜居带系外行星的成像探测能力，有助于系外行星的发现与表征。",
+      "llm_tldr": "NOMIC是热红外高对比度成像的关键仪器。本文介绍对其的两项升级：设计、制造和安装四重环形凹槽相位掩模日冕仪(Q-AGPM)，以及安装13微米截止的GeoSnap探测器。Q-AGPM是NOMIC中首个日冕仪，也是首批针对N波段观测优化的日冕仪之一。这些升级将提升NOMIC对邻近宜居带系外行星的成像探测能力，有助于系外行星的发现与表征。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "instruments and analysis methods enabling exoplanet and planetary science",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.27832v1",
+      "source": "arxiv",
+      "title": "The X-ray catalogue of FGK stars within 10 pc: The coronal temperature-brightness relation explained with the RTV scaling law",
+      "abstract": "A comprehensive measurement of stellar X-ray emission has important implications for our understanding of stellar dynamos, exoplanet atmosphere loss, and evaporation of protoplanetary disks. We present a catalogue of X-ray detections of the FGK-type main-sequence stars within 10 pc, which accounts for stellar multiplicity and optical loading of the detectors. To build the X-ray catalogue, we analysed all observations from SRG (Spectrum Roentgen Gamma)/eROSITA and XMM-Newton for stars in the FGK 10pc sample, and we cross-matched the sample with ROSAT catalogues. We fit thermal plasma models to the X-ray spectra to derive X-ray fluxes and coronal temperatures. We investigate the relation between coronal temperature and X-ray surface flux and find the result to be consistent with the ranges covered by different types of solar coronal magnetic structures. The lower end of the temperature-brightness relation is defined by the Maunder minimum star HD 166620 and three other stars whose positions identify them as possible Maunder minimum candidates. We identify systematic differences between the temperature-brightness law derived from XMM-Newton and eROSITA data that we attribute to their different instrumental response functions. We study the impact of both short-term flaring and long-term activity cycles on the evolution of coronal temperature along with X-ray brightness. With the exception of three stars, a remarkably small scatter is observed in the temperature-brightness relation across the whole sample. A natural explanation of the empirical kT-FX relation is provided by the RTV scaling law defined for solar magnetic loops. The small spread of the observed relation indicates a universal scaling between the length and the filling factor of coronal loops. The three observed outliers deviate from this invariance of the ratio of loop length to filling factor for an as of yet unknown reason.",
+      "authors": [
+        "M. M. Bennedik",
+        "B. Stelzer",
+        "M. Caramazza",
+        "S. Orlando",
+        "A. Binks",
+        "J. Robrade"
+      ],
+      "primary_category": "astro-ph.SR",
+      "categories": [
+        "astro-ph.SR"
+      ],
+      "published": "2026-07-30T08:11:02+00:00",
+      "link": "https://arxiv.org/pdf/2607.27832v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "X-ray catalogue of FGK stars with implications for exoplanet atmosphere loss and protoplanetary disk evaporation",
+      "llm_evidence_cn": "FGK恒星X射线星表，对系外行星大气逃逸和原行星盘蒸发具有启示",
+      "llm_evidence": "FGK恒星X射线星表，对系外行星大气逃逸和原行星盘蒸发具有启示",
+      "canonical_evidence": "FGK恒星X射线星表，对系外行星大气逃逸和原行星盘蒸发具有启示",
+      "llm_tldr_en": "Presents a comprehensive X-ray catalogue of FGK stars within 10 pc, analyzing eROSITA/XMM-Newton data, and relates coronal temperature to brightness using the RTV scaling law, with implications for exoplanet atmosphere loss and disk evaporation.",
+      "llm_tldr_cn": "恒星的X射线辐射对系外行星大气逃逸和原行星盘蒸发至关重要。本文构建了10秒差距内FGK主序恒星的X射线星表，统一分析了SRG/eROSITA、XMM-Newton和ROSAT数据，通过热等离子体模型拟合光谱得到X射线通量和日冕温度，并用RTV标度律解释了日冕温度-光度关系。该星表为行星大气和盘演化研究提供了关键恒星输入参数。",
+      "llm_tldr": "恒星的X射线辐射对系外行星大气逃逸和原行星盘蒸发至关重要。本文构建了10秒差距内FGK主序恒星的X射线星表，统一分析了SRG/eROSITA、XMM-Newton和ROSAT数据，通过热等离子体模型拟合光谱得到X射线通量和日冕温度，并用RTV标度律解释了日冕温度-光度关系。该星表为行星大气和盘演化研究提供了关键恒星输入参数。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "observations and models of exoplanet atmospheres, climate, chemistry, and escape",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
