@@ -1,0 +1,884 @@
+Title: Volcanic Satellites and Ion Escape in the Magnetospheres of Ultra-Cool and Brown Dwarf Stars
+
+URL Source: https://arxiv.org/pdf/2607.25964v1
+
+Published Time: Wed, 29 Jul 2026 01:22:39 GMT
+
+Number of Pages: 16
+
+Markdown Content:
+Astronomy & Astrophysics manuscript no. LanzaOza_main_revision_2 ©ESO 2026 July 29, 2026 
+
+# Volcanic Satellites and Ion Escape in the Magnetospheres of Ultra-Cool and Brown Dwarf Stars 
+
+A. F. Lanza 1 and A. V. Oza 2, 3 
+
+> 1
+
+INAF-Osservatorio Astrofisico di Catania, Via S. Sofia, 78 - I-95123 Catania, Italy e-mail: antonino.lanza@inaf.it  
+
+> 2
+
+California Institute of Technology, 1200 E California Boulevard, Pasadena, CA 91125, USA e-mail: oza@caltech.edu  
+
+> 3
+
+Jet Propulsion Laboratory, Pasadena, CA USA July 29, 2026 
+
+ABSTRACT 
+
+Radio emissions at ∼ GHz frequencies of ultra-cool dwarf and brown dwarf stars suggest the presence of radiation belts not unlike Jupiter’s. We investigate the possibility the inferred magnetospheric plasma at the primary star is sourced by an active planet or via ion escape modeled as a weak ionospheric outflow. We consider indirect methods to estimate the magnetospheric plasma mass flow from auroral radio emission and apply them to the ultra-cool dwarf LSR J1835 +3259. We find that an ionospheric outflow is a viable source of the order of 10 5 kg s −1, if the ionospheric e ff ective Pedersen conductance is lower than ∼ 0.02 mho. On the other hand, a tidally-heated volcanic satellite with the same mass and radius as Io and an orbit with a semimajor axis smaller than about 10 stellar radii, whose eccentricity ( e ∼ 10 −3) is maintained by perturbations by other planets in the system, is found to be a viable source of magnetospheric plasma without strong limitations on the ionospheric conductance. The volcanic satellite scenario is also naturally in sync with the recent finding that ultra-cool dwarfs with distant substellar or stellar companions are remarkably more likely to be detected as radio emitters. 
+
+Key words. stars: magnetic fields – brown dwarfs – planets and satellites: aurorae – planet-star interactions – stars: individual: LSR J1835 +3259 
+
+1. Introduction 
+
+Ultra-cool dwarf (UCD) stars at the lower end of the main se-quence (e.g., Route 2017; Kao & Shkolnik 2024), and brown dwarfs (BDs) with rotation periods of a few hours have been detected as radio emitters (e.g., Kao et al. 2016, 2018, 2019). They show both a bursty radio emission as well as a quiescent emission when observed at frequencies in the GHz range. The former is usually strongly circularly polarized and is interpreted as electron-cyclotron maser (ECM) emission peaking at a fre-quency 
+
+νECM = 2.8 B, (1) where νECM is the frequency in MHz and B the magnetic field in Gauss (e.g., Noyola et al. 2014). Therefore, a bursty emission at 8.4 GHz implies a magnetic field in the emitting region of 
+
+∼ 3 kGauss that is likely to be the magnetic field at the poles close to the surface of the star adopting a dipolar geometry for the stellar field. ECM emission is not isotropic, but is directed inside a small solid angle about the surface of a hollow cone the axis of which is along the local magnetic field and with an aper-ture of ∼ 70 ◦ − 80 ◦ (e.g., Melrose & Dulk 1982; Zarka 1998). Therefore, ECM emission can be observed only during a short interval along each stellar rotation, producing nearly periodic bursts with typical duration of minutes or tens of minutes as the star rotates. In addition to such slow bursts, short (milliseconds) bursts are intrinsically produced by the ECM, likely due to the rapid growth of the instability itself, in the case of Jupiter (Hess et al. 2007) and possibly M dwarfs (Zhang et al. 2023). The detection of ECM emission from UCD stars is not lim-ited at frequencies in the GHz domain. As witnessed by, for ex-ample, Vedantham et al. (2020) and Vedantham et al. (2023), observations at 144 MHz have revealed ECM emission in a T-dwarf binary implying an ion source of ˙ M ∼ 2.5 ×10 4 kg s −1 pro-vided the B field is at least ≫ 51 G, with a likely magnetic field strength of several hundreds of Gauss. This is remarkably larger than the theoretically estimated ∼ 13-85 Gauss magnetic field strengths in the cases of WASP-49 b, WASP-69 b, HAT-P-12 b, and HD-189733 b (e.g., Narang et al. 2023; Narang et al. 2022). On the other hand, quiescent emission in UCD stars is observ-able continuously and persists for several years with slow varia-tions and a low degree of circular polarization. It is interpreted as high-harmonic synchrotron radiation originating at several stel-lar radii from the surface of the star where the magnetic field is of the order of a few Gauss. The fraction of radio-emitting UCDs and BDs is approximately 20% after correcting for the known selection e ff ects a ff ecting their statistics in a volume lim-ited sample (Kao & Shkolnik 2024). A particularly interesting system that we adopt as a bench-mark is LSR J1835 +3259. Its quiescent emission has been spa-tially resolved at 4.94 GHz (Climent et al. 2023) and 8.4 GHz (Kao et al. 2023) showing two approximately symmetric lobes centred at a distance of ∼ 9 stellar radii from the centre of the star. The emission is indicative of radiation belts in a stellar mag-netosphere governed by a large scale dipolar magnetic field akin to the case of Jupiter (cf. de Pater 1981; de Pater & Dunn 2003). An important open question is the source of the electrons responsible for the ECM emission and of those producing the 
+
+Article number, page 1 of 16 arXiv:2607.25964v1 [astro-ph.EP] 28 Jul 2026 A&A proofs: manuscript no. LanzaOza_main_revision_2 
+
+synchrotron radiation. A system analogous to those UCDs and BDs is represented by the ECM and synchrotron emissions ob-served in the magnetosphere of Jupiter. The main source of ions in that case is the volcanic moon Io. It is worth noting that the first signature of volcanism at Io was indeed in the radio by de-cameter emission (Bigg 1964), however not seen in visible light (e.g. atomic sodium) until 1974 (Brown & Cha ff ee 1974) and finally confirmed by the observation of plumes by Voyager 1 (Morabito et al. 1979). The production of plasma at Io mainly results from electron-impact ionization: impacts of thermal elec-trons of its plasma torus with Io’s atmospheric molecules, essen-tially sulphur dioxide (Saur et al. 1999; Bagenal & Dols 2023) a component of which is also atmospherically sputtered (Ha ff et al. 1981; McGrath & Johnson 1987; Johnson 1990) (cf. Sect. 2.4.1). Dols et al. (2024) proposed that ionization by high-energy field-aligned electron beams also plays a relevant role, while pho-toionization by the solar ultraviolet radiation has a secondary role contributing less than 10-15% of the total ionization rate (Saur et al. 1999). Moreover, charge exchange contributes to the ion-neutral balance (McGrath & Johnson 1989; Bagenal & Dols 2023). The mechanisms to power the auroral emission in UCD stars have been reviewed by Saur et al. (2021) who consid-ered ionospheric-magnetospheric coupling (see Sect. 2.1) and the Alfven waves excited by the motion of a planet orbiting in-side the magnetosphere of the star (see Sect. 2.2). Such a star-planet interaction mechanism was criticized by Kuznetsov et al. (2012), but its plausibility was later reassessed by Leto et al. (2017), therefore, we shall also consider it to estimate the mass flux rate across the magnetosphere of UCD stars. We shall limit ourselves to an analysis of the ECM emission because the use of quiescent radio emission to make inferences on the magnetospheric mass flux is hampered by an incomplete knowledge of the acceleration and transport mechanisms of the relativistic electrons across a stellar magnetosphere. Those rela-tivistic electrons, responsible for the quiescent synchrotron emis-sion, represent a tiny fraction in comparison with the thermal electron distribution that depends critically on the details of such physical processes. Even in the case of the magnetosphere of Jupiter, our understanding of the relativistic electron population is too limited to link the synchrotron emission to the total elec-tron (and plasma) density inside the magnetosphere (cf. Sect. 4.3 of Kollmann et al. 2018). Therefore, even if the density of radi-ating relativistic electrons can be estimated from the maximum flux of the quiescent emission and its corresponding frequency (e.g., Berger et al. 2008b, Sect. 3.1), we cannot use such an in-formation for estimating the mass flux across the magnetosphere of LSR J1835 +3259 (see Metodieva et al. 2017, for further dis-cussion and modeling of the quiescent emission of our star). Further information on the magnetospheric environment of UCD stars is provided by their X-ray emission. Their X-ray lu-minosities are much lower than those expected on the basis of the relationship between the radio and the X-ray fluxes observed in stars with an higher mass and e ff ective temperature, the so-called Güdel-Benz law (Guedel & Benz 1993; Güdel 2004). This is likely related to the almost neutral atmospheres of those very low mass stars that do not allow for stellar coronae similar to those observed in stars of larger mass. Transient energy release asso-ciated with stellar flares is rare in the stars in our study, and does not appear to be a significant source of electrons that can account for their radio emission (Kao et al. 2023). On the other hand, we shall investigate the possibility that a weak stellar ionospheric outflow can contribute as a plasma source to the magnetosphere in Sect. 2.3 and Appendix A and found it plausible under certain conditions. In addition, we explore the role of small planets sim-ilar to Io, that is, planets orbiting radio-emitting UCDs and BDs as sources of electrons. It is also interesting to note that active satellites orbiting hot Jupiters have been invoked to source metals, in particu-lar the neutral alkali metal with a rapid photoionization time sodium, in the observed exospheres of transiting planets (Oza et al. 2019). One candidate may be especially compelling based on a Doppler redshift approaching the satellite orbital velocity near ∼ +15 km /s (Oza et al. 2024). Although exoplanet atmo-spheres can have solar abundance alkali metals in their escap-ing envelopes, Schmidt (2022) points out that the unique vec-tor of radiation pressure along our line-of-sight would exclu-sively Doppler blueshift alkali metals like at Mercury, there-fore a Doppler redshift is unambiguous evidence of a satellite-magnetosphere interaction, where redshifts (Unni et al. 2025) can be fuelled by charge-exchange or dissociative recombination as is the case at Io (Schmidt et al. 2023). Indeed, the presence of a SO 2 plasma torus somewhat analogous to what we describe here has been suggested around WASP-39 b on the basis of vari-able JWST /MIRI data (Oza et al. 2026). Furthermore, Sucerquia & Cuello (2025) indeed demonstrated that close-in satellites or-biting giant planets can be stable on Gyr timescales. 
+
+2. Model 
+
+In this Section, we consider the two mechanisms that have been proposed to produce the auroral ECM emission in LSR J1835 +3259, that is, the ionospheric-magnetospheric cou-pling (Sect. 2.1) and the star-planet interaction that excites Alfven waves through the orbital motion of a planet inside the stellar magnetosphere (Sect. 2.2). Starting from the observed ECM flux, these two models can be used to estimate an upper limit for the mass flow ˙M across the stellar magnetosphere due to magnetospheric convection (Hill et al. 1981). In the case of Jupiter, both mechanisms are simultaneously in operation with an average radio power of ∼ 10 10 W for the auroral spot pro-duced by Io and ∼ 4 × 10 10 W for the overall Jovian auro-ral emission mainly powered by the magnetospheric-ionospheric coupling (Zarka et al. 2001). Nevertheless, being interested in es-timating an upper limit on ˙M, we consider each mechanism as operating alone and being responsible for the entire ECM emis-sion of LSR J1835 +3259. We refer the reader to Kuznetsov et al. (2012) and Leto et al. (2017) for the possibility of distinguishing between the two mechanisms on the basis of the time modulation of the observed radio flux. The magnetospheric mass flow can be supplied by a stellar ionospheric outflow and /or by a volcanically active planet. We shall introduce and theoretically discuss these two sources in Sect. 2.3, providing details in Appendix A, and Sect. 2.4, respectively. Specifically, we shall consider the case of a tidally heated planet, akin the Jupiter moon Io, in Sects. 2.4.1 and 2.4.2, while the case of a planet heated by electromagnetic induction will be discussed in Sect. 2.4.3 and in Appendixes B and B.1. 
+
+> 2.1. Ionospheric-magnetospheric coupling
+
+Ionospheric-magnetospheric coupling has been invoked to ex-plain the auroral radio emission due to the ECM instability in giant exoplanets and UCD stars by Nichols (2011) and Turnpen-ney et al. (2017) using a model analogous to that of the oval auroral emission in Jupiter. This model is based on the flow of electric currents that couple the magnetosphere with the iono-sphere of the star, powered by the deviation from rigid rotation 
+
+> Article number, page 2 of 16 A. F. Lanza and A. V. Oza: Ion sources in UCD stars
+
+in the magnetosphere at large distances from the star itself. Such a deviation is produced by the angular momentum flux associ-ated with a mass flux ˙M across the magnetosphere that in turn is due to magnetospheric convection. The rapid rotation of our UCD star makes the centrifugal force stronger than the gravity beyond the corotation radius Rcor 
+
+that is given by 
+
+Rcor = GM s
+
+Ω2s
+
+!1/3
+
+, (2) where G is the gravitation constant, Ms the mass of the star and 
+
+Ωs its angular velocity of rotation. In the domain beyond the corotation radius, i.e., for r ≥ Rcor , magnetospheric convection occurs, that is, magnetic flux tubes with a plasma density greater than their neighbour tubes move outwards in the centrifugal po-tential, while less dense tubes move inwards (see Sect. 5.1 of Bagenal & Dols 2020). The collective e ff ects of such interchange motions were described by Siscoe & Summers (1981) as a dif-fusive process considering only interchanges occurring on small spatial scales. However, Hill et al. (1981) pointed out that the motion can develop itself on lengthscales comparable with the size of the magnetosphere, if there is a longitudinal asymmetry in the mass distribution as it happens in the case of Jupiter due to the asymmetry of the density inside the plasma torus fed by its satellite Io. In such a case, a magnetospheric convective motion occurs with the denser longitude sectors moving outwards in the centrifugal potential, while a return flow towards the planet sets in the less dense longitude ranges. The deviation from rigid rotation produces an azimuthal component of the magnetic field that is associated with an elec-tric current that flows along the magnetic field lines, thus cou-pling the magnetosphere with the Pedersen layer of the stellar atmosphere (where the gyrofrequency approaches the collision frequency), that is, the ionosphere of the star, where the electric circuit is closed. The precipitation of electrons onto the iono-sphere, accelerated by the di ff erence of potential that maintains the field-aligned electric current, is responsible for the ECM in-stability and the radio emission from the high-latitude regions of the star akin the radio emission from the Jupiter auroral ovals. The radial lengthscale beyond which the angular velocity of rotation of the magnetospheric plasma deviates from rigid coro-tation with the star is known as the Hill radius, RH, and is given by 
+
+RH = Rs
+
+
+
+2π Σ∗ 
+
+> p
+
+B2s R2s
+
+˙M
+
+
+
+> 1/4
+
+, (3) where Σ∗ 
+
+> p
+
+is the e ff ective Pedersen conductance in the ionosphere of the star, Rs its radius, Bs its surface equatorial magnetic field, and ˙ M the mass flux across the magnetosphere produced by mag-netospheric convection (Hill 2001; Turnpenney et al. 2017). A full model of the ionospheric-magnetospheric currents and the process by which they power the ECM emission of the star is provided by Turnpenney et al. (2017) and we refer the reader to that work for details. Here we limit ourselves to a qualitative description of their model that allows to estimate the mass flux ˙ M
+
+across the magnetosphere required to produce a deviation from corotation that accounts for the observed ECM power. The ionospheric-magnetospheric coupling model depends on several parameters (see Sect. 2 of Turnpenney et al. 2017). The angular velocity of rotation and the radius of our UCD star can be measured or estimated from its structure models, respec-tively. The magnetic field can be evaluated from the frequency of the ECM emission using Eq. (1) and generally refers to the poles of the star where the field is the strongest. To evaluate the stellar field Bm inside the magnetosphere, we simply scale it with the distance assuming a dipole geometry that is supported by the observations of the resolved magnetosphere around LSR J1835 +3259 (Climent et al. 2023; Kao et al. 2023). On the other hand, the e ff ective Pedersen conductance, Σ∗
+
+> P
+
+,the electron number density, n, and the plasma particle ther-mal energy, Wth , are poorly known. For this reason, Turnpenney et al. (2017) explore a range of variation for those parameters considering 0 .01 ≤ Σ∗ 
+
+> P
+
+≤ 10 mho, 10 3 ≤ n ≤ 10 5 m−3, and 0.25 ≤ Wth ≤ 25 keV. The wide range adopted for the Peder-sen conductance, equivalently 0.01-10 Siemens, is justified be-cause the electron precipitation associated with the electric cur-rents propagating along the magnetic field lines can enhance the conductivity in a planetary or stellar atmosphere. Specifically, in the case of Jupiter, Nichols & Cowley (2004) found an enhance-ment from ∼ 0.05 to 0 .7 mho. A similar enhancement can occur in the case of UCD stars, although a quantitative determination of the e ff ective Pedersen conductance in their atmospheres is still lacking (cf. Sect. 4 of Turnpenney et al. 2017). Concerning the other parameters n and Wth , the values mea-sured outside the current sheet of Jupiter are n = 10 4 m−3 and 
+
+Wth = 2.5 keV (Scudder et al. 1981), in the mid of the ranges we explore. Moreover, the stellar magnetosphere can be assumed to be closed as in the case of Jupiter or its magnetic field lines can be assumed to be open above some latitude and interacting with the interstellar medium as the star moves across the medium it-self. These two di ff erent magnetospheric configurations imply di ff erent mass flow rates ˙M for a given ECM emission flux (cf. Sect. 3.1). 
+
+> 2.2. Star-planet interaction
+
+The ECM emission that is observed as slow auroral bursts likely originates close to the poles of the star where the field is strongest (Kao et al. 2023). In the framework of the star-planet interaction model (Saur et al. 2021), ECM is powered by Alfven waves excited by the orbital motion of a close-by planet. The en-ergy made available by those waves can be estimated by means of the Alfven wing model (Neubauer 1980). We assume that the round-trip time of an Alfven wave from the planet to the stellar surface is longer than the convection time of the plasma past the planet. This is indeed the case in relatively dense magnetospheres that we consider to estimate the maximal mass flow. The opposite regime (the so-called unipolar inductor regime) will not be considered here and we refer to Neubauer (1998) and Saur et al. (2021) for its treatment. The expression in Eq. (8) of Noyola et al. (2014), discussed in Narang et al. (2023), provides the radio flux S observed at the Earth in the case of star-planet interaction as 
+
+S = 2π β S R2m B2mV0
+
+μ ν ECM Ω d2
+
+r ρm
+
+ρm + μ−1(Bm/V0)2 , (4) where βS is the conversion e ffi ciency between the Alfven wing power and the radio power, Rm the radius of the planet, Bm the stellar magnetic field strength at the planet, V0 the relative veloc-ity between the local magnetic field and the planet along its orbit, 
+
+ρm the plasma density at the planet, μ the magnetic permeability of the vacuum, νECM the ECM frequency (see Eq. 1), Ω the solid angle in which the emission is beamed, and d the distance of the star from the Earth. The conversion e ffi ciency βS can be assumed equal to that of the Jupiter-Io system, that is, of the order of 0.01  
+
+> Article number, page 3 of 16 A&A proofs: manuscript no. LanzaOza_main_revision_2
+
+(Zarka et al. 2001; Zarka 2007); similarly, the solid angle of the beamed ECM emission is assumed to be Ω = 0.15 sr (Queinnec & Zarka 2001; Zarka et al. 2004). The relative velocity V0 in the case of a circular prograde planetary orbit in the equatorial plane of the star is V0 = |Ωsa − √GM s/a|, where Ωs is the stellar spin angular velocity, G the gravitation constant, Ms the mass of the star, and a the orbital radius. When applied to the case of the Jupiter-Io system, Eq. (4) implies an emitted radio power of ∼ 5 × 10 9 W adopting βS =
+
+0.01, V0 ∼ 57 km s −1, Bm = 0.02 Gauss (Zarka et al. 2001) and a density of the plasma around Io of ρm ∼ 7 × 10 −17 kg m −3
+
+(see Sect. 2.4 of Noyola et al. 2014). Such an estimate is of the same order of magnitude of the average observed radio power as produced by the interaction of Io with Jupiter’s magnetic field (cf. Sect. 2 of Zarka et al. 2001). Equation (4) allows us to estimate the density of the plasma 
+
+ρm close to the planet provided that the flux of the auroral radio emission is measured, the radius of the planet Rm is assumed, and the stellar magnetic field at the distance of the planet Bm is known, typically by adopting a dipole geometry (cf. for example, Narang et al. 2023). The sensitivity to the density ρm of Eq. (4) is maximal when ρm is much smaller than the critical density 
+
+ρcrit ≡ μ−1(Bm/V0)2, a regime for which S ∝ √ρm as discussed by Noyola et al. (2014). It is important to notice that the value of Bm decreases with the distance from the star making the density ρm diverge at the orbital distance where 
+
+Bm = Blim ≡
+
+s
+
+μ S νECM Ω d2
+
+2πβ S R2m V0
+
+. (5) Therefore, Eq. (4) cannot be applied beyond that limit for our purposes. Moreover, another divergence occurs at the corotation distance Rcor where V0 = 0. Nevertheless, in the case of fast-rotating UCD stars, Rcor is usually inside the Roche limit within which a planet is destroyed by the tidal force of the star, that is given by (cf. Ford & Rasio 2006) 
+
+aRoche = 2.16 Rm
+
+Ms
+
+Mm
+
+!1/3
+
+, (6) where Mm is the mass of the planet. When ρm >∼ ρcrit , the ECM emission power becomes almost independent of the plasma density at the source of the Alfven waves according to Eq. (4). However, such a regime corresponds to a super-Alfvenic interaction where an MHD shock develops close to the planet and the Alfven waves cannot propagate to the star making the excitation of auroral ECM emission at the star unfeasible. Finally, we notice that the expression for the Alfven wing power adopted by Noyola et al. (2014) and Narang et al. (2023) is smaller by a factor of 2 with respect to that proposed by Saur et al. (2013) (cf. their Eq. 55) in the limit V0/VA → 0, where VA ≡ Bm/ √μρ m is the Alfven velocity. This is due to the consideration by Saur et al. (2013) of the energy flux both inside and outside the flux tube of cross section πR2m that was not ac-counted for in the original work by Neubauer (1980), according to Callingham et al. (2024) – see their Eq. (3) and its discussion. A relevant point is that Eq. (4) provides a density estimate at the source of the Alfven waves, that is, close to the planet. In other words, it provides a snapshot that depends on the po-sition of the planet along its orbit and can vary in time – see Sect. 3 for two density measurements in the magnetosphere of LSR J1835 +3259 at di ff erent times when di ff erent fluxes S were observed. Moreover, if the magnetic axis of the stellar dipole is inclined to the orbital angular momentum of the planet, Bm
+
+varies up to a factor of two at a given orbital radius, producing a variation in the estimated density up to a factor of four when 
+
+ρ ≪ ρcrit , that is the regime where the application of Eq. (4) is usually made. The density close to the planet is the highest in the magneto-sphere because the planet is the source of plasma (cf. Sect. 2.4). Therefore, the density derived from Eq. (4) can be used to es-timate an upper limit to the plasma mass flow due to magneto-spheric corotating convection. The maximum radial velocity of the magnetospheric convection at a distance r from the centre of the star is provided by (Hill et al. 1981, cf. their Eq. 26) 
+
+3mc (r) <∼ 1
+
+√6 Ωsr rRH
+
+!2
+
+, (7) where RH is the Hill radius (see Eq. 3). Therefore, in stationary conditions, an upper limit to the mass flow rate can be estimated from the equation of mass continuity by integrating our upper limit to the mass flux ρm(a) 3mc (a) over the lateral surface of the cylinder of radius a across which the plasma flows as a conse-quence of magnetospheric convection. In this way, our estimate of the upper limit to the mass flow, based on the density derived from our star-planet interaction model, ˙MSPI , is ˙MSPI <∼ 4πaH c ρm(a) 3mc (a), (8) where a is the orbital distance of the planet, whose orbit is as-sumed circular, 4 πaH c is the lateral surface of the cylinder across which the mass flux occurs, the density ρm(a) at distance a is ob-tained from Eq. (4), and the magnetospheric convective velocity 
+
+3mc (a) by Eq. (7) with r = a. The semi-height of the cylinder, 
+
+Hc, is the so-called centrifugal scale height, that is, the distance from the equator within which the outward flow, transported by magnetospheric convection, is largely confined. It is given by 
+
+Hc = 2kbT
+
+3mΩ2s
+
+!1/2
+
+, (9) where kb is the Boltzmann constant, T the temperature of the magnetospheric plasma, and m the mass of the ions of which the magnetospheric plasma mainly consists (Hill et al. 1981). The plasma is assumed to corotate with the planet because the Hill radius is of the order of ∼ 100 stellar radii or larger in our case (see Sect. 3.3). If that were not the case, Ωs in Eq. (9) should be replaced by the angular velocity of the plasma. The ion mass is computed considering a plasma composed of SO 2 ions, like in the case of the Jupiter moon Io (cf. Sect. 2.4.1), while the plasma has a maximal temperature that is given by the equilibrium temperature of a black body heated by the stellar ra-diation at distance a, that is, T <∼ Teq ≡ Teff 
+
+√Rs/a, where Rs
+
+is the radius and Teff the e ff ective temperature of the star. Equa-tion (8) does not take into account the return flow towards the star that develops in the magnetospheric corotating convection, therefore, it provides us with an upper limit to the mass loss rate ˙MSPI moving outwards across the magnetosphere. Our simplified analysis neglects local plasma sources and sinks and assumes only an axisymmetric source in the inner re-gion of the magnetosphere, so that the mass flow rate ˙M is a constant and is independent of the radial coordinate. In the Hill model, the mass flow ultimately depends on the radial gradient in the plasma angular momentum per unit mass (cf. Eq. 16 in Turnpenney et al. 2017). In a stationary regime, that gradient ad-justs itself in order to transport the entire mass flow produced by 
+
+> Article number, page 4 of 16 A. F. Lanza and A. V. Oza: Ion sources in UCD stars
+
+the source of plasma in the inner magnetosphere. In our formu-lation, we aim at estimating an upper limit to such a mass flow. As displayed on the r.h.s. of Eq. (8), such an upper limit is pro-portional to 3mc (a). In turn, 3mc ∝ R−2H ∝ ˙M1/2 from Eq. (7) and Eq. (3). Therefore, in our approach, it is the actual value of the average density ρm(a) that is predicted to adjust itself in order to transport the required mass loss rate across the cylindrical sheet of radius a. Such an adjustment is possible through a constant multiplicative factor because ˙M is a constant independent of the radial distance in the Hill model. 
+
+> 2.3. Magnetospheric mass flux due to an ionospheric flow
+
+UCD stars show X-ray emission indicating the presence of a plasma with temperatures of the order of the MK in their outer atmospheres. Given the measured emission measure values and assuming that the hot plasma is confined by the magnetic field, it is possible to estimate its spatial extent finding that it is confined to <∼ 1 − 10% of the stellar radius (see Sect. 3.1.3 and the final paragraphs of Sect. 4.2 of Magaudda et al. 2024, for details). In other words, the coronae of UCD stars are geometrically thin. If a fraction of the coronal magnetic field lines is open, for ex-ample, as a result of magnetic reconnection processes, some part of such an hot plasma can flow into the surrounding ionosphere of the star being accelerated by its own thermal pressure and the centrifugal force produced by the rapid rotation of the star. The induced mass flux across the ionosphere and the magne-tosphere is expected to be low because the plasma density de-creases rapidly away from the surface of the star given its ob-served small emission measure. We introduce a detailed model of such an ionospheric plasma outflow in Appendix A showing that its density decreases away from the star up to the corotation radius. At a given radial dis-tance, the density of the flow is maximal in the equatorial plane and decreases with increasing latitude away from it. In other words, the ionospheric plasma outflow expected along open magnetic field lines is largely similar to that coming from Io in Jupiter’s magnetosphere, that is, located not far from the corota-tion radius in the inner magnetosphere of the planet. This allows us to treat the corresponding mass and angular momentum trans-port inside the magnetosphere of our star by means of the Hill model that assumes that the plasma source is located at the base of the magnetosphere below or at the corotation radius. In Appendix A, we show that an upper limit to the mass flux across the magnetosphere of an UCD star is provided by Eq. (A.9). That upper limit is useful for our comparison with the mass flux as derived from the radio observations (cf. Sect. 3.3). The main uncertainty in the application to LSR J1835 +3259 comes from the e ff ective Pedersen conductance. Therefore, fol-lowing Turnpenney et al. (2017), we shall vary such a parameter between 0 .01 and 10 mho. 
+
+> 2.4. Mechanisms producing mass loss from a putative planet
+
+In addition to an ionospheric outflow, we consider now the pos-sibility of a putative planet orbiting our UCD star as a source of plasma to its magnetosphere. Its evaporation can be powered by tidal heating (Sects. 2.4.1 and 2.4.2) and /or electric currents induced by its orbital motion inside the stellar magnetosphere (Sect. 2.4.3 and Appendixes B and B.1). 
+
+> 2.4.1. Tidal heating and mass loss rate
+
+The source of ions and most of the electrons permeating Jupiter’s magnetosphere is Io’s volcanic activity, the energy of which is provided by tidal heating. With an observed Io surface mean heat flux of ∼ 2 W m −2 (e.g., Veeder et al. 1994; Tyler et al. 2015), its mean internal heating power is of ∼ 8.3 × 10 13 W. Such a heating is produced by the tides induced by Jupiter on Io whose orbit is slightly eccentric ( e ∼ 0.0041) owing to the perturbations by Europa and Ganymede. The power Ptide dissipated by tides for small eccentricity ( e <∼
+
+0.2) is given by (e.g., Jackson et al. 2008b; Miller et al. 2009) 
+
+Ptide = 63 4
+
+"
+
+(GM s)3/2 MsR5me2
+
+Q′
+
+> m
+
+!# 
+
+a−15 /2, (10) where G is the gravitation constant, Ms the mass of the star, Rm
+
+the radius of the planet, Q′ 
+
+> m
+
+the modified tidal quality factor of the planet that quantifies the e ffi ciency of tidal dissipation in its interior, and a the orbit semimajor axis. The lower the modified quality factor Q′
+
+> m
+
+, the stronger the tidal dissipation. It is defined as Q′ 
+
+> m
+
+= (3 /2)( Qm/k2), where Qm is the tidal quality factor and 
+
+k2 the tidal Love number of the planet. For a rocky body such as Io, 10 2 <∼ Q′ 
+
+> m
+
+<∼ 10 3 depending on its rheology and the tidal fre-quency (see discussion in, e.g., Sect. 2.5 of Lanza 2021). Specifi-cally in the case of Io, Q′ 
+
+> m
+
+is about 100 according to Lainey et al. (2009) that was confirmed by a recent determination based on 
+
+Juno Doppler measurements (Park et al. 2024). The mass loss of our putative planet occurs from its atmo-sphere. In the case of Io, its replenishing of Jupiter magneto-sphere is a complex process that includes interactions between the upper atmosphere and the exosphere of the moon, the neu-tral clouds, the plasma torus, the plasma sheet, and the magne-tosphere of Jupiter with several key aspects not understood yet (see Roth et al. 2024). However, the leading explanation of its mass loss considers atmospheric sputtering which is momentum transfer between incoming ions and the upper volcanic atmo-sphere of Io (Ha ff et al. 1981; Johnson 2004). The mass loss can be approximated as a function of plasma pressure by scaling to Io, as described in Gebek & Oza (2020), Eq. (14): ˙Msputtering ∼ PV U R2x ˙MIo , (11) where PV is the product of the plasma pressure and ion veloc-ity, U the binding energy, Rx the exobase radius, all of the above quantities scaled to Io’s whose total mass loss rate is ˙MIo . To es-timate the sputtering of a trace volatile i, in the bulk atmosphere, one can add a prefactor of xi, the mass mixing ratio of the volatile with respect to a nominal SO 2 background. At Io, described in Oza et al. (2019) Eq. (7), this can be as large as xNa ≈ 0.1 for sodium, at the exobase. We focus on the process that extracts neutral SO 2 from the exosphere of Io to ultimately fill in the plasma torus and assume that the molecules are ionized immediately after their extraction and di ff use through Jupiter’s magnetosphere. The dominant pro-cess that extracts neutrals from Io is represented by the elastic collisions between the ions of the plasma torus, that corotates with Jupiter magnetic field and overtakes Io with a velocity of 57 km s −1, and the SO 2 molecules in the exosphere of the moon. Such a sputtering process imparts velocities in excess of the es-cape velocity from Io of 2.56 km s −1 while dissociating and ionizing molecules, so that they leave the moon’s atmosphere as ions. The mass loss rate varies linearly with the atmospheric density at the surface of Io according to a model by Saur et al.  
+
+> Article number, page 5 of 16 A&A proofs: manuscript no. LanzaOza_main_revision_2
+
+(2003). On the other hand, the surface atmospheric density de-pends on the gas outflows produced by active volcanos as well as on the sublimation of frozen SO 2 deposited on the surface by previous volcanic activity. Both those processes lead to an at-mospheric density that can be assumed proportional to the mass rate erupted by Io’s volcanos averaged over a su ffi ciently long period of time, a quantity that can be assumed to be proportional to Ptide .We assume that similar processes occur in the case of a small rocky planet orbiting an UCD star and that the density of the plasma close to the planet surface is proportional to the mass loss rate from its exosphere. Sulphur dioxide has now been iden-tified by JWST /MIRI and may be an infrared satellite signature (Oza et al. 2026) of the toroidal plasma processes we describe here for GHz frequencies. In this way, adopting the above model by Saur et al. (2003), the density of the magnetospheric plasma close to the planet can be assumed proportional to its average volcanically erupted mass rate and, therefore, to Ptide , consider-ing stationary conditions. Since the mass flow rate transported by magnetospheric convection is proportional to the magneto-spheric density ρ(a) at the orbital radius a of the planet (see, for example, Eq. 8), the mass flow rate will be proportional to the tidal heating power Ptide inside the volcanically active planet. 
+
+> 2.4.2. Maintaining the eccentricity of the planetary orbit
+
+In the absence of further bodies in the system that excite it, the eccentricity of the orbit of the putative planet decays on an e-folding timescale given by Eq. (4) by Jackson et al. (2008a) that we recast as 
+
+τe ≡ − 1
+
+ede dt 
+
+!−1
+
+= 263 π Porb Q′
+
+> m
+
+Mm
+
+Ms
+
+! aRm
+
+!5
+
+, (12) where Porb is the orbital period of the planet and the other sym-bols have already been introduced above. For example, adopting 
+
+Q′ 
+
+> m
+
+∼ 100, a semimajor axis a = 9.5 Rs, a planet with the radius and mass of Io, and a star with the mass of LSR J1835 +3259, we obtain a timescale for the decay of the eccentricity of only 
+
+∼ 7800 years, that is, ∼ 20 times shorter than the Io eccentricity damping timescale for the same Q′
+
+> m
+
+. One of the simplest scenar-ios for keeping the orbit of the planet eccentric is the presence of a second planet on a co-planar, non-resonant, external orbit as in the simple model by Mardling (2007). In such a scenario, the orbit of the inner planet can be maintained at a small almost constant eccentricity value ( e ≈ 10 −3) for a timescale of sev-eral Gyr. Such an "equilibrium" eccentricity is given by Eq. (36) of Mardling (2007), while the timescale of its very slow decay can be computed with the method presented in Sect. 3.3.3 of the same paper. In our implementation of Eq. (36) of Mardling (2007), in addition to the General Relativity precession, we con-sider in their Eq. (34) the contribution of the rotational deforma-tion of the star to the apsidal precession as (see Eqs. (31) and (49) of Mardling & Lin 2002) ˙ηrot = ks
+
+np
+
+(1 + Mm/Ms)(1 − e2)2
+
+ Rs
+
+a
+
+5
+
+Ω2s , (13) where ks = 0.14 is the apsidal motion constant for a fully convec-tive star, np = 2π/ Porb is the mean orbital motion of the planet, and the stellar spin is aligned with the orbital angular momen-tum. We shall adopt the model by Mardling (2007) to justify the maintaining of the eccentricity of the inner putative planet, the  
+
+> Table 1. Parameters of the UCD star LSR J1835 +3259
+
+Parameter Value Mass (M J) 77 .28 ± 10 .34 Radius (R J) 1.07 ± 0.05 
+
+Teff (K) 2800 ± 30 Distance (pc) 5.6875 ± 0.00292 Spectral type M8.5V Rotation Period (hr) 2.84 ± 0.01 
+
+Bp (T) ∼ 0.3volcanic activity of which provides plasma to the magnetosphere of our UCD star, and apply it in Sect. 3.2 to estimate the equi-librium eccentricity, the tidal power heating rate, and the long timescale of its decay. 
+
+> 2.4.3. Induction heating
+
+The strong magnetic fields of UCDs and BDs make it possible an electromagnetic induction heating of the interiors of their close-by planets. As we shall see in Sect. 3.5, such a mechanism gener-ally does not provide enough power to justify the required evapo-ration rates from those planets according to the model presented in Appendix B. 
+
+3. Application to LSR J1835+3259 
+
+The main parameters of LSR J1835 +3259 are listed in Table 1 as reported by Kao et al. (2023). The magnetic field intensity at the pole Bp is estimated from the ECM emission frequency as discussed in Sect. 1. In this section, first we apply the models presented in Sects. 2.1 (magnetospheric-ionospheric coupling or M-I model) and 2.2 (Alfven wing model) to estimate the mass flow across the stellar magnetosphere from its observed ECM radio emission (see Sects. 3.1 and 3.2). In Table 2, we report on the left column the estimates of the upper limits of the mass flow rate across the magnetosphere, ˙M, according to the M-I and Alfven wing models, the latter for four values of the e ff ective Pedersen conductance, Σ∗
+
+> p
+
+, respectively. On the other columns of Table 2, we list for comparison the theoretical mass flow rates from a stellar ionospheric outflow (on the second column from the left) or from a putative planet orbiting around our UCD star with internal tidal heating (on the third column), or electric in-duction heating (on the fourth column) as predicted by the mod-els in Sects. A and 2.4, respectively (see Sects. 3.3, 3.4, 3.5). De-tails on the determination of the mass loss rates from the ECM flux or on its theoretical estimates will be provided below in the respective subsections. We report in Table 2 the results of the comparison between the measured and the theoretical values to conclude whether a given model is suitable to account for the estimated mass flux (yes) or not (no). 
+
+> 3.1. Auroral Ovals: Estimating mass flux from magnetospheric-ionospheric coupling
+
+Turnpenney et al. (2017) provide estimates of the mass flux across the magnetosphere of an UCD star required to account 
+
+> Article number, page 6 of 16 A. F. Lanza and A. V. Oza: Ion sources in UCD stars
+
+˙M from observed ECM emission Theoretical ˙M from models Ionospheric outflow Planet tidal heating Planet induction heating 6 ≤ a/Rs ≤ 10, Io-like planet 6 ≤ a/Rs ≤ 10, Io-like planet, 
+
+⟨σ⟩ = 0.1 mho m −1
+
+M-I model, closed magnetosphere, ˙M ∼ 10 5 kg s −1
+
+YES, if Σ∗ 
+
+> p
+
+<∼ 0.02 mho YES NO M-I model, open magnetosphere, ˙M ∼ 10 3 kg s −1
+
+YES, if Σ <∼ 2 mho YES YES Alfven Wing model, 6 ≤ a/Rs ≤ 10 
+
+Σ∗ 
+
+> p
+
+= 10 .0 mho : ˙M ∼ (0 .05 − 1.8) × 10 4 kg s −1 NO YES YES 
+
+Σ∗ 
+
+> p
+
+= 1.0 mho : ˙M ∼ (0 .05 − 1.8) × 10 5 kg s −1 NO YES NO 
+
+Σ∗ 
+
+> p
+
+= 0.1 mho : ˙M ∼ (0 .05 − 1.8) × 10 6 kg s −1 NO YES NO 
+
+Σ∗ 
+
+> p
+
+= 0.01 mho : ˙M ∼ (0 .05 − 1.8) × 10 7 kg s −1 NO NO NO  
+
+> Table 2. Summary of the comparison of the upper limits to the mass flow rates across the stellar magnetosphere as obtained from the ECM emission with the rates allowed by the di ff erent theoretical models.
+
+for the observed ECM emission fluxes for the range of electro-dynamic parameters considered in Sect. 2.1, a rotation period of 
+
+∼ 2 hours, and a surface magnetic dipole field of 0.15 T at the equator. Such rotation period and magnetic field apply well to the case of LSR J1835 +3259. According to Hallinan et al. (2008) and Kao et al. (2023), the bursty emission, attributed to ECM, has an integrated flux S in the 8.4 GHz band of ∼ 2500 μJy. We refer the reader to Sect. 3.2 of Turnpenney et al. (2017) for a detailed account, while we report in Table 2 only the max-imum values of the mass flux that are of the order of ˙M ∼ 10 5
+
+or ∼ 10 3 kg s −1 for a closed or an open magnetosphere with the UCD star moving with a velocity of 50 km s −1 with respect to the interstellar medium, respectively. We remind that in Turnpenney et al. (2017)’s modeling the e ff ective Pedersen conductance is assumed to vary between 0 .01 and 10 .0 mho. 
+
+3.2. Satellite Footprints: Estimating mass flux from star-planet interaction model 
+
+Now we assume that the ECM emission of LSR J1835 +3259 is powered by a star-planet interaction mediated by Alfven waves excited at the planet rather than by shear Alfven waves produced by the corotation breakdown as in the case of the magnetospheric-ionospheric coupling considered in Sect. 3.1. The bursty emission flux is assumed to be S = 2500 μJy as in Sect. 3.1. The corresponding mass flow across the magnetosphere of the star, estimated with the model introduced in Sect. 2.2, is shown in Fig. 1. We consider a planet with the same radius as Io orbiting outside the Roche limit within which a planet would be destroyed by the tidal force of the star ( <∼ 6 Rs) and plot the mass flow across the magnetosphere vs. the semimajor axis of the planetary orbit up to the distance where the magnetic field reaches the limit value in Eq. (5) and the density diverges (a/Rs ∼ 10 .7 in the present case). We plot the mass flow for four di ff erent values of the e ff ective Pedersen conductance Σ∗ 
+
+> p
+
+in the range adopted by Turnpenney et al. (2017). The plasma is as-sumed to consist of ionized SO 2 molecules as in the case of Io, giving a mass of 64.07 atomic mass units in Eq. (9), while the plasma temperature T is the black body equilibrium temperature at the distance of the planet, computed with the stellar e ff ective temperature as listed in Table 1 (Boehm et al. 2025). The mass flux in Fig. 1 increases with the semimajor axis of the planet a for a fixed Pedersen conductance Σ∗ 
+
+> p
+
+because the density as given by Eq. (4) and the flow velocity 3mc due to coro-tating magnetospheric convection both increase with a, while the centrifugal scale height decreases slowly as Hc ∝ a−1/4. To generalize our upper limit to the mass flux given by Eq. (8) to other values of the Pedersen conductance, we consider the de-pendence of the di ff erent terms appearing in that equation on Σ∗
+
+> p
+
+.For a given density at the distance of the planet ρm(a) as given by Eq. (4) that does not depend on Σ∗
+
+> p
+
+, equation (8) gives an upper limit to the mass flow ˙MSPI ∝ 3mc because Hc does not depend on Σ∗
+
+> p
+
+. In turn, 3mc ∝ R−2H from Eq. (7) and RH ∝ (Σ∗
+
+> p
+
+)1/4 from Eq. (3), yielding the dependence of the mass flow rate on Peder-sen conductance as ˙MSPI ∝ 3mc ∝ (Σ∗
+
+> p
+
+)−1/2. The dependence of the mass flux on the radius of the planet is remarkably stronger with ˙MSPI ∝ R−4m because a larger cross section of the planet makes the excitation of the Alfven waves that power the ECM emission more e ffi cient and requires a lower plasma density (cf. Eq. 4). In the first column of Table 2, we list the ranges of the upper limits of the mass flow rates as obtained for an Io-like planet or-biting between 6 Rs (the Roche limit) and 10 Rs stellar radii for four di ff erent values of the e ff ective Pedersen conductance, Σ∗
+
+> p
+
+.The lower values of the reported ranges refer to the lower limit of the orbit semimajor axis, a = 6 Rs, while the upper values refer to a = 10 Rs. For a > 10 Rs, the mass flow rate diverges rapidly reaching unrealistically large values and the model can-not be applied for a > 10 .7 Rs because the star-planet interaction becomes super-Alfvenic (cf. Sect. 2.2). 
+
+3.3. Coronal Escape: Theoretical mass flux from an 
+
+ionospheric outflow 
+
+LSR J1835 +3259 has an upper limit to its X-ray luminosity in the 0 .1 − 2 keV band of 3 .3 × 10 17 W (Berger et al. 2008a). Adopting a typical coronal temperature Tcor = 1.5 MK as in Schrijver (2009), we obtain an upper limit for its coronal base density ne0 = 1.51 ×10 14 m−3 from Eq. (A.1) that for an hydrogen plasma means ρ0 = 2.52 × 10 −13 kg m −3. In the case of our star, the coronal pressure scale height is Hp = 0.1624 Rs for the above coronal temperature, while the corotation radius is Rcor = 3.87 Rs
+
+from Eq. (2). The centrifugal scale height is Hc = 1.93 Rs as given by Eq. (9) for an hydrogen plasma with a temperature of 1.5 MK. The fraction fw of the surface of the star covered by the magnetic field lines along which there is a ionospheric outflow is taken as the mean value of the fractional area of the solar coronal holes as estimated by Soon et al. (2000), that is, fw = 0.15 in Eq. (A.9).                     
+
+> Article number, page 7 of 16 A&A proofs: manuscript no. LanzaOza_main_revision_2
+> Fig. 1. Upper limit to the mass flux ˙MSPI across the magnetosphere of LSR J1835 +3259 vs. the orbital radius of a planet with the radius of Io as estimated by means of Eq. (8) assuming the star-planet interac-tion and magnetospheric convection model in Sect. 2.2 and an observed auroral radio flux S=2500 μJy. Di ff erent line colours and linestyle re-fer to di ff erent values of the e ff ective Pedersen conductance: Σ∗
+> p=0.01 mho (solid, cyan); Σ∗
+> p=0.1 mho (dotted, green); Σ∗
+> p=1.0 mho (dashed, orange); and Σ∗
+> p=10 .0 mho (dash-dotted, yellow).
+
+The upper limit for the mass flow across the magnetosphere of our star ˙Mion flow , supported by a ionospheric outflow originat-ing from the base of the corona according to the model presented in App. A, is given in Table 3 together with the upper limit for the magnetospheric convection velocity 3mc and the Hill radius 
+
+RH for four values of the e ff ective Pedersen conductance Σ∗ 
+
+> p
+
+that span the range adopted by Turnpenney et al. (2017). In our model, the density at the level of the magnetosphere where corotating convection begins (that is, at r = Rcor ) is in-dependent of the magnetospheric conductance Σ∗ 
+
+> p
+
+and depends only on the ionospheric outflow model, that is, on the adopted ionospheric outflow temperature Tw and base density ρ0 as well as the stellar mass, radius, and angular velocity (cf. Eq. A.6). Therefore, the di ff erences in the values of the mass flux listed in Table 3 depend on the di ff erences in the velocity of the corotat-ing magnetospheric convection 3mc , that in turn depends on the di ff erences in the Hill radius RH through the di ff erences in the adopted Pedersen conductance (cf. Eqs. 7 and 3). Specifically, 
+
+3mc decreases as R−2H with increasing Hill radius when the con-ductance increases. For that reason, the mass flux decreases with increasing Pedersen conductance. For the values of Σ∗ 
+
+> p
+
+not listed in Table 3, the mass flow can be evaluated by means of Eq. (A.9) that shows that ˙Mwind ∝ (Σ∗
+
+> p
+
+)−1.Our upper limits for the mass flux supplied by an iono-spheric outflow are su ffi cient to account for the ECM emis-sion of LSR J1835 +3259 in the context of the ionospheric-magnetospheric coupling model and in the case of a closed mag-netosphere, provided that its ionospheric Pedersen e ff ective con-ductance is su ffi ciently small, that is, Σ∗ 
+
+> p
+
+<∼ 0.02 mho, because in that case the model by Turnpenney et al. (2017) requires ˙M ∼ 10 5 kg s −1. For comparison, in their Fig. 10 (lower middle column), Turnpenney et al. (2017) demonstrate that a Pedersen conductance of 0.7 mho is capable of reproducing the observed        
+
+> Table 3. Model parameters and upper limits to the magnetospheric mass flux for the stellar ionospheric outflow model of the UCD star LSR J1835 +3259 (cf. Sect. 2.3 and Appendix A for model details). Σ∗
+> p
+> is the magnetospheric conductance, 3mc is the radial velocity of the mag-netospheric convection (Eq. 7), RHthe Hill radius (Eq. 3), and ˙Mion flow
+> the stellar ionospheric outflow mass loss rate (Eq. A.9).
+
+Σ∗ 
+
+> p
+
+3mc RH ˙Mion flow 
+
+(mho) (m s −1) (Rs) (kg s −1)0.01 185.04 77.50 2.29e +05 0.10 18.50 245.09 2.29e +04 1.00 1.85 775.03 2.29e +03 10.00 0.19 2450.86 2.29e +02 radio flux with a mass flow rate of ˙M ∼ 10 5 kg s −1 and the magnetic field of the star inferred from its radio emission. Our model indicates that, adopting such a conductance and the ob-served upper limit on the X-ray stellar luminosity, the physical process originating the mass flow across the magnetosphere can-not be an ionospheric outflow. In the case of an open magnetosphere interacting with the interstellar medium, a larger conductance is allowed ( Σ∗ 
+
+> p
+
+<∼ 2mho) because a mass flow of only 10 3 kg s −1 is enough to ac-count for the observed ECM emission according to Turnpenney et al. (2017) (cf. Sect. 3.1). In this case, our model allows the possibility that an ionospheric outflow be at the origin of such a magnetospheric mass flux that was the value of ˙M adopted in Fig. 10 of Turnpenney et al. (2017) where they assumed a Ped-ersen conductance of 1 .2 mho (cf. their Fig. 10, middle upper panel). Conversely, if the ECM emission is powered by the Alfven waves excited by a planet orbiting within 6 − 10 Rs, our iono-spheric outflow model is not capable of supplying a su ffi cient mass flux to account for the observed ECM flux (cf. Table 3 with Fig. 1). These results are reported in the second column from the left of Table 2. 
+
+3.4. Volcanic Satellite: Theoretical mass flux from tidal heating 
+
+Now we consider the mass flux across the stellar magnetosphere that can be supplied by the volcanic activity of a small planet (or satellite) with the radius and mass of Io orbiting at di ff erent dis-tances from LSR J1835 +3259. The mass flux can be assumed to be proportional to the tidal power dissipated inside the planet fol-lowing the discussion in Sect. 2.4.1. Therefore, in the top panel of Fig. 2, we plot on the left axis the ratio of the tidal power dissi-pated inside the planet, Ptide , to that dissipated inside Io, PIo , vs. the semimajor axis a of the planetary orbit. The averaged mass loss rate of Io is ∼ 10 3 kg s −1, hence the corresponding mass flux supplied by the planet activity is ˙M ∼ 10 3(Ptide /PIo ) kg s −1
+
+and is reported on the right axis of Fig. 2. The tidal power Ptide 
+
+is computed by means of Eq. (10) with the equilibrium eccen-tricity e(eq) p as given by Eq. (36) of Mardling (2007), assuming a second co-planar non-resonant planet in the system with an orbit semimajor axis ac = 3.5 a, where a is the semimajor axis of the volcanically active inner planet, a mass mc = 0.4 M ⊕, and an or-bit eccentricity ec = 0.5. A perturbing planet on a resonant orbit 
+
+> Article number, page 8 of 16 A. F. Lanza and A. V. Oza: Ion sources in UCD stars
+
+as in the case of Io, appears to be a less likely scenario accord-ing to Cilibrasi et al. (2021). The modified tidal quality factor 
+
+Q′ 
+
+> m
+
+= 100, that is, equal to that measured in the case of Io, while the mass of the star is that of LSR J1835 +3259 in Table 1. The equilibrium eccentricity e(eq) p is plotted in the middle panel of Fig. 2 vs. a. For comparison, the forced eccentricity of the orbit of Io is 0.0041, a value comparable to those obtained for the inner active planet in our putative system. In the bottom panel of Fig. 2, we plot the timescale for the decay of the equilibrium eccentricity, that gives the duration of the planet volcanic activ-ity in the system. The decay timescale is longer than the Hubble time, indicating that the equilibrium eccentricity is maintained all along the evolution of the system. A mass flux of 10 5 kg s −1 can be supplied by an evaporat-ing active planet with the above parameters up to a distance of 
+
+∼ 13 Rs, despite the rapid decrease in tidal dissipation with in-creasing semimajor axis. This is su ffi cient for the mass flux re-quired by the ionospheric-magnetospheric coupling model for the ECM radio emission by Turnpenney et al. (2017). According to our model, an Io-like planet can reach a mass flux rate up to ˙M ∼ 1.2 × 10 6 kg s −1 close to the Roche limit at a ∼ 6 Rs (cf. Fig. 2). If the ECM emission is powered by the Alfven waves due to a star-planet interaction, such a maximum mass loss rate is su ffi cient to account for the estimated mass flux across the magnetosphere, except for the lowest value of the ef-fective Pedersen conductance ( Σ∗ 
+
+> p
+
+<∼ 0.01 mho) and a >∼ 9 Rs (cf. Fig. 1). Such results have been summarized in Table 2. Finally we note that the large mass flux of 10 6 − 10 7 kg s −1
+
+required in the case of a low e ff ective Pedersen conductance (Σ∗ 
+
+> p
+
+<∼ 0.01 mho, cf. Fig. 1) could be supplied by a rocky planet with a radius larger by a factor of 1 .6 − 2.5 than the radius of Io and with the same value of Q′
+
+> m
+
+, given the strong dependence of Ptide ∝ R5m in Eq. (10). Planets with a radius comparable to that of the Earth have indeed been found around the UCD star TRAPPIST-1, but here we focus on an Io-like planet because the 
+
+Q′ 
+
+> m
+
+of Io has been estimated, while the rheological properties of those bodies are unknown. Having demonstrated that a specific two-planet system can provide a su ffi cient mass flux to the magnetosphere of LSR J1835 +3259, we do not explore two-planet systems with di ff erent ac/a, ec, and mc for the second outer planet. Such an exploration would be greatly time consuming and would not change our conclusion. 
+
+3.5. Induced Electric Currents: Theoretical mass flux from induction heating 
+
+An additional source of internal heating is provided by induced electric currents as discussed in Appendix B. By assuming an orbital radius a = 9.2 Rs and an average internal conductivity of 
+
+⟨σ⟩ ∼ 0.01 mho m −1 for a planet with the radius of Io whose orbit is inclined by I = 35 ◦ to the magnetic equatorial plane of the UCD star, we find a skin depth δ ∼ 0.32 Rm and a dis-sipated power of ∼ 7.7 × 10 13 W, that is, comparable with the heating rate of Io. This is clearly insu ffi cient to account for the mass flux required by the ionospheric-magnetospheric coupling model, except for an open magnetosphere (see Sect. 3.1), or by the star-planet interaction model (see Sect. 3.2). Even adopting a conductivity of ⟨σ⟩ ∼ 0.1 mho m −1, we obtain a skin depth 
+
+δ ∼ 0.1 Rm and a power of ∼ 3.7 × 10 14 W, that is, a factor of 
+
+∼ 4.7 times that of Io, clearly not enough. Only if we assume that the outer 2% of the radius of the planet consists of a global salty ocean with a mean conductivity ⟨σ⟩ ∼ 3.5 mho m −1 simi-lar to that of the Earth’s oceans, we have a dissipated power of  
+
+> Fig. 2. Top panel: The ratio of the tidal power dissipated in the putative inner planet to the tidal power dissipated inside Io (on the left axis) and mass loss rate (on the right axis) vs. the orbit semimajor axis of the planet; middle panel: equilibrium eccentricity of the orbit of the inner planet vs. the semimajor axis of its orbit; bottom panel: timescale for the decay of the equilibrium eccentricity of the inner planet and of the eccentricity of the outer planet.
+
+∼ 2.6 × 10 15 W, that is, ∼ 33 times that of Io, while the skin depth δ is comparable with the depth of the ocean. However, the equilibrium temperature of a putative planet located at, say, 10 Jupiter radii from our UCD star would be of ∼ 510 K at the sub-stellar point, even assuming a Bond albedo of 0.9, that would not allow for the presence of a liquid ocean on the hemisphere fac-ing the star. On the opposite hemisphere, any water ocean would be always frozen owing to the tidal synchronization of planetary rotation. Given the much lower electric conductivity of the ice (Okada et al. 2014), the induction heating would be insu ffi cient inside it. We report our conclusions on the induction heating in Ta-ble 2, considering a planet with an orbit semimajor axis 6 ≤ a ≤
+
+10 Rs. We see that this process is not capable of providing a suf-ficient heating in most of the cases. In other words, tidal heating is expected to be dominant in the case of an Io-like planet in that range of separation from the star. 
+
+4. Discussion 
+
+We estimated upper limits for the mass flux across the mag-netosphere of the UCD star LSR J1835 +3259 considering its ECM emission. We have compared those upper limits with the mass fluxes computed for di ff erent plasma sources and the ra-dial transport by corotating magnetospheric convection due to the rapid rotation of this strongly magnetic star – see Table 2 for a summary of our results.                  
+
+> Article number, page 9 of 16 A&A proofs: manuscript no. LanzaOza_main_revision_2
+> Fig. 3. Schematic maps of the microwave emission assuming di ff erent plasma sources for the magnetospheric environment of LSR J1835 +3259 modeled over a 80 ×80 R Jfield of view. Six radio flux maps are simulated at 8.4 GHz following the six plasma source processes presented as toy models in Section 2 and applied in Section 3. (1) Auroral Oval, (2) Satellite Footprints, (3) Volcanic Planet, (4) Volcanic Satellite, (5) Stellar Ionospheric Outflow, and (6) Heating by Induced Electric Currents. In all panels, the quiescent radiation emission (isocontours in black) has been added and it is depicted as symmetric lobes at approximately 9 R⋆(∼9.63 R J). Mass-loss rates ( ˙ M) from Table 2 are shown for various dipolar and toroidal geometries. The resultant auroral emission (in blue) peaks at an integrated flux smaller than ∼1000 μJy convolved with the Epoch 2 synthesized beam of Kao et al. (2023) (1 .71 ×0.58 mas) to approximate VLBI observations with a 16 R Jauroral smudge (see Appendix C for details). The central white circle indicates the ultracool dwarf (radius 1 .07 R J), while Io-size companions are placed at maximum ∼10 R Jorbits (smaller white circles).
+
+In Fig. 3, we have simulated the ECM radio emission for di ff erent values of the mass loss rate ˙M of the planet (or satel-lite), according to the di ff erent proposed mechanisms in Sects. 2 and 3, to provide some illustrative applications of our models - see Appendix C for details on the method to simulate the emission flux and geometry of the VLBI observations, and the adopted mass loss rates. The synchrotron quiescent radio emis-sion as provided by the observations is added for completeness. We cannot simulate it, given the uncertainties on the mechanisms that accelerate and transport relativistic electrons (see Sect. 1), therefore, we extracted information on the geometry and fluxes from the observation by Kao et al. (2023) (see Appendix C for details). In Fig. 3, only the volcanic planet scenario yields ECM fluxes of the order of 10 3 μJy that can account for the observed fluxes (cf. Sect. 1). Recently, a similar model was proposed by Boehm et al. (2025) to account for the mass budget of circum-stellar plasma tori produced by volcanically active close-by plan-ets, while Oza et al. (2026) modeling neutral SO 2 identified a candidate volcanic exomoon in the system of WASP-39 b by means of observations of JWST /MIRI . In Table 2, our estimates of the stellar ionospheric outflow fluxes are based on an analytical model rather than the empiri-cal scaling relationships derived from a few indirect observations of mass loss rates in the winds of stars of earlier spectral types (Vidotto 2021). We refrain from applying those empirical rela-tionships because the coronae of UCD stars do not follow the empirical Gudel-Benz law and are probably remarkably di ff er-ent from those of earlier type stars (Magaudda et al. 2024). In view of the limitation of the stellar ionospheric outflow model, we considered a volcanically active planet that can be internally heated by tides or by electric induction, finding the former process as the dominant one. Considering an orbit semi-major axis between 6 and 10 stellar radii, the planetary transit probability is between 10% and 17%. Assuming the radius of Io, the relative depth of the transit is ∼ (Rm/Rs)2 ∼ 5.7 × 10 −4,that can be detected from dedicated space-borne photometry, given that the expected orbital period ranges between 5.5 and 12 hours. Therefore, one or more planets orbiting LSR J1835 +3259 can be detected by a dedicated follow-up program (cf. Lim-bach et al. 2021; Kotten et al. 2026). Another follow-up program may adopt the technique described in Oza et al. (2024), where 
+
+> Article number, page 10 of 16 A. F. Lanza and A. V. Oza: Ion sources in UCD stars
+
+monitoring Doppler shifts in the optical lines of Na or K, com-bined with a search for transient activity, may be useful. Thus far the Doppler shift technique has been confirmed by KECK observations to indicate transient sodium clouds at ∼ ± 10-20 km s −1 (Unni et al. 2025). Planetary systems have indeed been detected around UCD stars, notably in the case of TRAPPIST-1 (cf. Gillon et al. 2016). To keep a close-by planet volcanically active by tides, we need forcing its orbital eccentricity by an outer planet, so that a system of at least two planets is required. In principle, also the second planet could be directly detected, although its transit probability is lower owing to its larger distance from the star. However, its indirect detection could be feasible thanks to the transit timing variability induced in the inner planet. An alternative to the presence of a second planet could be an active moon losing mass, orbiting around a single planet in-side the magnetosphere of LSR J1835 +3259. In this case, it is the stellar gravitational perturbation that keeps the moon on an eccentric orbit around the planet leading to a relevant heating by the tides induced by the planet (Cassidy et al. 2009). Giant or Neptune-mass planets orbiting low mass stars are exceedingly rare (e.g. Sabotta et al. 2021; Pinamonti et al. 2022), therefore, we consider a planet with the mass of the Earth orbited by a moon with a mass of 0 .02 M ⊕. We analyse this system in Ap-pendix D and find that the likely fate of the moon is to collide with its planet within a timescale much shorter than the age of the system, if we assume the planet to have a solid interior giving a modified tidal quality factor Q′ 
+
+> m
+
+∼ 10 3. On the other hand, if the planetary interior is fluid, Q′ 
+
+> m
+
+can be greater by several orders of magnitude and the orbital decay timescale of the moon may become longer than the age of the system, thus making this a vi-able explanation. The detection of the planetary transits should be feasible from the ground given that its expected radius is com-parable with that of the planets orbiting TRAPPIST-1 or larger, but the detection of the small rocky moon can be di ffi cult, al-though its presence can be directly signalled by the composition of its evaporating materials di ff erent from those of the planet. An interesting result that has a general relevance for UCD stars is that by Kao & Pineda (2025) who showed that the pres-ence of a distant stellar or substellar companion is associated with an increase of radio detections in those stars. They sug-gested that such distant companions with typical separations of the order of 2 − 3 au (cf. Dupuy & Liu 2017) could induce high-amplitude oscillations of the eccentricity of a close-by planet by the Lidov-Kozai mechanism when the orbit of the inner and outer binaries are su ffi ciently inclined or by the mechanism in-vestigated by Mardling (2007) when they are coplanar. However, a necessary condition for those mechanisms to operate is that the period of the precession of the line of the apsides of the or-bit of the body closer to the star (due to the stellar quadrupole moment and general relativity) be longer than the characteris-tic time scale of angular momentum exchange between the bod-ies in the system. Such a requirement is generally violated ow-ing to the remarkable centrifugal distortion of the star leading to an apsidal precession period of a few tens or hundreds of years for the inner volcanically active planet, much shorter than the typical timescales of Kozai-Lidov cycles or angular momentum exchanges in the Mardling mechanism that are of the order of 10 4 yr. For this reason, we had to postulate the presence of an-other planet, much closer than any distant stellar companion, as the body exciting and maintaining the eccentric orbit of the tidally active innermost planet. However, the precession period of the line of the apsides of that outer planet is remarkably longer than that of the inner planet owing to its larger distance from the star. This may allow the Kozai mechanism to operate on the outer planet thus making its orbit eccentric as required by the Mardling model to account for the non-zero eccentricity of the inner planet. 
+
+5. Conclusions 
+
+We adopted the ionospheric-magnetospheric coupling model by Turnpenney et al. (2017) and the Alfven wave excitation model in the formulation of Noyola et al. (2014) to esti-mate the mass flow across the magnetosphere of the UCD star LSR J1835 +3259 that can account for its observed ECM emis-sion. We considered the mass transport by corotating magneto-spheric convection according to Hill et al. (1981) to obtain an upper limit for the mass flow and considered several sources of plasma to the magnetosphere to account for it (see Table 2 for a summary of the results). We found that a stellar ionospheric outflow is a viable source for a typically estimated mass flow of the order of 10 5 kg s −1
+
+for a closed magnetosphere whose ECM emission is powered by ionospheric-magnetospheric coupling currents (Turnpenney et al. 2017), provided that the e ff ective ionospheric Pedersen conductance Σ∗ 
+
+> p
+
+is lower than ∼ 0.02 mho. Otherwise, a rocky planet with the radius and mass of the Jupiter moon Io, heated by internal tidal dissipation, appears to be a suitable source pro-vided that its orbital semimajor axis a <∼ 6 − 14 stellar radii. On the other hand, if the ECM emission is powered by the Alfven waves excited by the orbital motion of such a putative planet, a Pedersen conductance Σ∗ 
+
+> p
+
+>∼ 0.1 mho and a <∼ (9 − 10) Rs lead to a mass supply rate up to ∼ 10 6 kg s −1. For smaller values of the Pedersen conductance, larger mass rates should be supplied by the planet to account for the ECM emission (cf. Fig. 1). Its internal heating can be maintained only if an outer planet forces its orbital eccentricity, for example, according to the mechanism proposed by Mardling (2007). Owing to its closeness to the star, the inner planet has a probability of ∼ 10 − 15% to be transit-ing with an orbital period typically shorter than 12 hours. For a radius equal to that of Io, a transit depth of 500-600 parts per million is predicted that can be detected by a space-borne pho-tometric follow-up such as with a telescope like CHEOPS (Benz et al. 2021). More subtle signatures may be visible by PLATO. Moreover, such a volcanically active planet could be indirectly detected by observing the absorption due to a circumstellar torus formed by its evaporated matter as in the case of Io (Oza et al. 2024; Boehm et al. 2025; Oza et al. 2026). Close-by planetary systems orbiting UCD stars may explain why targets with a distant substellar or stellar companion have a remarkably higher probability of being detected as radio sources according to Kao & Pineda (2025). The Kozai-Lidov mechanism involving the distant companion could be crucial in establish-ing the eccentricity of the orbit of the outer planet that in turn forces the eccentricity of the inner volcanically active planet. The magnetospheric phenomena studied here provide comple-mentary radio (Narang et al. 2022) and visible-light (Oza et al. 2019) signatures for the confirmation of putative satellites with radial velocity techniques, as inferred recently at the ∼ 37 M J
+
+brown dwarf CD-35 2722 B (Hoy et al. 2026). Estimating Ptide 
+
+of the ‘brown moon’ from Eq. (10) with a Jovian-like Q′ 
+
+> m
+
+= 10 5
+
+and Rm ≈ RJ yields ˙E ∼ 10 12 − 10 13 W ( ∼ 0.01 − 0.1 PIo )for the single eccentric companion solution of Hoy et al. (2026) (m sin i ≈ 0.9 M J, a ≈ 0.20 au, e ≈ 0.27), while their alter-native two-companion solution near a 2:1 mean-motion reso-nance yields ˙ E ∼ 10 11 W ( ∼ 10 −3 PIo ) for the inner companion 
+
+> Article number, page 11 of 16
+
+A&A proofs: manuscript no. LanzaOza_main_revision_2 
+
+(m sin i ≈ 0.22 M J, a ≈ 0.125 au, e ≈ 0.008) and only ∼ 10 8 W(∼ 10 −6 PIo ) for the nearly circular outer companion, far less than that at LSR J1835 +3259 in Fig. 2. On the other hand, tidally heated close-by telluric satellites of ultra cool and brown dwarfs may sustain volcanically fed magnetospheric plasma reservoirs as described here, a promising probe of satellite systems beyond the solar system. 
+
+Acknowledgements. The authors are grateful to two anonymous referees for sev-eral comments and suggestions that helped to significantly improve their work. AVO expresses gratitude to G. Hallinan for insight on new observations and the asymmetric nature of LSR J1835 +3259’s synchrotron radio emission. We sin-cerely thank V. Dols for insight on electrodynamic processes at Jupiter-Io. Re-search on exoplanets and stellar physics at Catania Astrophysical Observatory is founded by MUR (the Italian Ministry of University and Research) through the programs of INAF (the Italian National Institute for Astrophysics) including their grants for the support to fundamental research. The research described in this paper was carried out in part at the Jet Propulsion Laboratory, California Institute of Technology, under a contract with the National Aeronautics Space Administration. © 2026. All rights reserved. 
+
+References 
+
+Alvarado-Montes, J. A., Zuluaga, J. I., & Sucerquia, M. 2017, MNRAS, 471, 3019 Bagenal, F. & Dols, V. 2020, Journal of Geophysical Research (Space Physics), 125, e27485 Bagenal, F. & Dols, V. 2023, in Astrophysics and Space Science Library, Vol. 468, Io: A New View of Jupiter’s Moon, ed. R. M. C. Lopes, K. de Kleer, & J. T. Keane, 291–322 Benz, W., Broeg, C., Fortier, A., et al. 2021, Experimental Astronomy, 51, 109 Berdyugina, S. V., Harrington, D. M., Kuzmychov, O., et al. 2017, ApJ, 847, 61 Berger, E., Basri, G., Gizis, J. E., et al. 2008a, ApJ, 676, 1307 Berger, E., Gizis, J. E., Giampapa, M. S., et al. 2008b, ApJ, 673, 1080 Bigg, E. K. 1964, Nature, 203, 1008 Boehm, V. A., Seligman, D. Z., & Lewis, N. K. 2025, ApJ, 987, L1 Brown, R. A. & Cha ff ee, Jr., F. H. 1974, ApJ, 187, L125 Callingham, J. R., Pope, B. J. S., Kavanagh, R. D., et al. 2024, Nature Astronomy, 8, 1359 Cassidy, T. A., Mendez, R., Arras, P., Johnson, R. E., & Skrutskie, M. F. 2009, ApJ, 704, 1341 Cilibrasi, M., Szulágyi, J., Grimm, S. L., & Mayer, L. 2021, MNRAS, 504, 5455 Climent, J. B., Guirado, J. C., Pérez-Torres, M., Marcaide, J. M., & Peña-Moñino, L. 2023, Science, 381, 1120 Collier Cameron, A. & Jardine, M. 2018, MNRAS, 476, 2542 de Pater, I. 1981, A&A, 93, 370 de Pater, I. & Dunn, D. E. 2003, Icarus, 163, 449 Dols, V., Paterson, W. R., & Bagenal, F. 2024, Journal of Geophysical Research (Space Physics), 129, e2023JA031763 Domingos, R. C., Winter, O. C., & Yokoyama, T. 2006, MNRAS, 373, 1227 Dupuy, T. J. & Liu, M. C. 2017, ApJS, 231, 15 Ford, E. B. & Rasio, F. A. 2006, ApJ, 638, L45 Gebek, A. & Oza, A. V. 2020, MNRAS, 497, 5271 Gillon, M., Jehin, E., Lederer, S. M., et al. 2016, Nature, 533, 221 Goldreich, P. & Nicholson, P. D. 1977, Icarus, 30, 301 Güdel, M. 2004, A&A Rev., 12, 71 Guedel, M. & Benz, A. O. 1993, ApJ, 405, L63 Ha ff , P. K., Watson, C. C., & Yung, Y. L. 1981, J. Geophys. Res., 86, 6933 Hallinan, G., Antonova, A., Doyle, J. G., et al. 2008, ApJ, 684, 644 Hess, S., Zarka, P., & Mottez, F. 2007, Planet. Space Sci., 55, 89 Hill, T. W. 2001, J. Geophys. Res., 106, 8101 Hill, T. W., Dessler, A. J., & Maher, L. J. 1981, J. Geophys. Res., 86, 9020 Hoy, K., Zurlo, A., Peña R, P. A., et al. 2026, Nature, 655, 865 Jackson, B., Greenberg, R., & Barnes, R. 2008a, ApJ, 678, 1396 Jackson, B., Greenberg, R., & Barnes, R. 2008b, ApJ, 681, 1631 Johnson, R. E. 1990, Physics and Chemistry in Space, Vol. 19, Ener-getic Charged-Particle Interactions with Atmospheres and Surfaces (Berlin: Springer-Verlag) Johnson, R. E. 2004, ApJ, 609, L99 Kao, M. M., Hallinan, G., & Pineda, J. S. 2019, MNRAS, 487, 1994 Kao, M. M., Hallinan, G., Pineda, J. S., et al. 2016, ApJ, 818, 24 Kao, M. M., Hallinan, G., Pineda, J. S., Stevenson, D., & Burgasser, A. 2018, ApJS, 237, 25 Kao, M. M., Mioduszewski, A. J., Villadsen, J., & Shkolnik, E. L. 2023, Nature, 619, 272 Kao, M. M. & Pineda, J. S. 2025, MNRAS, 539, 2292 Kao, M. M. & Shkolnik, E. L. 2024, MNRAS, 527, 6835 Kisare, A. M. & Fabrycky, D. C. 2024, MNRAS, 527, 4371 Kislyakova, K. G., Noack, L., Johnstone, C. P., et al. 2017, Nature Astronomy, 1, 878 Kollmann, P., Roussos, E., Paranicas, C., et al. 2018, Journal of Geophysical Research (Space Physics), 123, 9110 Kotten, B., Limbach, M. A., Vos, J. M., et al. 2026, arXiv e-prints, arXiv:2607.13030 Kuznetsov, A. A., Doyle, J. G., Yu, S., et al. 2012, ApJ, 746, 99 Lainey, V., Arlot, J.-E., Karatekin, Ö., & van Hoolst, T. 2009, Nature, 459, 957 Lanza, A. F. 2021, A&A, 653, A112 Leto, P., Trigilio, C., Buemi, C. S., et al. 2017, MNRAS, 469, 1949 Limbach, M. A., Vos, J. M., Winn, J. N., et al. 2021, ApJ, 918, L25 Magaudda, E., Stelzer, B., Osten, R. A., et al. 2024, A&A, 687, A95 Mardling, R. A. 2007, MNRAS, 382, 1768 Mardling, R. A. & Lin, D. N. C. 2002, ApJ, 573, 829 McGrath, M. A. & Johnson, R. E. 1987, Icarus, 69, 519 McGrath, M. A. & Johnson, R. E. 1989, J. Geophys. Res., 94, 2677 Melrose, D. B. & Dulk, G. A. 1982, ApJ, 259, 844 Metodieva, Y. T., Kuznetsov, A. A., Antonova, A. E., et al. 2017, MNRAS, 465, 1995 Miller, N., Fortney, J. J., & Jackson, B. 2009, ApJ, 702, 1413 Morabito, L. A., Synnott, S. P., Kupferman, P. N., & Collins, S. A. 1979, Science, 204, 972 Narang, M., Oza, A. V., Hakim, K., et al. 2022, The Astronomical Journal, 165, 1Narang, M., Oza, A. V., Hakim, K., et al. 2023, MNRAS, 522, 1662 Neubauer, F. M. 1980, J. Geophys. Res., 85, 1171 Neubauer, F. M. 1998, J. Geophys. Res., 103, 19843 Nichols, J. & Cowley, S. 2004, Annales Geophysicae, 22, 1799 Nichols, J. D. 2011, MNRAS, 414, 2125 Noyola, J. P., Satyal, S., & Musielak, Z. E. 2014, ApJ, 791, 25 Okada, T., Iitaka, T., Yagi, T., & Aoki, K. 2014, Scientific Reports, 4, 5778 Oza, A. V., Gebek, A., Meyer zu Westram, M., et al. 2026, MNRAS, 546, staf1526 Oza, A. V., Johnson, R. E., Lellouch, E., et al. 2019, ApJ, 885, 168 Oza, A. V., Seidel, J. V., Hoeijmakers, H. J., et al. 2024, ApJ, 973, L53 Park, R. S., Jacobson, R. A., Gomez Casajus, L., et al. 2024, Nature Pinamonti, M., Sozzetti, A., Maldonado, J., et al. 2022, A&A, 664, A65 Queinnec, J. & Zarka, P. 2001, Planet. Space Sci., 49, 365 Roth, L., Blöcker, A., de Kleer, K., et al. 2024, arXiv e-prints, arXiv:2403.13970 Route, M. 2017, ApJ, 845, 66 Sabotta, S., Schlecker, M., Chaturvedi, P., et al. 2021, A&A, 653, A114 Saur, J., Grambusch, T., Duling, S., Neubauer, F. M., & Simon, S. 2013, A&A, 552, A119 Saur, J., Neubauer, F. M., Strobel, D. F., & Summers, M. E. 1999, J. Geo-phys. Res., 104, 25105 Saur, J., Strobel, D. F., Neubauer, F. M., & Summers, M. E. 2003, Icarus, 163, 456 Saur, J., Willmes, C., Fischer, C., et al. 2021, A&A, 655, A75 Schmidt, C., Sharov, M., de Kleer, K., et al. 2023, Planetary Science Journal, 4, 36 Schmidt, C. A. 2022, Frontiers in Astronomy and Space Sciences, 9, 801873 Schrijver, C. J. 2009, ApJ, 699, L148 Scudder, J. D., Sittler, E. C., & Bridge, H. S. 1981, J. Geophys. Res., 86, 8157 Siscoe, G. L. & Summers, D. 1981, J. Geophys. Res., 86, 8471 Soon, W., Baliunas, S., Posmentier, E. S., & Okeke, P. 2000, New A, 4, 563 Sucerquia, M. & Cuello, N. 2025, A&A, 694, L8 Sucerquia, M., Ramírez, V., Alvarado-Montes, J. A., & Zuluaga, J. I. 2020, MN-RAS, 492, 3499 Turnpenney, S., Nichols, J. D., Wynn, G. A., & Casewell, S. L. 2017, MNRAS, 470, 4274 Tyler, R. H., Henning, W. G., & Hamilton, C. W. 2015, ApJS, 218, 22 Unni, A., Oza, A. V., Hoeijmakers, H. J., et al. 2025, MNRAS, 540, L48 Vedantham, H. K., Callingham, J. R., Shimwell, T. W., et al. 2020, ApJ, 903, L33 Vedantham, H. K., Dupuy, T. J., Evans, E. L., et al. 2023, A&A, 675, L6 Veeder, G. J., Matson, D. L., Johnson, T. V., Blaney, D. L., & Goguen, J. D. 1994, J. Geophys. Res., 99, 17095 Vidotto, A. A. 2021, Living Reviews in Solar Physics, 18, 3 Wu, Y. 2005, ApJ, 635, 688 Yoshino, T. & Katsura, T. 2013, Annual Review of Earth and Planetary Sciences, 41, 605 Zarka, P. 1998, J. Geophys. Res., 103, 20159 Zarka, P. 2007, Planet. Space Sci., 55, 598 Zarka, P., Cecconi, B., & Kurth, W. S. 2004, Journal of Geophysical Research (Space Physics), 109, A09S15 Zarka, P., Treumann, R. A., Ryabov, B. P., & Ryabov, V. B. 2001, Ap&SS, 277, 293 Zhang, J., Tian, H., Zarka, P., et al. 2023, ApJ, 953, 65 
+
+Article number, page 12 of 16 A. F. Lanza and A. V. Oza: Ion sources in UCD stars 
+
+Appendix A: Magnetospheric mass flux due to an ionospheric mass outflow 
+
+The X-ray emission in UCD stars is regarded to come from hot coronal plasma located close to their surfaces, according to Schrijver (2009) and Magaudda et al. (2024). Specifically, the expected X-ray luminosity can be estimated as (cf. Eq. 3 in Schrijver 2009) 
+
+LX ∼ 4πR2s Hpn2e0 Λ(Tcor ), (A.1) where Rs is the radius of the star, Hp the coronal pressure scale height, ne0 the electron number density at the base of the corona, and Λ(Tcor ) the radiative loss function at the coronal tempera-ture Tcor . The high thermal conductivity in the closed corona or along open magnetic flux tubes connecting it with the iono-sphere and the magnetosphere, makes the plasma approximately isothermal along each magnetic field line close to the star. As a typical coronal temperature, we assume Tcor = 1.5 MK to eval-uate Λ(Tcor ) (Schrijver 2009; Vidotto 2021). The pressure scale height is Hp = ˜RT cor /( ˜ μg), where ˜ R is the gas constant, ˜ μ = 0.6, the mean molecular weight assumed for a solar composition, and 
+
+g = GM s/R2s the acceleration of gravity at the surface of the star. In a reference frame rotating with the angular velocity Ωs
+
+of the star, the momentum equation for a stationary ionospheric outflow is 
+
+ρ(3 · ∇ )3 = −∇ p + J × B + ρ∇Ψ − 2ρ Ωs × 3, (A.2) where ρ is the plasma density, 3 the flow velocity, p the plasma pressure, J the current density, B the magnetic field, and Ψ the total potential (gravitational plus centrifugal). Close to the star, the stellar magnetic field is so strong that the outflow is every-where directed along the magnetic field lines that are fixed in the rotating frame. Therefore, 3 = 3ˆs and B = Bˆs, where ˆ s is the unit vector pointing in the direction of the magnetic field at any given point. The projection of Eq. (A.2) along the unit vector ˆ s gives 12
+
+∂32
+
+∂s = − 1
+
+ρ∂p
+
+∂s + ∂Ψ
+
+∂s , (A.3) where we made use of the identity ∇(32/2) = (3 · ∇ )3 + 3 × (∇ × 3). The plasma follows the ideal gas law p = 32c ρ, where 
+
+32c ≡ ( ˜ RT w/ ˜μ) = 8.3 × 10 3 Tw
+
+˜μ
+
+!
+
+m2 s−2 (A.4) is the square of the isothermal sound speed that is a constant in our isothermal outflow model, where Tw ∼ Tcor is the outflow plasma temperature. By substituting the ideal gas law into Eq. (A.3), we find 
+
+∂∂s
+
+12 32 + 32c ln ρ − Ψ
+
+!
+
+= 0, (A.5) that can be immediately integrated along a given field line to give the density of the outflow 
+
+ρ = ρ0 exp Ψ − Ψ0
+
+32c
+
+!
+
+exp 
+
+− 12
+
+33c
+
+!2, (A.6) where ρ0 is the density at the base of the field line where the potential is Ψ0 and 3 = 0. The value of ρ0 (or an upper limit for it) can be obtained from the X-ray luminosity (or an upper limit to the X-ray luminosity) for a given coronal temperature from Eq. (A.1) by multiplying the number density ne0 by the mean atomic mass of the plasma. The total potential is given by 
+
+Ψ = GM s
+
+r + 12 Ω2r2 sin 2 θ, (A.7) where r is the distance from the centre of the star, and θ the co-latitude measured from the North pole that we assume for sim-plicity to coincide with the pole of the magnetic field dipole of the star. The potential at the base of the field lines on the stel-lar surface can be assumed to be uniform and equal to Ψ0 =
+
+GM s/Rs, provided that the centrifugal deformation of the star 
+
+ϵ ≡ Ω2s R3s /(2 GM s) ≪ 1. The corotation radius Rcor as given by Eq. (2) in the equatorial plane corresponds to the minimum of the total potential and hence of the density along the radial co-ordinate as can be seen from the vanishing of the first derivative of Eq. (A.7). Concerning the latitudinal dependence, the den-sity of the outflow is maximum in the equatorial plane of the star because the centrifugal potential is maximum there, given its proportionality to sin 2 θ.The outflow can be described by Eq. (A.5) up to the coro-tation radius Rcor , that is, in the domain where the gravity is stronger than the centrifugal force and the denser plasma tends to move towards the star. Conversely, in the domain beyond the corotation radius, i.e., for r ≥ Rcor , magnetospheric convection prevails producing an outward mass flux, fed by the ionospheric outflow coming from the domain below. In the domain where 
+
+r ≥ Rcor , we apply the Hill model assuming a constant mass flux across the magnetosphere that is ruled by the ionospheric out-flow because it determines the boundary conditions applied at the inner boundary of the domain at r = Rcor .In other words, the total mass flux across the magnetosphere originated by the ionospheric outflow can be expressed as ˙Mion flow ∼ fw
+
+Z 
+
+> S(Rcor )
+
+ρ(Rcor )3mc (Rcor ) dS ∼∼ 4π fw Rcor Hc ρ(Rcor )3mc (Rcor ), (A.8) where 0 ≤ fw ≤ 1 is the fraction of the coronal base covered by the open magnetic field lines along which the outflow devel-ops, S (Rcor ) the cylindrical surface of radius Rcor and height 2 Hc
+
+across which the mass flow occurs, ρ(Rcor ) the outflow density at the corotation radius that we estimate using Eqs. (A.6) and (A.7) with r = Rcor because the above outflow model can be applied for r ≤ Rcor . The exponential factor containing the outflow ve-locity 3 in Eq. (A.6) can be taken to be unity because we are interested in an upper limit for the mass loss rate and 3 >∼ 3c at 
+
+r = Rcor on the equatorial plane. In the case of our outflow, the centrifugal scale height is eval-uated by means of Eq. (9) where the temperature T is the outflow temperature ( T = Tw), while the particle mass is that of the pro-ton because the stellar corona, from which the flow originates, is mostly composed of hydrogen ions. By combining Eqs. (7), (3), and (A.8), we obtain an explicit expression for the mass loss flux across the magnetosphere supplied by the stellar ionospheric outflow ˙Mion flow as ˙Mion flow ∼ 4π fw
+
+3
+
+Rcor 
+
+Rs
+
+!6 Rcor Hc Ωs ρ(Rcor )2
+
+Σ∗ 
+
+> p
+
+B2s
+
+. (A.9) Given our neglect of the density decrease produced by the right-most exponential factor in Eq. (A.6) and the upper limit to the magnetospheric convection velocity as given by Eq. (7), Eq. (A.9) provides an upper limit to the mass flow across the magnetosphere that can be supplied by a stellar ionospheric flow.  
+
+> Article number, page 13 of 16 A&A proofs: manuscript no. LanzaOza_main_revision_2
+
+Appendix B: Induction heating 
+
+Given the strong magnetic fields observed in radio-emitting UCDs and BDs, we postulate that an additional internal heating source for our putative planet may be electromagnetic induction due to a time-varying magnetic field across its section during the rotation of the star and its orbital motion. A detailed model of the electromagnetic induction and the associated heating inside a planetary body has been presented by, e.g., Kislyakova et al. (2017). The stellar magnetic field as seen by the planetary in-terior is oscillating with a frequency ω = |2π/ Prot − 2π/ Porb |,where Prot is the rotation period of the star, while Porb is the orbital period of our planet. The time-varying stellar field is at-tenuated inside the orbiting planet because it decreases exponen-tially as exp( −d/δ ), where d is the depth from the surface and δ
+
+is the electromagnetic skin depth. In the regime of interest for our problem, the skin depth is given by 
+
+δ = min 
+
+s
+
+2
+
+μσω , Rm
+
+ , (B.1) where σ is the interior electric conductivity of the planet. The magnetic field inside the planet can be computed if we know the radial profile of its electric conductivity according to the model by Kislyakova et al. (2017). Nevertheless, given our ignorance about its interior composition and being interested only in an order of magnitude estimate of the internal heating produced by the electromagnetic induction, we shall use a much simpler approach assuming that the internal magnetic field is equal to the external stellar field down to a depth δ inside the planet. We sketch the physical system in Figure B.1. Assuming the same uniform magnetic field both inside and outside a spheri-cal planet and given the symmetry of the system, the electric field 
+
+E at a distance s = r sin θ from the polar axis, that we assume to be parallel to the magnetic field, is given by the induction law as 
+
+E = − 12 ˙B(t) r sin θ, (B.2) where r is the distance from the centre of the planet, θ the co-latitude, and ˙ B(t) ≡ dB /dt the time derivative of the magnetic field inside the planet. According to the Ohm law, the current density J = σE, where σ is the local electric conductivity of the planet that we assume to depend only on the radial coordinate r.Therefore, the Joule heating per elementary volume dV is given by 
+
+dP diss = J2
+
+σ dV = σE2 dV = 14 ( ˙ B)2 σ(r) r2 sin 2 θ dV , (B.3) where the volume element for given r and θ is dV =
+
+2πr2 sin θ dθ dr thanks to the cylindrical symmetry of the sys-tem that allows us to integrate immediately over the azimuthal angle. By integrating over the colatitude, we obtain the power dissipated inside the elementary spherical shell between r and 
+
+r + dr as 
+
+dP diss = 2π
+
+3 σ(r) ( ˙ B)2 r4dr . (B.4) Adopting a sinusoidal time variation for the magnetic field with the frequency ω and assuming that the field penetrates into the planet only down to a depth δ, Eq. (B.4) allows us to estimate the Joule heating inside it as 
+
+Pdiss ∼ 2π
+
+15 (ωBm)2 ⟨σ⟩ hR5m − (Rm − δ)5i , (B.5) !                         
+
+> r
+> Ps
+> H
+> O
+> B(t)
+> C(s)
+> E
+> Fig. B.1. Sketch of the electric induction inside a planet with a uniform internal magnetic field equal to the outer uniform field produced by the star around which the planet is orbiting, assuming that the skin depth is remarkably larger than the radius of the planet. In the reference frame of the planet, the external field B(t) depends on the time t. The local induced electric field Eis tangent to a circle C(s) (dashed line) lying in a plane orthogonal to the magnetic field Band with radius s=rsin θ,where ris the radial distance from the centre Oof the planet and θthe colatitude of a generic point Palong C(s). Thanks to the cylindrical symmetry of our system around the direction of the magnetic field and its uniformity, the induction law applied to the circle C(s) gives: 2 πsE =
+> −πs2˙B(t) from which Eq. (B.2) follows.
+
+where Rm is the radius of the planet, ⟨σ⟩ the mean value of its electric conductivity over the layer of depth δ where the external time-varying magnetic field can penetrate, and Bm is the ampli-tude of the time-varying magnetic field. The stellar magnetic field at the distance of the planet is dominated by its dipole component because it is the compo-nent with the slowest decay with the distance r and r/R is ap-proximately 5 − 15 in our systems considering that the putative planet can be orbiting in the middle of the quiescent radio lobes of LSR J1835 +3259. If the stellar dipole is oriented along the stellar rotation axis and the orbit of the planet is in the equatorial plane of the star, the planet will not experience any variation in the magnetic flux and no induction currents will be produced. In other words, such a configuration cannot produce any internal heating of the planet. In order to have an induction heating, we need a dipole field inclined to the stellar spin axis and /or an orbit of the planet inclined to the magnetic equator. For the sake of simplicity, we assume an angle I between the magnetic dipole axis of the star and the orbital angular momentum of the planet. Considering the variation in the modulus of the magnetic field along the orbit of the planet assumed to the circular, we find 
+
+Bm = Bs
+
+ p 
+
+3 sin 2 I + 1 − 1
+
+ aRs
+
+!−3
+
+, (B.6) where Bs is the stellar surface dipole field at the equator, a the orbit semimajor axis of the planet, and Rs the radius of the star. 
+
+> Article number, page 14 of 16 A. F. Lanza and A. V. Oza: Ion sources in UCD stars
+> B.1. Electric conductivity of the planet
+
+A critical parameter of our model is the mean electric conductiv-ity of the planet because it determines both the skin depth δ and the power dissipated by the induced currents inside the planet. It is a function of the mineralogical composition of the mantle of the planet and depends on the local temperature and density. A detailed account in the case of the Earth mantle has been pro-vided by Yoshino & Katsura (2013). The electric conductivity increases towards the interior as a consequence of the increase in the temperature and density. In the case of a planet similar to Io, the internal pressure is smaller than at a similar depth in-side the Earth’s mantle. Considering a roughly similar density in the outer layers, the internal pressure increases proportionally to the gravity that is approximately 0.18 that of the Earth. There-fore, we prudently postulate that the mean electric conductivity inside our putative planet is at least of 10 −2 mho m −1, that is the conductivity of the Earth’s mantle at a depth between 250 and 450 km. A more massive planet can have a higher conductivity because its internal pressure and temperature are expected to be more similar to those of the deep Earth mantle where σ ∼ 0.3mho m −1, at a depth of 800 km. The electromagnetic induction heating increases remarkably if the planet has a deep salty ocean because the electric conduc-tivity in that case can be of the order of ∼ 3 mho m −1, if we assume a salt concentration similar to that in the Earth oceans. However, due to the continuous mass loss from the surface of our planet, the lifetime of such an ocean could be shorter than the age of the system making such a scenario unlikely (cf. Sect. 4). 
+
+Appendix C: Energetics Sourcing Radio Flux 
+
+Figure 3 presents six schematic toy models describing the neces-sary energetics needed to power bursty ECM emission, peaking at 2200 μJy (Kao et al. 2023), observed at LSR J1835 +3259 at 8.4 GHz as described in Section 4 and Table 2. In Figure 3 we added also the integrated quiescent flux at 8.4 GHz, which in VLBI Epoch I is reported at Fν, I = 965 ± 12 μJy and Epoch II Fν, II = 537 ± 123 μJy (Kao et al. 2023). We recall that the simulation of the quiescent emission is outside the scope of the present work. Nevertheless, we added its observed geometry for completeness (see black isocontours in Fig. 3). The energetics of the ECM emissions are described by an ion escape parameter ˙M (in kg s −1) (side pink-orange-yellow color-bar in Fig. 3) showing either radially isotropic or toroidal. The mass loss in turn powers the total radio flux in μJy (top blue colorbar in Fig. 3) as described in Section 3. The toy model simulates a 80 × 80 RJ field of view. Contours are a fixed ob-servational reference tracing the resolved quiescent morphology of Kao et al. (2023), whose origin is not a focus of this work. Each panel corresponds to an illustrative plasma source scenario and is not intended for reproducing the exact auroral flux values, rather their order of magnitudes approximating the range of their mass losses for each physical process: 1. Auroral Oval (ionospheric–magnetospheric coupling, closed magnetosphere; Sect. 2.1): ˙M = 5 × 10 4 kg s −1; S ∼ 800 μJy 2. Satellite Footprints (Alfvén-wing star–planet interaction; Sect. 2.2): ˙M = 5 × 10 4 kg s −1; S ∼ 800 μJy; Io-sized planet at 6 R⋆.3. Volcanic Planet (tidal heating, toroidal plasma torus; Sect. A): ˙M = 10 5 kg s −1; S ∼ 1000 μJy; Io-sized planet at 6 R⋆.4. Volcanic Satellite (tidally heated moon; Sect. 2.4): ˙M = 10 3 kg s −1; S ∼ 300 μJy; planet at 6 R⋆ with exomoon companion. 5. Stellar Ionospheric outflow (stellar ionospheric outflow; Sect. 2.3 and App. A): ˙M = 10 4 kg s −1; S ∼ 500 μJy; no companion. 6. Induced Electric Currents (electromagnetic induction heat-ing of the planet; Sect. 2.4): ˙M = 4.7 × 10 3 kg s −1; S ∼ 100 μJy; Io-sized planet at 6 R⋆.While the peak ECM emission S is modeled in the main text as the instantaneous burst , the image in Fig. 3 seeks to approximate the beam-convolved, time-integrated ∼ 20 minute observation of the 8.4 GHz aurorae of the ultra cool dwarf. 
+
+> C.1. Beam convolution of the auroral component
+
+The intrinsic auroral emission in each panel is a point source placed at the inferred magnetic-pole positions ( |YR| = 0.8 R⋆,
+
+XR ≈ 0), convolved with the Epoch 2 synthesized beam of Kao et al. (2023): 
+
+θmaj = 1.71 mas , θmin = 0.58 mas , PA = −25 ◦. (C.1) Using the angular-to-physical scale 1 mas = 12 RJ appropriate for the distance of LSR J1835 +3259, the FWHM values con-vert to 20 .5 RJ (major) and 7 .0 RJ (minor). Converting FWHM to Gaussian standard deviations via σ = FWHM /(2 √2 ln 2) ≈
+
+FWHM /2.355 gives 
+
+σmaj = 1.71 × 12 2.355 RJ ≈ 8.7 RJ, (C.2) 
+
+σmin = 0.58 × 12 2.355 RJ ≈ 2.96 RJ. (C.3) These are passed directly to the gaussian_filter call in the toy model as pixel-equivalent sigma values (sigma = [sig_b_y * pix_scale, sig_b_x * pix_scale] , where 
+
+pix_scale = res/grid_span = 800/80 = 10 pixels R−1J ). The resulting convolved integrated flux density spans ∼ 16 RJ,consistent with the marginally resolved aurora detected cen-trally between the two quiescent lobes in Epoch 2 of Kao et al. (2023) (their Fig. 2; fitted minor axis ∼ 0.4 mas ≈ 5 RJ within a 2.06 × 0.55 mas synthesised beam). 
+
+> C.2. Observational reference contours of the quiescent synchrotron emission
+
+The black contours visible in all six panels are computed from the following two-component elliptical Gaussian bright-ness map, evaluated in sky-plane coordinates ( X, Y) (units of 
+
+RJ, positive West and North respectively) after rotation by the magnetic-axis inclination ψ = −15 ◦:
+
+XR = X cos ψ − Y sin ψ, (C.4) 
+
+YR = X sin ψ + Y cos ψ, (C.5) 
+
+I(XR, YR) = A1 exp 
+
+− (XR − d0)2
+
+2σ2
+
+> ∥
+
+− Y2
+
+> R
+
+2σ2
+
+> ⊥
+
+ +
+
+A2 exp 
+
+− (XR + d0)2
+
+2σ2
+
+> ∥
+
+− Y2
+
+> R
+
+2σ2
+
+> ⊥
+
+ , (C.6)  
+
+> Article number, page 15 of 16 A&A proofs: manuscript no. LanzaOza_main_revision_2
+
+with parameters set directly from Table 1 and Extended Data Table 2 of Kao et al. (2023): d0 ≈ 9.63 RJ, (9 , R⋆), σ∥ =
+
+4 RJ, σ ⊥ = 8 RJ, and A1 = 115 , A2 = 100 (μJy , beam −1). The centroid o ff set d0 ≈ 9 R⋆ is set at measured lobe sep-arations 17 .95 ± 1.39 RUCD (Epoch 2) and 18 .47 ± 1.85 RUCD 
+
+(Epoch 3) from Table 1 of Kao et al. (2023). The ratio σ⊥/σ ∥ = 2constrains the modeled radiation belt morphology perpendicular to the magnetic axis. Finally, the amplitude asymmetry between 
+
+A1 and A2 (representing the East and West quiescent lobes, re-spectively, c.f. Extended Data Table 2 Kao et al. (2023)) repro-duces the observed flux contrast found in the Stokes I images of LSR J1835 +3259. We note that while the precise geometry of this schematic can be refined in future works, our current model accurately represents the energetics and integrated radio flux of each scenario. Spatially correlated Gaussian noise with standard deviation 
+
+ση = 8 brightness units and correlation length ℓη = 2 pixels (im-posed by convolution with a circular Gaussian kernel) is added to I to reproduce the clumpy morphology of a partially resolved synchrotron source. Contours are drawn at levels {30 , 60 , 90 }
+
+brightness units ( ≈ 26%, 52%, and 78% of the mean lobe peak), and are held identical across all six panels to emphasise that they represent a fixed observational backdrop independent of the plasma-source scenario shown in each panel. For the sake of simplicity, we simulate the two lobes of the synchrotron emission as symmetric in Fig. 3, while in the ob-servations by Kao et al. (2023) (cf. their Fig. 1) there is a clear asymmetry with the emission from one lobe being stronger than that coming from the other, possibly as a consequence of an absorption or scattering on one side of the star where the syn-chrotron frequency becomes smaller or equal to the plasma fre-quency. 
+
+Appendix D: A moon orbiting a close-by planet of LSR J1835+3259 
+
+In order to be specific, we consider a planet with the mass and radius of the Earth orbiting at a distance ap of 9.5 stellar radii from the centre of LSR J1835 +3259, in the middle of its magne-tosphere. If such a planet has a moon with a mass Mmoon much smaller than its mass, the semimajor axis of the orbit of the moon 
+
+amoon must be within 0 .49 aH, if its orbit is prograde, or 0 .93 aH,if it is retrograde, where aH = ap[Mm/(3 Ms)] 1/3 is the dynamic Hill radius of the planet with Mm being its mass and Ms the mass of the star ( aH is not to be confused with the magnetospheric Hill radius of the star RH introduced in Eq. 3). These limits for or-bital stability under the gravitational perturbation of the star have been derived by Domingos et al. (2006). We note that Kisare & Fabrycky (2024) have revised the canonical 0.49 a H to 0.41 a H ,which only marginally a ff ects our results below. The orbital period of the moon Pmoon can be derived by con-sidering the Kepler third law and that Mmoon ≪ Mm ≪ Ms yield-ing 
+
+Pmoon = η3
+
+3
+
+!1/2
+
+Pp, (D.1) where η ≡ amoon /aH and Pp is the orbital period of the planet around the star that is of 0.455 days in the case of our putative planet. In the case of a prograde orbiting moon, its longest orbital period is ∼ 0.2 Pp (η = 0.49), while for a retrograde orbit it is 
+
+∼ 0.53 Pp (η = 0.93). The tides raised by the star on the planet will quickly circu-larize its orbit and synchronize its rotation with its orbital mo-tion. Therefore, both in the case of a prograde or a retrograde orbit, the moon orbital period will be shorter than the planet ro-tation period. In such a regime, tides raised by the moon on the planet will produce the decay of the moon’s orbit until it reaches the Roche limit of the planet where it is destroyed. The timescale for the orbital decay of the moon can be estimated using, for ex-ample, Eq. (6) of Collier Cameron & Jardine (2018) that can be recast as 
+
+td = Q′
+
+> p
+
+117 π
+
+η5 η3
+
+3
+
+!1/2 Mm
+
+Mmoon 
+
+Mm
+
+3Ms
+
+!5/3 amoon 
+
+Rm
+
+!5
+
+Pp, (D.2) where Q′ 
+
+> p
+
+is the modified tidal quality factor of the planet, that is assumed constant along the tidal evolution of the moon orbit, and 
+
+Rm is the radius of the planet. Considering a moon with a mass of 0 .02 M ⊕, that is, comparable with that of Io, and the above parameters for the star-planet and the planet-moon systems, we find 
+
+td <∼ 0.113 Q′ 
+
+> p
+
+Pp (D.3) for a prograde orbit, and 
+
+td <∼ 7.312 Q′ 
+
+> p
+
+Pp (D.4) for a retrograde orbit of the moon. Considering a moon orbiting a telluric planet that has Q′ 
+
+> p
+
+∼ 10 3, the timescale for the orbital decay is of the order of a few years only. Therefore, we do not expect the moon to survive enough to be a source for the stellar magnetosphere. The situation may change if the planet has a completely fluid interior because in that case the value of Q′ 
+
+> p
+
+can increase by sev-eral orders of magnitude. In an optimistic approach, assuming an upper bound for Q′ 
+
+> p
+
+= 10 12 (Goldreich & Nicholson 1977; Wu 2005), we find a tidal decay timescale shorter than 141 and 911 Myr, respectively. This is longer than the system lifetime of 22 
+
+± 4 Myr according to Berdyugina et al. (2017), thus making it possible for the moon to become a relevant plasma source to the system. The extremely large tidal Q′ 
+
+> p
+
+by Goldreich & Nicholson (1977) is not present in our solar system, presumably due to the large energy dissipation associated with the excitation of convec-tive or inertial modes in the upper atmosphere or the interior of Jupiter and Saturn. The excitation of these frequencies is likely not the case for close-in planets, therefore Oza et al. (2019) re-assessed that hot Jupiters (and fluid-body planets in general) may have tidal Q′
+
+> p
+
+’s that may be as large as 10 11 , although the 3-body stability problem is complex, depending also on eccentricity and obliquity. In Cassidy et al. (2009) and Oza et al. (2019) the cir-cular restricted three body problem is solved for stellar perturba-tions on a natural satellite, providing tidal heating from the star itself, which may significantly increase the mass loss reported here. The situation would become even more favourable in the case of a moon orbiting a giant planet located at a larger distance from the star because the evolution of the radius of the planet and of its modified tidal quality factor may allow the moon to mi-grate outwards and reach an orbital separation where it will no longer be a ff ected by tides over timescales of the order of Gyr (Alvarado-Montes et al. 2017; Sucerquia et al. 2020).

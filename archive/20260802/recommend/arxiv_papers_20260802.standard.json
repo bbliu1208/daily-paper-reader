@@ -1,0 +1,134 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-02T20:17:53.314155+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 3,
+    "quick_skim_target": 11,
+    "quick_selected": 3
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2607.25542v1",
+      "source": "arxiv",
+      "title": "Cloud and ammonia vertical profiles in the equatorial atmosphere of Jupiter determined from visible to near-IR observations made by VLT/MUSE, Cassini/VIMS, IRTF/SpeX and Juno/JIRAM",
+      "abstract": "We present a combined cloud/ammonia model for Jupiter's equatorial atmosphere from 0.1 to 10 bar, consistent with observations made at a range of observation geometries from 0.35 to 5.15 $μ$m by VLT/MUSE, Cassini/VIMS, IRTF/SpeX and Juno/JIRAM. Our cloud model has three components: 1) an optically-thick lower cloud (radius $r$$\\sim$$10$ $μ$m) at 1-2 bar; 2) an optically-thin upper cloud ($r$$\\sim$$10$ $μ$m) at $\\sim$0.55 bar; and 3) a layer of blue-absorbing chromophore particles ($r$$\\sim$$0.2$ $μ$m) situated within the main lower cloud. The ammonia profile is intimately linked with the cloud profile with the lower cloud coinciding with an initial drop in ammonia abundance and the upper cloud coinciding with the ammonia condensation level. The large lower cloud particles are highly scattering at visible wavelengths, allowing sunlight to scatter through the clouds and be Rayleigh-scattered from the deep atmosphere. At 5 $μ$m, the lower cloud particles are found to be more absorbing, with the belt/zone differences mostly accounted for by changes in the single-scattering albedo of these particles and secondarily by changes in the cloud opacity. The spectral properties of these lower cloud particles are possibly consistent with a component of water ice. The upper cloud particles need a distinct absorption band near 3 $μ$m, possibly consistent with a component of ammonia ice. We note that we do not need a separate upper-level photochemical haze in our model. Instead, we find that the features seen at methane-absorbing wavelengths are caused by variations in the opacity and vertical extent of the upper cloud layer.",
+      "authors": [
+        "Patrick G. J. Irwin",
+        "Asier Anguiano-Arteaga",
+        "Michelle Colantoni",
+        "Joseph Penn",
+        "Santiago Pérez-Hoyos",
+        "Davide Grassi",
+        "Alessandro Mura",
+        "Charlotte L. B. Alexander",
+        "Leigh N. Fletcher",
+        "Simon C. A. Toogood",
+        "Michael T. Roman"
+      ],
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-07-28T10:23:35+00:00",
+      "link": "https://arxiv.org/pdf/2607.25542v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Multiwavelength retrieval of Jupiter's cloud and ammonia vertical profiles, providing transferable atmospheric characterization methodology",
+      "llm_evidence_cn": "多波段反演木星云与氨垂直廓线，提供可迁移的大气表征方法",
+      "llm_evidence": "多波段反演木星云与氨垂直廓线，提供可迁移的大气表征方法",
+      "canonical_evidence": "多波段反演木星云与氨垂直廓线，提供可迁移的大气表征方法",
+      "llm_tldr_en": "Combining visible-to-NIR observations from VLT/MUSE, Cassini/VIMS, IRTF/SpeX and Juno/JIRAM, this paper derives a unified cloud/ammonia model for Jupiter's equatorial atmosphere, providing a retrieval framework transferable to giant exoplanets.",
+      "llm_tldr_cn": "木星赤道大气的云层与氨分布难以用单一波段观测唯一确定，本文联合VLT/MUSE、Cassini/VIMS、IRTF/SpeX和Juno/JIRAM的0.35-5.15微米多几何观测，构建了0.1-10巴的云/氨统一模型。模型包含光学厚下云、光学薄上云及蓝吸收色团层，氨廓线与云层紧密关联。该模型成功拟合了多设备的光谱，给出了木星大气垂直结构的自洽描述。这种多仪器联合反演方法可迁移至系外巨行星大气研究，为大气化学与云表征提供借鉴。",
+      "llm_tldr": "木星赤道大气的云层与氨分布难以用单一波段观测唯一确定，本文联合VLT/MUSE、Cassini/VIMS、IRTF/SpeX和Juno/JIRAM的0.35-5.15微米多几何观测，构建了0.1-10巴的云/氨统一模型。模型包含光学厚下云、光学薄上云及蓝吸收色团层，氨廓线与云层紧密关联。该模型成功拟合了多设备的光谱，给出了木星大气垂直结构的自洽描述。这种多仪器联合反演方法可迁移至系外巨行星大气研究，为大气化学与云表征提供借鉴。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "atmospheric characterization, chemistry, climate, and escape of exoplanets",
+      "matched_requirement_id": "req-11",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.25964v1",
+      "source": "arxiv",
+      "title": "Volcanic Satellites and Ion Escape in the Magnetospheres of Ultra-Cool and Brown Dwarf Stars",
+      "abstract": "Radio emissions at $\\sim$ GHz frequencies of ultra-cool dwarf and brown dwarf stars suggest the presence of radiation belts not unlike Jupiter's. We investigate the possibility the inferred magnetospheric plasma at the primary star is sourced by an active planet or via ion escape modeled as a weak ionospheric outflow. We consider indirect methods to estimate the magnetospheric plasma mass flow from auroral radio emission and apply them to the ultra-cool dwarf LSR J1835+3259. We find that an ionospheric outflow is a viable source of the order of $10^{5}$ kg s$^{-1}$, if the ionospheric effective Pedersen conductance is lower than $\\sim 0.02$ mho. On the other hand, a tidally-heated volcanic satellite with the same mass and radius as Io and an orbit with a semimajor axis lower than about $10$ stellar radii, whose eccentricity ($e \\sim 10^{-3}$) is maintained by perturbations by other planets in the system, is found to be a viable source of magnetospheric plasma without strong limitations on the ionospheric conductance. The volcanic satellite scenario is also naturally in sync with the recent finding that ultra-cool dwarfs with distant substellar or stellar companions are remarkably more likely to be detected as radio emitters.",
+      "authors": [
+        "A. F. Lanza",
+        "A. V. Oza"
+      ],
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-07-28T16:47:13+00:00",
+      "link": "https://arxiv.org/pdf/2607.25964v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Modeling magnetospheric plasma sources and ion escape around ultra-cool dwarfs",
+      "llm_evidence_cn": "模拟超冷矮星磁层等离子体来源与离子逃逸",
+      "llm_evidence": "模拟超冷矮星磁层等离子体来源与离子逃逸",
+      "canonical_evidence": "模拟超冷矮星磁层等离子体来源与离子逃逸",
+      "llm_tldr_en": "The paper models whether magnetospheric plasma around ultra-cool dwarfs and brown dwarfs comes from a volcanic satellite or ionospheric outflow, using auroral radio emission to estimate mass flow rates relevant to escape processes.",
+      "llm_tldr_cn": "超冷矮星和褐矮星的GHz射电辐射暗示其存在类似木星的辐射带，但磁层等离子体来源未知。作者用间接方法从极光射电辐射估算磁层等离子体质量流，并应用于LSR J1835+3259。结果表明离子层外向流可提供约10^5 kg/s的等离子体，而潮汐加热火山卫星也可能是源。这项研究对理解行星和卫星的离子逃逸与磁层耦合有启示。",
+      "llm_tldr": "超冷矮星和褐矮星的GHz射电辐射暗示其存在类似木星的辐射带，但磁层等离子体来源未知。作者用间接方法从极光射电辐射估算磁层等离子体质量流，并应用于LSR J1835+3259。结果表明离子层外向流可提供约10^5 kg/s的等离子体，而潮汐加热火山卫星也可能是源。这项研究对理解行星和卫星的离子逃逸与磁层耦合有启示。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "observations and models of exoplanet atmospheres, climate, chemistry, and escape",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.27352v1",
+      "source": "arxiv",
+      "title": "A Systematic Trend in the Observed vs. Predicted Radii of Transiting Brown Dwarfs",
+      "abstract": "Transiting brown dwarfs provide a direct empirical test of substellar evolutionary models, and with more than 50 now known we can carry out this test at the population level. We compared the observed masses and radii of 31 field-age, weakly irradiated transiting brown dwarfs to the Sonora Diamondback, Sonora Bobcat, and ATMO 2020 grids, and a subset of 23 of them to the irradiated models of Mukherjee et al. (2026). In every comparison we find a radius-dependent trend, with fits of $R_{\\rm pred}$ versus $R_{\\rm obs}$ yielding slopes of $0.3{-}0.4$, shallower than the one-to-one relation at $3.7{-}8σ$. The mean inflation is $5{-}14\\%$ depending on the grid, reaching $\\sim20\\%$ among the largest objects. We also measure an intrinsic dispersion of $8{-}12\\%$, two to three times the measurement uncertainty. While the mean inflation offset varies by a factor of three among grids, this dispersion does not, indicating that it is a property of the population and not the models. We find no correlation with mass, equilibrium temperature, orbital separation, tidal heating rate, or age, and only a marginal ($1.7σ$) trend with host-star metallicity. Most notable is the absence of any trend with irradiation, which argues against hot Jupiter-like stellar heating as the primary cause. We instead suggest that brown dwarfs span a wider range of atmospheric boundary conditions than current grids represent. The brown dwarf radius inflation is comparable to that in fully convective M dwarfs, and it is likely the transiting counterpart to the luminosity discrepancies seen in dynamical-mass benchmarks. If the trend extends below the deuterium-burning limit, it would bias directly imaged planet mass estimates, overestimating luminosity-age masses by several to ten percent and requiring spectroscopic-gravity masses to be revised upward by $\\sim20{-}45\\%$.",
+      "authors": [
+        "Thomas G. Beatty"
+      ],
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.SR"
+      ],
+      "published": "2026-07-29T18:09:11+00:00",
+      "link": "https://arxiv.org/pdf/2607.27352v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Systematic radius inflation trend in transiting brown dwarfs compared to evolutionary models",
+      "llm_evidence_cn": "凌星褐矮星与演化模型比较显示系统性半径膨胀趋势",
+      "llm_evidence": "凌星褐矮星与演化模型比较显示系统性半径膨胀趋势",
+      "canonical_evidence": "凌星褐矮星与演化模型比较显示系统性半径膨胀趋势",
+      "llm_tldr_en": "Compares observed radii of 31 transiting brown dwarfs to evolutionary models, finding a radius-dependent inflation trend (5-14%) and model mismatch.",
+      "llm_tldr_cn": "将31颗年老、弱辐照的凌星褐矮星的观测质量半径与Sonora Diamondback、Sonora Bobcat、ATMO 2020等演化模型进行统计比较，发现所有模型中均存在半径依赖的趋势，预测半径-观测半径拟合斜率为0.3-0.4，在3.7-8σ水平偏离1:1关系。褐矮星平均膨胀5%-14%，大半径天体可达约20%。表明亚恒星演化模型可能缺少某些物理过程，对系外行星大气和演化研究有参考价值。",
+      "llm_tldr": "将31颗年老、弱辐照的凌星褐矮星的观测质量半径与Sonora Diamondback、Sonora Bobcat、ATMO 2020等演化模型进行统计比较，发现所有模型中均存在半径依赖的趋势，预测半径-观测半径拟合斜率为0.3-0.4，在3.7-8σ水平偏离1:1关系。褐矮星平均膨胀5%-14%，大半径天体可达约20%。表明亚恒星演化模型可能缺少某些物理过程，对系外行星大气和演化研究有参考价值。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "new exoplanet discoveries and detection or characterization methods",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

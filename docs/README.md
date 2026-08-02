@@ -6,26 +6,30 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-08-01
-- 运行时间：2026-08-01 21:27:09 UTC
+- 最新运行日期：2026-08-02
+- 运行时间：2026-08-02 20:21:02 UTC
 - 运行状态：成功
-- 本次总论文数：2
-- 精读区：1
-- 速读区：1
+- 本次总论文数：3
+- 精读区：0
+- 速读区：3
 
 ### 今日简报（AI）
-今日精读1篇、速读1篇，聚焦系外行星成像与恒星X射线活动。最值得看的是LBTI/NOMIC升级四象限相位掩模与GeoSnap探测器，用于直接成像近邻宜居带系外行星。若对系外行星感兴趣，可延伸了解该技术后续观测计划及近邻恒星样本。
-- 详情：[/202608/01/README](/202608/01/README)
+今日速读3篇论文，聚焦木星大气垂直廓线与褐矮星半径异常。最值得关注的是木星赤道云层和氨分布研究，以及褐矮星观测半径与预测的系统性偏差。建议优先精读这两篇7分论文，深入验证模型与观测的差异。
+- 详情：[/202608/02/README](/202608/02/README)
 
 ### 精读区论文标签
-1. [Upgrading LBTI/NOMIC with a quadruple annular groove phase mask and GeoSnap detector for imaging nearby, habitable-zone exoplanets](/202608/01/2607.28562v1-upgrading-lbtinomic-with-a-quadruple-annular-groove-phase-mask-and-geosnap-detector-for-imaging-nearby-habitable-zone-exoplanets)  
-   标签：评分：9.0/10、query:ep
-   evidence：面向宜居带系外行星高对比度成像的仪器升级
+- 本次无精读推荐。
 
 ### 速读区论文标签
-1. [The X-ray catalogue of FGK stars within 10 pc: The coronal temperature-brightness relation explained with the RTV scaling law](/202608/01/2607.27832v1-the-x-ray-catalogue-of-fgk-stars-within-10-pc-the-coronal-temperature-brightness-relation-explained-with-the-rtv-scaling-law)  
+1. [Cloud and ammonia vertical profiles in the equatorial atmosphere of Jupiter determined from visible to near-IR observations made by VLT/MUSE, Cassini/VIMS, IRTF/SpeX and Juno/JIRAM](/202608/02/2607.25542v1-cloud-and-ammonia-vertical-profiles-in-the-equatorial-atmosphere-of-jupiter-determined-from-visible-to-near-ir-observations-made-by-vltmuse-cassinivims-irtfspex-and-junojiram)  
    标签：评分：7.0/10、query:ep
-   evidence：FGK恒星X射线星表，对系外行星大气逃逸和原行星盘蒸发具有启示
+   evidence：多波段反演木星云与氨垂直廓线，提供可迁移的大气表征方法
+2. [A Systematic Trend in the Observed vs. Predicted Radii of Transiting Brown Dwarfs](/202608/02/2607.27352v1-a-systematic-trend-in-the-observed-vs-predicted-radii-of-transiting-brown-dwarfs)  
+   标签：评分：7.0/10、query:ep
+   evidence：凌星褐矮星与演化模型比较显示系统性半径膨胀趋势
+3. [Volcanic Satellites and Ion Escape in the Magnetospheres of Ultra-Cool and Brown Dwarf Stars](/202608/02/2607.25964v1-volcanic-satellites-and-ion-escape-in-the-magnetospheres-of-ultra-cool-and-brown-dwarf-stars)  
+   标签：评分：6.0/10、query:ep
+   evidence：模拟超冷矮星磁层等离子体来源与离子逃逸
 
 
 <div class="dpr-home-promo-card">
