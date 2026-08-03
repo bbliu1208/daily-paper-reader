@@ -1,0 +1,293 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-03T21:50:29.563534+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 7,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2607.28924v1",
+      "source": "arxiv",
+      "title": "Asymmetric, variable H$α$ line profile in planetary mass object SR 12 c",
+      "abstract": "Young, forming planetary-mass objects often exhibit clear signatures of ongoing mass accretion and are thought to accrete material through processes analogous to those operating in young stars. In this study, we present high-spectral-resolution observations of asymmetric and time-variable H$α$ line profiles from the planetary-mass companion SR~12~c. The H$α$ line was observed at a resolving power of $R \\sim 49,000$--40{,}000 (corresponding to 6.1--7.5~km~s$^{-1}$) using the High Dispersion Spectrograph (HDS) on the 8.2 m Subaru Telescope. Strong H$α$ emission is clearly detected, while higher-order Balmer lines (H$β$, H$γ$, and H$δ$) are not detected due to their faintness. The H$α$ line profiles are well spectrally resolved and exhibit blueshifted emission peaks, which can be interpreted as arising from either (a) emission partially absorbed by redshifted accreting material along the line of sight and/or (b) geometric occultation by the inner circumplanetary disk. Moreover, the H$α$ flux shows significant variability at 43.6~$\\pm$~6.4~\\% relative to the peak flux on hourly timescales. During a continuous 2.5-hour observing sequence, the emission component peaking at approximately $-30$~km~s$^{-1}$ weakened over the first hour. Subsequently, an emission component centered near $-10$~km~s$^{-1}$ became dominant and remained stable for the remaining 1.5 hours. We discuss possible interpretations of this behavior. Overall, these results support that magnetospheric accretion is operating in the planetary-mass object SR~12~c while a scenario combining boundary-layer accretion with a failed wind cannot be ruled out.",
+      "authors": [
+        "Jun Hashimoto",
+        "Yuhiko Aoyama",
+        "Michihiro Takami",
+        "Shinsuke Takasao"
+      ],
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.SR"
+      ],
+      "published": "2026-07-31T00:59:38+00:00",
+      "link": "https://arxiv.org/pdf/2607.28924v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "High-resolution spectroscopy of accreting planetary-mass companion SR 12 c.",
+      "llm_evidence_cn": "对行星质量伴星SR 12 c进行高分辨率光谱观测，研究其吸积过程。",
+      "llm_evidence": "对行星质量伴星SR 12 c进行高分辨率光谱观测，研究其吸积过程。",
+      "canonical_evidence": "对行星质量伴星SR 12 c进行高分辨率光谱观测，研究其吸积过程。",
+      "llm_tldr_en": "High-resolution Subaru/HDS spectroscopy reveals asymmetric, time-variable Hα line profiles in the young planetary-mass companion SR 12 c, indicating ongoing accretion through a process analogous to star formation.",
+      "llm_tldr_cn": "年轻行星质量天体通常表现出持续吸积的特征，其吸积过程可能与恒星吸积类似。该研究利用Subaru望远镜HDS光谱仪对SR 12 c进行了高分辨率观测，清晰检测到强Hα发射，且谱线轮廓呈现蓝移不对称并随时间变化，而高阶Balmer线未被探测到。这些观测为行星质量伴星的吸积机制和形成演化提供了直接证据。",
+      "llm_tldr": "年轻行星质量天体通常表现出持续吸积的特征，其吸积过程可能与恒星吸积类似。该研究利用Subaru望远镜HDS光谱仪对SR 12 c进行了高分辨率观测，清晰检测到强Hα发射，且谱线轮廓呈现蓝移不对称并随时间变化，而高阶Balmer线未被探测到。这些观测为行星质量伴星的吸积机制和形成演化提供了直接证据。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "formation and early evolution of planets, planetesimals, and planetary systems",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.29057v1",
+      "source": "arxiv",
+      "title": "A Physically Driven Parameterisation of Multidimensional Atmospheres: Application to the JWST Phase Curve of WASP-121b",
+      "abstract": "Understanding the multidimensional structure of strongly irradiated exoplanets is essential for interpreting their atmospheric dynamics, chemistry and energy transport, yet current analyses remain limited by the difficulty of extracting reliable phase-resolved spectra and by the lack of physically interpretable parameterisations for retrievals. We combine a data-driven eclipse-normalisation method with an analytical three-dimensional temperature parameterisation derived from radiative, advective and diffusive energy balance and controlled by a few characteristic timescales. Applied to JWST/NIRSpec G395H observations of WASP-121b, the method yields spectra consistent with conventional phase-curve fitting, while the parameterisation reproduces the large-scale thermal structures predicted by general circulation models. The preferred retrieval reveals a pronounced day--night contrast, a dayside thermal inversion extending to both limbs, an inversion over part of the nightside, and limb temperatures differing by several hundred kelvin. Dynamical transport strengthens with pressure, and the hotspot offset increases from $\\sim4^\\circ$ to $\\sim9^\\circ$ across the pressures probed by G395H. The confined dayside hot region and the small, pressure-dependent offsets lie closer to the $\\sim$3~G GCM than to its non-magnetic counterpart, although Rayleigh drag cannot be excluded. The spectra also favour distinct dayside and nightside chemical states, with more nightside CH$_4$ than the cooler temperatures alone can explain, pointing to disequilibrium chemistry. The retrieved thermal structure further implies an inhomogeneous cloud distribution, with condensation favoured on the nightside and cooler morning limb. The framework provides a computationally efficient, physically interpretable path from spectroscopic phase curves to multidimensional atmospheric structure.",
+      "authors": [
+        "Yuanheng Yang",
+        "Guo Chen",
+        "Xianyu Tan",
+        "Thaddeus D. Komacek",
+        "Xi Zhang",
+        "Thomas M. Evans-Soma",
+        "Fei Yan",
+        "Chengzi Jiang",
+        "Fei Dai"
+      ],
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-07-31T06:22:52+00:00",
+      "link": "https://arxiv.org/pdf/2607.29057v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "physical 3D temperature parameterisation for exoplanet phase curve retrievals applied to JWST WASP-121b",
+      "llm_evidence_cn": "面向系外行星相位曲线反演的三维温度物理解析参数化，并应用于JWST WASP-121b观测",
+      "llm_evidence": "面向系外行星相位曲线反演的三维温度物理解析参数化，并应用于JWST WASP-121b观测",
+      "canonical_evidence": "面向系外行星相位曲线反演的三维温度物理解析参数化，并应用于JWST WASP-121b观测",
+      "llm_tldr_en": "A physically motivated 3D temperature parameterisation plus eclipse normalisation is applied to JWST WASP-121b phase curve, yielding physically interpretable multidimensional atmospheric retrievals.",
+      "llm_tldr_cn": "强辐照系外行星的多维大气结构对理解动力学、化学和能量输运至关重要，但现有相位分辨光谱提取和可解释参数化存在局限。作者将数据驱动的凌食归一化方法与基于辐射、平流和扩散能量平衡推导的解析三维温度参数化结合，应用于WASP-121b的JWST/NIRSpec G395H相位曲线。该方法得到的谱与常规相位曲线拟合一致，同时提供了可解释的动力学参数。这为多维系外行星大气反演提供了新的物理驱动框架。",
+      "llm_tldr": "强辐照系外行星的多维大气结构对理解动力学、化学和能量输运至关重要，但现有相位分辨光谱提取和可解释参数化存在局限。作者将数据驱动的凌食归一化方法与基于辐射、平流和扩散能量平衡推导的解析三维温度参数化结合，应用于WASP-121b的JWST/NIRSpec G395H相位曲线。该方法得到的谱与常规相位曲线拟合一致，同时提供了可解释的动力学参数。这为多维系外行星大气反演提供了新的物理驱动框架。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "atmospheric characterization, chemistry, climate, and escape of exoplanets",
+      "matched_requirement_id": "req-11",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.29558v1",
+      "source": "arxiv",
+      "title": "Warm Sub-Saturns Orbiting Single Stars Are Spin-Orbit Aligned",
+      "abstract": "In this work, we show that warm sub-Saturns orbiting single stars are predominantly aligned, in contrast to hot sub-Saturns, which are frequently misaligned, with the two populations differing at the 3.2$σ$ level. Because both populations are observed around cool stars, they are free from the ambiguity introduced by the $T_{\\rm eff}$-$λ$ dependence. Together with the established alignment of warm Jupiters, this demonstrates, among single-star systems, that spin-orbit misalignment arises specifically in the close-in ``hot-Jupiter-analog'' regime, where tidal circularization is efficient ($τ_e<τ_{\\rm age}$) and high-eccentricity migration is expected to operate. We further find that the transition between aligned and misaligned sub-Saturns occurs at wider orbital separations ($a_{\\rm final}/R_p = 338\\pm27$) than for Jupiters ($a_{\\rm final}/R_p = 117\\pm9$), consistent with the expectation that the lower masses (smaller $M_p/M_*$) and stronger tidal dissipation (lower $Q_p$) of sub-Saturns allow them to be circularized into wider final orbits within their lifetimes. Taken together, these results provide the clearest direct evidence to date that, in single-star systems, spin-orbit misalignments are produced by high-eccentricity migration. If this framework is correct, spin-orbit misalignments may also emerge among hot-Jupiter analogs in other mass regimes, including hot brown dwarfs around hot stars at $a_{\\rm final}/R_p\\lesssim100$ and isolated hot super-Earths at $a_{\\rm final}/R_p\\lesssim1000$, with the corresponding transition locations shifted by the dependence of the orbital-circularization timescale on $M_p/M_*$ and $Q_p$.",
+      "authors": [
+        "Xian-Yu Wang",
+        "Songhu Wang"
+      ],
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-07-31T15:49:18+00:00",
+      "link": "https://arxiv.org/pdf/2607.29558v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "observational study of spin-orbit alignment of warm vs hot sub-Saturns, probing planetary migration and architectures",
+      "llm_evidence_cn": "对比暖次土星与热次土星的自转轨道夹角，揭示行星迁移和系统动力学架构",
+      "llm_evidence": "对比暖次土星与热次土星的自转轨道夹角，揭示行星迁移和系统动力学架构",
+      "canonical_evidence": "对比暖次土星与热次土星的自转轨道夹角，揭示行星迁移和系统动力学架构",
+      "llm_tldr_en": "Warm sub-Saturns around single stars are mostly spin-orbit aligned whereas hot sub-Saturns are frequently misaligned, at 3.2 sigma, showing that misalignment arises only where tidal circularization and high-eccentricity migration operate.",
+      "llm_tldr_cn": "该研究发现，绕单星运行的暖次土星群体普遍满足自转-轨道对齐，而热次土星则经常出现倾斜，两者差异显著度为3.2σ。由于两类行星都围绕冷恒星运行，结果不受恒星温度与波长依赖的干扰。这表明在单星系统中，自转轨道错位主要出现在近邻的类热木星区域，即潮汐圆化和高偏心率迁移有效的地方。该结果对行星迁移与系统演化模型提供了重要约束。",
+      "llm_tldr": "该研究发现，绕单星运行的暖次土星群体普遍满足自转-轨道对齐，而热次土星则经常出现倾斜，两者差异显著度为3.2σ。由于两类行星都围绕冷恒星运行，结果不受恒星温度与波长依赖的干扰。这表明在单星系统中，自转轨道错位主要出现在近邻的类热木星区域，即潮汐圆化和高偏心率迁移有效的地方。该结果对行星迁移与系统演化模型提供了重要约束。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "planetary dynamics, migration, stability, and population-level architectures",
+      "matched_requirement_id": "req-12",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.28717v1",
+      "source": "arxiv",
+      "title": "Atmospheric Signatures of Common Envelope Evolution in White Dwarf Planets",
+      "abstract": "The majority of confirmed exoplanets orbit within 1 au of a main-sequence (MS) star. When their stellar hosts evolve off the MS, many of these planets will be engulfed and destroyed, creating empty \"forbidden\" zones around the stars as they evolve to their final state as a white dwarf (WD). However, several confirmed and candidate WD planets have been found within this forbidden zone. Two formation scenarios have been proposed to explain the existence of these close-in planets: high-eccentricity migration and common envelope evolution (CEE). There are currently few observational tests to distinguish between these pathways. In this study, we investigate whether CEE could leave a detectable atmospheric signature. Using Modules for Experiments in Stellar Astrophysics (MESA) models, we simulate an engulfed planet inspiraling into an AGB star, and allow the planet to accrete mass via Bondi-Hoyle-Lyttleton accretion. Assuming a range of planet masses (1$-$13 M$_{\\mathrm{Jup}}$) and accretion efficiencies (0.01$-$1.0), we find that the planet can accrete up to 48% of its initial mass in the most extreme Eddington-limited scenario. Because this accreted material is enriched in hydrogen and helium, we expect it to decrease the planet's bulk metallicity. Using simulated emission spectra, we find that CEE can increase thermal emission by up to 9.0% for a cool planet such as WD 1856 b. For lower accretion efficiencies (0.01$-$0.5), thermal emission increases between 0.1$-$3.6%. This signature may be observable in the most favorable cases, providing a potential new probe for investigating the dynamical history of close-in planets around WDs.",
+      "authors": [
+        "Sydney Jenkins",
+        "Andrew Vanderburg",
+        "James Mang",
+        "Juliette Becker",
+        "Caroline V. Morley",
+        "Melinda Soares-Furtado",
+        "Ricardo Yarza"
+      ],
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.SR"
+      ],
+      "published": "2026-07-30T18:00:00+00:00",
+      "link": "https://arxiv.org/pdf/2607.28717v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Exoplanet atmospheric signatures of common envelope evolution around white dwarfs",
+      "llm_evidence_cn": "白矮星行星共包层演化的大气特征，直接对应系外行星大气模拟需求",
+      "llm_evidence": "白矮星行星共包层演化的大气特征，直接对应系外行星大气模拟需求",
+      "canonical_evidence": "白矮星行星共包层演化的大气特征，直接对应系外行星大气模拟需求",
+      "llm_tldr_en": "This study tests whether common envelope evolution can leave detectable atmospheric signatures in white dwarf planets, offering an observational discriminator between CEE and high-eccentricity migration formation channels.",
+      "llm_tldr_cn": "白矮星周围的近距离行星如何形成仍不清楚，主流解释包括高偏心率迁移和共包层演化（CEE）。该研究用恒星演化模型模拟CEE过程，考察其是否会在白矮星行星大气中留下独特化学成分或热结构印记，从而成为区分两种形成路径的观测诊断。结果表明这类大气特征具有潜在可探测性，为白矮星行星形成机制提供了新的观测验证途径。",
+      "llm_tldr": "白矮星周围的近距离行星如何形成仍不清楚，主流解释包括高偏心率迁移和共包层演化（CEE）。该研究用恒星演化模型模拟CEE过程，考察其是否会在白矮星行星大气中留下独特化学成分或热结构印记，从而成为区分两种形成路径的观测诊断。结果表明这类大气特征具有潜在可探测性，为白矮星行星形成机制提供了新的观测验证途径。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "observations and models of exoplanet atmospheres, climate, chemistry, and escape",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.29232v1",
+      "source": "arxiv",
+      "title": "Predicting Radial Velocities from Rossiter-McLaughlin Time Series Observations",
+      "abstract": "The Rossiter-McLaughlin (RM) effect produces apparent radial velocity (RV) shifts through line-profile distortions caused by a transiting planet blocking different regions of the rotating stellar surface. Because the underlying orbital RV trend can be estimated from out-of-transit observations, RM sequences provide a controlled laboratory for studying flux-induced RV variations. We compiled a sample of 1171 ESPRESSO observations of 13 targets obtained during 21 RM observing nights and trained machine-learning models to reconstruct a reference RV trend from observed RVs, line-profile diagnostics, and activity indicators. Predictive performance varied substantially among stars and depended on both the strength of the RM signal and the similarity of the target star to the training sample. Applications to Sun-as-a-star observations and Proxima Centauri recovered known periodicities but did not fully remove the activity-induced variability. Larger and more diverse datasets will be required to assess the potential of this approach for mitigating activity-induced RV signals.",
+      "authors": [
+        "Vardan Adibekyan",
+        "Olivier Demangeon",
+        "Diogo Teixeira",
+        "Nuno C. Santos",
+        "Khaled Al Moulla",
+        "Eduardo Cristo",
+        "Andre Silva",
+        "Roman Chertovskih",
+        "Garik Israelian",
+        "Artur Hakobyan"
+      ],
+      "primary_category": "physics.gen-ph",
+      "categories": [
+        "physics.gen-ph"
+      ],
+      "published": "2026-07-31T10:04:42+00:00",
+      "link": "https://arxiv.org/pdf/2607.29232v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "machine-learning method to predict RV trends from RM time series, an analysis tool for exoplanet characterization",
+      "llm_evidence_cn": "利用机器学习从Rossiter-McLaughlin时序预测视向速度趋势，属于系外行星表征分析工具",
+      "llm_evidence": "利用机器学习从Rossiter-McLaughlin时序预测视向速度趋势，属于系外行星表征分析工具",
+      "canonical_evidence": "利用机器学习从Rossiter-McLaughlin时序预测视向速度趋势，属于系外行星表征分析工具",
+      "llm_tldr_en": "The paper trains machine-learning models on 1171 ESPRESSO RM observations to reconstruct a reference radial-velocity trend from line-profile and activity indicators, testing prediction performance across stars as a lab for flux-induced RV variability.",
+      "llm_tldr_cn": "该研究利用ESPRESSO对13个目标在21个Rossiter-McLaughlin观测夜晚的1171次观测，训练机器学习模型从视向速度、谱线轮廓诊断和活动指标中重构参考视向速度趋势。结果表明预测效果因恒星而异，依赖于RM信号强度和样本相似性。该方法为校正活动引起的视向速度变化提供了新的分析工具，对系外行星精确表征具有价值。",
+      "llm_tldr": "该研究利用ESPRESSO对13个目标在21个Rossiter-McLaughlin观测夜晚的1171次观测，训练机器学习模型从视向速度、谱线轮廓诊断和活动指标中重构参考视向速度趋势。结果表明预测效果因恒星而异，依赖于RM信号强度和样本相似性。该方法为校正活动引起的视向速度变化提供了新的分析工具，对系外行星精确表征具有价值。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "instruments and analysis methods enabling exoplanet and planetary science",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.29376v1",
+      "source": "arxiv",
+      "title": "Gas Phase Ion Species Released During Grain Collisions: Implications For Protoplanetary Disks",
+      "abstract": "Grain charging and gas ionization are important processes in protoplanetary disks. Both occur in mutual collisions between grains, as charge is exchanged between grain surfaces but also released into the surrounding gas as ions. The charge carrier for tribocharging, the origin of the gaseous ions, and their composition are currently unknown. However, it is important to know to validate the significance of these processes under disk conditions. In this work, we approach these questions by detecting molecules ejected during grain collisions by mass spectrometry. As tribocharging works well under normal atmospheric conditions, we use untreated \"dirty\" particles here. Without collisions, our measurements show a background mix of molecules. Among these are organics, but especially water-related molecules. During collisions, the abundances of not all but quite a few molecules change. Water-related molecules account for one of the largest changing fractions. These results suggest that particle collisions release adsorbates even at very low pressure, which is relevant for protoplanetary disks. As monolayers of water and organics are present on all surfaces in cool to moderately tempered parts of protoplanetary disks, this supports the importance of triboionization in disks.",
+      "authors": [
+        "Patrick Hock",
+        "Gerhard Wurm"
+      ],
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP"
+      ],
+      "published": "2026-07-31T12:59:21+00:00",
+      "link": "https://arxiv.org/pdf/2607.29376v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Protoplanetary disk grain charging and gas ionization study",
+      "llm_evidence_cn": "原行星盘中颗粒充电与气体电离研究",
+      "llm_evidence": "原行星盘中颗粒充电与气体电离研究",
+      "canonical_evidence": "原行星盘中颗粒充电与气体电离研究",
+      "llm_tldr_en": "Investigates molecules released during grain collisions via mass spectrometry to understand tribocharging and ion composition in protoplanetary disks.",
+      "llm_tldr_cn": "原行星盘中颗粒碰撞的摩擦起电与气体电离机制尚不清楚，尤其是释放离子的种类与来源。论文使用质谱法检测未处理“脏”颗粒碰撞时释放的气相离子种类，排除了无碰撞背景后识别出碰撞特有的分子信号。这为验证盘条件下摩擦起电及电离过程的重要性提供了实验室数据基础。对理解原行星盘电荷交换与化学演化有直接意义。",
+      "llm_tldr": "原行星盘中颗粒碰撞的摩擦起电与气体电离机制尚不清楚，尤其是释放离子的种类与来源。论文使用质谱法检测未处理“脏”颗粒碰撞时释放的气相离子种类，排除了无碰撞背景后识别出碰撞特有的分子信号。这为验证盘条件下摩擦起电及电离过程的重要性提供了实验室数据基础。对理解原行星盘电荷交换与化学演化有直接意义。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "observations and theoretical models of protoplanetary disks and disk evolution",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.29524v1",
+      "source": "arxiv",
+      "title": "Towards Autodifferentiable Point Spread Function Modelling for the VLT/ERIS Vortex Coronagraph",
+      "abstract": "High-contrast imaging of exoplanets is limited by the presence of quasi-static speckles and existing post-processing methods remain above the theoretical noise limit. We investigate a novel framework that incorporates adaptive optics (AO) wavefront sensor telemetry into post-processing using a differentiable optical model of the ERIS vortex coronagraph. As a first proof of concept, we inject AO telemetry into an ERIS forward model and assess its ability to reproduce the on-sky point spread function (PSF). We find that jitter discrepancies between the science camera and the AO telemetry hinder accurate PSF reconstruction. We proposed a plan to characterise this jitter and find its mechanical origin.",
+      "authors": [
+        "P. Van de Walle Suarez",
+        "G. Orban De Xivry",
+        "O. Absil",
+        "M. J. Bonse",
+        "R. J. De Rosa",
+        "V. Christiaens"
+      ],
+      "primary_category": "astro-ph.EP",
+      "categories": [
+        "astro-ph.EP",
+        "astro-ph.IM"
+      ],
+      "published": "2026-07-31T15:25:00+00:00",
+      "link": "https://arxiv.org/pdf/2607.29524v1",
+      "tags": [
+        "keyword:EP",
+        "query:EP"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Differentiable PSF modeling framework for high-contrast exoplanet coronagraphy",
+      "llm_evidence_cn": "面向系外行星高对比度日冕仪的可微PSF建模框架",
+      "llm_evidence": "面向系外行星高对比度日冕仪的可微PSF建模框架",
+      "canonical_evidence": "面向系外行星高对比度日冕仪的可微PSF建模框架",
+      "llm_tldr_en": "Proposes an autodifferentiable optical model integrating AO telemetry for VLT/ERIS vortex coronagraph PSF reconstruction, finding jitter discrepancies currently limit accuracy and outlining a plan to characterize them.",
+      "llm_tldr_cn": "针对系外行星高对比度成像受准静态散斑限制的问题，作者提出将自适应光学波前传感器遥测数据融入可微光学模型，以改进VLT/ERIS涡旋日冕仪的PSF重建。作为初步验证，他们将AO遥测注入前向模型并评估其复现实测PSF的能力。结果显示科学相机与AO遥测之间的抖动差异阻碍了精确重建，因此提出了表征并追溯抖动机械来源的计划。该框架有望提升直接成像后处理性能。",
+      "llm_tldr": "针对系外行星高对比度成像受准静态散斑限制的问题，作者提出将自适应光学波前传感器遥测数据融入可微光学模型，以改进VLT/ERIS涡旋日冕仪的PSF重建。作为初步验证，他们将AO遥测注入前向模型并评估其复现实测PSF的能力。结果显示科学相机与AO遥测之间的抖动差异阻碍了精确重建，因此提出了表征并追溯抖动机械来源的计划。该框架有望提升直接成像后处理性能。",
+      "llm_tags": [
+        "query:ep"
+      ],
+      "matched_query_tag": "query:ep",
+      "matched_query_text": "instruments and analysis methods enabling exoplanet and planetary science",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    }
+  ]
+}
