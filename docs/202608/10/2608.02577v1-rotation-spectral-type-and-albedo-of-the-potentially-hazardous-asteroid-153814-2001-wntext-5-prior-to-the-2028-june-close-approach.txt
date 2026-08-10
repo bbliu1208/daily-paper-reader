@@ -1,0 +1,385 @@
+Title: Rotation, spectral type, and albedo of the potentially hazardous asteroid (153814) 2001 WN_5 Prior to the 2028 June close approach
+
+URL Source: https://arxiv.org/pdf/2608.02577v1
+
+Published Time: Tue, 04 Aug 2026 02:49:23 GMT
+
+Number of Pages: 11
+
+Markdown Content:
+Astronomy & Astrophysics manuscript no. aa61418-26 ©ESO 2026 August 4, 2026 
+
+# Rotation, spectral type, and albedo of the potentially hazardous asteroid (153814) 2001 WN 5
+
+# Prior to the 2028 June close approach 
+
+Jin Beniyama 1, 2 ⋆, Alexey V. Sergeyev 1, 3, Konstantinos Odysseas Xenos 1, Benoit Carry 1, Petr Pravec 4, Petr Fatka 4,Peter Kušnirák 4, Larry Denneau 5, and Vasilij Shevchenko 3 
+
+> 1
+
+Université Côte d’Azur, Observatoire de la Côte d’Azur, CNRS, Laboratoire Lagrange, Bd de l’Observatoire, CS 34229, 06304 Nice Cedex 4, France  
+
+> 2
+
+Department of Earth and Planetary Science, The University of Tokyo, 7-3-1 Hongo, Bunkyo, Tokyo 113-0033, Japan  
+
+> 3
+
+Institute of Astronomy, V.N. Karazin Kharkiv National University, 35 Sumska Str., Kharkiv 61022, Ukraine  
+
+> 4
+
+Astronomical Institute ASCR, Friˇ cova 298, Ondˇ rejov 251 65, Czech Republic  
+
+> 5
+
+Institute for Astronomy, University of Hawaii, Honolulu, HI 96822, USA Received June 12, 2026 / Revised July 24, 2026 
+
+ABSTRACT 
+
+Context. The potentially hazardous asteroid (153814) 2001 WN 5 will pass inside the lunar distance on June 26, 2028, o ff ering a rare opportunity to characterize a kilometer-scale near-Earth asteroid at high angular resolution. However, previous taxonomic classifications have been inconsistent, and its physical properties remain insu ffi ciently consolidated. 
+
+Aims. We aim to constrain the rotation state, shape, visible colors, geometric albedo, and taxonomy of 2001 WN 5 before its 2028 close approach. 
+
+Methods. We combined new photometry from the 1.54 m Danish Telescope (DK154) with archival and survey observations from the Transiting Exoplanet Survey Satellite (TESS), Dark Energy Camera (DECam), Zwicky Transient Facility (ZTF), and the Asteroid Terrestrial-impact Last Alert System (ATLAS). These data were used to refine the rotation period, investigate the spin-shape solution space, derive visible colors, and estimate the geometric albedo from phase curve slopes. 
+
+Results. We measured a synodic rotation period of 4 .263 ± 0.002 h and 4 .259 ± 0.009 h from DK154 and TESS, respectively, consistent with previous lightcurve observations. The available lightcurves do not uniquely constrain the sidereal rotation period, but the preferred pole solutions lie in the southern hemisphere in ecliptic coordinates. Visible colors from multiple independent datasets are consistent with the C-complex, while the TESS phase curve slopes give pV = 0.13 ±0.04, consistent with previous thermal-infrared albedo estimates. Combining the visible colors, albedo, and published near-infrared spectra, we classify 2001 WN 5 as most likely a B-type asteroid. The e ff ective diameter is estimated to be D = 0.81 ± 0.13 km using the H-G model, while the linear model yields a slightly smaller value of 0 .74 ± 0.11 km. Dynamical models indicate that 2001 WN 5 likely originated from the inner main belt via the 
+
+ν6 resonance, with the Flora–Baptistina and Nysa–Polana complexes identified as the parent candidates. 
+
+Conclusions. During the 2028 encounter, 2001 WN 5 should reach an apparent diameter of about 0.5 arcsec, making it an excel-lent target for coordinated photometric, spectroscopic, and high-angular-resolution observations. Observations during the 2026–2027 apparition will be essential for improving its spin and shape model before its 2028 close approach. 
+
+Key words. Minor planets, asteroids: general – Minor planets, asteroids: individual: (153814) 2001 WN 5 – Methods: observational – Techniques: photometric 
+
+1. Introduction 
+
+Close encounters of near-Earth asteroids (NEAs) with Earth are a concern for planetary defense and also provide excep-tional opportunities for physical characterization. Such encoun-ters are accompanied by rapidly changing observing geome-try and, in the most favorable cases, enable measurements that would otherwise be di ffi cult, including direct or quasi-resolved imaging (Merline et al. 2008, 2012; Reddy et al. 2022), tighter constraints on spin states and shapes (e.g., Kwiatkowski et al. 2021; Beniyama et al. 2022), and tests of whether planetary tides can a ff ect rotation states (de León et al. 2013; Moskovitz et al. 2020; Benson et al. 2020; Ballouz et al. 2024), as well as investi- 
+
+> ⋆
+
+Corresponding author: jbeniyama@oca.eu 
+
+gations of surface refreshing (Binzel et al. 2010; Nesvorný et al. 2010; Kim et al. 2023). Among the NEAs approaching Earth in the second half of this decade, (153814) 2001 WN 5 is a particularly favor-able target for various observations. This potentially hazardous asteroid (PHA) of the Apollo type has an e ff ective diameter of about 0.9 km (Mainzer et al. 2011a; Masiero et al. 2021a; Myhrvold et al. 2022a), approximately three times larger than that of another PHA, (99942) Apophis, which will also make a close approach to Earth in April 2029 (e.g., Dotson et al. 2022). The synodic rotation period of 2001 WN 5 has been es-timated from several visible lightcurves obtained in 2010 and 2019, yielding 4 .253 ± 0.001 h and 4 .254 ± 0.018 h in 2010 (Ski ff et al. 2019), and 4 .259 ± 0.002 h (Warner & Stephens 2020) and 4 .260 ± 0.002 h (Monteiro et al. 2023) in 2019. Using 
+
+Article number, page 1 arXiv:2608.02577v1 [astro-ph.EP] 3 Aug 2026 A&A proofs: manuscript no. aa61418-26 
+
+WISE W4 (22 μm) band data acquired over 30.2 days, Lam et al. (2023) reported a period of 4 .1894 ± 0.095 h with a large ampli-tude of 1.0 mag. The geometric albedo of 2001 WN 5 has been estimated to be pV ∼ 0.1 from diameter constraints derived using ther-mal infrared observations (Mainzer et al. 2011a; Masiero et al. 2021a; Myhrvold et al. 2022a). Visible and near-infrared spec-tra of 2001 WN 5 have been included in several statistical studies of NEAs (Thomas et al. 2014; Binzel et al. 2019; Marsset et al. 2022). Thomas et al. (2014) obtained a 0.7–2.5 μm spectrum of 2001 WN 5 with the SpeX instrument at the NASA Infrared Telescope Facility (IRTF) on 2010 October 15, and classified it as a K-, L-, or Sq-type asteroid in the Bus–DeMeo taxon-omy (DeMeo et al. 2009), assigning an INDET (indeterminate) label because the possible subclassifications span more than one taxonomic complex. Binzel et al. (2019) classified 2001 WN 5
+
+as an L-type asteroid based on their IRTF /SpeX spectrum ob-tained on 2010 October 12, three days prior to the observations of Thomas et al. (2014), combined with an unpublished visible spectrum. Marsset et al. (2022) also classified 2001 WN 5 with their new IRTF /SpeX spectrum of 2001 WN 5 obtained in 2019 as a C- or X-type asteroid. The radar circular polarization ratio (SC /OC) was estimated to be around 0.4 in observations con-ducted in 2010 and 2021 (Taylor et al. 2021; Virkki et al. 2022), which is consistent with both S- and C-type asteroids (see Fig. 5 of Zambrano-Marin et al. 2024). On June 26, 2028, 2001 WN 5 will pass inside the Moon’s or-bit, at a geocentric distance of only ∼ 0.65 lunar distances (LD). This represents a rare opportunity for an object of kilometer-scale size and o ff ers a unique observational window. However, no dedicated study has yet consolidated the available physi-cal information on 2001 WN 5. Consequently, dedicated char-acterization is required to provide the accurate physical param-eters necessary to exploit this rare opportunity. In this paper, we present our lightcurve observations and analysis of archival TESS and DECam data, together with serendipitous observa-tions from ZTF and ATLAS, to provide a consolidated view of 2001 WN 5 and to constrain its physical properties prior to its 2028 close approach. 
+
+2. Data and methods 
+
+We conducted lightcurve observations of 2001 WN 5 with the 1.54-m Danish Telescope (DK154), and compiled publicly avail-able data from the Transiting Exoplanet Survey Satellite (TESS), Dark Energy Camera (DECam), the Zwicky Transient Facil-ity (ZTF), and the Asteroid Terrestrial-impact Last Alert Sys-tem (ATLAS) as well as historical measurements, spanning the period from 2010 to 2019. The detailed observational circum-stances, including the filter bands, coverage dates, predicted V
+
+magnitudes, and phase angles, are summarized in Table 1. These data cover a range of observing geometries, as shown in Fig. 1. 
+
+2.1. The 1.54 m Danish Telescope (DK154) 
+
+We observed 2001 WN 5 using DK154 and obtained time-series photometric data in the V and R bands on 5 nights from 18 to 23 December 2019. The solar phase angle ranged from 22 ◦ to 24 ◦. The data were calibrated in the Johnson–Cousins photo-metric system using the Landolt standard stars (Landolt 1992), with the nightly magnitude scale zero point uncertainties of 
+
+±0.01 mag. Since the observations were interleaved with other targets throughout each night, the resulting lightcurve is not a 2 1 0 1 2
+
+x [au]       
+
+> 2
+> 1
+> 012
+> y [au]
+> 0.080 0.081 -1.015 -1.014 -1.013
+> 2010-10-13 Skiff+2019 ( m=0.63)
+> 2010-10-26 Skiff+2019 ( m=0.35)
+> 2019-10-27 Warner+2020 ( m=0.20)
+> 2019-11-03 TESS ( m=0.12)
+> 2019-12-18 DK154 ( m=0.20)
+> 2026-12-01 Next apparition 2028-06-26 Close approach
+> 20 30 40 50 60
+> Phase angle [deg]
+
+Fig. 1: Heliocentric positions of 2001 WN 5 and Earth at the time of lightcurve observations. The positions of 2001 WN 5 and Earth are indicated by filled and open markers, respectively. Corre-sponding positions are connected by lines to clarify the observ-ing geometry. The orbits of 2001 WN 5 and Earth are shown with solid and dashed lines, respectively. The color of markers and solid lines indicates the solar phase angle of 2001 WN 5. The he-liocentric positions of 2001 WN 5 at future favorable observing apparitions are also indicated. The inset plot magnifies the spe-cific region during the close approach in June 2028. continuous time series but rather semi-dense lightcurves. In to-tal, 79 photometric data points were obtained. On 3 of the 5 observing nights we took also series of 4 +4R and V images in quick succession, alternating between them (RVRVRVRV). From the data, we derived the rotation period and V-R color index by fitting the Fourier series of the 6th order (which is the maximum significant order of the DK154 lightcurve data, determined using the F-test; see Pravec et al. (2024), Appendix B, and references therein) to the complete DK154 data while taking the di ff erence between the V and R data as a free parameter. The estimated error of the determined color index ( ±0.02) accounts for random errors as well as the absolute calibration errors of the data. 
+
+2.2. Transiting Exoplanet Survey Satellite (TESS) 
+
+We identified TESS observations of 2001 WN 5 acquired be-tween 4 and 9 November 2019. The data were extracted as 11 × 11 pixel moving-target pixel files (TPFs) centred on the predicted position of 2001 WN 5 using the TESSCut service (Brasseur et al. 2019). The extracted images were corrected for background and then used to define a photometric aperture based on the point response function (PRF). Aperture photometry was subsequently performed using the tess_asteroids package (Tuson et al. 2026) to produce a lightcurve calibrated in TESS magnitudes. The resulting lightcurve was cleaned by removing outliers with a sigma-clipping procedure. This yielded 254 useful mea-surements, each corresponding to a 30-min exposure, over a six-day observing interval. During this period, the solar phase angle of the asteroid ranged from 11 ◦ to 17 ◦. These data were subse-
+
+Article number, page 2 Beniyama et al.: Physical properties of (153814) 2001 WN 5
+
+Table 1: Summary of the observational data used in this work. Source Band Date V α
+
+(UTC) (mag) (deg) DK154 V, R 2019-12-18–2019-12-23 19.5–19.8 21.9–23.9 TESS TESS 2019-11-04–2019-11-09 17.1–17.1 10.5–16.9 DECam g, r 2016-11-20–2016-11-22 22.7–22.7 15.5–16.0 
+
+g, i, z 2019-02-14–2019-02-16 21.7–21.8 29.3–29.3 ZTF g, r 2019-11-03–2019-12-16 17.1–19.3 18.2–21.0 ATLAS c, o 2019-03-29–2019-12-28 17.0–20.0 3.4–100.0 Ski ff et al. (2019) R 2010-10-13–2010-10-26 15.8–16.1 38.1–64.9 Warner & Stephens (2020) V 2019-10-27–2019-10-30 17.0–17.1 23.6–27.8   
+
+> Notes. Predicted V-band apparent magnitude ( V) range and solar phase angle ( α) range are referred to the NASA Jet Propulsion Laboratory (JPL) Horizons system for the corresponding observation epochs.
+
+quently used to constrain both the rotation period and the phase curve of the asteroid (see Sects. 3.1 and 3.2). After correcting the magnitudes for the changing observing geometry, we deter-mined the rotation period from the cleaned TESS lightcurve us-ing an error-weighted generalized Lomb–Scargle periodogram (Zechmeister & Kürster 2009). 
+
+> 2.3. Dark Energy Camera (DECam)
+
+We searched for serendipitous detections of 2001 WN 5 using the Solar System Object Image Search (SSOIS) at the Canadian As-tronomy Data Centre (CADC; Gwyn et al. 2012), using the ob-ject name 2001 WN 5 with default settings. We identified several exposures from the Dark Energy Camera (DECam) on the 4-m Blanco telescope (Flaugher et al. 2015), although in some cases 2001 WN 5 lies outside the field of view. In 2016, 2001 WN 5 was observed on 11 and 14 January in the g and r bands with exposure times ranging from 46 to 111 s. These observations were obtained as part of the DECam Legacy Survey of the SDSS Equatorial Sky (Dey et al. 2019), with the 
+
+g and r exposures taken nearly simultaneously within two min-utes. In 2019, 2001 WN 5 was also serendipitously observed in multiple bands: g on 14 February, i on 27 February, and z on 19 February, with exposure times of 70–90 s. These data were acquired as part of the DECam Local Volume Exploration Sur-vey ( delve-wide ; Drlica-Wagner et al. 2021) and the DECam eROSITA Survey ( derositas ; Zenteno et al. 2025). We downloaded and analyzed the calibrated, resampled im-ages with filenames containing opi . We performed circular aper-ture photometry of 2001 WN 5. The aperture radii were opti-mised, and su ffi ciently large apertures were adopted to miti-gate seeing variations across di ff erent bands. Using the mag-nitude zero point recorded in the FITS header ( MAGZPT ), we computed magnitudes in the DES system. We then converted the DES magnitudes to the SDSS system following the proce-dure of Carruba et al. (2024) and using the transformations of Abbott et al. (2021). For the z-band data, 2001 WN 5 was located near the edge of the detector chip, where significant background artifacts were observed. To account for these patterns, we in-stead employed rectangular aperture photometry for this specific band. Cutout images are summarized in Appendix A. We ob-tained seven photometric measurements: three in g, two in r, and one each in i and z.
+
+> 2.4. Zwicky Transient Facility (ZTF)
+
+We retrieved sparse photometry of 2001 WN 5 from ZTF (Bellm et al. 2019) via the Fink broker 1 (Möller et al. 2021). Specifically, we obtained 11 and 12 detections in the ZTF g and r
+
+bands, respectively. The observations span the period from 2019 November 3 to December 16, corresponding to solar phase an-gles ranging from 3.4 ◦ to 21.1 ◦ in both bands. 
+
+> 2.5. Asteroid Terrestrial-impact Last Alert System (ATLAS)
+
+We extracted sparse photometry of 2001 WN 5 from ATLAS (Tonry et al. 2018b), as recorded in the ATLAS Solar System Catalog (SSCAT) version 3. The serendipitous detections are measured relative to the ATLAS Refcat photometric reference catalogue (Tonry et al. 2018a). We identified 55 and 250 detec-tions in the cyan ( c) and orange ( o) bands, respectively, including observations at solar phase angles up to 100 ◦.Regarding the ATLAS data, an outlier rejection step (Xenos et al. in prep) preceded phase curve and shape modeling. Out-liers in the data, associated with misidentifications of the aster-oid with background sources, were flagged and removed using the o ff set between their observed and predicted astrometric po-sitions and their reduced magnitude. This was followed by an iterative removal of the remaining outliers using the sHG 1G2
+
+phase curve model (Carry et al. 2024). As a result, 55 and 230 detections were retained in the c and o bands, respectively. For phase-curve modeling, we selected a subset of 35 c-band detections from 2019 March 31 to November 28, and 126 o-band detections from 2019 March 29 to December 28, restricting the data to phase angles below 35 deg where the phase function is well constrained. We note that the derived c − o color remains consistent when the full ATLAS dataset is used. 
+
+> 2.6. Historical measurements
+
+We have retrieved previously published lightcurves from the As-teroid Lightcurve Data Exchange Format (ALCDEF) database. Specifically, two archival datasets were used. The first set from Ski ff et al. (2019), obtained from LONEOS Schmidt (MPC code 699), consists of 825 measurements in the S R band obtained on 2010 October 13, 14, and 26 (UTC). The corresponding so-lar phase angles decrease from 65 ◦ to 38 ◦ over these observing epochs. The second dataset from Warner & Stephens (2020), ob-tained at the Center for Solar System Studies (MPC code U81),   
+
+> 1https://ztf.fink-portal.org/
+> Article number, page 3 A&A proofs: manuscript no. aa61418-26
+
+comprises 289 measurements in the V band and covers the pe-riod from 2019 October 27 to October 30 (UTC). During this interval, the solar phase angles range from 28 ◦ to 24 ◦.
+
+3. Results and discussion 
+
+3.1. Spin and shape 0.0 0.2 0.4 0.6 0.8 1.0 Rotation phase             
+
+> −0.5 0.0 0.5 1.0 1.5 2.0 Magnitude
+> α= 65 ∘
+> α= 38 ∘
+> α= 28 ∘
+> α= 11 −17 ∘
+> α= 23 ∘
+> Skiff+ 2019 Skiff+ 2019 Warner+ 2019 DK 154 TESS
+
+Fig. 2: Phased lightcurves of 2001 WN 5 obtained at di ff erent solar phase angles α. The lightcurves were folded using the ro-tation period of 4 .259 h. The individual data sets are vertically shifted for clarity. We determined the rotation periods of WN from the DK154 and TESS lightcurves to be 4 .263 ± 0.002 h and 4 .259 ± 0.009 h, respectively. We showed the DK154 and TESS lightcurves in Fig. 2, together with previously published lightcurves. For each observing epoch, we measured the peak-to-peak amplitude from a smooth periodic fit to the phased lightcurve. The lightcurve amplitude ranged from 0.12 at a phase angle of 
+
+∼ 14 ◦ to 0.63 at a phase angle of ∼ 65 ◦. The amplitudes decrease from ∆m = 0.63 at a phase angle of ∼ 65 ◦ on 13 October 2010 to 
+
+∆m = 0.12 at a mean phase angle of ∼ 14 ◦ on November 2019, with intermediate values of ∆m = 0.35 at ∼ 38 ◦ on 26 October 2010, ∆m = 0.20 at ∼ 28 ◦ on 27 October 2019, and ∆m = 0.20 at ∼ 23 ◦ in December 2019. The presence of three minima and maxima within a single rotation indicates a complex lightcurve morphology, probably reflecting a non-ellipsoidal shape and /or surface-albedo variations. No clear evidence for non-principal-axis rotation is found in the available datasets. This may be due to di ff erences in solar phase angle; however, the possibility of changes in aspect angle cannot be ruled out (Jackson et al. 2022; Carry et al. 2024). We performed shape modeling using the two methods: lightcurve inversion method developed in Kaasalainen & Torppa (2001) and the recent socca method, combining phase function with ellipsoidal shape (Xenos et al. 2026). In the present case, this approach yielded multiple degenerate period solutions, pre-venting a unique determination of the sidereal period. Neverthe-less, pole-orientation searches using the best-fit period favor a spin pole in the southern ecliptic hemisphere. The details are summarized in Appendix B. 
+
+3.2. Albedo 
+
+The extracted photometric data are shown as a function of solar phase angle in Fig. 3. The slope of a photometric phase curve serves as a diagnostic tool for determining albedo (Belskaya & Shevchenko 2000; Shevchenko et al. 2021). We es-timated the slope using the H–G model, defined as 
+
+H(α) = H − 2.5 log 10 [(1 − G)Φ1(α) + GΦ2(α)] , (1) where Φ1 and Φ2 are the phase functions defined by Bowell et al. (1989). Although the HG 1G2 formalism (Muinonen et al. 2010) is more informative on the surface properties, with the G 1G2 cor-related with taxonomy and albedo (see, e.g., Shevchenko et al. 2016), it requires observations below 3–5 ◦ to provide meaning-ful parameters (Mahlke et al. 2021). As described in Section 2 and visible in Fig. 3, there are no observations close to opposi-tion, and we thus stick to the H-G formalism. We also applied a linear phase-curve model, H(α) = Hlinear + bα, because the pres-ence of an opposition surge could not be established from the available data. To minimize the influence of potential outliers in the pho-tometric data, we derived the linear slope b using the Siegel estimator, a robust regression method. For the TESS data, we fitted the observations using both the H-G system and a linear model, with ( H, G) and ( Hlinear , b) as the respective free parame-ters. For the ZTF and ATLAS data, we performed a simultaneous dual-band fit; specifically, we determined ( H1, H2, G) for the H-
+
+G model and ( H1, H2, b) for the linear model. The di ff erences, 
+
+H1 − H2, are treated as colors (see the next subsection). The pa-rameter uncertainties were estimated using a Monte Carlo tech-nique. We generated 10,000 synthetic phase curves by randomly resampling the dataset; in this process, each observed data point was assumed to follow a normal distribution, with the standard deviation defined by the standard error of the error-weighted av-erage magnitude. The derived parameters are summarized in Table 2. Using the empirical relation (Belskaya & Shevchenko 2000; Shevchenko et al. 2021), b = C1 − C2 log 10 pV, where C1 and 
+
+C2 are constants calibrated using asteroids with albedos deter-mined from thermal infrared observations, we derive the geomet-ric albedo from the slope. Adopting the updated parameters C1 =
+
+0.016 ± 0.001 and C2 = 0.022 ± 0.001 (Shevchenko et al. 2021), we obtain geometric albedos for 2001 WN 5 of pV = 0.13 ± 0.04, 0.10 ± 0.04, and 0 .14 ± 0.02 from the TESS, ZTF, and ATLAS photometry, respectively. These values are in good agreement with those derived from thermal observations: pV = 0.097 ±0.016 (Mainzer et al. 2011a), 
+
+pV = 0.106 +0.105  
+
+> −0.053
+
+(Masiero et al. 2021a), and pV = 0.089 ± 0.021 (Myhrvold et al. 2022a). While the geometric albedo alone could also be consistent with an M-type asteroid, the available spectro-scopic constraints make this interpretation unlikely (see the next subsection). An albedo of ∼ 0.1 is somewhat higher than the typ-ical value for Bus–DeMeo or Mahlke C-types and may instead be more consistent with B-types (Marsset et al. 2022), support-ing the interpretation that 2001 WN 5 is a relatively high-albedo member within the C-complex. 
+
+3.3. Colors and reflectance 
+
+The derived colors are summarized in Table 3. We computed the g − z and g − i colors of 2001 WN 5 using the g, i, and z
+
+observations obtained in February 2019. The colors involving the DECam z-band, for instance g − z, appear anomalously blue, most likely because the observations were not obtained at the same rotation phase and /or because of the lower signal-to-noise ratio of the z-band detection. We therefore exclude the z-band measurement from the subsequent taxonomic interpretation. 
+
+> Article number, page 4 Beniyama et al.: Physical properties of (153814) 2001 WN 5
+
+Table 2: Best-fit parameters for the HG and Linear models. Instrument Model H1 H2 H1 − H2 G b
+
+(mag) (mag) (mag) (mag deg −1)TESS HG 17.56 ± 0.05 – – 0.14 ± 0.04 –Linear 17.87 ± 0.04 – – – 0.036 ± 0.003 ZTF ( g, r) HG 18.55 ± 0.04 18.08 ± 0.05 0.47 ± 0.06 0.23 ± 0.07 –Linear 18.74 ± 0.03 18.27 ± 0.04 0.47 ± 0.05 – 0.038 ± 0.003 ATLAS ( c, o) HG 18.20 ± 0.03 17.94 ± 0.03 0.26 ± 0.04 0.14 ± 0.02 –Linear 18.54 ± 0.02 18.26 ± 0.02 0.28 ± 0.03 – 0.035 ± 0.001                           
+
+> Notes. H1and H2denote the absolute magnitudes corresponding to the primary and secondary filters listed in the first column for each instrument (i.e., H1=Hgand H2=Hrfor ZTF; H1=Hcand H2=Hofor ATLAS). For TESS, H1represents its single band. Parameters Gand bare shared for ZTF and ATLAS dual-band fits.
+
+In the top panel of Fig. 4, we show the ATLAS colors of 2001 WN 5 together with those of two asteroid families from Erasmus et al. (2020). Although the ATLAS bandpasses are broader than those of the SDSS system, the c − o color in-dex has been shown to be diagnostic of asteroid spectral type (Erasmus et al. 2020). The colors of 2001 WN 5 are consistent with a C-type classification. In the middle panel of Fig. 4, we present the SDSS colors of 2001 WN 5 together with asteroids observed in the SDSS survey (Sergeyev & Carry 2021a). For this comparison, we assume that the g − r color in the ZTF system is equivalent to that in the SDSS system (Schemel & Brown 2021). The colors derived from both DECam and ZTF are consistent with a C-complex classification. In the bottom panel of Fig. 4, we present the V-R colors of 2001 WN 5 together with asteroids observed in the SDSS survey (Sergeyev & Carry 2021a). Overall, four independent color measurements, AT-LAS, DECam, ZTF, and DK154, consistently indicate that 2001 WN 5 belongs to the C-complex (e.g., Carvano et al. 2010; DeMeo & Carry 2013; Sergeyev & Carry 2021b; Sergeyev et al. 2023). In Fig. 5, we present the reflectance calculated from the derived colors and solar colors (Willmer 2018), as well as exist-ing spectra from the literature for comparison 2. The combined spectrum is consistent with a C-complex classification, and not with L-type or K-type, in the Mahlke taxonomy (Mahlke et al. 2022). Furthermore, when considering the albedo, the combined data are consistent with a bright C-complex classification, specifically a B-type. 
+
+3.4. Dynamical origin 
+
+To investigate the origin of 2001 WN 5, we referred to the near-Earth object source region probabilities provided by the Lowell AstOrb Database (Moskovitz et al. 2022), which are computed using the model of Granvik et al. (2018). The orbital elements of 2001 WN 5 listed in the AstOrb Database are a = 1.712 au, e = 0.467, and i = 1.920 ◦, with its absolute magnitude of 
+
+H = 18 .280. The corresponding source region probabilities in-dicate a dominant contribution from the ν6 resonance (90.2%). This result suggests that 2001 WN 5 most likely originated from          
+
+> 2Several near-infrared measurements of 2001 WN 5from the Visible and Infrared Survey Telescope for Astronomy (VISTA) were obtained on July 13 and 24, 2010. These were reported in the MOVIS catalog (Popescu et al. 2016) as well as in the Minor Planet Center database. Upon careful inspection, we found that the derived colors are inconsis-tent between the two epochs and appear unrealistic. Therefore, we do not use these measurements in the analysis. 0510 15 20 25 30 35
+
+## Phase angle [deg] 
+
+> 18.0 18.5 19.0 19.5
+> Reduced magnitude [mag]  TESS (N=254) ZTF g (N=11) ZTF r (N=12) ATLAS c (N=35) ATLAS o (N=126)
+
+Fig. 3: Phase curves of 2001 WN 5. The photometric data from di ff erent surveys and filters are represented by the following symbols: TESS (circles), ZTF g (squares), ZTF r (diamonds), ATLAS cyan (triangles), and ATLAS orange (inverted triangles). The dashed lines represent the best-fit curves using the H-G
+
+model, while the dotted lines indicate the results from a linear model. the inner main belt, with the ν6 resonance acting as the primary delivery pathway into near-Earth space. We further investigated its possible parent asteroid fam-ily using the recent family-association model of Brož et al. (2024) 3. Based on the orbital elements of 2001 WN 5, the family-association model assigns the highest probabilities to the Flora (34.5%) and Polana (28.4%) families, followed by the Nysa fam-ily (8.2%). The comparable probabilities obtained for Flora and Polana indicate that the dynamical information alone does not provide a unique identification of the parent family. Although S-type asteroids dominate the Flora family, it shares orbital-element space with the Baptistina family, whose members are commonly associated with the X complex (Nesvorný 2026). The X-type asteroids typically possess moder-ate geometric albedos of pV ∼ 0.1 (Mahlke et al. 2022), aligning with the value measured for 2001 WN 5. Consequently, an origin   
+
+> 3https://sirrah.troja.mff.cuni.cz/~mira/neomod/ neomod.php
+> Article number, page 5 A&A proofs: manuscript no. aa61418-26
+
+Table 3: Colors of 2001 WN 5.Instrument Color Value ∆t Mid-time Note (mag) (min) (UTC) DK154 V − R 0.42 ± 0.02 – – From lightcurves DECam g − r 0.41 ± 0.11 1.2 2016-01-11T06:39:31 
+
+g − r 0.46 ± 0.08 1.3 2016-01-14T06:26:13 
+
+g − i 0.48 ± 0.06 18758 2019-02-20T20:49:50 Distance corrected 
+
+g − z 0.13 ± 0.10 7143 2019-02-16T20:02:14 Distance corrected ZTF g − r 0.47 ± 0.05 – – From phase curve ATLAS c − o 0.28 ± 0.03 – – From phase curve  
+
+> Notes. For DECam measurements, colors are computed from pairs of exposures. Mid-time is defined as the midpoint between the two filter observations.
+
+within the dynamically overlapping Flora–Baptistina complex cannot be ruled out based on its albedo and reflectance spectrum. The Nysa-Polana complex is also compositionally hetero-geneous. While its higher-albedo component primarily con-sists of S-type asteroids linked to Nysa, the primitive Polana-Eulalia component displays a continuum of B- and C-type spec-tra (Cellino et al. 2001; de León et al. 2016). Because 2001 WN 5
+
+exhibits a B-type-like spectrum, its compositionally aligns best with the Polana-Eulalia population, pointing toward a primitive carbonaceous origin. Nevertheless, the overlapping dynamical probabilities prevent an unambiguous assignment to a single par-ent family. Further spectroscopic observations are required to better constrain the composition of 2001 WN 5 and determine its origin. 
+
+> 3.5. Implications for the Close Approach in June 2028
+
+2001 WN 5 is known to make an extremely close approach in 2028 (Dotson et al. 2022). It is an exceptional opportunity to image the disk of such a small target, without requiring a ren-dezvous space mission. To plan disk-resolved imaging observa-tions, several quantities are key parameters. The projected an-gular diameter is obviously the most critical parameter but both the apparent rate and apparent magnitude will be limiting factors (owing to the large non-sidereal motion of 2001 WN 5, the adap-tive optics loop must be closed on the target itself, which thus needs to be bright enough). Based on our analysis, which supports the classification of 2001 WN 5 as a B-type object, we derived its physical proper-ties by calculating the absolute magnitude in the V band, HV ,using the observed g and r magnitudes (Tonry et al. 2012). The resulting values are HV = 18 .31 ± 0.06 mag for the H-G model and HV = 18 .50 ± 0.05 mag for the linear model. By com-bining these results with the derived geometric albedo, the ef-fective diameter was calculated. The H-G model yielded a di-ameter of 0 .81 ± 0.13 km, while the linear model resulted in 0.74 ±0.11 km. This diameter agrees with the reported diameters of 0 .85, 0 .932 +0.011 
+
+> −0.011
+
+, and 0 .94 +0.39  
+
+> −0.39
+
+km based on NEATM anal-ysis of NEOWISE mid-infrared photometry by Myhrvold et al. (2022b), Mainzer et al. (2011b) and Masiero et al. (2021b). For the purpose of this study, we adopted the intermediate value of 0.78 km as the representative diameter for our calculations, since the presence or absence of an opposition surge remains uncer-tain. We present in Fig. 6 the ephemerides of 2001 WN 5 around its closest approach, obtained with the NASA JPL Horizons system using the Python package astroquery (Ginsburg et al. 2019). We checked the expected observability of 2001 WN 5
+
+from all largest facilities equipped with adaptive-optics (AO) cameras: ESO VLT /SPHERE, Keck /NIRC2, LBTO /SHARK-VIS, GTC /FRIDA, Subaru /SCExAO. We set limit of airmass below two, the Sun at least 12 ◦ below the horizon (nautical twi-light), a solar elongation of at least 40 ◦, and an apparent V mag brighter than 12 for ESO /SPHERE and 14 for the other facilities. 2001 WN 5 is not observable from LBTO or GTC. It can be imaged for two nights before the closest approach from both ESO VLT in Chile, and Hawaiian telescopes (Keck and Sub-aru). On 24-06-2028, 2001 WN 5 will reach an angular diameter of about 0.1 ′′ , providing limited details on its shape but allow-ing to probe its vicinity for satellites (e.g., Vachier et al. 2022; Minker et al. 2025), a unique opportunity to measure its mass (Carry 2012). On June 25, 2028, its angular diameter will reach 0.2 ′′ , allowing surface features to be finely imaged. It represents a rare opportunity to resolve a NEA, such angular diameter being more typical of 100-200 km diameter main-belt asteroids (see, e.g. Marsset et al. 2017; Carry et al. 2021; Vernazza et al. 2021). Provided VLT /SPHERE can track and keep the AO loop closed at a non-sidereal rate of 5–7 ′′ /s which is chal-lenging, on June 26, 2028, 2001 WN 5 will have an angu-lar diameter larger than 0.5 ′′ , that only asteroids like Pal-las and Ceres attain (Carry et al. 2008; Marsset et al. 2020). This is significantly larger than the apparent diameter of NEAs previously imaged from ground-based AO facilities (308635) 2005 YU 55 with Keck-II /NIRC2 (0.12 ′′ , Merline et al. 2012) and (66391) Moshup (1999 KW 4) with VLT /SPHERE (component separation of ∼ 0.06 ′′ , Reddy et al. 2022). It opens a unique possibility to detail the surface of a sub-kilometric as-teroid, something generally only achieved with a space mission. Furthermore, inhomogeneous surface properties of NEAs have been reported in previous studies (e.g., López-Oquendo et al. 2022), and we can directly investigate the surface heterogeneity of 2001 WN 5 using spatially resolved images in di ff erent filters and with integral field spectroscopy (such as with SPHERE /IFS, Claudi et al. 2008; Pajuelo et al. 2018). A comprehensive characterization of the shape and surface properties of 2001 WN 5 is still lacking, which is notable given that it will be one of the most accessible large NEAs. The next observing window for disk-integrated photometry spans from late 2026 to early 2027, during which 2001 WN 5 is expected to be brighter than V ∼ 22 from early November 2026 to mid-February 2027. As shown in Fig. 1, the observing geometry during this apparition di ff ers significantly from previous ones, making this an important opportunity to better constrain the lightcurve, sidereal period, and shape as well as to enable a more reliable interpretation of the 2028 close approach from ground-based observations. 
+
+> Article number, page 6
+
+Beniyama et al.: Physical properties of (153814) 2001 WN 50.1 0.2 0.3 0.4 0.5 
+
+## c-o [mag]         
+
+> 010 20
+> N
+> Koronis (S-type) Themis (C-type) 2001 WN 5
+> ATLAS
+> 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
+
+## g-r (SDSS) [mag]       
+
+> 0510 15 20
+> Normalized fraction
+> S-complex C-complex X-complex 2001 WN 5
+> DECam 2001 WN 5
+> ZTF
+> 0.2 0.3 0.4 0.5 0.6 0.7 0.8
+
+## V-R [mag] 
+
+> 010 20
+> Normalized fraction
+> S-complex C-complex X-complex 2001 WN 5
+> V-R
+
+Fig. 4: Colors of 2001 WN 5 compared with reference asteroids. (top) ATLAS c − o color. The observed color of 2001 WN 5 is indicated by the vertical solid line. The distributions of the S-type Koronis family (solid line) and the C-type Themis family (dashed line) are shown for comparison (Erasmus et al. 2020). (middle) SDSS g−r color. The colors of 2001 WN 5 derived from di ff erent instruments are shown as vertical solid (DECam) and vertical dashed (ZTF) lines, respectively. The background dis-tributions correspond to the S-complex (solid line), C-complex (dashed line), and X-complex (dotted line) (Sergeyev & Carry 2021a). (bottom) V − R color. The observed color of 2001 WN 5
+
+is indicated by the vertical solid line, plotted against the same taxonomic complex background distributions as in the middle panel. 
+
+4. Conclusion 
+
+In this work, we have presented a comprehensive phys-ical characterization of the potentially hazardous asteroid (153814) 2001 WN 5 by consolidating new photometry from DK154 with extensive archival data from TESS, DECam, ZTF, and ATLAS. This multi-epoch, multi-instrument dataset enabled us to refine the synodic rotation period to 4 .263 ± 0.002 h from DK154 and 4 .259 ± 0.009 h from TESS. The observed lightcurve amplitudes exhibit a large variation ranging from 0.12 to 0.63 mag. The complex lightcurve morphology probably re-flects a non-ellipsoidal shape. Although severe degeneracies re-main that prevent a unique determination of the sidereal rotation period, our spin-pole searches favor a preferred pole orientation located in the southern hemisphere in ecliptic coordinates. Four independent color datasets from ATLAS, DECam, ZTF, and DK154 consistently place 2001 WN 5 within the C-complex, resolving previous taxonomic inconsistencies in the literature. 0.50 0.75 1.00 1.25 1.50 1.75 2.00 2.25 2.50 
+
+## Wavelength [ m] 
+
+> 0.6 0.8 1.0 1.2 1.4
+> Reflectance
+> DECam (g, r, i) Binzel et al. 2019 Marsset et al. 2022 L-type X-type B-type C-type
+
+Fig. 5: Visible to near-infrared reflectance spectra of 2001 WN 5
+
+normalized at the g band center. The stars represent the re-flectance values derived from our DECam photometry. Previ-ously published spectra are plotted with circles (Binzel et al. 2019) and squares (Marsset et al. 2022). The spectrum from Binzel et al. (2019) has been renormalized to match the DECam 
+
+i-band reflectance, whereas the spectrum from Marsset et al. (2022) remains normalized at 1.215 μm as originally pub-lished. Mahlke templates of L-, X-, B-, and C-types are shown (Mahlke et al. 2022). Shaded areas indicate the uncertainties of the template spectra. By integrating these colors with published near-infrared spectra and our phase curve constraints, which yield a geometric albedo of pV = 0.13 ± 0.04 from the TESS data, the object is most accu-rately classified as a B-type asteroid under the Mahlke taxonomy. This taxonomic assignment yields a refined e ff ective diameter of 
+
+D = 0.81 ±0.13 km using the H-G model, or D = 0.74 ±0.11 km based on the linear phase model, both of which are in excellent agreement with independent thermal-infrared estimates. Dynam-ical modeling further suggests that 2001 WN 5 most likely orig-inated in the inner main belt through the ν6 resonance, with the Flora–Baptistina and Nysa–Polana complexes emerging as the plausible parent candidates. The upcoming encounter on June 26, 2028, at a geocentric distance of approximately 0.65 lunar distances, o ff ers a premier observational opportunity to investigate a kilometer-scale car-bonaceous NEA at high angular resolution. During its closest approach, the asteroid is expected to reach a maximum apparent angular diameter of about 0.5 arcsec, making it an ideal target for ground-based disk-resolved imaging using adaptive optics systems (such as VLT /SPHERE) as well as planetary radar facil-ities. To fully capitalize on this rare event, targeted photometric and lightcurve observations during the 2026–2027 apparitions will be essential to collect data at complementary viewing ge-ometries, break the current period-pole degeneracies, and mature the 3D shape model before the close flyby.    
+
+> Acknowledgements. We thank Robert D. Stephens, Brian D. Warner, and Brian A. Ski ff for providing the original photometric data through the ALCDEF database. We would like to thank the anonymous referees for their valuable com-ments, which have greatly improved the manuscript. This work was supported by JSPS KAKENHI Grant Number 25H00665. This work was supported by the French government through the France 2030 investment plan managed by the National Research Agency (ANR), as part of the Initiative of Excellence Uni-versité Côte d’Azur under reference number ANR-15-IDEX-01. This work was supported by the Japan Society for the Promotion of Science (JSPS) Overseas Research Fellowships. The work at Ondˇ rejov was supported by the Praemium
+
+Article number, page 7 A&A proofs: manuscript no. aa61418-26 50 
+
+> 0
+> [deg]  Paranal (V < 12) Mauna Kea (V < 14)
+> 05
+> Rate [ / s]
+> 10 15
+> V [mag]
+> 0.25 0.50
+> [ ]
+> 50 100 150
+> [deg]
+
+Closest approach      
+
+> 06/23 06/24 06/25 06/26 06/27 06/28
+
+2028 UTC 
+
+> 50 100 150
+> [deg]
+
+Fig. 6: Predicted declination ( δ), rate, V magnitude, angular size (Θ), phase angle ( α), and solar elongation ( Ψ) of 2001 WN 5
+
+around its closest approach on June 26, 2028. Expected windows of observations (see text) from Paranal (VLT) and Mauna Kea (Keck /Subaru) are marked. 
+
+Academiae award (no. AP2401) from the Academy of Sciences of the Czech Re-public. This research used the facilities of the Canadian Astronomy Data Cen-tre operated by the National Research Council of Canada with the support of the Canadian Space Agency. This work uses data obtained from the Asteroid Lightcurve Data Exchange Format (ALCDEF) database, which is supported by funding from NASA grant 80NSSC18K0851. This work uses data from the Uni-versity of Hawaii’s ATLAS project, funded through NASA grants NN12AR55G, 80NSSC18K0284, and 80NSSC18K1575, with contributions from the Queen’s University Belfast, STScI, the South African Astronomical Observatory, and the Millennium Institute of Astrophysics, Chile. This paper includes data collected with the TESS mission, obtained from the MAST data archive at the Space Tele-scope Science Institute (STScI). Funding for the TESS mission is provided by the NASA Explorer Program. STScI is operated by the Association of Univer-sities for Research in Astronomy, Inc., under NASA contract NAS 5–26555. The Legacy Surveys consist of three individual and complementary projects: the Dark Energy Camera Legacy Survey (DECaLS; Proposal ID #2014B-0404; PIs: David Schlegel and Arjun Dey), the Beijing-Arizona Sky Survey (BASS; NOAO Prop. ID #2015A-0801; PIs: Zhou Xu and Xiaohui Fan), and the Mayall z-band Legacy Survey (MzLS; Prop. ID #2016A-0453; PI: Arjun Dey). DECaLS, BASS and MzLS together include data obtained, respectively, at the Blanco telescope, Cerro Tololo Inter-American Observatory, NSF’s NOIRLab; the Bok telescope, Steward Observatory, University of Arizona; and the Mayall telescope, Kitt Peak National Observatory, NOIRLab. Pipeline processing and analyses of the data were supported by NOIRLab and the Lawrence Berkeley National Laboratory (LBNL). The Legacy Surveys project is honored to be permitted to conduct as-tronomical research on Iolkam Du’ag (Kitt Peak), a mountain with particular significance to the Tohono O’odham Nation. NOIRLab is operated by the Asso-ciation of Universities for Research in Astronomy (AURA) under a cooperative agreement with the National Science Foundation. LBNL is managed by the Re-gents of the University of California under contract to the U.S. Department of Energy. This project used data obtained with the Dark Energy Camera (DECam), which was constructed by the Dark Energy Survey (DES) collaboration. Fund-ing for the DES Projects has been provided by the U.S. Department of Energy, the U.S. National Science Foundation, the Ministry of Science and Education of Spain, the Science and Technology Facilities Council of the United Kingdom, the Higher Education Funding Council for England, the National Center for Su-percomputing Applications at the University of Illinois at Urbana-Champaign, the Kavli Institute of Cosmological Physics at the University of Chicago, Cen-ter for Cosmology and Astro-Particle Physics at the Ohio State University, the Mitchell Institute for Fundamental Physics and Astronomy at Texas A&M Uni-versity, Financiadora de Estudos e Projetos, Fundacao Carlos Chagas Filho de Amparo, Financiadora de Estudos e Projetos, Fundacao Carlos Chagas Filho de Amparo a Pesquisa do Estado do Rio de Janeiro, Conselho Nacional de Desen-volvimento Cientifico e Tecnologico and the Ministerio da Ciencia, Tecnologia e Inovacao, the Deutsche Forschungsgemeinschaft and the Collaborating Institu-tions in the Dark Energy Survey. The Collaborating Institutions are Argonne National Laboratory, the University of California at Santa Cruz, the Univer-sity of Cambridge, Centro de Investigaciones Energeticas, Medioambientales y Tecnologicas-Madrid, the University of Chicago, University College London, the DES-Brazil Consortium, the University of Edinburgh, the Eidgenossische Tech-nische Hochschule (ETH) Zurich, Fermi National Accelerator Laboratory, the University of Illinois at Urbana-Champaign, the Institut de Ciencies de l’Espai (IEEC /CSIC), the Institut de Fisica d’Altes Energies, Lawrence Berkeley Na-tional Laboratory, the Ludwig Maximilians Universitat Munchen and the asso-ciated Excellence Cluster Universe, the University of Michigan, NSF’s NOIR-Lab, the University of Nottingham, the Ohio State University, the University of Pennsylvania, the University of Portsmouth, SLAC National Accelerator Lab-oratory, Stanford University, the University of Sussex, and Texas A&M Uni-versity. BASS is a key project of the Telescope Access Program (TAP), which has been funded by the National Astronomical Observatories of China, the Chi-nese Academy of Sciences (the Strategic Priority Research Program “The Emer-gence of Cosmological Structures” Grant # XDB09000000), and the Special Fund for Astronomy from the Ministry of Finance. The BASS is also supported by the External Cooperation Program of Chinese Academy of Sciences (Grant # 114A11KYSB20160057), and Chinese National Natural Science Foundation (Grant # 12120101003, # 11433005). The Legacy Survey team makes use of data products from the Near-Earth Object Wide-field Infrared Survey Explorer (NEOWISE), which is a project of the Jet Propulsion Laboratory /California In-stitute of Technology. NEOWISE is funded by the National Aeronautics and Space Administration. The Legacy Surveys imaging of the DESI footprint is supported by the Director, O ffi ce of Science, O ffi ce of High Energy Physics of the U.S. Department of Energy under Contract No. DE-AC02-05CH1123, by the National Energy Research Scientific Computing Center, a DOE O ffi ce of Science User Facility under the same contract; and by the U.S. National Science Foun-dation, Division of Astronomical Sciences under Contract No. AST-0950945 to NOAO. ZTF is supported by the National Science Foundation under Grants No. AST-1440341 and AST-2034437 and a collaboration including current partners Caltech, IPAC, the Oskar Klein Center at Stockholm University, the University of Maryland, University of California, Berkeley , the University of Wisconsin at Milwaukee, University of Warwick, Ruhr University, Cornell University, North-western University and Drexel University. Operations are conducted by COO, IPAC, and UW. This work was developed within the Fink community and made use of the Fink resources. Fink is a broker for LSST (Möller et al. 2021) and is supported by LSST-France and CNRS /IN2P3. The properties of 2001 WN 5
+
+were retrieved thanks to the SsODNet service (Berthier et al. 2023) of the Space Service (SE-OP) of Laboratoire Temps Espace at Paris Observatory through its Solar System Portal 4 and rocks python interface 5.
+
+References 
+
+Abbott, T. M. C., Adamów, M., Aguena, M., et al. 2021, ApJS, 255, 20 Ballouz, R. L., Agrusa, H., Barnouin, O. S., et al. 2024, PSJ, 5, 251 Bellm, E. C., Kulkarni, S. R., Barlow, T., et al. 2019, PASP, 131, 068003 Belskaya, I. N. & Shevchenko, V. G. 2000, Icarus, 147, 94 Beniyama, J., Sako, S., Ohsawa, R., et al. 2022, PASJ, 74, 877 Benson, C. J., Scheeres, D. J., & Moskovitz, N. A. 2020, Icarus, 340, 113518 Berthier, J., Carry, B., Mahlke, M., & Normand, J. 2023, A&A, 671, A151 Binzel, R. P., DeMeo, F. E., Turtelboom, E. V., et al. 2019, Icarus, 324, 41 Binzel, R. P., Morbidelli, A., Merouane, S., et al. 2010, Nature, 463, 331 Bowell, E., Hapke, B., Domingue, D., et al. 1989, in Asteroids II, ed. R. P. Binzel, T. Gehrels, & M. S. Matthews (Tucson, AZ: Univ. Arizona Press), 524–556 Brasseur, C. E., Phillip, C., Fleming, S. W., Mullally, S. E., & White, R. L. 2019, Astrocut: Tools for creating cutouts of TESS images, Astrophysics Source Code Library, record ascl:1905.007 Brož, M., Vernazza, P., Marsset, M., et al. 2024, A&A, 689, A183 Carruba, V., Camargo, J. I. B., Aljbaae, S., et al. 2024, MNRAS, 527, 6495 Carry, B. 2012, Planet. Space Sci., 73, 98  
+
+> 4
+
+https://ssp.imcce.fr  
+
+> 5
+
+https://rocks.readthedocs.io/en/latest/ 
+
+Article number, page 8 Beniyama et al.: Physical properties of (153814) 2001 WN 5
+
+Carry, B., Dumas, C., Fulchignoni, M., et al. 2008, A&A, 478, 235 Carry, B., Peloton, J., Le Montagner, R., Mahlke, M., & Berthier, J. 2024, A&A, 687, A38 Carry, B., Vernazza, P., Vachier, F., et al. 2021, A&A, 650, A129 Carvano, J. M., Hasselmann, P. H., Lazzaro, D., & Mothé-Diniz, T. 2010, A&A, 510, A43 Cellino, A., Zappalà, V., Doressoundiram, A., et al. 2001, Icarus, 152, 225 Claudi, R. U., Turatto, M., Gratton, R. G., et al. 2008, in SPIE, Vol. 7014, Ground-based and Airborne Instrumentation for Astronomy II, 70143E de León, J., Ortiz, J. L., Pinilla-Alonso, N., et al. 2013, A&A, 555, L2 de León, J., Pinilla-Alonso, N., Delbo, M., et al. 2016, Icarus, 266, 57 DeMeo, F. E., Binzel, R. P., Slivan, S. M., & Bus, S. J. 2009, Icarus, 202, 160 DeMeo, F. E. & Carry, B. 2013, Icarus, 226, 723 Dey, A., Schlegel, D. J., Lang, D., et al. 2019, AJ, 157, 168 Dotson, J. L., Brozovic, M., Chesley, S., et al. 2022, 59 Drlica-Wagner, A., Carlin, J. L., Nidever, D. L., et al. 2021, ApJS, 256, 2 Erasmus, N., Navarro-Meza, S., McNeill, A., et al. 2020, VizieR Online Data Catalog: ATLAS c-o colors and classification of asteroids (Erasmus +,2020), VizieR On-line Data Catalog: J /ApJS /247 /13. Originally published in: 2020ApJS..247...13E Fatka, P., Pravec, P., Scheirich, P., et al. 2025, A&A, 695, A139 Flaugher, B., Diehl, H. T., Honscheid, K., et al. 2015, AJ, 150, 150 Ginsburg, A., Sip˝ ocz, B. M., Brasseur, C. E., et al. 2019, AJ, 157, 98 Granvik, M., Morbidelli, A., Jedicke, R., et al. 2018, Icarus, 312, 181 Gwyn, S. D. J., Hill, N., & Kavelaars, J. J. 2012, PASP, 124, 579 Hanuš, J., Vokrouhlický, D., Delbo’, M., et al. 2018, A&A, 620, L8 Jackson, S. L., Rozitis, B., Dover, L. R., et al. 2022, MNRAS, 513, 3076 Kaasalainen, M. & Torppa, J. 2001, Icarus, 153, 24 Kim, Y., DeMartini, J. V., Richardson, D. C., & Hirabayashi, M. 2023, MNRAS, 520, 3405 Kwiatkowski, T., Kole´ nczuk, P., Kryszczy´ nska, A., et al. 2021, A&A, 656, A126 Lam, A. L. H., Margot, J.-L., Whittaker, E., & Myhrvold, N. 2023, PSJ, 4, 61 Landolt, A. U. 1992, AJ, 104, 340 López-Oquendo, A., Trilling, D. E., Gustafsson, A., et al. 2022, PSJ, 3, 189 Mahlke, M., Carry, B., & Denneau, L. 2021, Icarus, 354, 114094 Mahlke, M., Carry, B., & Mattei, P. A. 2022, A&A, 665, A26 Mainzer, A., Grav, T., Bauer, J., et al. 2011a, ApJ, 743, 156 Mainzer, A., Grav, T., Bauer, J., et al. 2011b, ApJ, 743, 156 Marsset, M., Brož, M., Vernazza, P., et al. 2020, Nature Astronomy, 4, 569 Marsset, M., Carry, B., Dumas, C., et al. 2017, A&A, 604, A64 Marsset, M., DeMeo, F. E., Burt, B., et al. 2022, AJ, 163, 165 Masiero, J. R., Mainzer, A. K., Bauer, J. M., et al. 2021a, PSJ, 2, 162 Masiero, J. R., Mainzer, A. K., Bauer, J. M., et al. 2021b, PSJ, 2, 162 Merline, W. J., Conrad, A. R., Keck Observatory, W. M., et al. 2008, IAU Circ., 8977, 2 Merline, W. J., Drummond, J. D., Tamblyn, P. M., et al. 2012, in LPI Contribu-tions, Vol. 1667, Asteroids, Comets, Meteors 2012, ed. LPI Editorial Board, 6372 Minker, K., Carry, B., Vachier, F., et al. 2025, A&A, 698, A136 Möller, A., Peloton, J., Ishida, E. E. O., et al. 2021, MNRAS, 501, 3272 Monteiro, F., Lazzaro, D., Rondón, E., et al. 2023, Icarus, 390, 115297 Moskovitz, N. A., Benson, C. J., Scheeres, D., et al. 2020, Icarus, 340, 113519 Moskovitz, N. A., Wasserman, L., Burt, B., et al. 2022, Astronomy and Comput-ing, 41, 100661 Muinonen, K., Belskaya, I. N., Cellino, A., et al. 2010, Icarus, 209, 542 Myhrvold, N., Pinchuk, P., & Margot, J.-L. 2022a, PSJ, 3, 30 Myhrvold, N., Pinchuk, P., & Margot, J.-L. 2022b, PSJ, 3, 30 Nesvorný, D. 2026, ApJS, 283, 63 Nesvorný, D., Bottke, W. F., Vokrouhlický, D., Chapman, C. R., & Rafkin, S. 2010, Icarus, 209, 510 Pajuelo, M., Carry, B., Vachier, F., et al. 2018, Icarus, 309, 134 Popescu, M., Licandro, J., Morate, D., et al. 2016, A&A, 591, A115 Pravec, P., Meyer, A. J., Scheirich, P., et al. 2024, Icarus, 418, 116138 Reddy, V., Kelley, M. S., Dotson, J., et al. 2022, Icarus, 374, 114790 Schemel, M. & Brown, M. E. 2021, PSJ, 2, 40 Sergeyev, A. V. & Carry, B. 2021a, A&A, 652, A59 Sergeyev, A. V. & Carry, B. 2021b, A&A, 652, A59 Sergeyev, A. V., Carry, B., Marsset, M., et al. 2023, A&A, 679, A148 Shevchenko, V. G., Belskaya, I. N., Muinonen, K., et al. 2016, Planet. Space Sci., 123, 101 Shevchenko, V. G., Mikhalchenko, O. I., Belskaya, I. N., et al. 2021, Planet. Space Sci., 202, 105248 Ski ff , B. A., McLelland, K. P., Sanborn, J. J., Pravec, P., & Koehn, B. W. 2019, Minor Planet Bulletin, 46, 458 Taylor, P. A., Wright, E. L., Masiero, J. R., et al. 2021, in 7th IAA Planetary Defense Conference, 95 Thomas, C. A., Emery, J. P., Trilling, D. E., et al. 2014, Icarus, 228, 217 Tonry, J. L., Denneau, L., Flewelling, H., et al. 2018a, ApJ, 867, 105 Tonry, J. L., Denneau, L., Heinze, A. N., et al. 2018b, PASP, 130, 064505 Tonry, J. L., Stubbs, C. W., Lykke, K. R., et al. 2012, ApJ, 750, 99 Tuson, A., Martínez-Palomera, J., & Hedges, C. 2026, altuson /tess-asteroids: v1.5.1 Vachier, F., Carry, B., & Berthier, J. 2022, Icarus, 382, 115013 ˇDurech, J., Sidorin, V., & Kaasalainen, M. 2010, A&A, 513, A46 Vernazza, P., Ferrais, M., Jorda, L., et al. 2021, A&A, 654, A56 Virkki, A. K., Marshall, S. E., Venditti, F. C. F., et al. 2022, PSJ, 3, 222 Vokrouhlický, D., Pravec, P., ˇ Durech, J., et al. 2017, AJ, 153, 270 Warner, B. D. & Stephens, R. D. 2020, Minor Planet Bulletin, 47, 105 Willmer, C. N. A. 2018, ApJS, 236, 47 Xenos, O., Carry, B., Peloton, J., et al. 2026, A&A, in press Zambrano-Marin, L. F., Howell, E. S., Marshall, S. E., Giorgini, J., & Venditti, F. C. F. 2024, Icarus, 415, 116060 Zechmeister, M. & Kürster, M. 2009, A&A, 496, 577 Zenteno, A., Kluge, M., Kharkrang, R., et al. 2025, A&A, 698, A171 
+
+Article number, page 9 A&A proofs: manuscript no. aa61418-26 
+
+Appendix A: Photometry of DECam images 
+
+The resulting cutout images are presented in Fig. A.1. In these panels, dashed lines indicate the apertures used for photome-try, while solid lines denote the annuli used for background and noise estimation. For the z-band specifically, the rectangular aperture necessitated by the chip-edge artifacts is also plotted. 
+
+Appendix B: Shape modeling 
+
+> B.1. Lightcurve inversion
+
+First, we used the lightcurve inversion method developed in Kaasalainen & Torppa (2001), implemented in the public code provided by the Database of Asteroid Models from In-version Techniques (DAMIT; ˇDurech et al. 2010), following the methodology of Fatka et al. (2025). We used both dense lightcurves and ATLAS sparse photometry for the modeling, with the exception of TESS observations, which were excluded due to their low signal-to-noise ratio and long e ff ective exposure times relative to the target’s rotation period. Following the stan-dard convention, we first determined the sidereal rotation period using period_scan .We estimate 3 σ uncertainties of parameters with the follow-ing boundary: 
+
+χ2 ≤ χ2min (1 + 3 p2/ν ), (B.1) where χ2min is the global minimum chi-squared and ν is the de-grees of freedom. In this analysis, the number of data points is 1462 and the number of parameters is 17, yielding a to-tal degrees of freedom of ν = 1445. Eq. (B.1) is used in, e.g., Vokrouhlický et al. (2017); Hanuš et al. (2018), which is an approximate expression, but as the resulting minimum chi-squared is close to unity, they yield nearly identical results. While in some cases the period can be well constrained even from two dense lightcurves separated by approximately a decade (Fatka et al. 2025), in the present case this approach produced multiple degenerate period solutions (Fig.B.1). We could not constrain a unique sidereal period. Subsequently, we constrained the spin-axis orientation by searching for the global chi-squared minimum in the pole pa-rameter space. Since a unique sidereal rotation period could not be determined due to multiple comparable minima, we adopted the global minimum period as a reference solution, and derived a corresponding global best-fit model, including the spin axis and shape. We set the sidereal period as a free parameter and explored the corresponding shape and spin-axis solutions. To search for the pole direction of 2001 WN 5, we generated 2001 pole orientations using the golden spiral algorithm. In this pro-cess, only the spin-axis orientation is fixed, and sidereal period and shape are optimized. In this analysis, the number of param-eters is 49, yielding a total degrees of freedom of ν = 1413. The result of pole search is shown in Fig. B.2. The best fit values are ( λ, β ) = (229 .9◦, −39 .0◦) (star in Fig. B.2). The cor-responding shape model was unstable and physically unrealistic because its longest axis was the z-axis (rotation axis). Therefore, we filtered out this unrealistic solution (Kaasalainen & Torppa 2001) and estimated the shape using the alternative solution, (λ, β ) = (272 .9◦, −44 .5◦) (diamond in Fig. B.2), as shown in Fig. B.3 as a representative example. This analysis indicates that the preferred pole solutions are located in the southern hemi-sphere in the ecliptic coordinate. The SOCCA solution discussed in the next subsection is also within the 3 σ threshold. 
+
+> B.2. SOCCA
+
+The SOCCA phase curve model (Xenos et al. 2026) was also ap-plied to the dataset. The model corrects for the viewing geometry eff ects by fitting a triaxial ellipsoid to the photometric observa-tions, simultaneously retrieving the ellipsoid shape parameters, spin axis orientation and sidereal roatational period. The best-fit solution yielded an RMS residual of 0.12 mag. The relatively large residual is expected as the triaxial ellipsoid approximation cannot fully reproduce the irregular shape fea-tures of the object. The model recovers the sidereal rotation pe-riod of 4 .260727 ± 8.4 × 10 −6 hours. The spin-axis orientation was determined to be ( α0, δ 0) = (62 .42 ◦, −29 .36 ◦)±(1 .98 ◦, 3.6◦), corresponding to ecliptic coordinates ( λ, β ) = (51 .85 ◦, −49 .21 ◦). The spin axis orientation and rotation period given here by SOCCA correspond to the ellipsoid parameters providing the lowest fit RMS error and are therefore reported as the model’s unique solution. While this pole di ff ers from the convex shape model solution in ecliptic longitude by approximately 180 ◦, the two solutions share similar β values, reflecting a known mirror symmetry in pole determinations. The derived ellipsoidal shape parameters are a/b = 1.18 ± 0.02 and a/c = 2.09 ± 0.39 with 
+
+a > b > c the ellipsoid axes. 
+
+> Article number, page 10
+
+Beniyama et al.: Physical properties of (153814) 2001 WN 5
+
+Fig. A.1: DECam detections of 2001 WN 5. Crosses indicate 2001 WN 5. Field of view covers 15 arcsec ×15 arcsec. North is to the top and East is to the left. The dashed region represents the aperture used for photometry, and the region enclosed by solid lines indicates the area used for local background estimation. 4.0 4.1 4.2 4.3 4.4 4.5 
+
+Sidereal period [h]     
+
+> 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5
+> Normalized  2
+> Global 2
+> min at P=4.260712 hr
+> 4.260 4.261 4.262 1.0 1.5
+
+Fig. B.1: Results of sidereal period search with period_scan .The dashed horizontal line indicates the 3 σ threshold. Circles indicate solutions below the 3 σ threshold. The region around the global minimum is shown in the inset. 
+
+Fig. B.2: Results of the pole search. Only solutions below the 3 σ threshold are shown. The global minimum at ( λ, β ) =
+
+(229 .9◦, −39 .0◦) is marked with a star. The alternative solution used for the shape reconstruction is marked with a diamond at (λ, β ) = (272 .9◦, −44 .5◦). yzxzxy
+
+Fig. B.3: Shape model reconstructed the lightcurve inversion method. The equatorial view is shown in the left and center pan-els, while the pole-on view is displayed on the right. 
+
+Article number, page 11

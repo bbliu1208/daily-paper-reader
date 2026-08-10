@@ -1,0 +1,591 @@
+Title: A JWST Study of Stardust. I. Infrared Spectroscopy of Comet 81P/Wild 2 and Overall Composition
+
+URL Source: https://arxiv.org/pdf/2608.02190v1
+
+Published Time: Tue, 04 Aug 2026 02:50:50 GMT
+
+Number of Pages: 27
+
+Markdown Content:
+Draft version 2026-08-04 
+
+Typeset using L ATEX default style in AASTeX7 
+
+A JWST Study of Stardust. I. Infrared Spectroscopy of Comet 81P/Wild 2 and Overall Composition. 
+
+Nathan X. Roth, 1, 2 Stefanie N. Milam, 1 Diane H. Wooden, 3 Charles E. Woodward, 4
+
+Dominique Bockel´ ee-Morvan, 5 Michael S. P. Kelley, 6 Steven B. Charnley, 1 Simon J. Clemett, 7
+
+Martin A. Cordiner, 1, 8 Perry A. Gerakines, 1 David E. Harker, 9 Els Peeters, 10, 11, 12 Ella Sciamma-O’Brien, 3 and Geronimo L. Villanueva 13 
+
+> 1
+
+Solar System Exploration Division, Astrochemistry Laboratory Code 691, NASA Goddard Space Flight Center, 8800 Greenbelt Rd, Greenbelt, MD 20771, USA 
+
+> 2
+
+Department of Physics, American University, 4400 Massachusetts Ave NW, Washington, DC 20016, USA 
+
+> 3
+
+NASA Ames Research Center, Astrophysics Division, MS 245-6, Moffett Field, CA 94035-1000, USA 
+
+> 4
+
+Minnesota Institute for Astrophysics, School of Physics and Astronomy, 116 Church Street SE, University of Minnesota, Minneapolis, MN 55455, USA 
+
+> 5
+
+LIRA, Observatoire de Paris, Universit´ e PSL, CNRS, Sorbonne Universit´ e, Universit´ e Paris Cit´ e, 5 place Jules Janssen, 92195 Meudon, France 
+
+> 6
+
+Department of Astronomy, University of Maryland, College Park, MD 20742-0001, USA 
+
+> 7
+
+NASA Johnson Space Center, 2224 Bay Area Blvd, Houston, TX, 77058, USA 
+
+> 8
+
+Department of Physics, The Catholic University of America, 620 Michigan Ave., N.E. Washington, DC 20064, USA 
+
+> 9
+
+Department of Astronomy and Astrophysics, University of California, San Diego, 9500 Gilman Drive, MC 0424, La Jolla, CA 92093-0424, USA 
+
+> 10
+
+Department of Physics and Astronomy, University of Western Ontario, London, Ontario N6G 2V4, Canada 
+
+> 11
+
+Institute for Earth and Space Exploration, University of Western Ontario, London, Ontario N6A 5B7, Canada 
+
+> 12
+
+SETI Institute, Mountain View, CA 94043, USA 
+
+> 13
+
+Solar System Exploration Division, Code 690, NASA Goddard Space Flight Center, 8800 Greenbelt Rd, Greenbelt, MD 20771, USA 
+
+(Received 2026-08-03; Revised; Accepted) 
+
+Submitted to The Planetary Science Journal ABSTRACT We report observations of comet 81P/Wild 2, target of the Stardust sample return mission, on UT 2023 March 20 and 24 at a heliocentric distance ( r H ) of 1.85 au using the NIRSpec and MIRI integral field unit spectrographs on board the James Webb Space Telescope (JWST). This study is the first compositional comparison between JWST remote-sensing spectroscopy of a solar system object against terrestrial analysis of its returned samples. We securely detected molecular emission from H 2O, CH 4,C2H6, CH 3OH, CO, CO 2, 13 CO 2, OCS, HCN, and CN and find molecular abundances consistent within 2 σ with those reported during previous perihelion passages. The water ortho-to-para ratio was 2.76 ± 0.05, and the 12 CO 2/13 CO 2 ratio was 85 ± 4. Thermal emission from the nucleus and dust was detected and modeled, providing an effective nucleus radius of 1 .77 ± 0.04 km and a dust composition (relative mass fraction of the submicron grains) of ∼ 36% amorphous carbon, ∼ 25% amorphous Mg:Fe olivine, ∼ 23% Mg-rich crystalline olivine, and ∼ 15% amorphous Mg:Fe pyroxene. The crystalline mass fraction of the sub-micron grains in the coma was 0 .362 ± 0.003. Comparison of the JWST-derived thermal model against the fine-grained materials in Stardust returned samples demonstrates complementarity between the missions, with each most sensitive to a different population of the coma dust grains. 
+
+Corresponding author: Nathan X. Roth nathaniel.x.roth@nasa.gov arXiv:2608.02190v1 [astro-ph.EP] 3 Aug 2026 2 Roth et al. 
+
+Keywords: Molecular spectroscopy (2095) — Polycyclic aromatic hydrocarbons (1280) — Near infrared astronomy (1093) — Comae (271) — Comets (280) – Infrared spectroscopy (2285)  
+
+> 1.
+
+INTRODUCTION Comets may serve as “living fossils” of solar system formation, with the volatile composition of their nuclei reflecting the chemistry and prevailing conditions present where and when they formed (D. Bockel´ ee-Morvan et al. 2004; M. J. Mumma & S. B. Charnley 2011). The James Webb Space Telescope (JWST; J. Rigby et al. 2023; J. P. Gardner et al. 2023) is opening new frontiers in cometary science, providing sensitive measures of the volatile and refractory components of the coma, including evidence for polycyclic aromatic hydrocarbon (PAH) species (C. E. Woodward et al. 2025). Here we report JWST MIRI and NIRSpec integral field unit (IFU) observations of Jupiter-family comet 81P/Wild 2 (hereafter 81P). Comet 81P represented an exceptional JWST target, being also the target of the Stardust sample return mission (e.g., S. A. Sandford et al. 2006; S. J. Clemett et al. 2010; D. E. Brownlee & D. J. Joswiak 2017) and complemented by the availability of ground-based, high spectral resolution near-infrared compositional studies during its previous perihelion passages (N. Dello Russo et al. 2014). These combined measurements reported here represent the first opportunity to integrate the results of comet sample return analyses with a full near–mid infrared cometary spectrum measured with the unparalleled sensitivity of JWST. This manuscript (Paper I) reports our radiative transfer modeling of molecular emission from volatiles in the coma and thermal modeling of continuum emission from the nucleus and coma dust grains. Our best-fit models for all three of these quantities were subtracted to form a residual spectrum, which is analyzed in Paper II (N. X. Roth et al. 2026a) to test for the presence of polycyclic aromatic hydrocarbons (PAHs). Section 2 details our observations and data reduction procedures. Section 3 provides our modeling of the nucleus signal. Sections 4 and 5 describe our analysis of molecular emission from water and trace volatiles in the coma. Section 6 shows our thermal modeling formalism for the dust signal. Section 7 discusses the results of our best-fit dust model, and Section 8 compares the JWST model to the dust properties found in the Stardust returned samples.  
+
+> 2.
+
+OBSERVATIONS AND DATA REDUCTION We conducted post-perihelion observations toward 81P on UT 2023 March 20 and 24 using JWST. An observing log is in Table 1. We used the the MIRI Medium Resolution Spectroscopy IFU on 20 March (G. S. Wright et al. 2023), covering wavelengths from 4 .9 − 28 .1 μm with λ/ ∆λ ∼ 3000, and the NIRSpec IFU (T. B¨ oker et al. 2022) with the G395H/F290LP grating on 24 March, covering wavelengths from 2 .87 − 5.27 μm with a resolving power 
+
+λ/ ∆λ ∼ 2700. Observations were conducted without target acquisition (following Cycle 1 best practices for faint, extended objects such as 81P) using JPL/HORIZONS ephemerides (JPL#K222/37). We used a four-point dither pattern, with dedicated background exposures taken offset 180 ′′ from the comet ephemeris position along the sunward position angle. We followed data reduction and analysis procedures as detailed by C. E. Woodward et al. (2025) and N. X. Roth et al. (2026b) using the jwstComet package (N. X. Roth 2026). Here we will only describe aspects of our reduction and analysis that differed significantly. We downloaded the Level 0 data files for NIRSpec and MIRI from the Mikulski Archive for Space Telescopes (MAST) and reduced locally using version 1.14.0 of the JWST pipeline and CRDS file version 1228. We utilized an MRS defringing algorithm in Stage 1 (calwebb2), and background subtraction in Stages 2 and 3 for NIRSpec and MIRI, respectively. The resulting Level 3 background-subtracted three-dimensional spatial-spectra data cubes (s3d) were used for analysis in this study. We identified spatially extended emission from both the gas and dust in the NIRSpec and MIRI data cubes. We used the Python photutils package to extract spectra in 1 .′′ 41 diameter apertures centered on the comet photocenter. Note that in this aperture NIRSpec contains all of the nucleus flux but MIRI does not, thereby requiring application of an Aperture Correction Factor (ACF) to assess the nucleus flux in the aperture (see § 6.2). We investigated similar extracts at off-nucleus positions, but none displayed a sufficient signal-to-noise ratio (S/N) for a well-constrained analysis aside from 12 CO 2 in NIRSpec and H 2O in MIRI. Thus, we performed spaxel-by-spaxel analysis (a spaxel, or “spectral pixel” refers to the fact that each spatial element of the IFU contains a spectrum of the source at that position) of these two molecules and calculated bulk abundances for the remaining composition using our nucleus-centered extracts only. The complete 81P JWST spectrum is shown in Figure 1. No scaling was applied to account for potential coma or nucleus signal variability with time between the NIRSpec and MIRI observations. A JWST Study of Stardust. I. 3
+
+Table 1. Observing Log JWST IFU No. Dithers UTC Midpoint tint r H ∆ ϕSTO ψ⊙
+
+Archive No. Configuration (s) (au) (au) (◦) (◦)MIRI IFU 3 (comet) MRS LONG C 4 2023 Mar. 20 21:52:18 166 1.87 1.43 32.6 272.7 4 (bkgnd) MRS LONG C 43 (comet) MRS MEDIUM B 4 2023 Mar. 20 22:12:05 277 1.87 1.43 32.6 272.7 4 (bkgnd) MRS MEDIUM B 43 (comet) MRS SHORT A 4 2023 Mar. 20 22:35:20 666 1.87 1.43 32.6 272.7 4 (bkgnd) MRS SHORT A 4NIRSpec IFU 1 (comet) NIRSpec G395H 4 2023 Mar. 24 07:41:10 2567 1.85 1.42 32.2 272.3 2 (bkgnd) NIRSpec G395H 4
+
+Note —tint is the total on-source integration time. r H , ∆, ϕSTO , and ψ⊙ are the heliocentric distance, geocentric distance, phase angle (Sun–Comet–Earth), and position angle of the Sun–Comet radius vector measured counter-clockwise (east) from celestial north, respectively, of 81P at the time of observations. 3 5 10 20 
+
+## ( m) 
+
+10 19 
+
+10 18 
+
+> F (W cm  2)
+
+rH = 1.87 au, JWST = 1.43 au 
+
+Figure 1. Composite 81P/Wild 2 JWST spectrum extracted from a 1 .′′ 41 diameter circular aperture centered on the comet photocenter. Wavelengths > 26.0 μm are clipped out due to poor MRS performance. 4 Roth et al.  
+
+> 3.
+
+NUCLEUS EXTRACTION AND MODEL Thermal emission from cometary nuclei can contribute a substantial fraction of the total emission in a spectrum, which, if not addressed, can bias a retrieval of the composition (M. S. Kelley & D. H. Wooden 2009). The Stardust spacecraft imaged the resolved nucleus of comet 81P, but due to the slow rotation and fast flyby only a partial shape model could be constructed. Furthermore, the spacecraft did not carry an infrared instrument, so the thermophysical state of the nucleus was not assessed. Therefore, we measured the nucleus emission directly from the MIRI MRS data by separating the point source nucleus from the extended coma with a morphological technique (P. L. Lamy et al. 1996; M.-T. Hui & J.-Y. Li 2018). This technique uses the surface brightness distribution of the coma to predict its contribution to the inner, spatially unresolved region around the nucleus. A model comet surface brightness distribution, IC , is produced from the sum of a model coma and model nucleus, 
+
+IC = ( Icρk + FN δ) ∗ IP SF , (1) where Icρk is the coma surface brightness distribution, FN is the total nucleus brightness, δ is the Dirac delta function, 
+
+∗ is the convolution operator, and IP SF is the point spread function for the instrument and wavelength range being tested. The coma is described by a power-law distribution as a function of projected distance to the nucleus, ρ, with a slope k.We first generated images of 81P averaging over three MRS wavelength regions: 5.8–6.0 μm, 6.57–6.62 μm, and 12.5–12.7 μm. The wavelength intervals were chosen to avoid strong features from gas, i.e., the 6 μm ν2 H2O band, and the silicate emission bands at ∼ 10 and ∼ 20 μm. Silicate emission features from the coma can be stronger than those from the nucleus (M. S. P. Kelley et al. 2017). Avoiding the band would therefore increase the nucleus-to-coma contrast. For each wavelength range, we averaged together monochromatic Point Spread Functions (PSF) generated at each wavelength step in the MRS data cubes, producing three final PSF files. Each image was azimuthally averaged, centered on an inner 3 ×3 or 5 ×5 pixel box. Linear least-squares techniques (scipy ’s nnls and leastsq P. Virtanen et al. (2020a)) were used to derive the slope, coma, and nucleus scale factors. However, instead of minimizing χ2 = P
+
+> i
+
+(IC,i − Iobs,i )2/σ 2
+
+> obs,i
+
+, we weighted the difference between the model and data by ρ: ( χ′)2 = P
+
+> i
+
+(IC,i − Iobs,i )2ρ2 
+
+> i
+
+/σ 2
+
+> obs,i
+
+. Without the radial weights, the best-fits were more strongly driven by the PSF core and the power-law behavior of the surrounding coma was not as well reproduced. The best-fit coma slopes were –1.40, –1.32, and –1.12 for the 5.90, 6.60, and 12.60 μm images, respectively. The best-fit nucleus brightnesses were 6 .64 ± 0.07 mJy, 11 .70 ± 0.05 mJy, and 61 .37 ± 0.03 mJy, respectively. Following D. R. Law et al. (2024), we added a 2% calibration error for final uncertainties of 0.15, 0.24, and 1.23 mJy. The observed nucleus brightnesses were then modeled with the Near-Earth Asteroid Thermal Model (NEATM; A. W. Harris 1998), a model that is commonly used to measure the sizes of comets from thermal emission photometry (Y. R. Fern´ andez et al. 2013). Briefly, the model assumes the nucleus is a sphere in instantaneous local thermodynamic equilibrium (LTE) with sunlight. The temperature of a surface element on the nucleus is described by 
+
+T (θz ) = 
+
+ (1 −A)F⊙ cos( θz )
+
+> ηϵσ SB
+
+1/4
+
+for θz < 90 ◦,
+
+0 for θz ≥ 90 ◦,
+
+(2) where A = 0 .02 is the assumed bolometric albedo, F⊙ is the flux (irradiance) of the Sun at the heliocentric distance of the comet (1367.6 W m −2 at 1 au), θz is the zenith angle of the Sun, η is the infrared beaming parameter, ϵ = 0 .95 is the infrared emissivity, and σSB is the Stefan-Boltzmann constant. The parameter η adjusts the effective temperature to account for surface roughness and thermal inertia (i.e., non-instantaneous equilibrium). Optimizing the model with the observed nucleus brightness and a least-squares fit approach results in a radius of 1 .77 ± 0.04 km, and a beaming parameter of 0 .77 ± 0.02. The result suggests we observed the nucleus near the minimum cross-sectional area. The triaxial ellipsoid model of T. C. Duxbury et al. (2004) has dimensions 1 .65 × 2.00 × 2.75 km, and a minimum effective radius of 1.82 km.  
+
+> 4.
+
+ANALYSIS OF H 2O EMISSION Emission lines from H 2O are detected in both NIRSpec and MIRI/MRS spectra of 81P. In the 4.5–5.2 μm range, faint H 2O ro-vibrational lines are from the ν3-ν2 and ν1-ν2 hot bands. As shown in Fig. 2, the spectral region 5.5–7.25 
+
+μm, covered by Channel 1 of MIRI/MRS, shows strong lines from the ν2 fundamental vibrational band, with some minor contribution expected from hot bands (e.g., ν3 + ν2 − ν3, 2 ν2 − ν2). A JWST Study of Stardust. I. 5The spectral resolution of MIRI/MRS is appropriate to investigate the ortho-to-para ratio (OPR) of water molecules from the ν2 ro-vibrational lines. For the OPR analysis, we used the H 2O fluorescence model of J. Crovisier (2009), which includes fundamental bands and hot bands and uses the comprehensive H 2O ab initio database of D. W. Schwenke & H. Partridge (2000). One should note that the 6.3-μm synthetic spectra from J. Crovisier (2009) closely resemble those obtained by the NASA Planetary Spectrum Generator (PSG; G. L. Villanueva et al. 2018), which uses the BT2 ab initio database of R. J. Barber (2006); G. L. Villanueva et al. (2012b). The fitting procedure consisted of a simultaneous fit to the H 2O lines and the underlying continuum, represented as a cubic spline. The procedure corrects for small deviations in the frequency calibration. The water spectrum was fitted with the above-mentioned optically thin fluorescence model parametrized by a normalizing factor (proportional to the water production rate Q(H 2O)), the rotational temperature Trot in the ground vibrational state, and the ortho-to-para ratio (OPR). Minimization was done with the Levenberg–Marquardt algorithm. The same approach was used for the analysis of C/2017 K2 MIRI/MRS data (C. E. Woodward et al. 2025). A fit of synthetic spectra produced by the PSG show that the OPR derived using the PSG H 2O fluorescence model (version 2026 March 23) would have been almost identical. Figure 2 shows the 5.5–7.25 μm MIRI spectrum extracted over a 1.4 arcsec-diameter circular aperture centered on the nucleus, with the model fit superimposed. The retrieved model parameters are Trot = 24 ±0.4 K and OPR = 2.76 ± 0.05. In Fig. 2 the difference between the measured and modeled H 2O spectra (residuals) is shown in green. Also shown in orange are the residuals obtained using the PSG retrieval tool, used to determine Q(H 2O). One should note that, in PSG, the OPR is not a free parameter. Instead, g−factors for ortho- and para-H 2O are generated assuming the statistical equilibrium value of 3, so that OPR = 3 N (o − H2O) /N (p − H2O) as modeled with the PSG (see G. Villanueva et al. 2025, for more details). Residuals show that neither fluorescence model is able to correctly fit the H2O lines near 6.5 μm. The strength of the lines at 6.933 μm and 6.96 μm are also not explained, the former line being unidentified (and not present in C/2017 K2 MIRI spectrum; C. E. Woodward et al. 2025) and the latter corresponding to the H 2O ν2 321 –4 32 ro-vibrational line. These discrepancies possibly originate from non-LTE populations in the ground vibrational state. For this weakly active comet, non-LTE populations can be expected within the field-of-view (∼ 730 km radius) because the gas density is not high enough to maintain thermal equilibrium through collisions (see H2O rotational populations for low production rates from S. Lee et al. 2011). Since the higher energy levels start deviating from the thermal equilibrium population at smaller cometocentric distances than the lower energy levels, higher discrepancies might be expected for the low-intensity infrared lines. Focusing on the eight strongest and non-blended ortho lines, we found that the ratios of observed fluxes and modeled fluxes F /Fmod , normalized to their mean value ( <F /Fmod >), show a minimum standard deviation for Trot = 24 K, with a maximum deviation for individual lines of 15%, suggesting that LTE is a good approximation for these lines. A similar result is obtained for the five strongest para lines. Fixing Trot to 24 K and using these eight ortho and five para lines, minimization of the standard deviation of the F /Fmod /<F /Fmod > values is obtained for OPR = 2.70 ± 0.09, which is consistent with the value obtained by fitting the full spectrum. For the determination of the water production rate from lines covered by NIRSpec and MIRI, we used the PSG retrieval tool (G. L. Villanueva et al. 2018) for consistency with other production rate determinations. With the assumed expansion velocity of 0.55 km/s following the empirical relationship v = 0 .8/√rH km s −1 (N. Biver et al. 1999; T. Ootsubo et al. 2012), the derived value from the 5.5–7.25 μm MIRI spectrum extracted over a 1.4 arcsec-diameter is Q(H 2O) = 1 .80 ± 0.04 × 10 27 s−1. 
+
+> 5.
+
+ANALYSIS OF TRACE VOLATILE EMISSION We securely detected molecular emission from multiple trace species, including CO 2, 13 CO 2, OCS, CH 4, CH 3OH, C2H6, HCN, and CN, and determined stringent (3 σ) upper limits on the production of H 2CO. CO 2 was detected through both its 15 μm and 4.25 μm bands with MIRI and NIRSpec, respectively. We determined contributions from continuum and gaseous emissions using the Optimal Estimation Method implemented in the NASA PSG. We subtracted continuum thermal emission from the nucleus and dust coma, as well as scattered sunlight and instrumental artifacts, using a low-order polynomial (3 − 7, depending on the shape of the underlying continuum across the width of the spectral extract; higher order polynomials were used for the widest extracts) spectral baseline. We chose the lowest order possible to reproduce the spectral shape and avoided higher-order polynomials to prevent introducing artifacts into the spectra. The spectral baseline was fit simultaneously with the molecular emission models, thereby propagating uncertainties on the baseline fit to each retrieved quantity ( Q or T rot ). The fits included a correction for 6 Roth et al.           
+
+> Figure 2. Model fits to H 2O MIRI/MRS spectrum. Black line: observed spectrum over a 1.41 arcsec diameter aperture. Blue line: continuum-subtracted spectrum. Red line: model fit using the fluorescence model of J. Crovisier (2009). Residuals are shown in green and retrieved parameters are given in the figure title. The residuals in orange color are those obtained using PSG retrieval tool, with inferred parameters: Q(H 2O) = 1.80 ±0.04 10 27 s−1and Trot = 26.6 ±0.4 K
+
+opacity effects for each species (see G. Villanueva et al. 2025; N. X. Roth et al. 2023, for further details). Uncertainties on the derived parameters were retrieved from the diagonal elements of the covariance matrix, scaled by the square root of the reduced χ2 statistic of the fit. Figures 3 and 4 show extracted spectra and best-fit models for each detected species, and Table 2 gives the respective values of Q and T rot . Table 2 shows that, compared to measured Jupiter-family comets, 81P was depleted in CO, CH 4,and CH 3OH, enriched in CO 2, and consistent with average values for all other species. Our simultaneous measure of 12 CO 2 and 13 CO 2 enabled us to derive a ratio 12 C/13 C = 85 ± 4, consistent with the terrestrial value of 89. The significant decrease (by near a factor of 3) of the CO 2/H 2O abundance from March 20 to March 24 is remarkable. Examination of Table 2 shows that Q(H 2O) rose by 38% from one epoch to the next, while Q(CO 2) fell by 57%, contributing to the dramatically enriched CO 2 abundance on March 20 compared to more nearly median values on March 24. Although previous studies have found similar variations in molecular abundances measured at infrared wavelengths across apparitions (e.g., 2P/Encke; N. X. Roth et al. 2018), such a dramatic decrease within the space of a few days is unusual. It is interesting to note that significant differences in CO 2/H 2O were found for interstellar comet 3I/ATLAS measured with JWST, depending on whether the NIRSpec (M. Cordiner et al. 2026; N. X. Roth et al. 2026b) or MIRI (measured several days after NIRSpec; M. Belyakov et al. 2026) CO 2 bands were analyzed. Future work with more nearly simultaneous measures of CO 2 using MIRI and NIRSpec may shed additional light on comparisons between the 4.25 μm and 15 μm CO 2 bands. N. Dello Russo et al. (2014) characterized the volatile composition of 81P during its 2010 perihelion passage using high-resolution ground-based near-infrared spectroscopy. For molecules common to both studies, our molecular abun-dance for C 2H6 is higher, whereas our abundances for HCN and H 2CO are lower, yet our abundance for CH 3OH is in formal agreement. However, all abundances between the two studies agree within 2 σ uncertainty, indicating that there were no significant changes in the molecular abundances of these molecules over the course of three perihelion passages (in 2010, 2016, and 2022). Our spaxel-by-spaxel maps of the brightest molecules, H 2O and CO 2, show considerable differences in the spatial distributions of column density ( N ) and T rot of each (Figures 5 and 6). To correct for expansion dilution effects, N × ρ
+
+is plotted. In such a plot, an isotropic outflow would appear approximately flat as a function of nucleocentric distance. Although at lower S/N, the MIRI H 2O N × ρ distribution is relatively flat with nucleocentric distance, indicative of an isotropic distribution. Likewise, T rot for H 2O peaks near the nucleus position and quickly falls off, although it is somewhat warmer in the anti-sunward direction. The simultaneously measured continuum emission shows a broad anti-sunward plume of dust. In contrast, the CO 2 emission measured with NIRSpec is asymmetric, with a broad, approximately sunward fan of emission and a narrow anti-sunward jet. The rotational temperature shows a stark A JWST Study of Stardust. I. 70.45 0.50 0.55 0.60 0.65 Flux (mJy) 81P/Wild 2 Baseline Total Model 2.875 2.900 2.925 2.950 2.975 3.000 3.025 3.050 3.075 ( m) 
+
+> 0.10
+> 0.05
+> 0.00 0.05 0.10 0.15 Flux (mJy) 81P/Wild 2 H2OOH* HCN Residual
+
+(A) 2.0 2.2 2.4 2.6 2.8 3.0 3.2 3.4 3.6 Flux (mJy) 81P/Wild 2 Baseline Total Model 4.55 4.60 4.65 4.70 4.75 4.80 ( m)  
+
+> 0.2
+> 0.0 0.2 0.4 0.6 Flux (mJy) 81P/Wild 2 H2OCN CO Residual
+
+(B) 0510 15 20 25 Flux (mJy) 81P/Wild 2 Baseline Total Model 4.175 4.200 4.225 4.250 4.275 4.300 4.325 4.350 ( m) 
+
+> 0510 15 20 25 Flux (mJy) 81P/Wild 2 CO 2
+> Residual
+
+(C) 1.5 1.6 1.7 1.8 Flux (mJy) 81P/Wild 2 Baseline Total Model 4.36 4.38 4.40 4.42 4.44 ( m)  
+
+> 0.10
+> 0.05
+> 0.00 0.05 0.10 0.15 0.20 0.25 Flux (mJy) 81P/Wild 2
+> 13 CO 2
+> Residual
+
+(D) 
+
+Figure 3. (A)–(D). Spectra of comet 81P extracted in a 1 .′′ 41 diameter aperture and showing detections of H 2O, HCN, CO, CN, CO 2, and 13 CO 2 in 81P on March 24. For each figure, the upper panel shows the observed spectrum, spectral baseline, and total fluorescence model. The lower panel shows the baseline-subtracted spectrum and individual best-fit molecular fluorescence models. The residual spectrum (observed −baseline −models) is shown for comparison and offset vertically. 
+
+sunward/anti-sunward dichotomy, with the anti-sunward direction distinctly warmer. Furthermore, the overall T rot 
+
+for CO 2 is nearly twice as high than that for H 2O. The continuum in both the MIRI and NIRSpec observations shows an anti-sunward enhancement, although it is not as pronounced in the latter. These differences in column density and T rot distributions for H 2O and CO 2 in 81P are similar to those measured by JWST for comet C/2017 K2 (PanSTARRS) and the interstellar object 3I/ATLAS (C. E. Woodward et al. 2025; N. X. Roth et al. 2026b). The lower H 2O temperatures were attributed to its more efficient rotational cooling compared 8 Roth et al. 3.0 3.2 3.4 3.6 3.8 4.0 4.2 4.4 Flux (mJy) 81P/Wild 2 Baseline Total Model 4.80 4.85 4.90 4.95 5.00 ( m) 
+
+0.2 
+
+0.1 
+
+0.0 0.1 0.2 0.3 0.4 Flux (mJy) 81P/Wild 2 H2OCN OCS Residual 
+
+(A) 0.48 0.50 0.52 0.54 0.56 0.58 Flux (mJy) 81P/Wild 2 Baseline Total Model 3.475 3.500 3.525 3.550 3.575 3.600 3.625 3.650 3.675 ( m) 
+
+0.04 
+
+0.02 
+
+0.00 0.02 0.04 0.06 Flux (mJy) 81P/Wild 2 OH* CH 3OH H2CO Residual (B) 0.40 0.45 0.50 0.55 0.60 0.65 0.70 Flux (mJy) 81P/Wild 2 Baseline Total Model 3.20 3.25 3.30 3.35 3.40 3.45 3.50 3.55 3.60 ( m) 
+
+0.15 
+
+0.10 
+
+0.05 
+
+0.00 0.05 0.10 0.15 Flux (mJy) 81P/Wild 2 OH* CH 3OH C2H6
+
+CH 4
+
+Residual 
+
+(C) 160 162 164 166 168 Flux (mJy) 81P/Wild 2 Baseline Total Model 14.5 14.6 14.7 14.8 14.9 15.0 15.1 15.2 ( m) 
+
+6
+
+4
+
+2
+
+024Flux (mJy) 81P/Wild 2 CO 2
+
+Residual (D) 
+
+Figure 4. (A)–(C). As in Figure 3 for H 2O, OCS, CN, CH 3OH, H 2CO, C 2H6, CH 4, and OH* in 81P on March 24. D. As in Figure 3 for CO 2 on March 20. 
+
+to CO 2 for both of these objects. Similarly, the lower temperatures for both molecules in the sunward direction were associated with more efficient adiabatic cooling in the sunward hemisphere of the coma. In addition to C/2017 K2 (PanSTARRS) and 3I/ATLAS, these sunward/anti-sunward dichotomies in T rot were also measured for H 2O in C/2022 E3 (ZTF) by JWST (K. D. Foster et al. 2026) and also for CH 3OH in 46P/Wirtanen with ALMA and IRAM (N. Biver et al. 2021; M. A. Cordiner et al. 2023). A JWST Study of Stardust. I. 9
+
+Table 2. Molecular Production Rates in 81P/Wild 2 and Comets Measured Molecule Q(a) T rot (b) Qx/Q (H 2O) (c) ⟨Qx/Q (H 2O) ⟩(d) Qx/Q (H 2O) (e) 
+
+(10 25 s−1) (K) (%) (%) (2010, %) 
+
+2023 March 20, MIRI/MRS, r H =1.87 au, ∆=1.43 au 
+
+H2O 180 ± 4 24 .0 ± 0.4 100 ... ... CO 2 80 .8 ± 10 .5 32 ± 12 45 ± 6 12 ± 2 ... 
+
+2023 March 24, G395H/F290LP, r H =1.85 au, ∆=1.42 au 
+
+H2O (2.9 μm) 264 ± 7 38 ± 3 100 ... ... H2O (4.8 μm) 272 ± 8 (38) 103 ± 4 ... ... CO 1.90 ± 0.24 (38) 0.72 ± 0.09 1.3 ± 0.6 ... CO 2 44 .8 ± 1.3 41 .2 ± 0.5 17 .0 ± 0.2 12 ± 2 ... 
+
+> 13
+
+CO 2 0.53 ± 0.02 44 ± 2 0.20 ± 0.01 ... ... CH 4 1.20 ± 0.06 39 ± 2 0.46 ± 0.02 0.7 ± 0.2 ... C2H6 1.54 ± 0.08 (38) 0.59 ± 0.03 0.46 ± 0.12 0.45 ± 0.05 CH 3OH 2.88 ± 0.24 39 ± 1 1.09 ± 0.08 1.73 ± 0.33 0.9 ± 0.3H2CO < 0.2 (3 σ) (39) < 0.09 (3 σ) 0.26 ± 0.10 0.22 ± 0.08 HCN 0.47 ± 0.09 (38) 0.18 ± 0.04 0.17 ± 0.03 0.27 ± 0.03 OCS 0.29 ± 0.03 (38) 0.10 ± 0.01 0.126 ± 0.034 ... CN 0.25 ± 0.03 (38) 0.09 ± 0.01 ... ... 
+
+Note —(a) Q is the molecular production rate. (b) T rot is the rotational temperature. (c) 
+
+Qx/Q (H 2O) are molecular abundances with respect to H 2O (this work). (d) ⟨Qx/Q (H 2O) ⟩
+
+are average molecular abundances with respect to water in comets reported by N. Biver et al. (2024b); O. Harrington Pinto et al. (2022); M. Saki et al. (2020); N. X. Roth et al. (2020); N. X. Roth et al. (2017); M. A. DiSanti et al. (2017); N. Dello Russo et al. (2016a). (e) Molecular abundances with respect to H 2O reported for 81P during its 2010 perihelion passage (N. Dello Russo et al. 2014). 1000 500 0 500 1000                           
+
+> Distance West (km)
+> 1000
+> 750
+> 500
+> 250
+> 0250 500 750 1000
+> Distance North (km) S
+> 1000 500 0500 1000
+> Distance West (km)
+> 1000 500 0500 1000
+> Distance West (km)
+> 0.6 0.8 1.0 1.2 1.4 N(H 2O)× [10 23 m1]
+> 10 15 20 25 30 T(H 2O) [K]
+> 0.2 0.4 0.6 0.8 1.0 9m Cont. × [10 6Jy m]
+
+Figure 5. Left. Map of N × ρ for H 2O in 81P on March 20 with MRS. The white arrow shows the projected direction of the Sun. Middle. Map of T rot for H 2O. A 3 × 3 boxcar smoothing kernel was applied during the retrieval to improve S/N. Right. 
+
+Map of 9 μm projected continuum intensity ( I × ρ). 10 Roth et al. 1500 1000 500 0 500 1000 1500                               
+
+> Distance West (km)
+> 1500
+> 1000
+> 500
+> 0500 1000 1500
+> Distance North (km) S
+> 1500 1000 500 0500 1000 1500
+> Distance West (km)
+> 1500 1000 500 0500 1000 1500
+> Distance West (km)
+> 1.0 1.5 2.0 2.5 N(CO 2)× [10 23 m1]
+> 30 35 40 45 50 55 T(CO 2) [K]
+> 0.00 0.25 0.50 0.75 1.00 3.8 m Cont. × [10 6Jy m]
+
+Figure 6. Left. Map of N × ρ for CO 2 in 81P on March 24 with NIRSpec. The white arrow shows the projected direction of the Sun. Middle. Map of T rot for CO 2. A 3 × 3 boxcar smoothing kernel was applied during the retrieval to improve S/N. 
+
+Right. Map of 3.8 μm projected continuum intensity ( I × ρ). 6. COMA FLUX DERIVATION AND DUST THERMAL MODELING 6.1. MRS Coma Flux Derivation 
+
+The analysis of the coma flux of comet 81P was conducted using spectral extractions derived from the pipeline reprocessed MRS IFU cubes (Section 2). Three apertures, centered on the MRS cube photocenter (i.e., on the nucleus), were employed with aperture diameters of 1 .′′ 00, 1 .′′ 22, and 1 .′′ 41, with equivalent areal coverages of 0 .25 π, 0 .372 π, and 0.50 π square-arcseconds, respectively, to derive the aperture-integrated observed flux. The Aperture Correction Factor (ACF) was applied to the NEATM model (Section 3) to yield the nucleus predicted aperture flux, accounting for PSF losses, for each of the three apertures across the four MRS grating settings. The coma fluxes in each of the three apertures were then taken as the observed fluxes minus the nucleus predicted aperture fluxes. Between these three apertures, the coma fluxes in the 1 .′′ 22 and 1 .′′ 41 apertures were consistent in shape after scaling the 1 .′′ 22 aperture flux by 1.19 (for an ideally expanding coma, this ratio would equal the ratio of the aperture radii, 0 .705 /0.610 = 1 .156). The 1 .′′ 00 diameter aperture was considerably less consistent in spectral shape compared to the 1 .′′ 22 and 1 .′′ 41 diameter apertures, especially at wavelengths ≥ 18 μm. The nucleus-predicted aperture flux uncertainty was assessed by scaling the 1 .′′ 22 aperture flux to the 1 .′′ 41 aperture (multiplying by a factor of 1.19) and then taking the absolute value of its difference with the 1 .′′ 41 aperture spectrum. The coma flux error at each wavelength was then determined by root-mean-square of the instrumental error and nucleus predicted aperture flux uncertainty. The aperture flux predicted for the nucleus for all three apertures presented a discontinuity (drop) at 17.979 μm, which was most severe for the smallest aperture. This discontinuity was not seen in the data before nucleus subtraction. After subtracting the aperture flux predicted for the nucleus for the 1 .′′ 41 diameter aperture, the coma flux was multiplied by 1.042 at λ ≥ 17 .979 μm. In the analysis that follows, we adopt the 1 .′′ 41 diameter aperture nucleus-subtracted flux as the coma flux, with the propagated uncertainties. The aperture-integrated flux spectra and nucleus models from which the coma flux is derived are shown in Figure 7. In this aperture, the nucleus flux was approximately 0.75 of the total, so subtraction of the nucleus was critical to deriving the coma dust thermal emission spectrum. This coma flux was used for modeling and analyses of the coma dust and organics. 6.2. NIRSpec Coma Flux Derivation 
+
+Spectral extractions in a 1 .′′ 41 diameter aperture were performed on the NIRSpec IFU spectral cubes. PSG models were run to fit the molecular line emission and continuum simultaneously. The molecular lines were subtracted to yield a residual containing scattered light, thermal dust emission, and features not fitted by the PSG model as described in Sections 4 and 5. The PSG molecular emission model used for dust scattered light and thermal modeling was run on 2025 Aug 16. The CH 3OH model within the PSG, particularly the ν9 band, has since evolved (see G. L. Villanueva et al. 2012a; G. Villanueva et al. 2025, for further details on the challenges associated with modeling this band). A A JWST Study of Stardust. I. 11 3 4 5Wavelength ( m)                   
+
+> 10 19
+> 10 18
+> F (W/cm 2)
+> 10 20 30 567 8 Wavelength ( m)
+> 10 20 30 345678Wavelength ( m)
+> 10 20
+> 10 19
+> 10 18
+> F (W/cm 2)
+> (a) (b) (c)
+
+Figure 7. Derivation of the 2 .9–27 μm coma spectral energy distribution ( λF λ vs. λ) for comet 81P/Wild 2 in a 1 .′′ 41 diameter aperture. The measured fluxes and scaled nucleus model fluxes ( saddlebrown dashed lines) are shown in (a) and (b), from which the nucleus-subtracted coma fluxes in (c) are derived for NIRSpec ( skyblue ) and MRS ( black ). (a) NIRSpec flux ( dimgray ) with uncertainties ( silver ) plotted with 0 .96 × Fλ(NEATM nucleus model) ( saddlebrown dashed line), where the 0 .96 scaling factor is set such that 1 .042 × the NIRSpec coma flux matches the MRS coma flux in the overlapping wavelength region (Section 6.2). (b) MRS flux ( dimgray ) with uncertainties ( silver ), the NEATM nucleus model ( dimgray densely dotted line) with the flux points used to derive the model (open circles), and the aperture-corrected nucleus model (ACF ×NEATM, saddlebrown dashed line) that is subtracted from the measured flux to derive the MRS coma flux. The prominent H 2O emission lines at MRS wavelengths are shown ( blue ). (c) The nucleus-subtracted coma SED combining NIRSpec ( skyblue ) and MRS ( black ), used as input to the thermal model and scattered light analysis (Section 6.3). 
+
+revised PSG run on 2026 Jun 11 updated the CH 3OH model between 3 .0–4 .0 μm, while the baseline changed negligibly (±2%) in that region (Fig. 8). Because the scattered light and thermal modeling used the gas-subtracted data from the 2025 Aug 16 PSG run, the PSG model outside 3 .0–4 .0 μm retains the original 2025 Aug 16 output. The PSG molecular line model, the piecewise PSG baseline, and the resulting residual are shown in Figure 8. The nucleus NEATM model was extrapolated to NIRSpec wavelengths. Because of NIRSpec’s higher spatial resolu-tion, no ACF was applied, and the NEATM model directly yielded the nucleus total model flux. A simple subtraction of this flux was not feasible because the NIRSpec data were taken at a slightly different epoch than the MRS data. In the wavelength region of overlap with the MRS, the NIRSpec total flux (coma + nucleus) matched the MRS coma flux alone, indicating that the NIRSpec epoch measured slightly less coma flux than the MRS epoch. Under the supposition that the same active areas have the same level of activity and contribute to the flux in the beam, an epoch change relates to a change in the projected cross-sectional area of the nucleus, with a similarly proportional change in the coma contribution. Therefore, we scaled the nucleus NEATM model by 0.96 ±0.01, which is commensurate with a small change in the projected area of the nucleus size due to the comet’s rotation. We then subtracted the scaled nucleus flux to derive the coma flux, and then multiplied the coma flux by the inverse factor 1.042 ±0.011. This factor was chosen such that after subtraction, the NIRSpec coma flux matched the MRS coma flux in the overlap region. 6.3. Iterative Modeling of the Dust Thermal Emission and Scattered Light 
+
+The dust thermal model and the scattered light model were fitted iteratively in flux density units, Fλ (W cm −2 μm−1). Throughout this section, “flux” means Fλ. The H 2O molecular emission-line model (Section 4) was subtracted from the MRS Channel 1 data at the H 2O line positions. However, the subtraction was imperfect and left residuals. To remove these residuals, the line-to-continuum ratio was assessed at each H 2O line position, points with line-to-continuum 12 Roth et al. 2800 3000 3200                                             
+
+> Wavenumber ( cm 1)
+> 3.2 3.4 3.6 1.0 2.0 3.0 1e 20
+> 3.2 3.4 3.6 1.0 2.0 3.0 1e 20
+> 3.2 3.4 3.6 1.0 1.2 1.4 1.6 1e 20
+> 3.0 3.2 3.4 3.6 3.8 Wavelength ( m)
+> 0.0 1.0 2.0 1e 21
+> 1900 2000 2200 2400 2600 2800 3000 3200 3400 Wavenumber ( cm 1)
+> 3.0 3.5 4.0 4.5 5.0 0.1 1.0
+> 1e 19
+> 3.0 3.5 4.0 4.5 5.0 1.0 2.0 4.0 6.0
+> 1e 20
+> 3.0 3.5 4.0 4.5 5.0 0.0 2.0 4.0 6.0
+> 1e 20
+> 3.0 3.5 4.0 4.5 5.0 Wavelength ( m)
+> 0.0 2.0 4.0 1e 21
+> F (W/cm 2/ m) (linear scale)  F (W/cm 2/ m) (log 10  scale)
+> (a) (b) (c) (d) (e) (f) (g) (h)
+
+Figure 8. Comet 81P/Wild 2’s NIRSpec PSG model for gaseous molecular emission lines and piecewise continuous baseline, and residual with 3 .42 μm feature, in a 1 .′′ 41 diameter aperture. Left panels (a–d) focus on the 3 .0–3 .8 μm region and right panels (e–h) show the 2 .9–5 .23 μm wavelength range. (a, e) Measured flux density (coma plus nucleus) ( darkslategray ) plotted against the PSG model (PSG gas and PSG baseline) ( teal ) and the PSG baseline ( saddlebrown and palevioletred for the CO 2
+
+region), on a log 10 y-axis scale. (b, f) Flux density minus the PSG gas model ( skyblue and navy in the CO 2 region) compared to the PSG baseline ( saddlebrown and palevioletred for the CO 2 region), on a log 10 y-axis scale. (c, g) The same data as (b, f) on a linear y-axis scale, showing the choice of the 4 .57–5 .23 μm continuum used in the thermal modeling ( darkgreen points and caps with chartreuse error bars), which is the baseline coupled with an uncertainty envelope encompassing a range of flux values and instrumental uncertainties in this region where the PSG model lacks identified molecular species. (d, h) The PSG residual (measured flux minus the sum of the PSG molecular line model and the PSG model baseline), on a linear y-axis scale. The residual spanning 3 .2–3 .6 μm and centered at 4 .2 μm is median filtered ( teal ). The λ ≥ 4.57 μm continuum uncertainties are more clearly displayed in (h) compared to (g). The PSG gas and baseline were fitted on 2025 Aug 16, with the 3 .0–4 .0 μmregion refitted on 2026 Jun 11 (see text). 
+
+≥3 were masked, and a median filter was applied to derive a new continuum. This mask-and-filter procedure was repeated three times (see Appendix A). The resulting continuum, free of narrow-line residuals, was used in preparing the residuals shown in Figure 11. Thermal emission contributes significantly to the longer wavelengths of NIRSpec and scattered light contributes minimally to the shorter wavelengths of MRS ( λ <
+
+∼ 8 μm). The region of overlap between MRS and NIRSpec is near where the thermal emission and scattered light have approximately equal contributions. The thermal emission flux falls A JWST Study of Stardust. I. 13 sharply towards shorter MRS wavelengths ( λ <
+
+∼ 8 μm) and the scattered light gradually decreases in flux towards longer NIRSpec wavelengths ( λ >
+
+∼ 4 μm). To achieve the best thermal model that would extend to NIRSpec wavelengths, the scattered light subtracted spectra were together fitted down to 4.1 μm. Potential polycyclic aromatic hydrocarbon (PAH) emission in MRS starts at ∼5.5 μm (e.g, C. E. Woodward et al. 2025), yielding the 4.9–5.5 μm region available in principle for establishing the sum of the scattered light and thermal emission for MRS. Comets contain refractory dust grains that are a mixture of ISM dust and solar nebula processed material. The grains are composed primarily of silicates (amorphous and crystalline), that produce distinct emission features in the mid-IR, and dark absorbing material that produces a featureless underlying continuum. Hence, a dust thermal model is fitted to the coma flux minus the flux of scattered light from the coma. The dust thermal model (D. E. Harker et al. 2023; C. Engrand et al. 2024; C. E. Woodward et al. 2025) employs five materials: Mg:Fe = 50:50 amorphous silicates, Mg-rich crystalline silicates of olivine and orthopyroxene composition (Mg 2y Fe 2(1 −y)SiO 4, 0 .9 ≤ y ≤ 1) and (Mg xFe 1−xSiO 3, x ≃ 1), and amorphous carbon (glassy carbon, O. Edoh 1983) that is featureless and highly absorbing. Our dust thermal model (D. E. Harker et al. 2023, and references therein) predicts the thermal emission per particle for an ensemble of particles with discrete compositions characterized by a differential size distribution, specifically the Hanner grain size distribution (HGSD, M. S. Hanner et al. 1994), defined by a slope N , the particle size at which the size distribution peaks ( ap), and a parameter D for the porosity prescription P = 1 − f , where f is the filling factor and f = ( a/a 0)D with a0 = 0 .1 μm. The dust thermal model parameters that result from fitting the thermal model to the data by minimizing χ2 are the three HGSD parameters and the relative mass fractions of the five dust materials. We used χ2 to assess the dust thermal model parameters for a particular model. We used the Akaike Information Criterion (AIC, K. P. Burnham & D. R. Anderson 2004) to compare the dust thermal model fitted to different renditions of the data. We changed the weights of the coma flux uncertainties (from 1 × to 40 ×) in some spectral regions of MRS to improve the AIC. Specifically, including the 12.5–16.5 μm wavelength range with the instrumental errors always increased the AIC (worsened the fit). Increased uncertainties were applied to MRS between 12.5 and 16.5 μm because of an unknown dust component emitting prominently in this wavelength range. Increased uncertainties were also applied in the short-wavelength shoulder of the silicate feature because of the potential presence of PAH emissions. Flux in the 5.60–8.65 μm region was used to constrain the thermal model. However, this region has potential PAH emissions that are weak in contrast to the thermal emission. The MRS data in Channel 1 has significant fringing or undulations in the pipeline produced data products (e.g., D. R. Law & M. Clarke 2026). For the thermal modeling, this was not median filtered. A combination of two estimates of the local continuum was determined for under the 5.60–8.65 μm PAH bands in order to do the thermal model fitting. Using an initial run for the thermal model, one continuum estimate was determined by shifting the amorphous carbon to lie under the PAH emission bands. A second continuum estimate was determined by shifting the amorphous olivine, which has a steeper spectral decline going towards shorter wavelengths in comparison to the amorphous carbon. A value of 2 .5 × 10 −21 W cm −2 μm−1 was assessed for the level of the pixel-to-pixel undulations in this region of the spectrum. This uncertainty was considered for each of the two local continua. The envelope of the upper and lower bounds of the combination of the two local continua was assessed and the mid-point determined. These mid-points and their uncertainties were used as constraints for the thermal model fitting in the 5.60–8.65 μm wavelength range. This is shown in Figure 9 for the last iteration of the thermal model. The thermal model was fit to data that included MRS wavelengths from 5.60–8.65 μm as well as NIRSpec wave-lengths, with NIRSpec providing a fit to the coma continuum after subtracting an estimate of the scattered light. The thermal model had to span NIRSpec wavelengths because of the strong dust contribution to the coma aperture flux. In the NIRSpec wavelengths, there is significant scattered light declining toward longer wavelengths. A linear model was adopted for the scattered light in normalized reflectance (flux divided by a scaled solar spectrum using ‘E490 2014LR’ from the sbpy.calib.Sun package; M. Mommert et al. 2019), with the 3.6 μm flux point chosen as the point of normalization (at the end of the 3.2–3.6 μm wavelength region considered for potential PAH emission in NIRSpec). The slope and intercept were iteratively determined using the SciPy (P. Virtanen et al. 2020b) pack-age scipy.optimize.curve fit so that the intercept was unity at 3.6 μm in normalized reflectance. The NIRSpec scattered light was estimated by fitting under the molecular bands — including under CO 2 (to which PSG did not fit uniquely due to opacity effects, see Section 5) and under weak lines not modeled by PSG — using the flux minima as the fit points (Figure 8(g, h)). The slope was constrained such that the NIRSpec coma flux minus the scattered light and the MRS coma flux minus the scattered light agreed within the uncertainties with the thermal model across these wavelengths. 14 Roth et al. 10 21          
+
+> 10 20
+> 10 19
+> 10 18
+> 10 17
+> F (W cm  2)
+> Comet 81P/Wild
+> rh= 1.8477au
+> 4.0 6.0 10.0 20.0 30.0
+> Wavelength (microns)
+> 0.25
+> 0.00 0.25
+> Res
+
+Figure 9. Best-fit thermal model for the scattered light-subtracted coma of comet 81P/Wild 2 in a 1 .′′ 41 diameter aperture. The flux points and uncertainties used to fit the thermal model are shown ( black , dimgray ) along with the residual. The thermal model total ( red ) is the sum of dust components of amorphous carbon (AC, darkorange ), amorphous olivine (AO50, cyan ), amorphous pyroxene (AP50, blue ), and crystalline olivine (CO, forestgreen ). A pie diagram of the mass fractions of these dust components is in Figure 10. Enhanced uncertainties are applied in regions of the spectrum where organics or unknown carriers contribute to the observed emissions. Specifically, for 5 .6–8 .65 μm an estimated baseline and range for the uncertainties in that baseline were substituted for the measured values and used in the thermal model fitting. This 5 .6–8 .65 μm estimated baseline undershoots the thermal model and the residual shows an unusual shape in this region. The thermal model is adopted for the 5.6–8 .65 μm baseline and is also adopted for the baselines in the 8 .65–10 μm and 12 .5–16 .5 μm regions. 
+
+Figure 10. The relative mass fraction for the submicron- to micron-size portion of the particle differential size distribution in the inner coma of comet 81P. The compositional designations illustrated in the figure are: amorphous carbon (AC), amorphous silicates (AO50, AP50), and crystalline silicates (CO, CP). 
+
+The fit to the NIRSpec scattered light used select coma minus thermal model points that appear to be the lowest flux points in the ranges 3.48–3.745 μm (3.48–3.50, 3.55–3.58, 3.60–3.62, 3.727–3.745 μm) and 4.345–4.77 μm (4.345–4.360, 4.495–4.505, 4.570–4.770 μm), together with the 4.57–5.2 μm PSG baseline with increased uncertainties (dark green A JWST Study of Stardust. I. 15 10 20 3 5 710 22 
+
+10 21 
+
+10 20 
+
+10 19 
+
+10 18 
+
+> F (W/cm 2/ m)
+
+3 4 5 6 7 8 9 10 0.0 0.2 0.4 0.6 0.8 1.0 1e 19 
+
+10 20 3 5 710 22 
+
+10 21 
+
+10 20 
+
+10 19 
+
+10 18 
+
+> F (W/cm 2/ m)
+
+3 4 5 6 7 8 9 10 0.0 0.2 0.4 0.6 0.8 1.0 1e 19 
+
+10 20 3 5 710 22 
+
+10 21 
+
+10 20 
+
+10 19 
+
+10 18 
+
+> F (W/cm 2/ m)
+
+3 4 5 6 7 8 9 10 0.0 1.0 2.0 3.0 1e 20 
+
+10 20 3 5 7Wavelength ( m)
+
+10 19 
+
+10 18 
+
+10 17 
+
+10 16 
+
+10 15 
+
+> Reflectance ( F /F )
+
+3 4 5 6 7 8 9 10 Wavelength ( m)
+
+0.5 
+
+0.0 0.5 1.0 1.5 2.0 1e 17 
+
+(a) (b) (c) (d) (e) (f) (g) (h) 
+
+Figure 11. Comet 81P/Wild 2’s coma spectrum separated into components derived from iteratively fitting the scattered light and the thermal model. Panels (a–d) have 5-decade logarithmic y-scales and (e–h) are zoomed-in linear inset plots. (a) Coma flux of NIRSpec ( skyblue ) and MRS ( black ) plotted with the scattered light model ( olive long dashed line) along with the thermal model total ( red ) and its dust components of amorphous carbon (AC, darkorange ), amorphous olivine (AO50, cyan ), amorphous pyroxene (AP50, blue ), and crystalline olivine (CO, forestgreen ). (b) Coma flux minus the scattered light ( dimgray ) compared to the thermal model total ( red ). (c) The thermal model residual (coma minus thermal model). The thermal model residual for MRS is shown by data points ( lightseagreen ) and as a median filtered spectrum ( teal ). The scattered light model ( olive long dashed line) is compared to the thermal model residual at NIRSpec wavelengths ( palevioletred ). The estimated PSG baseline that was an input to the thermal model fitting is also shown ( darkgreen points and chartreuse error bars; see Figure 8(g, h)). (d) The scattered light model ( olive ) compared to the thermal model residual in Reflectance units. The purple points highlight the NIRSpec data points used in the scattered light model fit. (h) The scattered light linear model fit ( Reflectance), which passes through the lower error bars of the estimated baseline’s uncertainties ( chartreuse ) that reference the PSG model baseline (Figure 8(h)). 16 Roth et al. 
+
+Table 3. Comet 81P/Wild 2: Best-Fit Thermal Emission Model Parameters                                  
+
+> Np(×10 18 )a
+> Amorphous Amorphous Amorphous Crystalline NbMbap†DbPyroxene Olivine Carbon Olivine Npts χ2χ2
+> ν
+> (μm) (AP50) (AO50) (AC) (CO) 4.3 25.8 0.7 2.727 0.5929 +0 .0205
+> −0.0206 0.9737 +0 .0114
+> −0.0114 3.0799 +0 .0030
+> −0.0030 0.5048 +0 .0061
+> −0.0061 11846 23756.62 2.01
+> †Derived parameter.
+> aNumber of grains, Np, at the peak ( ap) of the Hanner grain-size distribution (HGSD, M. S. Hanner et al. 1994).
+> bSee text for parameter definitions.
+
+points and chartreuse error bars; Fig. 8(h)). These increased uncertainties in the 4.57–5.2 μm PSG baseline were assessed from wavelength points where the PSG molecular model flux divided by the instrumental error was ≤ 5, i.e., where no strong lines were present in the PSG molecular model. The uncertainties adopted were the root-mean-square of the instrumental uncertainties and the standard deviation ( σ = 3.226 × 10 −22 W cm −2 μm−1) of a Gaussian fitted to the histogram of the residual minus the Savitzky–Golay-smoothed residual ( scipy.signal.savgol filter ) residual. The NIRSpec scattered light was then extrapolated to MRS, subtracted, and a new thermal model was assessed (i.e., the iterative process). Thermal models also were run and scattered light slopes determined for the combined NIRSpec and MRS data with two additional NIRSpec scaling factors, the upper and lower scaling factors were related to 1 .042 ± 0.011 (see Section 6.2). The scattered light slopes, intercepts, and R3.6 μm changed to −0.693 ±5.0×10 −6 μm−1, 1 .0±1.4×10 −6,and 5 .35 × 10 −18 , respectively, for the upper scaling factor (1.053) and to −0.888 ± 3.4 × 10 −3 μm−1, 1 .0 ± 1.1 × 10 −3,and 5 .134 × 10 −18 , respectively, for the lower scaling factor (1.031). Even though the scattered light slopes changed for NIRSpec, given that the scattered light does not extend far into MRS, the corresponding thermal models for these two alternate NIRSpec coma scaling factors and scattered light models differed primarily in the 4.1–5.2 μm region. For the NIRSpec coma scale factor of 1.053, the shallower scattered light slope, when extrapolated to MRS wavelengths, yields a slight over-subtraction at 4.5–5.0 μm in the overlap region between the two instruments. For 1.031, in the overlap region the scattered light fit runs through the lower error bars of the 4.57–5.2 μm PSG baseline with enhanced uncertainties, similar to 1.042, but its steeper scattered light slope yields a slight over-subtraction at λ > 5.0 μm. The 1.042 scaler yields the best total residual (coma flux minus the sum of the thermal model and the scattered light model) in the overlap region. The total residual falls within the lower uncertainty bounds of the 4.57–5.2 μm PSG baseline’s expanded uncertainties, which represents the best determination of the local continuum beneath potential emissions not identified by the PSG (Fig. 8(h,g)). The uncertainties from the scattered light and thermal models are not formally propagated into the errors. The thermal model is highly non-linear and formal error propagation is beyond the scope of this work. Nevertheless, the differences among the total residuals for the three NIRSpec scaling factors, which exceed the internal uncertainties in the thermal models themselves, remain small compared to the MRS instrumental uncertainties. The final scattered light fit and the corresponding thermal model for the adopted NIRSpec coma scaling factor of 1.042 were used for the 1 .′′ 41 diameter aperture. The thermal model and the scattered light model, derived iteratively, and their subtraction from the coma flux are shown in Figure 11. 
+
+7. COMET 81P COMA DUST COMPOSITION The full thermal model fit is shown in Figure 9. Table 3 lists the best-fit model parameters in terms of the particle HGSD differential size distribution. Table 4 lists the relative mass fractions of the submicron particles in that distribution, and Figure 10 displays these mass fractions as a pie diagram. Mg-rich crystalline orthopyroxene is included in the fitting but yields Np(CP)= 0 .0000 ± 0.0000, and so is omitted from Tables 3 and 4. A JWST Study of Stardust. I. 17 
+
+Table 4. Comet 81P/Wild 2: Best-Fit Mass Fractions of Submicron Grains                                         
+
+> Total †Amorphous Amorphous Amorphous Crystalline Silicate/Carbon Mass Pyroxene Olivine Carbon Olivine Ratio fcryst
+> ( kg ×10 7)(f(ap50) ×10 −1)(f(ao50) ×10 −1)(f(ac) ×10 −1)(f(co) ×10 −1)(×10 −1)0.6520 +0 .0025
+> −0.0024 1.5383 +0 .0487
+> −0.0495 2.5262 +0 .0367
+> −0.0373 3.6321 +0 .0141
+> −0.0144 2.3034 +0 .0222
+> −0.0224 1.7532 +0 .0110
+> −0.0107 3.6172 +0 .0316
+> −0.0320
+> Note — Asymmetric uncertainties indicate values constrained to a confidence level of 95%.
+> †Derived parameter for emission within a 1 .′′ 41 diameter aperture centered on the nucleus.
+
+In the thermal model, the crystalline silicates are confined to the 0.1–1 μm size range, and the mass fractions of the other compositions are tabulated over the same range. This range is chosen because crystals computed at radii larger than 1 μm have resonances with long-wavelength shoulders and lower contrast that do not fit the observed resonances (S. S. Lindsay et al. 2013; C. Engrand et al. 2024). Porous amorphous particles out to 100 μm radii are included in the HGSD. The best-fit fractal dimension D = 2 .727 is considered ‘moderately porous’ and is characteristic of the thermal-model outcomes for amorphous silicates and amorphous carbon in many comets (D. E. Harker et al. 2023). The peak grain size ap = 0 .7 μm lies in the mid-range of values reported for 22 comets in a Spitzer survey modeled over mid-IR through far-IR wavelengths (7.5–30 μm; D. E. Harker et al. 2023, Figure 5a); however, the slope N = 4 .3is significantly steeper. A steeper slope emphasizes the submicron particles relative to shallower slopes (e.g., N = 3 .5). Amorphous Mg:Fe olivine-type and Mg:Fe pyroxene-type silicates dominate the relative mass fractions of the sub-micron silicates. The Mg-rich crystalline olivine shows a weak resonance and a significant mass fraction. This weak resonance is commensurate with the lower temperatures per particle that arise from the lower absorptivity at high Mg-content. The null contribution from Mg-rich crystalline orthopyroxene noted above likely extends to Mg-rich crystalline clinopyroxene, since the two have similar spectral shapes at high Mg-content (H. Chihara et al. 2002). Figure 12 shows the composition of comet 81P alongside other comets in the coordinates of the mass fractions of amorphous carbon (AC), amorphous silicates (AS, the sum of amorphous olivine and pyroxene), and crystalline silicates (CS, the sum of crystalline olivine and orthopyroxene). The comparison sample includes the Spitzer survey comets modeled over the full wavelength range (7.5–30 μm; D. E. Harker et al. 2023) and comet C/2017 K2 (PanSTARRS), observed by JWST (C. E. Woodward et al. 2025). Comet 81P is more silicate-rich than most comets in this figure, and its crystalline mass fraction, fcryst = f (CO )/[f (CO ) + f (AP 50) + f (AO 50)] (cf. Table 4), is as high as or higher than most other comets analyzed applying the same methodology. Only comet C/1995 O1 (Hale-Bopp), comet 17P/Holmes after outburst, comet 78P/Gehrels 2, and comet C/2017 K2 (PanSTARRS) are more silicate-rich. It so happens that like comet 81P, comet 78P/Gehrels 2 and C/2017 K2 (PanSTARRS) have 14.5 μm features (C. E. Woodward et al. 2025; D. E. Harker et al. 2023). Hale-Bopp and 17P/Holmes had very prominent silicate resonances with distinct crystal features because their comae were silicate-rich and their particles were very small, with ap = 0 .2 μm and 0.3 μm, respectively (D. E. Harker et al. 2002, 2023). Smaller particles have higher-contrast resonances. Comet 81P thus belongs to a small group of silicate-rich, crystal-rich comets that also includes Hale-Bopp, 17P/Holmes (after outburst), 78P/Gehrels 2, and C/2017 K2 (PanSTARRS). 
+
+8. MINERALOGY: STARDUST VERSUS JWST 8.1. The Submicron Stardust Components 
+
+In this section we examine the major mineral characteristics of the Stardust samples in order to compare them with the JWST thermal model results for the dust in comet 81P/Wild 2’s coma (D. Brownlee 2014; C. Engrand et al. 2024). The thermal model preferentially samples the smallest particles in the size distribution because they produce the higher-contrast resonances. The mineralogies of olivine crystals as large or larger than ∼2 μm radii have resonances that are broadened towards longer wavelengths and are filled in between the far-IR resonances (S. S. Lindsay et al. 2013) to the extent that their resonances disagree with observed IR emission spectral features (e.g., by comparison to the distinct resonances from Mg-rich olivine submicron crystals in comet C/1995 O1 (Hale-Bopp); J. Crovisier 18 Roth et al. 0.0 0.2 0.4 0.6 0.8 1.0 Amor. Silicates (AS) 0.0 0.2 0.4 0.6 0.8 1.0 Amorphous Carbon (AC) 0.0 0.2 0.4 0.6 0.8 1.0 Crystalline Silicates (CS)  
+
+> C/2017 K2
+> 8P 9P 9P 17P 37P 46P 46P 46P 48P 67P 67P 67P 67P 71P 73P 78P 88P C/2004 B1 C/2006 P1 C/2006 Q1 C/2006 Q1 C/2008 T2 C/1995 O1 C/2013 US10 C/2018 W2 C/2013 X1 C/2012 K1
+
+81P/Wild 2 
+
+AS AC CS 
+
+Figure 12. A ternary diagram of the relative mass fractions of the thermal dust model components for comet 81P/Wild 2 (large blue triangle) and a comparison sample of comets from the Spitzer survey (D. E. Harker et al. 2023) and comet C/2017 K2 (PanSTARRS) observed by JWST (C. E. Woodward et al. 2025). Solid symbols are Oort cloud comets; open symbols are Jupiter Family comets. The three axes represent the summed mass fractions of amorphous silicates (AS = AO50 + AP50), amorphous carbon (AC), and crystalline silicates (CS = CO + CP), where AS + AC + CS = 1. A ternary diagram represents compositions in which three components sum to unity as a triangular plane in three-dimensional composition space; the axial grid is included to highlight this three-dimensional geometry. 
+
+et al. 1997). The absorption spectrum of a 20 μm anhydrous IDP also shows this trend where the mid-IR resonances become saturated (Figure 1, L. P. Keller & G. J. Flynn 2003). The submicron-to-micron particle radii range is therefore where the JWST thermal model and the Stardust laboratory characterization can be cross-compared. Thus, studies of fine-grained materials (FGM) in Stardust samples are the focus of this section. In Stardust samples, the submicron components of the captured particles were disaggregated into the bulbs of some tracks during the 6 km s −1 flyby capture. The micron-sized and larger components penetrated deeper into the aerogel. The carrot-shaped and rutabaga-shaped tracks had these large terminal mineral particles. The terminal particles are well studied (M. Zolensky et al. 2024; C. Engrand et al. 2024) and are dominated by Mg:Fe olivines and pyroxenes. The olivines have a wide-and-flat or bimodal Mg distribution, spanning from Mg-rich LIME olivines (D. J. Joswiak et al. 2017) to Mg ∼0.5 and one nearly pure fayalite grain was also found (Mg ∼0; M. Zolensky et al. 2024). Most terminal olivines are 5–30 μm in diameter, with minor-element abundances commensurate with mostly type II (Mg ≤0.9) chondrules and some type I chondrules (0.9 ≤Mg ≤1.0). These chondrules are of igneous origin, formed by rapid heating and melting (D. R. Frank et al. 2014; D. H. Wooden et al. 2017). A few LIME-olivine (Mg ≃1.0) A JWST Study of Stardust. I. 19 condensates were identified (D. J. Joswiak et al. 2012; D. R. Frank et al. 2014). Terminal particles are also composed of other minerals, with sulfides (pyrrhotite, Fe 1−xS where x = 0 − 0.2) being next in abundance compared to olivines and pyroxenes. Other terminal particle mineral species are detailed in M. Zolensky et al. (2024) and D. J. Joswiak et al. (2017). These terminal particle crystals are too large for IR emission spectroscopy to ascertain their mineralogy, as comae spectral emission features are predominantly from submicron particles. Submicron particles in the Stardust tracks identified as being cometary are sparsely studied compared to terminal particles because the submicron constituents disaggregated, dispersed along the walls of the upper bulbous parts of tracks (closer to particle entry), and intermixed with molten aerogel. Amorphous silicates were sought in the track bulbs, but they were largely not discernible from the aerogel (H. A. Ishii et al. 2008; J. Stodolna et al. 2012b; H. A. Ishii 2019). Some submicron constituents were found in regions of lesser heating and modification: in microtracks perpendicular to the walls of the bulbous part of the tracks (H. Leroux & D. Jacob 2013), in cracks in the aerogel nearer the terminal particles (K. Nakamura-Messenger et al. 2012), in the bay behind a large terminal particle whose forward-facing side took the shock heating while hot gas extruded around its rear (Z. Gainsforth et al. 2019), and in the lee of a 50 μm-sized terminal particle (H. A. Ishii et al. 2026). The submicron cometary particulates that were studied are broadly segregated into three categories: mineral crystals or microcrystals; equilibrated aggregates (EAs), so named by analogy to those in chondritic anhydrous interplanetary dust particles (CA IDPs; sometimes called chondritic porous IDPs, CP IDPs, although not all chondritic IDPs are porous); and amorphous and siliceous, spherule-shaped materials that are GEMS-like (Glass with Embedded Metal and Sulfides). 8.1.1. Equilibrated Aggregates 
+
+In studies of Stardust samples, equilibrated aggregates are microcrystalline conglomerations of primarily Mg-rich olivine (forsterite) and Mg-rich low-Ca pyroxene (enstatite), with minor diopside and Mg-Fe-Al-Cr-spinel (H. Leroux & D. Jacob 2013), or microcrystalline conglomerations of forsterite, enstatite, FeS or pyrrhotite, Mg-Al-Na, and Si-rich mesostasis (glass; K. Nakamura-Messenger et al. 2012). L. P. Keller & S. Messenger (2005, 2010) refined the classification into Type 1 EAs, submicrometer aggregates strictly of Mg-rich forsterite or mixed forsterite-enstatite crystallites (50–200 nm) with equilibrium grain boundaries, and Type 2 EAs that better match J. P. Bradley (1994)’s original definition of Fe-bearing olivine and pyroxene along with Fe-sulfides set in a silica-rich amorphous matrix. Type 1 EAs are hypothesized to represent aggregate clusters of high-temperature nebular condensates (Mg-rich, low oxygen fugacity) that may have undergone slight annealing. In contrast, Type 2 EAs are hypothesized to result from subsolidus metastable crystallization via heating (to ∼1000 K) of porous, amorphous siliceous precursors, where interdiffusion is enhanced by their porous structure (M. Roskosz & H. Leroux 2015), forming Fe-olivine crystallites, FeS, remnant glass (L. P. Keller & S. Messenger 2010), and silica (F. J. M. Rietmeijer 2015). Note that not all investigators use the Type 1 versus Type 2 EA terminology; some describe EAs as having forsteritic olivine without explicitly labeling them Type 1. 8.1.2. Amorphous Silicates or GEMS 
+
+GEMS are notably underdense because of high porosity at the nanoscale and non-stoichiometric (Si- or SiO- or SiO 2-richer), with embedded Fe 1−xS (pyrrhotite) and Fe,Ni metal and often associated with carbonaceous materials with cold-origin signatures such as D-enrichments (S. Messenger 2000) or 15 N-enrichments (H. A. Ishii et al. 2018; J. P. Bradley et al. 2022). GEMS are three-component assemblages in which nanometer-sized metal and sulfide inclusions are suspended in an amorphous silicate matrix with chondritic but highly variable composition, and they retain their characteristic nanoscale porosity over a well-defined size distribution (0.05–0.5 μm; K. K. Ohtaki et al. 2021; J. P. Bradley et al. 2022). GEMS have amorphous silicates, but not all amorphous silicates are GEMS in the sense of this original definition (J. P. Bradley et al. 2022). Amorphous silicates are ubiquitous in CA IDPs in highly variable concentrations and with heterogeneous composi-tions. In eight IDPs, 105 distinct regions of amorphous Mg-silicate glass acting as matrix for nanophase inclusions of Fe-Ni-metal and Fe-sulfides were studied to characterize the elemental composition of GEMS (B. Schulz et al. 2024). Most GEMS occur as aggregates of subgrains rather than as single grains. These (new) ‘GEMS amorphous silicates’ have Mg:Si ratios ranging from 0.01 to 1.34, with an average of 0.43 ±0.03 — well below the solar value of 1.03. This population is dominantly Si-enriched relative to solar, so a supersolar component is thought to be needed for CA IDPs to equate to solar (CI) composition (B. Schulz et al. 2024). While there are differences between the earlier and more 20 Roth et al. 
+
+recent definitions of GEMS (J. P. Bradley et al. 2022; B. Schulz et al. 2024), the enhanced Si/Mg compositions of GEMS are an interesting key characterization. In terrestrial laboratory experiments, controlled heating of GEMS produces (at 700 ◦C) moderately Fe-rich olivine and pyroxene set in a silica-rich glass — the same mineralogy that defines Type 2 EAs. D. E. Brownlee et al. (2005) describe these heated-GEMS products as “equilibrated aggregate or coarse-grained silicate material.” Heating of GEMS did not produce Type 1 EAs. Both types of EAs have components expected from an equilibrated formation environment, but the Mg-rich Type 1 EAs require a lower oxygen fugacity than the Type 2 EAs (L. Grossman 1972; A. V. Fedkin & L. Grossman 2016; D. H. Wooden et al. 2017). GEMS are sought in Stardust because, being so primitive, they are a clear signature of cometary origins. However, GEMS are also the most easily modified primitive material, which makes definitive identification in the Stardust tracks even harder. Recently, behind one of the largest (50 μm) terminal particles, H. A. Ishii et al. (2026) reported finding a submicron amorphous silicate-rich spherule with interior Fe and Ni metal consistent with partially decomposed FeNi sulfide beads. The spherule also showed S-depletion at the surface, where S loss is an expected consequence of heating, and a carbon-rich halo that might be indigenous. It is tantalizing to consider this a GEMS, but the evidence is not convincing. Thus, bona fide GEMS have not yet been identified in Stardust tracks and the search continues. 8.1.3. Microcrystals in Microtracks or Bays of Terminal Particles 
+
+Of the four locations introduced above, the microtracks perpendicular to the bulb walls of Track #10 potentially offer the most direct comparison to JWST IR spectra. They are prepared by compressing the 3-d aerogel to 2-d, embedding in viscous epoxy or acrylic, followed by ultramicrotomy (100 nm), which preserves the spatial association of components. After accounting for enhanced Si from the mixing with aerogel that occurred upon deceleration and heating, the fragment compositions comprise 25% CI-like (solar composition), 40% Fe and S, and 35% crystalline silicates and Mg-bearing, Al-bearing oxides (H. Leroux & D. Jacob 2013). The fragment-diameter distribution spans 0.01–0.12 μm with a pronounced peak at 0.04 μm (H. Leroux & D. Jacob 2013, Figure 5). At this size, extraction from the aerogel is not feasible. They appear to have survived without compositional change; they are polycrystalline assemblages of dominantly olivine and low-Ca pyroxene with minor Mg-Fe-Al-Cr-spinel and diopside. In situ studies reveal them as individual crystals or microcrystalline assemblages with similar Mg:Fe compositions, classified as Type I EAs following CA IDP nomenclature. The submicron olivine and low-Ca pyroxene crystals have Mg:Fe = 0.90:0.10– 0.85:0.15 (H. Leroux et al. 2009; H. Leroux & D. Jacob 2013), which is in the compositional range that we discern in the JWST data (see Section 7). In the same microtracks of Track #10, the 25% CI-like fragments are glassy patches with 10% cometary material and 90% melted aerogel; their silica-rich composition, mainly Fe, Mg, and S, is near-CI. The CI-like fragments could be thermally modified EAs or GEMS yet do not show a loss of sulfur (F. J. M. Rietmeijer 2015). The preserved CI composition at this small scale argues that this material has not been chemically differentiated by high-temperature solar-nebula processes that would have driven off sulfur (H. Leroux & D. Jacob 2013, Figure 7). Terminal particle 2 of Track #168 from aerogel cell C2098 was an 8 μm aggregate with a concentric structure: a core of 0.1 μm olivine crystals co-existing with indigenous amorphous SiO 2, surrounded by a 0.8 μm carbon mantle, all encased in compressed aerogel (K. Nakamura-Messenger et al. 2012). Other similarly studied terminal particles are likely type II chondrule fragments. The aerogel cracks in Track #147, also from aerogel cell C2098, are along the track walls. In cracks in Track #147 from less-heated regions 200 μm from the track wall, there are 0.5–1 μm irregularly shaped polycrystalline assemblages with 0.01–0.2 μm crystals of forsterite, enstatite, diopside, and pyrrhotite, together with an amorphous Mg-Al-Na, Si-rich mesostasis whose textures suggest it was never molten, unlike typical aerogel melts. Three of these polycrystalline grains were identified as like Type I EAs (K. Nakamura-Messenger et al. 2012). In the bay of the large terminal FeS grain ‘Andromeda’, 12 fine-grain-material (FGM) regions were studied; two were ascertained to be indistinguishable from EAs and one to be GEMS-like (Z. Gainsforth et al. 2019). These three represent CA IDP components found in Stardust tracks. The micro-chondrule Febo had FGM (D. J. Joswiak et al. 2012), but further study demonstrated its composition falls well outside the CI-compositional bounds of GEMS in CA IDPs and so this FGM was deemed to not be GEMS (H. A. Ishii 2019). In a separate search, micron-to-submicron crystalline silica was sought and found in 5/25 tracks examined. The samples were 100 nm ultramicrotomed slices of samples from two aerogel cells (C2009 and one slice from C2044), embedded in epoxy or acrylic. The presence of silica is very unusual in extraterrestrial samples (M. Roskosz & H. Leroux 2015). The crystalline structure of the silica and its association with adjacent minerals indicate that silica A JWST Study of Stardust. I. 21 results from subsolidus metastable crystallization, forming olivine with silica as a byproduct of long-duration annealing near 1000 K (M. Roskosz et al. 2009; M. Roskosz & H. Leroux 2015), presumably in the protoplanetary disk prior to incorporation into the comet. 8.2. JWST and Stardust as Complements 
+
+The fine-grained crystalline silicates (submicron Stardust materials) that survived capture in regions of lesser heating are Mg-rich olivine and low-Ca pyroxene with Mg/(Mg+Fe) = 0.90–0.85 (H. Leroux & D. Jacob 2013), which is precisely the compositional range that the JWST thermal dust model sees in the coma of comet 81P (Figure 13(a,b); Section 7). The thermal model also has abundant amorphous silicates that resemble the IR spectrum of a GEMS-rich IDP with Mg-rich crystalline olivine (Figure 13(c)). Stardust contains Type 1 and Type 2 EAs. Type 1 EAs have Mg-rich silicates, consistent with the thermal model results for 81P’s coma dust emission; however, enstatite is excluded (at 95% confidence) from the thermal model. Some Stardust EA-like assemblages have forsterite, enstatite, and iron-sulfides (pyrrhotite; K. Nakamura-Messenger et al. 2012), and there are nanoscale Fe-Ni-S beads in Stardust tracks that appear to be inherited from a population of nanoscale iron-sulfides similar to those found in cometary IDPs (N. E. Sanders & M. A. Velbel 2012; J. Stodolna et al. 2012a). The JWST spectrum nonetheless lacks the resonances of submicron sulfides, by comparison with spectra of FeS in an external protoplanetary disk and with laboratory spectra of pyrrhotite (Fe 1−xS; L. P. Keller et al. 2002). Type 2 EAs have Fe-rich silicates, which are also clearly absent from the JWST spectrum: submicron powders of more fayalitic olivine (Mg:Fe ≲ 0.6:0.4) have wavelength positions of their resonances significantly different from those of the Mg-rich olivines (C. Koike et al. 2003) and so would be distinguishable if present. Stardust EAs that are similar to Type 1 EAs are therefore mostly consistent with the thermal model. Type 2 EAs are not found in the JWST spectrum. The enhanced Si/Mg compositions of GEMS are an interesting key characterization because the mid-IR absorption spectrum of a GEMS-rich IDP (Figure 13(d)) has a shorter wavelength onset for its 10 μm feature than the spectral shape of amorphous pyroxene (AP50; Figure 13(c)), computed using the optical constants for Mg:Fe=50:50 amorphous pyroxene (J. Dorschner et al. 1995) that are widely used to model cometary IR spectra. Additional IR spectra, and spectra that span the full range of JWST wavelengths, of GEMS or GEMS-rich regions of CA IDPs are needed for more detailed comparisons with IR spectra of comets. GEMS-like materials are sought in the Stardust submicron inventory even though bona fide GEMS have not been confirmed. Whether remote sensing JWST spectroscopy can be used to ascertain the composition of amorphous siliceous materials so small and porous that they survived the Stardust capture intact is an outstanding question. Conversely, the Stardust samples have siliceous materials too large to impact the SED of JWST spectra. JWST is thus an interesting complement to Stardust, and analysis of the remote sensing SED demonstrated that Mg:Fe amorphous silicates are a prominent component in the fine-grained submicron materials in the coma of comet 81P/Wild 2.  
+
+> 9.
+
+CONCLUSION Our study of comet 81P/Wild 2 contextualizes the first compositional comparison between JWST spectroscopy of a solar system object against analysis of its returned samples. Our measurements of the volatile composition of the coma found that 81P was enriched in CO 2, depleted in CO, CH 4, and CH 3OH, and consistent with average values for all other species; furthermore, we did not find evidence for significant compositional variability across perihelion passages when comparing to previous ground-based studies (N. Dello Russo et al. 2014). Analysis of the nucleus retrieved an effective radius consistent with that of the shape model derived from images of the Stardust flyby. Finally, thermal modeling of the dust coma demonstrated that JWST spectroscopy is highly complementary to the analysis of the Stardust returned samples, with each mission diagnostically sensitive to materials that the other was not. These results highlight potential synergies between remote sensing spectroscopy (including with JWST) and future comet rendezvous/flyby/sample return missions. ACKNOWLEDGMENTS This work is based on observations made with the NASA/ESA/CSA James Webb Space Telescope. The data were obtained from the Mikulski Archive for Space Telescopes at the Space Telescope Science Institute, which is operated by the Association of Universities for Research in Astronomy, Inc., under NASA contract NAS 5-03127 for JWST. 22 Roth et al. 5 10 15 20 25 Wavelength ( m)
+
+0.0 0.5 1.0 1.5 2.0 2.5  
+
+> F (W/cm 2/ m)
+> 1e 19
+> Dust Thermal Model Total AC AO50 AP50 CO
+
+(a) 
+
+8 10 12 Wavelength ( m)
+
+0.0 0.5 1.0 1.5 2.0 2.5  
+
+> F (W/cm 2/ m)
+> 1e 19
+> 81P/Wild 2 Dust Model Residual Blackbody
+
+(b) 
+
+8 10 12 Wavelength ( m)
+
+0.0 0.2 0.4 0.6 0.8 1.0 1.2 1.4 Silicate Strength ( F / B ) 81P/Wild 2 Dust Model Residual 
+
+(c) 
+
+8 10 12 Wavelength ( m) 
+
+> Intensity (arb. units), Sil. Strength
+> 81P/Wild 2 Dust Model Residual IDP L2021C4 minor Fo thin section L2011*B6 Gems-rich IDP IDP L2011*B5 with 10% En thin section
+
+(d) 
+
+Figure 13. Comet 81P/Wild 2’s 10 μm silicate feature compared to GEMS-rich IDPs. (a) MRS coma flux ( dimgray ) and the best-fit dust thermal model total ( red ) with dust components of amorphous carbon (AC, darkorange ), amorphous olivine (AO50, 
+
+cyan ), amorphous pyroxene (AP50, blue ), and crystalline olivine (CO, forestgreen ). (b) A scaled blackbody ( black dashed line) fitted to the ‘pseudo-continuum’ flux points on either side of the 10 μm silicate feature ( red shaded wavelength regions). (c) The Silicate Strength, which is the coma flux divided by the scaled blackbody. The dust thermal model total and its components also are blackbody-divided to show how amorphous olivine (AO50) and amorphous pyroxene (AP50) contribute to the Silicate Strength shape, and to highlight how the ‘baseline’ includes amorphous carbon and silicates that have non-negligible opacities at λ > 12 .5 μm. The residual of the coma minus the thermal dust model is also shown ( teal shading; Figure 11). The scattered light model does not contribute at these wavelengths. (d) The Intensity (in arbitrary units) of IR absorption features of a GEMS-rich IDP (L2011*B6) and GEMS-rich IDP thin sections for L2021C4 with minor forsterite (minor Mg-crystalline olivine) and for L2011*B5 with 10% enstatite (Mg-crystalline orthopyroxene) (J. P. Bradley et al. 1999, Figs. 3, 4). The JWST 10 μmsilicate feature shape best compares to the GEMS-rich IDP thin section with minor crystalline forsterite ( saddlebrown ). 
+
+These observations are associated with program #1897. The specific observations analyzed can be accessed via doi:10.17909/py2d-2z26. Support for program #1897 was provided by NASA through a grant from the Space Telescope Science Institute, which is operated by the Association of Universities for Research in Astronomy, Inc., under NASA contract NAS 5-03127. N.X.R, C.E.W, D.H.W. and M.S.P.K. acknowledge support from JWST-GO-01897. N.X.R., A JWST Study of Stardust. I. 23 M.A.C., S.B.C., S.N.M., and P.A.G. were also supported by the NASA Planetary Science Division Internal Scientist Funding Model program through the Fundamental Laboratory Research work package (FLaRe). D.H.W. was also supported by the NASA Planetary Science Division Internal Scientist Funding Model through the Cold Solar System Objects (CSSO) ISFM. We gratefully acknowledge insightful discussions with Keiko Nakamura-Messenger, Don E. Brownlee, John P. Bradley, and Hope A. Ishii regarding the Stardust returned samples. 
+
+## Software: Astropy ( Astropy Collaboration et al. 2013, 2018, 2022), Astroquery (A. Ginsburg et al. 2019), jwstComet (N. X. Roth 2026), sbpy (M. Mommert et al. 2019), SciPy (P. Virtanen et al. 2020a) APPENDIX  
+
+> A.
+
+THERMAL AND SCATTERED LIGHT MODELS FOR THREE NIRSPEC SCALING FACTORS Figure A1 shows the thermal and scattered light models for the three NIRSpec coma flux scaling factors 1.042, 1.053, and 1.031 plotted against the coma flux, together with their total residuals. For the NIRSpec coma scale factor of 1.053, the shallower scattered light slope, when extrapolated to MRS wavelengths, yields a slight over-subtraction at 4.5–5.0 μm in the overlap region between the two instruments. For 1.031, in the overlap region the scattered light fit runs through the lower error bars of the 4.57–5.2 μm PSG baseline with enhanced uncertainties, but its steeper scattered light slope yields a slight over-subtraction at λ > 5.0 μm. The 1.042 scaler yields the best total residual in the overlap region. The differences among the total residuals for the three scaling factors remain small compared to the MRS instrumental uncertainties adopted for the residuals (see Section 6.3). 24 Roth et al. 10 20 3 5 710 22 
+
+10 21 
+
+10 20 
+
+10 19 
+
+10 18 
+
+> F (W/cm 2/ m)
+
+3.0 4.0 5.0 6.0 0.0 1.0 1e 20 
+
+10 20 3 5 710 22 
+
+10 21 
+
+10 20 
+
+10 19 
+
+10 18 
+
+> F (W/cm 2/ m)
+
+3.0 4.0 5.0 6.0 0.0 1.0 1e 20 
+
+10 20 3 5 7Wavelength ( m)
+
+10 22 
+
+10 21 
+
+10 20 
+
+10 19 
+
+10 18 
+
+> F (W/cm 2/ m)
+
+3.0 4.0 5.0 6.0 Wavelength ( m)
+
+0.0 1.0 1e 20 
+
+(a) (b) (c) (d) (e) (f) 
+
+Figure A1. Three sets of thermal and scattered light models for the NIRSpec coma flux scaling factors 1.042, 1.053, and 1.031. The left panels show the models plotted against the coma flux. The right panels show the corresponding total residuals (coma flux minus the sum of the thermal model and the scattered light model). (a, d) NIRSpec scaler 1.042 (0.96 ×NEATM nucleus model). (b, e) NIRSpec scaler 1.053 (0.95 ×NEATM). (c, f) NIRSpec scaler 1.031 (0.97 ×NEATM). Components shown: NIRSpec coma flux ( skyblue ); MRS coma flux ( black ); thermal dust model total ( red ); scattered light model ( olive , long dashed); MRS total residual, median filtered ( teal ); NIRSpec total residual ( mediumvioletred ); NIRSpec data points used in fitting the scattered light model ( purple ); 4.57–5.2 μm PSG baseline with enhanced uncertainties ( darkgreen , chartreuse error bars). A JWST Study of Stardust. I. 25 REFERENCES 
+
+Astropy Collaboration, Robitaille, T. P., Tollerud, E. J., et al. 2013, A&A, 558, A33, doi: 10.1051/0004-6361/201322068 Astropy Collaboration, Price-Whelan, A. M., Sip˝ ocz, B. M., et al. 2018, AJ, 156, 123, doi: 10.3847/1538-3881/aabc4f Astropy Collaboration, Price-Whelan, A. M., Lim, P. L., et al. 2022, ApJ, 935, 167, doi: 10.3847/1538-4357/ac7c74 Barber, R. J. 2006, PhD thesis, University College London, UK Belyakov, M., Wong, I., Bolin, B. T., et al. 2026, ApJL, 1001, L11, doi: 10.3847/2041-8213/ae5700 Biver, N., Dello Russo, N., Opitom, C., & Rubin, M. 2024b, in Comets III, ed. K. J. Meech, M. R. Combi, D. Bockel´ ee-Morvan, S. N. Raymodn, & M. E. Zolensky (U. Arizona Press), 459–498, doi: 10.2458/azu uapress 9780816553631-ch015 Biver, N., Bockel´ ee-Morvan, D., Crovisier, J., et al. 1999, AJ, 118, 1850 Biver, N., Bockel´ ee-Morvan, D., Boissier, J., et al. 2021, A&A, 648, A49, doi: 10.1051/0004-6361/202040125 Bockel´ ee-Morvan, D., Crovisier, J., Mumma, M. J., & Weaver, H. A. 2004, in Comets II, ed. H. U. Keller & H. A. Weaver (University of Arizona Press), 391 B¨ oker, T., Arribas, S., L¨ utzgendorf, N., et al. 2022, A&A, 661, A82, doi: 10.1051/0004-6361/202142589 Bradley, J. P. 1994, Science, 265, 925, doi: 10.1126/science.265.5174.925 Bradley, J. P., Ishii, H. A., Bustillo, K., et al. 2022, GeoCoA, 335, 323, doi: 10.1016/j.gca.2022.06.036 Bradley, J. P., Keller, L. P., Snow, T. P., et al. 1999, Science, 285, 1716, doi: 10.1126/science.285.5434.1716 Brownlee, D. 2014, Annual Review of Earth and Planetary Sciences, 42, 179, doi: 10.1146/annurev-earth-050212-124203 Brownlee, D. E., & Joswiak, D. J. 2017, M&PS, 52, 471, doi: 10.1111/maps.12804 Brownlee, D. E., Joswiak, D. J., Bradley, J. P., Matrajt, G., & Wooden, D. H. 2005, in 36th Annual Lunar and Planetary Science Conference, Lunar and Planetary Science Conference, 2391 Burnham, K. P., & Anderson, D. R. 2004, Sociological Methods & Research, 33, 261, doi: 10.1177/0049124104268644 Chihara, H., Koike, C., Tsuchiyama, A., Tachibana, S., & Sakamoto, D. 2002, A&A, 391, 267, doi: 10.1051/0004-6361:20020791 Clemett, S. J., Sandford, S. A., Nakamura-Messenger, K., H¨ orz, F., & McKay, D. S. 2010, M&PS, 45, 701, doi: 10.1111/j.1945-5100.2010.01062.x Cordiner, M., Roth, N. X., Micheli, M., et al. 2026, Nature, In Press, doi: 10.1038/s41586-026-10771-6 Cordiner, M. A., Roth, N. X., Milam, S. N., et al. 2023, ApJ, 953, 59, doi: 10.3847/1538-4357/ace0bc Crovisier, J. 2009, in Deep Impact as a World Observatory Event: Synergies in Space, Time, and Wavelength, ed. H. U. K¨ aufl & C. Sterken, 249, doi: 10.1007/978-3-540-76959-0 33 Crovisier, J., Leech, K., Bockelee-Morvan, D., et al. 1997, Science, 275, 1904, doi: 10.1126/science.275.5308.1904 Dello Russo, N., Kawakita, H., Vervack, R. J. J., & Weaver, H. A. 2016a, Icarus, 278, 301 Dello Russo, N., Vervack, R. J., Kawakita, H., et al. 2014, Icarus, 238, 125, doi: 10.1016/j.icarus.2014.05.021 DiSanti, M. A., Bonev, B. P., Dello Russo, N., et al. 2017, AJ, 154, 246 Dorschner, J., Begemann, B., Henning, T., Jaeger, C., & Mutschke, H. 1995, A&A, 300, 503 Duxbury, T. C., Newburn, R. L., & Brownlee, D. E. 2004, Journal of Geophysical Research (Planets), 109, E12S02, doi: 10.1029/2004JE002316 Edoh, O. 1983, PhD thesis, University of Arizona Engrand, C., Lasue, J., Wooden, D. H., & Zolensky, M. E. 2024, in Comets III, ed. K. J. Meech, M. R. Combi, D. Bockel´ ee-Morvan, S. N. Raymond, & M. E. Zolensky (U. Arizona Press), 577–620, doi: 10.2458/azu uapress 9780816553631-ch018 Fedkin, A. V., & Grossman, L. 2016, M&PS, 51, 843, doi: 10.1111/maps.12627 Fern´ andez, Y. R., Kelley, M. S., Lamy, P. L., et al. 2013, Icarus, 226, 1138, doi: 10.1016/j.icarus.2013.07.021 Foster, K. D., Cordiner, M. A., Roth, N. X., et al. 2026, AJ, 171, 162, doi: 10.3847/1538-3881/ae3565 Frank, D. R., Zolensky, M. E., & Le, L. 2014, GeoCoA, 142, 240, doi: 10.1016/j.gca.2014.05.037 Gainsforth, Z., Westphal, A. J., Butterworth, A. L., et al. 2019, M&PS, 54, 1069, doi: 10.1111/maps.13265 Gardner, J. P., Mather, J. C., Abbott, R., et al. 2023, 135, 068001, doi: 10.1088/1538-3873/acd1b5 Ginsburg, A., Sip˝ ocz, B. M., Brasseur, C. E., et al. 2019, AJ, 157, 98, doi: 10.3847/1538-3881/aafc33 Grossman, L. 1972, GeoCoA, 36, 597, doi: 10.1016/0016-7037(72)90078-6 Hanner, M. S., Lynch, D. K., & Russell, R. W. 1994, ApJ, 425, 274, doi: 10.1086/173984 Harker, D. E., Wooden, D. H., Kelley, M. S. P., & Woodward, C. E. 2023, PSJ, 4, 242, doi: 10.3847/PSJ/ad0382 26 Roth et al. 
+
+Harker, D. E., Wooden, D. H., Woodward, C. E., & Lisse, C. M. 2002, ApJ, 580, 579, doi: 10.1086/343091 Harrington Pinto, O., Womack, M., Fernandez, Y., & Bauer, J. 2022, PSJ, 3, 247, doi: 10.3847/PSJ/ac960d Harris, A. W. 1998, Icarus, 131, 291, doi: 10.1006/icar.1997.5865 Hui, M.-T., & Li, J.-Y. 2018, PASP, 130, 104501, doi: 10.1088/1538-3873/aad538 Ishii, H. A. 2019, M&PS, 54, 202, doi: 10.1111/maps.13182 Ishii, H. A., Bradley, J. P., Brownlee, D. E., & Wooden, D. H. 2026, in LPI Contributions, Vol. 3160, 57th Lunar and Planetary Science Conference, 1730 Ishii, H. A., Bradley, J. P., Dai, Z. R., et al. 2008, Science, 319, 447, doi: 10.1126/science.1150683 Ishii, H. A., Bradley, J. P., Bechtel, H. A., et al. 2018, Proceedings of the National Academy of Science, 115, 6608, doi: 10.1073/pnas.1720167115 Joswiak, D. J., Brownlee, D. E., Matrajt, G., et al. 2012, M&PS, 47, 471, doi: 10.1111/j.1945-5100.2012.01337.x Joswiak, D. J., Brownlee, D. E., Nguyen, A. N., & Messenger, S. 2017, M&PS, 52, 1612, doi: 10.1111/maps.12877 Keller, L. P., & Flynn, G. J. 2003, in Lunar and Planetary Science Conference, Lunar and Planetary Science Conference, 1903 Keller, L. P., & Messenger, S. 2005, in Astronomical Society of the Pacific Conference Series, Vol. 341, Chondrites and the Protoplanetary Disk, ed. A. N. Krot, E. R. D. Scott, & B. Reipurth, 657 Keller, L. P., & Messenger, S. 2010, Meteoritics and Planetary Science Supplement, 73, 5359 Keller, L. P., Hony, S., Bradley, J. P., et al. 2002, Nature, 417, 148, doi: 10.1038/417148a Kelley, M. S., & Wooden, D. H. 2009, Planet. Space Sci., 57, 1133, doi: 10.1016/j.pss.2008.11.017 Kelley, M. S. P., Woodward, C. E., Gehrz, R. D., Reach, W. T., & Harker, D. E. 2017, Icarus, 284, 344, doi: 10.1016/j.icarus.2016.11.029 Koike, C., Chihara, H., Tsuchiyama, A., et al. 2003, A&A, 399, 1101, doi: 10.1051/0004-6361:20021831 Lamy, P. L., Toth, I., Grun, E., et al. 1996, Icarus, 119, 370, doi: 10.1006/icar.1996.0025 Law, D. R., & Clarke, M. 2026, AJ, 171, 304, doi: 10.3847/1538-3881/ae589a Law, D. R., Hawcroft, C., Smith, L. J., et al. 2024, ApJL, 976, L25, doi: 10.3847/2041-8213/ad91a6 Lee, S., von Allmen, P., Kamp, L., Gulkis, S., & Davidsson, B. 2011, Icarus, 215, 721, doi: 10.1016/j.icarus.2011.07.007 Leroux, H., & Jacob, D. 2013, M&PS, 48, 1607, doi: 10.1111/maps.12185 Leroux, H., Jacob, D., & Cordier, P. 2009, in 40th Annual Lunar and Planetary Science Conference, Lunar and Planetary Science Conference, 1785 Lindsay, S. S., Wooden, D. H., Harker, D. E., et al. 2013, ApJ, 766, 54, doi: 10.1088/0004-637X/766/1/54 Messenger, S. 2000, Nature, 404, 968, doi: 10.1038/35010053 Mommert, M., Kelley, M., de Val-Borro, M., et al. 2019, The Journal of Open Source Software, 4, 1426, doi: 10.21105/joss.01426 Mumma, M. J., & Charnley, S. B. 2011, ARA&A, 49, 471 Nakamura-Messenger, K., Keller, L. P., Messenger, S., et al. 2012, in 43rd Annual Lunar and Planetary Science Conference, Lunar and Planetary Science Conference, 2551 Ohtaki, K. K., Ishii, H. A., Bradley, J. P., et al. 2021, GeoCoA, 310, 320, doi: 10.1016/j.gca.2021.05.042 Ootsubo, T., Kawakita, H., Hamada, S., et al. 2012, The Astrophysical Journal, 752, 15 Rietmeijer, F. J. M. 2015, M&PS, 50, 1767, doi: 10.1111/maps.12510 Rigby, J., Perrin, M., McElwain, M., et al. 2023, PASP, 135, 048001, doi: 10.1088/1538-3873/acb293 Roskosz, M., Gillot, J., Capet, F., Roussel, P., & Leroux, H. 2009, ApJL, 707, L174, doi: 10.1088/0004-637X/707/2/L174 Roskosz, M., & Leroux, H. 2015, ApJL, 801, L7, doi: 10.1088/2041-8205/801/1/L7 Roth, N. X. 2026, Zenodo, doi: https://doi.org/10.5281/zenodo.18700806 Roth, N. X., Gibb, E. L., Bonev, B. P., et al. 2018, AJ, 156, 251 Roth, N. X., Gibb, E. L., Bonev, B. P., et al. 2017, The Astronomical Journal, 153, 168 Roth, N. X., Milam, S. N., Wooden, D. H., et al. 2026a, In Prep. Roth, N. X., Gibb, E. L., Bonev, B. P., et al. 2020, AJ, 159, 42 Roth, N. X., Milam, S. N., DiSanti, M. A., et al. 2023, PSJ, 4, 172, doi: 10.3847/PSJ/ace1e9 Roth, N. X., Cordiner, M. A., Milam, S. N., et al. 2026b, ApJL, 1005, L5, doi: 10.3847/2041-8213/ae7443 Saki, M., Gibb, E. L., P., B. B., et al. 2020, AJ, 160, 184 Sanders, N. E., & Velbel, M. A. 2012, M&PS, 47, 594, doi: 10.1111/j.1945-5100.2012.01352.x Sandford, S. A., Al´ eon, J., Alexander, C. M. O. D., et al. 2006, Science, 314, 1720, doi: 10.1126/science.1135841 A JWST Study of Stardust. I. 27 
+
+Schulz, B., Vollmer, C., Leitner, J., Keller, L. P., & Ramasse, Q. M. 2024, GeoCoA, 378, 153, doi: 10.1016/j.gca.2024.06.013 Schwenke, D. W., & Partridge, H. 2000, JChPh, 113, 6592, doi: 10.1063/1.1311392 Stodolna, J., Gainsforth, Z., Butterworth, A., & Westphal, A. J. 2012a, in 43rd Annual Lunar and Planetary Science Conference, Lunar and Planetary Science Conference, 1214 Stodolna, J., Jacob, D., & Leroux, H. 2012b, GeoCoA, 87, 35, doi: 10.1016/j.gca.2012.03.026 Villanueva, G., Liuzzi, G., Faggi, S., et al. 2025, in Fundamentals of the Planetary Spectrum Generator 2025 Edition, ed. G. Villanueva (Goddard Space Flight Center), 65–78. https://psg.gsfc.nasa.gov/help.php Villanueva, G. L., DiSanti, M. A., Mumma, M. J., & Xu, L.-H. 2012a, ApJ, 747, 3 Villanueva, G. L., Mumma, M. J., Bonev, B. P., et al. 2012b, JQSRT, 113, 202 Villanueva, G. L., Smith, M. D., Protopapa, S., Faggi, S., & Mandell, A. M. 2018, JQSRT, 217, 86 Virtanen, P., Gommers, R., Oliphant, T. E., et al. 2020a, Nature Methods, 17, 261, doi: 10.1038/s41592-019-0686-2 Virtanen, P., Gommers, R., Oliphant, T. E., et al. 2020b, Nature Medicine, 17, 261, doi: 10.1038/s41592-019-0686-2 Wooden, D. H., Ishii, H. A., & Zolensky, M. E. 2017, Philosophical Transactions of the Royal Society of London Series A, 375, 20160260, doi: 10.1098/rsta.2016.0260 Woodward, C. E., Bock´ elee-Morvan, D., Harker, D. E., et al. 2025, PSJ, 6, 139, doi: 10.3847/PSJ/add1d5 Wright, G. S., Rieke, G. H., Glasse, A., et al. 2023, PASP, 135, 048003, doi: 10.1088/1538-3873/acbe66 Zolensky, M., Engrand, C., Nakamura, T., & Ebel, D. 2024, SSRv, 220, 79, doi: 10.1007/s11214-024-01111-z

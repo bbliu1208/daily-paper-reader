@@ -1,0 +1,901 @@
+Title: The Sonora Substellar Atmosphere Models. VII. Flame Skimmer: Cloud-free Atmospheric and Evolutionary Models for the Coldest Substellar Objects
+
+URL Source: https://arxiv.org/pdf/2608.06454v1
+
+Published Time: Mon, 10 Aug 2026 00:03:42 GMT
+
+Number of Pages: 32
+
+Markdown Content:
+> Draft version August 10, 2026
+> Typeset using L ATEX twocolumn style in AASTeX7
+
+The Sonora Substellar Atmosphere Models. VII. Flame Skimmer: Cloud-free Atmospheric and Evolutionary Models for the Coldest Substellar Objects 
+
+James Mang ,1, ∗ Yayaati Chachan ,2 Caroline V. Morley ,1 Natasha E. Batalha ,3
+
+Nicholas F. Wogan ,4, 5 Sagnick Mukherjee ,6, † Jonathan J. Fortney ,2 Mark S. Marley ,7
+
+Channon Visscher ,8, 9 and Ehsan Gharib-Nezhad 3
+
+> 1Department of Astronomy, University of Texas at Austin, Austin, TX 78712, USA
+> 2Department of Astronomy & Astrophysics, University of California Santa Cruz, Santa Cruz, CA 95064, USA
+> 3Space Science and Astrobiology Division, NASA Ames Research Center, Moffett Field, CA, 94035, USA
+> 4NASA Ames Research Center, Moffett Field, CA 94035
+> 5SETI Institute, Mountain View, CA 94043
+> 6School of Earth and Space Exploration, Arizona State University, Tempe, AZ, USA
+> 7Department of Lunar and Planetary Sciences, University of Arizona, Tucson, AZ 85721, USA
+> 8Chemistry & Planetary Sciences, Dordt University, Sioux Center, IA 51250, USA
+> 9Center for Extrasolar Planetary Systems, Space Science Institute, Boulder, CO 80301, USA
+
+(Received; Revised; Accepted) 
+
+Submitted to ApJ ABSTRACT JWST has provided unprecedented access to ultra-cool brown dwarfs and has pushed the boundaries of directly imaging temperate giant planets. As we continue to push toward detecting sub-Saturn and Neptune-like planets, it is crucial to develop atmospheric and evolutionary models that better capture the complexity and diversity of planetary atmospheres similar to the gas and ice giants in our Solar System. We present Sonora Flame Skimmer , the next suite of cloud-free 1D atmospheric and evolutionary models in chemical equilibrium and disequilibrium probing colder temperatures (down to 50 K), smaller objects (down to log(g) = 2), and a wide range of metallicities (10x sub-solar to 100x super-solar) and C/O ratios (solar to 2.5x solar). Beyond expanding the physical parameter space of previous Sonora models, we update the opacities and evolutionary model framework from 
+
+Sonora Bobcat , as well as the chemical treatment of volatiles (H 2O, CH 4, NH 3) and carbon species such as CO 2 from Sonora Elf Owl . For the evolution of these substellar objects, we find that high-metallicity atmospheres lead to slower cooling compared to solar metallicity, while the strength of vertical mixing ( Kzz ) has a negligible impact on the evolutionary tracks. At the highest metallicity explored here (100 × solar), the deuterium-burning and hydrogen-burning minimum masses fall to 5.39 and 45.03 MJ, respectively. All the models presented here, including the atmospheric structure, chemical profiles, spectra, synthetic photometry, and evolutionary models, are publicly available. 
+
+Keywords: brown dwarfs - exoplanetary atmospheres - evolutionary models 
+
+1. INTRODUCTION Over the past two decades, atmospheric models have been extensively used to interpret the observations of   
+
+> Corresponding author: James Mang j mang@utexas.edu
+> ∗NSF Graduate Research Fellow.
+> †51 Pegasi b Fellow
+
+directly imaged exoplanets and brown dwarfs (e.g. Mar-ley et al. 1996; Allard et al. 1996; Marois et al. 2008; Lagrange et al. 2009; Macintosh et al. 2015), providing key insights into the chemistry and dynamics of extraso-lar worlds. Until recently, we could only directly image planets that were much warmer, brighter, and younger than the planets in our solar system; we lacked the capa-bility to directly image and characterize the atmospheres of mature temperate giant planets analogous to the gas arXiv:2608.06454v1 [astro-ph.EP] 6 Aug 2026 2 Mang et al. 
+
+giants in our own Solar System. While the discovery of such planets through radial velocity has provided essen-tial constraints on orbital architectures and dynamical masses, without directly imaging them, we are unable to assess how representative Jupiter and Saturn’s at-mospheres and compositions are of other mature giant planets. This has positioned brown dwarfs as key atmospheric laboratories, spanning similar effective temperatures and masses as these cool giant planets (Cushing et al. 2011). Y dwarfs in particular ( Teff < 500 K) have pro-vided critical insight into the chemistry and dynamics of ultra-cool atmospheres. The coldest Y-dwarf, WISE J085510.83-70071442.5 (Luhman 2014; Skemer et al. 2016; Luhman et al. 2024; Rowland et al. 2024; K¨ uhnle et al. 2025, Miles et al. submitted, Kothari et al. sub-mitted) represents the closest brown dwarf to bridge the temperature regime toward true-Jupiter analogs. 1.1. Ongoing JWST Observations of Cold Worlds 
+
+With JWST, we are rapidly expanding the sample of cold substellar objects that we can observe at moder-ate resolution. JWST has already obtained spectra of dozens of Y dwarfs spanning effective temperatures of 250–450 K (e.g. Beiler et al. 2023; Luhman et al. 2024; Lew et al. 2024; Beiler et al. 2024a; Faherty et al. 2024; Rowland et al. 2024; Su´ arez et al. 2025; K¨ uhnle et al. 2025; De Furio et al. 2025). Its broad wavelength cover-age (0.6–28 μm) and moderate spectral resolution have transformed our ability to probe cold atmospheres. Ob-servations of Y-type brown dwarfs have revealed atmo-spheric properties that deviate from expectations based on chemical equilibrium, including enhanced CO 2 abun-dances (Beiler et al. 2024b), CH 4 emission features (Fa-herty et al. 2024), and low PH 3 abundances (Beiler et al. 2024b; Rowland et al. 2024; Burgasser et al. 2025). So far, these programs have demonstrated that disequilib-rium chemistry is ubiquitous in substellar atmospheres along with clear signs of variability (Biller et al. 2024; McCarthy et al. 2025; Nasedkin et al. 2025; Oliveros-Gomez et al. 2026, Miles et al. submitted). Beyond isolated brown dwarfs, JWST is the first facil-ity capable of directly imaging RV-detected temperate giant planets such as ϵ Indi Ab (Matthews et al. 2024, 2026; Sanghi et al. 2026a) and 14 Her c (Bardalez Gagli-uffi et al. 2025). Other programs targeting true-Jupiter analogs like ϵ Eri b (Sanghi et al. 2026b) have thus far eluded clear detections but provide essential limits for atmospheric scenarios that are viable for future observa-tions. JWST is also beginning to discover a new popula-tion of lower-mass, colder directly imaged planets, such as TWA-7 b (Lagrange et al. 2025; Crotts et al. 2025), a young sub-Saturn. These discoveries represent the first steps toward directly imaging true Solar System analogs with many other programs pushing the limits towards even smaller objects. (GO 4050, GO 5835, GO 10764 PI: Carter, GO 6005 PI: Biller, GO 6122, 8581 PI: Bowens-Rubin) 1.2. A Need for Colder Atmosphere and Evolution Models 
+
+Existing atmospheric model grids have provided a broad foundation for interpreting substellar objects. These models fall into several categories that differ in their treatment of clouds, chemistry, coupling to in-terior evolution, and exploration of parameter space. Early models such as Burrows et al. (1997) and COND 
+
+(Baraffe et al. 2003) focused on cloud-free atmospheres and equilibrium chemistry. Next, the coupled atmo-spheric and evolutionary framework of Saumon & Mar-ley (2008) linked radiative–convective equilibrium atmo-spheres with hybrid models including clouds. The Sonora family of models builds on the legacy of Saumon & Marley (2008) by extending this coupled atmosphere–evolution framework with updated opaci-ties, chemistry, and cloud treatments. Sonora Bobcat 
+
+(Marley et al. 2021) established a baseline grid of clear, equilibrium-chemistry atmospheric and evolution-ary models. Sonora Cholla (Karalidi et al. 2021) and Sonora Elf Owl (Mukherjee et al. 2024; Wogan et al. 2025) extended this framework to include dise-quilibrium chemistry in the atmospheres, while Sonora Diamondback (Morley et al. 2024) incorporated re-fractory cloud species (e.g., silicates and iron) for warmer L and T dwarfs and explored their impact on both atmospheric structure and evolution. Sonora Red Diamondback (Davis et al. 2025) then extended the 
+
+Sonora Diamondback evolutionary models to higher ef-fective temperatures by incorporating SPHINX atmo-spheric models as boundary conditions. A summary of the full parameter space explored across the Sonora fam-ily of models is provided in Table 1. Models from other groups have also explored comple-mentary approaches. For example, BT-Settl (Allard et al. 2011) and BHAC-15 (Baraffe et al. 2015) also include cloud treatments. The Exo-REM framework (Charnay et al. 2018) provides flexible forward models that include parameterized cloud treatments and dise-quilibrium chemistry, particularly suited for directly im-aged exoplanets. The ATMO2020 (Phillips et al. 2020) and Tremblin et al. (2015, 2019) models explore both equilibrium and disequilibrium chemistry and alterna-tive non-adiabatic thermal structures. The SAND mod-els (Alvarado et al. 2024) characterize hotter ( Teff ≥Sonora Flame Skimmer 3700 K), ultra-low metallicity objects that are being found in the halo and thick disk and have atmospheric and evolutionary models with disequilibrium chemistry. The coolTLUSTY models (Lacy & Burrows 2023), ex-tend into the Y dwarf regime with water clouds and disequilibrium chemistry. On the evolutionary side, the BEX models (Linder et al. 2019) provide tracks for low-mass objects spanning 0.16–2 M Jup using atmospheric models with equilibrium chemistry and no water clouds. Unlike most model grids that self-consistently couple a single atmospheric framework to the evolutionary calcu-lations, the BEX models combine atmospheric boundary conditions from multiple model families and codes (e.g., 
+
+COND (Allard et al. 2001), HELIOS (Malik et al. 2017), and petitCODE (Molli` ere et al. 2015, 2017)), relying on interpolation and extrapolation when extending beyond the parameter space covered by the underlying atmo-spheric grids. Despite this progress, existing grids of models pro-vide mostly overlapping coverage of parameter space (e.g. Teff and log(g)), but interpreting the coldest sub-stellar atmospheres now accessible with JWST remains challenging. In particular, expanding self-consistent at-mospheric and evolutionary models to include disequi-librium chemistry and volatile condensation across a broader range of metallicities, surface gravities, and ef-fective temperatures approaching those of Neptune- and Uranus-like planets will further enhance our ability to discover and interpret the observations of these objects. No existing Sonora grid extends to temperatures below 
+
+∼200 K, metallicities as high as 100 × solar, or surface gravities as low as log( g) = 2 (cgs; Table 1). The evo-lutionary models within the Sonora family have also only been computed for grids in chemical equilibrium as Sonora Cholla and Sonora Elf Owl do not have evolution models accompanying their atmospheric mod-els. This motivated the development of Sonora Flame Skimmer .1.3. Sonora Flame Skimmer: Bridging Solar System-analogs and Brown Dwarfs 
+
+In this paper, we present Sonora Flame Skimmer , the newest set of atmospheric and evolutionary models in the Sonora family. The name “Flame Skimmer” refers to the bright orange dragonfly Libellula saturata , com-monly known as the firecracker skimmer and native to the Sonoran Desert. The Sonora Flame Skimmer mod-els span 45 effective temperatures from 50 to 2400 K and 15 surface gravities of log( g) = 2 .0–5.5, with 7 metal-licities [M/H] = [ −1.0, −0.5, 0.0, +0 .5, +1 .0, +1 .5, +2 .0] (scaled relative to solar; Lodders et al. 2009) and 4 C/O ratios of [0.229, 0.458, 0.687, and 1.14] where the so-lar C/O ratio is 0.458 (Lodders et al. 2009). For mod-els including disequilibrium chemistry, we adopt eddy diffusion coefficients of Kzz = 10 2, 10 4, 10 7, 10 8, and 10 9 cm 2 s−1 for consistency with the values adopted in the Sonora Elf Owl grid. The Sonora Flame Skimmer 
+
+grid comprises 94,500 atmospheric models computed in chemical disequilibrium and 18,900 models in chemical equilibrium. The full parameter space of the grid is sum-marized in Table 1, alongside the rest of the Sonora fam-ily of models. Overall, Sonora Flame Skimmer expands the param-eter space of all the previous Sonora grids to colder temperatures, lower surface gravities, and more extreme metallicities. These models will enable the direct char-acterization of Neptune-like objects that we could not have done before within the Sonora family of models. The grid also incorporates updated opacity lists (Sec-tion 2.1) and revised evolutionary model assumptions (Section 2.2). Several key differences relative to earlier Sonora model families are summarized below: 1. For equilibrium chemistry models, Sonora Flame Skimmer adopts the updated opacities introduced in the 1460 grid, superseding those used in the 1060 grid ( Sonora Bobcat ; see Section 2.1). We also expand the grid to much larger ranges of metallicity and lower surface gravities. 2. In Sonora Elf Owl , the abundances of quenched species were held fixed above the quench level. In contrast, in Sonora Flame Skimmer we allow H2O, NH 3, and CH 4 to condense once they reach their saturation vapor pressures in disequilibrium models. This accounts for the depletion of these volatiles from the gas-phase atmospheric compo-sition and chemistry, but does not include cloud opacity. This treatment becomes particularly im-portant for the coldest objects in the grid ( Teff ≤
+
+275 K), where these species are expected to con-dense out of the gas phase; see Section 2.1.1. We also update the metallicity dependence of the chemical timescales used to determine the quench points. 3. Sonora Elf Owl and Cholla provided atmo-spheric models without accompanying evolution-ary tracks. Here, we compute evolutionary tracks for models with disequilibrium chemistry for the first time. Relative to Sonora Bobcat , the new evolutionary models also adopt an updated equa-tion of state, along with additional changes de-scribed in Section 2.2. 4 Mang et al.                                                  
+
+> Parameter Flame Skimmer Bobcat Cholla Diamondback Elf Owl
+> Reference this work Marley et al. (2021) Karalidi et al. (2021) Morley et al. (2024) Mukherjee et al. (2024) Wogan et al. (2025)
+> Teff [K] (step) 50–2400 (25–100) 200–2400 (25–100) 500–1300 (50–100) 900–2400 (100) 275–2400 (25–100) log( g) [cgs] (step) 2.0–5.5 (0.25) 3.25–5.5 (0.25–0.5) 3.0–5.5 (0.25) 3.5–5.5 (0.5) 3.25–5.5 (0.25) [M/H] [dex] −1.0, −0.5, 0.0, +0.5, +1.0, +1.5, +2.0 −0.5, 0.0, +0.5 0.0 −0.5, 0.0, +0.5 −1.0, −0.5, 0.0, +0.5, +0.7, +1.0
+> fsed . . . . . . . . . 1, 2, 3, 4, 8, nc . . . log( Kzz ) [cgs] EQ & 2, 4, 7, 8, 9 EQ 2, 4, 7, 10 EQ 2, 4, 7, 8, 9 C/O ratio 0.229, 0.458, 0.687, 1.14 0.229, 0.458, 0.687 0.458 0.458 (solar) 0.229, 0.458, 0.687, 1.14 Evolution Models Yes Yes No Yes No
+> Table 1. Grid Parameters for the Sonora Family of Models
+
+Here we present the details of Sonora Flame Skimmer . In Section 2, we describe the framework used to generate the atmospheric models (Section 2.1), in-cluding updates to the chemistry and opacities (Sec-tion 2.1.1), as well as the evolutionary modeling ap-proach (Section 2.2). In Section 3, we present the key results from the grid, including the thermal struc-tures (Section 3.1), spectra (Section 3.2), evolution-ary tracks (Section 3.3), and color–magnitude diagrams (Section 3.4). In Section 4, we discuss convergence be-havior in specific regions of the grid, the role of clouds in future model developments, and applications of the grid to JWST and future missions. We summarize our find-ings in Section 5. The thermal structures, spectra, and evolutionary tracks from this grid are publicly available on Zenodo 10 . 
+
+> 2.
+
+MODELS 2.1. Atmospheric Modeling with PICASO 
+
+We use PICASO (Mukherjee et al. 2023; Mang et al. 2026), an open-source Python-based atmospheric model to compute one-dimensional pressure–temperature (P-T) profiles in RCE and is rooted in the legacy of the sub-stellar EGP code (Marley et al. 1996; Marley & McKay 1999; Fortney et al. 2005, 2007, 2008; Robinson & Mar-ley 2014; Morley et al. 2018; Marley et al. 2021; Karalidi et al. 2021; Morley et al. 2024). PICASO has been used to model exoplanet and brown dwarf atmospheres in nu-merous JWST programs (e.g. Beiler et al. 2023; Miles et al. 2023; Rustamkulov et al. 2023; Biller et al. 2024; Lew et al. 2024; Alderson et al. 2024; Crotts et al. 2025; Bardalez Gagliuffi et al. 2025; Beichman et al. 2025; Mukherjee et al. 2025; Matthews et al. 2026; Sanghi et al. 2026a,b) and was used to generate the Sonora Elf Owl grid. Each 1D atmosphere is discretized into 90 pressure layers (91 grid levels). The pressure grid for each model  
+
+> 10 Flame Skimmer Zenodo Repository
+
+is adopted from the Sonora Elf Owl grid. For mod-els colder than 275 K (the lower temperature limit of 
+
+Sonora Elf Owl ), we adopt the same pressure grid as the 275 K model. Gas opacities are computed using the correlated-k
+
+method. The opacity database is based on Freedman et al. (2008), with updates from Freedman et al. (2014), and includes revised opacities for H 2O, FeH, and al-kali metals, as well as the addition of SO 2. Relative to previous Sonora models, we also update the line list sources for NH 3 and CH 4. For completeness, all opacity sources are summarized in Table 2. Our opacity tables are computed on a 1460 pressure–temperature grid that covers temperatures 75–4000 K and pressures 1 ×10 −6
+
+- 3000 bars. For each atmospheric layer, PICASO es-timates the opacity at that layer’s pressure and tem-perature by identifying the surrounding grid points in pressure-temperature space and interpolating between them. The interpolation is performed in logarithmic pressure and inverse temperature, (1 /T ), rather than di-rectly in pressure and temperature. In the limited cases where a layer lies outside the tabulated opacity grid, 
+
+PICASO uses the nearest two grid points at the edge of the table and extends the same interpolation formula beyond the grid boundary. Further details on the dif-ferent opacity treatments can be found in Mang et al. (2026). For FeH, we follow the treatment adopted in previ-ous Sonora models by reducing the opacity in the H band ( ∼ 1.6μm) by a factor of three to better repro-duce observed spectra. While this empirical correction significantly improves agreement with observations, re-cent work by Mader et al. (2026) has identified persis-tent wavelength-dependent discrepancies, including out-side the H band, when comparing Sonora Diamondback 
+
+models to spectra of late-M and L dwarfs. This suggests that improved FeH line lists will be required in future work. Sonora Flame Skimmer 5
+
+Molecule Reference for Opacities C2H2 Rothman et al. (2013) C2H4 Rothman et al. (2013) C2H6 Rothman et al. (2013) CH 4 Yurchenko et al. (2013), Yurchenko & Ten-nyson (2014), Wenger & Champion (1998), Pine (1992), Hargreaves et al. (2020), computed with meth-ods in Gharib-Nezhad et al. (2021) CO Rothman et al. (2010); Gordon et al. (2017); Li et al. (2015) CO 2 Huang et al. (2014) CrH Burrows et al. (2002), computed in Gharib-Nezhad et al. (2021) Cs Ryabchikova et al. (2015) Fe Ryabchikova et al. (2015); O’Brian et al. (1991); Fuhr et al. (1988); Bard et al. (1991); Bard & Kock (1994) FeH Dulick et al. (2003), with added E-A transition Hargreaves et al. (2010) H2 Gordon et al. (2017) H+3 Mizus et al. (2017) H2–H 2 Saumon et al. (2012) with added overtone from Lenzuni et al. (1991) Table 8 H2–He Saumon et al. (2012) H2–N 2 Saumon et al. (2012) H2–CH 4 Saumon et al. (2012) H− 
+
+> 2
+
+Bell (1980) H− bf John (1988) H− ff Bell & Berrington (1987) H2O Polyansky et al. (2018) H2S Azzam et al. (2016) HCN Harris et al. (2006); Barber et al. (2014); Gordon et al. (2022) LiCl Bittner & Bernath (2018) LiF Bittner & Bernath (2018) LiH Coppola et al. (2011) MgH Yadin et al. (2012); GharibNezhad et al. (2013) computed in Gharib-Nezhad et al. (2021) N2 Rothman et al. (2013) NH 3 Coles et al. (2019); Yurchenko et al. (2024), com-puted with methods in Chubb et al. (2021) OCS Gordon et al. (2017) PH 3 Sousa-Silva et al. (2014) Rb Ryabchikova et al. (2015) SiO Barton et al. (2013); Gharib-Nezhad et al. (2021) SO 2 Underwood et al. (2016) TiO McKemmish et al. (2019) computed in Gharib-Nezhad et al. (2021) VO McKemmish et al. (2016) computed in Gharib-Nezhad et al. (2021) Li, Na, K Ryabchikova et al. (2015); Allard et al. (2007a,b, 2016, 2019), as compiled in Molli` ere et al. (2019) 
+
+Table 2. References of gaseous opacities used for calculating the resulting spectra in this work. If not specified, the cross section was computed and compiled with the framework dis-cussed in Freedman et al. (2008, 2014). 
+
+The neutral alkali opacities are treated separately from the molecular line lists because their pressure-broadened resonance lines can strongly shape the red op-tical and near-infrared spectra of brown dwarfs. We use the same neutral alkali metal atomic line absorption cal-culations for Li, Na, K, Rb, and Cs as in Sonora Bobcat 
+
+(Marley et al. 2021). For the Na and K line opacities, the updated opacity set used incorporates newer uni-fied alkali line profiles from Allard et al. (2016, 2019). These profiles capture the far wings of the Na and K resonance doublets in H 2/He-rich atmospheres, where standard Lorentzian or molecular pressure-broadening prescriptions are insufficient. The effects of pressure-broadened alkali opacity are most important across the 
+
+Y and J bands. The H 2 collision-induced absorption (CIA) opacity also depends on the assumed ortho-to-para ratio of H 2.Normal H 2 corresponds to a fixed 3:1 ortho-to-para ra-tio, while equilibrium H 2 follows the local Boltzmann population and becomes increasingly para-rich at low temperatures. As described in Freedman et al. (2008), the H 2 CIA opacity used here assumes normal H 2. The choice of ortho-to-para ratio, which can be affected by disequilibrium processes (conceptually reminiscent of CO to CH 4 conversion), is most important in cold atmo-spheres, such as Uranus (Smith 1978; Massie & Hunten 1982; Fegley et al. 1991; Marley & McKay 1999), and thus affects the coldest models in our grid. More work is needed to explore the impact of equilibrium and normal ortho–para H 2 populations on the H 2 CIA opacity and resulting spectra of our models. We also distinguish between the treatment of opac-ities in the equilibrium and disequilibrium grids. For the equilibrium grid, we use pre-mixed (pre-weighted) correlated-k tables defined on the standard 1460-point P–T grid and a 196-wavelength grid, constructed using precomputed equilibrium chemistry abundances. The disequilibrium grid uses individual molecular correlated-
+
+k tables on the same 1460-point P–T grid, but over a 661-wavelength grid. In this case, opacities are com-bined “on-the-fly” for each model using the resort–rebin method of Amundsen et al. (2017), rather than using on pre-mixed chemistry tables. Further details on these methods and associated opacity updates in PICASO are provided in Mang et al. (2026). Using these opacities together with the 1D thermal structures, we compute moderate-resolution thermal emission spectra with PICASO . The spectra span 0.5–30 
+
+μm at a resampled resolving power of R = 60 ,000, which is sufficiently high to be readily binned and convolved to be used even at the highest resolution of JWST obser-vations. The publicly available spectra on Zenodo are 6 Mang et al. 
+
+provided at a resolution of R = 30 ,000 to reduce storage requirements and improve accessibility. 2.1.1. Chemistry 
+
+The chemical equilibrium abundances are based on thermochemical models from Lodders & Fegley (2002, 2006) and Visscher et al. (2006, 2010a); Visscher (2012). Our metallicity grid spans [M/H] = -1.0 to +2.0, where +0.0 is solar metallicity. For each metallicity, we also have four different C/O ratios of 0.229, 0.458, 0.687, and 1.14, where solar is 0.458 (Lodders et al. 2009). While the solar C/O ratio has been updated in Lodders (2020), we continue to use 0.458 as the solar value to be consis-tent with previous Sonora grids of models. For disequilibrium models, the strength of vertical mixing in the atmosphere is parameterized by the eddy diffusion coefficient ( Kzz ). While the parameteriza-tion of Kzz remains largely uncertain, the impact of different prescriptions for Kzz has been evaluated in Mukherjee et al. (2022). For consistency with Sonora Elf Owl , we adopt the same constant Kzz values of 10 2, 10 4, 10 7, 10 8, and 10 9. These values set the charac-teristic mixing timescale τmix in each atmospheric layer, 
+
+τmix = H2
+
+Kzz 
+
+(1) where H is the local pressure scale height. Larger values of Kzz correspond to more efficient mixing and therefore shorter mixing timescales and a lower value of 
+
+Kzz results in a slower mixing timescale. To determine where species such as CH 4, CO, CO 2,H2O, NH 3, N 2, and HCN depart from chemical equilib-rium, the mixing timescale in each layer is compared to the chemical timescale, τchem , associated with the relevant reactions (Figure 1). In the deep atmosphere, where temperatures and pressures are high, chemical re-actions proceed rapidly ( τchem ≪ τmix ), and abundances follow equilibrium values as seen in the green region of Figure 1. Moving up in the atmosphere towards cooler temperatures and lower pressures, the reaction rates de-crease and a transition occurs when τchem ≳ τmix . Above this level, vertical mixing outpaces chemical conversion, and the abundances become “quenched.” We define the quench point at this transition and hold the abundances constant above it. This is the prescription followed in both Sonora Cholla and Sonora Elf Owl .Our disequilibrium models introduce three key refine-ments relative to Cholla and Sonora Elf Owl . First, we revise the quenching prescription for CO 2, CH 4,H2O, CO, and HCN. For CO 2, previous Sonora Elf Owl models have been shown to underestimate its abun-dance relative to JWST observations of substellar at-mospheres (Beiler et al. 2024b). Revisiting the chemical 𝜏 chem < 𝜏 mix 
+
+## 𝜏 chem < 𝜏 mix 
+
+## 𝜏 chem > 𝜏 mix        
+
+> DEQ EQ
+> CO 2Quench CO Quench
+> Figure 1. Diagram showing the different quench points of CO and CO 2in a 275 K brown dwarf with log(g) = 4.5, [M/H] = +0.0, C/O = 0.458, and Kzz = 10 7.CO (green line) quenches first deeper in the atmosphere. Then CO 2(or-ange line) has a second quench further up in the atmosphere (orange region) as it continues to react and equilibrate with the quenched CO abundances. Finally, both abundances are held constant in the regions where mixing dominates (blue region).
+
+kinetic framework of Visscher et al. (2010b) and Zahnle & Marley (2014) revealed that the CO 2 abundance pro-file naturally exhibits a “second quench point” (Figure 1, orange region). This arises because CO quenches deeper in the atmosphere (Figure 1, green region), setting an enhanced reservoir of CO that can subsequently be con-verted into CO 2 before CO 2 itself quenches at lower pressures. As a result, the CO 2 abundance is increased by one to two orders of magnitude relative to models that do not account for this effect (Figure 2). Although 
+
+Sonora Elf Owl v2 (Wogan et al. 2025) implemented this CO 2 correction, the thermal structure was not re-computed, resulting in a non-self-consistent atmospheric profile (Figure 2, red line). The difference between the CO 2 abundance in Sonora Flame Skimmer (yellow) and 
+
+Sonora Elf Owl v2 (red) arises from modest changes to the P–T structure. For other species like CH 4, H 2O, CO, and HCN, these chemical reaction timescales were assumed to be inde-pendent of metallicity in Sonora Elf Owl . While the ef-fects of this assumption are minimal, for completeness, in the Sonora Flame Skimmer disequilibrium models, the chemical timescale used to calculate the quench point for these species follows the metallicity-dependent relationships prescribed in Zahnle & Marley (2014). For CO, CH 4, and H 2O, the chemical timescale follows eq. 12 in Zahnle & Marley (2014) : Sonora Flame Skimmer 710 12 10 11 10 10 10 9 10 8 10 7 10 6
+
+CO 2 VMR                  
+
+> 10 2
+> 10 1
+> 10 0
+> 10 1
+> 10 2
+> 10 3
+> Pressure [bar]
+> Bobcat (EQ) Elf Owl (First Quench) Elf Owl v2 (Second Quench, Post-Process) Flame Skimmer (Second Quench, Self-Consistent) Bobcat (EQ) Elf Owl (First Quench) Elf Owl v2 (Second Quench, Post-Process) Flame Skimmer (Second Quench, Self-Consistent)
+> Figure 2. Volume mixing ratios of CO 2in a 275 K object with log(g) = 4.5, [M/H] = +0.0, C/O = 0.458, and for disequilibrium models, Kzz = 10 9.The profiles for Sonora Bobcat ,Sonora Elf Owl ,Sonora Elf Owl v2 , and Sonora Flame Skimmer are shown in different colors. The updated CO 2kinetics in Sonora Flame Skimmer produce significantly higher CO 2abundances due to the second quench and it is important to calculate these self-consistently.
+
+τchemCO /CH 4 = 1 .5×10 −6P −1m−0.7exp(42 , 000 /T) (2) where P is the pressure in bars, m is the linear metal-licity relative to solar (ie. [M/H] = +0.5 is m ∼ 3), and 
+
+T is the temperature in Kelvin. For HCN, the chemical timescale follows eq. 40 in Zahnle & Marley (2014): 
+
+τHCN = 1 .5 × 10 −4P −1m−0.7exp(36 , 000 /T) . (3) Second, we allow volatile species to condense and be depleted from the gas phase, following the rainout chem-istry approach used in Sonora Bobcat . All equilib-rium chemistry models already include this treatment, whereas the disequilibrium prescription in Sonora Elf Owl held quenched abundances fixed above the quench level (Figure 3, right). As a result, species such as H 2O, NH 3, and CH 4 remained overabundant in the coldest atmospheres, where they are expected to condense out of the gas phase. Because Sonora Flame Skimmer extends to temper-atures as low as 50 K, we allow H 2O, NH 3, and CH 4
+
+to condense after quenching by limiting their gas-phase abundances to the corresponding saturation vapor pres-sures (Figure 3, left). This treatment modifies the at-mospheric composition by removing excess volatile gas, thereby avoiding unrealistically strong absorption fea-tures that would otherwise be predicted for these cold atmospheres. This treatment modifies the atmospheric composition but does not include cloud opacity. For disequilibrium models colder than 450 K, these species are also “cold-trapped,” such that once condensation begins, their abundances are not permitted to increase relative to the layer below. Finally, we remove PH 3 from the disequilibrium mod-els. The phosphorus chemical network and reaction ki-netics remain uncertain in cold substellar atmospheres (Wang et al. 2016; Visscher 2020; Bains et al. 2023). The PH 3 abundances predicted by Sonora Elf Owl were found to be inconsistent with observations of cool brown dwarfs (Beiler et al. 2024b). Based on this observational evidence, Sonora Elf Owl v2 (Wogan et al. 2025) re-moved PH 3 as a spectral contributor. Recent obser-vations have reported PH 3 detections in WISE 0855– 0714 at the ∼1 ppb level (Rowland et al. 2024) and in Wolf 1130C at ∼0.100 ppm (Burgasser et al. 2025). For comparison, theoretical disequilibrium chemistry cal-culations predict PH 3 abundances approximately 5 ×
+
+higher than inferred for Wolf 1130C and 500 × higher than inferred for WISE 0855–0714. Recent calculations show the depletion of phosphorus could be through con-densation with Fe and Ni to form metal phosphides (Yin et al. 2026). For uniformity across the grid and following the prescription used in Sonora Elf Owl v2 , we there-fore exclude PH 3 from the default chemistry. Since PH 3
+
+is a trace species, its omission is not expected to signif-icantly affect the thermal structure of the models, and PH 3 opacity can be incorporated in post-processing for custom models in future work. 2.2. Evolution Models 
+
+The evolution models used are described in detail in Chachan et al. (2025) and we summarize the key fea-tures and differences here. Our evolution models solve the standard structure equations using the relaxation method. The atmospheric models presented in this work are used as boundary conditions at the ‘top’ of the planet’s interior, i.e., the relation of the surface grav-ity and interior entropy to outgoing flux that sets the cooling of an object. Following Chachan et al. (2025), we define the atmosphere–interior boundary at 10 bar. At each timestep, the interior model is matched to the atmospheric grid by requiring the specific entropy of the convective interior to agree with the entropy of the at-mospheric model at this pressure level. In this way, the atmosphere and interior are stitched together through a common entropy at 10 bar, while the emergent flux from the atmospheric model determines the rate at which the interior cools. The radii reported in the evolutionary tracks correspond to the atmospheric radius at 10 mbar. 8 Mang et al. 0 100 200 300 400 500 600 
+
+Temperature [K]   
+
+> 10 2
+> 10 1
+> 10 0
+> 10 1
+> 10 2
+> 10 3
+> Pressure [bar]
+> H2ONH 3
+> CH 4
+
+50 K 150 K 275 K 50 K 150 K 275 K              
+
+> 10 810 710 610 510 410 310 2
+
+VMR H2ONH 3
+
+CH 4
+
+Flame Skimmer (Quench + Rainout) Elf Owl (Quench + Constant)        
+
+> Figure 3. Left: Solid lines show the pressure-temperature profiles of three objects at 50, 150, and 275 K with log(g) = 4.5, [M/H] = +0.0, C/O = 0.458, and Kzz = 10 7. The dashed lines correspond to the condensation curves of CH 4, NH 3, and H 2Ofrom left to right. Right: volume mixing ratios of H 2O, NH 3, and CH 4in the 275 K object. Solid lines show the condensation of volatiles in Sonora Flame Skimmer , compared to the constant quenched abundances used in Sonora Elf Owl (dashed). The depletion of these volatile species above their condensation levels is important to accurately model compositions of cold substellar objects.
+
+The interior consists of a homogeneous and adiabatic envelope whose composition is set by the metallicity of the atmospheric model used for the boundary condition. Objects < 20 M⊕ are assumed to have a 12 M⊕ core, objects ≥ 20 M⊕ but < 3 MJ have a 15 M⊕ core, and beyond 3 MJ the objects are assumed to be coreless. The choice of core masses is motivated by recent empirical constraints on giant-planet mass–radius relationships. In particular, Chachan et al. (2025) infer a characteristic core mass of Mcore = 14 .7+1 .8 
+
+> −1.6
+
+M⊕. We therefore adopt a 15 M⊕ core for most low-mass giant-planet tracks. For the lowest-mass objects in the grid, however, we adopt a slightly smaller 12 M⊕ core. This choice avoids an unrealistically core-dominated structure for < 20 M⊕
+
+models while preserving the expected trend that lower-mass planets have larger bulk heavy-element fractions. The cooling of the core contributes to the luminosity. Metals are represented by water and the EOS from Mazevet et al. (2019) is used. For hydrogen and helium, we use the EOS from Chabrier & Debras (2021), which incorporates improvements in our understanding of their behavior at intermediate pressure levels (0 .1 − 10 Mbar) and accounts for the effect of non-ideal mixing of H and He. The water and H-He EOS are combined assuming they constitute an ideal mixture. These choices depart from the Bobcat evolution models, which used the SCvH EOS for H and He and represented metals by excess He. This change in EOS is also accompanied by small changes in X = 0.725 and Y = 0.275 to match the tables available for the latest EOS. Solar metallicity is assumed to be Z = 0.014, in line with our atmospheric models. The D/H mass ratio = 2 .88 × 10 −5 is kept identical to previous models. However, all mass ratios are calculated accounting for the assumed Z. The atmospheric model grid presented in this work extends up to Teff = 2400 K. However, at early ages and for the most massive objects, the evolutionary tracks re-quire high-entropy initial conditions corresponding to ef-fective temperatures above this upper limit. We do not compute additional atmospheric models above 2400 K because this regime requires a stellar-atmosphere treat-ment with additional atomic opacities not included in our atmospheric model framework. Instead, for these high-temperature initial conditions, we extend the at-mospheric boundary condition above 2400 K in order to initialize the cooling tracks. Davis et al. (2025) show that linear extrapolation of models curves can signifi-cantly overestimate Teff at early ages. We choose to fit a simple parametric model to SPHINX models used in Davis et al. (2025) to extend our grid for Teff > 2400 (see Appendix B). This parametric model includes a de-pendence on log g and atmospheric metallicity, which is used to extend the smaller range of these parameters in the SPHINX models to match our atmospheric models. Sonora Flame Skimmer 9We model the evolution of objects spanning a broad range of masses from 15 M⊕ to 0 .1 M⊙. In particular, we extend the mass grid of the Bobcat models to include both lower mass objects (15, 20, 40, 60 M⊕ and 0.25 and 0.75 MJ) that may be observed in upcoming observing campaigns as well as objects more massive than 0 .08 M⊙
+
+to enable modeling of objects that straddle the hydrogen burning limit. The evolution models are run up to an age of 10 Gyr and are only terminated earlier if the lowest entropy in the EOS is reached (this only affects the lowest mass objects).  
+
+> 3.
+
+RESULTS 3.1. P-T Profiles 
+
+Figure 4 shows a range of P-T profiles in the Sonora Flame Skimmer grid and the effect that varying the pa-rameters of the grid has at different temperatures. The profiles shown are for 150, 600, 1300, and 2200 K ob-jects with log(g) = 4.5. The solid lines are the same profiles across all the panels. In the first panel on the left, we compare equilibrium models (dashed) with dis-equilibrium models with Kzz = 10 7 (solid). The largest difference is seen in the 1300 K model. The differ-ence arises from the equilibrium model having a deeper convective zone compared to the disequilibrium model. This temperature lies near the L/T transition and near the CO/CH 4 chemical transition, where vertical mix-ing will significantly modify the gas-phase abundances of these dominant carbon-bearing species. These abun-dance changes alter the wavelength-dependent opacity and will shift the location of the radiative–convective boundary, producing a larger change in the thermal structure than is seen at the other temperatures shown. At higher temperatures, carbon remains primarily in CO, and the equilibrium and disequilibrium abundance structures are more similar. In the middle panel, we show models with different metallicities. We show the extreme cases of the grid with models with metallicities of [M/H] = -1.0 (dashed) being shifted to be colder compared to the solar metal-licity models (solid). This monotonic trend continues as increasing the metallicity, up to 100 × solar (dotted), shows the shift of the P-T profiles to much hotter tem-peratures due to the higher opacities. Finally, in the right panel we show the effects of different C/O val-ues. Variations in C/O have a comparatively small effect on the P–T profiles. Unlike metallicity, which changes the total abundance of heavy elements and therefore broadly increases molecular opacity, changing C/O at fixed metallicity primarily redistributes carbon and oxy-gen among major opacity sources such as H 2O, CO, CH 4, and CO 2. As a result, the thermal profiles remain relatively similar across the C/O range explored here. In the extreme cases of 0.5 times solar (dashed) and 2.5 times solar (dotted), the major difference comes at higher temperatures, with higher C/O leading to cooler deep atmospheres but hotter upper atmospheres, with the opposite effect for lower C/O ratios. We also compared the parts of the grid that overlap with the Sonora Bobcat and Sonora Elf Owl grid to validate our fiducial cases, given the changes we have made. Sonora Flame Skimmer reproduces the Sonora Bobcat P–T structures with high fidelity. This agree-ment validates our use of PICASO to generate the equilib-rium grid, demonstrating consistency with the original 
+
+Sonora Bobcat models computed using the Fortran EGP 
+
+code as we expand this grid to more extreme metallici-ties (10x sub-solar and 100x super-solar). We also find minimal differences with the Sonora Elf Owl grid ex-cept at cold temperatures, where differences in the upper atmosphere arise due to the inclusion of volatile conden-sation in Sonora Flame Skimmer . For further details and discussion, see Appendix A. 3.2. Spectral Features 
+
+Figure 5 shows a sequence of emergent spectra from 350 K down to 100 K at fixed gravity (log( g)=4.5), solar metallicity, and Kzz = 10 7. The corresponding 
+
+Sonora Elf Owl spectra at 300 and 350 K (black) are also plotted for a direct comparison at these overlapping temperatures. At Teff = 300 K, there is a clear effect from the hybrid disequilibrium chemical treatment of the volatiles. The Sonora Elf Owl spectrum is fainter, particularly in the H 2O band (5-7 μm), due to stronger absorption from H 2O, which remains at a constant abun-dance from the quench level. In contrast, by allowing volatiles to condense in Sonora Flame Skimmer , it de-pletes these volatile species in the upper atmosphere, reducing opacity and increasing the emergent flux in these absorption windows. As the sequence progresses to colder temperatures ( Teff ≲ 200 K), the impact of volatile condensation becomes more pronounced. These trends highlight the importance of condensing volatiles when modeling ultra-cool atmospheres, even when con-sidering disequilibrium chemistry. The other key comparison is the differences in metal-licity in the models. Figure 6 isolates the effect of metallicity by comparing spectra at [M/H] = +0 .0 (col-ored lines) and [M/H] = +2 .0 (black lines). Increas-ing metallicity produces stronger molecular absorption features, most notably from CO 2 in the 4–4.5 μm re-gion. In addition to CO 2, metallicity also affects the balance between CH 4 and CO. At intermediate temper-atures ( Teff < 1600 K), higher metallicity models ex-10 Mang et al. 0 500 1000 1500 2000 2500 3000                
+
+> Temperature [K]
+> 10 3
+> 10 2
+> 10 1
+> 10 0
+> 10 1
+> 10 2
+> Pressure [bar] Chemistry 150 K 600 K 1300 K 2200 K
+> EQ DEQ
+> 0500 1000 1500 2000 2500 3000
+> Temperature [K] Metallicity
+> [M/H]=-1.0 [M/H]=+0.0 [M/H]=+2.0
+> 0500 1000 1500 2000 2500 3000
+> Temperature [K] C/O
+> C/O=0.5 C/O=1.0 C/O=2.5
+
+Figure 4. Pressure-temperature profiles of a sequence of Sonora Flame Skimmer objects with Teff = 150 , 600 , 1300 , and 2200 K, log(g) = 4.5, and Kzz = 10 7. Left: comparison of equilibrium (dashed) and disequilibrium (solid) chemistry models, showing only minor differences, with a shift in the radiative–convective boundary near 1300 K. Middle: models with varying metallicity, [M/H] = −1.0 (dashed), +0 .0 (solid), and +2 .0 (dotted), where increasing metallicity shifts the entire P–T profile to warmer temperatures. Right: models with different C/O ratios, 0.229 (dashed), 0.458 (solid), and 1.14 × solar (dotted), where higher C/O ratios produce a colder convective region. Overall, metallicity has the dominant impact on the thermal structure, while disequilibrium chemistry and C/O introduce comparatively smaller modifications. 
+
+hibit reduced CH 4 absorption relative to solar metal-licity models. This behavior reflects the warmer P-T profiles at high metallicity, which shift the chemistry to-ward CO-dominated compositions prior to quenching. At the coldest temperatures ( Teff ≲ 200 K), these dif-ferences diminish as the thermal structures converge. In this regime, spectral differences are dominated by varia-tions in H 2O abundance, which increases with metallic-ity and strengthens absorption features across the near-and mid-IR. 3.3. Evolutionary Tracks 
+
+Figure 7 shows the evolution of radius as a function of time for three different masses for the range of C/O and metallicity of our atmospheric models. Atmospheric models with equilibrium chemistry are shown in solid lines, and those with disequilibrium chemistry with an assumed Kzz = 10 7 are shown in dashed lines. Evo-lutionary models using disequilibrium chemistry atmo-spheric boundary conditions show little variation with the choice of Kzz , and we therefore present results for a single representative value of Kzz .Differences between the equilibrium and disequilib-rium tracks are most pronounced at early times in the highest-metallicity cases, while becoming progressively smaller at lower metallicities, though measurable differ-ences in the radius remain. They also appear only at the lowest masses, where the cooling history is most sensitive to the atmospheric boundary condition. In these cold, low-luminosity objects, changes in opacity from disequilibrium chemistry generate a thermal profile shifted colder than the equilibrium chemistry model and produce smaller radii at young ages. At higher masses, the larger interior entropy reservoir and nuclear energy release dominate over these atmospheric chemistry ef-fects, leading to nearly identical equilibrium and dise-quilibrium tracks. More metal-rich objects are expected to be smaller due to their higher density at any given pressure and tem-perature, and this is mostly borne out by the evolution models with two interesting exceptions. Firstly, at early ages, intermediate metallicity objects are larger than the lowest metallicity objects in our model grid. This is due to delayed cooling of the metal-rich objects as a result of additional opacity from metals in the atmosphere. How-ever, the effect of increasing metallicity on the opacity typically does not dominate over the effect on density for atmospheric metallicity of +2 .0. Secondly, at mature ages, objects for which hydrogen fusion becomes impor-tant (i.e. ≳ 80 MJ) show the opposite trend with more metal-rich objects remaining larger than metal-poor ob-jects on many Gyrs. This is a result of an earlier onset of hydrogen burning in more metal-rich objects, which stalls the cooling and contraction of the envelope. This is also evident in Figure 7, which shows the upturn in radius for the most massive sub-stellar objects occurs at earlier times for higher atmospheric metallicities. Metallicity also has an impact on the onset of deu-terium burning, both the timing and the object mass at which the onset happens. In the middle row of Figure 7 corresponding to a 13 .62 MJ mass object, deuterium-burning (manifest in the slowing down of contraction and radius evolution) turns on earlier for more metal-rich objects. Figure 8 shows the mass-radius relation of Sonora Flame Skimmer 11 0.6 1 2 4 8
+
+# Wavelength [ m] 
+
+> Normalized Flux [log(F ) + constant]
+
+# 1 2 4 8
+
+# Wavelength [ m] 
+
+Figure 5. Cold spectral sequence of Sonora Flame Skimmer models for objects with Teff = 350-100 K, log( g) = 4 .5, [M/H] = +0.0, C/O = 0.458, and Kzz = 10 7. Sonora Elf Owl spectra (black) are shown for comparison at 300 and 350 K. Shaded regions highlight differences between the models, where blue indicates stronger absorption (lower flux) in Sonora Elf Owl relative to 
+
+Sonora Flame Skimmer , and red indicates weaker absorption (higher flux). These differences arise from the inclusion of volatile condensation and updated disequilibrium chemistry in Sonora Flame Skimmer , which reduces upper-atmosphere opacities and alters spectral features at the coldest temperatures. 12 Mang et al. 0.6 1 2 4 8
+
+## Wavelength [ m] 
+
+> Normalized Flux [log(F ) + constant]
+
+1 2 4 8
+
+## Wavelength [ m] 
+
+1 2 4 8
+
+## Wavelength [ m] 
+
+Figure 6. Spectral sequence for Sonora Flame Skimmer models spanning Teff = 2400-100 K with log( g) = 4 .5, [M/H] = +0.0, C/O = 0.458, and Kzz = 10 7. These are compared to metal-rich models with [M/H] = +2.0 (black). Shaded regions highlight differences between the spectra, where blue indicates stronger absorption (lower flux) and red indicates weaker absorption (higher flux) in the high-metallicity models relative to solar metallicity. Increasing metallicity enhances molecular opacities across the atmosphere, leading to systematically suppressed flux and stronger absorption features. Sonora Flame Skimmer 13 0.4 0.6 0.8 1.0 1.2 
+
+> Radius [R J]
+
+# C/O = 0.229 C/O = 0.458 C/O = 0.687 0.05 M J
+
+# C/O = 1.14 
+
+> [M/H] = -1.0 [M/H] = -0.5 [M/H] = +0.0 [M/H] = +0.5 [M/H] = +1.0 [M/H] = +1.5 [M/H] = +2.0
+
+1.0 1.5 2.0 2.5 3.0  
+
+> Radius [R J]13.62 M J
+> 10 Myr 100 Myr 1 Gyr
+
+# Age 
+
+2468 
+
+> Radius [R J]
+> 10 Myr 100 Myr 1 Gyr
+
+# Age  
+
+> 10 Myr 100 Myr 1 Gyr
+
+# Age  
+
+> 10 Myr 100 Myr 1 Gyr
+
+# Age 80.66 M J
+
+Figure 7. Radius as a function of time for different C/O ratios (columns) and three representative substellar masses, low mass (0.05 MJ), near the deuterium-burning limit (13.62 MJ), and high mass (80.66 MJ) (rows). Colors indicate atmospheric metal-licity. Solid lines show equilibrium chemistry models, while dashed lines correspond to disequilibrium models with Kzz = 10 7.Metallicity drives the dominant variations in radius evolution, influencing both cooling rates at early times and the onset of nuclear burning, while variations in C/O only have a minor impact. Disequilibrium chemistry has a larger effect at low masses. 
+
+substellar objects for different metallicities at different times in their evolutionary sequence. The panel corre-sponding to a metallicity of +2.0 shows that deuterium-burning starts earlier (the 1 Myr curve shows signs of deuterium burning) and also extends to lower mass ob-jects down to ∼ 5 MJ.Table 3 shows the deuterium-burning minimum mass (DBMM) and hydrogen-burning minimum mass (HBMM) for the equilibrium Sonora Flame Skimmer 
+
+evolution models as a function of metallicity. We re-port two DBMM values, defined as the masses at which objects have burned 50% and 90% of their initial deu-terium by an age of 10 Gyr. The HBMM is defined as the mass at which 99.9% of the luminosity is powered by nuclear fusion. For both DBMM and HBMM, increasing metallicity systematically lowers the minimum mass. 
+
+[M/H] DBMM (50%) DBMM (90%) HBMM 
+
+-1.0 13.01 13.86 81.18 -0.5 12.66 13.46 79.59 +0.0 12.21 12.98 77.92 +0.5 11.44 12.20 75.01 +1.0 10.05 11.08 68.65 +1.5 7.85 8.39 57.45 +2.0 5.39 6.11 45.03 
+
+Table 3. Deuterium Burning Minimum Mass and Hydrogen Burning Minimum Mass in Jupiter masses from the equilib-rium evolution tracks as a function of metallicity with solar C/O. 
+
+At solar metallicity, our DBMM is 0.05 MJ higher than that derived from the clear Sonora Diamondback 
+
+models, while the sub-solar case ([M/H] = −0.5) is 14 Mang et al. 0.3 148            
+
+> Radius [R J][M/H]=-1.0
+> 1 Myr 10 Myr 100 Myr 1 Gyr 10 Gyr
+> [M/H]=+0.0
+> 10 110 010 110 2
+> Mass [M J]
+> 0.3 148
+> Radius [R J][M/H]=+1.0
+> 10 110 010 110 2
+> Mass [M J][M/H]=+2.0
+> Figure 8. Mass–radius relation of substellar objects at dif-ferent ages for four atmospheric metallicities, with C/O = 0.458. Higher metallicity shifts the onset of deuterium burn-ing to earlier times and lower masses, producing larger radii at young ages and extending deuterium burning to objects as low as ∼5MJ.
+
+only 0.02 MJ lower. At higher metallicity (3 × solar), the DBMM increases by 0.12 MJ relative to Sonora Diamondback . For the 90% depletion criterion, we re-cover the same DBMM (12.9 MJ) as reported for Sonora Diamondback and Sonora Bobcat . In comparison to Spiegel et al. (2011), our DBMM values most closely align with the He28 models, although they are lower by 
+
+∼0.6 MJ. The He28 models adopt a helium mass frac-tion of Y = 0 .28, which is close to the value used here (Y = 0 .275) and to the solar value of Y = 0 .274 (Lod-ders 2003). The remaining differences likely arise from updates to the atmospheric opacities and the equation of state (EOS). For the HBMM at solar metallicity, our value (77.92 MJ) is higher than the Sonora Diamondback 
+
+(76.5 MJ) and Sonora Bobcat (77.5 MJ) results, and lies slightly below the values reported by Saumon & Marley (2008) and Chabrier et al. (2023) (78.6 MJ). This suggests that the updated EOS from Chabrier & Debras (2021) shifts the hydrogen-burning limit to higher masses. At the highest metallicity, the HBMM is at a strikingly low mass of only 45.03 MJ, almost half the value of the HBMM at 10x sub-solar metallicity. The effect of metallicity found here is even stronger than the impact of irradiation on transiting brown dwarfs, which can reduce the HBMM and DBMM by 13% and 16%, respectively, depending on the strength of irradiation (Mukherjee et al. 2026). Figure 9 shows the evolution of substellar objects in 
+
+Teff –log( g) space, where individual mass tracks progress from high temperatures and low surface gravities toward lower temperatures and higher gravities as the objects contract and cool over time. The kink visible along the isochrones at intermediate masses marks the onset of deuterium burning, which temporarily slows contrac-tion and produces a plateau in both Teff and log( g). The 13 .1 MJ track, near the deuterium-burning limit, clearly traces this feature across temperature space at solar metallicity. We also note that some regions of the grid are included to maintain a uniform parameter space but do not correspond to physically plausible ob-jects within the age of the universe (e.g., Teff = 100 K at log( g) = 5 .5) where no mass track reaches this pa-rameter space. These edge cases are retained for com-pleteness but should be interpreted with caution; further discussion is provided in Section 4.1. The left panel of Figure 9 highlights the impact of metallicity on the evolutionary tracks. At fixed mass and age, metal-rich models are systematically shifted to lower Teff and slightly lower log( g) at early times, reflect-ing slower cooling due to enhanced atmospheric opacity. This delay in cooling is most pronounced at higher tem-peratures. Additionally, the onset of deuterium burning occurs earlier and extends to lower masses for higher metallicity objects, consistent with the increased opac-ity and modified internal structure. As the objects age, these differences diminish as cooling dominates over the initial atmospheric conditions, and a higher metallicity track, at a fixed mass and age, leads to slightly warmer and higher surface gravity objects. In contrast, the right panel demonstrates that dif-ferences between equilibrium and disequilibrium chem-istry have only a minor effect on the bulk evolutionary tracks. While disequilibrium chemistry can significantly alter molecular abundances and the observed spectra, its impact on the cooling history is comparatively small. As a result, the equilibrium and disequilibrium tracks largely overlap across most of parameter space, with only subtle deviations appearing at lower masses and higher temperatures. This behavior underscores that metallicity and opacity dominate the thermal evolution, while disequilibrium chemistry plays a secondary role, primarily affecting observable spectral features rather than the global cooling sequence. Further comparisons with Saumon & Marley (2008) evolutionary tracks can be found in Appendix C. Looking further into the effects of metallicity, Fig-ure 10 shows the evolution of substellar objects in both Sonora Flame Skimmer 15 0 500 1000 1500 2000       
+
+> Teff [K]
+> 2.0 2.5 3.0 3.5 4.0 4.5 5.0 5.5
+> log(g) [cm s  2]
+> [M/H]=+0.0 [M/H]=+1.0 0500 1000 1500 2000
+> Teff [K]
+> 2.0 2.5 3.0 3.5 4.0 4.5 5.0 5.5
+> log(g) [cm s  2]
+> EQ DEQ
+
+Figure 9. Evolution of brown dwarfs in Teff and surface gravity for different masses. Evolution proceeds from right to left along the thick black tracks, labeled by mass in Jupiter masses. Isochrones (blue dotted lines) span 10 Myr to 10 Gyr, with thicker lines marking 0.01, 0.1, 1, and 10 Gyr. Nearly vertical red lines indicate constant luminosity from log( L/L ⊙) = −3 to 
+
+−6.5 in steps of 0.5, and green lines show constant radii from 0.08 to 0.42 R⊙. Left: solar metallicity tracks (black) compared to enhanced metallicity ([M/H] = +1.0; gray). Right: equilibrium chemistry models (black) compared to disequilibrium models (gray). Metallicity produces noticeable shifts in the evolutionary tracks, particularly at higher temperatures, while differences between equilibrium and disequilibrium chemistry remain small. 
+
+luminosity and effective temperature as a function of age. Increasing metallicity slows the cooling of these ob-jects, resulting in higher luminosities and effective tem-peratures at a given age. For intermediate mass objects, metallicity also shifts the onset of deuterium burning to earlier times. For example, the evolutionary track of a 15.7 MJ object at solar metallicity intersects that of a 10.5 MJ object at [M/H] = +2.0 around ∼20 Myr. By this time, the lower-metallicity object has cooled signifi-cantly, with a temperature difference of ∼600 K relative to its higher-metallicity counterpart. At even higher masses, enhanced metallicity increases the temperatures in the deep atmosphere of the object, increasing the efficiency of hydrogen burning via the pp-chain, allowing objects to sustain fusion at lower masses (down to ∼55.5 MJ in this grid). Higher metallicity at-mospheres also retain heat more efficiently, further ex-tending the duration over which fusion can be sustained. While the extreme case of 100 × solar metallicity repre-sents an upper bound, it illustrates the broader trend that metallicity strongly influences the thermal and nu-clear evolution of massive substellar objects. For low-mass objects, Figure 11 shows cooling tracks at varying metallicities for objects with masses compa-rable to Neptune, Saturn, and Jupiter. At all three masses, differences between solar and moderately en-hanced metallicities (e.g., 3 × solar) are small, but these differences become increasingly pronounced at higher metallicities and younger ages. For a Neptune-mass ob-ject, the maximum temperature difference at 10 Myr is 
+
+∼ 60 K, decreasing to negligible differences at late times. This effect grows with mass: a Jupiter-mass object ex-hibits differences of up to ∼ 200 K at 10 Myr, which diminish to ∼ 40 K at older ages. These trends reflect the increased atmospheric opac-ity at higher metallicities, which slows radiative cool-ing and delays contraction, particularly at early times when objects are most luminous. As the objects age, the influence of atmospheric composition weakens, and the tracks converge. Overall, metallicity introduces a mass-dependent modulation of the early thermal evo-lution, with the largest impact for higher-mass objects and at young ages, with the cooling tracks converging as a function of time. 3.3.1. Comparison with Bobcat models and effect of modifications 
+
+We compare the evolutionary models presented here with the Sonora Bobcat evolution models for a solar metallicity and solar C/O atmosphere. To do so, we use our evolution code to replicate the Sonora Bobcat 
+
+evolution model setup. Our reproduction of Sonora Bobcat models agrees well with the models presented in Marley et al. (2021) with small differences for objects at the deuterium-burning limit around 10 Myr. These differences become insignificant at later ages. We study the effect of each update that we made to the evolution models in this paper by adding this change to the Bob-cat models one at a time. Figure 12 shows comparisons 16 Mang et al. 10 Myr 100 Myr 1 Gyr 10 Gyr    
+
+> Age
+> 9
+> 8
+> 7
+> 6
+> 5
+> 4
+> 3
+> log Luminosity [L  ]
+> 10 Myr 100 Myr 1 Gyr 10 Gyr
+> Age
+> 0500 1000 1500 2000 2500 3000 3500
+> Teff  [K]
+
+Figure 10. Thermal evolution models for the equilibrium 
+
+Sonora Flame Skimmer grid comparing solar ([M/H] = +0.0; solid) and super-solar ([M/H] = +2.0; dashed) metallicity tracks in luminosity (top) and effective temperature (bot-tom) as a function of age. Higher metallicity slows the cool-ing of substellar objects, leading to higher luminosities and effective temperatures at fixed age, with the largest effects at higher masses where nuclear burning processes are modified. 
+
+of evolution models for a representative set of planet masses for the most notable differences. The left panel in Figure 12 shows a direct com-parison of the resulting evolutionary tracks with ef-fective temperature as a function of age between the choices made in Sonora Flame Skimmer (solid lines) and Sonora Bobcat (dashed lines). Overall, the Sonora Flame Skimmer and Sonora Bobcat tracks do not have large differences at mature ages. At the high substellar mass range, the difference between the two evolution-ary tracks is driven by how the atmospheric boundary condition is extended beyond its available range (Figure 12; right panel). Sonora Bobcat models assumed linear extrapolation for Teff and T10 , which severely overesti-mates Teff as T10 increases and leads to rapid cooling at early ages and thus smaller radii compared to the mod-els in this paper (Davis et al. 2025). We choose to use the SPHINX models to inform the extrapolation of our atmospheric boundary conditions. The objects in our models more closely follow the Hayashi track, and their 10 Myr 100 Myr 1 Gyr 10 Gyr 
+
+> Age
+> 100 200 300 400 500 600 700
+> Teff  [K]
+> [M/H] = +0.0 [M/H] = +0.5 [M/H] = +1.5 [M/H] = +2.0
+
+Figure 11. Thermal evolution models for the equilibrium 
+
+Sonora Flame Skimmer grid for objects with masses similar to Neptune (blue), Saturn (green), and Jupiter (red). Dif-ferent metallicities are shown from solar (solid) to 100 × su-per-solar (dot-dashed). Jupiter is shown as a black star for reference. Higher metallicity slows the cooling of these ob-jects, producing temperature differences of ≳150 K at young ages and ∼50 K at late times for Jupiter-mass objects, with smaller differences at lower masses. 
+
+Teff remains nearly constant while they cool and become smaller. This choice in using the SPHINX models recon-ciles the largest differences between the Sonora Flame Skimmer and Sonora Bobcat models at younger ages. Other updates to the Sonora Flame Skimmer evolu-tionary models introduce comparatively minor differ-ences relative to the inclusion of SPHINX atmospheric boundary conditions at higher temperatures. Figure 13 shows the change in effective temperature, ∆ Teff , be-tween the original Sonora Bobcat evolutionary mod-els and models with individual updates applied. Neg-ative values (blue) indicate models that are cooler at a given mass and age, while positive values (red) in-dicate models that are warmer relative to the original tracks. The horizontal feature near ∼ 12-15 MJ traces the deuterium burning limit, which introduces a local-ized change in the thermal evolution. The magnitude of these temperature differences is small compared to the deviations introduced by the SPHINX boundary condi-tion at young ages. At the lowest masses, the dominant effect arises from the inclusion of a 12-15 M⊕ core (Fig-ure 13, top panel), which increases the bulk metallicity of sub-Jovian objects and leads to smaller radii. Replac-ing the SCvH equation of state with the CMS equation of state for H–He (Figure 13, bottom panel) produces a similar shift toward smaller radii, with the largest im-pact in the sub-Saturn to Saturn mass range. In con-trast, changes associated with using water as a proxy for metals, as well as adjustments to the H, He, and metal mass fractions, produce only minor differences and are Sonora Flame Skimmer 17 1 Myr 10 Myr 100 Myr 1 Gyr 10 Gyr 
+
+Age 
+
+> 500 1000 1500 2000 2500 3000 3500 4000
+> Teff  [K]
+
+Flame Skimmer vs Bobcat 1 Myr 10 Myr 100 Myr 1 Gyr 10 Gyr 
+
+Age 
+
+> 500 1000 1500 2000 2500 3000 3500 4000
+> Teff  [K]
+
+Flame Skimmer vs Bobcat + SPHINX 
+
+Figure 12. Left: comparison of Sonora Bobcat (dashed) and Sonora Flame Skimmer (solid) evolutionary models for solar metallicity and solar C/O objects. Right: effect of adopting SPHINX models for the atmospheric boundary condition in the 
+
+Sonora Bobcat models (dashed). The Sonora Flame Skimmer models closely reproduce the original Sonora Bobcat evolution, with the largest differences arising from the choice of atmospheric boundary condition at higher temperatures for young. 40.0 M 
+
+> 0.8 M J
+> 4.7 M J
+> 15.7 M J
+> 94.3 M J
+> Mass
+
+Bobcat + Water/Core    
+
+> 10 Myr 100 Myr 1 Gyr 10 Gyr
+
+Age 
+
+> 40.0 M
+> 0.8 M J
+> 4.7 M J
+> 15.7 M J
+> 94.3 M J
+> Mass
+
+Bobcat + CMS 
+
+> 3
+> 2
+> 1
+> 0123
+> Teff  [%]
+
+Figure 13. Diagnostic heat maps showing the fractional difference in effective temperature (∆ Teff ) between modified 
+
+Sonora Bobcat evolutionary models and the original Sonora Bobcat tracks as a function of mass and age. Each panel isolates the impact of a single model update: Top: inclusion of a water-rich core in low-mass objects; Bottom: replace-ment of the SCvH equation of state with the CMS equation of state for H–He. Colors indicate the percent change in Teff 
+
+relative to the original Sonora Bobcat models. These up-dates produce modest ( ≲ few percent) shifts in Teff .
+
+therefore not shown. These effects are particularly small at solar metallicity and tend to partially cancel. The im-pact of modifying the atmospheric boundary condition (excluding SPHINX) is also omitted, as it introduces only subtle changes to the evolutionary tracks. 3.4. Color-Magnitude Diagram 
+
+Figure 14 shows color–magnitude diagrams (CMDs) for the Sonora Flame Skimmer disequilibrium chem-istry models across a range of Kzz values, using synthetic photometry computed for the full grid and mapped to absolute magnitudes using the corresponding evo-lutionary model radii. Observational comparisons are drawn from the UltracoolSheet compilation (Dupuy & Liu 2012; Dupuy & Kraus 2013; Deacon et al. 2014; Liu et al. 2016; Best et al. 2018, 2021; Sanghi et al. 2023; Schneider et al. 2023; Best et al. 2025), where subd-warfs are shown as yellow triangles, young objects as blue squares, and field objects as gray circles. As cloud-free models, the Sonora Flame Skimmer 
+
+grid does not reproduce the red J − K colors of late L dwarfs prior to the L-T transition, which require cloudy atmospheres (Morley et al. 2024). Additionally, there is little distinction between models with different Kzz val-ues in these near-IR bandpasses. The offset and redness of the Y-J tracks go back to a similar source. Our mod-els are systematically brighter in the J band. This can be due to the fact that for late T dwarfs, cloud species like Cr, MnS, Na2S, ZnS, and KCl impact the Y and J band brightness (Morley et al. 2012). Earlier Sonora opacity treatments followed the pressure-broadened al-kali framework of Burrows et al. (2000), while the up-dated opacity set used in recent Sonora models incorpo-rates newer unified alkali line profiles from Allard et al. (2016, 2019). These profiles are designed to capture the far wings of the Na and K resonance doublets in H 2/He-rich atmospheres, where standard Lorentzian or molec-ular pressure-broadening prescriptions are insufficient. Uncertainties in these alkali line wings may contribute to residual offsets in the Y band and therefore in Y − J
+
+colors. Larger differences are also seen in W1 and W2, 18 Mang et al. 2 1 0 1 2 3 4
+
+## J - K 
+
+> 10 12 14 16 18
+> MJ
+
+## Field Subdwarfs Young Field Subdwarfs Young       
+
+> 0.4 0.6 0.8 1.0 1.2 1.4 1.6
+
+## Y - J      
+
+> 10 12 14 16 18
+> MJ
+> 012345
+
+## J - W2       
+
+> 910 11 12 13 14
+> MW2
+> 0.0 0.5 1.0 1.5 2.0 2.5 3.0
+
+## W1 - W2 
+
+> 910 11 12 13 14
+> MW2
+
+## Kzz = 10 2
+
+## Kzz = 10 4
+
+## Kzz = 10 7
+
+## Kzz = 10 8
+
+## Kzz = 10 9
+
+Figure 14. Color–magnitude diagrams using MKO and WISE (W1, W2) filters, with a comparison sample drawn from the UltracoolSheet. Sonora Flame Skimmer disequilibrium tracks are shown for log( g) = 4 .5, [M/H] = +0.0, and C/O = 0.458, with varying Kzz . Variations in vertical mixing produce only minor shifts in these MKO filters, indicating that Kzz has a limited impact on broadband photometry at these wavelengths compared to in W1 and W2. 
+
+where the carbon chemistry is dictated by the strength of vertical mixing. Figure 15 shows the CMD with the same ob-jects across the same filters but with the Sonora Flame Skimmer models with varying metallicity. High-metallicity models ([M/H] ≳ +1 .0) show systematically bluer colors in the 4-5 μm region due to enhanced CO 2
+
+and CO absorption. The sub-solar metallicity track exhibits less monotonic behavior in Y-J color due to reduced molecular opacity from H 2O and CH 4, which weakens the differential absorption between the Y and J bands. In this regime, collision-induced absorption (CIA) from H 2 becomes comparatively more important, contributing a broad and relatively featureless opacity source that suppresses both bands more uniformly and prevents the turnover seen at higher metallicities. Mean-while in W1 - W2, the sequence of metallicities follows the expected trend due to the change in abundances of species like CO 2 and CO in these near-IR bandpasses. 
+
+4. DISCUSSION 4.1. Model Convergence 
+
+While Sonora Flame Skimmer is constructed as a uni-form, square grid across all parameters, certain regions of parameter space correspond to extreme evolutionary stages—either very early, near formation, or at ages ex-Sonora Flame Skimmer 19 2 1 0 1 2 3 4
+
+## J - K 
+
+> 10 12 14 16 18
+> MJ
+
+## Field Subdwarfs Young Field Subdwarfs Young       
+
+> 0.4 0.6 0.8 1.0 1.2 1.4 1.6
+
+## Y - J      
+
+> 10 12 14 16 18
+> MJ
+> 012345
+
+## J - W2         
+
+> 910 11 12 13 14
+> MW2
+> 1.0 0.5 0.0 0.5 1.0 1.5 2.0 2.5 3.0
+
+## W1 - W2 
+
+> 910 11 12 13 14
+> MW2
+
+## [M/H]=-1.0 [M/H]=+0.0 [M/H]=+1.0 [M/H]=+1.5      
+
+> Figure 15. Color–magnitude diagrams using MKO and WISE (W1, W2) filters, with a comparison sample drawn from the UltracoolSheet. Sonora Flame Skimmer disequilibrium tracks are shown for log( g) = 4 .5, C/O = 0.458, and Kzz = 10 7, with varying [M/H]. Increasing metallicity shifts the tracks to redder colors and lower fluxes.
+
+ceeding that of the universe. As a result, we do not place strong emphasis on irregularities that arise in these regimes, such as combinations of high temperature with low surface gravity or low temperature with high sur-face gravity. In practice, this can produce repeated en-tries in the evolutionary tables for a given mass and age across a range of cold temperatures at fixed sur-face gravity, reflecting the boundaries of the model grid rather than physically distinct solutions. In addition, we encountered convergence difficulties for a subset of high-metallicity models ([M/H] = +1.5 and +2.0) at early L dwarf temperatures. In these cases, the models develop extended convective zones that reach high into the atmo-sphere, complicating numerical convergence. We note that for the convective regions in the PICASO RCE solver, it follows an adiabatic lapse rate computed assuming a pure H/He mixture with solar abundances, including for the metal-rich atmospheres in this grid. At the highest metallicities explored here, deviations from a non-solar H/He adiabatic lapse rate may alter the thermal struc-ture and locations of the convective zones. At colder temperatures, particularly across the T–Y dwarf transition, achieving convergence often required initializing the models with slightly warmer thermal pro-files. For example, a converged 500 K model may require an initial profile closer to 525 K. This behavior is driven by the presence of detached convective zones, which in-troduce additional complexity into the thermal struc-20 Mang et al. 
+
+ture. To improve convergence in this regime, we also limit the magnitude of temperature adjustments per-mitted at each iteration. This constraint is critical for resolving the intervening radiative zone and preventing it from being numerically bypassed during iterations. This approach is applied to late T dwarfs and all Y dwarf models. The specific thresholds and implementa-tion of this temperature-limiting scheme in PICASO are described in detail in Mang et al. (2026). There is on-going development to improve the radiative-convective zone solver that will further improve and simplify these cases and conditions. Additionally, for some disequilibrium models colder than 300 K, chemical timescales become sufficiently long that, for high values of Kzz , vertical mixing dominates deep in the atmosphere. As a result, species quench at very high pressures ( ≳ 10 4 bar), often below the maxi-mum pressure boundary of the atmospheric profile. To accurately capture these quenched abundances, we ex-tend the atmospheric profiles downward to 10 6 bar along the adiabat and compute the chemical abundances over this extended region. We then identify the quench points deep in the atmosphere and remove the extended pres-sure layers, reverting to the original pressure grid while retaining the computed abundances. 4.2. Clouds 
+
+Clouds are not included in Sonora Flame Skimmer .For the L dwarfs warmer than Teff ∼ 1300 K, iron and silicate clouds should condense in the atmosphere. These cloudy models exist as Sonora Diamondback , al-though it does not have as wide a metallicity range as 
+
+Sonora Flame Skimmer . The additional opacity source from clouds warms the atmospheric profile and impacts the evolutionary tracks as seen in Morley et al. (2024). The colder models in our grid with Teff ≤ 450 K are within the regime where water, ammonia, and even methane clouds can begin to condense (Morley et al. 2012, 2014; Faherty et al. 2014; Leggett et al. 2015; Ske-mer et al. 2016; Morley et al. 2018; Mang et al. 2022; Lacy & Burrows 2023; K¨ uhnle et al. 2025). These clouds are seen in the atmospheres of the gas giants in our own Solar System (Sato & Hansen 1979; Carlson et al. 1992; Banfield et al. 1998; Guillot et al. 2020). The addi-tional opacity from these clouds will dampen the ob-served spectral features, especially in the near-IR where there are clear water-ice features (Morley et al. 2014; Mang et al. 2022; Lacy & Burrows 2023). The inclusion of clouds will also alter the atmospheric profiles. With the additional opacity source, the cloud acts as a blanket to trap more heat emerging from the deeper atmosphere, which while suppressing the flux in the observable, also 10 Myr 100 Myr 1 Gyr 10 Gyr    
+
+> Age
+> 9
+> 8
+> 7
+> 6
+> 5
+> 4
+> 3
+> log 10  Luminosity [L  ]
+> Figure 16. Sonora Flame Skimmer equilibrium evolution-ary tracks categorized by mass for planets (yellow), brown dwarfs (green), and stars (red). Directly imaged dynamical benchmark objects compiled in Li et al. (2026), along with
+> ϵIndi Ab (Sanghi et al. 2026a), are shown as blue circles, with Jupiter shown as a black star.
+
+shifts the thermal structure of the atmosphere due to ra-diative feedback heating the deeper atmosphere (Mang et al. 2024). Since the thermal structures are used as the boundary conditions for the evolutionary models, the addition of clouds, as seen in Sonora Diamondback 
+
+will change the evolution timescales of these substellar objects. The impact of clouds on the evolution of sub-stellar objects is expected to increase with metallicity, as metal-rich atmospheres contain larger abundances of condensable species (e.g., H 2O) that can form clouds, enhance atmospheric opacity, and further slow radiative cooling. Future work will include volatile clouds self-consistently within the colder range of Sonora models. 4.3. Implications for JWST & Future Observations 
+
+Figure 16 overplots a sample of dynamical benchmark systems on the Sonora Flame Skimmer evolutionary tracks. The benchmark sample is drawn from the com-pilation of Li et al. (2026) and includes recent measure-ments of Eps Indi Ab (Sanghi et al. 2026a). JWST will continue to populate the gaps in the colder, lower-mass object regime across all ages, moving toward true Solar System analogs. The Sonora Flame Skimmer models presented here extend the Sonora framework to suffi-ciently low temperatures and masses to overlap with this emerging population. As a result, these models enable more robust color-based selection criteria for identifying and prioritizing candidates for follow-up observations in JWST surveys. Figure 17 shows a color-magnitude diagram of the JWST NIRCam F200W and F444W bandpasses, which are commonly used filters for observations of temperate giant planets and other surveys searching for other cold Sonora Flame Skimmer 21 0 2 4 6 8 10 12 
+
+F200W - F444W     
+
+> 10 12 14 16 18
+> MF444W
+> [M/H]=-1.0 [M/H]=+0.0 [M/H]=+1.0 [M/H]=+1.5 Beiler et al. 2024 Sample
+> Figure 17. Color–magnitude diagram showing a sample of brown dwarfs from Beiler et al. (2024a) (gray) along-side Sonora Flame Skimmer tracks at varying metallicities for log( g) = 4 .5 and C/O = 0.458. WISE 0855 (red) and planetary-mass objects AF Lep b (brown), TWA-7 b (green), and 14 Her c (purple) are shown as stars, with arrows indicat-ing F200W upper limits. The broad spread of these JWST targets demonstrates that metallicity can drive large shifts in observed color at short-wavelength NIRCam observations.
+
+substellar objects (GO 4050, GO 5835, GO 10764 PI: Carter, GO 6005 PI: Biller, GO 6122, 8581 PI: Bowens-Rubin). A sample of brown dwarfs is shown in the gray circles from Beiler et al. (2024a) along with WISE 0855 (red star) for which we generated synthetic photometry from the JWST NIRSpec/PRISM data from Luhman et al. (2024). Other early JWST observations of plan-ets AF Lep b (Franson et al. 2024), 14 Her c (Bardalez Gagliuffi et al. 2025), and TWA-7 b (Crotts et al. 2025) are also shown. These planets do not have detections in F200W and thus are upper limits for the color seen in F200W - F444W. Further implications on the sensitiv-ity and yield predictions using Sonora Flame Skimmer 
+
+are discussed in an upcoming study for these ongoing JWST surveys (Strampelli et al. in prep). Figures 18 and 19 illustrate the effects of varying chemistry, metallicity, and C/O on the emergent spec-tra. We show representative models at Teff = 300 K and 800 K across the JWST wavelength range relevant for planetary mass companions, along with synthetic pho-tometry in commonly used JWST bandpasses, includ-ing NIRCam F200W and F444W and MIRI F1065C, F1500W, and F2100W. The 300 K case represents tem-perate gas giants such as 14 Her c, TWA-7 b, and 
+
+ϵ Indi Ab, while the 800 K case is representative of ob-jects like AF Lep b. Differences between equilibrium and disequilibrium chemistry are primarily driven by carbon chemistry, most notably through enhanced CO 2 abun-dances, which produce strong variations in bands such as F444W. Metallicity has the largest overall impact, sys-tematically shifting the abundances of dominant species (e.g., H 2O, NH 3, CO, CO 2, and CH 4) and producing broad changes across the spectrum. In contrast, varia-tions in C/O ratio introduce more modest differences, with their effects becoming more noticeable at higher temperatures. A notable trend emerging from recent JWST observa-tions of temperate giant planets is their relative faintness in the F444W band. This suppression may arise from a combination of cloud opacity and molecular absorp-tion, including the CO 2 feature near 4.2 μm produced by disequilibrium carbon chemistry. Bowens-Rubin et al. (2025) investigated this effect for cold, cloud-bearing atmospheres by comparing JWST sensitivity in F444W and F2100W. They found that variations in cloud cover-age can produce brightness differences of up to 10 mag-nitudes in F444W, while H 2O clouds have a negligible impact at F2100W. For comparison, we include an illustrative model in Figures 18 and 19 that self-consistently includes H 2Ocloud opacity in a 300 K atmosphere. The clouds in this model follow the prescription of Ackerman & Marley (2001) and adopt a sedimentation efficiency parameter of fsed = 4. Larger values of fsed correspond to a more cloudy atmosphere, with fsed = 10 representing an ef-fectively cloud-free atmosphere. Further details on the cloud coupling to the climate model are described in Mang et al. (2026). The cloud effects in this model are modest, but are expected to become increasingly impor-tant at colder temperatures as more H 2O condenses into a cloud, becoming more optically thick. Our next gener-ation of Sonora models will incorporate clouds alongside both equilibrium and disequilibrium chemistry to cap-ture these effects self-consistently across the grid. On the horizon is the launch of the Nancy Grace Ro-man Space Telescope (NGRST). Its Coronagraph In-strument, while a technology demonstration, may reach down to Saturn-sized planets and deliver images and low-resolution spectra of mature, Jupiter-like exoplanets (Lupu et al. 2016; Lacy et al. 2019; Morley et al. 2014), potentially revealing more information about the dise-quilibrium carbon chemistry and water clouds in their atmospheres. Reflected-light observations are highly sensitive to clouds (Sudarsky et al. 2000, 2005; Lupu et al. 2016; Sanghi et al. 2026b), meaning that uncer-tainties in H 2O and NH 3 cloud formation will directly impact the expected contrast of these objects and thus their detectability. 22 Mang et al. 10 5                         
+
+> 10 3
+> 10 1
+> 10 1
+> 10 3Chemistry
+> EQ DEQ Kzz = 10 9
+> Cloudy ( fsed = 4)
+> 10 5
+> 10 3
+> 10 1
+> 10 1
+> 10 3
+> Flux [W m  2 m 1] Metallicity
+> [M/H]=-1.0 [M/H]=+0.0 [M/H]=+2.0
+> 24610 20
+> Wavelength [ m]
+> 10 5
+> 10 3
+> 10 1
+> 10 1
+> 10 3C/O
+> C/O=0.5 C/O=1.0 C/O=2.5 10 1
+> 10 2
+> 10 3
+> 10 4
+> Chemistry
+> EQ DEQ Kzz = 10 9
+> 10 1
+> 10 2
+> 10 3
+> 10 4
+> Flux [W m  2 m 1] Metallicity
+> [M/H]=-1.0 [M/H]=+0.0 [M/H]=+2.0
+> 24610 20
+> Wavelength [ m]
+> 10 1
+> 10 2
+> 10 3
+> 10 4
+> C/O
+> C/O=0.5 C/O=1.0 C/O=2.5
+
+Figure 18. Simulated Sonora Flame Skimmer spectra and synthetic photometry for two representative substellar objects observed with JWST. Left: a cold object with Teff = 300 K and log(g) = 4.5. Right: a warmer object with Teff = 800 K and log(g) = 4.5. On both sides, the top row compares equilibrium (EQ; green) and disequilibrium (DEQ; blue) chemistry models, the middle row shows the effect of metallicity ([M/H] = −1.0, +0 .0, +2 .0), and the bottom row shows the effect of the C/O ratio (0.229, 0.458, 1.14). In all rows, the blue spectrum is the same model for reference. Different colored transmission bands for common JWST filters (F200W, F444W, F1065C, F1500W, and F2100W) are overplotted. Metallicity remains the dominating variable in differences observed across the different bands. The effects of the chemistry and C/O ratio, with observable differences driven by the abundance of CO 2, become more important with increasing temperatures. For comparison, we also show a 300 K model that includes H 2O cloud opacity in the top-left panel (gray), highlighting the potential spectral impact of clouds relative to our cloud-free grid. 5. CONCLUSIONS We present Sonora Flame Skimmer , a new grid of cloud-free 1D atmospheric and evolutionary models that extends the Sonora family to colder temperatures, lower surface gravities, and a broader range of metallicities and C/O ratios. The grid spans Teff = 50-2400 K, log( g) = 2 .0-5.5 (cgs), metallicities [M/H] = −1.0 to +2 .0 (0.1 × to 100 × solar), and C/O ratios from so-lar to 2.5 × solar. The models include both chemical equilibrium and disequilibrium chemistry with vertical mixing strengths of Kzz = 10 2-10 9 cm 2 s−1. These mod-els are designed to interpret the growing population of cold substellar objects observed with JWST and to pre-pare for future observations of Solar System analogs. All 
+
+Sonora Flame Skimmer atmospheric structures, chem-ical abundance profiles, spectra, synthetic photometry, and evolutionary tracks are publicly available on Zen-odo for the community to use with the following doi: 10.5281/zenodo.20030439. Key results from this work include: 1. Expanded parameter space: Sonora Flame Skimmer extends atmospheric and evolutionary models down to 50 K and log( g) = 2, en-abling the study of Neptune-like objects and low-gravity planetary-mass companions for the first time within the Sonora framework. 2. Consistent reproduction of previous grids: 
+
+The equilibrium and disequilibrium P-T structures closely reproduce Sonora Bobcat and Sonora Elf Owl models, validating the updated PICASO -based framework. 3. Updated disequilibrium chemistry: The in-clusion of improved CO 2 kinetics increases CO 2
+
+abundances and produces corresponding suppres-sion of flux in the 4–5 μm region. The metallicity-dependent quenching also introduces smaller but measurable changes in the abundances of CO, CH 4, H 2O, and HCN. Sonora Flame Skimmer 23 
+
+## Panel A: T eff = 300 K, log(g) = 4.5 3.0 3.5 4.0 4.5 5.0 10 4   
+
+> 10 3
+> 10 2
+> 10 1
+> 10 0
+> 10 1
+> 10 2
+> 10 3
+> Flux [W m  2 m 1]
+
+G395H + F444W      
+
+> 6810 12 10 1
+> 10 0
+> 10 1
+> 10 2
+
+LRS + F1065C    
+
+> 12.5 15.0 17.5 10 0
+> 10 1
+> 10 2
+
+F1500W  
+
+> 20 25 10 1
+
+F2100W                       
+
+> EQ DEQ Kzz = 10 9
+> Cloudy ( fsed = 4)
+> 3.0 3.5 4.0 4.5 5.0 10 4
+> 10 3
+> 10 2
+> 10 1
+> 10 0
+> 10 1
+> 10 2
+> 10 3
+> Flux [W m  2 m 1]
+> 6810 12 10 1
+> 10 0
+> 10 1
+> 10 2
+> 12.5 15.0 17.5 10 0
+> 10 1
+> 10 2
+> 20 25 10 1
+> [M/H]=-1.0 [M/H]=+0.0 [M/H]=+2.0
+> 3.0 3.5 4.0 4.5 5.0
+
+Wavelength [ m]        
+
+> 10 4
+> 10 3
+> 10 2
+> 10 1
+> 10 0
+> 10 1
+> 10 2
+> 10 3
+> Flux [W m  2 m 1]
+> 6810 12
+
+Wavelength [ m]    
+
+> 10 1
+> 10 0
+> 10 1
+> 10 2
+> 12.5 15.0 17.5
+
+Wavelength [ m]  
+
+> 10 0
+> 10 1
+> 10 2
+> 20 25
+
+Wavelength [ m] 
+
+> 10 1
+> C/O=0.5 C/O=1.0 C/O=2.5
+
+## Panel B: T eff = 800 K, log(g) = 4.5 3.0 3.5 4.0 4.5 5.0 10 1
+
+> 10 2
+> 10 3
+> 10 4
+> Flux [W m  2 m 1]
+
+G395H + F444W         
+
+> 5678910 11 12 13 10 2
+> 10 3
+
+LRS + F1065C     
+
+> 12 14 16 18 10 1
+> 10 2
+> 10 3
+
+F1500W   
+
+> 20 25 10 1
+> 10 2
+> 10 3
+
+F2100W                       
+
+> EQ DEQ Kzz = 10 9
+> 3.0 3.5 4.0 4.5 5.0 10 1
+> 10 2
+> 10 3
+> 10 4
+> Flux [W m  2 m 1]
+> 5678910 11 12 13 10 2
+> 10 3
+> 12 14 16 18 10 1
+> 10 2
+> 10 3
+> 20 25 10 1
+> 10 2
+> 10 3
+> [M/H]=-1.0 [M/H]=+0.0 [M/H]=+2.0
+> 3.0 3.5 4.0 4.5 5.0
+
+Wavelength [ m]         
+
+> 10 1
+> 10 2
+> 10 3
+> 10 4
+> Flux [W m  2 m 1]
+> 5678910 11 12 13
+
+Wavelength [ m]    
+
+> 10 2
+> 10 3
+> 12 14 16 18
+
+Wavelength [ m]  
+
+> 10 1
+> 10 2
+> 10 3
+> 20 25
+
+Wavelength [ m] 
+
+> 10 1
+> 10 2
+> 10 3
+> C/O=0.5 C/O=1.0 C/O=2.5
+
+Figure 19. Simulated Sonora Flame Skimmer spectra and synthetic photometry for two representative substellar objects observed with JWST. Top: a cold object with Teff = 300 K and log(g) = 4.5. Bottom: a warmer object with Teff = 800 K and log(g) = 4.5. For both objects, the top row compares equilibrium (EQ; green) and disequilibrium (DEQ; blue) chemistry models, the middle row shows the effect of metallicity ([M/H] = −1.0, +0 .0, +2 .0), and the bottom row shows the effect of the C/O ratio (0.229, 0.458, 1.14). Different colored transmission bands for common JWST filters (F444W, F1065C, F1500W, and F2100W) are overplotted. Metallicity remains the dominating variable in differences observed across the different bands. The effects of the chemistry and C/O ratio, with observable differences driven by the abundance of CO 2, become more important with increasing temperatures. For comparison, we also show a 300 K model that includes H 2O cloud opacity in the top-left panel (gray), highlighting the potential spectral impact of clouds relative to our cloud-free grid. 24 Mang et al. 
+
+4. Condensation of volatile species without cloud opacity: In disequilibrium models, we al-low H 2O, NH 3, and CH 4 to condense and be de-pleted from the gas phase once they reach their saturation vapor pressures. This produces weaker absorption features relative to the Sonora Elf Owl models, while still omitting cloud opacity. 5. Updated evolution models: While Sonora Flame Skimmer largely matches most of the 
+
+Sonora Bobcat evolutionary tracks, the largest differences are seen at younger, more massive ob-jects as we use the SPHINX models to extend the atmospheric boundary condition. Other dif-ferences at lower masses stem from the inclusion of a core in objects ≤ 3 MJ and updates to the EOS (SCvH to CMS). 6. Metallicity-driven evolution: Higher metallic-ity atmospheres slow the cooling of substellar ob-jects, leading to higher luminosities and effective temperatures at the same age. At solar metallicity, equilibrium and disequilibrium evolutionary tracks show minimal differences, indicating that atmo-spheric chemistry primarily affects spectra rather than global evolution. Meanwhile variations in vertical mixing strength ( Kzz ) have a negligible impact on bulk evolution. We also find that in the highest metallicity case, the DBMM and HBMM are significantly reduced to 5.39 and 45.03 MJ, re-spectively. With ongoing JWST observations of ultra-cool Ydwarfs and temperate giant planets, Sonora Flame Skimmer provides a cloud-free baseline for interpreting the effects of composition, disequilibrium chemistry, and evolution in the coldest substellar atmospheres. These models serve as a stepping stone toward identifying and characterizing Solar System analogs by providing broad parameter-space coverage that can guide obser-vations. These models will be critical for refining our understanding of ultra-cool substellar objects and guid-ing future JWST observations. Future work will incor-porate clouds self-consistently into cold substellar at-mosphere models, connecting the grid with the Sonora Diamondback models. ACKNOWLEDGMENTS The authors would like to thank the referee for their helpful comments which improved the manuscript. J.M. acknowledges support from the National Science Foun-dation Graduate Research Fellowship Program under Grant No. DGE 2137420. S.M. is supported by the Heising-Simons Foundation through the 51 Pegasi b postdoctoral fellowship. J.J.F. acknowledges sup-port from JWST Theory Grant JWST-AR-03245.003-A. M.S.M. acknowledges support from JWST The-ory Grant JWST-AR-01977. This material is based on work supported by the National Aeronautics and Space Administration under grant No. 80NSSC24K0958 for the NASA XRP program. Support from pro-gram JWST-GO-02507.004-A, JWST-GO-2243, JWST-AR-03245.004-A, JWST-GO-04403.005-A, JWST-GO-02327, JWST-GO-04050.009-A, JWST-AR-01977.004 was provided by NASA through a grant from the Space Telescope Science Institute, which is operated by the Association of Universities for Research in Astron-omy, Incorporated, under NASA contract NAS5-26555. This work has benefited from The UltracoolSheet at http://bit.ly/UltracoolSheet, maintained by Will Best, Trent Dupuy, Michael Liu, Rob Siverd, and Zhoujian Zhang, and developed from compilations by Dupuy & Liu (2012); Dupuy & Kraus (2013); Liu et al. (2016); Best et al. (2018, 2021); Sanghi et al. (2023); Schneider et al. (2023). AUTHOR CONTRIBUTIONS J.M. developed the PICASO software capabilities re-quired to generate the grid, produced the atmospheric models, led the manuscript preparation, and generated the final publicly available data products. Y.C. gener-ated the evolutionary models. N.E.B. contributed to the software development of PICASO and generated the high-resolution spectra. N.F.W. implemented the updated CO 2 kinetic prescription used in Sonora Elf Owl v2 .S.M. provided guidance on the generation of disequilib-rium chemistry models within PICASO . C.V.M., J.J.F., and M.S.M. provided guidance on the generation of the grid and interpretation of the results. C.V. provided guidance on the chemical prescriptions adopted in the grid. All authors contributed to writing and editing the manuscript. 
+
+## Software: PICASO (Batalha et al. 2019; Mukherjee et al. 2023; Mang et al. 2026), Jupyter (Kluyver et al. 2016), NumPy (Walt et al. 2011), SciPy (Virtanen et al. 2020), and Matplotlib (Hunter 2007). Models from this paper are hosted on Zenodo for public use. Sonora Flame Skimmer 25 APPENDIX  
+
+> A.
+
+SONORA BOBCAT & SONORA ELF OWL P-T PROFILE BENCHMARKS Figure 20 compares equilibrium-chemistry Sonora Flame Skimmer P-T profiles to the corresponding 
+
+Sonora Bobcat profiles over a wide range of effective temperatures (300–2400 K). Each column shows models at fixed surface gravity (log( g) = 3.5, 4.5, 5.5), while each row varies metallicity ([M/H] = −0.5, +0 .0, +0 .5). These metallicities are chosen to enable direct compar-isons with the Sonora Bobcat grid, which does not ex-tend to other metallicities. The shaded regions high-light the differences between the two sets of profiles. In most cases, these differences are minimal, indicat-ing that Sonora Flame Skimmer reproduces the Sonora Bobcat P–T structures with high fidelity. Small devia-tions are present in a few cases (e.g., 1200 and 1500 K at log( g) = 3 .5 and [M/H] = +0 .5), but remain neg-ligible. These differences arise from a small difference in the radiative-convective boundary found for the final converged profiles in these cases while the location of the radiative–convective boundary remains largely un-changed otherwise. We then show an analogous comparison for disequilib-rium chemistry models, where Sonora Flame Skimmer 
+
+profiles are compared to those from Sonora Elf Owl 
+
+in Figure 21. The columns and rows of the figure are identical to Figure 20, and the models shown have 
+
+Kzz = 10 9. As in the equilibrium case, Sonora Flame Skimmer closely reproduces the Sonora Elf Owl P–T profiles. While updates to the CO 2 chemistry and quenching prescriptions have a significant impact on the synthetic spectra (Section 3.2), they have a minor effect on the thermal structure. Notable differences emerge primarily at the lowest temperatures where at 300 K, deviations become more apparent in the upper atmo-sphere, where H 2O begins to rain out. This process is in-cluded in Sonora Flame Skimmer , whereas Sonora Elf Owl maintains constant quenched abundances above the quench level, leading to these differences.  
+
+> B.
+
+FITS TO SPHINX MODELS Evolution modeling at very early ages, especially for massive sub-stellar objects, requires a relationship be-tween the interior entropy (representated by the equiv-alent 10 bar temperature as T10 ) and the internal heat flux ( Teff , that controls cooling) at the top of the at-mosphere for Teff > 2400 K, i.e. above the boundary conditions provided by our atmospheric models. Lin-early extrapolating or clipping this relationship gener-ally leads to poorer predictions compared to full mod-eling beyond 2400 K (Davis et al. 2025). We use the SPHINX models presented in (Davis et al. 2025) to fit a simple model to T10 as a function of Teff , log g, and log of the metallicity Z. This enables us to extend our atmospheric boundary conditions beyond Teff = 2400 K as well as to use the SPHINX models beyond their log g (3 − 5.5) and metallicity ( −0.5 − +0 .5) limits for the Sonora Flame Skimmer models. After some exper-imentation, we found the following expressions captures the behavior of the SPHINX models well log T10 =
+
+
+
+[a (log Teff − 3.3)+ 
+
+b (log g − 3) + f log Z + c], log T10 < d 
+
+[e (log Teff − 3.3)+ 
+
+b (log g − 3) + f log Z + c′], log T10 > d, 
+
+(B1) with a total of 6 free parameters ( c′ is determined by equating the two expressions at log T10 ). We use the 
+
+scipy non-linear least squares function to find the opti-mum values of the parameters: a = 0.9399, b = -0.0833, 
+
+c = 3.619, d = 3.669, e = 2.962, f = 0.0601. The sum of the squares of the residuals is merely 0.185 and more than 95% of the residuals are smaller than ±0.05. There is a dramatic change in the slope (compare a and e) of the relation between log T10 and log Teff at a specific value of log T10 = d across all the models. For log T10 > d , the SPHINX models show that log T10 rises very rapidly with log Teff , which results in objects ending up on Hayashi tracks at very early ages. We stitch this relation between log T10 and log Teff to the one provided by the Sonora Flame Skimmer models by removing any offsets between them at log Teff = 2400 K.  
+
+> C.
+
+OTHER EVOLUTION MODEL COMPARISONS Figure 22 compares the evolution of substellar ob-jects in Teff –log( g) space between the Sonora Flame Skimmer models and the Saumon & Marley (2008) grids for both cloud-free and cloudy atmospheres. In the cloud-free case (left panel), the two model sets show excellent agreement in higher mass objects but begin to deviate at intermediate mass objects as seen starting after the 19.4 MJ mass track. The Saumon & Marley (2008) mass track in these intermediate temperatures shows the impact of the inclusion of the new EOS in 
+
+Sonora Flame Skimmer .In the cloudy case (right panel), the behavior of the mass tracks matches the expectation as seen in the 26 Mang et al. 10 3  
+
+> 10 2
+> 10 1
+> 10 0
+> 10 1
+> Pressure [bar]
+
+log(g)=3.5 log(g)=4.5 [M/H] = -0.5 log(g)=5.5      
+
+> 300K 600K 900K 1200K 1500K 1900K 2400K 300K 600K 900K 1200K 1500K 1900K 2400K
+> 10 3
+> 10 2
+> 10 1
+> 10 0
+> 10 1
+> Pressure [bar] [M/H] = +0.0
+> 0500 1000 1500 2000 2500 3000
+
+Temperature [K]      
+
+> 10 3
+> 10 2
+> 10 1
+> 10 0
+> 10 1
+> Pressure [bar]
+> 0500 1000 1500 2000 2500 3000
+
+Temperature [K]   
+
+> 0500 1000 1500 2000 2500 3000
+
+Temperature [K] [M/H] = +0.5 
+
+Figure 20. Comparison of pressure–temperature profiles between Sonora Flame Skimmer (solid) and Sonora Bobcat (dashed) at Teff = 300 , 600 , 900 , 1200 , 1500 , 1900 , and 2400 K. Columns correspond to different surface gravities (log( g) = 3 .5, 4.5, 5.5), and rows to different metallicities ([M/H] = −0.5, +0 .0, +0 .5), with all models assuming C/O = 0.458. The close agreement between the two grids across parameter space validates the Sonora Flame Skimmer implementation of equilibrium chemistry and thermal structure. 
+
+comparison between cloud-free and cloudy models in Saumon & Marley (2008). Differences between Sonora Flame Skimmer and Saumon & Marley (2008) are more noticeable, particularly at intermediate temperatures where cloud opacity is most influential. These offsets arise from the inclusion of clouds, which alter the at-mospheric boundary condition and therefore the cool-ing rate. This difference shifts the evolutionary tracks toward lower effective temperatures and slightly lower surface gravities at early times, reflecting the reduced radiative efficiency and slower cooling in cloudy atmo-spheres. Sonora Flame Skimmer 27 10 3  
+
+> 10 2
+> 10 1
+> 10 0
+> 10 1
+> Pressure [bar]
+
+log(g)=3.5 log(g)=4.5 [M/H] = -1.0 log(g)=5.5      
+
+> 300K 600K 900K 1200K 1500K 1900K 2400K 300K 600K 900K 1200K 1500K 1900K 2400K
+> 10 3
+> 10 2
+> 10 1
+> 10 0
+> 10 1
+> Pressure [bar] [M/H] = +0.0
+> 0500 1000 1500 2000 2500 3000
+
+Temperature [K]      
+
+> 10 3
+> 10 2
+> 10 1
+> 10 0
+> 10 1
+> Pressure [bar]
+> 0500 1000 1500 2000 2500 3000
+
+Temperature [K]   
+
+> 0500 1000 1500 2000 2500 3000
+
+Temperature [K] [M/H] = +1.0 
+
+Figure 21. Comparison of pressure–temperature profiles between Sonora Flame Skimmer (solid) and Sonora Elf Owl (dashed) at Teff = 300 , 600 , 900 , 1200 , 1500 , 1900 , and 2400 K. Columns correspond to different surface gravities (log( g) = 3 .5, 4.5, 5.5), and rows to different metallicities ([M/H] = −0.5, +0 .0, +0 .5), with all models assuming C/O = 0.458 and Kzz = 10 9. Shaded regions highlight differences between the profiles. The close agreement across most of parameter space demonstrates that 
+
+Sonora Flame Skimmer reproduces the Sonora Elf Owl disequilibrium structures, with deviations emerging primarily at the lowest temperatures where volatile condensation occurs. 
+
+REFERENCES 
+
+Ackerman, A. S., & Marley, M. S. 2001, ApJ, 556, 872, doi: 10.1086/321540 Alderson, L., Batalha, N. E., Wakeford, H. R., et al. 2024, AJ, 167, 216, doi: 10.3847/1538-3881/ad32c9 Allard, F., Allard, N. F., Homeier, D., et al. 2007a, A&A, 474, L21, doi: 10.1051/0004-6361:20078362 Allard, F., Hauschildt, P. H., Alexander, D. R., Tamanai, A., & Schweitzer, A. 2001, ApJ, 556, 357, doi: 10.1086/321547 Allard, F., Hauschildt, P. H., Baraffe, I., & Chabrier, G. 1996, ApJL, 465, L123, doi: 10.1086/310143 28 Mang et al. 0 500 1000 1500 2000       
+
+> Teff [K]
+> 3.50 3.75 4.00 4.25 4.50 4.75 5.00 5.25 5.50
+> log(g) [cm s  2]
+> Flame Skimmer SM08 Clear 0500 1000 1500 2000
+> Teff [K]
+> 3.50 3.75 4.00 4.25 4.50 4.75 5.00 5.25 5.50
+> log(g) [cm s  2]
+> Flame Skimmer SM08 Cloudy
+
+Figure 22. Comparison of evolutionary tracks in Teff and log( g) space between Sonora Flame Skimmer (black) and Saumon & Marley (2008) (gray) models for solar metallicity atmospheres labeled by mass in Jupiter masses. Left: cloud-free (SM08 clear) models. Right: cloudy models with fsed = 2 (SM08 Cloudy). Isochrones (blue dotted lines) span 10 Myr to 10 Gyr, with thicker lines marking 0.01, 0.1, 1, and 10 Gyr. Nearly vertical red lines indicate constant luminosity from log( L/L ⊙) = −3 to −6.5 in steps of 0.5, and green lines show constant radii from 0.08 to 0.28 R⊙. The Sonora Flame Skimmer models reproduce the overall structure of the SM08 grids in both cloud-free and cloudy cases, with differences primarily arising from updated atmospheric boundary conditions, and more pronounced deviations in the cloudy models due to the additional opacity from cloud formation. Allard, F., Homeier, D., & Freytag, B. 2011, in Astronomical Society of the Pacific Conference Series, Vol. 448, 16th Cambridge Workshop on Cool Stars, Stellar Systems, and the Sun, ed. C. Johns-Krull, M. K. Browning, & A. A. West, 91, doi: 10.48550/arXiv.1011.5405 Allard, N. F., Kielkopf, J. F., & Allard, F. 2007b, European Physical Journal D, 44, 507, doi: 10.1140/epjd/e2007-00230-6 Allard, N. F., Spiegelman, F., & Kielkopf, J. F. 2016, A&A, 589, A21, doi: 10.1051/0004-6361/201628270 Allard, N. F., Spiegelman, F., Leininger, T., & Molliere, P. 2019, A&A, 628, A120, doi: 10.1051/0004-6361/201935593 Alvarado, E., Gerasimov, R., Burgasser, A. J., et al. 2024, Research Notes of the American Astronomical Society, 8, 134, doi: 10.3847/2515-5172/ad4bd7 Amundsen, D. S., Tremblin, P., Manners, J., Baraffe, I., & Mayne, N. J. 2017, A&A, 598, A97, doi: 10.1051/0004-6361/201629322 Azzam, A. A. A., Tennyson, J., Yurchenko, S. N., & Naumenko, O. V. 2016, Monthly Notices of the Royal Astronomical Society, 460, 4063, doi: 10.1093/mnras/stw1133 Bains, W., Pasek, M. A., Ranjan, S., et al. 2023, ACS Earth and Space Chemistry, 7, 1219, doi: 10.1021/acsearthspacechem.3c00016 Banfield, D., Gierasch, P. J., Bell, M., et al. 1998, Icarus, 135, 230, doi: 10.1006/icar.1998.5985 Baraffe, I., Chabrier, G., Barman, T. S., Allard, F., & Hauschildt, P. H. 2003, A&A, 402, 701, doi: 10.1051/0004-6361:20030252 Baraffe, I., Homeier, D., Allard, F., & Chabrier, G. 2015, A&A, 577, A42, doi: 10.1051/0004-6361/201425481 Barber, R. J., Strange, J. K., Hill, C., et al. 2014, MNRAS, 437, 1828, doi: 10.1093/mnras/stt2011 Bard, A., Kock, A., & Kock, M. 1991, A&A, 248, 315 Bard, A., & Kock, M. 1994, A&A, 282, 1014 Bardalez Gagliuffi, D. C., Balmer, W. O., Pueyo, L., et al. 2025, ApJL, 988, L18, doi: 10.3847/2041-8213/ade30f Barton, E. J., Yurchenko, S. N., & Tennyson, J. 2013, MNRAS, 434, 1469, doi: 10.1093/mnras/stt1105 Batalha, N. E., Marley, M. S., Lewis, N. K., & Fortney, J. J. 2019, ApJ, 878, 70, doi: 10.3847/1538-4357/ab1b51 Beichman, C., Sanghi, A., Mawet, D., et al. 2025, ApJL, 989, L22, doi: 10.3847/2041-8213/adf53f Beiler, S. A., Cushing, M. C., Kirkpatrick, J. D., et al. 2023, ApJL, 951, L48, doi: 10.3847/2041-8213/ace32c —. 2024a, ApJ, 973, 107, doi: 10.3847/1538-4357/ad6301 Beiler, S. A., Mukherjee, S., Cushing, M. C., et al. 2024b, ApJ, 973, 60, doi: 10.3847/1538-4357/ad6759 Bell, K. 1980, Journal of Physics B: Atomic and Molecular Physics (1968-1987), 13, 1859 Bell, K. L., & Berrington, K. A. 1987, Journal of Physics B: Atomic and Molecular Physics, 20, 801, doi: 10.1088/0022-3700/20/4/019 Sonora Flame Skimmer 29 
+
+Best, W. M. J., Dupuy, T. J., Liu, M. C., et al. 2025, The UltracoolSheet: Photometry, Astrometry, Spectroscopy, and Multiplicity for 4000+ Ultracool Dwarfs and Imaged Exoplanets, 2.1.0, Zenodo, doi: 10.5281/zenodo.15802304 Best, W. M. J., Liu, M. C., Magnier, E. A., & Dupuy, T. J. 2021, AJ, 161, 42, doi: 10.3847/1538-3881/abc893 Best, W. M. J., Magnier, E. A., Liu, M. C., et al. 2018, ApJS, 234, 1, doi: 10.3847/1538-4365/aa9982 Biller, B. A., Vos, J. M., Zhou, Y., et al. 2024, MNRAS, 532, 2207, doi: 10.1093/mnras/stae1602 Bittner, D. M., & Bernath, P. F. 2018, VizieR Online Data Catalog, J/ApJS/235/8 Bowens-Rubin, R., Mang, J., Limbach, M. A., et al. 2025, ApJL, 986, L26, doi: 10.3847/2041-8213/addbde Burgasser, A. J., Gonzales, E. C., Beiler, S. A., et al. 2025, Science, 390, 697, doi: 10.1126/science.adu0401 Burrows, A., Marley, M. S., & Sharp, C. M. 2000, ApJ, 531, 438, doi: 10.1086/308462 Burrows, A., Ram, R. S., Bernath, P., Sharp, C. M., & Milsom, J. A. 2002, The Astrophysical Journal, 577, doi: 10.1086/342242 Burrows, A., Marley, M., Hubbard, W. B., et al. 1997, ApJ, 491, 856, doi: 10.1086/305002 Carlson, B. E., Lacis, A. A., & Rossow, W. B. 1992, ApJ, 388, 648, doi: 10.1086/171182 Chabrier, G., Baraffe, I., Phillips, M., & Debras, F. 2023, A&A, 671, A119, doi: 10.1051/0004-6361/202243832 Chabrier, G., & Debras, F. 2021, ApJ, 917, 4, doi: 10.3847/1538-4357/abfc48 Chachan, Y., Fortney, J. J., Ohno, K., Thorngren, D., & Murray-Clay, R. 2025, ApJ, 994, 43, doi: 10.3847/1538-4357/ae0cbf Charnay, B., B´ ezard, B., Baudino, J.-L., et al. 2018, ApJ, 854, 172, doi: 10.3847/1538-4357/aaac7d Chubb, K. L., Rocchetto, M., Yurchenko, S. N., et al. 2021, A&A, 646, A21, doi: 10.1051/0004-6361/202038350 Coles, P. A., Yurchenko, S. N., & Tennyson, J. 2019, MNRAS, 490, 4638, doi: 10.1093/mnras/stz2778 Coppola, C. M., Lodi, L., & Tennyson, J. 2011, MNRAS, 415, 487, doi: 10.1111/j.1365-2966.2011.18723.x Crotts, K. A., Carter, A. L., Lawson, K., et al. 2025, ApJL, 987, L41, doi: 10.3847/2041-8213/ade798 Cushing, M. C., Kirkpatrick, J. D., Gelino, C. R., et al. 2011, ApJ, 743, 50, doi: 10.1088/0004-637X/743/1/50 Davis, C. E., Fortney, J. J., Iyer, A., et al. 2025, ApJ, 994, 198, doi: 10.3847/1538-4357/ae1015 De Furio, M., Faherty, J. K., Bardalez Gagliuffi, D. C., et al. 2025, ApJL, 990, L63, doi: 10.3847/2041-8213/adfee1 Deacon, N. R., Liu, M. C., Magnier, E. A., et al. 2014, ApJ, 792, 119, doi: 10.1088/0004-637X/792/2/119 Dulick, M., Bauschlicher, C. W., J., Burrows, A., et al. 2003, ApJ, 594, 651, doi: 10.1086/376791 Dupuy, T. J., & Kraus, A. L. 2013, Science, 341, 1492, doi: 10.1126/science.1241917 Dupuy, T. J., & Liu, M. C. 2012, ApJS, 201, 19, doi: 10.1088/0067-0049/201/2/19 Faherty, J. K., Tinney, C. G., Skemer, A., & Monson, A. J. 2014, ApJL, 793, L16, doi: 10.1088/2041-8205/793/1/L16 Faherty, J. K., Burningham, B., Gagn´ e, J., et al. 2024, Nature, 628, 511–514, doi: 10.1038/s41586-024-07190-w Fegley, Jr., B., Gautier, D., Owen, T., & Prinn, R. G. 1991, in Uranus, ed. J. T. Bergstralh, E. D. Miner, & M. S. Matthews, 147–203 Fortney, J. J., Lodders, K., Marley, M. S., & Freedman, R. S. 2008, ApJ, 678, 1419, doi: 10.1086/528370 Fortney, J. J., Marley, M. S., & Barnes, J. W. 2007, ApJ, 659, 1661, doi: 10.1086/512120 Fortney, J. J., Marley, M. S., Lodders, K., Saumon, D., & Freedman, R. 2005, ApJL, 627, L69, doi: 10.1086/431952 Franson, K., Balmer, W. O., Bowler, B. P., et al. 2024, ApJL, 974, L11, doi: 10.3847/2041-8213/ad736a Freedman, R. S., Lustig-Yaeger, J., Fortney, J. J., et al. 2014, ApJS, 214, 25, doi: 10.1088/0067-0049/214/2/25 Freedman, R. S., Marley, M. S., & Lodders, K. 2008, ApJS, 174, 504, doi: 10.1086/521793 Fuhr, J. R., Martin, G. A., & Wiese, W. L. 1988, Journal of Physical and Chemical Reference Data, 17 Gharib-Nezhad, E., Iyer, A. R., Line, M. R., et al. 2021, ApJS, 254, 34, doi: 10.3847/1538-4365/abf504 GharibNezhad, E., Shayesteh, A., & Bernath, P. F. 2013, MNRAS, 432, 2043, doi: 10.1093/mnras/stt510 Gordon, I. E., Rothman, L. S., Tan, Y., Kochanov, R. V., & Hill, C. 2017, in 72nd International Symposium on Molecular Spectroscopy, TJ08, doi: 10.15278/isms.2017.TJ08 Gordon, I. E., Rothman, L. S., Hargreaves, R. J., et al. 2022, JQSRT, 277, 107949, doi: 10.1016/j.jqsrt.2021.107949 Guillot, T., Li, C., Bolton, S. J., et al. 2020, Journal of Geophysical Research (Planets), 125, e06404, doi: 10.1029/2020JE006404 Hargreaves, R. J., Gordon, I. E., Rey, M., et al. 2020, ApJS, 247, 55, doi: 10.3847/1538-4365/ab7a1a Hargreaves, R. J., Hinkle, K. H., Bauschlicher, Charles W., J., et al. 2010, AJ, 140, 919, doi: 10.1088/0004-6256/140/4/919 30 Mang et al. 
+
+Harris, G. J., Tennyson, J., Kaminsky, B. M., Pavlenko, Y. V., & Jones, H. R. A. 2006, MNRAS, 367, 400, doi: 10.1111/j.1365-2966.2005.09960.x Huang, X., Gamache, R. R., Freedman, R. S., Schwenke, D. W., & Lee, T. J. 2014, Journal of Quantitative Spectroscopy and Radiative Transfer, 147, 134 , doi: https://doi.org/10.1016/j.jqsrt.2014.05.015 Hunter, J. D. 2007, Computing in Science & Engineering, 9, 90, doi: 10.1109/MCSE.2007.55 John, T. L. 1988, A&A, 193, 189 Karalidi, T., Marley, M., Fortney, J. J., et al. 2021, ApJ, 923, 269, doi: 10.3847/1538-4357/ac3140 Kluyver, T., Ragan-Kelley, B., P´ erez, F., et al. 2016, in ELPUB, 87–90 K¨ uhnle, H., Patapis, P., Molli` ere, P., et al. 2025, A&A, 695, A224, doi: 10.1051/0004-6361/202452547 Lacy, B., & Burrows, A. 2023, ApJ, 950, 8, doi: 10.3847/1538-4357/acc8cb Lacy, B., Shlivko, D., & Burrows, A. 2019, AJ, 157, 132, doi: 10.3847/1538-3881/ab0415 Lagrange, A.-M., Gratadour, D., Chauvin, G., et al. 2009, A&A, 493, L21, doi: 10.1051/0004-6361:200811325 Lagrange, A.-M., Wilkinson, C., Mˆ alin, M., et al. 2025, Nature, 642, 905, doi: 10.1038/s41586-025-09150-4 Leggett, S. K., Morley, C. V., Marley, M. S., & Saumon, D. 2015, ApJ, 799, 37, doi: 10.1088/0004-637X/799/1/37 Lenzuni, P., Chernoff, D. F., & Salpeter, E. E. 1991, ApJS, 76, 759, doi: 10.1086/191580 Lew, B. W. P., Roellig, T., Batalha, N. E., et al. 2024, AJ, 167, 237, doi: 10.3847/1538-3881/ad3425 Li, G., Gordon, I. E., Rothman, L. S., et al. 2015, ApJS, 216, 15, doi: 10.1088/0067-0049/216/1/15 Li, Y., Liu, M. C., Dupuy, T. J., et al. 2026, ApJ, 1002, 13, doi: 10.3847/1538-4357/ae4bdb Linder, E. F., Mordasini, C., Molli` ere, P., et al. 2019, A&A, 623, A85, doi: 10.1051/0004-6361/201833873 Liu, M. C., Dupuy, T. J., & Allers, K. N. 2016, ApJ, 833, 96, doi: 10.3847/1538-4357/833/1/96 Lodders, K. 2003, ApJ, 591, 1220, doi: 10.1086/375492 —. 2020, Oxford Research Encyclopedia of Planetary Science, doi: 10.1093/acrefore/9780190647926.013.146 Lodders, K., & Fegley, B. 2002, Icarus, 155, 393, doi: 10.1006/icar.2001.6740 Lodders, K., & Fegley, B., J. 2006, in Astrophysics Update 2, ed. J. W. Mason, 1, doi: 10.1007/3-540-30313-8 1 Lodders, K., Palme, H., & Gail, H. P. 2009, Landolt B¨ ornstein, 4B, 712, doi: 10.1007/978-3-540-88055-4 34 Luhman, K. L. 2014, The Astrophysical Journal, 786, L18, doi: 10.1088/2041-8205/786/2/L18 Luhman, K. L., Tremblin, P., Alves de Oliveira, C., et al. 2024, AJ, 167, 5, doi: 10.3847/1538-3881/ad0b72 Lupu, R. E., Marley, M. S., Lewis, N., et al. 2016, AJ, 152, 217, doi: 10.3847/0004-6256/152/6/217 Macintosh, B., Graham, J. R., Barman, T., et al. 2015, Science, 350, 64, doi: 10.1126/science.aac5891 Mader, E., Zhang, Z., Fortney, J. J., et al. 2026, AJ, 171, 198, doi: 10.3847/1538-3881/ae4021 Malik, M., Grosheintz, L., Mendon¸ ca, J. M., et al. 2017, AJ, 153, 56, doi: 10.3847/1538-3881/153/2/56 Mang, J., Gao, P., Hood, C. E., et al. 2022, ApJ, 927, 184, doi: 10.3847/1538-4357/ac51d3 Mang, J., Morley, C. V., Robinson, T. D., & Gao, P. 2024, ApJ, 974, 190, doi: 10.3847/1538-4357/ad6c4c Mang, J., Batalha, N. E., Morley, C. V., et al. 2026, ApJ, 1000, 98, doi: 10.3847/1538-4357/ae47ff Marley, M. S., & McKay, C. P. 1999, Icarus, 138, 268, doi: 10.1006/icar.1998.6071 Marley, M. S., Saumon, D., Guillot, T., et al. 1996, Science, 272, 1919, doi: 10.1126/science.272.5270.1919 Marley, M. S., Saumon, D., Visscher, C., et al. 2021, ApJ, 920, 85, doi: 10.3847/1538-4357/ac141d Marois, C., Macintosh, B., Barman, T., et al. 2008, Science, 322, 1348, doi: 10.1126/science.1166585 Massie, S. T., & Hunten, D. M. 1982, Icarus, 49, 213, doi: 10.1016/0019-1035(82)90073-2 Matthews, E. C., Carter, A. L., Pathak, P., et al. 2024, Nature, 633, 789, doi: 10.1038/s41586-024-07837-8 Matthews, E. C., Mang, J., Carter, A. L., et al. 2026, ApJL, 1002, L5, doi: 10.3847/2041-8213/ae5823 Mazevet, S., Licari, A., Chabrier, G., & Potekhin, A. Y. 2019, A&A, 621, A128, doi: 10.1051/0004-6361/201833963 McCarthy, A. M., Vos, J. M., Muirhead, P. S., et al. 2025, ApJL, 981, L22, doi: 10.3847/2041-8213/ad9eaf McKemmish, L. K., Masseron, T., Hoeijmakers, H. J., et al. 2019, MNRAS, 488, 2836, doi: 10.1093/mnras/stz1818 McKemmish, L. K., Yurchenko, S. N., & Tennyson, J. 2016, MNRAS, 463, 771, doi: 10.1093/mnras/stw1969 Miles, B. E., Biller, B. A., Patapis, P., et al. 2023, ApJL, 946, L6, doi: 10.3847/2041-8213/acb04a Mizus, I. I., Alijah, A., Zobov, N. F., et al. 2017, MNRAS, 468, 1717, doi: 10.1093/mnras/stx502 Molli` ere, P., van Boekel, R., Bouwman, J., et al. 2017, A&A, 600, A10, doi: 10.1051/0004-6361/201629800 Molli` ere, P., van Boekel, R., Dullemond, C., Henning, T., & Mordasini, C. 2015, ApJ, 813, 47, doi: 10.1088/0004-637X/813/1/47 Molli` ere, P., Wardenier, J. P., van Boekel, R., et al. 2019, A&A, 627, A67, doi: 10.1051/0004-6361/201935470 Sonora Flame Skimmer 31 
+
+Morley, C. V., Fortney, J. J., Marley, M. S., et al. 2012, ApJ, 756, 172, doi: 10.1088/0004-637X/756/2/172 Morley, C. V., Marley, M. S., Fortney, J. J., et al. 2014, ApJ, 787, 78, doi: 10.1088/0004-637X/787/1/78 Morley, C. V., Skemer, A. J., Allers, K. N., et al. 2018, ApJ, 858, 97, doi: 10.3847/1538-4357/aabe8b Morley, C. V., Mukherjee, S., Marley, M. S., et al. 2024, ApJ, 975, 59, doi: 10.3847/1538-4357/ad71d5 Mukherjee, S., Batalha, N. E., Fortney, J. J., & Marley, M. S. 2023, ApJ, 942, 71, doi: 10.3847/1538-4357/ac9f48 Mukherjee, S., Fortney, J. J., Batalha, N. E., et al. 2022, ApJ, 938, 107, doi: 10.3847/1538-4357/ac8dfb Mukherjee, S., Fortney, J. J., Carmichael, T. W., Davis, C. E., & Thorngren, D. P. 2026, ApJ, 1000, 309, doi: 10.3847/1538-4357/ae3539 Mukherjee, S., Fortney, J. J., Morley, C. V., et al. 2024, ApJ, 963, 73, doi: 10.3847/1538-4357/ad18c2 Mukherjee, S., Schlawin, E., Bell, T. J., et al. 2025, ApJL, 982, L39, doi: 10.3847/2041-8213/adba46 Nasedkin, E., Schrader, M., Vos, J. M., et al. 2025, A&A, 702, A1, doi: 10.1051/0004-6361/202555370 O’Brian, T. R., Wickliffe, M. E., Lawler, J. E., Whaling, W., & Brault, J. W. 1991, Journal of the Optical Society of America B Optical Physics, 8, 1185, doi: 10.1364/JOSAB.8.001185 Oliveros-Gomez, N., Manjavacas, E., Karalidi, T., et al. 2026, ApJ, 997, 136, doi: 10.3847/1538-4357/ae21d9 Phillips, M. W., Tremblin, P., Baraffe, I., et al. 2020, A&A, 637, A38, doi: 10.1051/0004-6361/201937381 Pine, A. S. 1992, The Journal of Chemical Physics, 97, 773, doi: 10.1063/1.463943 Polyansky, O. L., Kyuberis, A. A., Zobov, N. F., et al. 2018, MNRAS, 480, 2597, doi: 10.1093/mnras/sty1877 Robinson, T. D., & Marley, M. S. 2014, The Astrophysical Journal, 785, 158, doi: 10.1088/0004-637X/785/2/158 Rothman, L. S., Gordon, I. E., Barber, R. J., et al. 2010, Journal of Quantitative Spectroscopy and Radiative Transfer, 111, doi: 10.1016/j.jqsrt.2010.05.001 Rothman, L. S., Gordon, I. E., Babikov, Y., et al. 2013, Journal of Quantitative Spectroscopy and Radiative Transfer, 130, doi: 10.1016/j.jqsrt.2013.07.002 Rowland, M. J., Morley, C. V., Miles, B. E., et al. 2024, ApJL, 977, L49, doi: 10.3847/2041-8213/ad9744 Rustamkulov, Z., Sing, D. K., Mukherjee, S., et al. 2023, Nature, 614, 659, doi: 10.1038/s41586-022-05677-y Ryabchikova, T., Piskunov, N., Kurucz, R. L., et al. 2015, Physica Scripta, 90, 054005, doi: 10.1088/0031-8949/90/5/054005 Sanghi, A., Liu, M. C., Best, W. M. J., et al. 2023, ApJ, 959, 63, doi: 10.3847/1538-4357/acff66 Sanghi, A., Thompson, W., Mang, J., et al. 2026a, AJ, 172, 115, doi: 10.3847/1538-3881/ae74c8 Sanghi, A., Mang, J., Llop-Sayson, J., et al. 2026b, AJ, 171, 225, doi: 10.3847/1538-3881/ae4909 Sato, M., & Hansen, J. E. 1979, Journal of the Atmospheric Sciences, 36, 1133, doi: 10.1175/1520-0469(1979)036 ⟨1133:JACACS ⟩2.0.CO;2 Saumon, D., & Marley, M. S. 2008, ApJ, 689, 1327, doi: 10.1086/592734 Saumon, D., Marley, M. S., Abel, M., Frommhold, L., & Freedman, R. S. 2012, ApJ, 750, 74, doi: 10.1088/0004-637X/750/1/74 Schneider, A. C., Munn, J. A., Vrba, F. J., et al. 2023, AJ, 166, 103, doi: 10.3847/1538-3881/ace9bf Skemer, A. J., Morley, C. V., Allers, K. N., et al. 2016, ApJL, 826, L17, doi: 10.3847/2041-8205/826/2/L17 Smith, W. H. 1978, Icarus, 33, 210, doi: 10.1016/0019-1035(78)90034-9 Sousa-Silva, C., Al-Refaie, A. F., Tennyson, J., & Yurchenko, S. N. 2014, Monthly Notices of the Royal Astronomical Society, 446, 2337, doi: 10.1093/mnras/stu2246 Spiegel, D. S., Burrows, A., & Milsom, J. A. 2011, ApJ, 727, 57, doi: 10.1088/0004-637X/727/1/57 Su´ arez, G., Faherty, J. K., Burningham, B., et al. 2025, ApJ, 993, 165, doi: 10.3847/1538-4357/ae0e6a Sudarsky, D., Burrows, A., Hubeny, I., & Li, A. 2005, ApJ, 627, 520, doi: 10.1086/430206 Sudarsky, D., Burrows, A., & Pinto, P. 2000, ApJ, 538, 885, doi: 10.1086/309160 Tremblin, P., Amundsen, D. S., Mourier, P., et al. 2015, ApJL, 804, L17, doi: 10.1088/2041-8205/804/1/L17 Tremblin, P., Padioleau, T., Phillips, M. W., et al. 2019, ApJ, 876, 144, doi: 10.3847/1538-4357/ab05db Underwood, D. S., Tennyson, J., Yurchenko, S. N., et al. 2016, Monthly Notices of the Royal Astronomical Society, 459, 3890 Virtanen, P., Gommers, R., Oliphant, T. E., et al. 2020, Nature Methods, 17, 261, doi: 10.1038/s41592-019-0686-2 Visscher, C. 2012, ApJ, 757, 5, doi: 10.1088/0004-637X/757/1/5 —. 2020, Journal of Geophysical Research (Planets), 125, e06526, doi: 10.1029/2020JE006526 Visscher, C., Lodders, K., & Fegley, Bruce, J. 2006, ApJ, 648, 1181, doi: 10.1086/506245 —. 2010a, ApJ, 716, 1060, doi: 10.1088/0004-637X/716/2/1060 Visscher, C., Moses, J. I., & Saslow, S. A. 2010b, Icarus, 209, 602, doi: 10.1016/j.icarus.2010.03.029 32 Mang et al. 
+
+Walt, S. v. d., Colbert, S. C., & Varoquaux, G. 2011, Computing in Science & Engineering, 13, 22 Wang, D., Lunine, J. I., & Mousis, O. 2016, Icarus, 276, 21, doi: 10.1016/j.icarus.2016.04.027 Wenger, C., & Champion, J. 1998, Journal of Quantitative Spectroscopy and Radiative Transfer, 59, 471, doi: https://doi.org/10.1016/S0022-4073(97)00106-4 Wogan, N. F., Mang, J., Batalha, N. E., et al. 2025, Research Notes of the American Astronomical Society, 9, 108, doi: 10.3847/2515-5172/add407 Yadin, B., Veness, T., Conti, P., et al. 2012, MNRAS, 425, 34, doi: 10.1111/j.1365-2966.2012.21367.x Yin, R., Li, Y., Li, Y., & Seager, S. 2026, ApJL, 1002, L27, doi: 10.3847/2041-8213/ae606a Yurchenko, S. N., & Tennyson, J. 2014, Monthly Notices of the Royal Astronomical Society, 440, 1649, doi: 10.1093/mnras/stu326 Yurchenko, S. N., Tennyson, J., Barber, R. J., & Thiel, W. 2013, Journal of Molecular Spectroscopy, 291, 69, doi: 10.1016/j.jms.2013.05.014 Yurchenko, S. N., Bowesman, C. A., Brady, R. P., et al. 2024, Monthly Notices of the Royal Astronomical Society, 533, 3442, doi: 10.1093/mnras/stae1849 Zahnle, K. J., & Marley, M. S. 2014, ApJ, 797, 41, doi: 10.1088/0004-637X/797/1/41

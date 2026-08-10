@@ -1,0 +1,203 @@
+Title: Effect of non-spherical projectiles on the structure of porous dust aggregates formed by coagulation
+
+URL Source: https://arxiv.org/pdf/2608.04277v1
+
+Published Time: Thu, 06 Aug 2026 00:21:10 GMT
+
+Number of Pages: 14
+
+Markdown Content:
+> Version August 6, 2026
+> Preprint typeset using L ATEX style openjournal v. 09/06/15
+
+EFFECT OF NON-SPHERICAL PROJECTILES ON THE STRUCTURE OF POROUS DUST AGGREGATES FORMED BY COAGULATION 
+
+Lucas Kolanz, Davide Lazzati 
+
+> Department of Physics, Oregon State University, 301 Weniger Hall, Corvallis, OR 97331, USA
+> Version August 6, 2026
+
+ABSTRACT Cosmic dust is ubiquitous in the universe, yet the structure and geometry of individual grains remain poorly understood. The existence of non-spherical, fluffy, and even fractal grain structures is predicted by numerical simulation and supported by observations of linear polarization of starlight. However, it has proven challenging to go beyond a qualitative investigation of such crucial grain characteristics. We present soft-sphere discrete element simulations of dust coagulation with sequential collisions using non-spherical projectiles of various sizes. We study the internal structure and geometry of the resulting aggregates under three growth conditions: a constant final aggregate size, a constant number of projectiles, and a constant projectile size. In most cases we allow for projectile internal restructuring, but we also test the effect of enforcing a constant projectile structure after impact. We find that aggregates’ porosity and fractal dimension depend both on the size and number of projectiles, and that their asymmetry and stretch parameters depend more on the number of projectiles than on projectile size. Overall, the grain porosity increases with both the number of projectiles and the size of the individual projectiles. Comparison with constraints from interstellar polarization indicates that none of our sufficiently large aggregates have structures capable of reproducing the observed polarization of starlight in the interstellar medium. We conclude that cosmic dust undergoes additional processing after coagulation to acquire structures consistent with observations. 
+
+1. INTRODUCTION 
+
+Cosmic dust is an important but often overlooked com-ponent of our universe. Not only is it a fundamental building block of asteroids, comets, and planetesimals, but it also plays key roles in many physical processes. The presence or absence of dust can even change the out-come of star formation and supernova explosions (Dopcke et al. 2025; Mart´ ınez-Gonz´ alez 2025) even though it only makes up a small fraction of these systems. Thus, un-derstanding where it comes from and how it interacts with its environment is important for understanding our universe and how it evolves. How dust interacts with its environment, whether that be through radiation or other dust particles, depends in part on its structure and other physical properties. The structure of cosmic dust has been estimated using numerical methods such as N-body simulations (Wada et al. 2007), analytical methods such as EMT-Mie the-ory and the Discrete Dipole Approximation (Ysard et al. 2018), experiments (Wurm & Blum 2000), and dust col-lected from the deep sea, space, and the stratosphere (Brownlee 1985). Dust in the interstellar medium (ISM) also polarizes starlight and produces polarized thermal emission. Dust grains tend to rotate with preferred orientations relative to external magnetic fields. This alignment produces an orientation-dependent extinction cross section that po-larizes starlight. Recently, Draine (2024b) put constraints on the struc-ture of dust in the interstellar medium (ISM) us-ing starlight polarization and polarized thermal emis-sion. They found highly porous dust must be flat-tened/elongated sufficiently to explain this polarization. In Kolanz et al. (2026), we used our soft-sphere dis-crete element method (ssDEM) code DECCO (Discrete Element Cosmic COllision) to simulate dust coagulation and explore the role of temperature on the structure of dust aggregates. In these simulations we grew aggregates one spherical monomer at a time, fully simulating each growth step to allow for the possibility of aggregate re-structuring. In this paper, we again fully simulate the collision of each projectile with the growing target aggregate, but now projectiles are themselves aggregates of a set num-ber of monomers. We then use the structural metrics ex-plored in Kolanz et al. (2026); Draine (2024a,b) to quan-tify the effects of projectile size and the number of projec-tiles on the resulting aggregate structure. Additionally, we test the difference between treating projectile aggre-gates as groups of monomers bound together purely with attractive forces versus treating them as rigid bodies, es-sentially treating projectiles as non-spherical elements. Using non-spherical elements in DEM simulations has historically run into limitations. The main problems stem from efficient collision detection, which is greatly complicated with non-spherical elements. Still, non-spherical elements are necessary in some systems in order to reproduce the correct bulk behavior. Non-spherical el-ements are important, e.g., for studying such systems as hopper discharge rates (Tangri et al. 2019), mixing of different granular materials (Govender et al. 2023), and arXiv:2608.04277v1 [astro-ph.GA] 4 Aug 2026 2 Kolanz L., Lazzati D. ballast mechanics (Hou et al. 2023). This manuscript is organized as follows: in section 2 we describe our simulation code and physical parameters, the aggregate growth schemes, and metrics for quantify-ing aggregate structure. In section 3 we describe the results of our simulations. Section 4 summarizes and discusses our results and their implications. Throughout this work, the term “particle” refers to ei-ther a solid piece of dust or a dust aggregate. We use the term “monomer” to refer to an individual, spheri-cal, solid dust particle. A monomer is the smallest unit treated in our simulations and has a radius of the order 
+
+∼ 0.1 μm. The term “aggregate” denotes a bound col-lection of monomers held together by attractive forces or treated as a rigid body. A “fragment” is a projectile which is itself an aggregate, used to grow a larger tar-get aggregate. We refer to the number of monomers in an aggregate or fragment as its “size”. During a colli-sion, the larger-sized grain is referred to as the target and the smaller as the projectile. If they are the same size, the target and projectile aggregates will be defined as needed. We group metrics of aggregate structure into two categories: the “internal structure”, which refers to the porosity and fractal dimension, and the “geometry”, which refers to the asymmetry and stretch parameters (defined in Section 2.3). In this study we focus on frag-ments as projectiles. However, in limiting cases, we in-clude monomers as projectiles.   
+
+> 2. METHODS
+> 2.1.
+
+Numerical Simulation 
+
+For this study we use the DECCO code (Guidos et al. 2025; Kolanz et al. 2026) to run three-dimensional, ss-DEM dust coagulation simulations to produce dust ag-gregates. Projectiles in this study are also aggregates of various sizes grown in Kolanz et al. (2026). These aggre-gates are made up of monomers whose radii were drawn from a lognormal distribution. The standard deviation of the lognormal distribution is set to σ = 0 .2. Monomers in the final aggregates have radii ranging from 0.04 to 0.20 μm. The final aggregate radii range from 0.29 to 4.68 μm, measured as the distance from the aggregate’s center of mass to the furthest monomer’s center. Monomers have a density of ρ = 2 .25 g/cm 3, consistent with graphite. Depending on external conditions, the coefficient of friction of graphite can vary greatly. We use a value of μk=0.1 (Morstein et al. 2022) for the coefficient of sliding friction and μr = 10 −5 for the coefficient of rolling friction, both at the low end. These are the same parameters used in Kolanz et al. (2026). DECCO treats contact forces between monomers as linear springs with a constant coefficient of restitution. If kin and kout are the spring constants during compres-sion and decompression, respectively, the coefficient of restitution is calculated as 
+
+ϵ = pkout /k in . (1) Since kin > k out , this saps energy from the system, mimicking energy dissipation from plastic deformation. It is also applicable for particles of various sizes. In or-der to treat the soft, compressible nature of real matter, 
+
+kin is set such that there will be multiple time steps cal-culated for any collision in the simulation. Then kout is set based on equation 1. The code used here is the same as that used in Kolanz et al. (2026), with the addition of rigid body physics. Aggregates treated as rigid bodies consist of monomers that cannot move relative to one another. This is known as the clumped or multi-sphere method (Favier et al. 1999). We follow Favier et al. (1999) for our implemen-tation. However, we use quaternions to track rotations and move between reference frames (Kartiwa et al. 2023). To calculate forces on a rigid body, monomer-monomer forces and torques are calculated for all pairs of monomers not part of the same rigid body 1. The total force on a rigid body is then calculated as ⃗Fj = X
+
+> i∈Gj
+
+⃗Fi, (2) where ⃗ Fj is the total force on body j,⃗ Fi is the total force on monomer i from all other monomers not in group j,and Gj is the set of monomers in body j. The body’s acceleration is then simply ⃗a j =⃗ Fj /m j , (3) where mj is the mass of body j.The total torque on a rigid body is calculated as ⃗τ j = X
+
+> i∈Gj
+
+(⃗r i,j ×⃗ Fi +⃗τ i) (4) where ⃗τ j is the total torque on body j,⃗r i,j is the dis-placement vector from the center of mass of body j to the center of monomer i, and ⃗τ i is the total monomer-monomer torque experienced by monomer i.The body’s angular acceleration is then calculated as ⃗α body,j = I−1 
+
+> body,j
+
+(⃗τ body,j −⃗ω body,j × Ibody,j ⃗ω body,j ) (5) where ⃗α body,j is the angular acceleration, Ibody,j is the moment of inertia tensor, ⃗τ body,j is the total torque, and ⃗ω body,j is the angular velocity, all of which are of body j
+
+and in the body-fixed frame. A body’s velocity ⃗v j , angular velocity ⃗ω body,j , and cen-ter of mass position ⃗r j are then found by integrating with the half-step Verlet method (Verlet 1967). Individual monomer velocities and angular velocities are then obtained using ⃗v i =⃗v j +⃗ω j ×⃗r i,j (6) ⃗ω i =⃗ω j (7) where ⃗v i is the velocity of monomer i,⃗v j is the velocity of body j, and ⃗ω i is the angular velocity of monomer i.Translational quantities are stored in the inertial sim-ulation frame, while angular quantities are stored in the body-fixed frame to avoid recalculating the moment of inertia tensor in the inertial frame for each body at each timestep. We rotate between frames as needed using quaternions. A vector quantity of body j (for example, ⃗p j ) can be  
+
+> 1Quantities labeled with the “body” subscript are in the body-fixed frame and those without are in the inertial simulation frame.
+
+Effect of non-spherical projectiles on dust aggregates 3
+
+Fig. 1.— Example grains for all growth methods tested in this study. Growth methods are color-coded. Grains grown to a final size of N = 300 monomers (CAS) are green, grains grown with C = 30 fragments each (CNP) are blue, grains grown with fragments of size 
+
+M = 20 (CFS) are pink, and grains grown to a final size of 300 monomers using rigid body fragments (wCAS) are yellow. The fragment size M (or number of projectiles C) used is listed above each grain. 4 Kolanz L., Lazzati D. rotated from the body-fixed frame to the inertial frame with ⃗p j =⃗p body,j + 2 q0,j (qv,j ×⃗p body,j ) + 2 qv,j × (qv,j ×⃗p body,j )(8) where qj is the unit quaternion describing the rotation from body-fixed to inertial frames for group j with scalar component q0,j and vector component qv,j , and ⃗p j and ⃗p body,j are the representations of the vector in the inertial and body-fixed frames, respectively. The rotation from the inertial frame to the body-fixed frame is then ⃗p body,j =⃗p j − 2q0,j (qv,j ×⃗p j ) + 2 qv,j × (qv,j ×⃗p j ). (9) At each timestep qj is updated with 
+
+qn+1 ,j = qn,j ⊗ exp 
+
+ dt 
+
+2
+
+
+
+0,⃗ ω n+1 /2
+
+> body,j
+
+
+
+(10) where qn,j is body j’s quaternion at timestep n, dt is the timestep, ⊗ is the quaternion product, and ⃗ω n+1 /2 
+
+> body,j
+
+is the half-step angular velocity of group j in the body-fixed frame (Kartiwa et al. 2023).  
+
+> 2.2.
+
+Aggregate Growth 
+
+Aggregates in this study were grown using sequential collisions (Suyama et al. 2008; Kolanz et al. 2026). In sequential collisions, all growth steps are fully simulated, allowing for the possibility of aggregate restructuring. This differs from sequential sticking where projectiles are simply stuck on the growing aggregate and no restruc-turing is possible. In Kolanz et al. (2026) we grew aggre-gates one monomer at a time with sequential collisions and sequential sticking in order to compare them. We include the same sequential sticking data in some figures in this paper for the same reason. We assume that the projectiles are in thermal equilib-rium 2 with the surrounding gas. Their initial velocities are therefore drawn from a Maxwell-Boltzmann distri-bution determined by the projectile mass and ambient temperature and are thus strictly thermal. In general, aggregates form denser structures at higher temperatures because monomers have enough energy to restructure upon impacts but not enough energy to fracture the grain (Kolanz et al. 2026). A value of 1000 K is used as the temperature for all simulations in this paper. Projectiles in this study are themselves aggregates (which we term “fragments”) which consist of various numbers of monomers (which we refer to as the aggre-gates’ “size”). These fragments are taken from a random aggregate at a given stage in its growth from Kolanz et al. (2026). All aggregates are grown with fragments of a constant number of monomers. In Kolanz et al. (2026) aggregates naturally gain and lose angular momentum as additional monomers deposit onto them. Thus, each   
+
+> 2The assumption of thermal equilibrium was used in Kolanz et al. (2026) to isolate and study the effect of thermal velocities on the structure of growing aggregates, and is kept in this study to stay consistent. In some astrophysical environments grains reach higher speeds due to magnetohydrodynamic turbulence (Yan et al. 2004).
+
+fragment’s initial angular velocity is carried over from its last growth step. Fragments are given a random direc-tion and offset before a collision. The offset is uniformly chosen in both dimensions of the plane perpendicular to the projectile’s direction, and can range between plus or minus the target aggregate’s initial radius, calculated as the distance from the furthest monomer’s center to the center of mass of the aggregate. Typical final aggregates for all growth schemes are shown in Figure 1. The aggregates grown for this study can be parameter-ized by three values: the total number of monomers in the aggregate N , the number of monomers in projectile fragments M , and the total number of projectiles used to grow the aggregate C. These parameters are related by the simple equation N = CM .Thus, we have carried out three main studies. In each study, we keep one parameter constant, vary another over a specified range, and set the third such that N = CM .The first study sets N = 300 and varies M = 1, 3, 5, 10, 15, 20, 30, 50, 60, 75, 100, 150, 300 (or equivalently 
+
+C = 300, 100, 60, 30, 20, 15, 10, 6, 5, 4, 3, 2, 1). This set will be referred to as constant aggregate size (CAS) and is shown in green throughout this paper. The second study sets C = 30 and varies M = 1, 3, 5, 10, 15, 20, 30, 50, 60 (or equivalently N = 30, 90, 150, 300, 450, 600, 900, 1500, 1800). This set will be referred to as constant number of projectiles (CNP), and is shown in blue. Lastly, we set M = 20 and vary C = 1, 2, 3, 4, 5, 6, 10, 15, 20, 30 (or equivalently N = 20, 40, 60, 80, 100, 120, 200, 300, 400, 600). This set will be referred to as constant fragment size (CFS) and is shown in pink. In addition to these sets, we ran an additional CAS set for M = 3, 15, and 100 where fragments are treated as rigid bodies instead of loosely bound aggregates to study how much fragments restructure upon impact. This set will be referred to as welded constant aggregate size (wCAS) and is shown in yellow. Each ( N, M, C ) combination was simulated 30 times with a different random seed (i.e., different projectile fragments, fragment velocities, directions, and collision offsets). The presented results are averaged over those 30 runs. Error bars represent the standard error.  
+
+> 2.3.
+
+Quantifying Aggregate Structure 
+
+The structures of the final aggregates are quantified using several metrics previously applied and evaluated by Kolanz et al. (2026), including the equivalent ellip-soid porosity Pabc , the gyration radius porosity PKBM ,the geometric-cross-section-based porosity Pgcs , and the fractal dimension Df . In addition to these metrics, the asymmetry parameter A (Draine 2024b) and stretch pa-rameter S (Draine 2024a) are also calculated. Draine (2024b) and Shen et al. (2008) define the di-mensionless quantities 
+
+αi ≡ Ii
+
+0.4magg r2
+
+> ef f
+
+(11) where I is the moment of inertia tensor of the aggre-gate with eigenvalues I1 ≥ I2 ≥ I3, ref f is the ra-dius of the single equivalent sphere and is defined as 
+
+ref f ≡ [3 magg /(4 πρ )] 1/3, and magg is the total mass of the aggregate. Using these, the asymmetry parameter is Effect of non-spherical projectiles on dust aggregates 5       
+
+> Fig. 2.— Equivalent ellipsoid porosity Pabc vs number of monomers in projectile fragments, M. Points are plotted with an image of a representative final aggregate to visualize their structural range. All aggregates in this figure are CAS aggregates, and consist of N= 300 total monomers.
+
+A ≡ 
+
+ α1
+
+α2 + α3 − α1
+
+1/2
+
+. (12) The asymmetry parameter is at a minimum of A = 1 for a sphere and A > 1 for elongated or flattened shapes. In Draine (2024b) the asymmetry parameter and porosity of interstellar dust are constrained using starlight polarization and polarized thermal emission. Draine finds that observed polarization can only be ex-plained if the asymmetry and porosity (they used Pabc 
+
+specifically) of interstellar dust follow the relationship 
+
+A ≳ 1 + 0.49 (1 − P abc )4/3 . (13) The stretch parameter is introduced as a way to distin-guish flattened or oblate (1 /√2 < S < 1) from elongated or prolate ( S > 1) shapes. It is defined as 
+
+S ≡ α2
+
+(α1α3)1/2 . (14)  
+
+> 3. RESULTS
+
+We find that the structure of an aggregate grown with sequential collisions is highly dependent on the struc-ture and shape of its constituent projectiles. As seen in Figures 2, 3, and 4, Pabc doubles over two orders of mag-nitude in projectile size, an impressive difference for a parameter that ranges from 0 ≤ P abc ≤ 1. Thus, pro-jectile shape is a significantly greater driver of porosity and geometry than temperature. Kolanz et al. (2026) find that Pabc varies only by 0.05 ( ∼ 10% of the varia-tion seen in this study) over two orders of magnitude in temperature. The main difference between this work and Kolanz et al. (2026) is that the present study uses non-spherical projectiles. For M > 1, projectiles are non-spherical, and thus cannot roll as easily into existing voids in the target aggregate. For M = 1, projectiles are perfectly spherical monomers. Being perfect spheres, these pro-jectiles can roll after their initial impact and more easily find and fill existing voids in an aggregate. All the aggre-gates discussed in Kolanz et al. (2026) were grown with 
+
+M = 1, and all M = 1 aggregates in this study come from Kolanz et al. (2026). Additionally, we find that treating aggregates as rigid bodies rather than loosely bound aggregates has little effect on the final aggregate structure for the thermal velocities considered in this study. The slight differences seen are not statistically significant and appear to be dominated by the chaotic nature of the N-body problem. In the following, we analyze in greater detail the ef-6 Kolanz L., Lazzati D.        
+
+> Fig. 3.— Equivalent ellipsoid porosity Pabc vs number of monomers in projectile fragments, M.Points are plotted with an image of a representative final aggregate to visualize the structural range. All aggregates in this figure are CNP aggregates, and were grown with
+> C= 30 projectiles each.
+
+fects of projectile size ( M ), number of projectiles ( C), and final aggregate size ( N ) on the structure of the ag-gregates. To quantify structure, we use four different porosity metrics defined in Kolanz et al. (2026), as well as the two shape parameters defined in Section 2.3.  
+
+> 3.1.
+
+Constant Aggregate Size (CAS) 
+
+When grown to a constant final size of N = 300 monomers, the structure of our CAS aggregates is cyclic over fragment size M and number of projectiles C. This is shown for Pabc in Figure 2, which is plotted with im-ages of the aggregates to better visualize the cyclic nature of their structure. It is also shown for all metrics in the green lines of Figures 5 and 6. The cyclic behavior is not surprising, as an ( N = 300, 
+
+M = 1) aggregate is identical to an ( N = 300, M = 300) aggregate grown at 1000 K in Kolanz et al. (2026). The rest of the variation in intermediate M values is due to differences in non-spherical projectiles. Starting at 
+
+M = 1, projectile monomers are able to roll into existing gaps until multiple contacts are made between the new monomer and the aggregate. At M = 3, projectiles start with contacts, and thus cannot make as many additional contacts upon impact with the target aggregate. As M
+
+gets larger, even fewer new contacts per existing con-tact and projectile are made with the target aggregate, leading to a higher porosity. Eventually this effect is bal-anced out and overcome as M gets even larger (and C
+
+gets smaller). At this point, the limited number of total projectiles in the aggregate means there are less porous configurations possible, and so porosity goes back down. Since porosity and fractal dimension are anticorrelated (a higher porosity corresponds to a lower fractal dimen-sion and vice versa), it is unsurprising that the fractal dimension is also cyclic, but with a minimum instead of a maximum. This anticorrelation is seen in all plots of 
+
+P and Df , and so further discussion will focus on the porosity, but is still applicable to the fractal dimension. A similar cyclic trend is seen with A and S for CAS aggregates in Figure 5. However, the peak occurs much later, around M ∼ (60 − 100). This difference reflects how A and S are dependent only on the geometry of the aggregate and not the internal structure such as Pabc ,
+
+PKBM , Pgcs , and Df . Metrics that focus on the geome-try are not sensitive to the different internal voids caused by fragments of different sizes. Thus, void size peaks for 
+
+M ∼ 15, but the fewer projectiles in an aggregate, the more aspherical its final structure. This tells us an ag-gregate’s geometry is highly dependent on the number of projectiles. Effect of non-spherical projectiles on dust aggregates 7          
+
+> Fig. 4.— Equivalent ellipsoid porosity Pabc vs number of monomers in the final aggregate, N.Points are plotted with an image of a representative final aggregate to visualize the structural range. All aggregates in this figure are CFS aggregates, and were grown with a constant fragment size of M= 20 monomers.
+> 3.2.
+
+Constant Number of Projectiles (CNP) 
+
+Due to the dependence of an aggregate’s final structure on the number of projectiles, we also study aggregates grown with a constant number of projectiles C = 30. These CNP aggregates and their Pabc values are shown in Figure 3. All structural metrics for the CNP aggregates are shown by the blue lines of Figures 5 and 7. The porosity of these aggregates grows monotonically with M and N , as does their overall size, visualized in Figure 3. However, porosity and size are not simply cor-related, highlighting the growth path in the structure of the final aggregate. If we compare the M = 1 points in Figure 5a, we see a difference in Pabc of around 0.1 when aggregates are grown with 30 vs. 300 monomers. If we instead compare aggregates grown with 30 projectiles of 10 monomers each and those grown with 300 individ-ual monomers, the porosity differs by around 0.35. The additional difference is due to larger voids in aggregates made up of fragments, as fragments tend not to roll and restructure upon impact as a monomer would. The observation in the previous section that an aggre-gate’s geometry is highly dependent on the number of projectiles C rather than fragment size M is consistent here, where A and S are mostly constant for a constant number of non-spherical projectiles of all sizes.  
+
+> 3.3.
+
+Constant Fragment Size (CFS) 
+
+Additionally, we grew aggregates with various numbers of projectiles made up of M = 20 monomer fragments. These CFS aggregates, along with their porosities, are shown in Figure 4. The dependence of all structural met-rics on C and N for the CFS aggregates is shown in the pink lines of Figures 6 and 7. Porosity increases monotonically with C and N for CFS aggregates, consistent with the porosity of CNP ag-gregates. On the other hand, the asymmetry and stretch param-eters now follow the CAS aggregates. This is visualized in the bottom panels of Figure 6, and again indicates these parameters (and thus an aggregate’s geometry) are highly dependent on the number of projectiles C. 
+
+> 3.4.
+
+Aggregate Shape 
+
+None of our aggregates with N > 60 are within the asymmetry-porosity space allowed by Equation 13, shown in Figure 8. Only the N = 40 and N = 60 CFS aggregates are within the region. The closest ag-gregates to the allowable region are the ones formed by three or fewer fragments, which seems to be a sweet spot for asymmetry vs porosity. With only three projectiles, the final aggregate has a good chance of those projec-8 Kolanz L., Lazzati D. 
+
+Fig. 5.— Structural metrics vs fragment size M for CAS, CNP, and wCAS aggregates. The green line represents aggregates grown to a constant final aggregate size of N = 300 (CAS). The blue line represents aggregates grown with a constant number of projectiles C = 30 (CNP). The yellow points represent aggregates grown to a final size of N = 300 where each projectile is a rigid body (wCAS). Effect of non-spherical projectiles on dust aggregates 9
+
+Fig. 6.— Structural metrics vs number of projectiles C for CAS and CFS aggregates. The green line represents aggregates grown to a constant final aggregate size of N = 300 (CAS). The pink line represents aggregates grown with a constant fragment size M = 20 (CFS). 10 Kolanz L., Lazzati D. 
+
+Fig. 7.— Structural metrics vs final aggregate size N for CNP and CFS aggregates. The blue line represents aggregates grown with a constant number of projectiles of C = 30 (CNP). The pink line represents aggregates grown with a constant fragment size of M = 20 (CFS). Effect of non-spherical projectiles on dust aggregates 11 
+
+Fig. 8.— Asymmetry parameter vs equivalent ellipsoid porosity for all types of simulations. The green line represents CAS aggregates grown to a constant final size of N = 300 monomers, parameterized over the fragment sizes M = 1, 3, 5, 10, 15, 20, 30, 50, 60, 75, 100, 150, and 300. The blue line represents CNP aggregates grown with C = 30 projectiles, parameterized over the fragment sizes M = 1, 3, 5, 10, 15, 20, 30, 50, and 60. The pink line represents CFS aggregates grown with a constant fragment size of M = 20 monomers, parameterized over the number of projectiles C = 1, 2, 3, 4, 5, 6, 10, 15, 20, and 30. The yellow points represent wCAS aggregates, which are the same as the green but each projectile is treated as a rigid body, for projectiles of M = 3, 15, and 100 monomers. 12 Kolanz L., Lazzati D.                          
+
+> Fig. 9.— Ratios of the equivalent ellipsoid semi-major axes, c/a vs b/a for all aggregates in this study, where a > b > c .Given this constraint, the area above y=xis forbidden. The closer an aggregate is to (0 ,0), the closer it is to a one-dimensional needle. The closer it is to (1 ,0), the closer it is to a plane. The closer it is to (1 ,1), the closer it is to a sphere. Numbers next to the points indicate the projectile size M, except in the bottom-right panel, where they indicate the number of projectiles C. CAS aggregates with N= 300 are plotted in all panels for comparison. Note that for CAS aggregates, M= 1 and M= 300 are the same point.
+
+tile fragments connecting along a single axis. With two projectiles, even though they must connect along a sin-gle axis, the final aggregate is less asymmetric than those with three projectiles. With four projectiles, the final ag-gregate is unlikely to form along a single axis and thus, on average, does not form as asymmetric a structure as with two or three projectiles. This is consistent with the results of Draine (2024b), who found three-sphere configurations have polarization properties closer to observational constraints than two spheres. An intuitive way to discuss the geometry of aggregates is in ellipsoid axis space. Figure 9 shows c/a vs b/a ,where a > b > c are the axes of the equivalent ellipsoid fit to each aggregate. In this space, all shapes fall below the 
+
+c/a = b/a line by definition. Locations near ( b/a, c/a ) = (0 , 0), (1 , 0), and (1 , 1) correspond to a needle, a flat disk, and a sphere, respectively. Effect of non-spherical projectiles on dust aggregates 13 In general, for CAS aggregates grown to N = 300 par-ticles, a smaller fragment size ( M ) and more projectiles (C) produce more spherical final aggregates. Aggregates then become more needle-like as we increase M and de-crease C. These aggregates have a similar distance from the disk corner, except for a fragment size of M = 150, which is less disk-like than the rest. CNP aggregates grown with a constant number of pro-jectiles C = 30 tend to cluster in the same area regardless of the fragment size ( M ) used. CFS aggregates grown with M = 20 monomer frag-ments follow the same trend as CAS aggregates, where more non-spherical projectiles C > 1 produce more spherical aggregates, and fewer projectiles produce more needle-like aggregates. Again, the aggregates formed with two projectiles are less disk-like than the rest of the aggregates. Thus, differences in axis space seem to primarily be due to the number of projectiles C making up the final aggregate, as with the asymmetry and stretch parame-ters. As in previous sections, the rigid body wCAS aggre-gates are consistent with the bound CAS aggregates.  
+
+> 4. SUMMARY AND DISCUSSION
+
+We have numerically grown aggregates using sequential collisions to study the effect of non-spherical projectiles on aggregate structure. We find that aggregates grown with non-spherical projectiles have significantly different structures than those grown with spherical projectiles. At thermal velocities, spherical projectiles are able to roll on the target aggregate and fill voids, while non-spherical projectiles cannot roll, and do not have enough energy to restructure upon impact, mostly stick-ing where they impacted. Thus, aggregates grown with non-spherical projectiles are less dense (higher porosity, lower fractal dimension) than those grown with spheri-cal projectiles. We see a similar effect on the asymmetry and stretch parameters. Non-spherical projectiles can stick where they land, leading to relatively less spherical final aggregates. We also find that an aggregate’s final structure is cor-related with three variables: the number of projectiles that make up the aggregate C, the size of projectiles M ,and the final size of the aggregate N .The porosity is positively correlated with both the size of projectiles M and number of projectiles C in our CNP and CFS aggregates. This is seen in the blue lines of Figures 5 and 7 and in the pink lines of Figures 6 and 7. This is due to larger projectiles and more projectiles both being able to create larger voids in the final aggregate. The correlation of the asymmetry and stretch parame-ters with the size of projectiles M and number of projec-tiles C is more complicated. The asymmetry and stretch parameters depend only weakly on projectile size M . On the other hand, varying the number of projectiles C has a non-linear effect on these parameters. In this case, asym-metry and stretch parameters peak for 1 < C ≲ 10. At low C, aggregates formed from only a few projectiles can adopt only a limited number of highly asymmetric con-figurations. As C increases beyond approximately ten, the number of possible configurations increases, and the average aggregate becomes more spherical. For CAS aggregates grown to a final size of N = 300 (green lines of Figures 5 and 6), porosities peak for M on the order of ten. This peak is caused by the competing effects of projectile size M and number of projectiles C.Increasing both M and C increases porosity, but to keep 
+
+N = 300 and satisfy N = CM , one of M or C must decrease as the other increases. Fragments treated as rigid bodies (wCAS aggregates) do not form aggregates appreciably different from those formed by fragments held together solely by attractive forces when collision velocities are thermal. This is seen in the yellow dots of Figures 5, 8, and 9, which agree with their CAS counterparts. Overall, the geometry of aggregates (asymmetry pa-rameter, stretch parameter, ellipsoid axis space) depends heavily on the number of projectiles C, with more projec-tiles corresponding to a more spherical final aggregate. The geometry of aggregates is only weakly tied to the size of fragments M . On the other hand, the porosity and fractal dimensions depend heavily on both the size of fragments M and the number of projectiles C.None of our final aggregates with N > 60 monomers have structures that conform to the constraint (Equa-tion (13)) Draine (2024b) found to explain starlight polarization and polarization from thermal emission. In agreement with Draine (2024b), aggregates formed with fewer fragments are closest to aligning with Equa-tion (13), as they are less porous and more asymmetric. Again in agreement with Draine (2024b), our results suggest aggregates formed through coagulation need ad-ditional processing before they can be responsible for observed polarization. This is consistent with decades of results suggesting that dust is continually processed from the time it is formed in asymptotic giant branch stars (Sandin & H¨ ofner 2004; Gobrecht et al. 2016), su-pernovae (Slavin et al. 2015; Kirchschlager et al. 2024), and molecular clouds (Ossenkopf 1993; Bergin et al. 1995; Vallucci-Goy et al. 2024) to when it is present in the in-terstellar medium (Draine 1990; Galliano et al. 2018). Processes that could push aggregates toward being more asymmetric and less porous could include photolytic den-sification or grain-grain collisions as suggested by Draine (2024b), or processing in shocks. In the case of grain-grain collisions, aggregates could become flatter and less porous through superthermal col-lisions. The fragments themselves could also have differ-ent structures if the assumption of thermal equilibrium is relaxed during their growth, though more simulations are necessary to reach these conclusions. An additional source of uncertainty in this study is our interaction model. Although our model is relatively simple and inexpensive computationally, it has a smaller barrier to rolling than other models such as the Johnson-Kendall-Roberts (JKR) contact model (Johnson et al. 1971). A comparison of aggregate structures produced by sequential collisions using our model and the JKR model will be explored in future work. Still, having a smaller barrier to rolling means less porous final aggregates, so it is unlikely the JKR model will create aggregates that better align with Equation (13). It is also unlikely that aggregates in nature grow through collisions with consistently sized projectiles, as has been done in this study. In reality, the number of monomers in a projectile will vary between collisions and change over time as the populations of smaller projec-14 Kolanz L., Lazzati D. tiles are used up. This will be addressed in future work (Kolanz and Lazzati in preparation). LK and DL acknowledge Job Guidos’ contributions to the development of DECCO and useful discussions dur-ing the preparation of this work. LK acknowledges finan-cial support from the ARCS Foundation Oregon, as well as access to facilities and help developing the DECCO code from Dr. Doru Thom Popovici and Dr. Mauro Del Ben with the Applied Computing for Scientific Discovery group at LBNL. 
+
+REFERENCES Bergin, E. A., Langer, W. D., & Goldsmith, P. F. 1995, The Astrophysical Journal, 441, 222, aDS Bibcode: 1995ApJ...441..222B Brownlee, D. E. 1985, Annual Review of Earth and Planetary Sciences, 13, 147 Dopcke, G., Glover, S. C. O., Clark, P. C., & Klessen, R. S. 2025, The Astrophysical Journal Letters, 729, L3 Draine, B. T. 1990, in Astronomical Society of the Pacific Conference Series, Vol. 12, The Evolution of the Interstellar Medium, ed. L. Blitz (San Francisco: Astronomical Society of the Pacific), 193–205 Draine, B. T. 2024a, The Astrophysical Journal, 961, 103 —. 2024b, The Astrophysical Journal, 969, 92, ADS Bibcode: 2024ApJ...969...92D Favier, J., Abbaspour-Fard, M., Kremmer, M., & Raji, A. 1999, Engineering Computations, 16, 467 Galliano, F., Galametz, M., & Jones, A. P. 2018, Annual Review of Astronomy and Astrophysics, 56, 673, aDS Bibcode: 2018ARA&A..56..673G Gobrecht, D., Cherchneff, I., Sarangi, A., Plane, J. M. C., & Bromley, S. T. 2016, Astronomy and Astrophysics, 585, A6, aDS Bibcode: 2016A&A...585A...6G Govender, N., Kobylka, R., & Khinast, J. 2023, Chemical Engineering Science, 270, 118499 Guidos, J., Kolanz, L., & Lazzati, D. 2025, The Open Journal of Astrophysics, 8, 119 Hou, W., Li, A., & Song, W. 2023, Scientific Reports, 13, 14810 Johnson, K., Kendall, K., & Roberts, A. 1971, Proceedings of the Royal Society of London. A. Mathematical and Physical Sciences, 324, 301 Kartiwa, A., Supriatna, A. K., Rusyaman, E., & Sulaiman, J. 2023, Axioms, 12, 483 Kirchschlager, F., Sartorio, N. S., De Looze, I., et al. 2024, Monthly Notices of the Royal Astronomical Society, 528, 5364 Kolanz, L., Lazzati, D., & Guidos, J. 2026, The Open Journal of Astrophysics, 9, doi:10.33232/001c.158771 Mart´ ınez-Gonz´ alez, S. 2025, Astronomy & Astrophysics, 702, L6 Morstein, C. E., Klemenz, A., Dienwiebel, M., & Moseler, M. 2022, Nature Communications, 13, 5958, publisher: Nature Publishing Group Ossenkopf, V. 1993, Astronomy and Astrophysics, 280, 617, aDS Bibcode: 1993A&A...280..617O Sandin, C., & H¨ ofner, S. 2004, Astronomy & Astrophysics, 413, 789 Shen, Y., Draine, B. T., & Johnson, E. T. 2008, The Astrophysical Journal, 689, 260 Slavin, J. D., Dwek, E., & Jones, A. P. 2015, Astrophysical Journal, 803, 7 Suyama, T., Wada, K., & Tanaka, H. 2008, The Astrophysical Journal, 684, 1310 Tangri, H., Guo, Y., & Curtis, J. S. 2019, Chemical Engineering Science: X, 4, 100040 Vallucci-Goy, V., Lebreuilly, U., & Hennebelle, P. 2024, Astronomy & Astrophysics, 690, A23 Verlet, L. 1967, Phys. Rev., 159, 98 Wada, K., Tanaka, H., Suyama, T., Kimura, H., & Yamamoto, T. 2007, The Astrophysical Journal, 661, 320 Wurm, G., & Blum, J. 2000, The Astrophysical Journal, 529, L57 Yan, H., Lazarian, A., & Draine, B. T. 2004, The Astrophysical Journal, 616, 895, publisher: IOP Publishing Ysard, N., Jones, A. P., Demyk, K., Bout´ eraon, T., & Koehler, M. 2018, Astronomy and Astrophysics, 617, 1 
+
+This paper was built using the Open Journal of As-trophysics L ATEX template. The OJA is a journal which provides fast and easy peer review for new papers in the 
+
+astro-ph section of the arXiv, making the reviewing pro-cess simpler for authors and referees alike. Learn more at http://astro.theoj.org.

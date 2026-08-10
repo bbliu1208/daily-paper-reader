@@ -1,0 +1,810 @@
+Title: Pyrat Bay 2.0: an Upgraded Framework for Exoplanet Atmosphere Modeling in the JWST Era
+
+URL Source: https://arxiv.org/pdf/2608.07128v1
+
+Published Time: Mon, 10 Aug 2026 01:02:23 GMT
+
+Number of Pages: 16
+
+Markdown Content:
+MNRAS 000 , 1–15 (2026) Preprint 10 August 2026 Compiled using MNRAS L ATEX style file v3.2 
+
+# Pyrat Bay 2.0: an Upgraded Framework for Exoplanet Atmosphere Modeling in the JWST Era 
+
+# Patricio E. Cubillos 1,2∗, Jasmina Blecic 3,4, Denis Shulyak 5, and Luca Fossati 1
+
+> 1
+
+Space Research Institute, Austrian Academy of Sciences, Schmiedlstrasse 6, A-8042, Graz, Austria 
+
+> 2
+
+INAF – Osservatorio Astrofisico di Torino, Via Osservatorio 20, 10025 Pino Torinese, Italy 
+
+> 3
+
+Department of Physics, New York University Abu Dhabi, PO Box 129188, Abu Dhabi, UAE 
+
+> 4
+
+Center for Astrophysics and Space Science (CASS), New York University Abu Dhabi, PO Box 129188, Abu Dhabi, UAE 
+
+> 5
+
+Instituto de Astrofísica de Andalucía - CSIC, c/ Glorieta de la Astronomía s/n, 18008 Granada, Spain 
+
+Accepted XXX. Received YYY; in original form ZZZ 
+
+ABSTRACT 
+
+This article presents a major update to the open-source Pyrat Bay modeling framework (version 2.0), tailored for the char-acterization of exoplanet atmospheres with the observational capabilities of current facilities, such as the James Webb Space Telescope ( JWST ), and future missions. The upgraded framework introduces a standalone chemistry package, chemcat, enabling the modeling of exoplanet atmospheres via thermochemical-equilibrium calculations with custom compositions, self-consistent radiative-equilibrium thermal profiles, and equilibrium-chemistry retrievals. Other key implementations include nested sam-pling via MultiNest, isotopic-ratio fitting, transit light source modeling, and free-chemistry parameterization allowing vertical variations in volume mixing ratios. We validated the thermochemical- and radiative-equilibrium modules via comparisons with the GGchem, FastChem, and HELIOS codes. We present an application of the new modeling framework by conducting an atmospheric characterization study using simulated transmission spectra of high signal-to-noise observations for a gas-giant exoplanet. We found that vertical abundance variations in planetary atmospheres can be accurately recovered using data of JWST 
+
+quality. In such cases, retrievals that neglect these variations may result in biased abundance constraints, e.g., when employing the commonly used free-chemistry approach assuming constant abundance profiles. The results highlight the potential of JWST 
+
+to study the multi-dimensional nature of exoplanetary atmospheres and their underlying physical processes. 
+
+Key words: planets and satellites: atmospheres — radiative transfer — techniques: spectroscopic 
+
+1 INTRODUCTION 
+
+The more than 6000 exoplanets known to date provide a vast and diverse sample of environments to study planetary physics (e.g., Borucki 2016; Sing et al. 2016; Fulton & Petigura 2018). By test-ing our theoretical models against observations across this popula-tion, we can refine our understanding of the physical processes that shape both individual planets and the population as a whole. This is challenging, however, because the observed properties of exoplanets reflect the combined effects of multiple past and ongoing processes throughout their histories. The formation path of planets from their protoplanetary disks determines the building blocks that make up the planets’ composition (e.g., Öberg et al. 2011; Mordasini et al. 2016; Pacetti et al. 2022). Then, hydrodynamic escape and migra-tion processes can alter the metal fraction of atmospheres over time or lead to the total loss of primary atmospheres (e.g., Lammer et al. 2003; Kubyshkina et al. 2019; Louca et al. 2023). Lastly, chemical (e.g., Fegley & Lodders 1996; Visscher et al. 2006; Moses 2014) and dynamical processes (e.g., Showman et al. 2009; Agúndez et al. 2012) shape the atmospheric composition of planets across different pressure levels and latitudinal and longitudinal locations. 
+
+∗E-mail: patricio.cubillos@oeaw.ac.at 
+
+Time-series observations of transiting exoplanets has become one of the most effective tools for probing exoplanet atmospheric com-positions and other properties (Charbonneau et al. 2000). However, interpreting exoplanet observations is a degenerate problem. Only through the detection of multiple species and the precise measure-ment of their abundances can we begin to disentangle the impact of the multiple physical processes mentioned above (e.g., Fortney et al. 2020; Baeyens et al. 2021, 2022). To constrain multiple species, one needs to distinguish their unique individual spectral signatures, which requires probing a broad spectral range at sufficient resolu-tion and signal-to-noise ratio. Fortunately, the start of operations of new instrumentation has recently begun to enable such constraints us-ing high-resolution ground-based observatories (e.g., Giacobbe et al. 2021; Weiner Mansfield et al. 2024) and space-based telescopes. The 
+
+James Webb Space Telescope (JWST ) in particular has demonstrated an unrivaled data quality and the ability to sample a broad spectral range—potentially observing continuously from ∼0.6 to 12.0 μm— by combining multi-epoch observations using different instruments (e.g., JWST Transiting Exoplanet Community Early Release Science Team et al. 2023; Ahrer et al. 2023; Alderson et al. 2023; Coulombe et al. 2023; Feinstein et al. 2023; Rustamkulov et al. 2023). The en-hanced characterization capabilities of JWST have significantly raised the bar for theoretical models, for example, by requiring a more care-ful consideration of stellar variability effects (e.g., Rackham et al. 
+
+© 2026 The Authors arXiv:2608.07128v1 [astro-ph.EP] 7 Aug 2026 2 Patricio E. Cubillos et al. 
+
+2018; Moran et al. 2023), planetary spatial inhomogeneities (e.g., Changeat et al. 2019; Murphy et al. 2024), disequilibrium chem-istry processes (e.g., Tsai et al. 2023), or biases arising from the combination of multi-epoch observations (e.g., Carter et al. 2024). Generally speaking, there are two primary approaches to inferring the physical processes behind a given observation: forward modeling and retrieval techniques. The forward-model approach relies on well established physical principles, enabling the simulation of theoret-ical scenarios in a self-consistent and highly detailed manner (e.g., Marley et al. 1996; Moses et al. 2011; Morley et al. 2015; Fossati et al. 2025). Conversely, retrieval techniques adopt a data-driven ap-proach, using Bayesian statistical frameworks to obtain statistically robust constraints of physical parameters (e.g., Mollière et al. 2019; Min et al. 2020; Zhang et al. 2020; Al-Refaie et al. 2021; Cubillos & Blecic 2021; Welbanks & Madhusudhan 2021; MacDonald 2023; Deka et al. 2026). These statistical frameworks involve computation-ally intensive processes, requiring thousands of model evaluations to properly sample the parameter space (Feroz et al. 2009; Foreman-Mackey et al. 2013). To overcome high computational demands, re-trievals often relax the physical self-consistency of the models in ex-change for performance. Together, these methods provide a balanced strategy for understanding exoplanetary atmospheres, with forward models offering predictive insights and retrievals placing statistically rigorous estimations based on the observations. In this context, we present a major update to the open-source Pyrat Bay framework for the characterization of exoplanet atmo-spheres (Cubillos & Blecic 2021). Specifically, we have upgraded the Pyrat Bay’s chemical-equilibrium module, enabling 1D self-consistent radiative-thermochemical-equilibrium calculations and chemically consistent Bayesian posterior sampling. We implemented a new modular free-chemistry abundance parameterization that al-lows for non-isobaric volume mixing ratios, bridging the gap be-tween the overtly simplistic constant-with-altitude assumption and the chemical-equilibrium assumption. We also implemented para-metric models to correct for depth offsets and scale the uncertain-ties for combined multi-epoch observations. Additionally, we added new capabilities such as posterior sampling with nested sampling, isotopic-ratio modeling, and H – absorption, putting Pyrat Bay up to date with the needs required for exoplanet atmospheric modeling with JWST and future observatories. Section 2 describes and benchmarks the new modules imple-mented in the Pyrat Bay framework. Section 3 presents an ap-plication on exoplanet atmospheric characterization using simulated 
+
+JWST observations. Section 4 summarizes our conclusions. 
+
+2 THE Pyrat Bay MODELING FRAMEWORK 
+
+The open-source Pyrat Bay modeling framework (Cubillos & Ble-cic 2021) is a modular package that provides tools for opacity line sampling, planetary atmospheric modeling, spectral synthesis of transmission and emission observations, and Bayesian spectral re-trieval of exoplanet atmospheres constrained by transit, secondary-eclipse, or phase-curve observations. The following sections describe the most significant improvements implemented into our framework Pyrat Bay version 2.0, available at https://pyratbay.readthedocs.io. 
+
+2.1 Thermochemical equilibrium 
+
+Until now, Pyrat Bay used the thermochemical-equilibrium abun-dances code (tea; Blecic et al. 2016) to compute atmospheric abun-dances. tea has the flexibility to compute volume mixing ratios (VMRs) over a wide range of temperatures and pressures expected for exoplanet atmospheres, but its limited speed makes it less suitable for computationally intensive applications, such as iterative forward modeling or retrieval analyses. Here we present Chemistry Calculator for Atmospheres (chemcat), a standalone, open-source package that builds on our experience with thermochemical frameworks (Blecic et al. 2016; Cubillos et al. 2019) and from other literature packages (e.g., Agúndez et al. 2012; Stock et al. 2018; Woitke et al. 2018). 
+
+2.1.1 Efficient Gibbs free-energy solver 
+
+chemcat computes gas-phase VMRs in thermochemical equilibrium via Gibbs free energy minimization at known temperatures and pres-sures, for a user-defined system of species (as in Blecic et al. 2016). Following Agúndez et al. (2012), chemcat implements a Newton-Raphson optimizer with Lagrange multipliers written in C (see, e.g., Press et al. 2007) to impose the mass-balance constraints as described in White et al. (1958). This implementation enables chemcat to compute atmospheric abundances for an atmosphere in fractions of a second, making the code suitable for iterative or retrieval applica-tions (e.g., a 100-layer atmosphere is processed in ∼0.02 s with a single CPU on an Intel Core i7-4790 3.60GHz processor). In addition, chemcat implements the charge-balance constraint, assuming a net-neutral mixture, thereby enabling the code to handle ionic species in the chemical network. This feature is particularly relevant for calculations at the high temperatures observed in plane-tary atmospheres of ultra hot Jupiters ( T ≳ 2000 K), where thermal ionization is expected to occur (e.g., Fossati et al. 2021, 2023). 
+
+2.1.2 Thermodynamic databases 
+
+As with the predecessor tea code, chemcat uses the NIST-JANAF database of thermochemical properties (Chase 1986). This is an ex-tensive database containing data for over 1700 liquid, solid, and gaseous molecular species. It provides tabulated thermochemical properties, typically (but not always) spanning the 100–6000 K tem-perature range, sampled at 100 K intervals. chemcat incorporates data for 909 neutral and ionic gaseous species from JANAF. Additionally, chemcat also uses the NASA Glenn thermodynamic database (Thermo Build, McBride et al. 2002), which contains data for over 2000 solid, liquid, and gaseous chemical species across a temperature range of 200 to 20000 K, and also provides the data for the widely used Chemical Equilibrium with Applications code (CEA, Gordon & McBride 1994). The Thermo Build data are expressed as coefficients of a seven-term polynomial for molar heat capacity at constant pressure and temperature, along with two integration constants to compute enthalpy and entropy, from which Gibbs free energy can be derived. chemcat incorporates data for 365 neutral and ionic gaseous species from Thermo Build. chemcat allows one to select which thermodynamic database to use, to combine them, or to use custom-provided thermochemical data. This flexibility is particularly beneficial for assessing whether the choice of thermochemical database affects a given application. In future implementations we will explore the posibility to incorporate additional thermodynamic databases such as BURCAT (Burcat & Ruscic 2005).  
+
+> MNRAS 000 , 1–15 (2026)
+
+# Pyrat Bay 2.0: Exoplanet Modeling for JWST 3     
+
+> Figure 1. Benchmark test between chemcat (dashed black lines) and GGchem (solid colored lines) for a network of neutral species at 1 bar and temperatures from 100–6000 K (only selected species are shown). Both codes produced results typically consistent within 0.1 dex, with noticeable differences resulting from missing thermochemical data or at the lowest temperatures T≲200 K.
+
+2.1.3 User interface 
+
+The chemcat package offers an intuitive, object-oriented Python in-terface, supported by comprehensive unit tests and documentation 1.Users initialize a chemical-network object as a one-dimensional temperature–pressure profile T (p) and a set of atomic and molec-ular species. Since the code is designed for planetary atmospheres, elemental abundances are initially set to the solar composition (As-plund et al. 2009, 2021). These elemental abundances can be readily customized in multiple ways: 1. Use a global ’metallicity’ scale factor to: (a) Scale abundance of all elements other than H and He relative to solar values, [M/H] 2. Use element-specific abundance scale factors to: (a) Scale relative to solar values, e.g., [C/H], [O/H], [Na/H] (b) Scale relative to another element, e.g., C/O, K/Na These parameterization schemes are commonly used in exoplanet atmospheric retrievals. For a given scenario, any combination and number of scaling-factor parameters can be applied as needed. We note that element scaling factors relative to solar (2.a) overwrite the values set by the metallicity scaling factor. Thus, a model parame-terized with [C/H], [O/H], and [M/H] will independently scale the abundances of carbon, oxygen, and all other metals. In contrast, el-ement scaling factors relative to other species (2.b) are applied on top of the other scaling factors. Thus, a model parameterized with C/O and [M/H] will first scale the metallicity of all metals and then independently adjust the abundance of carbon relative to oxygen. The object-oriented design of chemcat ensures flexibility and promotes discoverability (Mackamul et al. 2024), giving users direct  
+
+> 1https://chemcat.readthedocs.io/en/main/chemistry_tutorial.html
+
+access to species’ physical properties, such as equilibrium compo-sitions, stoichiometric values, heat capacity, and Gibbs free energy. The chemcat package is available via the Python Package Index and Conda-forge repositories, simplifying the installation and integration with other projects, e.g., via the command: 
+
+pip install chemcat 
+
+or: 
+
+conda install -c conda-forge chemcat 
+
+The source code is available at Github 2.
+
+2.1.4 Equilibrium chemistry benchmarking 
+
+To benchmark the chemcat code, we compared its results with those of GGchem (Woitke et al. 2018), a publicly available code for deter-mining the chemical composition of gases in thermochemical equi-librium down to 100 K, with or without equilibrium condensation. We tested both codes on a task similar to that described in Section 5.1 of Woitke et al. (2018), involving a chemical network of 442 neutral species derived from 24 different elements: H, He, Li, C, N, O, F, Na, Mg, Al, Si, P, S, Cl, K, Ca, Ti, V, Cr, Mn, Fe, Ni, Zr, and W. Both codes calculated thermochemical equilibrium abundances at 1 bar and from 100 to 6000 K. As Woitke et al. (2018) noted, the JANAF database does not include many species in the GGchem network, therefore we opted to include in chemcat only the 183 significant species depicted in Fig. 3 of Woitke et al. (2018). Figure 1 shows a subset of our benchmark test results. For most species, we found no significant VMR deviations between our re-sults (dashed black curves) and GGchem (solid colored curves). Notable deviations can be attributed to differences in extrapola-tion methods beyond available thermodynamic data (e.g., Si(CH 3)42 https://github.com/AtmoLib/chemcat MNRAS 000 , 1–15 (2026) 4 Patricio E. Cubillos et al. 
+
+at T < 300 K), differences in thermodynamic data sources (e.g., chemcat uses Thermo Build for SiH 3 and SiH 2), missing dominant species (e.g., several Mn molecules), or the high numerical precision required at the lowest temperatures. As discussed by Woitke et al. (2018), at sufficiently low temperatures ( T ≲ 200 K), some species reach abundances so low that standard double-precision floating-point representation becomes inadequate ( VMR ≲ 10 −308 ). In our implementation, we opted to cap the values in the Newton-Raphson routine to avoid VMRs below the minimum representable floating-point number. Despite this different approach, we obtained stable results with no discontinuities and in good agreement between chem-cat and GGchem. While this method does not provide precise val-ues for the least abundant species, their low abundances render this discrepancy negligible for practical applications. At the lowest tem-peratures ( T < 200 K), we found VMR deviations less than one dex for species in the 10 −20 < VMR < 10 −8 range, and less than 0.25 dex for the more abundant species with VMR > 10 −8. At higher temperatures above 200 K, most VMRs deviations remain well below the ∼0.1 dex level. For a second benchmark, we compared chemcat with FastChem (Stock et al. 2018), an open-source semi-analytical program for calcu-lating neutral and ionized gas-phase chemical equilibria. Both codes were tested using an identical network of 39 ionic and neutral species, over a temperature range of 300–3000 K and a pressure range of 
+
+10 3 − 10 −10 bar. This setup was specifically designed for gas-giant exoplanet applications, focusing on a chemical network comprising the dominant species expected for hydrogen, helium, carbon, nitro-gen, and oxygen (H 2O, CH 4, CO, CO 2, NH 3, N 2, H 2, HCN, C 2H2,C2H4, OH, H, He, C, N, O), their ions (e –, H –, H +, H +2 , He +), alkali metals (Na, Na –, Na +, K, K –, K +), and other metals of relevance to planetary atmospheres (Mg, Mg +, Fe, Fe +, Ti, TiO, TiO 2, Ti +, V, VO, VO 2, V +). Figure 2 shows the results of the benchmark test. Be-cause the same chemical network and thermochemical data (JANAF) were used by both codes in this comparison, we found an excellent agreement between the two codes. The abundances for all ionic and neutral species matched to within 0.05 dex across the entire range of temperatures and pressures. 
+
+2.2 Radiative equilibrium 
+
+Radiative equilibrium occurs when the total bolometric energy en-tering a given atmospheric volume equals the energy leaving it. By assuming radiative equilibrium in a 1D planetary atmospheric model, we can calculate its temperature profile. To calculate the energy flowing through each atmospheric layer, our radiative-equilibrium implementation solves the radiative-transfer equation, using the two-stream approximation, following the derivation in Heng et al. (2014). Under the assumptions of pure ab-sorption, hemispheric isotropy (i.e., the intensities are independent of the zenith angle), local thermodynamic equilibrium, and a lin-ear dependence of the Planck function B with optical depth τ , the radiative-transfer solution for the downward and upward fluxes (de-noted as ↓ and ↑, respectively) between a pair of upper and lower layers ( u and l, respectively) is: 
+
+F↓l(λ) = F↓uT + πB u(1 − T )+ πB ′
+
+
+
+− 23
+
+
+
+1 − e−∆τ 
+
++ ∆ τ
+
+
+
+1 − T
+
+3
+
+ 
+
+,(1) 
+
+F↑u(λ) = F↑lT + πB l(1 − T )+ πB ′
+
+ 23
+
+
+
+1 − e−∆τ 
+
+− ∆τ
+
+
+
+1 − T
+
+3
+
+ 
+
+, (2)      
+
+> Figure 2. Benchmark test between chemcat (thin black lines) and FastChem (thick colored lines) for a network of neutral and ionic species (see legends), over a 10 3−10 −10 bar range, and at three isothermal temperatures of 300, 1400, and 3000 K (top to bottom panels, respectively). Both codes produced results consistent to better than 0.05 dex.
+
+where ∆τ = τl − τu, B′ = ∆ B/ ∆τ , and T is the transmission function: 
+
+T = (1 − ∆τ )e−∆τ + (∆ τ )2E1(∆ τ ), (3) with E1 the exponential integral of the first order. Most of these terms are wavelength dependent ( λ), but we have omitted the λ labels for clarity. To compute fluxes across the atmosphere, we sequentially solve Eqs. (1) for F↓l from the top to the bottom of the atmosphere, and then solve Eqs. (2) for F↑u from the bottom to the top of the atmosphere. At the top of the atmosphere, the absorbed stellar irradiation sets the boundary condition: 
+
+F↓ = βirr 
+
+ R⋆
+
+a
+
+2
+
+F⋆, (4) where R⋆ is the stellar radius, F⋆ is the stellar surface flux spectrum, 
+
+a is the semi-major axis, and βirr = (1 − A)f is a catch-all term ac-counting for the Bond albedo A and day–night energy redistribution factor f . For example, values of f = 1 , 1/2, and 1/4 correspond to absorbed flux at the substellar point, to uniform redistribution over the day side, and to redistribution over the entire planet, respectively (Burrows et al. 2008; Guillot 2010). Burrows et al. (2008) further recommends f = 2 /3 for secondary eclipse observations due to the bias toward the substellar-point emission (see also Appendix in Spiegel & Burrows 2010). At the bottom of the atmosphere, the boundary condition is set  
+
+> MNRAS 000 , 1–15 (2026)
+
+# Pyrat Bay 2.0: Exoplanet Modeling for JWST 5
+
+by an internal radiative heat term represented by a blackbody with temperature Tint , typically set at around 100 K for hot Jupiters. In our framework, both βirr and Tint are adjustable user-defined parameters. 
+
+2.2.1 Radiative and thermochemical equilibrium 
+
+To compute atmospheric profiles in radiative equilibrium, we im-plemented the iterative procedure described by Malik et al. (2017, 2019). Using the two-stream radiative-transfer approximation, this approach integrates the upward and downward fluxes over all wave-lengths across each atmospheric layer to calculate the corresponding bolometric fluxes: F bol  
+
+> ↑↓
+
+= R F↑↓ (λ)d λ. From these, the code de-termines the net bolometric flux ( Fnet = F bol  
+
+> ↑
+
+− F bol  
+
+> ↓
+
+) and its net divergence ( ∆Fnet ) from the difference in Fnet between consecutive layers. The divergence indicates whether an atmospheric layer is in radiative equilibrium ( ∆Fnet = 0 ), receives more energy than it emits, or emits more energy than it receives. To achieve radiative equilibrium, the code iteratively adjusts the temperature profile so that the net bolometric flux divergence ap-proaches negligible values at all layers. By combining Eqs. (26–28) into Eq. (24) of Malik et al. (2017), the temperature perturbation at iteration i is computed as: 
+
+∆Ti = ki(p) sign(∆ Fnet )|∆Fnet |0.1
+
+σSB T 3 
+
+> i
+
+∆ log p , (5) where σSB is the Stefan-Boltzmann constant, p is the pressure, and 
+
+Ti is the temperature profile. ki(p) is an adaptive scale factor to mod-ulate the temperature perturbations at each layer. ki(p) is initialized with a value of 10 5, resulting in initial perturbations on the order of 100 K. During each iteration, ki(p) is updated, decreasing by a factor of 0.5 at the layers where the sign of ∆Fnet has changed during the last four iterations, or otherwise increasing by a factor of 1.15. This scheme effectively damps the magnitude of the perturbations when the temperature oscillates around a solution (an infamous behav-ior characteristic of radiative equilibrium calculations, e.g., Mollière et al. 2015; Malik et al. 2017; Mukherjee et al. 2023). To prevent unphysical temperature gradients or “zig-zag" profiles the code ap-plies a Gaussian kernel smoothing along the profile. The kernel’s standard deviation is set to 0.1 × | ∆T |avg /K, capped between 0.1 and 1.5 dex in pressure, to prevent over-smoothing as the iterative routine converges toward an equilibrium solution. At each iteration, the code invokes the chemcat module to ensure that the abundances remain in thermochemical equilibrium with the current tempera-ture profile. Radiative-equilibrium calculations typically converge to a stable solution in 100–300 iterations, requiring typically ∼10 min of CPU time. For any given radiative-equilibrium calculation, the metallicity and elemental composition of the atmosphere can be freely customized as described in Section 2.1.3. 
+
+2.2.2 Convection 
+
+Atmospheric energy transport is expected to be dominated by con-vection, rather than radiation, when the temperature gradient of the atmosphere ( ∇T = d log T /d log p ) becomes steeper than the adi-abatic temperature gradient ( ∇ad ). This typically occurs in regions with high atmospheric opacities or low gravitational acceleration (Carroll & Ostlie 1996). For highly irradiated exoplanets, convection is generally confined to the deeper atmospheric layers. In most atmospheric models, convective energy transport is han-dled by identifying convective layers and either enforcing an adiabatic temperature gradient within them (e.g., Mollière et al. 2015; Mukher-jee et al. 2023) or by using mixing-length theory (e.g., Rohrmann                            
+
+> Table 1. System properties for radiative-equilibrium benchmark. Equilibrium tempertatures were derived from the system parameters assuming zero Bond albedo. System WASP-107 WASP-39 WASP-121
+> Host star:
+> Teff (K) 4400.0 5500.0 6400.0
+> Rstar (R⊙)0.67 0.94 1.458
+> Planet:
+> Rplanet (RJup )0.943 1.280 1.753
+> Mplanet (MJup )0.096 0.281 1.157 semi-major axis (AU) 0.055 0.048 0.026
+> Teq (K) 750.0 1200.0 2300.0
+
+2001; Gustafsson et al. 2008; Goody & Yung 1989; Henyey et al. 1965). Mixing-length theory is a phenomenological formalism that captures the general convection behavior observed in stars (e.g., Cox & Giuli 1968; Mihalas 1978; Carroll & Ostlie 1996). Here we im-plement a convective flux based on the mixing-length formulation of Carroll & Ostlie (1996): 
+
+Fc = α2β1/2ρc pT (gH )1/2(∇T − ∇ ad )3/2, (6) where cp, ρ, g, and H are the specific heat capacity at constant pressure, mass density, gravity, and pressure scale height throughout the atmosphere, respectively. The terms α and β are arbitrary free parameters of mixing length theory: α quantifies the mixing length traveled by the convective gas, l = αH , with typical values around 
+
+α ≈ 1.5, based on stellar and brown dwarf atmospheric models (Henyey et al. 1965; Gray 1992; Drummond et al. 2016). β is a less relevant parameter that accounts for an approximation of the average speed of the gas, with a value in the 0 < β < 1 range (e.g., Henyey et al. 1965; Carroll & Ostlie 1996). The convective flux of Eq. (6) is added to the upward bolometric flux at the layers where the atmospheric temperature gradient is steeper than the adiabatic gradient. 
+
+2.2.3 Radiative thermochemical equilibrium benchmark 
+
+To validate our radiative-equilibrium scheme, we performed bench-mark simulations, comparing our results with those generated by the HELIOS package (Malik et al. 2017). These tests consist of six scenarios involving three planetary systems representing a distinct stellar-irradiation regime: a warm Jupiter (similar to WASP-107 b), a classical hot Jupiter (WASP-39 b), and an ultra-hot Jupiter (WASP-121 b). We modeled two scenarios for each planet, first adopting a default configuration for all of them, i.e., assuming solar composi-tion, no internal heat flux ( Tint = 0 K), and a common set of the optical and infrared cross sections. Then, for each planet we explored an additional scenario by varying one specific model parameter: for WASP-107 b we simulated an atmosphere with a higher internal heat flux of Tint = 350 K, for WASP-39 b a higher atmospheric metallici-ties of 50 × solar, and for WASP-121 b an atmosphere with additional TiO and VO optical absorbers. Table 1 summarizes the system pa-rameters adopted for these benchmark simulations. For the host stars’ spectral energy distribution (SEDs) we adopted PHOENIX models (Husser et al. 2013), assuming solar metallicity and a surface gravity of log( g) = 4 .5 (Fig. 3). Both Pyrat Bay and HELIOS adopted a similar planetary atmo-sphere model, with pressures ranging from 100 to 10 −9 bar, sampled with 81 layers for Pyrat Bay and 115 for HELIOS. Both codes also adopted a wavelength spectrum ranging from 0.15 to 33 μmsampled at a resolution R = λ/ ∆λ = 3000 . This broad spectral  
+
+> MNRAS 000 , 1–15 (2026)
+
+# 6 Patricio E. Cubillos et al.     
+
+> Figure 3. Incident stellar SEDs at the top of the atmosphere for the radiative-equilibrium benchmark runs (see labels). These are PHOENIX models (Husser et al. 2013) with solar metallicity, surface gravity of log g= 4 .5, and effective temperatures of 4400 K (WASP-107, spectral type K4V), 5500 K (WASP-39, G8V), and 6400 K (WASP-121, F5V).
+
+range was chosen to capture the bulk of radiation from both the host star and planet. We included the same set of atomic and molecular cross sections, sampled over this wavelength array. Their abundances were calculated under thermo-chemical equilibrium using chemcat (Pyrat Bay) and FastChem (HELIOS). For the atomic species we computed custom cross sections for Na, K, Fe, Fe +, Mg, and Mg +,using the line lists from the Kurucz database (Kurucz 2018). For the molecular species we included cross sections obtained from DACE (dace.unige.ch), which were based on the HITEMP and ExoMol line-lists for H 2O (Polyansky et al. 2018), CO (Li et al. 2015), CO 2
+
+(Yurchenko et al. 2020), CH 4 (Yurchenko & Tennyson 2014), NH 3
+
+(Yurchenko 2015; Coles et al. 2019), HCN (Harris et al. 2006, 2008), H2S (Azzam et al. 2016), SO 2 (Underwood et al. 2016), C 2H2 (Chubb et al. 2020), TiO (McKemmish et al. 2019) and VO (McKemmish et al. 2016). These cross sections are pre-calculated at a fixed grid in temperature, pressure, and wavelength. The radiative transfer cal-culation interpolates from these tables at each radiative-equilibrium iteration. For the continuum cross sections, we included collision-induced absorption for H 2–H 2 and H 2–He (Borysow et al. 1988, 1989, 2001; Borysow & Frommhold 1989; Borysow 2002); Rayleigh scat-tering for H 2, H, He, and e − (Kurucz 1970); and H – free-free and bound-free absorption (John 1988). Figure 4 shows the temperature profiles, emission spectra, and composition of the radiative-equilibrium benchmark simulations. Overall we find good agreement between Pyrat Bay and HELIOS across all scenarios. The typical temperature-profile differences be-tween Pyrat Bay and HELIOS are in the 10–50 K range for these scenarios, whereas the NIR emission spectra differ by 1–10% on average. More importantly, the radiative-equilibrium outputs follow the expected behavior according to the change of environmental conditions. Increasing the incident stellar irradiation leads to hot-ter atmospheres with distinct thermal structures: the least irradiated case (WASP-107 b) shows a non-inverted profile; the hot Jupiter (WASP-39 b) shows heating confined to the uppermost layers; and the ultra-hot Jupiter (WASP-121 b) shows a strong thermal inversion. The two WASP-107 b simulations illustrate how a higher internal heat flux yields warmer deep layers, with the excess heat quickly dis-sipating at higher pressures. The two WASP-39 b simulations show how an increased atmospheric metallicity shifts the photosphere to lower pressures, as the enhanced metallicity increases the overall opacity of the atmosphere. Finally, the two WASP-121 b simulations highlight how optical absorbers not only drive thermal inversions but also impact the deep atmospheric layers. As the stellar radiation dominates the energy budget of strongly irradiated planets, a higher optical opacity intercepts more flux at low pressures, reducing the energy that reaches depth and yielding lower temperatures in the bottom layers. In this regard, Na and K absorption has a significant role in shaping the thermal structure for all of these simulations. For ultra-hot Jupiters, atomic absorption by Fe, Mg, Fe +, and Mg + also have a significant impact shaping the thermal structure of planets. Considering the large range of parameters that can factor into a radiative-equilibrium calculation, different results between different implementations are expected to occur. A major factor impacting the radiative-equilibrium calculations is the choice of the opacity source for a given absorber. Particularly, we found that the choice of the alkali opacities (e.g., Burrows et al. 2000 or Allard et al. 2019) can introduce discrepancies on the order of ∼100 K. Further discrepancies can arise from the choice of line profiles when sampling line lists (i.e., choice of line-wing extent or broadening parameters), choice for which there is no general prescription other than ad-hoc 
+
+values adopted by the community (see, e.g., Grimm & Heng 2015). We also found that the choice of spectral resolving power (R=3000 vs. 25000) can lead to differences of dozens of K. 
+
+2.3 Bayesian atmospheric retrievals 
+
+2.3.1 Nested sampling 
+
+Up until now, Pyrat Bay has implemented the Differential-evolution Markov-chain Monte Carlo (MCMC) Bayesian sampler (ter Braak & Vrugt 2008) via mc3 (Cubillos et al. 2017). An alternative to MCMC sampling is nested sampling (Skilling 2004; Skilling 2006). Nested sampling works by evolving a collection of live points that sample the prior parameter space. At each iteration, the algorithm replaces the lower-likelihood point with a new one that has a larger likelihood. In this way, this process continuously shrinks the prior volume, thus converging towards the highest likelihood region(s). Nested sampling then estimates the Bayesian evidence by integrating the parameter space, from which the parameter posterior distribu-tion can be derived. This is an advantage of nested sampling over MCMC, since the evidences allow for parameter inference and model comparison. For a more in-depth overview of the nested-sampling algorithm and its application in the physical sciences see Ashton et al. (2022). In Pyrat Bay we have incorporated the widely-used MultiNest nested-sampling implementation (Feroz et al. 2009) via the pyMultiNest Python interface (Buchner et al. 2014). Atmospheric retrieval employing MultiNest can be executed in parallel via Mes-sage Passing Interface (MPI). 
+
+2.3.2 Free-chemistry retrievals with non-isobaric VMRs 
+
+The ’free-chemistry’ parameterization is a common assumption used in retrieval studies (e.g., Bell et al. 2024; Benneke et al. 2024; Verma et al. 2025). In this approach, the abundances of species are treated as independent constant-with-altitude (i.e., isobaric) volume mix-ing ratios (VMRs). This is an ad hoc approximation suitable when thermochemical equilibrium is not expected (e.g., temperate atmo-spheres) or when observations lack the sensitivity to constrain the vertical structure of a VMR in a statistically significant manner. How-ever, simulations (Changeat et al. 2019) and recent observations (e.g., Garai et al. 2025; Challener et al. 2025) suggest that more realistic models may be required, particularly for JWST observations of gas  
+
+> MNRAS 000 , 1–15 (2026)
+
+# Pyrat Bay 2.0: Exoplanet Modeling for JWST 7
+
+Figure 4. Radiative-equilibrium benchmark between Pyrat Bay and HELIOS. The top, middle, and bottom rows show simulations for a temperate planet (WASP-107 b), a hot-Jupiter (WASP-39 b), and an ultra-hot Jupiter (WASP-121 b), respectively. Left column: radiative-equilibrium temperature profiles estimated by Pyrat Bay (solid curves) and HELIOS (dashed curves). Light and dark colors correspond to two simulated scenarios for each system (see legend). The contribution-function curves on the left of each panel show the region of the atmosphere probed by NIR eclipse observations. Center column: derived planet-to-star flux ratio (eclipse spectra) for each simulation, as computed by Pyrat Bay (colored) and HELIOS (black). Right column: atmospheric volume mixing ratios (VMR) derived by Pyrat Bay for each simulation for a selection of the most relevant species (see legend on the top right corner). Neutral species, negative ions, and positive ions are shown as solid, short-dashed, and long-dashed curves, respectively. The HELIOS VMRs follow the same trends as shown by Pyrat Bay (omitted for clarity), being typically consistent within ∼0.1 dex, where the main discrepancies are consistently explained by the difference in temperature. MNRAS 000 , 1–15 (2026) 8 Patricio E. Cubillos et al.  
+
+> Figure 5. Examples of VMR profiles expected in planetary atmospheres (dashed curves, adapted from Moses et al. 2011) and parametric non-isobaric VMR profiles (solid curves). The non-isobaric VMR model can adjust to the complexity of the profile by varying the number of free parameters, for example: isobaric profiles (blue, one free parameter), slanted profiles (red, two free parameter), quenched and photochemically affected profiles (yellow, three free parameters), or vertically quenched profiles (green, four free pa-rameters). The text above the panel lists the values for each VMR model, with black and gray text indicating free and fixed parameters, respectively.
+
+giants. For this reason, we have developed a new flexible non-isobaric VMR model. The non-isobaric model consist of a slanted log VMR –log p pro-file capped between two VMR values. The model is parameterized by a slope m and reference point { log VMR 0, log p0} that define a slanted VMR curve, and by two additional parameters that cap the profile at a minimum and maximum VMR value. This parameter-ization allows the model to simulate a wide variety of VMR pro-files expected from equilibrium and disequilibrium-chemistry calcu-lations (Fig. 5). Note that { log VMR 0, log p0} are a degenerate pair of values; for retrieval analyses one parameter should be kept fixed, while leaving the other one free. Thus, only between one and four free parameters are needed for practical applications. This highlights the flexibility of the model and its adaptability to the complexity of the problem at hand (Fig. 5). In its simplest form with a single free parameter ( log VMR 0), the model reduces to the isobaric case (thus enabling nested-sampling model comparison with the stan-dard free-chemistry approximation). Two free parameters ( m and 
+
+log VMR 0) can fit a monotonically decreasing (or increasing) VMR profile. Three free parameters ( m, log VMR 0, and log VMR min ) can fit profiles that are a combination of constant and slanted sections. Four free parameters can fit abundances constrained between two values. See Section 3 for a worked example. 
+
+2.3.3 Chemically-consistent atmospheric retrievals 
+
+The ‘equilibrium-chemistry’ parameterization is a second approach commonly used used for exoplanet atmospheric retrievals. Here, the composition is parameterized by the abundance of the elemental building blocks, and computed self-consistently with the pressure– temperature profile under the assumption of thermochemical equi-librium. In Pyrat Bay we implemented the equilibrium-chemistry retrieval approach by employing the new equilibrium-chemistry module (Sec-tion 2.1), ensuring that the model has the flexibility to vary the abundance of any element in the atmosphere with a variety of pa-rameterizations. This is relevant given the rich information content provided by current observations (e.g., Pelletier et al. 2026). As a baseline, the code assumes a solar elemental abundance composi-tion (Asplund et al. 2021). Free parameters can modify elemental abundances as a whole by a metallicity factor [M/H] that scales all metals relative to solar abundances, or individually: either relative to the solar abundance (e.g., [C/H], [O/H], etc.) or relative to other elemental abundances (e.g., C/O, Na/K, etc.). Any number of these free parameters can be used and combined as needed. 
+
+2.3.4 Hybrid equilibrium plus disequilibrium chemistry 
+
+A third retrieval mode implemented in Pyrat Bay is a hybrid ap-proach that combines equilibrium-chemistry abundances with ad-ditional free-chemistry VMR parameters for selected species. This approach is suitable when neither the free-chemistry nor chemical-equilibrium assumptions alone can adequately describe an atmo-spheric composition. A common example is when modeling at-mospheres with out-of-equilibrium SO 2 abundances, influenced by quenching and photochemistry processes (e.g., Tsai et al. 2023; Kirk et al. 2025). 
+
+2.3.5 Isotopic-ratio fitting 
+
+The measurement of isotopic ratios has recently emerged as a power-ful tool for characterizing sub-stellar objects, their atmospheres, and their formation paths (Mollière & Snellen 2019). This method relies on resolving and measuring individual absorption lines, typically requiring high signal-to-noise ratio and high spectral-resolution ob-servations. For this reason, isotopic ratios have been detected mainly in directly imaged objects from ground-based (e.g., Zhang et al. 2021; Gandhi et al. 2025) and space telescopes (Gandhi et al. 2023). We enabled in Pyrat Bay the capability to fit and retrieve cus-tom isotopic ratios via isotopic-fraction parameters ( log δiso X), which model the log-scale isotopic fraction of selected isotopes of a given species. These parameters can either take specific values, e.g., log δ13 CO = −1.9, or act as “filler” values (analogous to free-chemistry VMR fitting), e.g.: 
+
+δ12 CO = 1 − δ13 CO − δC18 O. (7) This provides a fully customizable framework for modeling isotopic ratios in both forward modeling and retrieval analyses. Applying isotopic-ratio weighting requires the species’ input cross sections to be partitioned by isotope. For this, we upgraded the Pyrat Bay line-sampling routine to generate cross-section tables for se-lected isotopes from ExoMol or HITRAN line lists. Spezzano et al. (in prep.) present a validation of this implementation by applying it on a brown-dwarf observation. 
+
+2.4 Cross sections 
+
+2.4.1 H – cross sections 
+
+H– continuous absorption can become significant at the high temper-atures expected for ultra Hot Jupiters ( T ≳ 2000 K, Arcangeli et al. 2018), where molecular hydrogen dissociates to give way to atomic and ionic hydrogen as the most abundant species. We have imple-mented the H – absorption model from John (1988), which accounts  
+
+> MNRAS 000 , 1–15 (2026)
+
+# Pyrat Bay 2.0: Exoplanet Modeling for JWST 9
+
+for bound-free photo-detachment ( hν + H – → H + e –) and free-free scattering ( hν + e – + H → H + e –). The bound-free and free-free cross sections for H – (in units of cm 5 per hydrogen atom per electron) at a temperature T (in K) and wavelength λ (in μm) are: 
+
+σbf (T, λ ) =0 .75 × 10 −18 kBT −3/2eα/λ 0T 
+
+1 − e−α/λT 
+
+×
+
+λ3
+
+ 1
+
+λ − 1
+
+λ0
+
+3/2 6X
+
+> n=1
+
+cn
+
+ 1
+
+λ − 1
+
+λ0
+
+(n−1) /2
+
+, (8) 
+
+σff (T, λ ) =10 −29 kBT
+
+> 6
+
+X
+
+> n=1
+
+ 5040 
+
+T
+
+(n+1) /2
+
+×
+
+
+
+λ2An + Bn + Cn
+
+λ + Dn
+
+λ2 + En
+
+λ3 + Fn
+
+λ4
+
+
+
+, (9) where λ0 = 1 .6419 μm is the photo-detachment threshold, kB
+
+is the Boltzmann constant, and α = hc/k B = 1 .439 cm K. The polynomial coefficients in Eqs. (8) and (9) are listed in John (1988). 
+
+2.4.2 Tabulated cross sections 
+
+While Pyrat Bay continues to enable sampling custom cross sec-tions, we also provide pre-computed cross-section files intended for a broad range of applications. These cross sections have been com-puted assuming a H 2/He-dominated atmosphere, terrestrial isotopic ratios, and Voigt profiles with wing cut-offs at 300 half-width at half maximum (HWHM) and at 25 cm −1. The grids have been sampled in wavelength from 0.15 to 33 μm at a resolving power of R = 25 ,000 ,in temperature from 200 to 5000 K with a step of 150 K, and in log-pressure from 10 −9 to 1000 bar with 4 samples per dex. We selected a resolution of R = 25 ,000 following Leconte (2021) and Welbanks et al. (in prep.), which found that line-sampling resolu-tions of 20 ,000 − 30 ,000 reach transmission-spectrum accuracies of 
+
+∼1 − 10 ppm, which is at or below the typical uncertainty of JWST 
+
+observations. The cross-section files are hosted in a Zenodo repository reachable at https://zenodo.org/records/16965390. At the time of publication we provide cross sections for 38 species from the HITRAN, Exomol, and Ames databases (Table 2). The largest line lists consisting of sev-eral billions of transitions have been pre-processed with the repack algorithm (Cubillos 2017) to extract the dominant transitions. New cross sections will be added or updated as they become available. 
+
+2.5 Fitting data to models 
+
+2.5.1 Depth offsets 
+
+The analysis of multi-epoch exoplanet time-series with JWST has revealed transit-depth offsets between observations at overlapping wavelengths on the order of 10–100 ppm. These offsets have been attributed to astrophysical effects (e.g., stellar variability, unocculted stellar spots), data-reduction choices (e.g., adopted system parame-ters, limb-darkening treatment), and instrumental systematics (Mad-husudhan et al. 2023; Carter et al. 2024; Fu et al. 2024; Welbanks et al. 2024; Barat et al. 2025; Louie et al. 2025; Mayo et al. 2025). Furthermore, depth offsets have been seen between detectors during a same observation (e.g., Fournier-Tondreau et al. 2025; Holmberg & Madhusudhan 2024). These offsets are unlikely to be of astrophys-ical origin. A variety of potential explanations have been suggested, such as different background levels between detectors (Gressier et al. 2024), systematics due to the small number of groups per integration                                                                                
+
+> Table 2. Cross-sections currently provided in Pyrat Bay, available at this repository: https://zenodo.org/records/16965390 Species Source References AlF Exomol Bernath (2020) C2H2Exomol Chubb et al. (2020) CH 4Exomol Yurchenko et al. (2024a) CO HITEMP Li et al. (2015) CO 2Ames Huang et al. (2023) CS Exomol Paulose et al. (2015) CS 2HITRAN Gordon et al. (2026) CaH Exomol Owens et al. (2022) Fe VALD Piskunov et al. (1995) FeH Exomol Dulick et al. (2003); Bernath (2020) H2OExomol Polyansky et al. (2018) H2SExomol Azzam et al. (2016); Chubb et al. (2018) HCN Exomol Harris et al. (2008); Barber et al. (2014) HCl HITRAN Gordon et al. (2026) HF Exomol Coxon & Hajigeorgiou (2015) KVALD Piskunov et al. (1995) KCl Exomol Barton et al. (2014) KOH Exomol Owens et al. (2021) Mg VALD Piskunov et al. (1995) Na VALD Piskunov et al. (1995) NaCl Exomol Barton et al. (2014) NaH Exomol Rivlin et al. (2015) NH 3Exomol Coles et al. (2019); Yurchenko et al. (2024b) OCS Exomol Owens et al. (2024) OH HITEMP Gordon et al. (2022) PH Exomol Langleben et al. (2019) PH 3Exomol Sousa-Silva et al. (2015) PN Exomol Semenov et al. (2025) PO Exomol Prajapat et al. (2017) SH Exomol Gorman et al. (2019) SiH Exomol Yurchenko et al. (2018) SiH 4Exomol Owens et al. (2017) SiO Exomol Yurchenko et al. (2022) SiS Exomol Upadhyay et al. (2018) SO Exomol Brady et al. (2024) SO 2Exomol Underwood et al. (2016) TiO Exomol McKemmish et al. (2019) VO Exomol Bowesman et al. (2024)
+
+(Adams Redai et al. 2025), performance or use differences between detectors (Ahrer et al. 2025a), treatment of the bias correction (Moran et al. 2023), differences in the 1/f noise subtraction (Lothringer et al. 2025), or light-curve detrending analysis (Bello-Arufe et al. 2025; Sikora et al. 2025). To account for possible offsets between observations or detectors, we have implemented parametric models that shift the depths of selected data points. These are wavelength-independent offsets that can be applied to individual or groups of data points, i.e., to specific observations or instruments. 
+
+2.5.2 Noise scaling JWST spectra often show noise levels above that expected from pure instrumental noise or residual correlated noise (e.g., Espinoza et al. 2023; Scarsdale et al. 2024; Alderson et al. 2024; Wallack et al. 2024; Alam et al. 2025; Mayo et al. 2025). This suggest that the structure and magnitude of this noise source is not well understood yet (Bell et al. 2024). To account for possible underestimated uncertainties, we imple-mented parametric models that scale the original depth uncertainties (σi), either as multiplicative factors (Bell et al. 2024) or added in  
+
+> MNRAS 000 , 1–15 (2026)
+
+# 10 Patricio E. Cubillos et al. 
+
+quadrature (Line et al. 2015; Welbanks & Madhusudhan 2021), re-spectively: 
+
+σ′ 
+
+> i
+
+= Sσ i, (10) 
+
+σ′ 
+
+> i
+
+=
+
+q
+
+σ2 
+
+> i
+
++ S2, (11) where log S is the model parameter. As before, the error-scaling models are wavelength independent, and can apply to individual or groups of data points. 
+
+2.6 Transit light source effect 
+
+The transit light source (TLS) effect is a wavelength-dependent con-tamination into exoplanet transmission spectra due to spots or facu-lae heterogeneities on the surface of the host star (McCullough et al. 2014; Rackham et al. 2018; Thompson et al. 2024). Stellar activ-ity has become a recurrent source of noise and bias in atmospheric characterization studies from JWST observations, in particular for M and K stellar-type hosts or young stars (e.g., Moran et al. 2023; Ahrer et al. 2025b; Murphy et al. 2026). In Pyrat Bay we modeled the TLS correction for unocculted spots following Rackham et al. (2018), where the observed transit depth is expressed in terms of the true transit depth as dobs (λ) = ϵ(λ)d(λ), with the TLS correction given by: 
+
+ϵ(λ) = 11 − fspot (1 − Fspot /F s) − ffac (1 − Ffac /F s) , (12) where Fs, Fspot , and Ffac are the flux spectra from the uncontami-nated host star, spots, and faculae, respectively. fspot and ffac are the spot and faculae coverage fraction of the stellar surface (projected area) as seen from Earth at the moment of the observation. These fluxes are modeled using a library of SED models covering the ex-pected range of stellar, spot, and faculae temperatures. Pyrat Bay uses the PHOENIX New-Era SED models (Hauschildt et al. 2025), which typically span temperatures from T ≈ 2300 K to 12000 K, although these boundaries may vary depending on the stellar metal-licity and surface gravity. The model parameters are thus the spot (and optionally faculae) temperature and covering fraction. Figure 6 shows an example of the TLS effect on a [M/H]=0.5 K2V star ( Teff = 4800 K and log g = 4 .5) produced by spot/faculae heterogeneities with a covering fraction of f = 0 .01 over a range of temperatures. The TLS contamination is the largest at short wave-lengths ( λ ≲ 2), exhibiting a strong spectral component. At longer wavelengths the amplitude of the TLS contamination decreases, al-though significant chromatic variability can remain up to ∼10 μm. Given that spots and faculae come into and out of view as a host star rotates, stellar heterogeneities can induce flux variability in timescales as short as a few days. To model this time dependency, Pyrat Bay can selectively apply individual TLS corrections to spe-cific groups of data points, enabling simultaneous atmospheric fitting and retrieval from multi-epoch observations. 
+
+3 APPLICATION: CHARACTERIZING EXOPLANET ATMOSPHERES WITH JWST 
+
+The unprecedented signal-to-noise ratio and spectral coverage of 
+
+JWST exoplanet observations is enabling access to the three-dimensional distribution of atmospheric properties. Thanks to the detection of limb asymmetries between morning and evening termi-nators in several giant planets (e.g., Espinoza et al. 2024; Murphy et al. 2024), much focus has been placed at the study of longitudinal             
+
+> Figure 6. Transit light source (TLS) effect for a [M/H]=0.5 K2V star with
+> Teff = 4800 K and log g= 4 .5. Each curve shows the contamination to the optical–NIR transmission spectrum produced by a spot ( Thet < T eff )or faculae ( Thet > T eff ) with a projected covering fraction of 1% at a temperature Thet (see legend).
+
+variability. In this section, we complement this picture, investigat-ing JWST ’s potential to constrain vertical variations in atmospheric abundances, their dependence on spectral coverage, and the biases that may arise if these variations are not properly accounted for. To demonstrate the capability of the new tools developed for Pyrat Bay, we performed atmospheric retrieval simulations with 
+
+JWST on synthetic transmission spectra of the warm-Jupiter WASP-69 b (Anderson et al. 2014). We selected this planet because its large radius and relative low mass (1.06 RJup , 0.25 M Jup , Bonomo et al. 2017), combined with its bright host star (K2V, 7.46 K s mag) make WASP-69 b a favorable target for atmospheric characterization (Kempton et al. 2018). WASP-69 b is also being observed by JWST 
+
+with NIRISS/SOSS, NIRSpec/G395H, and MIRI/LRS (PIDs 3712 and 5924), yielding a combined 0.8–12 μm transmission spectrum that probes multiple absorption features by H 2O, CH 4, CO, CO 2, NH 3,or SO 2. Thus, synthetic spectra for such a target provide a control dataset to compare input and retrieved atmospheric properties, and test how the posterior constraints depend on the spectral coverage. 
+
+3.1 Atmospheric forward modeling of WASP-69 b 
+
+We based our simulations on the observational constraints of WASP-69 b from the literature. Ground-based observations with the high-resolution instrument GIANO-B (0.9–2.45 μm, at R = 50 000 )detected the signature of H 2O, CO, CH 4, NH 3, and C 2H2 (Guilluy et al. 2022). Optical and near-infrared observations have consistently detected H 2O at solar-to-supersolar abundances, and a transit-depth slope characteristic of non-gray hazes (Fisher & Heng 2018; Tsiaras et al. 2018; Murgas et al. 2020; Khalafinejad et al. 2021). We generated temperature and VMR profiles under radiative-thermochemical equilibrium, assuming efficient day-to-night energy redistribution, zero bond albedo, 3 × solar metallicity, and a solar carbon-to-oxygen ratio of C/O = 0.59. The computed temperature profile is non-inverted, spanning 600–1400 K between 10 −5 and 10 bar (Fig. 7, left panel). At these temperatures, CO is the primary carbon carrier, leaving a lower abundance of CH 4. With a solar C/O ratio, the excess oxygen not bound to CO forms primarily H 2O (Fig. 7, middle panel). Motivated by the detection of NH 3, suggesting dis-equilibrium chemistry (Guilluy et al. 2022), we manually enhanced the abundance of NH 3 and SO 2 in our models to mimic the effects of  
+
+> MNRAS 000 , 1–15 (2026)
+
+# Pyrat Bay 2.0: Exoplanet Modeling for JWST 11       
+
+> Figure 7. Left panels: radiative-thermochemical-equilibrium simulation of WASP-69 b assuming a 3 ×solar metallicity and a solar C/O ratio of 0.59. The dashed red curve in the left panel shows the boundary where thermochemical equilibrium predicts an equal amount of CO and CH 4. Volume mixing ratios are color coded according to the legends above the right panel. The dashed VMR curves show SO 2and NH 3abundances taken out of equilibrium. Right panel: transmission spectrum of the WASP-69 b model atmospheres (black curve). The colored curves with shaded areas show the contribution from specific atmospheric species to the transmission spectrum (see legend and labels).
+
+vertical quenching and photochemistry (e.g., Moses 2014; Tsai et al. 2023). We computed the WASP-69 b transmission spectrum including line-sampled cross-sections for CO, CO 2, H 2O, CH 4, C 2H2, SO 2,H2S, HCN, NH 3 (Table 2); alkali opacity for K (Burrows et al. 2000); collision-induced absorption for H 2–H 2 and H 2–He (Borysow et al. 1988, 1989, 2001; Borysow & Frommhold 1989; Borysow 2002); and Rayleigh-scattering for H 2 and He (Kurucz 1970). The trans-mission spectrum (Fig. 7, right panel) illustrates the broad range of atmospheric species accessible to near-infrared transmission obser-vations. In particular, species like H 2O and CH 4 present multiple absorption features in this range, potentially arising from different pressure levels, which is key to enable constraints of their VMR vertical profiles. 
+
+3.2 Atmospheric retrievals of WASP-69 b 
+
+To simulate JWST transmission observations of our model spectra we employed the Gen TSO simulator for time-series observations (Cubillos 2024). We simulated a single transit observation with each instrument of the GO programs 3712 and 5924. We com-puted the expected noise following the instrumental configuration of these programs and assuming a K2V PHOENIX SED for WASP-69 ( Teff = 4750 K, log g = 4 .5). We then increased the noise by a factor of 1.5 to account for the excess noise typically seen in ob-served data. At a resolution of R = 100 , the mean precision of the transit depths are 30 ppm for NIRISS/SOSS (0.8–2.8 μm), 33 ppm for NIRSpec/G395H (2.9–5.2 μm), and 84 ppm for MIRI/LRS (5–12 
+
+μm). Figure 8 shows the simulated spectra. For the retrievals, we adopted the commonly-used “free-chemistry” parameterization to explicitly assess its ability to con-strain the composition of more complex atmospheric models. We focused on CH 4 because it is the most abundant trace gas showing a pressure-dependent VMR. Also, CH 4 presents multiple spectral features at 2.2, 3.3, and 8.0 μm. Thus, for all other species we as-sumed constant-with-altitude VMR profiles, whereas for CH 4 we tested both a constant and a non-isobaric VMR profile. This compar-ison allows us to determine compositional biases, and their statistical significance. We also explored the impact of spectral coverage on the abundance constraints by comparing retrievals using all three instruments (0.8–12 μm) to retrieval using only NIRSpec and MIRI (2.8–12 μm). The retrievals have in total 18 (for the constant-VMR for CH 4
+
+case) and 20 (non-isobaric CH 4 VMR case) free parameters. We fit the VMR of H 2O, CO, CO 2, CH 4, K, NH 3, SO 2, H 2S, HCN, and C 2H2.Simultaneously, we fit the temperature profile with a Madhusudhan & Seager (2009) model, the reference pressure of the planet radius, and the cloud-top pressure pcloud of a gray cloud-deck model. We carried out the posterior sampling with MultiNest, using 1000 live samples. Table A1 lists the models free parameters, their priors, and the re-trieved values. Figure 8 shows the retrieved spectra and posteriors for each model parameterization and fitting dataset. Overall, these sim-ulated transmission spectra probe pressures from 10 −2 − 10 −5 bar, range in which the CH 4 abundance decreases steeply with altitude. The NIRSpec+MIRI retrieval assuming all constant VMRs fails to reproduce all spectral features (Fig. 8, yellow model and poste-riors). The core of the discrepancy arises from the constant-VMR assumption for CH 4, as highlighted in the transmission spectrum in-sets. These insets show two spectral regions with prominent CH 4
+
+features, but that probe distinct pressure levels. While a constant CH 4 profile can fit the spectrum at ∼3.9 μm (probing 5 mbar, where CH 4 is abundant), is not able to simultaneously fit the 3.3 μm feature (probing 0.03 mbar, where CH 4 is less abundant). Furthermore, given the degenerate nature of atmospheric abundance retrievals, correla-tions between abundances propagate into biases for other species, resulting in overestimated VMR posteriors. In particular, the VMR constraints for H 2O and CO, the two most abundant trace gasses, are 
+
+∼3.5 σ above the true values, leading to a biased metallicity inference of ∼18 × solar, rather than the expected 3 × solar value. We found that the cloud top-pressure parameter is constrained to the layers be-low the observed photosphere, showing no significant impact on the retrievals nor degeneracies with other parameters. This is consistent with the input cloud-free atmospheric model. The addition of NIRISS/SOSS data provides spectral coverage of several H 2O bands in the 0.8–2.8 μm range, which improves the overall accuracy of the constant-VMR constraints (Fig. 8, red model). The retrieved CH 4 VMR falls more in line with the average true-VMR (between the probed pressures), but again the model is unable to fit all spectral features (see insets). Consequently, biases emerge in the form of lower temperatures than expected, a spurious HCN posterior peak at log XHCN = −6.4, and a slight overestimation of CO 2.We then performed atmospheric retrievals using the non-isobaric VMR model for CH 4. These runs produced substantially better fits  
+
+> MNRAS 000 , 1–15 (2026)
+
+# 12 Patricio E. Cubillos et al.                
+
+> Figure 8. Retrieval of simulated JWST transmission spectra of WASP-69 b. Top left: the black markers with error bars show the simulated JWST spectra with NIRISS, NIRSpec, and MIRI. The solid curves show the retrieved spectra, color coded by fitting dataset and VMR parameterization (see legend). The insets zoom in on prominent CH 4absorption bands, arising from different pressure levels. Top right: posterior pressure–temperature profiles. The shaded areas denote the retrieved 1 σcredible intervals (same color coding as left panel), whereas the black dashed curve shows the input true temperature profile. The hatched area marks the pressure ranges probed by the simulated transmission spectra. Bottom: marginal posterior distributions for the atmospheric abundances. The shaded areas denote the 1 σcredible intervals for each retrieval run (same color coding as above). The black dashed curves show the true values as function of pressure. The panels for CH 4shows the abundance profile as a function of pressure. The hatched region denotes the range of pressures probed by the simulated observations.
+
+to the simulated spectra (Fig. 8, green and blue). The resulting pos-terior distributions accurately recovered the true VMR values within 1σ credible intervals for detected species, and yielded upper limits for non-detected species. The wavelength coverage played a smaller factor compared to the constant-VMR retrievals. In this case, adding NIRISS data extends the range of probed pressures, improving the overall constraints. That is, narrower posterior distributions, a more accurate fit of the non-inverted thermal profile, and a strengthened CH 4 constraint at high pressures, due to the inclusion of the CH 4
+
+band at 1.7 μm. Finally, we note that although the CO 2 abundance also varies with altitude, the retrievals (assuming constant CO 2 VMR profiles) do not appear to be significantly biased. Two factors likely explain this. First, in this spectrum CO 2 exhibits only two absorption bands at 4.4 and 2.8 μm, with the latter located at the wavelengths with the lowest S/N of the simulated data. Second, due to the observing ge-ometry in transit observations, rays that probe deeper layers of an atmosphere also traverse low-pressure layers. Therefore, for an abun-dance that increases with altitude, like CO 2, the stronger absorption at low pressures dominates the shape of spectral features, and thus is less likely to introduce altitude-dependent biases. Consequently, as seen in these simulations, the retrievals fit a VMR close to that of the lowest-pressure layers that are probed. These simulations show that JWST observations of Jupiter-sized exoplanets have the potential to characterize the vertical structure of their atmospheric composition. These are challenging measure-ments that require favorable targets with extended atmospheres and high S/N observations. Although our simulations assumed some-what idealized, cloud-free conditions, metrics such as χ2 statistics or Bayes factor ( B) help determine when a more complex model is justified in a robust manner (e.g., Raftery 1995; Trotta 2007; Thorn-gren et al. 2026). For example, the Bayes factor between competing models can be estimated from the ratio of their posterior evidences, an output from MultiNest. In our WASP-69 b retrieval simulations, the reduced χ2 improves from 1.56 to 1.09 for the NIRSpec+MIRI fit when switching from the isobaric to non-isobaric VMR assump-tion. Likewise, for the NIRISS+NIRSpec+MIRI fit the reduced χ2
+
+improves from 1.61 to 1.14. The Bayesian evidence statistics also strongly favores the non-isobaric over the constant-VMR model, with 
+
+ln B = 35 .7 for the NIRSpec+MIRI fit and ln B = 89 .1 for the NIRISS+NIRSpec+MIRI fit. Lastly, we acknowledge the practical limitations of using more complex models, as the larger dimension-ality of the parameter space steeply increases the number of model  
+
+> MNRAS 000 , 1–15 (2026)
+
+# Pyrat Bay 2.0: Exoplanet Modeling for JWST 13 
+
+evaluations for the posterior sampling. The use self-consistent VMR profiles, e.g., from kinetic or global circulation models, can help to determine when to consider vertically varying VMR profiles for a given species. 
+
+4 CONCLUSIONS 
+
+We have presented a major upgrade to the Pyrat Bay atmospheric modeling package. This includes a new self-standing radiative-equilibrium code chemcat, specifically designed for exoplanet atmospheric modeling. chemcat enabled the implementation of radiative-equilibrium and equilibrium-chemistry retrieval studies in Pyrat Bay. We have successfully validated these new mod-ules by comparing atmospheric models to existing chemistry and radiative-transfer codes from the literature (GGchem, FastChem, HELIOS). We have also incorporated into Pyrat Bay state-of-the-art retrieval schemes, including MultiNest nested sampling, isotopic-ratio fitting, equilibrium-chemistry retrievals, and hybrid equilibrium-chemistry plus free-VMR retrievals. We have also im-plemented the transit-light-source effect to correct for stellar contam-ination by unocculted spots and faculae in transmission spectra. We further implemented fitting and retrieval parameters for data manip-ulation, that is error-scaling and transit-depth offsets for multi-epoch observations. Lastly we developed a new abundance free-chemistry parameterization allowing vertical variation in VMR profiles. We show with simulated transit observations that JWST is able to detect vertical variations. Additionally, a separate work by Blecic et al. (in prep.) will present the implementation of advanced mie scattering clouds. The need for such tools is evidenced by the wide variety of research approaches seen in the literature, such as atmospheric grid fitting for high-resolution observations (Giacobbe et al. 2021; Carleo et al. 2022; Guilluy et al. 2022; Basilicata et al. 2024), atmospheric retrievals of ultra-hot Jupiters (Demangeon et al. 2024; Singh et al. 2024; Akinsanmi et al. 2024; Challener et al. 2025; Deline et al. 2025; Garai et al. 2025), or atmospheric simulations to study the characterization potential of JWST (Bangera et al. 2025; Bonfanti et al. 2025; Damasso et al. 2024; Sozzetti et al. 2024). Pyrat Bay is a Python package available for installation from PyPI 3 (pip install pyratbay). The source code is available at github.com/pcubillos/pyratbay. To facilitate the use of Pyrat Bay, we have provided via Zenodo 4 pre-computed line-sampled cross sec-tions for 38 species of interest for exoplanet atmospheric modeling. These cross sections cover wavelength from 0.15 to 33 μm, pres-sures from 10 3 to 10 −9 bar, and temperatures from 200 to 5000 K, at a spectral resolution of R = 25 , 000 . We have also expanded the documentation, providing practical tutorials of specific modules and full end-to-end scientific applications 5.
+
+ACKNOWLEDGEMENTS 
+
+We thank the anonymous referee for their time and valu-able comments. We thank Luis Welbanks and Jorge Naranjo for their help implementing nested sampling. We thank con-tributors to the Python Programming Language and the free and open-source community (see Software Section below). This project was funded by the Austrian Science Fund (FWF) Erwin    
+
+> 3https://pypi.org/project/pyratbay
+> 4https://zenodo.org/records/16965390
+> 5https://pyratbay.readthedocs.io/en/latest/cookbooks/recipes.html
+
+Schroedinger Fellowship, program J4595-N. D. S. acknowledges support from the Severo Ochoa grant CEX2021-001131-S funded by MCIN/AEI/10.13039/501100011033 and from the project PID2021-126365NB-C21(MCI/AEI/FEDER, UE). This research has made use of NASA’s Astrophysics Data System Bibliographic Services. The following software and packages were used in this work: Pyrat Bay (Cubillos & Blecic 2021), mc3 (Cubillos et al. 2017), MultiNest (Feroz et al. 2009), chemcat 6, TEA (Blecic et al. 2016), GGchem (Woitke et al. 2018), FastChem (Stock et al. 2018), HE-LIOS (Malik et al. 2017), repack (Cubillos 2017), Numpy (Har-ris et al. 2020), SciPy (Virtanen et al. 2020), Matplotlib (Hunter 2007), IPython (Pérez & Granger 2007), and bibmanager 7 (Cubil-los 2020). 
+
+DATA AVAILABILITY 
+
+Data and analyses presented in this article are available at this Zenodo research compendium https://doi.org/10.5281/zenodo.21689779. 
+
+REFERENCES    
+
+> Adams Redai J., et al., 2025, AJ, 170, 219 Agúndez M., Venot O., Iro N., Selsis F., Hersant F., Hébrard E., Dobrijevic M., 2012, A&A, 548, A73 Ahrer E.-M., et al., 2023, Nature, 614, 653 Ahrer E.-M., et al., 2025a, MNRAS, 540, 2535 Ahrer E.-M., et al., 2025b, ApJ, 985, L10 Akinsanmi B., et al., 2024, A&A, 685, A63 Al-Refaie A. F., Changeat Q., Waldmann I. P., Tinetti G., 2021, ApJ, 917, 37 Alam M. K., et al., 2025, AJ, 169, 15 Alderson L., et al., 2023, Nature, 614, 664 Alderson L., et al., 2024, AJ, 167, 216 Allard N. F., Spiegelman F., Leininger T., Molliere P., 2019, A&A, 628, A120 Anderson D. R., et al., 2014, MNRAS, 445, 1114 Andrae R., 2010, arXiv e-prints, p. arXiv:1009.2755 Arcangeli J., et al., 2018, ApJ, 855, L30 Ashton G., et al., 2022, Nature Reviews Methods Primers, 2, 39 Asplund M., Grevesse N., Sauval A. J., Scott P., 2009, ARA&A, 47, 481 Asplund M., Amarsi A. M., Grevesse N., 2021, A&A, 653, A141 Azzam A. A. A., Tennyson J., Yurchenko S. N., Naumenko O. V., 2016, MNRAS, 460, 4063 Baeyens R., Decin L., Carone L., Venot O., Agúndez M., Mollière P., 2021, MNRAS, 505, 5603 Baeyens R., Konings T., Venot O., Carone L., Decin L., 2022, MNRAS, 512, 4877 Bangera N., Helling C., Guilluy G., Cubillos P., Fossati L., Giacobbe P., Rimmer P., Kitzmann D., 2025, ApJ, 980, 147 Barat S., et al., 2025, AJ, 170, 165 Barber R. J., Strange J. K., Hill C., Polyansky O. L., Mellau G. C., Yurchenko S. N., Tennyson J., 2014, MNRAS, 437, 1828 Barton E. J., Chiu C., Golpayegani S., Yurchenko S. N., Tennyson J., Frohman D. J., Bernath P. F., 2014, MNRAS, 442, 1821 Basilicata M., et al., 2024, A&A, 686, A127 Bell T. J., et al., 2024, Nature Astronomy, 8, 879 Bello-Arufe A., et al., 2025, ApJ, 980, L26 Benneke B., et al., 2024, arXiv e-prints, p. arXiv:2403.03325 Bernath P. F., 2020, J. Quant. Spectrosc. Radiative Transfer, 240, 106687 Blecic J., Harrington J., Bowman M. O., 2016, ApJS, 225, 4 Bonfanti A., et al., 2025, A&A, 693, A90 Bonomo A. S., et al., 2017, A&A, 602, A107
+> 6https://chemcat.readthedocs.io
+> 7https://bibmanager.readthedocs.io MNRAS 000 , 1–15 (2026)
+
+# 14 Patricio E. Cubillos et al. 
+
+Borucki W. J., 2016, Reports on Progress in Physics, 79, 036901 Borysow A., 2002, A&A, 390, 779 Borysow A., Frommhold L., 1989, ApJ, 341, 549 Borysow J., Frommhold L., Birnbaum G., 1988, ApJ, 326, 509 Borysow A., Frommhold L., Moraldi M., 1989, ApJ, 336, 495 Borysow A., Jorgensen U. G., Fu Y., 2001, J. Quant. Spectrosc. Radiative Transfer, 68, 235 Bowesman C. A., Qu Q., McKemmish L. K., Yurchenko S. N., Tennyson J., 2024, MNRAS, 529, 1321 Brady R. P., Yurchenko S. N., Tennyson J., Kim G.-S., 2024, MNRAS, 527, 6675 Buchner J., et al., 2014, A&A, 564, A125 Burcat A., Ruscic B., 2005, Technical report, Third millenium ideal gas and condensed phase thermochemical database for combustion (with update from active thermochemical tables)., https://www.osti.gov/biblio/925269. Argonne National Laboratory (ANL), doi:10.2172/925269, https://www.osti.gov/biblio/925269 Burrows A., Marley M. S., Sharp C. M., 2000, ApJ, 531, 438 Burrows A., Budaj J., Hubeny I., 2008, ApJ, 678, 1436 Carleo I., et al., 2022, AJ, 164, 101 Carroll B. W., Ostlie D. A., 1996, An Introduction to Modern Astrophysics. Cambridge University Press Carter A. L., et al., 2024, Nature Astronomy, 8, 1008 Challener R. C., et al., 2025, Nature Astronomy, 9, 1821 Changeat Q., Edwards B., Waldmann I. P., Tinetti G., 2019, ApJ, 886, 39 Charbonneau D., Brown T. M., Latham D. W., Mayor M., 2000, ApJ, 529, L45 Chase M. W., 1986, JANAF thermochemical tables. American Institute of Physics Chubb K. L., et al., 2018, J. Quant. Spectrosc. Radiative Transfer, 218, 178 Chubb K. L., Tennyson J., Yurchenko S. N., 2020, MNRAS, 493, 1531 Coles P. A., Yurchenko S. N., Tennyson J., 2019, MNRAS, 490, 4638 Coulombe L.-P., et al., 2023, Nature, 620, 292 Cox J. P., Giuli R. T., 1968, Principles of stellar structure. Gordon and Breach Coxon J. A., Hajigeorgiou P. G., 2015, J. Quant. Spectrosc. Radiative Transfer, 151, 133 Cubillos P. E., 2017, ApJ, 850, 32 Cubillos P. E., 2020, bibmanager: A BibTeX manager for La-TeX projects, Zenodo, doi:10.5281/zenodo.2547042, Zenodo, doi:10.5281/zenodo.2547042 Cubillos P. E., 2024, PASP, 136, 124501 Cubillos P. E., Blecic J., 2021, MNRAS, 505, 2675 Cubillos P., Harrington J., Loredo T. J., Lust N. B., Blecic J., Stemm M., 2017, AJ, 153, 3 Cubillos P. E., Blecic J., Dobbs-Dixon I., 2019, ApJ, 872, 111 Damasso M., et al., 2024, A&A, 688, A15 Deka T., Majumdar L., Khan T. B., Dewan S., Ghosh P., Das D., Patra M., 2026, ApJ, 996, 116 Deline A., et al., 2025, A&A, 699, A150 Demangeon O. D. S., et al., 2024, A&A, 684, A27 Drummond B., Tremblin P., Baraffe I., Amundsen D. S., Mayne N. J., Venot O., Goyal J., 2016, A&A, 594, A69 Dulick M., Bauschlicher Jr. C. W., Burrows A., Sharp C. M., Ram R. S., Bernath P., 2003, ApJ, 594, 651 Espinoza N., et al., 2023, PASP, 135, 018002 Espinoza N., et al., 2024, Nature, 632, 1017 Fegley Jr. B., Lodders K., 1996, ApJ, 472, L37 Feinstein A. D., et al., 2023, Nature, 614, 670 Feroz F., Hobson M. P., Bridges M., 2009, MNRAS, 398, 1601 Fisher C., Heng K., 2018, MNRAS, 481, 4698 Foreman-Mackey D., Hogg D. W., Lang D., Goodman J., 2013, PASP, 125, 306 Fortney J. J., Visscher C., Marley M. S., Hood C. E., Line M. R., Thorngren D. P., Freedman R. S., Lupu R., 2020, AJ, 160, 288 Fossati L., Young M. E., Shulyak D., Koskinen T., Huang C., Cubillos P. E., France K., Sreejith A. G., 2021, A&A, 653, A52 Fossati L., et al., 2023, A&A, 676, A99 Fossati L., et al., 2025, A&A, 699, A186 Fournier-Tondreau M., et al., 2025, MNRAS, 539, 422 Fu G., et al., 2024, Nature, 632, 752 Fulton B. J., Petigura E. A., 2018, AJ, 156, 264 Gandhi S., de Regt S., Snellen I., Zhang Y., Rugers B., van Leur N., Bosschaart Q., 2023, ApJ, 957, L36 Gandhi S., et al., 2025, MNRAS, 537, 134 Garai Z., et al., 2025, A&A, 700, A5 Giacobbe P., et al., 2021, Nature, 592, 205 Goody R. M., Yung Y. L., 1989, Atmospheric Radiation: Theoretical Basis. Oxford: Oxford Univ. Press Gordon S., McBride B. J., 1994, Computer Program for Cal-culation of Complex Chemical Equilibrium Compositions and Applications I, NASA Reference Publication RP-1311, https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19950013764.pdf Gordon I. E., et al., 2022, J. Quant. Spectrosc. Radiative Transfer, 277, 107949 Gordon I. E., et al., 2026, J. Quant. Spectrosc. Radiative Transfer, 353, 109807 Gorman M. N., Yurchenko S. N., Tennyson J., 2019, MNRAS, 490, 1652 Gray D. F., 1992, The observation and analysis of stellar photospheres.. Cambridge University Press Gressier A., et al., 2024, ApJ, 975, L10 Grimm S. L., Heng K., 2015, ApJ, 808, 182 Guillot T., 2010, A&A, 520, A27 Guilluy G., et al., 2022, A&A, 665, A104 Gustafsson B., Edvardsson B., Eriksson K., Jørgensen U. G., Nordlund Å., Plez B., 2008, A&A, 486, 951 Harris G. J., Tennyson J., Kaminsky B. M., Pavlenko Y. V., Jones H. R. A., 2006, MNRAS, 367, 400 Harris G. J., Larner F. C., Tennyson J., Kaminsky B. M., Pavlenko Y. V., Jones H. R. A., 2008, MNRAS, 390, 143 Harris C. R., et al., 2020, Nature, 585, 357 Hauschildt P. H., Barman T., Baron E., Aufdenberg J. P., Schweitzer A., 2025, A&A, 698, A47 Heng K., Mendonça J. M., Lee J.-M., 2014, ApJS, 215, 4 Henyey L., Vardya M. S., Bodenheimer P., 1965, ApJ, 142, 841 Holmberg M., Madhusudhan N., 2024, A&A, 683, L2 Huang X., Freedman R. S., Tashkun S., Schwenke D. W., Lee T. J., 2023, Journal of Molecular Spectroscopy, 392, 111748 Hunter J. D., 2007, Computing In Science & Engineering, 9, 90 Husser T.-O., Wende-von Berg S., Dreizler S., Homeier D., Reiners A., Bar-man T., Hauschildt P. H., 2013, A&A, 553, A6 JWST Transiting Exoplanet Community Early Release Science Team et al., 2023, Nature, 614, 649 John T. L., 1988, A&A, 193, 189 Kempton E. M.-R., et al., 2018, PASP, 130, 114401 Khalafinejad S., et al., 2021, A&A, 656, A142 Kirk J., et al., 2025, MNRAS, 537, 3027 Kubyshkina D., et al., 2019, ApJ, 879, 26 Kurucz R. L., 1970, SAO Special Report, 309 Kurucz R. L., 2018, in Workshop on Astrophysical Opacities. p. 47 Lammer H., Selsis F., Ribas I., Guinan E. F., Bauer S. J., Weiss W. W., 2003, ApJ, 598, L121 Langleben J., Tennyson J., Yurchenko S. N., Bernath P., 2019, MNRAS, 488, 2332 Leconte J., 2021, A&A, 645, A20 Li G., Gordon I. E., Rothman L. S., Tan Y., Hu S.-M., Kassi S., Campargue A., Medvedev E. S., 2015, ApJS, 216, 15 Line M. R., Teske J., Burningham B., Fortney J. J., Marley M. S., 2015, ApJ, 807, 183 Lothringer J. D., et al., 2025, AJ, 169, 274 Louca A. J., Miguel Y., Kubyshkina D., 2023, ApJ, 956, L19 Louie D. R., et al., 2025, AJ, 169, 86 MacDonald R. J., 2023, The Journal of Open Source Software, 8, 4873 Mackamul E., Casiez G., Malacria S., 2024, Human-Computer Interaction, pp 1 – 26 Madhusudhan N., Seager S., 2009, ApJ, 707, 24 Madhusudhan N., Sarkar S., Constantinou S., Holmberg M., Piette A. A. A., Moses J. I., 2023, ApJ, 956, L13 Malik M., et al., 2017, AJ, 153, 56 MNRAS 000 , 1–15 (2026) Pyrat Bay 2.0: Exoplanet Modeling for JWST 15 
+
+Malik M., Kitzmann D., Mendonça J. M., Grimm S. L., Marleau G.-D., Linder E. F., Tsai S.-M., Heng K., 2019, AJ, 157, 170 Marley M. S., Saumon D., Guillot T., Freedman R. S., Hubbard W. B., Burrows A., Lunine J. I., 1996, Science, 272, 1919 Mayo A. W., Fortenbach C. D., Louie D. R., Dressing C. D., Turtelboom E. V., Giacalone S., Harada C. K., 2025, AJ, 170, 50 McBride B. J., Zehe M. J., Gordon S., 2002, NASA Glenn Coefficients for Calculating Thermodynamic Properties of In-dividual Species, NASA Technical Publication TP-2002-211556, https://ntrs.nasa.gov/citations/20020085330 McCullough P. R., Crouzet N., Deming D., Madhusudhan N., 2014, ApJ, 791, 55 McKemmish L. K., Yurchenko S. N., Tennyson J., 2016, MNRAS, 463, 771 McKemmish L. K., Masseron T., Hoeijmakers H. J., Pérez-Mesa V., Grimm S. L., Yurchenko S. N., Tennyson J., 2019, MNRAS, 488, 2836 Mihalas D., 1978, Stellar atmospheres. W. H. Freeman Min M., Ormel C. W., Chubb K., Helling C., Kawashima Y., 2020, A&A, 642, A28 Mollière P., Snellen I. A. G., 2019, A&A, 622, A139 Mollière P., van Boekel R., Dullemond C., Henning T., Mordasini C., 2015, ApJ, 813, 47 Mollière P., Wardenier J. P., van Boekel R., Henning T., Molaverdikhani K., Snellen I. A. G., 2019, A&A, 627, A67 Moran S. E., et al., 2023, ApJ, 948, L11 Mordasini C., van Boekel R., Mollière P., Henning T., Benneke B., 2016, ApJ, 832, 41 Morley C. V., Fortney J. J., Marley M. S., Zahnle K., Line M., Kempton E., Lewis N., Cahoy K., 2015, ApJ, 815, 110 Moses J. I., 2014, Philosophical Transactions of the Royal Society of London Series A, 372, 20130073 Moses J. I., et al., 2011, ApJ, 737, 15 Mukherjee S., Batalha N. E., Fortney J. J., Marley M. S., 2023, ApJ, 942, 71 Murgas F., Chen G., Nortmann L., Palle E., Nowak G., 2020, A&A, 641, A158 Murphy M. M., et al., 2024, Nature Astronomy, 8, 1562 Murphy M. M., et al., 2026, AJ, 172, 66 Öberg K. I., Murray-Clay R., Bergin E. A., 2011, ApJ, 743, L16 Owens A., Yachmenev A., Thiel W., Tennyson J., Yurchenko S. N., 2017, MNRAS, 471, 5025 Owens A., Tennyson J., Yurchenko S. N., 2021, MNRAS, 502, 1128 Owens A., Dooley S., McLaughlin L., Tan B., Zhang G., Yurchenko S. N., Tennyson J., 2022, MNRAS, 511, 5448 Owens A., Yurchenko S. N., Tennyson J., 2024, MNRAS, 530, 4004 Pacetti E., et al., 2022, ApJ, 937, 36 Paulose G., Barton E. J., Yurchenko S. N., Tennyson J., 2015, MNRAS, 454, 1931 Pelletier S., et al., 2026, A&A, 706, A2 Pérez F., Granger B. E., 2007, Computing in Science and Engineering, 9, 21 Piskunov N. E., Kupka F., Ryabchikova T. A., Weiss W. W., Jeffery C. S., 1995, A&AS, 112, 525 Polyansky O. L., Kyuberis A. A., Zobov N. F., Tennyson J., Yurchenko S. N., Lodi L., 2018, MNRAS, 480, 2597 Prajapat L., Jagoda P., Lodi L., Gorman M. N., Yurchenko S. N., Tennyson J., 2017, MNRAS, 472, 3648 Press W. H., Teukolsky S. A., Vetterling W. T., Flannery B. P., 2007, Nu-merical Recipes 3rd Edition: The Art of Scientific Computing, 3 edn. Cambridge University Press, New York, NY, USA Rackham B. V., Apai D., Giampapa M. S., 2018, ApJ, 853, 122 Raftery A. E., 1995, Sociological Methodology, 25, 111 Rivlin T., Lodi L., Yurchenko S. N., Tennyson J., Le Roy R. J., 2015, MNRAS, 451, 634 Rohrmann R. D., 2001, MNRAS, 323, 699 Rustamkulov Z., et al., 2023, Nature, 614, 659 Scarsdale N., et al., 2024, AJ, 168, 276 Semenov M., El-Kork N., Yurchenko S. N., Tennyson J., 2025, MNRAS, 536, 714 Showman A. P., Fortney J. J., Lian Y., Marley M. S., Freedman R. S., Knutson H. A., Charbonneau D., 2009, ApJ, 699, 564 Sikora J. T., et al., 2025, AJ, 170, 105 Sing D. K., et al., 2016, Nature, 529, 59 Singh V., et al., 2024, A&A, 683, A1 Skilling J., 2004, in Fischer R., Preuss R., Toussaint U. V., eds, American Institute of Physics Conference Series Vol. 735, Bayesian Inference and Maximum Entropy Methods in Science and Engineering. pp 395–405, doi:10.1063/1.1835238 Skilling J., 2006, Bayesian Analysis, 1, 833 Sousa-Silva C., Al-Refaie A. F., Tennyson J., Yurchenko S. N., 2015, MNRAS, 446, 2337 Sozzetti A., et al., 2024, MNRAS, 535, 531 Spiegel D. S., Burrows A., 2010, ApJ, 722, 871 Stock J. W., Kitzmann D., Patzer A. B. C., Sedlmayr E., 2018, MNRAS, 479, 865 Thompson A., et al., 2024, ApJ, 960, 107 Thorngren D. P., Sing D. K., Mukherjee S., 2026, ApJS, 283, 10 Trotta R., 2007, MNRAS, 378, 72 Tsai S.-M., et al., 2023, Nature, 617, 483 Tsiaras A., et al., 2018, AJ, 155, 156 Underwood D. S., Tennyson J., Yurchenko S. N., Huang X., Schwenke D. W., Lee T. J., Clausen S., Fateev A., 2016, MNRAS, 459, 3890 Upadhyay A., Conway E. K., Tennyson J., Yurchenko S. N., 2018, MNRAS, 477, 1520 Verma A., Goyal J., Avarsekar S., Shukla G., 2025, AJ, 170, 69 Virtanen P., et al., 2020, Nature Medicine, 17, 261 Visscher C., Lodders K., Fegley Jr. B., 2006, ApJ, 648, 1181 Wallack N. L., et al., 2024, AJ, 168, 77 Weiner Mansfield M., et al., 2024, AJ, 168, 14 Welbanks L., Madhusudhan N., 2021, ApJ, 913, 114 Welbanks L., et al., 2024, Nature, 630, 836 White W. B., Johnson S. M., Dantzig G. B., 1958, J. Chem. Phys., 28, 751 Woitke P., Helling C., Hunter G. H., Millard J. D., Turner G. E., Worters M., Blecic J., Stock J. W., 2018, A&A, 614, A1 Yurchenko S. N., 2015, J. Quant. Spectrosc. Radiative Transfer, 152, 28 Yurchenko S. N., Tennyson J., 2014, MNRAS, 440, 1649 Yurchenko S. N., Sinden F., Lodi L., Hill C., Gorman M. N., Tennyson J., 2018, MNRAS, 473, 5324 Yurchenko S. N., Mellor T. M., Freedman R. S., Tennyson J., 2020, MNRAS, 496, 5282 Yurchenko S. N., et al., 2022, MNRAS, 510, 903 Yurchenko S. N., Owens A., Kefala K., Tennyson J., 2024a, MNRAS, 528, 3719 Yurchenko S. N., et al., 2024b, MNRAS, 533, 3442 Zhang M., Chachan Y., Kempton E. M.-R., Knutson H. A., Chang W. H., 2020, ApJ, 899, 27 Zhang Y., et al., 2021, Nature, 595, 370 ter Braak C. J. F., Vrugt J. A., 2008, Statistics and Computing, 18, 435 
+
+APPENDIX A: WASP-69 b RETRIEVAL PARAMETERS 
+
+Table A1 lists all parameters, priors, and posteriors for the atmo-spheric retrievals of the simulated WASP-69b spectra. 
+
+This paper has been typeset from a TEX/L ATEX file prepared by the author. MNRAS 000 , 1–15 (2026) 16 Patricio E. Cubillos et al. 
+
+Table A1. Atmospheric retrievals of simulated WASP-69 b observations Uniform prior Constant CH 4 retrievals Non-isobaric CH 4 retrievals Parameter ranges NIRSpec+MIRI NIRISS+NIRSpec+MIRI NIRSpec+MIRI NIRISS+NIRSpec+MIRI 
+
+log p1 (bar) (−9.0, 2.0) −4.4+3 .0 
+
+> −3.3
+
+−3.57 +2 .15  
+
+> −1.00
+
+−6.1+3 .0 
+
+> −2.0
+
+−2.51 +0 .54 
+
+> −0.73
+
+log p2 (bar) (−9.0, 2.0) −4.5+3 .9 
+
+> −3.0
+
+−6.2+2 .2 
+
+> −1.8
+
+−3.7+3 .4 
+
+> −3.2
+
+−5.9+2 .1
+
+> −2.1
+
+log p3 (bar) (−9.0, 2.0) −0.7+1 .9 
+
+> −3.0
+
+−1.61 +2 .16  
+
+> −0.49
+
+−1.8+2 .6 
+
+> −3.4
+
+0.4+1 .1
+
+> −1.1
+
+a1 (0 .02 , 2.0) 1.23 +0 .49  
+
+> −0.43
+
+1.44 +0 .38  
+
+> −0.74
+
+1.31 +0 .46  
+
+> −0.54
+
+1.39 +0 .39 
+
+> −0.33
+
+a2 (0 .02 , 2.0) 1.21 +0 .52  
+
+> −0.55
+
+0.49 +0 .39  
+
+> −0.16
+
+1.36 +0 .43  
+
+> −0.50
+
+0.42 +0 .14 
+
+> −0.12
+
+T0 (K) (300 , 1500) 674 .6+104 .8 
+
+> −94 .4
+
+531 .8+43 .0 
+
+> −155 .2
+
+748 .4+70 .3 
+
+> −62 .1
+
+688 .5+36 .5
+
+> −56 .3
+
+log pref (bar) (−8.0, 0.0) −5.99 +0 .23  
+
+> −0.21
+
+−5.233 +0 .093  
+
+> −0.092
+
+−5.02 +0 .21  
+
+> −0.22
+
+−5.04 +0 .11 
+
+> −0.13
+
+log XH2O (−10 .0, −0.5) −2.29 +0 .18  
+
+> −0.19
+
+−3.099 +0 .094  
+
+> −0.100
+
+−3.06 +0 .22  
+
+> −0.23
+
+−2.99 +0 .14 
+
+> −0.12
+
+log XCO (−10 .0, −0.5) −1.98 +0 .23  
+
+> −0.29
+
+−3.12 +0 .17  
+
+> −0.18
+
+−2.86 +0 .29  
+
+> −0.31
+
+−2.91 +0 .23 
+
+> −0.21
+
+log XCO2 (−10 .0, −0.5) −4.01 +0 .17  
+
+> −0.18
+
+−4.64 +0 .11  
+
+> −0.12
+
+−4.90 +0 .23  
+
+> −0.23
+
+−4.89 +0 .14 
+
+> −0.13
+
+log XCH4 (−10 .0, −0.5) −4.29 +0 .16  
+
+> −0.19
+
+−4.847 +0 .084  
+
+> −0.089
+
+· · · · · · 
+
+mCH4 (0 .0, 5.0) · · · · · · 1.22 +0 .92  
+
+> −0.27
+
+2.6+1 .5
+
+> −1.1
+
+log X0CH4 (−10 .0, 1.0) · · · · · · −4.45 +0 .63  
+
+> −0.41
+
+−3.93 +0 .84 
+
+> −0.58
+
+log Xmax CH4 (−6.0, −0.5) · · · · · · −3.94 +1 .96  
+
+> −0.29
+
+−4.43 +0 .13 
+
+> −0.11
+
+log XK (−10 .0, −0.5) −6.1+2 .7 
+
+> −2.6
+
+−6.85 +0 .16  
+
+> −0.17
+
+−6.5+2 .4 
+
+> −2.2
+
+−6.39 +0 .24 
+
+> −0.23
+
+log XNH3 (−10 .0, −0.5) −4.72 +0 .20  
+
+> −0.26
+
+−5.75 +0 .12  
+
+> −0.14
+
+−5.46 +0 .25  
+
+> −0.26
+
+−5.57 +0 .15 
+
+> −0.15
+
+log XSO2 (−10 .0, −0.5) −5.15 +0 .17  
+
+> −0.21
+
+−5.789 +0 .093  
+
+> −0.096
+
+−5.64 +0 .18  
+
+> −0.19
+
+−5.66 +0 .14 
+
+> −0.12
+
+log XH2S (−10 .0, −0.5) −3.30 +0 .21  
+
+> −0.23
+
+−4.36 +0 .13  
+
+> −0.13
+
+−7.1+1 .8 
+
+> −1.9
+
+−4.42 +0 .19 
+
+> −0.19
+
+log XHCN (−10 .0, −0.5) −8.0+1 .4 
+
+> −1.3
+
+−6.37 +0 .35  
+
+> −1.33
+
+−8.66 +1 .03  
+
+> −0.90
+
+−8.64 +1 .06 
+
+> −0.93
+
+log XC2H2 (−10 .0, −0.5) −8.4+1 .1 
+
+> −1.1
+
+−8.5+1 .2 
+
+> −1.0
+
+−8.78 +0 .89  
+
+> −0.83
+
+−8.79 +0 .89 
+
+> −0.81
+
+log pcl (bar) (−7.0, 2.0) −0.1+1 .4 
+
+> −1.4
+
+0.87 +0 .73  
+
+> −0.73
+
+−0.0+1 .3 
+
+> −1.4
+
+0.58 +0 .95 
+
+> −0.98
+
+The reported retrieved values correspond to the marginal posterior distribution’s median and boundaries of the 68% central credible interval (Andrae 2010). For the non-isobaric CH 4 model, the pressure of log X0CH4 is set at p0 = 1 mbar. MNRAS 000 , 1–15 (2026)

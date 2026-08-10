@@ -1,0 +1,378 @@
+Title: Discovery of the λ Bootis phenomenon in an early B-type star
+
+URL Source: https://arxiv.org/pdf/2608.06954v1
+
+Published Time: Mon, 10 Aug 2026 00:38:49 GMT
+
+Number of Pages: 9
+
+Markdown Content:
+Astronomy & Astrophysics manuscript no. HD37356 ©ESO 2026 August 10, 2026 
+
+# Discovery of the λ Bootis phenomenon in an early B-type star 
+
+J. Olbermann 1, P. Aschenbrenner 1, and N. Przybilla 1 ⋆
+
+Universität Innsbruck, Institut für Astro- und Teilchenphysik, Technikerstr. 25 /8, 6020 Innsbruck, Austria Received ; accepted  
+
+> ABSTRACT
+> Context.
+
+Chemically peculiar A-type stars of the λ Boo class are characterised by depletions of refractory elements and normal volatile species. Their formation channel(s) have not yet been fully established, but they provide insight into star-disc-planet interactions during star formation, star-planet interactions in later system evolution, or interactions between stars and the interstellar medium.  
+
+> Aims.
+
+We report the first detection of the λ Boo phenomenon in a massive early B-type star, HD 37356, a member of Ori OB1c.  
+
+> Methods.
+
+We analysed a high-quality spectrum using a hybrid non-LTE model-atmosphere technique. We determined atmospheric parameters and elemental abundances using neural networks to emulate synthetic spectra, coupled with a Markov chain Monte Carlo algorithm. We also derived the fundamental parameters of the star using Gaia data and stellar evolution models.  
+
+> Results.
+
+HD 37356 closely resembles the Morgan-Keenan standard γ Peg, closely agreeing in spectral signatures except for the lines of refractory elements, which are systematically weaker. The quantitative analysis yields similar stellar parameters. The abundances of volatile elements are compatible with cosmic standard abundances, while refractory species are depleted by 0.25 to 0.45 dex. In particular, the lower iron abundance explains the di ff erent pulsational behaviour of HD 37356 compared to γ Peg. Of the di ff erent formation channels for λ Boo stars, only the accretion of gas depleted in refractory elements from the circumstellar disc during star formation appears to be feasible in this case. This scenario requires HD 37356 to be a true slow rotator in order to prevent the abundance pattern from being erased by internal mixing processes such as meridional circulation.  
+
+> Key words.
+
+Stars: abundances – Stars: atmospheres – Stars: chemically peculiar – Stars: individual: HD 37356 – Stars: massive 
+
+1. Introduction 
+
+The λ Boo stars are the third most common chemically peculiar (CP) A-type stars after the slow-rotating Am and magnetic Ap stars and are found between spectral types B9 and F3 (Corbally 2018). They are characterised by a deficiency of heavy elements in their spectra, while the abundances of light elements car-bon, nitrogen, oxygen, and sulphur remain close to solar (Heiter 2002). This resembles the general pattern of metal depletion found in the interstellar medium (ISM), with refractory elements locked in dust grains and only volatile elements remaining in the gas phase (Venn & Lambert 1990). The λ Boo phenomenon af-fects A-type stars of all ages, from star formation (see examples in OB associations; Gray & Corbally 1993) to the terminal-age main sequence. However, the cause of the chemical peculiarity remains unclear, and multiple channels can produce the spectral signature of λ Boo stars (Murphy & Paunzen 2017). Based on observed abundance patterns, Venn & Lambert (1990) suggested that λ Boo stars result from the separation of circumstellar, or interstellar, gas from grains, and subsequent ac-cretion of the gas by the star (see also Waters et al. 1992). The bulk of the interstellar grains would then comprise a circumstel-lar cloud or disc that would be detectable by its IR radiation. Indeed, the incidence of bright IR excesses around λ Boo stars is higher than in normal A-type stars, which is interpreted as origi-nating from debris discs (Draper et al. 2016). Kama et al. (2015) proposed a mechanism in which a Jupiter-type planet blocks the flow of dust from a protoplanetary disc to the stellar surface late in its formation. Later in the life of A-type stars, accretion of material from the winds of hot Jupiters could also lead to the  
+
+> ⋆
+
+Corresponding author: norbert.przybilla@uibk.ac.at 
+
+λ Boo abundance pattern (Jura 2015); radiation pressure on gas-phase ions might selectively allow the accretion of light elements with relatively few spectral lines such as carbon, nitrogen, and oxygen, while the inflow of elements such as iron (with its rich spectrum) may be suppressed – the presence of dust would not be required in that case. Kamp & Paunzen (2002) suggested the interaction between a star and a di ff use interstellar cloud as the origin of the λ Boo abundance pattern. Once the interaction ends, the resulting abundance pattern would remain visible for only a short timescale of ∼10 6 yr, and would be gradually diminished by meridional circulation in intermediate- to fast-rotating λ Boo stars (Turcotte 2002), explaining the rarity of this kind of star. The opportunity to study star-disc-planet interactions during star formation, star-planet interactions in later system evolution, or star-ISM interactions makes λ Boo stars interesting in the as-trophysical context beyond their immediate peculiarity. Progress in understanding complex problems often comes from a perspec-tive that is independent of the immediate context. Here, we re-port the serendipitous discovery of a λ Boo abundance pattern in a massive early B-type star that, compared to A-type stars, has a substantial stellar wind. The paper is structured as follows: We introduce the observational material in Sect. 2 and the analysis methodology in Sect. 3. Section 4 presents the results, and we draw our conclusions in Sect. 5. 
+
+2. Observational data 
+
+Our study is based on a spectrum of HD 37356 observed on the night of 8 November 2011 (programme ID 088.D-0064, P.I. A. Irrgang) with the Fibrefed Extended Range Op-tical Spectrograph (FEROS; Kaufer et al. 1999) mounted on the Max-Planck-Gesellschaft /European Southern Observatory 
+
+Article number, page 1 arXiv:2608.06954v1 [astro-ph.SR] 7 Aug 2026 A&A proofs: manuscript no. HD37356 
+
+Fig. 1: Comparison of strategic regions of the observed spectra of HD 37356 (black line) and γ Peg (grey line), covering all analysed chemical species. The spectrum of γ Peg was artificially broadened to match that of HD 37356. Both spectra were shifted to the laboratory rest frame. Line identifications are given, and lines of refractory elements are marked with dots. (ESO) 2.2 m telescope at La Silla in Chile. We downloaded pipeline-reduced Phase 3 data from the ESO science portal 1. It covers a useful wavelength range from about 3700 to 9200 Å at a resolving power of R = λ/ ∆λ ≈ 48 000 and a signal-to-noise ratio of S /N ≈ 400 per pixel, measured around 5000 Å. We nor-malised the spectrum by fitting a spline function through care-fully selected continuum points. For comparison, we adopted a spectrum of γ Peg (HD 886) as observed with the Fibre Optics Cassegrain Echelle Spectrograph (FOCES; Pfei ff er et al. 1998) on the Calar Alto 2.2m telescope in Spain, with R ≈ 40 000 and 
+
+S /N≈ 500 (for further details, see Nieva & Przybilla 2012). Moreover, for the construction of the stellar energy distribu-tion (SED), we used low-dispersion, large-aperture spectropho-tometry for HD 37356 (IDs SWP40064 and LWP19162) ob-tained with the International Ultraviolet Explorer, IUE 2. In the optical we also considered a low-resolution spectrum from Gaia 
+
+Data Release 3 (DR3; Gaia Collaboration et al. 2016, 2023) and Johnson U BV magnitudes (Mermilliod 1997). In the IR, we adopted JHK magnitudes from the Two Micron All Sky Survey (2MASS; Cutri et al. 2003) and AllWISE photometry (Cutri et al. 2021), based on data from the Wide-Field Infrared Survey Explorer (WISE) mission. Finally, we adopted time-series photometry from the Transiting Exoplanet Survey Satellite (TESS), extracted via the Mikulski Archive for Space Telescopes (MAST) 3.
+
+3. Analysis 
+
+We employed hybrid non-local thermodynamic equilibrium (non-LTE) model atmospheres computed with the codes A t-
+
+las (Kurucz 1993, 1996), D etail (Giddings 1981), and S ur -
+
+face (Butler & Giddings 1985). The general modelling approach was described by Nieva & Przybilla (2007, 2012), with fur-ther refinements described by Aschenbrenner et al. (2023). For the analysis we used S aturn (Spectral Analysis Tool Using Restricted Neural networks; Aschenbrenner & Przybilla 2026), which couples emulation of synthetic spectra using previously    
+
+> 1https://archive.eso.org/scienceportal/home
+> 2https://archive.stsci.edu/iue/
+> 3https://mast.stsci.edu/portal/Mashup/Clients/Mast/ Portal.html
+
+trained neural networks with a Markov chain Monte Carlo al-gorithm to determine atmospheric parameters – e ff ective tem-perature Teff , (logarithmic) surface gravity log g (in cgs units), helium abundance (by number) y, microturbulence ξ, projected rotational velocity 3 sin i, (radial-tangential) macroturbulence ζ,and radial stellar velocity 3rad –, and the abundances for eleven chemical species via spectrum fitting, including a realistic uncer-tainty determination. To determine the fundamental parameters, we employed stel-lar evolution tracks of Ekström et al. (2012) for non-rotating stars at metallicity Z = 0.014 (assuming the λ Boo phe-nomenon a ff ect only the surface, whereas the bulk composi-tion follows the present-day cosmic abundance standard, CAS; Nieva & Przybilla 2012). We determined the evolutionary mass 
+
+M by interpolating the tracks in the spectroscopic Hertzsprung-Russell diagram (sHRD; Langer & Kudritzki 2014). We deter-mined the evolutionary age τ by interpolating isochrones based on the Ekström et al. tracks in the Hertzsprung-Russell diagram (HRD), and we determined the fractional main-sequence life-time τ/τ MS by comparing this evolutionary age with the termi-nal main sequence age of an appropriate (interpolated) evolu-tionary track. Based on the evolutionary mass and log g, we cal-culated the stellar radius R and determined the luminosity using the Stefan-Boltzmann law. Finally, using the reddening law of Fitzpatrick (1999), we constrained interstellar reddening E (B − V) and the ratio of total-to-selective extinction RV by fitting a model SED, com-puted using the A tlas 9 code, to the photometric and spec-trophotometric data described in the previous section. We calcu-lated the absolute bolometric magnitude Mbol from the luminos-ity ( Mbol = −2.5 · log ( L/L⊙) + Mbol ,⊙, where Mbol ,⊙ = 4.74 mag) and determined the absolute visual magnitude M0 
+
+> V
+
+using the bolometric correction from our model SED. In addition, we derived the spectroscopic distance dspec using Eq. (2) of Aschenbrenner et al. (2023). 
+
+4. Results 
+
+The similarity between the spectra of HD 37356 and γ Peg over wide parts of the wavelength range is remarkable. Fig-ure 1 shows a comparison of strategic spectral regions of both stars; for this, we artificially broadened the spectrum of γ Peg to 
+
+> Article number, page 2
+
+J. Olbermann et al.: Discovery of the λ Bootis phenomenon in an early B-type star 
+
+Fig. 2. Elemental abundances relative to the cosmic abundance standard (CAS; Nieva & Przybilla 2012; Przybilla et al. 2013; Aschenbrenner et al. 2025, grey band), as derived from OB-type stars in the solar neigh-bourhood, and supplemented, where unavail-able, by solar meteoritic data (Asplund et al. 2021). Data for HD 37356 (black dots), γ Peg (green boxes; Nieva & Przybilla 2012, and this work) and the mild λ Boo star Vega (Przybilla 2002, grey triangles) are shown. Filled symbols mark non-LTE and open symbols LTE abun-dances. Error bars denote 1 σ uncertainties. The dashed lines indicate the average depletions of refractory elements in HD 37356 (black) and Vega (grey). 
+
+Table 1: Atmospheric and stellar parameters of HD 37356. 
+
+General information: Sp. Type B2 IV a dGaia (pc) c 450 +13 
+
+> −10
+
+OB Assoc. Ori OB1c b dspec (pc) 380 +15 
+
+> −15
+
+3rad 29.3 ±0.5 km s −1
+
+Atmospheric parameters: 
+
+Teff (K) 22039 ±131 ξ (km s −1) 1.6 ±0.8 log g (cgs) 3.96 ±0.02 3 sin i (km s −1) 18.6 ±0.6 
+
+y (by number) 0.096 ±0.002 ζ (km s −1) 3.8 ±2.4 Elemental abundances: log ( X/H) + 12 CAS d
+
+C 8.43 ±0.04 (10) 8.33 ±0.04 N 7.81 ±0.02 (31) 7.79 ±0.04 O 8.79 ±0.08 (59) 8.76 ±0.05 Ne 8.05 ±0.03 (12) 8.09 ±0.05 Mg 7.31 ±0.04 (6) 7.56 ±0.05 Al 5.88 ±0.06 (4) 6.30 ±0.07 ∗
+
+Si 7.25 ±0.04 (11) 7.50 ±0.05 P 4.94 ±0.07 (3) 5.36 ±0.14 S 7.08 ±0.09 (4) 7.14 ±0.06 ∗
+
+Ar 6.58 ±0.05 (9) 6.57 ±0.02 ∗
+
+Fe 7.07 ±0.06 (15) 7.52 ±0.03 Photometric data: 
+
+V (mag) e 6.188 ±0.015 RV 3.63 ±0.09 
+
+B − V (mag) e −0.041 ±0.003 M0 
+
+> V
+
+(mag) −2.44 +0.07 
+
+> −0.07
+
+E (B − V) (mag) 0.209 ±0.004 Mbol (mag) −4.63 +0.05 
+
+> −0.05
+
+Fundamental stellar parameters: 
+
+M/M⊙ 8.77 +0.07  
+
+> −0.06
+
+τ (Myr) 20.2 ±0.6 
+
+R/R⊙ 5.15 +0.13  
+
+> −0.13
+
+τ/τ MS 0.73 +0.02 
+
+> −0.02
+
+log L/L⊙ 3.75 +0.02 
+
+> −0.02
+
+Notes. Uncertainties are standard deviations. ∗ Preliminary val-ues. Systematic errors of the abundances due to uncertainties of the atmospheric parameters, atomic data, and continuum normali-sation amount to ∼0.1 dex (Przybilla et al. 2000, 2001a,b). (a) This work, due to resemblance to the B2 IV MK standard γ Peg  
+
+> (b)
+
+Brown et al. (1994) (c) Bailer-Jones et al. (2021, photogeomet-ric distance) (d) Nieva & Przybilla (2012), Przybilla et al. (2013), Aschenbrenner et al. (2025) (e) Mermilliod (1997). 
+
+match the broadening of HD 37356. Lines of volatile species H, He, C, N, O, Ne, S, and Ar match almost perfectly, with the Balmer lines indicating very similar surface gravity, and the matching ionisation equilibria of C ii/iii , O i/ii , Ne i/ii , and S ii/iii implying very similar Teff . Moreover, nearly identical He i
+
+lines indicate similar helium abundance, and the overall match of weak and strong lines of the volatile species yields a sim-ilar microturbulent velocity. However, the lines of the refrac-tory elements Mg, Al, Si, P, and Fe are systematically weaker in HD 37356, which requires lower abundances. Hence, the sig-nature of a λ Boo abundance pattern is evident on pure observa-tional grounds. However, we note that the di ff erences are subtle enough to be overlooked at lower spectral resolution and S /N,or at higher 3 sin i. Moreover, since the e ff ective temperature dif-fers substantially from that of A-type λ Boo stars, classical line ratios used for empirical classification as λ Boo peculiar in the optical (Paunzen et al. 2014; Cheng et al. 2017) and in the UV (Solano & Paunzen 1998, 1999) cannot be applied. This is be-cause lines from species such as C i or Fe i are absent from the spectrum, and the Ca ii H+K lines are of interstellar origin. We derived the exact depletion of the refractory elements by quantitative analysis. Table 1 summarises the results for all con-strained parameters of HD 37356, which also provides values for the CAS abundances; Fig. B.1 shows the high-quality fit of the model to the observed spectrum. The atmospheric parameters, abundances of volatile species, and fundamental parameters of HD 37356 agree with those of γ Peg (Nieva & Przybilla 2012, 2014) within the uncertainties. The abundances of the refractory elements are depleted by ∼0.25 to 0.45 dex. This is visualised in Fig. 2, which also compares the abundance pattern with that of the fast-rotating, mild λ Boo star Vega (Przybilla 2002). Non-LTE abundances are not available for all species. The depletion of refractory elements is less in HD 37356 than in Vega, and it is less uniform. For neon and argon, the hotter star provides access to highly volatile noble gas species, which are, as expected, not depleted. In the past, studies of early B-type stars in the solar neigh-bourhood (Kilian 1992, 1994) and in the Orion OB1 associa-tion (Cunha & Lambert 1994) considered them to be metal-poor compared to the Sun and chemically highly inhomogeneous. This changed once photometric techniques for parameter de-terminations were abandoned and self-consistent spectroscopic analysis techniques were employed in combination with atomic data from ab initio calculations on a large scale (Przybilla et al. 2008; Nieva & Przybilla 2012), indicating chemical homogene-ity in the solar neighbourhood and abundance values close to solar values (i.e. CAS values). For the Orion association, Simón-Díaz (2010) deduced chemical homogeneity and elemen-tal abundances compatible with CAS values using 13 targets in the four Ori OB1 sub-groups, and Nieva & Simón-Díaz (2011) confirmed and extended this using two independent non-LTE model atmosphere techniques. This also applies to the compo-nents of a multiple system in Orion (Aschenbrenner & Przybilla 2024). Compared to these and many other OB stars in the so-
+
+Article number, page 3 A&A proofs: manuscript no. HD37356 4.32 4.34 4.36 4.38 4.40 log( Teff / K) 2.5 2.6 2.7 2.8 log(  / )
+
+> 8M
+> 9M
+> 3.9 4.0 4.1 log( g)=4.2
+
+## = T 4eff 
+
+> g
+
+4.32 4.34 4.36 4.38 4.40 log( Teff / K) 3.4 3.6 3.8 4.0 log( L)
+
+> 8M
+> 9M
+
+Fig. 3: Position of HD 37356 (red ellipse) in the sHRD and HRD. Evolutionary tracks from Ekström et al. (2012) for non-rotating stars at Z = 0.014 with 8, 9, and 10 M⊙ are shown as solid, dashed, and dashed-dotted black lines, respectively. Top : Posi-tion of the star in the sHRD. Lines of constant log g are indicated by dotted magenta lines. Bottom : Position of the star in the HRD. Isochrones from Ekström et al. (2012) for log τevol (yr) = 7.0, 7.1, 7.2, and 7.3 are overlaid (dotted magenta lines). lar neighbourhood, the abundance pattern of HD 37356 reported here is unusual, even considering systematic abundance uncer-tainties of ∼0.1 dex. We discuss the results of the present analysis for HD 37356 in the context of previous studies in Appendix A. Figure 3 shows the position of HD 37356 in the sHRD and in a classical HRD. The position in both plots agrees with the stel-lar evolution tracks when the spectroscopic distance is adopted. Use of the Gaia distance of 450 pc would result in no match, cor-responding to log L/L⊙ = 3.9. However, that distance would put HD 37356 beyond the Orion Trapezium cluster at about 390 pc (Dzib et al. 2026), that is, inside the Orion giant molecular cloud, which is clearly not the case. Therefore, despite a ‘good’ renor-malised unit weight error (RUWE) of 1.079, it is likely that sys-tematic e ff ects a ff ect the Gaia DR3 parallax of this bright star, aff ecting both the absolute value and the uncertainty (see e.g. Maíz Apellániz 2022). Figure 4 shows a fit of our model flux to the observed SED of HD 37356, confirming that our solution reproduces not only the optical spectrum, but also the global energy output of the star. The reddening law deviates slightly from standard, but this is not unexpected for an object close to the Orion molecular cloud. We did not include the AllWISE W4 data point as it is a ff ected by background dust emission, which also complicates the detection 3.5 4.0 4.5 5.0 log( / Å) 
+
+16 
+
+14 
+
+12 
+
+10   
+
+> log( F / (erg cm  2 s 1 Å 1))
+> RV= 3.63
+> E(BV) = 0.203
+
+V J H K W1 W2 W3 BU
+
+Fig. 4: Spectral energy distribution fit of the reddened A tlas 9model flux (red) to photometric measurements (squares), and to observed IUE spectrophotometry and Gaia XP spectra (grey). 
+
+Fig. 5: Di ff erential magnitudes from TESS observations of HD 37356 in Sector 32 ( top ) and of γ Peg from Sector 57 ( bot-tom ). The abscissa shows the barycentric Julian date. The me-dian values of the measurements are set to zero. of a potential debris disc around the star via excess radiation in the far-IR. Figure 5 shows the variability of HD 37356 in the TESS time-series photometry compared to that of γ Peg. The light curves of both targets are not a ff ected by other stars within the large TESS pixels owing to their brightness. While γ Peg shows pronounced variability as a hybrid pulsator showing character-istics of both β Cep and slowly pulsating B-star (SPB) pulsa-tions (Chapellier et al. 2006; Handler et al. 2009), HD 37356 is stable at a level of less than about 0.6 mmag (3 σ-value). The 
+
+κ-mechanism driving both p-mode and g-mode β Cep and SPB pulsations operates at the iron opacity bump at temperatures near 200 kK. In the two stars that are otherwise very similar, the sig-nificantly reduced iron abundance in HD 37356 may explain the di ff erence in pulsational behaviour. This also indicates that the 
+
+λ Boo abundance pattern extends at least to the outer envelope layers where the iron bump operates. Finally, we discuss the potential binarity of HD 37356. For decades, a constant radial velocity 3rad = 29.1 ±2.6 km s −1 was reported (Plaskett & Pearce 1931; Gontcharov 2006), and the small RUWE value of the Gaia parallax disfavours binarity. However, Cottaar et al. (2015) published pipeline-determined radial velocities from 14 near-IR spectra from the Sloan Digital Sky Survey III (SDSS-III) Apache Point Observatory Galactic 
+
+> Article number, page 4
+
+J. Olbermann et al.: Discovery of the λ Bootis phenomenon in an early B-type star 
+
+Evolution Experiment (APOGEE), suggesting changes in 3rad of more than 130 km s −1 (with typical uncertainties of a few km s −1)within a time span of about 50 days, and almost 100 km s −1
+
+within one day. This appears unplausible, and, indeed, a later study of the same data using a di ff erent analysis pipeline derived a smaller range of 3rad between 11 and 66 km s −1 (with uncertain-ties typically between 10 and 20 km s −1, but up to 117 km s −1). Based on this, the agreement of our 3rad measurement (see Ta-ble 1) with the classical value and based on the quality of our SED fit, we see no evidence of a companion to HD 37356. We note, however, that analysis of an object with a second continuum contribution as a single star can lead to underesti-mated abundances. The low abundances of refractory elements in HD 37356 cannot be explained that way, as volatile species would experience the same e ff ect. However, we encourage a careful study of the radial velocity of HD 37356 to clarify the binarity issue and search for a potential substellar companion, as well as an investigation using high-spatial-resolution techniques. Interferometric observations have recently revealed that γ Peg is a binary, with the secondary contributing to the light in the H
+
+band by 3.6 +0.1
+
+> −0.4
+
+% (Frost et al. 2025). The secondary must there-fore be a significantly cooler star, implying negligible second light in the optical spectrum. 
+
+5. Conclusions 
+
+Having discovered the presence of a λ Boo abundance pattern in the atmosphere of HD 37356, its origin remains to be ad-dressed. Scenarios involving the accretion of volatile-depleted material from the passage of a di ff use interstellar cloud or from the wind of a hot Jupiter are unlikely for an early B-type star. A-type ( λ Boo) stars have fractionated metal winds with a mass-loss rate ˙M that falls below 10 −16 M⊙ yr −1 (Babel 1995), which allows the accretion of gas for su ffi ciently large accre-tion rates. Kamp & Paunzen (2002) found that 10 −13 M⊙ yr −1
+
+at a relative velocity of 10 km s −1 between an ISM cloud and a star was su ffi cient. A B2 IV star such as HD 37356 is ex-pected to have an ionised homogeneous wind (i.e. hydrogen and helium are Coulomb-coupled to the wind-driving metals) with ˙M ≃ 10 −10 M⊙ yr −1 (Krtiˇ cka 2014), which is too strong for ac-cretion to occur. Accretion from a circumstellar disc, with or without a Jo-vian planet or a brown dwarf, remains a plausible scenario for HD 37356 and links its λ Boo abundance pattern to the late stages of stellar formation. Dust trapped in pressure max-ima of circumstellar discs has been described theoretically (e.g. Pinilla et al. 2012) and has also been observed (e.g. Kraus et al. 2017). The challenge here is to preserve the abundance signature over a lifetime of ∼20 Myr. One issue is the stellar wind, which has removed on the order of 0.002 M⊙ of material from the star; this provides a lower limit to the mass of refractory-poor material that must be accreted initially. The other issue is internal mixing processes, such as meridional circulation, which can dilute sur-face signatures over time. HD 37356 appears to be a true slow rotator, since the C, N, and O abundances remain at the start-ing point of the nuclear path expected for mixing with CNO-processed material (Przybilla et al. 2010; Maeder et al. 2014). The 3 sin i of HD 37356 is at the very low end of the observed ve-locity distribution of OB-type stars (e.g. de Burgos et al. 2024), making the star special. As accretion of matter from a circumstellar disc also adds angular momentum, HD 37356 must have experienced e ffi cient removal of angular momentum during its formation. It is be-yond the scope of the present paper to investigate scenarios for the evolution of the star in detail, but we outline potential options for angular-momentum removal. These include trans-fer to the orbital motion of a substellar companion, removal via a protostellar jet (Oliva et al. 2026), or coupling between a potential stellar magnetic field (testable via spectropolarimetry) and the disc, which would lead to e ffi cient spin-down. How-ever, the latter scenario is unlikely, since HD 37356 lies in a region of the HRD where strongly magnetic stars are expected to exhibit He-strong characteristics (e.g. Hunger & Groote 1999; Przybilla et al. 2016). A final issue arising from this result is whether other early B-type stars show the λ Boo phenomenon. HD 37356 may lie towards the hot end of the temperature range where the λ Boo phenomenon occurs. Hotter stars emit harder UV radiation dur-ing formation, which e ffi ciently photoevaporates dust. A possi-ble indicator is the abundances of magnesium and silicon (see Fig. 1), which implies that part of the magnesium-containing sil-icate dust component less stable than pyroxene (MgSiO 3) and olivine (Mg 2SiO 4) may have entered the gas phase, leading to reduced depletion. In contrast, corundum (Al 2O3) is one of the most thermally stable compounds in circumstellar discs, so little aluminium would be released into the gas phase; metallic iron behaves similarly. To fully verify the viability of the observed abundance pattern, we would need chemodynamical calculations for a circumstellar disc that locate dust traps relative to the sub-limation boundaries of di ff erent dust components; this is beyond the scope of this paper. At cooler e ff ective temperatures, in the spectral gap towards the classical λ Boo stars, λ Boo signatures imprinted during star formation may initially also be present in parallel to HD 37356. However, they must subsequently compete with atomic di ff u-sion, which a ff ects all slowly rotating B-type CP stars, and the 
+
+λ Boo signature is erased. 
+
+Data availability 
+
+The observational material employed in this work is accessible via the ESO science portal, the Mikulski Archive for Space Tele-scopes, and the VizieR Catalogue Service. The FOCES spectrum of γ Peg is available from the authors upon reasonable request.         
+
+> Acknowledgements. The authors thank E. Vorobiev for fruitful discussion and the referee E. Paunzen for valuable suggestions. Based on observations collected at the European Southern Observatory under ESO programme 088.D-0064(A). Based on observations collected at the Centro Astronómico Hispano Alemán at Calar Alto (CAHA), operated jointly by the Max-Planck Institut für As-tronomie and the Instituto de Astrofísica de Andalucáa (CSIC), proposal H2005-2.2-016. This work has made use of data from the European Space Agency (ESA) mission Gaia (https://www.cosmos.esa.int/gaia ), processed by the Gaia Data Processing and Analysis Consortium (DPAC, https://www. cosmos.esa.int/web/gaia/dpac/consortium ). Funding for the DPAC has been provided by national institutions, in particular the institutions participat-ing in the Gaia Multilateral Agreement. This paper includes data collected by the TESS mission. Funding for the TESS mission is provided by the NASA’s Science Mission Directorate.
+
+Article number, page 5 A&A proofs: manuscript no. HD37356 
+
+References 
+
+Abdurro’uf, Accetta, K., Aerts, C., et al. 2022, ApJS, 259, 35 Aschenbrenner, P., Butler, K., & Przybilla, N. 2025, A&A, 698, A164 Aschenbrenner, P. & Przybilla, N. 2024, A&A, 691, A361 Aschenbrenner, P. & Przybilla, N. 2026, A&A, 709, A124 Aschenbrenner, P., Przybilla, N., & Butler, K. 2023, A&A, 671, A36 Asplund, M., Amarsi, A. M., & Grevesse, N. 2021, A&A, 653, A141 Babel, J. 1995, A&A, 301, 823 Bailer-Jones, C. A. L., Rybizki, J., Fouesneau, M., Demleitner, M., & Andrae, R. 2021, AJ, 161, 147 Brown, A. G. A., de Geus, E. J., & de Zeeuw, P. T. 1994, A&A, 289, 101 Butler, K. & Giddings, J. R. 1985, Newsletter of Analysis of Astronomical Spec-tra, 9 (Univ. London) Chapellier, E., Le Contel, D., Le Contel, J. M., Mathias, P., & Valtier, J.-C. 2006, A&A, 448, 697 Cheng, K.-P., Ne ff , J. E., Johnson, D. M., et al. 2017, AJ, 153, 39 Corbally, C. J. 2018, Astrophys. Space Sci. Proc., 51, 43 Cottaar, M., Covey, K. R., Foster, J. B., et al. 2015, ApJ, 807, 27 Cunha, K. & Lambert, D. L. 1994, ApJ, 426, 170 Cutri, R. M., Skrutskie, M. F., van Dyk, S., et al. 2003, VizieR Online Data Catalog, II /246 Cutri, R. M., Wright, E. L., Conrow, T., et al. 2021, VizieR Online Data Catalog, II /328 de Burgos, A., Simón-Díaz, S., Urbaneja, M. A., & Puls, J. 2024, A&A, 687, A228 Draper, Z. H., Matthews, B. C., Kennedy, G. M., et al. 2016, MNRAS, 456, 459 Dzib, S. A., Ordóñez-Toro, J., Loinard, L., et al. 2026, A&A, 708, A300 Ekström, S., Georgy, C., Eggenberger, P., et al. 2012, A&A, 537, A146 Fitzpatrick, E. L. 1999, PASP, 111, 63 Frost, A. J., Sana, H., Le Bouquin, J.-B., et al. 2025, A&A, 701, A171 Gaia Collaboration, Prusti, T., de Bruijne, J. H. J., et al. 2016, A&A, 595, A1 Gaia Collaboration, Vallenari, A., Brown, A. G. A., et al. 2023, A&A, 674, A1 Giddings, J. R. 1981, PhD thesis, (Univ. London) Gontcharov, G. A. 2006, Astron. Lett., 32, 759 Gray, R. O. & Corbally, C. J. 1993, AJ, 106, 632 Handler, G., Matthews, J. M., Eaton, J. A., et al. 2009, ApJ, 698, L56 Heiter, U. 2002, A&A, 381, 959 Hunger, K. & Groote, D. 1999, A&A, 351, 554 Jura, M. 2015, AJ, 150, 166 Kama, M., Folsom, C. P., & Pinilla, P. 2015, A&A, 582, L10 Kamp, I. & Paunzen, E. 2002, MNRAS, 335, L45 Kaufer, A., Stahl, O., Tubbesing, S., et al. 1999, The Messenger, 95, 8 Kilian, J. 1992, A&A, 262, 171 Kilian, J. 1994, A&A, 282, 867 Kounkel, M., Covey, K., Moe, M., et al. 2019, AJ, 157, 196 Kraus, S., Kreplin, A., Fukugawa, M., et al. 2017, ApJ, 848, L11 Krtiˇ cka, J. 2014, A&A, 564, A70 Kurucz, R. 1993, CD-ROM No. 13 (Cambridge, Mass.: SAO) Kurucz, R. L. 1996, ASP Conf. Ser., 108, 160 Langer, N. & Kudritzki, R. P. 2014, A&A, 564, A52 Lyubimkov, L. S., Lambert, D. L., Poklad, D. B., Rachkovskaya, T. M., & Ros-topchin, S. I. 2013, MNRAS, 428, 3497 Maeder, A., Przybilla, N., Nieva, M. F., et al. 2014, A&A, 565, A39 Maíz Apellániz, J. 2022, A&A, 657, A130 Mermilliod, J. C. 1997, VizieR Online Data Catalog, 2168 Murphy, S. J. & Paunzen, E. 2017, MNRAS, 466, 546 Nieva, M. F. & Przybilla, N. 2006, ApJ, 639, L39 Nieva, M. F. & Przybilla, N. 2007, A&A, 467, 295 Nieva, M. F. & Przybilla, N. 2008, A&A, 481, 199 Nieva, M. F. & Przybilla, N. 2012, A&A, 539, A143 Nieva, M. F. & Przybilla, N. 2014, A&A, 566, A7 Nieva, M. F. & Simón-Díaz, S. 2011, A&A, 532, A2 Oliva, A., Moyano, F. D., Sciarini, L., et al. 2026, A&A, 710, L7 Paunzen, E., Iliev, I. K., Fossati, L., Heiter, U., & Weiss, W. W. 2014, A&A, 567, A67 Pfei ff er, M. J., Frank, C., Baumueller, D., Fuhrmann, K., & Gehren, T. 1998, A&AS, 130, 381 Pinilla, P., Benisty, M., & Birnstiel, T. 2012, A&A, 545, A81 Plaskett, J. S. & Pearce, J. A. 1931, Publications of the Dominion Astrophysical Observatory Victoria, 5, 1 Przybilla, N. 2002, PhD thesis, (University of Munich) Przybilla, N., Butler, K., Becker, S. R., & Kudritzki, R. P. 2001a, A&A, 369, 1009 Przybilla, N., Butler, K., Becker, S. R., Kudritzki, R. P., & Venn, K. A. 2000, A&A, 359, 1085 Przybilla, N., Butler, K., & Kudritzki, R. P. 2001b, A&A, 379, 936 Przybilla, N., Firnstein, M., Nieva, M. F., Meynet, G., & Maeder, A. 2010, A&A, 517, A38 Przybilla, N., Fossati, L., Hubrig, S., et al. 2016, A&A, 587, A7 Przybilla, N., Nieva, M. F., & Butler, K. 2008, ApJ, 688, L103 Przybilla, N., Nieva, M. F., Irrgang, A., & Butler, K. 2013, EAS Publ. Ser., 63, 13 Simón-Díaz, S. 2010, A&A, 510, A22 Solano, E. & Paunzen, E. 1998, A&A, 331, 633 Solano, E. & Paunzen, E. 1999, A&A, 348, 825 Turcotte, S. 2002, ApJ, 573, L129 Ünal, K. Ö., Elmaslı, A., & Ozuyar, D. 2025, MNRAS, 541, 1286 Venn, K. A. & Lambert, D. L. 1990, ApJ, 363, 234 Waters, L. B. F. M., Trams, N. R., & Waelkens, C. 1992, A&A, 262, L37 Weßmayer, D., Przybilla, N., & Butler, K. 2022, A&A, 668, A92 Weßmayer, D., Przybilla, N., Ebenbichler, A., Aschenbrenner, P., & Butler, K. 2023, A&A, 677, A175 
+
+Article number, page 6 J. Olbermann et al.: Discovery of the λ Bootis phenomenon in an early B-type star 
+
+Table A.1: Comparison of literature data on atmospheric parameters of HD 37356.                                                                          
+
+> Teff (K) log g(cgs) ξ(km s −1)3sin i(km s −1)[O /H] CAS [Fe /H] CAS Reference 23300 ±800 3.89 ±0.07 528 ±6−0.24 ±0.08 −0.42 ±0.32 aKilian (1992, 1994) 22370 4.13 9... −0.09 ±0.05 −0.22 ±0.09 aCunha & Lambert (1994) 21400 ±630 3.78 ±0.16 1.1 17.5 ±3−0.14 ±0.06 ... Lyubimkov et al. (2013) 6940...15000 b3.55...4.80 ... 29...307 ... ... Kounkel et al. (2019) 16858.2 4.218 ... ... ... −2.500 cAbdurro’uf et al. (2022) 17300.9 4.176 ... ... ... −2.013 cAbdurro’uf et al. (2022) 14486.8 3.5135 ... ... ... +0.6058 cGaia Collaboration et al. (2023) 22000 ±1000 4.00 ±0.25 4.50 ±0.10 18.00 ±0.10 +0.01 ±0.12 −0.09 ±0.19 Ünal et al. (2025) 22039 ±131 3.96 ±0.02 1.6 ±0.8 18.6 ±0.6 +0.03 ±0.08 −0.45 ±0.06 this work
+> Notes. (a)LTE values (b)range from analyses of 14 individual spectra (c)values relative to the solar iron abundance.
+
+Appendix A: Comparison with literature data 
+
+As one of the bright early-type stars in the Orion association, HD 37356 has been subject to a number of quantitative stud-ies. Table A.1 summarises the atmospheric parameters derived, 
+
+Teff , log g, ξ and 3 sin i, and gives oxygen and iron abundances relative to CAS values, [X /H] CAS = log(X /H) − log(X /H) CAS , as examples of a volatile and a refractory element, respectively; ref-erences are also indicated. The studies split into two classes, targeted detailed analyses of individual early B-type stars, and bulk pipeline-determined data as part of surveys that investi-10 
+
+gated more than ten thousand stars, such as a multiplicity study within APOGEE-2 (Kounkel et al. 2019), hundreds of thousands of stars, such as the full APOGEE-2 release (Abdurro’uf et al. 2022), or even more than a billion stars, such as Gaia DR3 (Gaia Collaboration et al. 2023). The pipeline-derived parame-ters are not sensible for an early B-type star, more fitting to late or mid-B-ype stars, with the study of Kounkel et al. (2019) analysing 14 individual high-quality spectra of HD 37356, find-ing even a range of Teff values suitable to F- to mid-B-type stars, and some log g values locating the star even below the 20 
+
+main sequence (which lies around a value of 4.3 at that Teff ), and not to mention extremely high rotational velocities. The de-rived metallicities are in part far o ff the expectations for a young massive star, implying extreme halo population metallicity, or in the case of the 4 ×solar metallicity one may argue for a Bp sig-nature. These pipeline-derived parameters may be statistically useful for the main targets of these surveys, such as solar-type stars and cool giants, but they have to be viewed with caution at present for OB-type stars, as apparently their modelling is subject to massive systematic errors (for similar findings see 30 
+
+Aschenbrenner et al. 2023; Weßmayer et al. 2023). The four literature studies that targeted early B-type stars on the other hand roughly agree on Teff , log g and 3 sin i
+
+amongst each other and with our values. Our star HD 37356 is one of the cases where the use of photometric Teff indica-tors (Cunha & Lambert 1994; Lyubimkov et al. 2013) provides results similar to spectroscopic techniques. Modern microtur-bulence values of OB-type stars based on a range of indica-tors are systematically (much) smaller than older determinations (see also Nieva & Przybilla 2012; Aschenbrenner et al. 2023; 40 
+
+Weßmayer et al. 2022, 2023), and apparently also smaller than the determination based on a single indicator, in this case the Si iii triplet (Ünal et al. 2025). The derived elemental abundances vary somewhat from each other, with Kilian (1992, 1994), Cunha & Lambert (1994) and Lyubimkov et al. (2013) indicat-ing overall sub-CAS (and therefore also sub-solar) values, while Ünal et al. (2025) reproduce CAS values. Notable with respect to the latter work is that they also determine atmospheric param-eters for γ Peg, finding an approximately 20% higher e ff ective 
+
+> 50
+
+temperature despite the similarity of the spectra stressed here. Unfortunately, no comparison of abundances can be made, as they refrain from a chemical analysis for γ Peg. In a situation when there are somewhat conflicting results available for a star, one has to resort to the basic principle in physics that a theory (in this case a model) that reproduces the experiment (here the observations) better has to be preferred over its competitors. Not only the pure empirical similarity of the spectra of HD 37356 and γ Peg, except for the weaker spec-tral lines of the refractory elements, speaks in our favour. There 60 
+
+is also a tight match of our model with all observational con-straints: the detailed agreement of the synthetic spectrum with the observed one (see Appendix B), including the series of hy-drogen lines and multiple ionisation equilibria (C ii/iii , O i/ii ,Ne i/ii , Al ii/iii , Si ii/iii/iv , S ii/iii , Fe ii/iii ), the tight reproduction of the SED, and the pulsational behaviour in comparison to that of γ Peg. 
+
+Appendix B: Spectral fit 
+
+A comparison between the observed FEROS spectrum of HD 37356 from 3900 Å to 5250 Å and the region around H α 70 
+
+with the global best-fitting model is shown in Fig. B.1 In addi-tion to stellar lines, numerous di ff use interstellar bands (DIBs) are present, and other interstellar lines such as the Ca ii H and K lines. The quality of the fit at this very high S /N and low 3 sin i
+
+of the observed spectrum is overall excellent, which implies that the line list is mostly complete (missing lines involve, e.g. levels of the C ii quartet spin system above the first ionisation thresh-old that are not included in the model atom; Nieva & Przybilla 2006, 2008), that the oscillator strengths are mostly correct, a proper determination of atmospheric parameters, and accurate 80 
+
+and precise determination of non-LTE level populations (i.e. re-liable model atoms). The largest di ff erences arise from the DIBs and the interstellar lines, which are not modelled. Inherent to the models are inaccuracies due to the selected oscillator strengths, which are mostly responsible for the line-to-line abundance scat-ter. Uncertainties of less than 10-20% should be typical for the oscillator strengths of many of the metal lines investigated here, but some may reach 50%, see the quality markers assigned in the data collection of the National Institute of Standards and Tech-nology, NIST 4. For a similar plot for our comparison star γ Peg, 90 
+
+see Figs. 9a-e of Nieva & Przybilla (2012); note, however, that at that time the spectrum synthesis was not as comprehensive as achieved in the meantime.  
+
+> 4https://www.nist.gov/pml/atomic-spectra-database
+> Article number, page 7
+
+A&A proofs: manuscript no. HD37356 3900 3920 3940 3960 3980 4000 4020 4040 
+
+Wavelength (Å) 
+
+0.2 0.4 0.6 0.8 1.0 
+
+> Normalised Flux
+> H
+> H
+> He I He I He I He I C II C II N II N II N II N II N II N II O II O II O II O II O II O II O II O II S III Fe II
+
+4060 4080 4100 4120 4140 4160 4180 4200 
+
+Wavelength (Å) 
+
+0.2 0.4 0.6 0.8 1.0 
+
+> Normalised Flux
+> H
+> He I He I He I He I N II N II N II N II N II N II N II N II O II O II O II O II O II O II O II O II O II O II O II O II O II O II O II O II O II O II O II Al III Si II Si II Si IV S II Fe III Fe III Fe III Fe III
+
+4200 4220 4240 4260 4280 4300 4320 4340 
+
+Wavelength (Å) 
+
+0.2 0.4 0.6 0.8 1.0 
+
+> Normalised Flux
+> H
+> He C II N II N II N II N II N II N II O II O II O II O II O II O II O II O II O II O II O II O II O II O II O II O II O II O II O II O II S III S III S III S III Fe III Fe III Fe III
+
+4360 4380 4400 4420 4440 4460 4480 4500 
+
+Wavelength (Å) 
+
+0.2 0.4 0.6 0.8 1.0 
+
+> Normalised Flux H
+> He I He I He I N II N II N II N II O II O II O II O II O II O II O II O II O II O II O II O II O II O II O II O II O II Mg II Mg II Al III Al III S III S III Fe III
+
+4500 4520 4540 4560 4580 4600 4620 4640 
+
+Wavelength (Å) 
+
+0.2 0.4 0.6 0.8 1.0 
+
+> Normalised Flux
+> He I C III N II N II N II N II N II N II N II N II O II O II O II O II O II O II O II O II O II O II Mg II Al III Al III Al III Si III Si III Si III S II
+
+Fig. B.1: Comparison between the observed spectrum of HD 37356 in black and the global best-fitting model in red. The strongest spectral lines are marked by solid lines. We note the presence of a few narrow interstellar lines and broader di ff use interstellar bands. 
+
+Article number, page 8 J. Olbermann et al.: Discovery of the λ Bootis phenomenon in an early B-type star 4660 4680 4700 4720 4740 4760 4780 4800 
+
+Wavelength (Å) 
+
+0.2 0.4 0.6 0.8 1.0 
+
+> Normalised Flux
+> He I C III NN II N II N II N II N II N II N II O II O II O II O II O II O II O II O II O II O II O II O II O II O II O II Si III Si III Si III S II
+
+4800 4820 4840 4860 4880 4900 4920 4940 
+
+Wavelength (Å) 
+
+0.2 0.4 0.6 0.8 1.0 
+
+> Normalised Flux
+> H
+> He I N II N II N II N II O II O II O II O II O II O II Si III Si III Si III S II S II S II
+
+4960 4980 5000 5020 5040 5060 5080 5100 
+
+Wavelength (Å) 
+
+0.2 0.4 0.6 0.8 1.0 
+
+> Normalised Flux
+> He I He I He I N II N II N II N II N II N II N II N II O II O II O II O II Si II Si II SS II S II S II S II S II S II S II S II Fe III Fe III Fe III
+
+5100 5120 5140 5160 5180 5200 5220 5240 
+
+Wavelength (Å) 
+
+0.2 0.4 0.6 0.8 1.0 
+
+> Normalised Flux
+> C II C II C II C II C II C II O II O II O II O II Mg II S II S II S II Fe II Fe III Fe III Fe III Fe III Fe III Fe III Fe III
+
+6500 6520 6540 6560 6580 6600 6620 6640 
+
+Wavelength (Å) 
+
+0.2 0.4 0.6 0.8 1.0 
+
+> Normalised Flux
+> H
+> C II C II O II Ne I Ne I Mg II
+
+Continued. 
+
+Article number, page 9

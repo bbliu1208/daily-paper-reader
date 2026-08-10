@@ -1,0 +1,626 @@
+Title: Geometry of dust rings in protoplanetary disks: the case of LkCa 15
+
+URL Source: https://arxiv.org/pdf/2608.06457v1
+
+Published Time: Mon, 10 Aug 2026 00:07:28 GMT
+
+Number of Pages: 16
+
+Markdown Content:
+> Draft version August 10, 2026
+> Typeset using L ATEX twocolumn style in AASTeX7
+
+Geometry of dust rings in protoplanetary disks: the case of LkCa 15 
+
+Yansong Qian 1 and Yanqin Wu 1
+
+> 1Department of Astronomy & Astrophysics, University of Toronto, Toronto, Canada
+
+ABSTRACT Dust properties in proto-planetary disks shape the pathways for planet formation. Here, we present a method to measure these properties in moderately inclined dust rings. Our method exploits the simple geometric fact that, for such a ring, its ansae appear brighter because our line of sight traverses a longer path through the ring material, and appear broader because the minor axis are foreshortened by projection. The resultant patterns of apparent brightness and width can used to constrain three parameters: the intrinsic ring width, its vertical thickness and its optical depth. We apply this method to ALMA archival images of the LkCa 15 disk, in Bands 7, 6 and 3. We find that the optical depth of its main ring drops from 1 .6 at 0.89mm to 0 .4 at 3mm. Simultaneously, both the ring width and the ring height decrease from about two to one gas scale heights. Such wavelength-dependent morphology can only be explained by the presence of multiple grain populations. If we adopt a simple two-size model, we infer that the ring contains a massive population of small grains (size ≲ 20 μm; total mass 
+
+∼ 100 M⊕) that are broadly distributed, and a less massive population of large grains (size ≳ 200 μm) that are more spatially concentrated. This large surplus of small grains is not predicted by models of dust coagulation, but it naturally explains the fluffy ring in LkCa 15, and possibly rings in other disks. 
+
+1. INTRODUCTION Over the past decade, high resolution observations have revealed that proto-planetary disks are not smooth, but exhibit a variety of substructures (e.g., van der Marel et al. 2013; ALMA Partnership et al. 2015; An-drews et al. 2018b; Long et al. 2018). Among these, gap-and-ring pairs are common and are thought to be the results of planet-disk interactions (e.g., Zhang et al. 2018), though other explanations exist. Near a ring, dust grains tend to migrate towards its center (pressure maximum) and to settle towards the mid-plane. The radial and vertical extents of the dust are therefore good indicators for both the grain sizes and the strength of local stirring, important ingredients in establishing the planet-forming potential of disks. Determining these spatial spreads have motivated a large number of studies, with the vertical extent get-ting substantially more attention (see Villenave 2025, for a recent review). For instance, in the iconic HL Tau system, the clear dark gaps sandwiched between bright rings allow Pinte et al. (2016) to infer that the rings are vertically thin, perhaps as thin as 1au at a distance of 100au. Another example is the pioneering work of Doi & Kataoka(2021, hereafter DK21), where they demon-strated how, in an inclined ring, variations in the line-of-sight optical depth can be used to deduce its vertical thickness. Applying to the dust ring of HD 163296, they showed that the inner 67au ring is vertically as extended as the gas, while the outer 100 au ring is more settled, with a height smaller than 10% of the gas scale height. Their work has spurred a number of studies (Pizzati et al. 2023; Villenave et al. 2025; Jiang et al. 2025; Mar-tinien et al. 2026; Antilen et al. 2026). And just like in the case of HD 163296, these studies return a diverse range for the dust scale heights. A common interpreta-tion for such a diversity is that these rings experience (vastly) different strengths of turbulent stirring. In this work, we are motivated to re-examine the DK21 approach, for a number of reasons. A necessary assumption in their work is that the ring is optically thin (vertically), or else the optical depth variation would not translate into brightness asymme-try. However, multiple lines of evidence indicate that dust disks are likely optically thick at ALMA bands, es-pecially at Bands 6/7 where most of these studies are carried out. For instance, disks in multiple star-forming regions exhibit the so-called size-luminosity relation (e.g. Tripathi et al. 2017; Barenfeld et al. 2017; Andrews et al. 2018a; Otter et al. 2021), where disk millimeter lumi-nosities are observed to scale approximately quadrati-cally with their sizes. This indicates that the emission is governed primarily by the emitting surface area and is therefore likely optically thick. In addition, spectral in-dices measured in millimeter bands (between 1 to 3mm) lie close to the blackbody value (e.g. Pinilla et al. 2014; arXiv:2608.06457v1 [astro-ph.EP] 6 Aug 2026 2Tazzari et al. 2021; Otter et al. 2021; Qian & Wu 2025). This consideration motivate us to extend the original DK21 work to the optically thick limit. Another reason to re-visit this problem is the recogni-tion that the radial width of a ring can also be tapped for information. There are two aspects to this. First, the intrinsic radial width of the dust ring provides an addi-tional diagnostic on grain concentration. Yet it has only been utilized in a handful of studies, i.e Dullemond et al. (2018) in Band 6 and Doi & Kataoka (2023); Sierra et al. (2025) in multi-wavelengths. Second, as we show in this work, the apparent radial width of a ring also carries information on the vertical dust height. This latter fea-ture has not been formally discussed, but it is implicitly utilized when considering the shape of a gap bordered by two nested rings (see, e.g. Pinte et al. 2016; Villenave et al. 2022). Here, we explicitly include this observable in our model, and show that it breaks model degeneracy and is useful even when only one ring is present. A third reason to revisit the DK21 model is to em-phasize the role of beam shape. This has been im-properly neglected in the past. Lastly, we will employ our model on the multi-band observations of LkCa 15. We show that this multi-wavelength approach provides unique new insights. We find an alternative explanation for the diverse dust scale heights previously reported. In §2, we construct a geometric toy-model to connect dust geometry to the observables. In §3, we apply the model to the LkCa 15 disk, and present a physical model for the measurements. We discuss physical implications and caveats in §4, before concluding in §5.  
+
+> 2.
+
+A TOY RING In this section, we follow DK21 to construct a geo-metrical model for an inclined ring. The focus is on how projection effects can produce variations in both its width and its brightness, and how these can be used to constrain the ring’s properties. We consider an axisymmetric ring with a dust density that is normal distributed in both the radial and the vertical directions: 2
+
+ρ(x, y, z ) = Σ0
+
+√2πσ h
+
+exp 
+
+
+
+− (r − R)2
+
+2σ2
+
+> r
+
+− z2
+
+2σ2
+
+> h
+
+
+
+, (1) where z points at the disk normal, and r = px2 + y2.Here, Σ 0 is the two-sided surface density measured at the ring centroid, r = R. It is related to the peak (two-sided) optical depth τ⊥ as τ⊥ = κd Σ0, where κd is the   
+
+> 2For the radial direction, we note that an actual ring may not be Gaussian in shape, and its inner and outer edges may be asym-metric. Our assumption needs to be refined for well resolved rings.
+
+dust absorption opacity and is assumed to be constant across the ring (for a given population of dust grains). Effects of grain scattering is considered in Appendix C. We further assume a constant temperature T . These assumptions allow us to calculate the intensity map of an inclined ring trivially, 
+
+I(xo, y o) = Bν (T )
+
+
+
+1 − exp 
+
+
+
+−κd
+
+Z ∞−∞ 
+
+ρ(x, y, z ) dz o
+
+ 
+
+,
+
+(2) where the coordinates ( xo,yo,zo) are now in the ob-server’s frame. The axis zo points along the line-of-sight and is inclined by an angle i from z. Meanwhile, x = xo,
+
+y = yo cos i − zo sin i, z = yo sin i + zo cos i. We then con-volve this intensity map (in the observer’s frame) with a Gaussian beam to produce the final image. This final image is to be compared against data. When doing so, instead of working on the 2-D images directly as in some previous works (e.g. Pinte et al. 2016; Jiang et al. 2025; Antilen et al. 2026), we opt for a more trans-parent and economic method. We will extract only two features from the images, i.e., the ring brightness and radial width as functions of image-plane azimuth. We show that these are sensitive and sufficient to infer the three intrinsic properties of a ring: peak optical depth (τ⊥), radial width ( σr /r ) and vertical thickness ( σh/r ). A cartoon version of this approach is illustrated in Fig. 1. Fig. 2 presents the detailed numerical results for an inclined ring. To obtain these, we define the azimuthal brightness as the peak surface brightness of a ring at each azimuth angle. At each angle, we also measure the radial width by fitting a Gaussian form (of dispersion 
+
+σr = W ) to the radial brightness profile. In the fol-lowing, we explain these results in simple words, before applying them to a real disk. 2.1. Asymmetry in Brightness 
+
+If a ring is optically thin and vertically extended, it appears brighter along its major axis than along its mi-nor axis because the line of sight passes through more material at the ansae. Such an asymmetry is stronger for a ring that is more vertically extended, as was first pointed out by DK21. For realistic rings, we argue that there are two neces-sary corrections. The first is that ring optical depths are likely close to or above unity, especially in shorter wave-length ALMA bands (see Introduction). The brightness asymmetry should be diminished in such a ring, as the radiation intensity approaches the local blackbody and saturates (see Fig. 2). The other correction is the effect of an observing beam. Convolution with a wide beam dilutes the brightness of a ring. It is of no concern if the ring has a uniform shape across all angles. However, 3      
+
+> Figure 1. A cartoon to illustrate our geometrical model. Two inclined ( i= 50 ◦) Gaussian rings with similar optical depths (τ⊥= 0 .1) and radial widths ( σr/r = 0 .1), but different vertical heights, can be distinguished by their azimuthal patterns in apparent brightness (middle upper panel) and apparent width (middle lower panel). Beam effects are not included here. The flatter ring appears more uniform in brightness (DK21) and has a more fore-shortened minor axis. Including the apparent radial width allows us to infer all three parameters of a Gaussian ring (right panel). A further observable, the absolute flux, yields disk temperature.
+
+as we argue below, the ring is typically narrower near the minor axis. Beam convolution dilutes the surface brightness there more severely, giving rise to an addi-tional brightness asymmetry (see Fig. 2). This effect holds even if the observing beam is round. And it is significant as long as the beam is not much smaller than half of the intrinsic ring width – a common happenstance among ALMA observations. As a result of these two complications, the brightness contrast now depends not only on the ring height, but also on the ring optical depth and the observing beam. Measuring this contrast alone is no longer sufficient. A new observable is required. 2.2. Asymmetry in Radial Width 
+
+The apparent width of a ring provides this additional constraint. This was little discussed in the past, pos-sibly because measuring width requires a high spatial resolution (but see Villenave et al. 2020, 2025). An inclined ring will appear narrower in its minor axes due to fore-shortening. In the limit that the ring is razor-thin ( σh = 0), the projected radial width is ap-proximately 
+
+W (ϕ) ∼ σr
+
+q
+
+cos 2 ϕ + sin 2 ϕ cos 2 i , (3) where σr is the intrinsic width, i is the inclination angle and ϕ the azimuthal angle measured from a major axes in the image plane. So a thin ring that is inclined by 50 ◦
+
+will exhibit a ∼ 40% width variation from the major to the minor axis. This width contrast is sensitive to the ring thickness (σh). The thickness broadens the ring everywhere, but affects the minor axis more both because they are al-ready thinner to start with, and because the vertical extension there is parallel to the radial extension. Two additional factors – optical depth and beam con-volution – also affect the apparent ring width but in a different way. As shown in Fig. 2, increasing the opti-cal depth beyond unity broadens the apparent widths of a ring, because the emission profile is transformed from a Gaussian shape to a top-hat shape. However, this broadening affects the major and minor axes nearly equally, leaving their width contrast largely unchanged. Beam convolution likewise broadens the ring in a simi-lar manner along both axes. These dependencies are all included in our model. Including the azimuthal dependence of the ring width therefore breaks the degeneracy inherent in the DK21 model. As Fig. 1 indicates, we now have three mea-surements, brightness contrast ( Imax /I min ), maximum width (( W/r )max ), minimum width (( W/r )min ), to con-strain the three intrinsic variables: τ⊥, σr , σh. The 4     
+
+> Figure 2. Asymmetries in azimuthal brightness (top) and azimuthal radial width (bottom) for our model ring, plot-ted as functions of ring optical depth, and for different ring heights. All models are viewed at an inclination of 50 ◦, and have an intrinsic width of σr/r = 0 .1. The left panels show results with infinite spatial resolution, while the right ones are convolved with a circular beam of σb/r = 0 .05. Vertical thickness and beam tend to enhance the brightness contrast, and reduce the width contrast. Increasing optical depth sup-presses the brightness contrast and fattens the ring.
+
+degeneracy is broken. In the following, we will apply our toy model to the disk of LkCa 15.  
+
+> 3.
+
+APPLICATION TO LKCA 15 LkCa 15 is a young T-Tauri star in the Taurus star-forming region, at a distance of 159 pc (Gaia Collabora-tion et al. 2018). The star mass M∗ = 1 .2M⊙ (Manara et al. 2014) and is likely a couple Myrs old. It hosts two bright rings that are inclined at i = 50 .2◦(Facchini et al. 2020). The disk is bright both in scattered light (e.g. Swastik et al. 2026) and in thermal emission, with an integrated thermal luminosity of ∼ 0.28 L∗ (Sierra et al. 2025). We choose this disk for its large size, and for its extensive coverage at high-resolution in multiple ALMA wavelengths (Long et al. 2022; Sierra et al. 2025). These images allow us to accurately quantify ring asym-metries. Here, we will focus on the prominent inner ring at 69au. 3 We will first extract ring width and bright-ness profiles from ALMA images ( §3.1). We will then present results for dust geometries in §3.2 and construct  
+
+> 3We also investigate the outer 101au ring in Appendix B.
+
+a simple model to interpret these results ( §3.3). Multi-band observations are instrumental in achieving these interpretations. 3.1. Observations 
+
+We use the publicly available Band 3 (97.5 GHz, 3.08 mm), Band 6 (224 GHz, 1.34 mm), and Band 7 (340 GHz, 0.88 mm) images from Sierra et al. (2025). The Band 6 and 7 data were originally reported by Long et al. (2022). For consistency across wavelengths, Sierra et al. (2025) have convolved all images to a common circular beam with a FWHM of 60mas FWHM. We measure azimuthal brightness and radial width the same way as for our toy ring (see §2). To ac-count for correlation among data points in the image, we have adopted a spacing in the azimuthal direction of 1×FWHM of the beam. In the radial direction, how-ever, we adopt three grid points per beam FWHM to adequately resolve the radial brightness profile and mea-sure the ring width. At each azimuth angle, we first find the peak brightness, Iϕ. We then extract the radial pro-file inside a region that is falls ±1.5× beam FWHM of the ring peak (see Fig. 3). Restricting the fitting region in this way reduces contamination from adjacent rings. We then fit the resulting radial profile using a single Gaussian and obtain its dispersion W . The uncertainty in brightness is estimated as the standard deviation of the pixel values within a synthesized beam centered on the peak. For simplicity, we adopt the uncertainty on the ring width to be 1 /3 of the beam size. Our resultant measurements are shown in Fig. 3. There are clear azimuthal variations in both the ring width ( W ) and the ring brightness ( Iϕ), by amounts that significantly exceed the measurement uncertainties. The minor axes are always dimmer and narrower, as ex-pected. Moreover, the brightness asymmetry is larger in longer wavelengths, whereas the ring looks broader in shorter wavelengths. It is clear that a single set of parameters cannot explain all bands. To proceed, we first assume that the ring in each band has a unique set of parameters ( Tring , τ⊥, σr and σh). We define the log-likelihood log L = − 12
+
+X (Wobs − Wmodel )2
+
+E2
+
+> W
+
++ (Iobs − Imodel )2
+
+E2
+
+> I
+
+,
+
+(4) where EW and EI denote the corresponding observa-tional uncertainties. We then perform Markov Chain Monte Carlo (MCMC) sampling, using the python pack-age emcee (Foreman-Mackey et al. 2013) to find the maximum likelihood. Each chain has 64 walkers and are run for 5000 steps. The first 1000 steps are discarded as initial burn-in. 5
+
+Observation Multi-wavelength Joint Fit Single-Band Fit Band λobs Tring τ⊥ σr /r σh/r Tring τ⊥ σr /r σh/r 
+
+7 0.88mm 13 .0+0 .6 
+
+> −0.6
+
+K 1.6+0 .3 
+
+> −0.3
+
+0.121 +0 .008  
+
+> −0.007
+
+0.080 +0 .007  
+
+> −0.007
+
+13 .0+0 .7 
+
+> −0.4
+
+K 1.5+0 .3 
+
+> −0.3
+
+0.123 +0 .009  
+
+> −0.007
+
+0.079 +0 .007 
+
+> −0.008
+
+6 1.34mm (same) 1.1+0 .3 
+
+> −0.2
+
+0.092 +0 .005  
+
+> −0.006
+
+0.063 +0 .007  
+
+> −0.008
+
+14 +2  
+
+> −1
+
+K 0.9+0 .4 
+
+> −0.3
+
+0.096 +0 .007  
+
+> −0.008
+
+0.061 +0 .007 
+
+> −0.008
+
+3 3.08mm (same) 0.35 +0 .03  
+
+> −0.03
+
+0.078 +0 .004  
+
+> −0.004
+
+0.059 +0 .006  
+
+> −0.006
+
+15 +7  
+
+> −4
+
+K 0.3+0 .2 
+
+> −0.1
+
+0.078 +0 .005  
+
+> −0.005
+
+0.059 +0 .006 
+
+> −0.006
+
+Table 1. Best-fit parameters for the geometric model, with 1 σ uncertainties, and in different ALMA bands, for the inner (69au) ring of LkCa 15. For comparison, the vertical gas height at the ring center is h/r ∼ 0.06. The observing beam is σb/r = 0 .059 for all three bands. 
+
+Figure 3. Images and corresponding azimuthal profiles (brightness in the middle and radial width at the right) for the 69au ring in three ALMA Bands. The dashed curves in the left images enclose regions we use to extract the azimuthal profiles of the 69au ring. Uncertainties on brightness only include the rms noise, while uncertainties on width are taken to be 1/3 of the beam size. The corresponding best-fit models are shown as colored curves, based on the joint fit from Table 1. Each brightness profile is normalized by its maximum intensity. Band 3, compared to other bands, requires a narrower/thinner Gaussian ring that is more optically thin. 
+
+Results for individual bands are listed in Table 1 (the ‘Single-Band Fit’), where we also infer ring tempera-ture using the observed fluxes. 4 As expected, we find that ring properties vary with the observing wavelength:  
+
+> 4
+
+These do not yet include calibration errors. See the ‘Joint Fit’ below. 
+
+while the ring temperature is largely constant across all bands, its intrinsic width, height and peak optical depths all decrease with increasing wavelength. This inspire us to perform a joint analysis, insist-ing a single temperature across all bands (the ‘Multi-wavelength Joint Fit’ in Table 1). To account for cali-bration errors ( ∼ 10% in Bands 6/7, and ∼ 5% in Band 63, ALMA Technical Handbook), we introduce a calibra-tion factor c into the likelihood function by replacing 
+
+Imodel with c ∗ Imodel in Eq. 4 for Bands 6/7, but ignore the smaller error on Band 3. We impose a Gaussian prior on the two calibration factors, c ∼ N (1 , 0.1). The total log-likelihood is then obtained by summing the likeli-hoods from all three bands. The MCMC corner-plot for this joint fitting is shown in the appendix (Fig. 7). In the Joint Fit, we find that all ring parameters re-main largely the same as in the single-band fit, but with slightly improved uncertainties. We stress that our model is purely geometrical – there is no assumption on the opacity law or the underlying temperature. All information is contained in the apparent shape of the ring. 3.2. Results on dust geometry 
+
+Before turning to a physical interpretation, we first briefly comment on our results and contrast them with existing measurements in the literature. We compute the expected gas scale height ( h) at ring center. Under hydrostatic equilibrium, this is given by 
+
+hr = cs
+
+vK
+
+=
+
+ kb
+
+μm H GM ∗
+
+1/2 √rT , (5) which yields h/r ≈ 0.06 using the parameters of LkCa 15 ( M∗ = 1 .2, M ⊙, r = 69 au, μ = 2 .3, and T = 13 K). The measured radial widths are generally larger than this, dropping from about 2 h to 1 h from Band 7 to Band 3. Our values agree well with those obtained in Sierra et al. (2025) using the Frankenstein reduction (fractional widths 0 .115, 0 .095, 0 .062), but fall below those using the CLEAN pipeline as the latter include beam convo-lution. Our measured heights ( σh) are roughly 30% below the radial widths. At Bands 6 and 3, these heights are com-parable to h, while sitting above h at Band 7. This gives the impression that all dust grains are well mixed with the gas. However, we argue later that such an inference may be incorrect. At Band 6, two previous studies have also reported dust height. Our value ( σh/r = 0 .063 +0 .007 
+
+> −0.008
+
+) is con-sistent with the lower limit ( ≥ 0.067) reported by Vil-lenave et al. (2025), but inconsistent with the value of 
+
+σh/r ∼ 0.022 reported by Jiang et al. (2025). We ex-plain how these differences may arise in §4. Lastly, as an improvement over previous studies, our approach also allows us to measure the values of the peak optical depths. We find them to also decreases with in-creasing wavelength, transitioning from moderately op-tically thick to optically thin across the three bands. This finding is consistent with the spectral indexes re-ported by Sierra et al. (2025), who found that α ≲ 210 1          
+
+> 10 0
+> 10 1
+> 10 2
+> tot  = abs  + sca  [cm 2/g]
+> B9 B7 B6 B3 Q
+> (a)
+> grain size
+> 1m
+> 2m
+> 5m
+> 10 m
+> 20 m
+> 50 m
+> 0.1mm 0.2mm 0.5mm 1mm 2mm 5mm
+> 0.0 0.2 0.4 0.6 0.8 1.0
+> Albedo  sca / tot  (b)
+> 0.5 1248
+> [mm]
+> 01234
+> dln  tot /dln
+> (c)
+
+Figure 4. Optical properties for grains of different sizes. We adopt the DIANA composition and evaluate for a narrow Gaussian distribution around the said size (see text). In ALMA Bands 7/6/3, all grains below ∼ 20 μm have similar opacities, while larger grains are strong scatterers. 
+
+between Bands 6 and 7, while α rises to ∼ 2.3 between Bands 6 and 3. Moreover, the obtained optical depths scale with wavelength approximately as τ⊥ ∝ λ−1.2.Such an opacity index is not very different from that expected of small grains ( a ≪ λ): β ≈ 1.5 (DIANA grains, see Fig. 4), hinting already at the role of small grains. In fact, without the information on the varying ring width/height, one would have easily believed that small grains are all there is. In summary, we find the 69au ring to be broad and thick, with a number of intriguing variations. In the following, we propose an explanation for these observa-tions. 3.3. A two-size Model 
+
+If the ALMA emission is dominated by a single grain population, our measured τ⊥(λ) would directly yield the 7grain size. However, the fact that the ring is seen to vary in width and height across wavelength suggests that this assumption cannot hold. Instead, our observation demands that there must be multiple dust populations, each with its own spatial distribution. Here, we build the simplest model, one where there are exactly two populations of grains. We further assume each population has a single size. We call this the ‘two-size model’, with sizes asmall and abig . Each dust pop-ulation has densities ρsmall (r, z ) and ρbig (r, z ) that are distributed according to equation (1). These introduce 6 unknowns: peak surface densities Σ small , Σ big ; frac-tional radial widths ( σr /r )s, ( σr /r )b; and fractional ver-tical heights ( σh/r )s, ( σh/r )b. The ‘small grains’ likely dominate in the shorter wavelengths and are responsible for the fluffy look of the ring; while the ‘big grains’ dom-inate in the longer wavelengths and are more narrowly distributed. Our simplifications are necessitated by the small num-ber of constraints: a total of 9 measurements ( τ⊥, σr
+
+and σh in 3 ALMA Bands). A two-size model, at the same time, already demands 8 parameters. Moreover, our single-size assumption differs from the more com-mon approach of a power-law size distribution. We ar-gue that ours is more physical, as one expects the spatial distribution to depend on grain size, or in other words, different sized grains should be spatially segregated. A few more choices in our model construction are listed here. 
+
+• Grain sizes. We choose our small grains to be 
+
+asmall = 1 μm . The exact size, as long as asmall ≤
+
+20 μm , is irrelevant, thanks to the convenient prop-erty that all such grains have nearly identical millimeter opacities (see Fig. 4). 5 The abun-dant existence of such small grains has been in-ferred from scattered light studies (see below). We are also prompted to adopt such small grains by the observed opacity index of the observed ring (τ⊥ ∝ λ−1.3). Sizes for the big grains ( abig ), on the other hand, is a quantity that we will explore. 
+
+• Grain opacity. We adopt the DIANA composition (Woitke et al. 2016) for our dust grains. Other compositions do not qualitatively change our con-clusions. 6 By the word ‘single-size’, we actually refer to a narrow size-distribution with a Gaus-sian width of asig = 0 .4 in the dust opacity code   
+
+> 5In fact, the ‘small grains’ can be an arbitrary combination of these grains (e.g., power-laws) without affecting the results.
+> 6Switching to the DSHARP composition (Birnstiel et al. 2018), for instance, raises the mass budget by about a factor of 3.
+
+Optool (Dominik et al. 2021). The opacity and opacity index for some relevant sizes are shown in Fig. 4. The same figure also exhibits the scatter-ing albedo. These are near unity for large grains in millimeter. We now obtain properties for the mixture ring. The peak optical depth is obtained by summing over the two sizes. The effective Gaussian width and height are de-termined by the best Gaussian fit to the sum of the two Gaussians, weighted by the respective contribution to the local optical depth. This is not strictly appropriate and may fail when the mixture departs significantly from a single Gaussian, e.g., when one of the populations is much narrower than the other. To match the observed parameters, we define a re-duced χ2
+
+> ν
+
+χ2 
+
+> ν
+
+= 1(Nobs − Nvar )
+
+X
+
+> Bands ,i
+
+(Xmodel − Xobs )2
+
+δX 2 , (6) where the summation is over Bands 7/6/3, and over the variable index i, where i = 1 , 2, 3 correspond to τ⊥,(σr /r ) and ( σh/r ) respectively. The observed values ( X)and their errors ( δX ) are taken from the Joint Fit in Ta-ble 1. The degree of freedoms are Nobs = 3 × 3 = 9 and 
+
+Nvar = 6. This exercise is repeated for each choice of 
+
+abig . We use the tool ‘differential evolution’ in SciPy to search for minima in χ2 
+
+> ν
+
+. Often the convergence is straightforward and even brute-force grid search suffices. The fitting results are presented in Fig. 5, where an embedded table shows our best-fit parameters at every choice of abig . We summarize our results below and discuss their implications in §4.2: 
+
+• small grains: one of our most interesting find-ing is that small grains dominate much more than expected. Their total mass is of order 100 M⊕,7
+
+about ten times that in large grains. They also account for most of the emission in Band 7 and (sometimes) Band 6. These grains are broadly distributed, explaining the large ring width/height that we find in these wavelengths. Such a large mass in the small grains is surpris-ing (see more below). However, this claim is sup-ported by studies at other wavelengths. First, scattered light. Swastik et al. (2026) carried out the most comprehensive modeling of infrared scat-tering in LkCa 15 and reported that the scatter-ing grains in the 69au ring are one to ten microns  
+
+> 7This is based on the standard DIANA opacity. More absorbent grains, e.g., with a higher carbon content, will reduce this es-timate.
+
+80.1 0.3 13
+
+> peak
+> B9 B7 B6 B3 Q
+
+(a) 
+
+> Joint Fit (Table 1) model (total) model (big grain)
+> 0.050 0.075 0.100 0.125
+> r/r
+
+(b)     
+
+> 0.5 1248
+
+[mm] 
+
+> 0.04 0.06 0.08 0.10
+> h/r
+
+(c)     
+
+> 0.5 1248
+
+[mm] 
+
+> 10 1
+> 10 2
+> 2F [mm 2 mJy]
+
+(d) 
+
+> Sierra+25 Sierra+25
+
+abig 2 small big Msmall Mbig ( r                                                             
+
+> r)s(r
+> r)b(h
+> r)s(h
+> r)b
+> [g/cm ²][g/cm ²][M][M]
+> 0.1mm 11.6 0.55 0.0046 139 0.3 0.09 0.02 0.07 0.05
+> 0.2mm 4.3 0.19 0.097 92 11 0.17 0.04 0.13 0.03
+> 0.5mm 2.9 0.31 0.069 102 70.12 0.03 0.08 0.03
+> 1mm 2.6 0.26 0.15 90 20 0.12 0.05 0.08 0.04
+> 2mm 2.5 0.28 0.28 95 38 0.12 0.05 0.08 0.04
+> Best-fit Parameters ( asmall 20 m)
+
+Figure 5. Explaining our measurements (black circles) using a two-size dust model. At each size of large grains ( abig , colored as in the embedded table), the best-fit model is drawn as a function of wavelength. Panels a) peak optical depth, with the total value in thick curves, and the big grain contributions in thin curves; b) effective radial width; c) effective vertical height; d) resultant SED, calculated for a face-on ring. For the last, we have also over-plotted the observed full-disk values taken from (Sierra et al. 2025). The peak surface densities in the table are two-sided, and we obtain the total grain masses by integrating these over the respective ring widths. 
+
+in size (depending on porosity), and have a to-tal mass of ∼ 10 M⊕ if assuming a scale-height 
+
+σh/r = 0 .1. This can be made compatible with our mass estimate, when one adopts a smaller scale-height, 8 and when one includes grains larger than the scatterers. Second, the Band 9 (450 μm ) image of LkCa 15 (Leemker et al. 2022) shows one broad ring that spans both the 69au and the 101au rings in Band 7. This indicates that small grains domi-nate Band 9 and are shinning brightly even in the gap between the two rings. 9 This again suggests a large mass in the small grains. We can also compare the above mass estimate to the gas mass. For the whole disk, Jin et al. (2019) previously reported a gas mass of 100 MJ , while Sturm et al. (2023) reduced it to 10 +10  
+
+> −4
+
+MJ . Taking the latter value and assuming that it is all asso-ciated with the 69au ring, and that Z = 0 .01, we expect a total dust mass of 20 − 60 M⊕, within a  
+
+> 8
+
+The LkCa 15 disk reprocesses ∼ 28% of the stellar flux to far infrared. If including also scattering albedo, the scattering surface is likely very tall. This requires a large amount of small grains. A smaller dust scale height exacerbates this problem.  
+
+> 9
+
+A similarly filled-in Band 9 is also observed in the HL Tau disk (Guerra-Alvarado et al. 2024). 
+
+factor of two of our estimate. Most of it, we seem to find, is lodged in small grains. Lastly, we infer a scale-height for small grains that slightly exceeds the gas scale height ( ∼ 1.2h). 
+
+• big grains: we cannot uniquely determine the value of abig . Any model with abig > 200 μm 
+
+can reasonably explain our measurements, while grains with a smaller abig fail (large χ2) because their opacities are too similar to those of the ‘small grains’. We can, however, speak to the big grains’ spatial distribution. They have to be concentrated near the ring center ( σr /r ∼ 0.03) and to the disk mid-plane (a similar σh/r ). Since the opacity in Band 7 is largely dominated by small grains, while Band 3 by large grains, one observes an increasingly narrow/thin ring at longer wavelengths. This ob-served change allows us to recover information at scales smaller than the beam width ( σB /r ∼ 0.05). The mass of the big grains lies about ten times be-low that of the small grains. It increases in models with a larger abig , because larger grains are less ef-ficient emitters. 
+
+• SED: the spectral-energy-distribution of LkCa 15 has been well characterized (see, e.g., Sierra et al. 92025). Many SED fits have been attempted (e.g. Sturm et al. 2023; Sierra et al. 2025; Swastik et al. 2026), yielding dust parameters that are drasti-cally different from our solutions here. So to vali-date our model, we will also compute disk fluxes. We calculate the emission assuming the 69au ring is face-on, so the radiative transfer is only 1-D. The results are presented in Fig. 5, and compared against the full-disk integrated SED collected by Sierra et al. (2025). 10 This is not an apple-to-apple comparison: our model ring is assumed to be face-on, while the real disk is inclined and con-tains multiple rings. The main message, however, is that the SED is also largely invariant to the choice of abig . This should be caution enough for studies that claim to determine grain sizes, based purely on SED. In that panel, we plot SED in unit of λ2Fν . For a blackbody emission in the Rayleigh-Jeans limit, this should be flat with wavelength. We see that emissions in Bands 9/7/6 are indeed largely flat, supporting the claim that these bands are optically thick. In contrast, fluxes in Bands 3/Q fall with wavelengths roughly as Fν ∝ λ−3. In our model, this results both from the lowering of the optical depth with wavelength, and from the reduction in emitting area as one sees mostly large grains in these bands. So in summary, we find that a two-size model can be chosen to explain our findings on the 69au ring. The fact that this ring looks broad and fluffy is likely explained by the massive small grains. And the fact that it becomes narrower and thinner at longer wavelength is because big grains increasingly take dominance.  
+
+> 4.
+
+DISCUSSIONS Here, we first discuss the measurement of dust scale heights, in order to put our work in context with sim-ilar studies. We then move on to discuss the physical implications of our results. 4.1. Measuring Dust Heights 
+
+A variety of methods have been developed to mea-sure dust heights, and a diversity of results have been obtained (see Villenave et al. 2025, for a review). We comment on the improvements we make over these past studies.  
+
+> 10 We are forced to do so because we lack the resolved images in Band 9 and Q.
+
+• In this work, we emphasize the importance of mea-suring the radial width. The radial width is as informative on turbulence stirring as the vertical height. In addition, the variation of width over azimuth allows one to measure the disk height. 
+
+• We argue that the beam size matters, even when the beam is round. This contrasts with previ-ous understanding (Doi & Kataoka 2021; Villenave et al. 2025) where only elliptical beams are thought to affect the brightness asymmetry. This is be-cause the ring width is the smallest at the minor axis (fore-shortened by cos i), so a beam dilutes the flux most there. A larger beam enhances the brightness asymmetry (Fig. 2), and may mislead one into believing that the ring is thicker than it really is. This effect is more severe for smaller rings (relatively larger value of σB /r ). We suspect that it may, at least partially, explain why Jiang et al. (2025); Villenave et al. (2025) reported that in systems with two-rings, the inner rings tend to be thicker. 
+
+• We explicitly solve for the optical depth of the ring, without any assumption on the dust tem-perature. This departs from past studies where optical depth is obtained only by adopting a tem-perature model. In addition to being model-dependent, the conventional approach also loses its sensitivity when the disk is optically thick. The high optical depth we find in Band 6 explains why our height value differs from that reported in Jiang et al. (2025): σh/r = 0 .063 as opposed to 0.022 – they fixed the optical depth to τ⊥ = 0 .32 at Band 6. As Fig. 2 demonstrates, an optically thin ring that is geometrically thin can look as asymmetric in brightness as an optically thick ring that is much puffier. Fig. 2 demonstrates that it is impossible to obtain a thickness measurement when the optical depth is not known – one could only hope for a lower-limit. 
+
+• Unlike previous studies that use the entire 2-D im-age (e.g. Villenave et al. 2025; Jiang et al. 2025; Antilen et al. 2026), we explicitly focus on two quantities: peak brightness and apparent radial width. In so doing, we channel our attention to quantities that are the most defining. It also al-lows for a transparent and economic exploration of the parameter space. Figure 3 of Villenave et al. (2025) also illustrated how the width at the minor-axis can be used to 10 constrain ring thickness, the effect we explicitly in-vestigate here. However, unlike our measurements here, their study of the 69au ring only yields a lower limit to the dust height. This may be re-lated to their having a limited number of models and the best model lies at the edge of their model grid (Villenave, private communication). 
+
+• We emphasize the utility of multi-band obser-vations, following the works of Doi & Kataoka (2023); Sierra et al. (2025). Previously, Sierra et al. (2025) have established that the width of the 69au ring decreases with wavelength and at-tributed it to differential trapping of dust grains. Here, we further reveal that the dust height also decreases with wavelength. Both lengths drop by a factor of 2 from Band 7 to Band 3. Such a stereo vision allows us to draw physical conclusions that are not possible before, and leads us to a new in-terpretation for the fluffy disk (see next section), one that is not related to strong stirring. In contrast, previous works, including population studies by Pizzati et al. (2023); Villenave et al. (2025); Jiang et al. (2025); Martinien et al. (2026); Antilen et al. (2026), predominately use data from only one band (typically Band 6). Collectively, these works found a broad range of σh/r that spans almost two decades (from 10 −3 to ∼ 10%), an ex-ample being HD 163296 with its two rings differ-ing in thickness by a factor of 10 (DK21). If these heights are related to dust stirring, they would re-quire a dramatic (and puzzling) range in the tur-bulence strength. Again, we argue below against the stirring interpretation. It will be useful to apply our method to more disks, es-pecially as high-resolution, multi-band observations be-come increasingly common. 4.2. What do our Results Mean? 
+
+Large grains are expected to drift rapidly towards the pressure maximum and to settle towards the disk mid-plane. We calculate the speeds of these movements using a model with Σ gas = 30 g / cm 2 (two-sided) at the ring center (69au) and a Gaussian width wr /r = 0 .12 (or 
+
+wr /h ∼ 2), same width as that inferred for the small grains (Fig. 5). The total gas mass in the ring is 20 MJ ,consistent with that inferred for LkCa 15 by Sturm et al. (2023). We take the gas temperature to be a constant 13 K. Defining the Stokes number for a grain of size a as 
+
+St ≡ a × (ρbulk Ωk/ρ gas cs), where ρbulk is the grain bulk density and ρgas the local gas density, we obtain that 
+
+St ∼ 10 −5 for a 1 μm grain at the midplane of the ring center. The Stokes number rises with height as the up-per atmosphere is more dilute. The characteristic timescales for vertical settling and for radial migration are (see, e.g. Chiang & Youdin 2010) 
+
+tz ≡ zvz
+
+≈ 1ΩkSt ∼ 10 6yrs 
+
+ St 
+
+10 −4
+
+−1
+
+tr ≡ wr
+
+vr
+
+∼
+
+ hr
+
+ 1
+
+ηΩkSt ∼ 2 × 10 6yrs 
+
+ St 
+
+10 −4
+
+−1
+
+,(7) where η ∼ (h/r )2 d ln Pd ln r ∼ (h/r )( h/w r ), and we have evaluated with h/r = 0 .06 and at the limit St ≪ 1. The corresponding velocities are shown in Fig. 6. We first consider the state of the small grains. Assum-ing a system age of a few Myrs, these estimates suggest that small grains (up to tens of μm) in the bottom scale-height have neither settled nor migrated. We expect them to show large radial width and vertical thickness, as is indeed found in the two-size model. On the other hand, they should settle rapidly at altitudes above 2 h
+
+where the gas is more dilute (also see Dullemond & Do-minik 2004). Their presence there then requires active stirring or wafting. The latter can be provided by, e.g., an up-ward blowing wind. Imagine a steady wind that has a speed of h/Myrs near the base (such that all mass is blown away after 1 Myr). It quickens at high altitude as the gas density drops, as vz ∝ 1/ρ gas (z). Fig. 6 shows that such a wind can counteract settling and waft small grains up to a large number of scale-heights. An obvious candidate for such a wind is the MHD disk wind (e.g. Bai & Stone 2013). What about the ‘big grains’ ( abig ≥ 200 μm )? These grains are seen to be more compactly distributed than the gas, with σr /r ∼ σh/r ∼ 0.02 (Fig. 5). Fig. 6indicates that this requires some form of active mainte-nance. If we assume this maintenance is by turbulent stirring, using expressions from Dullemond et al. (2018) for radial stirring, and from Dubrulle et al. (1995); Youdin & Lith-wick (2007) for vertical stirring, we find a comparable magnitude of stirring strength in both directions, 
+
+αr ∼ αz ∼ 10 −1St ∼ 10 −4
+
+ abig 
+
+100 μm 
+
+
+
+. (8) We are largely ignorant as to the true value of α, in par-ticular in dusty rings. An MHD simulation by Xu & Bai (2022) reported α ∼ 10 −3, but the physical conditions (e.g., the large amount of small grains) in the 69au ring may differ from their set-up. So overall, the large heights and widths observed in the 69au ring of LkCa 15 is most naturally explained 11 55 60 65 70 75 80               
+
+> r [AU]
+> 10 2
+> 10 1
+> 10 0
+> 10 1
+> vr [cm s  1]
+> 5au/Myrs
+> r/r= 0.03
+> 0.2 0.5 125
+> z/h
+> 10 1
+> 10 0
+> 10 1
+> 10 2
+> 10 3
+> 10 4
+> vz [cm s  1]
+> h/Myrs upward wind
+> h/r= 0.02
+> 1m10 m100 m
+
+Figure 6. Speeds of radial drift (top panel) and vertical settling (bottom) for three representative grain sizes near the 69au ring. The red arrows indicate our deduced geometry for the big-grains. Micron-sized grains can stay afloat below 
+
+z/h = 2, and to an even larger height if considering lofting by an ‘upward wind’ (see text). Larger grains, in contrast, should have been vertically settled. The situation is similar in the radial direction. 
+
+by the fact that ALMA emission is dominated by small grains that are tightly coupled to gas, rather than an anomalously strong turbulent stirring. The large grains are more concentrated and can be stirred by an isotropic turbulence. 4.3. Puzzles and Caveats 
+
+Our result – that small grains dominate the dust mass – poses a new puzzle. Small grains should collide at a high rate and grow in size. The mean collision time, 
+
+tmfp ≈ 1
+
+nσ ∆V ∼
+
+ Σgas 
+
+Σdust 
+
+ hSt f ∆V ∼ 1
+
+Z f Ωk
+
+∼ 8000 yrs × f −1
+
+ Z
+
+0.01 
+
+−1  r
+
+69au 
+
+3/2
+
+, (9) where we have taken σh = h, and have defined metal-licity Z = Σdust /Σgas . The number density n ∼
+
+f Σd/h ρbulk (4 π/ 3) a3 , where f is the mass fraction of the small grains (we find f ∼ 1), and the collisional cross-section 
+
+σ = πa 2. We have also equated the relative collisional velocity ∆ V to the vertical settling speed at a scale height, vz = cs St . This choice makes the collision timescale independent of grain size. The presence of any other velocity dispersion will further shorten the timescale. In fact, past theoretical studies have invariably con-cluded that the dust mass should be quickly concen-trated into large grains (e.g., Birnstiel et al. 2012). We confirm such claims using the DustPy code (Stammler & Birnstiel 2022) and present the results in Appendix D. In a LkCa-15-like ring, grains starting from 1 μm quickly conglomerate to cm-sized after a mere 0.2 Myrs. As a result, the ring should appear both narrow and thin, with, e.g., scale heights σh/r ∼ 0.02 − 0.01 going from Band 7 to 3 (Fig. 9). These grains may resemble the ‘big grains’ in LkCa 15, but fail to explain the broad and puffy ring of ‘small grains’. The LkCa 15 ring may not be unique. At least two other systems, HD 163296 and V1094Sco, are reported to host broad and thick dust rings (Doi & Kataoka 2021; Villenave et al. 2025). They may, like LkCa 15, also possess a large amount of small grains. Why are the small grains so massive? One possibility is that they are prevented to grow by the presence of a bouncing barrier (Dominik & Tielens 1997; Dominik & Dullemond 2024; Qian & Wu 2025). Another puzzle relates to the absence of the so-called ‘hot-wall’. The 69au ring is inclined. So, we can see the star-facing wall on the far side of the ring (along one minor axis). One expects this wall to be markedly hotter (and therefore brighter) than the near-side which faces away from the star. Such hot-wall effect have been reported in disks like CIDA 9, RY Tau (Ribas et al. 2024), as well as in the inner region of HL Tau (Guerra-Alvarado et al. 2024), and has been used to measure disk thickness. But surprisingly, it is absent in LkCa 15 – both its minor axis are largely similar in bright-ness. This is surprising in Band 7 which has a large optical depth, and even more so in Band 9 (see image in Leemker et al. 2022) where the optical depth is likely even higher. Such an absence of the ‘hot-wall’ has also been reported for a number of well resolved rings, e.g., GM Aur (Huang et al. 2020) and J16083070 (Villenave et al. 2025). It is unclear what causes this. Now we turn to caveats. First, our measurements of the ring images may carry some systematic errors that are introduced by, e.g., neighbouring rings, ellip-tical beam shapes, low signal-to-noise ratio (especially in Band 3). Higher fidelity images will help confirm our results. Our model also contains a number of sim-plifications. One is the assumption of a Gaussian ring. This can be refined by fitting the radial profile along the major axis (as is done in Villenave et al. 2025). This as-12 sumption is also suspicious in the context of the two-size model, since the composite of two Gaussians may not be well fit by a Gaussian. The two-size model itself can also be improved upon when further constraints arrive. Throughout this work, we ignore the effects of grain scattering. Large grains, on the other hand, may have high albedos in ALMA bands (Fig. 4). In Appendix C, we solicit the help of the RADMC3d code (Dullemond et al. 2012) to help understand how much our results are altered by grain scattering. Fortuitously, for the param-eters of the 69au disk (width and height), a ring with high albedo appears the same as one with zero albedo. The optical depths that we infer for the ring can be straightforwardly interpreted as the total optical depths values (scattering + absorption). This conclusion may not hold for other rings. Our geometrical method may also be plagued by the presence of intrinsic asymmetries, e.g., those caused by shadows. The latter may explain the imperfect bright-ness fit in Fig. 3.  
+
+> 5.
+
+CONCLUSIONS DK21 first pointed out that the brightness asymmetry of an inclined dust ring can be used to measure its verti-cal height. In this work, we extend their idea beyond the original optically thin limit, and beyond the sole use of brightness asymmetry. We demonstrate that, when one also measures the apparent radial width along the az-imuth, three independent quantities can be constrained simultaneously: ring optical depth, intrinsic width and intrinsic height. However, to do so requires knowing the exact beam shape. Our method is, as is the original DK21 work, purely geometrical. We are thus free from assumptions on disk temperature and opacity laws. Applying our method to the 69au ring of LkCa 15, we find that it appears broad and thick. In ALMA Band 7, its fractional radial width and vertical thickness are both of order 10%. Conventional wisdom holds that ALMA emission is dominated by large dust grains. But if so, such a fluffy ring would demand un-physically strong stirring. Fortunately, the extensive data on LkCa 15 allows us to also study the ring in both Bands 6 and 3. We find that the ring width and height smoothly decrease with increasing wavelength. A single dust population would not appear to have different intrinsic geometry in differ-ent bands. So our results demand not one, but two or more dust populations. These populations, with their different opacity law and different spatial distributions, trade dominance in different ALMA bands. To explore this idea, we experiment with a simple two-size model for the 69au ring. Our model suggests that the ‘small’ grain population (likely anything smaller than ∼ 20 μm) are spatially broad and thick; while the ‘big’ population ( ∼ 200 μm and above) are distributed a few times narrower and thinner. This latter fact re-lieves the need to invoke strong stirring. We also find that the small population dominates the flux in Band 7 and dominates the total solid budget. These conclusions depart from conventional wisdom (e.g., DustPy simula-tions) and are surprising. Is LkCa 15 special? Compared to other bright disks in Taurus, the spectral energy distribution of LkCa 15 appears unremarkable (see, e.g., Painter et al. 2025). Moreover, among dusty rings studied for their heights, some are reported to be as vertically extended (typically in Band 6, see e.g., Villenave et al. 2025; Antilen et al. 2026). So we speculate that LkCa 15 is not special, and that a substantial fraction of the disks also have large masses of small grains. This can be confirmed by applying our geometrical method on future multi-band, high-resolution data. (Acknowledgement to be inserted) REFERENCES 
+
+> ALMA Partnership, Brogan, C. L., P´ erez, L. M., et al. 2015, ApJL, 808, L3, doi: 10.1088/2041-8205/808/1/L3 Andrews, S. M., Terrell, M., Tripathi, A., et al. 2018a, ApJ, 865, 157, doi: 10.3847/1538-4357/aadd9f Andrews, S. M., Huang, J., P´ erez, L. M., et al. 2018b, ApJL, 869, L41, doi: 10.3847/2041-8213/aaf741 Antilen, J., Pinilla, P., Li, D., et al. 2026, MNRAS, doi: 10.1093/mnras/stag882 Bai, X.-N., & Stone, J. M. 2013, ApJ, 769, 76, doi: 10.1088/0004-637X/769/1/76 Barenfeld, S. A., Carpenter, J. M., Sargent, A. I., Isella, A., & Ricci, L. 2017, ApJ, 851, 85, doi: 10.3847/1538-4357/aa989d Birnstiel, T., Klahr, H., & Ercolano, B. 2012, A&A, 539, A148, doi: 10.1051/0004-6361/201118136 Birnstiel, T., Dullemond, C. P., Zhu, Z., et al. 2018, ApJL, 869, L45, doi: 10.3847/2041-8213/aaf743 Chiang, E., & Youdin, A. N. 2010, Annual Review of Earth and Planetary Sciences, 38, 493, doi: 10.1146/annurev-earth-040809-152513
+
+13 
+
+Doi, K., & Kataoka, A. 2021, ApJ, 912, 164, doi: 10.3847/1538-4357/abe5a6 —. 2023, ApJ, 957, 11, doi: 10.3847/1538-4357/acf5df Dominik, C., & Dullemond, C. P. 2024, A&A, 682, A144, doi: 10.1051/0004-6361/202347716 Dominik, C., Min, M., & Tazaki, R. 2021, OpTool: Command-line driven tool for creating complex dust opacities, Astrophysics Source Code Library, record ascl:2104.010. http://ascl.net/2104.010 Dominik, C., & Tielens, A. G. G. M. 1997, ApJ, 480, 647, doi: 10.1086/303996 Dubrulle, B., Morfill, G., & Sterzik, M. 1995, Icarus, 114, 237, doi: 10.1006/icar.1995.1058 Dullemond, C. P., & Dominik, C. 2004, A&A, 421, 1075, doi: 10.1051/0004-6361:20040284 Dullemond, C. P., Juhasz, A., Pohl, A., et al. 2012, RADMC-3D: A multi-purpose radiative transfer tool, Astrophysics Source Code Library, record ascl:1202.015. http://ascl.net/1202.015 Dullemond, C. P., Birnstiel, T., Huang, J., et al. 2018, ApJL, 869, L46, doi: 10.3847/2041-8213/aaf742 Facchini, S., Benisty, M., Bae, J., et al. 2020, A&A, 639, A121, doi: 10.1051/0004-6361/202038027 Foreman-Mackey, D., Hogg, D. W., Lang, D., & Goodman, J. 2013, PASP, 125, 306, doi: 10.1086/670067 Gaia Collaboration, Brown, A. G. A., Vallenari, A., et al. 2018, A&A, 616, A1, doi: 10.1051/0004-6361/201833051 Guerra-Alvarado, O. M., Carrasco-Gonz´ alez, C., Mac´ ıas, E., et al. 2024, A&A, 686, A298, doi: 10.1051/0004-6361/202349046 Huang, J., Andrews, S. M., Dullemond, C. P., et al. 2020, ApJ, 891, 48, doi: 10.3847/1538-4357/ab711e Jiang, H., Long, F., Mac´ ıas, E., et al. 2025, ApJ, 993, 166, doi: 10.3847/1538-4357/ae089e Jin, S., Isella, A., Huang, P., et al. 2019, ApJ, 881, 108, doi: 10.3847/1538-4357/ab2dfe Leemker, M., Booth, A. S., van Dishoeck, E. F., et al. 2022, A&A, 663, A23, doi: 10.1051/0004-6361/202243229 Long, F., Pinilla, P., Herczeg, G. J., et al. 2018, ApJ, 869, 17, doi: 10.3847/1538-4357/aae8e1 Long, F., Andrews, S. M., Zhang, S., et al. 2022, ApJL, 937, L1, doi: 10.3847/2041-8213/ac8b10 Manara, C. F., Testi, L., Natta, A., et al. 2014, A&A, 568, A18, doi: 10.1051/0004-6361/201323318 Martinien, L., Duchˆ ene, G., Ribas, ´A., et al. 2026, A&A, 710, A140, doi: 10.1051/0004-6361/202659107 Otter, J., Ginsburg, A., Ballering, N. P., et al. 2021, ApJ, 923, 221, doi: 10.3847/1538-4357/ac29c2 Painter, C., Andrews, S. M., Chandler, C. J., et al. 2025, The Open Journal of Astrophysics, 8, 134, doi: 10.33232/001c.144268 Pinilla, P., Benisty, M., Birnstiel, T., et al. 2014, A&A, 564, A51, doi: 10.1051/0004-6361/201323322 Pinte, C., Dent, W. R. F., M´ enard, F., et al. 2016, ApJ, 816, 25, doi: 10.3847/0004-637X/816/1/25 Pizzati, E., Rosotti, G. P., & Tabone, B. 2023, MNRAS, 524, 3184, doi: 10.1093/mnras/stad2057 Qian, Y., & Wu, Y. 2025, ApJ, 995, 115, doi: 10.3847/1538-4357/ae17c5 Ribas, ´A., Clarke, C. J., & Zagaria, F. 2024, MNRAS, 532, 1752, doi: 10.1093/mnras/stae1534 Sierra, A., Pinilla, P., P´ erez, L. M., et al. 2025, MNRAS, 538, 2358, doi: 10.1093/mnras/staf393 Stammler, S. M., & Birnstiel, T. 2022, ApJ, 935, 35, doi: 10.3847/1538-4357/ac7d58 Sturm, J. A., Booth, A. S., McClure, M. K., Leemker, M., & van Dishoeck, E. F. 2023, A&A, 670, A12, doi: 10.1051/0004-6361/202244227 Swastik, C., Wahhaj, Z., Benisty, M., et al. 2026, A&A, 706, A312, doi: 10.1051/0004-6361/202449743 Tazzari, M., Testi, L., Natta, A., et al. 2021, MNRAS, 506, 5117, doi: 10.1093/mnras/stab1912 Tripathi, A., Andrews, S. M., Birnstiel, T., & Wilner, D. J. 2017, ApJ, 845, 44, doi: 10.3847/1538-4357/aa7c62 van der Marel, N., van Dishoeck, E. F., Bruderer, S., et al. 2013, Science, 340, 1199, doi: 10.1126/science.1236770 Villenave, M. 2025, PASP, 137, 103001, doi: 10.1088/1538-3873/ae05cb Villenave, M., M´ enard, F., Dent, W. R. F., et al. 2020, A&A, 642, A164, doi: 10.1051/0004-6361/202038087 Villenave, M., Stapelfeldt, K. R., Duchˆ ene, G., et al. 2022, ApJ, 930, 11, doi: 10.3847/1538-4357/ac5fae Villenave, M., Rosotti, G. P., Lambrechts, M., et al. 2025, A&A, 697, A64, doi: 10.1051/0004-6361/202553822 Woitke, P., Min, M., Pinte, C., et al. 2016, A&A, 586, A103, doi: 10.1051/0004-6361/201526538 Xu, Z., & Bai, X.-N. 2022, ApJ, 924, 3, doi: 10.3847/1538-4357/ac31a7 Youdin, A. N., & Lithwick, Y. 2007, Icarus, 192, 588, doi: 10.1016/j.icarus.2007.07.012 Zhang, S., Zhu, Z., Huang, J., et al. 2018, ApJL, 869, L47, doi: 10.3847/2041-8213/aaf744 14  
+
+> Figure 7. Multiwavelength (Bands 7/6/3) joint MCMC fitting results for the 69au ring.
+
+APPENDIX  
+
+> A.
+
+MCMC RESULTS ON THE 69AU RING Fig. 7 displays the MCMC corner plot from the joint multi-wavelength (bands 7/6/3) fit for the 69au ring in LkCa 15. The best-fit from this exercise is listed in Table 1. It is largely similar to the solutions from single-band fitting.  
+
+> B.
+
+THE OUTER RING For completeness, we also carry out the same fitting procedure for the outer ring of LkCa 15 at 101AU. We only use the Band 6/7 data from Sierra et al. (2025) as the Band 3 data is too noisy. We use the same procedure as for the 69au ring, but limiting ourselves to regions outside the ring center. This is necessary to avoid contamination from the 69 au ring. The beam FWHM is σB = 60 mas ( σB /r = 0 .041). The results are listed in Table 2. As is the case for the 69au ring, ring optical depth also drops with increasing wavelength. The fractional radial widths are also similar, but the vertical heights appear smaller. In Band 6, we find σh/r ∼ 0.014, consistent with the upper limit of σh/r ≤ 0.034 by Villenave et al. (2025), but larger than the value of σh/r ≤ 0.006 in Jiang et al. (2025). These results are surprising as one naively expects a comparable width and height for a dust ring. One possibility is that it contains two unresolved thin rings. The other possibility relates to the residual noise pollution from the 69au ring. 15 
+
+Band Best-fit 
+
+Tring τ⊥ σr /r σh/r 
+
+7 10 .3+0 .6 
+
+> −0.5
+
+K 1.2+0 .3 
+
+> −0.2
+
+0.136 +0 .005  
+
+> −0.006
+
+0.034 +0 .007 
+
+> −0.009
+
+6 (same) 0.59 +0 .09  
+
+> −0.08
+
+0.131 +0 .002  
+
+> −0.002
+
+0.014 +0 .004 
+
+> −0.003
+
+Table 2. Joint fit for the outer (101au) ring of LkCa 15. The beam width σB /r = 0 .041. 
+
+Figure 8. Effects of grain scattering on the azimuthal profile of a dust ring. The data and the red curves (no scattering) are as in Fig. 3, while the green curves show the RADMC3d results (using the same set of σh, σ r and observed with the same beam) when the grain albedo is set to be 0 .8 and the peak optical depth refers to the total optical depth (absorption and scattering). We find that including scattering does not appreciably change the ring appearance, at least not for the geometrical parameters of the 69au ring. C. EFFECTS OF GRAIN SCATTERING Our analysis in the main paper ignores the effects of grain scattering. Here, we investigate if scattering can affect the azimuthal variations in disk brightness and with. We model grain scattering using the Monte-Carlo radiative transfer code RADMC-3D (Dullemond et al. 2012). We set a constant albedo of 0 .8, or equivalently κscat = 4 κabs . This falls in the expected range for large grains (see Fig. 4). Scattering is assumed to be isotropic. We further adopt the Multi-wavelength Joint Fit (Table 1) for the dust spatial distribution and the peak optical depths. When the albedo is zero, the resultant azimuthal variations in each band are plotted in Fig. 3 and reproduced here in Fig. 8. When scattering is considered, we instead let the tabulated peak optical depth be the sum of absorption and scattering, τ⊥ = τabs + τscat . This requires adjusting the dust density downwards by five times from the previous case. We then convolve the RADMC3d images with the observing beam ( σb/r = 0 .059), and extract the apparent brightness and width as in main text. These results are also plotted in Fig. 8. The scattering case, interestingly, looks almost identical to the no-scattering case, with a notice-able difference only in the most optically thick band (Band 7). So if we are to measure disk geometry using the no-scattering model (as is done in the main text), our results lie close to the truth, even with an albedo as high as 0 .8. To be more precise, since the scattering model tends to make the ring look thinner (by about 15% in Band 7), if we were to correct for the effect of scattering, we would have found that the intrinsic width in Band 7 is even higher than our current value. This further strengthens our conclusion that the ring looks wider in shorter wavelength. 16 50 55 60 65 70 75 80 85                                       
+
+> R [au]
+> 10 4
+> 10 3
+> 10 2
+> 10 1
+> 10 0
+> a [cm] DustPy dd/dln a
+> 50 55 60 65 70 75 80 85
+> R [au]
+> 10 1
+> 10 0
+> 10 1
+> + dz
+> DustPy Optical Depth
+> B9 ( r/r=0.0202)
+> B7 ( r/r=0.0193)
+> B6 ( r/r=0.0188)
+> B3 ( r/r=0.0178)
+> BQ ( r/r=0.0169)
+> 0.5 12346
+> [mm]
+> 10 2
+> 10 1
+> /r
+> B9 B7 B6 B3 BQ
+> Widths and Thicknesses
+> r/r(DustPy)
+> z/r(DustPy)
+> r/r(observed)
+> z/r(observed)
+> 10 3
+> 10 2
+> 10 1
+> 1
+
+Figure 9. Comparing results of DustPy simulations against data. The left panel shows the simulated dust surface density as a function of grain size and radius, after 1 Myr of evolution. Most of the dust mass has been collected into ring center and are in the form of ∼ 1 cm grains. The middle panel shows the resultant (two-sided) optical depths, in various ALMA bands. The right panel exhibits the standard deviations for the DustPy ring (in open symbols) in the radial and vertical directions, as well as our reported values in 3 ALMA bands (Table 1). The former do decrease with increasing wavelengths, but are much smaller than the observed ones. 
+
+This experiment gives us confidence that our inferred optical depths and disk geometry remain robust even in the presence of highly reflective grains. Such a conclusion applies to the specific geometry of the 69au ring, but may not be broadly applicable to other geometry. 
+
+D. DUSTPY SIMULATION We carry out DustPy (Stammler & Birnstiel 2022) simulations to showcase the expectations of dust coagulation models. We adopt a gas density distribution that is centered at 69au, with a scale height h/r = 0 .06, a width 
+
+wr /r = 0 .12 ∼ 2h/r and a peak gas surface density of Σ = 30 g / cm 2. These are motivated by what we find for the ”small grains” (Fig. 5). Dust grains are initialized with the same spatial distribution, at a constant mass fraction of 
+
+Z = 0 .01 and at a size of one micron. We further adopt a turbulence strength α = 10 −4, and a fragmentation threshold of 1 m / s (similar to Model 2 of Sierra et al. 2025). Dust grains in our ring quickly conglomerate. Most of the mass has been incorporated into cm-sized grains after a mere 0.2 Myrs. These grains are radially concentrated. Fig. 9 shows a snapshot of the dust distribution at 1 Myr. To compare directly against observation, we assume each size grains are distributed vertically with a scale height σh/h = pα/St , where St is the mid-plane Stokes number. We then sum over all sizes (weighted by the simulated mass density) to calculate the 2-D distribution of ρdκd, and measure its radial and vertical widths. Fig. 9 shows our results. According to DustPy, the ring should appear narrow and thin, with fractional widths and heights of order a percent or so. Although these values also decrease with wavelength as the observed ones do, they cannot explain the observed values both in magnitudes and in decay rates.

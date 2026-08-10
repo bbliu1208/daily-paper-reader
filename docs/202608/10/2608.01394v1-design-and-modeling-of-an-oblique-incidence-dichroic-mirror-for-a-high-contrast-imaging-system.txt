@@ -1,0 +1,347 @@
+Title: Design and modeling of an oblique incidence dichroic mirror for a high contrast imaging system
+
+URL Source: https://arxiv.org/pdf/2608.01394v1
+
+Published Time: Tue, 04 Aug 2026 01:30:26 GMT
+
+Number of Pages: 17
+
+Markdown Content:
+# Design and modeling of an oblique incidence dichroic mirror for a high contrast imaging system 
+
+## Joanna Rosenbluth a, Ramya Anche b, Kyle Van Gorkom b, Nikoli Cooper b, William Melby a,Daewook Kim a,b , and Ewan Douglas baWyant College of Optical Sciences, University of Arizona, 1630 E University Blvd, Tucson, AZ 85721, USA 
+
+> b
+
+## Steward Observatory, University of Arizona, 933 N Cherry Ave, Tucson, AZ 85721, USA 
+
+ABSTRACT 
+
+The proposed Habitable Worlds Observatory (HWO) aims to detect and characterize Earth-like planets around Sun-like stars from the ultraviolet to the infrared using high-contrast imaging. A dichroic mirror is a natural choice for splitting light between multiple wavelength channels in such a system, but the coating must introduce minimal polarization aberrations and chromatic wavefront errors (WFE) to avoid limiting contrast. We present the design of a long-pass dichroic mirror operated at a 7 ◦ angle of incidence that provides high reflection in the short-wavelength band, high transmission in the long-wavelength band, and a sharp cut-on near 550 nm. A multilayer thin-film design process was used to meet these spectral requirements while reducing polarization aberrations and chromatic WFE sensitivity. Reflected phase optimization was also incorporated to reduce sensi-tivity to manufacturing-induced layer-thickness variations, which can produce wavelength-dependent WFE and degrade coronagraph performance. The resulting coating-induced WFE was propagated through simulations of a vector vortex coronagraph to assess contrast performance. Simulations predict dark-hole contrast residuals at the 10 −12 level, indicating that the optimized dichroic mirror does not limit coronagraph performance. 
+
+Keywords: dichroic mirror, thin film coatings, polarization, coronagraphy, high contrast imaging 
+
+1. INTRODUCTION 
+
+Future space-based observatories such as the Habitable Worlds Observatory (HWO) aim to directly image and characterize Earth-like exoplanets around nearby Sun-like stars using high-contrast imaging. 1 Achieving the required contrast levels places stringent requirements on the optical system, including tight control of wavefront quality, stray light, and polarization-dependent aberrations. Even small amplitude or phase differences between orthogonal polarization states can introduce leakage into the coronagraph dark hole and degrade achievable contrast. 2–5 As coronagraph architectures continue to push toward deeper contrast and broader spectral coverage, controlling polarization effects throughout the optical system becomes increasingly important. Many proposed coronagraph instruments operate over broad wavelength ranges spanning much of the visible spectrum. However, wavefront sensing and coronagraph suppression become more challenging over large spectral bandwidths because chromatic phase errors and polarization aberrations vary with wavelength. 6 Splitting the beam into multiple narrower spectral channels can reduce these chromatic effects while still providing broad overall wavelength coverage. 7, 8 Dichroic beamsplitters are well suited for this task because they separate wave-length bands with minimal throughput loss, directing different portions of the spectrum into independent optical channels rather than rejecting light. 9 For this reason, dichroic coatings are a promising solution for wavelength separation in future high-contrast imaging instruments. 10 
+
+Although dichroic coatings provide efficient wavelength separation, multilayer coatings operated at oblique incidence inherently exhibit polarization-dependent behavior because s- and p-polarized light experience differ-ent Fresnel boundary conditions. These differences accumulate across the many interfaces within a multilayer coating and produce measurable diattenuation and retardance. 11 For example, Mueller-matrix measurements of a commercial dichroic operated at 45 ◦ incidence showed strong wavelength-dependent polarization effects, with 
+
+Further author information: (Send correspondence to J.R.) arXiv:2608.01394v1 [astro-ph.IM] 2 Aug 2026 the optic behaving approximately as a quarter-wave plate near 630 nm. 12 Previous studies of the dichroic beam-splitter used to separate the VIS and NISP channels in the Euclid space telescope showed that coating-induced phase variations can generate strongly chromatic wavefront errors capable of distorting the telescope point-spread function. 13 Measurements of this optic reported wavelength-dependent wavefront distortions approaching 40 nm RMS at specific wavelengths, highlighting the importance of accurately controlling and characterizing coating-induced phase effects. 14 These effects become increasingly significant as the angle of incidence (AOI) increases, motivating the use of a small AOI for dichroic designs used in applications requiring precise polarization control. 15 
+
+Beyond conventional throughput requirements, coating-induced phase errors can directly impact coronagraph performance. Spatial and spectral variations in the coating phase response generate chromatic wavefront errors that are difficult to correct over broad bandwidths and can produce residual light leakage within the coronagraph dark hole. Understanding the relationship between coating design, wavefront error, and achievable contrast is therefore an important consideration for future high-contrast imaging systems. In this work, a 7 ° AOI dichroic mirror is designed for use in a high-contrast imaging instrument. The resulting coating is analyzed in terms of its spectral performance, polarization aberrations, and chromatic wavefront error. Several phase-based optimization strategies are investigated to reduce sensitivity to coating thickness varia-tions. The resulting coating-induced chromatic wavefront error is propagated through vector vortex coronagraph simulations to assess contrast performance. Comparisons are made between a baseline design optimized using conventional spectral criteria and a design incorporating reflected phase optimization to quantify the impact of phase control on coronagraph contrast. Sec. 2 reviews the thin-film, polarization, and chromatic wavefront-error background relevant to high-contrast coronagraph systems. Sec. 3 describes the dichroic coating design method-ology and phase optimization strategies. Sec. 4 presents the predicted coating performance, and Sec. 5 evaluates the resulting impact on coronagraph contrast through vector vortex coronagraph simulations. 
+
+2. BACKGROUND 
+
+Multilayer thin-film coatings rely on interference between partial reflections at each interface to achieve the desired spectral performance. 16 At oblique incidence, this interference becomes polarization-dependent due to the different boundary conditions experienced by s- and p-polarized light. 17 As a result, both the amplitude and phase behavior of the coating must be evaluated separately for each polarization state. Two coating-induced effects are of particular importance for high-contrast coronagraph systems. The first is polarization aberration, which arises from differences between the s- and p-polarization states and manifests as diattenuation and retardance. The second is chromatic wavefront error (WFE), which results from nonuniformi-ties of the coating and the wavelength dependence of the coating phase response. Because these errors vary with wavelength, they can leave chromatic residuals after broadband wavefront correction and degrade dark-hole con-trast. 18, 19 Therefore, polarization aberrations and chromatic WFE must be considered alongside conventional spectral performance metrics when designing dichroic coatings for high-contrast coronagraph systems. 
+
+2.1 Thin-film modeling using the characteristic matrix method 
+
+The optical response of the multilayer coating was modeled using the characteristic matrix method. 16 For each layer, the phase thickness is given by 
+
+δj = 2πλ nj dj cos θj , (1) where nj , dj , and θj are the refractive index, physical thickness, and propagation angle within the layer, respectively. The optical admittance is a polarization-dependent quantity which is given by 
+
+η(s) 
+
+> j
+
+= nj cos θj , η(p) 
+
+> j
+
+= nj
+
+cos θj
+
+. (2) These differing admittances are the source of the polarization-dependent behavior observed in multilayer coatings at oblique incidence. Each layer is represented by a characteristic matrix 
+
+Mj =
+
+ cos δj iηj sin δj
+
+iη j sin δj cos δj
+
+
+
+(3) The overall response of the multilayer stack is obtained by multiplying the characteristic matrices of all layers and applying the substrate boundary condition 
+
+BC
+
+
+
+= Y
+
+> j
+
+Mj
+
+ 1
+
+ηsub 
+
+
+
+. (4) The effective optical admittance of the stack is then 
+
+Y = CB . (5) The resulting complex reflection and transmission coefficients are 
+
+r = η0 − Yη0 + Y , t = 2η0
+
+η0 + Y , (6) where η0 is the optical admittance of the incident medium. From these coefficients, the reflectance, transmit-tance, and phase response of the coating can be calculated separately for s- and p-polarized light. The reflectance and transmittance are obtained from the complex amplitude coefficients as 
+
+R = |r|2, T = Re( ηsub )Re( η0) |t|2, (7) where the admittance ratio accounts for the change in optical power between the incident and transmitted media. The phase response is determined from the argument of the complex coefficients, 
+
+ϕr = arg( r), ϕt = arg( t). (8) 
+
+2.2 Polarization aberrations 
+
+The polarization behavior of the coating is characterized using diattenuation and retardance. 17 Diattenuation quantifies the differential attenuation of orthogonal polarization states and is evaluated separately for the reflected and transmitted beams as 
+
+Dr = Rs − Rp
+
+Rs + Rp
+
+, Dt = Ts − Tp
+
+Ts + Tp
+
+, (9) where Rs, Rp, Ts, and Tp are the reflectance and transmittance for s- and p-polarized light. A value of D = 0 corresponds to identical response for both polarization states. Retardance describes the relative phase difference between the two polarization components and is given by 
+
+δ = ϕp − ϕs, (10) where ϕs and ϕp are the phases of the complex amplitude coefficients for s- and p-polarization. At normal incidence, s- and p-polarization are degenerate, resulting in zero diattenuation and retardance. As the angle of incidence increases, the Fresnel coefficients diverge, producing increasing amplitude and phase differences that accumulate throughout the multilayer stack and vary spectrally. 11 2.3 Coating phase response and wavefront error 
+
+In addition to meeting spectral transmission and reflection requirements, the wavelength dependence of the coating phase response must also be considered. Multilayer interference coatings can exhibit regions where the reflected phase varies rapidly with wavelength, particularly near spectral transitions and resonant features. 20 In these regions, small coating thickness variations can produce large changes in reflected phase, making the coating highly sensitive to manufacturing nonuniformities. 21 
+
+For coronagraph applications, the quantity of interest is not the coating phase itself but the wavefront error generated from errors in layer thickness and spatial variation across the optic. These errors lead to wavelength-dependent phase errors that manifest as chromatic wavefront error (WFE). 14, 22 A coating with a smooth phase response is generally less sensitive to thickness variations, whereas a coating with steep phase gradients can generate significant WFE even when spectral performance remains largely unchanged. This analysis focuses on the reflected phase because it exhibits significantly stronger spectral phase variation than the transmitted phase. 23 
+
+For a coating with spatially varying thickness errors, the reflected phase error can be expressed as ∆ϕR(x, y, λ ) = ϕR, actual (x, y, λ ) − ϕR, nominal (λ), (11) where ϕR, nominal is the phase response of the nominal coating design and ϕR, actual is the phase response of the fabricated coating. 13 The corresponding coating-induced wavefront error is WFE c(x, y, λ ) = λ
+
+2π ∆ϕR(x, y, λ ). (12) Consequently, the sensitivity of the coating to manufacturing nonuniformities is closely linked to the spectral behavior of the reflected phase response. Coatings with smoother phase characteristics are expected to exhibit reduced chromatic wavefront error when thickness variations are present. Because high-contrast coronagraph systems are highly sensitive to chromatic wavefront errors, the reflected phase response was considered as an additional design parameter during the optimization process. 
+
+3. DICHROIC COATING DESIGN AND OPTIMIZATION 
+
+The dichroic mirror was designed to satisfy the spectral throughput and polarization requirements of a multi-channel coronagraph instrument while maintaining high efficiency across the visible wavelength range. 24 In addition to meeting conventional reflection and transmission requirements, the design process considered polar-ization dependent amplitude and phase effects introduced by the multilayer coating. Phase-based optimization constraints were also explored to reduce sensitivity to variations in coating thickness. Fig. 1 illustrates the structure of the dichroic beamsplitter designed in this work. 
+
+3.1 Design Requirements 
+
+The dichroic beamsplitter must efficiently separate the visible spectrum into reflected and transmitted wavelength channels while preserving the high optical throughput required for coronagraphic observations. The primary spectral and manufacturing requirements used during coating optimization are summarized in Table 1. A fused silica substrate and nominal incidence angle of 7 ◦ were selected for the design. The selected an-gle provides sufficient separation between the incident and reflected beam paths for instrument implementation while maintaining low polarization sensitivity due to the small angle of incidence. Additional design consider-ations included minimizing backside reflections through the use of an anti-reflection coating optimized for the transmission band. Figure 1: Architecture of a low-angle dichroic beamsplitter. A multilayer dielectric coating deposited on the front surface of a fused silica substrate reflects the 400–540 nm band while transmitting the 560–750 nm band. An antireflection coating on the rear surface minimizes backside reflections and maximizes throughput. Table 1: Dichroic coating design requirements. 
+
+Specification Value Notes 
+
+Reflection band 400–540 nm Transmission band 560–750 nm Transition region 540–560 nm Cut-on near 550 nm Reflectance Rs, R p > 98% As-built: Rs, R p > 95% Transmittance Ts, T p > 98% As-built: Ts, T p > 95% Angle of incidence 7◦ Collimated space Substrate Fused silica 6 mm thickness Backside AR coating <2% reflectance 560–750 nm Diameter 25.4 mm 90% clear aperture 
+
+3.2 Coating Architecture and Material Selection 
+
+The dichroic design starting point was based on the periodic multilayer stack (0 .5H L 0.5H)n, (13) where H and L represent quarter-wave optical thickness layers of the high- and low-index materials, respec-tively, and n is the number of repeated periods. This structure is a standard edge-filter design and serves as a convenient foundation for optimization of a dichroic mirror. Several candidate material combinations were evaluated using this same initial multilayer architecture. Fig. 2a compares the spectral performance for each pair of materials prior to numerical optimization, while Fig. 2b shows the corresponding refractive-index difference between the high and low-index materials. As expected, material pairs with larger refractive-index contrast produce broader reflection bands and steeper spectral transitions. The TiO 2/MgF 2 design achieves high reflectivity across the entire 400–540 nm reflection band. The lower-contrast material pairs exhibit progressively narrower stopbands. This trend is particularly evident for the HfO 2/SiO 2design, which only achieves > 98% reflectivity over a bandwidth of 80 nm, far less than the 140 nm requirement. These results highlight the importance of high refractive-index contrast for broadband dichroic mirrors. Wavelength (nm)                
+
+> 400 450 500 550 600 650 700 750
+> Reflectance (%)
+> 010 20 30 40 50 60 70 80 90 100
+> 2% 98% TiO 2/MgF 2
+> TiO 2/SiO 2
+> Ta 2O5/SiO 2
+> HfO 2/SiO 2
+> (a) Wavelength (nm)
+> 400 450 500 550 600 650 700 750
+> "n= n H - n L
+> 0.4 0.5 0.6 0.7 0.8 0.9 11.1
+> TiO 2/MgF 2
+> TiO 2/SiO 2
+> Ta 2O5/SiO 2
+> HfO 2/SiO 2(b)
+
+Figure 2: (a) Nominal spectral performance of several candidate material pairs using the same periodic multilayer architecture prior to optimization. (b) Refractive-index difference, nH − nL, for each material pair as a function of wavelength. The TiO 2/MgF 2 material pair provides the largest refractive-index contrast among the combinations con-sidered and correspondingly exhibits the strongest initial spectral performance. However, SiO 2 was selected as the low-index material for the final design because it offers improved manufacturability and robustness to envi-ronmental factors. Previous studies have noted that MgF 2 films can be more susceptible to mechanical stress and environmental degradation, while SiO 2 offers improved chemical stability and resistance to stress, humidity, and temperature cycling. 25 These considerations are especially important when a coating will be used in space. Based on this trade-off between optical performance and manufacturability, the final optimization used TiO 2 as the high-index material and SiO 2 as the low-index material. The resulting design was optimized in OptiLayer 
+
+to meet the spectral requirements while reducing the polarization-dependent amplitude and phase effects. 
+
+3.3 Phase Optimization for High-Contrast Imaging 
+
+Although the spectral requirements define the primary functionality of the dichroic mirror, the reflected spectral phase response was also considered during the optimization process, as mentioned in Sec. 2.3. Initial designs that satisfied the reflection and transmission requirements often exhibited sharp phase features within the reflection band. These features correspond to regions where the reflected phase changes rapidly with wavelength and are expected to be more sensitive to coating thickness variations. This would induce a larger and more spectrally varying WFE, as shown in Equations 11 and 12. Because chromatic wavefront errors are difficult to correct in broadband coronagraph systems, additional optimization constraints were investigated to improve the smooth-ness of the reflected phase response. OptiLayer ’s gradual evolution optimization method was used, with equal weighting between the spectral and phase targets. 26 
+
+Several phase-based optimization strategies were evaluated. These included constraining the reflected group delay (GD) and group delay dispersion (GDD), which correspond to the first and second spectral derivatives of the reflected phase, respectively, as well as optimization toward an explicit linear reflected phase response. Multiple linear phase targets with different slopes were investigated to evaluate the tradeoff between phase linearity and manufacturing sensitivity. Fig. 3 compares the reflected phase response obtained using the different optimization strategies. The design optimized using only reflection and transmission targets exhibits a sharp phase modulation near the center of the reflected band. Although GD- and GD+GDD-based merit functions reduce the severity of this feature, the most uniform phase response is obtained using a linear phase target. The corresponding GD and GDD are shown Wavelength (nm)        
+
+> 400 420 440 460 480 500 520 540
+> ?r (radians)
+> -4 -2 0246810 12
+> Optimization Method
+> No phase opt. GD only GD + GDD Linear phase, 0.0429 rad/nm Linear phase, 0.0571 rad/nm Linear phase, 0.0643 rad/nm
+
+Figure 3: Reflected phase response across the reflection band for the investigated phase optimization strategies. The design optimized using only reflection and transmission targets exhibits a sharp phase modulation near the center of the reflection band, while the linear phase targets produce a substantially smoother phase response. Wavelength (nm)        
+
+> 400 420 440 460 480 500 520 540
+> Reflected GD (fs)
+> 050 100 150
+> Optimization Method
+> No phase opt. GD only GD + GDD Linear phase, 0.0429 rad/nm Linear phase, 0.0571 rad/nm Linear phase, 0.0643 rad/nm
+
+(a) Wavelength (nm)          
+
+> 400 420 440 460 480 500 520 540
+> Re .ected GDD (fs 2)
+> -300 -200 -100 0100 200 300 Optimization Method
+> No phase opt. GD only GD + GDD Linear phase, 0.0429 rad/nm Linear phase, 0.0571 rad/nm Linear phase, 0.0643 rad/nm
+
+(b) 
+
+Figure 4: Comparison of reflected (a) group delay (GD) and (b) group delay dispersion (GDD) for the investigated phase optimization strategies. Optimization toward a linear reflected phase target produces a more uniform GD and GDD response than directly optimizing GD or GD+GDD simultaneously. in Fig. 4. Optimization toward a linear reflected phase target produces the smoothest GD and GDD behavior, indicating that directly controlling the phase is more effective than independently constraining its derivatives. The resulting phase behavior was further evaluated through Monte Carlo analysis to estimate sensitivity to coating thickness perturbations. Further details of the tolerancing procedure are provided in Sec. 4.4. WFE and σWFE were calculated from the difference between the expected and nominal reflected phase responses and the associated 68% confidence interval. The results are shown in Fig. 5. The design optimized without a reflected phase target exhibits WFE and σWFE values that are more than an order of magnitude larger than the phase-optimized designs. Optimization using GD and GD+GDD significantly reduces these metrics, but both approaches retain pronounced spectral features near 485 nm. In contrast, the linear phase targets substantially suppress these spectral variations, demonstrating that phase linearity is closely linked to reduced manufacturing sensitivity. Among the linear phase designs, larger target slopes produced lower spectral variation but increased Wavelength (nm)        
+
+> 400 420 440 460 480 500 520 540
+> WFE (waves)
+> -0.12 -0.1 -0.08 -0.06 -0.04 -0.02 0
+> Optimization Method
+> No phase target GD only GD + GDD Linear phase, 0.0429 rad/nm Linear phase, 0.0571 rad/nm Linear phase, 0.0643 rad/nm -0.001 00.005
+
+(a) Wavelength (nm)        
+
+> 400 420 440 460 480 500 520 540
+> <WFE  (waves)
+> 00.05 0.1 0.15 0.2 0.25 0.3 0.35
+> Optimization Method
+> No phase target GD only GD + GDD Linear phase, 0.0429 rad/nm Linear phase, 0.0571 rad/nm Linear phase, 0.0643 rad/nm 00.05
+
+(b) 
+
+Figure 5: Comparison of (a) WFE and (b) WFE standard deviation between different optimization methods. Without optimizing for reflected phase, these values are large in magnitude and vary rapidly with wavelength. the overall magnitude of WFE and σWFE . A target slope of 0.0571 rad/nm provided the best balance between minimizing chromatic variation and maintaining low overall wavefront error and was therefore selected for the final design. 4. PREDICTED COATING PERFORMANCE 
+
+The final coating design consists of a 47-layer TiO 2/SiO 2 dichroic coating deposited on a 6 mm thick fused silica substrate with a 5-layer anti-reflection coating on the backside. In addition to optimizing for the linear phase, manufacturing constraints such as having a minimum layer thickness of 20 nm were considered. Following opti-mization, the coating performance was evaluated using spectral, polarization, and phase-based metrics relevant to high-contrast coronagraph applications. 
+
+4.1 Spectral Performance 
+
+Fig. 6 shows the predicted spectral performance of the final optimized design. Reflectance and transmittance remain above 95% throughout the specified operating bands, with peak values approaching 98%. This comfort-ably satisfies the performance requirements defined in Table 1. While quarter-wave antireflection coatings are frequently used, our goals of minimizing diattenuation and maximizing throughput in the transmitted band re-quire a more robust 5-layer design. This design uses the same high- and low-index materials as the front dichroic coating to simplify the manufacturing process and achieves back reflectance < 2% throughout the transmitted band. Wavelength (nm) 
+
+400 450 500 550 600 650 700 750 
+
+> R/T (%)
+
+020 40 60 80 100 98% 2% 540 560 
+
+> Rs
+> Rp
+> Ts
+> Tp
+
+Figure 6: Spectral performance of the final optimized dichroic coating at 7 ◦ angle of incidence. 
+
+4.2 Polarization Performance 
+
+The polarization performance of the final design is summarized in Fig. 7. As expected for a low-AOI dichroic mirror, both quantities remain relatively small across most of the operating wavelength range with the largest deviations occurring near the spectral transition region. Optimizing for s-pol and p-pol individually proves to be an effective way of further minimizing polarization effects. Therefore, coating-induced polarization aberrations are not expected to limit contrast in our system. Wavelength (nm)        
+
+> 400 450 500 550 600 650 700 750 00.5 11.5 22.5
+> Diattenuation
+> #10 -3 (a)
+
+Wavelength (nm)         
+
+> 400 450 500 550 600 650 700 750
+> Retardance (waves)
+> 00.005 0.01 0.015 (b)
+
+Figure 7: Polarization properties of the final dichroic design. (a) Diattenuation fluctuates between 0 and 0.001 throughout the operating wavelength region. (b) Analysis predicts retardance values < 0.008 waves and < 0.015 waves in the reflection and transmission regions, respectively. Dashed lines indicate the transition region. 
+
+4.3 Reflected Phase Characteristics 
+
+The reflected phase response of the final coating is shown in Fig. 8. The phase varies smoothly across the reflection band and closely follows the linear behavior targeted during optimization. The corresponding group delay is also smooth and exhibits only small differences between s- and p-polarized light. These results indicate that the phase optimization strategy successfully suppressed the sharp spectral phase features observed in the initial designs while maintaining minimal polarization-dependent phase behavior. Wavelength (nm)        
+
+> 400 420 440 460 480 500 520 540
+> ?r (radians)
+> -2 0246810
+> ?r;s
+> ?r;p
+> (a)
+
+Wavelength (nm)         
+
+> 400 420 440 460 480 500 520 540
+> GD (fs)
+> 46810 12 14
+> GD s
+> GD p(b)
+
+Figure 8: The reflected phase (a) follows a linear relationship with wavelength for both s- and p-polarizations. GD values (b) remain under 14 fs and vary 8 fs throughout the reflection band. 
+
+4.4 Manufacturing Sensitivity and Wavefront Error 
+
+To evaluate the sensitivity of the final coating to fabrication errors, a Monte Carlo analysis consisting of 1,000 trials was performed using independent 1% layer-thickness perturbations. Fig. 9 shows the resulting coating-induced WFE and one-sigma WFE uncertainty derived from the reflected phase response for the reflected and transmitted beams. The mean coating-induced WFE magnitude remains below 0.003 waves across the reflection and transmission bands for both polarization states. More importantly, the associated WFE uncertainty remains smooth and free of the strong spectral features observed in the earlier optimization studies. The absence of localized peaks indicates that the reflected phase response is relatively insensitive to small thickness perturbations and suggests that the final design is more robust to manufacturing variability. Broadband optical monitoring techniques may also provide a practical means of characterizing and mitigating deposition errors during fabrication. 21, 27 Wavelength (nm)        
+
+> 400 420 440 460 480 500 520 540 -4 -3 -2 -1 012
+> Re .ected WFE (waves)
+> #10 -3
+> W F E s
+> W F E p
+
+(a) Wavelength (nm)         
+
+> 400 420 440 460 480 500 520 540
+> Re .ected  <WFE  (waves)
+> 00.005 0.01 0.015 0.02 0.025
+> <r;s
+> <r;p
+
+(b) Wavelength (nm)    
+
+> 600 650 700 750 -4 -3 -2 -1 012
+> Transmitted WFE (waves)
+> #10 -3
+> W F E s
+> W F E p
+
+(c) Wavelength (nm)     
+
+> 600 650 700 750
+> Transmitted  <WFE  (waves)
+> 00.005 0.01 0.015 0.02 0.025
+> <r;s
+> <r;p
+
+(d) 
+
+Figure 9: Wavefront-error metrics derived from the Monte Carlo analysis of the final coating design using 1,000 trials with 1% layer-thickness errors. (a) Coating-induced wavefront error relative to the nominal design. (b) One-sigma wavefront-error uncertainty as a function of wavelength. Corresponding metrics for the transmitted band are shown in (c) and (d). The wavefront-error variation remains smooth across the reflection band and exhibits no sharp resonant features. The corresponding Monte Carlo reflectance and transmittance results are shown in Fig. 10. The expected spectral performance remains close to the nominal design, and the confidence intervals indicate only modest variation in both bands. Together, these results demonstrate that the final phase-optimized design maintains both high spectral performance and low chromatic wavefront-error sensitivity under realistic fabrication tolerances. Wavelength (nm)        
+
+> 400 420 440 460 480 500 520 540
+> R (%)
+> 93 94 95 96 97 98 99 100
+> Rs
+> Rs, 68% CI Rp
+> Rp, 68% CI (a)
+
+Wavelength (nm)     
+
+> 600 650 700 750
+> T (%)
+> 93 94 95 96 97 98 99 100
+> Ts
+> Ts, 68% CI Tp
+> Tp, 68% CI (b)
+
+Figure 10: Monte Carlo tolerance analysis of (a) reflectance and (b) transmittance. Solid curves show the expected performance, while gray curves indicate a 68% confidence interval. 
+
+5. IMPLICATIONS FOR CORONAGRAPH PERFORMANCE 
+
+To evaluate the impact of chromatic coating-induced WFE on coronagraph performance, we interpret the wavelength-dependent wavefront error variability σWFE (λ), derived from the Monte Carlo phase sensitivity anal-ysis described in Sec. 3.3, as a proxy for the spatial WFE across the dichroic. The resulting chromatic phase aberrations were propagated through a simulation of a charge-6 vector vortex coronagraph (VVC) implemented using HCIPy. 24, 28 
+
+Two representative wavelength bands centered at 430 nm and 475 nm were selected for analysis. As shown in Fig. 5b, the design optimized without a phase constraint exhibits relatively little variation in σWFE (λ) across the 430 nm band, whereas a pronounced spectral feature is present near 475 nm. For each band, individual Zernike modes were scaled by σWFE (λ), and the mean dark-hole (DH) contrast was evaluated over a 10% spectral bandwidth using both a 3–4 λ/D and 3–10 λ/D dark-hole region. Figure 11 compares the resulting coronagraph sensitivity for the baseline dichroic design and the final phase-optimized design. Results are shown separately for s- and p-polarized light to illustrate the influence of polarization-dependent coating phase variations on coronagraph performance. Although the overall contrast trends are similar for both polarization states, small differences occur due to the polarization dependence of the coating-induced wavefront error shown in Fig. 9. The results indicate that the design optimized for linear reflected phase achieves <10 −10 broadband contrast if the chromatic phase aberrations manifest as low-order aberrations. At 475 nm, the baseline design shows a steady degradation in dark-hole contrast from Noll Zernike modes Z5 through Z11, reaching contrast levels above 10 −6
+
+for the most sensitive modes. In contrast, the phase-optimized design suppresses the response of most low-order modes to the 10 −12 –10 −11 level, with significant sensitivity remaining only for the trefoil modes, Noll Z9 and Z10. This behavior is consistent with the charge dependence of vortex coronagraph leakage described by Ruane et al., which shows that rejection of a Zernike mode depends on the vortex charge relative to the mode’s radial and azimuthal orders. 29 Furthermore, the phase-optimized design exhibits nearly identical contrast performance at 430 nm and 475 nm, whereas the baseline design displays a strong wavelength dependence. This suggests that correction of these aberrations using a deformable mirror would be feasible for the phase-optimized design. To further illustrate this contrast improvement, Fig. 12 compares representative coronagraphic dark-hole intensity distributions at 475 nm for defocus (Z4) and horizontal astigmatism (Z5). These modes were selected because dichroic-induced wavefront error is expected to couple most strongly into low-order aberrations. (a) 
+
+> (b)
+
+Figure 11: Coronagraph sensitivity of the charge-6 VVC to coating-induced Zernike phase aberrations for (a) the baseline design and (b) the final linear phase optimized design. Mean dark-hole contrast is shown for both the 3–4 λ/D and 3–10 λ/D regions using a 10% spectral bandwidth at central wavelengths of 430 nm and 475 nm. Contrast differences between s- and p-polarization increase in the baseline design’s region of rapid spectral phase variation. While the preceding analysis focused on the reflected channel, the transmitted channel was also evaluated. Fig. 13 compares coronagraph sensitivity for representative wavelengths within the transmission band. The transmitted band exhibits similar trends in Zernike mode sensitivity when compared to the reflected band. Near the transition region at 600 nm, several low-order aberrations (Z5–Z8) exhibit elevated sensitivity to chromatic wavefront error. At 675 nm, farther from the spectral transition, the response is dominated primarily by the trefoil terms (Z9 and Z10). In both cases, the contrast difference between s- and p-polarization remains small, indicating that polarization-dependent effects are well controlled throughout the transmission band. This is consistent with the results shown in Fig. 9d, where the orthogonal polarization states have nearly equal WFE sensitivity across the transmitted band. Figure 12: Representative 475 nm dark-hole intensity distributions for Noll Z4 and Z5, evaluated with a charge-6 VVC over a 10% spectral bandwidth. Red circles mark the 3–10 λ/D region used to calculate the reported mean contrast values; the far-right panel shows the numerical floor with no applied aberration.  
+
+> (a) (b)
+
+Figure 13: Transmitted-channel coronagraph sensitivity at (a) 600 nm and (b) 675 nm. Mean dark-hole contrast is shown for individual Zernike modes using both s- and p-polarization wavefront-error sensitivities. Results are reported for the 3–4 λ/D and 3–10 λ/D dark-hole regions. 
+
+6. CONCLUSION 
+
+A low-AOI dichroic mirror was designed and analyzed for use in a high-contrast imaging system, with particular emphasis placed on polarization-dependent phase behavior and its impact on high-contrast imaging performance. The final coating design successfully met the required reflection and transmission band specifications, while main-taining low diattenuation and reduced polarization-dependent phase variations across the operating wavelength range. In addition to conventional spectral performance metrics, the reflected coating phase response was incor-porated directly into the optimization process. Monte Carlo sensitivity analysis demonstrated that designs optimized for a more linear spectral reflected phase response exhibit substantially lower wavefront error and re-duced sensitivity to manufacturing-induced thickness variations. The final phase-optimized coating produced a smoother spectral wavefront-error response and eliminated localized features associated with increased chromatic sensitivity. To evaluate the system-level implications of these improvements, we propagated the coating-induced chro-matic wavefront error through a model of the vector vortex coronagraph. These results showed that linear phase optimization not only reduces coating-induced wavefront error, but also improves coronagraph sensitivity to chromatic aberrations by reducing chromatic residuals within the dark hole. These findings demonstrate the im-portance of considering the spectral variation of reflected phase during the design of dichroic coatings intended for high-contrast imaging applications. Coronagraph simulations performed for s- and p-polarization demonstrated that these residual polarization effects produce only modest differences in dark-hole contrast, confirming that the low-AOI design effectively minimizes polarization sensitivity. Fabrication of the designed dichroic is in progress. Once fabrication is complete, the spectral performance, Mueller matrix, 30 and WFE will be characterized experimentally. 14 This prototype will be used on the Space Coronagraph Optical Bench (SCoOB) to determine contrast performance. 31–33 Comparison of modeled and experimental results will assess the accuracy of the optimization and tolerancing procedure discussed in this paper, as well as indicate potential ways to improve analysis techniques. 
+
+ACKNOWLEDGMENTS 
+
+Portions of this research were supported by funding from the Technology Research Initiative Fund (TRIF) of the Arizona Board of Regents and by generous anonymous philanthropic donations to the Steward Observatory of the College of Science at the University of Arizona. This research received support through Schmidt Sciences. 
+
+REFERENCES 
+
+[1] Feinberg, L. D., Sitarski, B. N., McElwain, M. W., Arney, G., Baker, C., Bolcar, M. R., Levine, M., Liu, A., Mennesson, B., Roberge, A., Smith, J. S., Zhao, F., and Ziemer, J., “Habitable worlds observatory’s concept and technology maturation: Initial feasibility and trade space exploration,” (2026). [2] Llop-Sayson, J., Ruane, G., Serabyn, E., Prada, C. M., Walter, A., and Allan, G., “Vector vortex coro-nagraph experiments in vacuum towards 10-10 contrast,” in [ Space Telescopes and Instrumentation 2024: Optical, Infrared, and Millimeter Wave ], Coyle, L. E., Matsuura, S., and Perrin, M. D., eds., 13092 ,130921Y, International Society for Optics and Photonics, SPIE (2024). [3] Will, S. ., Advanced coronagraphic modeling and wavefront control , phd thesis, University of Rochester, Rochester, NY (March 2022). Available at http://hdl.handle.net/1802/36777 .[4] Breckinridge, J. B., Lam, W. S. T., and Chipman, R. A., “Polarization aberrations in astronomical tele-scopes: The point spread function,” Publications of the Astronomical Society of the Pacific 127 , 445 (may 2015). [5] Anche, R. M., Ashcraft, J. N., Haffert, S. Y., Millar-Blanchaer, M. A., Douglas, E. S., Snik, F., Williams, G., van Holstein, R. G., Doelman, D., Van Gorkom, K., and Skidmore, W., “Polarization aberrations in next-generation giant segmented mirror telescopes (gsmts): I. effect on the coronagraphic performance,” 
+
+Astronomy & Astrophysics 672 , A121 (Apr. 2023). [6] Mawet, D., Pueyo, L., Lawson, P., Mugnier, L., Traub, W., Boccaletti, A., Trauger, J., Gladysz, S., Serabyn, E., Milli, J., Belikov, R., Kasper, M., Baudoz, P., Macintosh, B., Marois, C., Oppenheimer, B., Barrett, H., Beuzit, J.-L., Devaney, N., and Wallace, J., “Review of small-angle coronagraphic techniques in the wake of ground-based second-generation adaptive optics systems,” Proceedings of SPIE - The International Society for Optical Engineering 8442 (07 2012). [7] Juanola-Parramon, R., Chen, P., Damiano, M., Gersh-Range, J., Groff, T. D., Kasdin, J., Korzh, B., Krist, J. E., Mamajek, E. E., Mazin, B. A., Morgan, R. M., Potier, A., Pueyo, L. A., Quijada, M. A., Sadleir, J. E., Scowen, P. A., Stapelfeldt, K. R., Stark, C. C., Siegler, N., Young, A., and Zimmerman, N. T., “Toward a near-ultraviolet coronagraph instrument for the Habitable Worlds Observatory,” Journal of Astronomical Telescopes, Instruments, and Systems 12 (1), 015005 (2026). [8] Pueyo, L., Stark, C., Juanola-Parramon, R., Zimmerman, N., Bolcar, M., Roberge, A., Arney, G., Ruane, G., Riggs, A. J., Belikov, R., Sirbu, D., Redding, D., Soummer, R., Laginja, I., and Will, S., “The LUVOIR Extreme Coronagraph for Living Planetary Systems (ECLIPS) I: searching and characterizing exoplanetary gems,” in [ Techniques and Instrumentation for Detection of Exoplanets IX ], Shaklan, S. B., ed., 11117 ,1111703, International Society for Optics and Photonics, SPIE (2019). [9] Stark, C. C., Latouf, N., Mandell, A. M., and Young, A., “Optimized bandpasses for the habitable worlds observatory’s exoearth survey,” Journal of Astronomical Telescopes, Instruments, and Systems 10 (Mar. 2024). [10] Sitarski, B., Noecker, C., and Scowen, P., “Hwo instrument studies to date,” (May 2026). [11] Harrington, D. M., Sueoka, S. R., and White, A. J., “Polarization modeling and predictions for Daniel K. Inouye Solar Telescope part 5: impacts of enhanced mirror and dichroic coatings on system polarization calibration,” Journal of Astronomical Telescopes, Instruments, and Systems 5(3), 038001 (2019). [12] Heath, J., Kupinski, M., Douglas, E., Hart, K., and Breckinridge, J., “Mueller matrix maps of dichroic filters reveal polarization aberrations,” in [ Space Telescopes and Instrumentation 2020: Optical, Infrared, and Millimeter Wave ], Lystrup, M., Perrin, M. D., Batalha, N., Siegler, N., and Tong, E. C., eds., 11443 ,1144341, International Society for Optics and Photonics, SPIE (2020). [13] Baron, M., Characterization and modeling of the dichroic mirror of the Euclid space telescope , PhD thesis, Universit´ e Claude Bernard - Lyon I (2024). Available at https://theses.hal.science/tel-04610414. [14] Baron, M., Sassolas, B., Frugier, P.-A., Venancio, L. M. G., Amiaux, J., Castelnau, M., Keller, F., Dovillaire, G., Treimany, P., Juv´ enal, R., Miller, L., Pinard, L., and Ealet, A., “Measurement and modelling of the chromatic dependence of a reflected wavefront on the Euclid space telescope dichroic mirror,” in [ Space Telescopes and Instrumentation 2022: Optical, Infrared, and Millimeter Wave ], Coyle, L. E., Matsuura, S., and Perrin, M. D., eds., 12180 , 121804V, International Society for Optics and Photonics, SPIE (2022). [15] Davis, J., Kupinski, M. K., Chipman, R. A., and Breckinridge, J. B., “HabEx polarization ray trace and aberration analysis,” in [ Space Telescopes and Instrumentation 2018: Optical, Infrared, and Millimeter Wave ], Lystrup, M., MacEwen, H. A., Fazio, G. G., Batalha, N., Siegler, N., and Tong, E. C., eds., 10698 ,106983H, International Society for Optics and Photonics, SPIE (2018). [16] Macleod, H. A., [ Thin-Film Optical Filters ], CRC Press, 5th ed. (2017). [17] Chipman, R. A., Lam, W. S. T., and Young, G., [ Polarized Light and Optical Systems ], CRC Press (2018). [18] Gorkom, K. J. V., Anche, R. M., Mendillo, C. B., Gersh-Range, J. A., Hom, J., Robinson, T. D., N’Diaye, M., Lewis, N. K., Macintosh, B. A., and Douglas, E. S., “Performance predictions and contrast limits for an ultraviolet high-contrast imaging testbed,” Journal of Astronomical Telescopes, Instruments, and Systems 11 (4), 042203 (2025). [19] Anche, R. M., Haffert, S. Y., Ashcraft, J. N., Milani, K., Gorkom, K. V., Derby, K., Douglas, E. S., and Millar-Blanchaer, M. A., “Estimation of polarization aberrations and their effect on the coronagraphic performance for future space telescopes,” (2023). [20] Baumeister, P. W., [ Optical Coating Technology ], SPIE Optical Engineering Press (2004). [21] Ji, X., Zhang, J., Jiao, H., Cheng, X., Wang, Z., Kochikov, I., Sharov, A., and Tikhonravov, A., “Production of ultra-steep dichroic filters with broad band optical monitoring,” Opt. Express 30 , 22501–22511 (Jun 2022). [22] Sassolas, B., Baron, M., Pinard, L., Ealet, A., Dovillaire, G., Grand-Chavin, P., Juvenal, R., Legrand, J., Sanson, F., Frugier, P.-A., and Venancio, L. M. G., “Preliminary results of the chromatic wavefront errors measured on the Euclid’s dichroic mirror,” in [ International Conference on Space Optics — ICSO 2024 ], Bernard, F., Karafolas, N., Kubik, P., and Minoglou, K., eds., 13699 , 136994K, International Society for Optics and Photonics, SPIE (2025). [23] Piegari, A., Sytchkova, A., and Taccola, M., “Wavefront control in the design of narrow-and broad-band optical coatings,” in [ International Conference on Space Optics — ICSO 2018 ], Sodnik, Z., Karafolas, N., and Cugny, B., eds., 11180 , 111804J, International Society for Optics and Photonics, SPIE (2019). [24] Roy, A., Feldman, S., Klupar, P., DiPalma, J., Perlmutter, S., Douglas, E. S., Aldering, G., Furesz, G., Ingraham, P., Stefansson, G., Kelly, D., Yang, F. Y., Wevers, T., Arulanantham, N., Lasker, J., Rigault, M., Schlawin, E., Zandbergen, S. R., Worden, S. P., Anche, R., Choi, H., Crossfield, I. J. M., Derby, K., Edelstein, J., Eiklenborg, M., Gezari, S., Giuliano, P., Hom, J., Hoyt, T. J., Kang, H., Kim, D., Kunnumkai, K., Lacroix, L., Males, J. R., Maccarone, T. J., Milani, K., Miller, T. N., Miller, K. L., Nicolas, P., Palmese, A., Pero, J., Pueyo, L., Rinaldi, S., Sand, D. J., Schneider, C., Sabhlok, S., Smith, A., Stefan, I. I., Subramanian, S. K., Gorkom, K. V., Wong, A. F., Yoo, J., and Zaman, M. A. A., “The lazuli space observatory: Architecture & capabilities,” (2026). [25] Ghapanvari, E. and Salahshoor, M., “Sensitivity and tolerance analysis of single-layer mgf 2 and sio 2 anti-reflection coatings,” Scientific Reports 15 , 45126 (2025). [26] Trubetskov, M., “Deep search methods for multilayer coating design,” Appl. Opt. 59 , A75–A82 (Feb 2020). [27] Tikhonravov, A. V., Trubetskov, M. K., and Amotchkina, T. V., “Investigation of the effect of accumulation of thickness errors in optical coating production by broadband optical monitoring,” Appl. Opt. 45 , 7026–7034 (Sep 2006). [28] Por, E. H., Haffert, S. Y., Bond, C. Z., Keller, C. U., and Kenworthy, M. A., “Hcipy: an open-source adaptive optics and coronagraph simulator,” Proceedings of SPIE 10703 , 1070342 (2018). [29] Ruane, G., Mawet, D., Mennesson, B., Jewell, J., and Shaklan, S., “Vortex coronagraphs for the habit-able exoplanet imaging mission concept: theoretical performance and telescope requirements,” Journal of Astronomical Telescopes, Instruments, and Systems 4, 1 (Mar. 2018). [30] Ashcraft, J. N., Jenkins, E., and Van Gorkom, K., “Gromit: A dual rotating retarder polarimeter.” https: //github.com/uasal/gromit (2024). Accessed: 2026-05-29. [31] Anche, R. M., Van Gorkom, K. J., Ashcraft, J. N., Douglas, E., Jenkins, E. L., Haffert, S. Y., and Millar-Blanchaer, M. A., “The space coronagraph optical bench (scoob): 5. end-to-end simulations of polarization aberrations,” in [ Space Telescopes and Instrumentation 2024: Optical, Infrared, and Millimeter Wave ], 
+
+Proceedings of SPIE 13092 , 130926M, SPIE (2024). [32] Gorkom, K. V., Douglas, E. S., Ashcraft, J. N., Haffert, S., Kim, D., Choi, H., Anche, R. M., Males, J. R., Milani, K., Derby, K., Harrison, L., and Durney, O., “The space coronagraph optical bench (scoob): 2. wavefront sensing and control in a vacuum-compatible coronagraph testbed for spaceborne high-contrast imaging technology,” (2022). [33] Cooper, N., Anche, R., Rosenbluth, J., Gorkom, K. V., Melby, W., and Douglas, E., “Characterization and coronagraphic performance of a dichroic mirror on a high-contrast imaging testbed,” in [ Astronomical Telescopes and Instrumentation 2026: Advances in Optical and Mechanical Technologies for Telescopes and Instrumentation VII ], Proceedings of SPIE 14154-294 , SPIE (2026).
