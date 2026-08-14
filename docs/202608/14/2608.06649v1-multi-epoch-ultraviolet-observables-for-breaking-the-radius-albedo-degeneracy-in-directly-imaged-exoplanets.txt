@@ -1,0 +1,1009 @@
+Title: Multi-epoch ultraviolet observables for breaking the radius-albedo degeneracy in directly imaged exoplanets
+
+URL Source: https://arxiv.org/pdf/2608.06649v1
+
+Published Time: Mon, 10 Aug 2026 00:16:16 GMT
+
+Number of Pages: 27
+
+Markdown Content:
+> Draft version August 10, 2026
+> Typeset using L ATEX twocolumn style in AASTeX631
+
+Multi-epoch ultraviolet observables for breaking the radius-albedo degeneracy in directly imaged exoplanets 
+
+Suniti Sanghavi, 1 Robert A. West, 2 and Pin Chen 1
+
+> 1Jet Propulsion Laboratory, California Institute of Technology, Pasadena, CA 91109, USA
+> 2Formerly Jet Propulsion Laboratory, California Institute of Technology, Pasadena, CA 91109, USA
+
+ABSTRACT Direct imaging measures how bright a planet appears in reflected starlight, but brightness alone cannot tell whether the planet is large and dark or small and bright. This radius-albedo degeneracy limits the characterization of non-transiting exoplanets, including those targeted by the Habitable Worlds Observatory (HWO). From multi-epoch observations we construct ultraviolet observables that are independent of planetary radius: the normalized 400 nm lightcurve shape, the ultraviolet intensity and polarization colors, and the degree of linear polarization. In a clear 360-400 nm spectral window where Rayleigh scattering is strong and bright ultraviolet surfaces are nearly colorless, these observables constrain the atmospheric column, the surface reflectivity, and, when relevant, the observed phases before radius is inferred. Using the GPU accelerated vector radiative transfer model vSmartMOM , we test how uniquely these radius-free observables determine the scattering state at signal-to-noise ratios (SNRs) of 5, 20, and 100. For the chosen six phase sequence, spectropolarimetry gives median radius consequences of 9.5%, 3.3%, and 0.45% when the phases are known. If the phases are unknown, six distinct epochs keep the penalty modest at low SNR and negligible at moderate-high SNR, with median consequences of 14%, 3.2%, and 0.47%, respectively. Removing polarimetry degrades the result, especially in the HWO simulations where phase coverage is restricted by inner working angle. For solar twin systems at 6 and 12 parsecs, the required six-phase campaigns fall in the allotted range of a few hundred hours, making this a clear observing path to planetary radii from HWO’s reflected-light detections. 
+
+Keywords: Exoplanet atmospheres; Polarimetry; Radiative transfer; Direct imaging; Habitable Worlds Observatory 
+
+1. INTRODUCTION The direct imaging of exoplanets in reflected starlight, the central science driver of the Habitable Worlds Ob-servatory (HWO; National Academies of Sciences, En-gineering, and Medicine 2021), confronts a fundamental degeneracy. The reflected flux measured at Earth from an unresolved planet scales as 
+
+Fobs (λ, α ) ∝
+
+ Rp
+
+d
+
+2
+
+Ag(λ) Φ( α), (1) where Rp is the planetary radius, d the star-planet sepa-ration, Ag(λ) the geometric albedo, and Φ( α) the phase function at phase angle α. At known phase angle, or for an adopted phase law, a single broadband measurement constrains only the product R2p Ag, leaving radius and albedo entangled (Nayak et al. 2017; Feng et al. 2018). An unknown phase is an additional quantity to infer in Equation 1. For a transiting planet the radius can be determined from the transit light curve to break the degeneracy trivially, but the planets HWO will image are overwhelmingly non-transiting, and their radii are constrained only indirectly. 1.1. State of the art 
+
+Reflected-light retrieval literature reveals various ap-proaches to deal with the radius-albedo degeneracy: Lupu et al. (2016) avoided the full degeneracy by fix-ing the planetary radius, but still found strong corre-lations between cloud optical thickness and absorber abundances in reflected-light retrievals. Nayak et al. (2017) treated the radius as a free parameter along with the phase angle, finding that photometric observations constrain it only to within a factor of two, with the residual ambiguity absorbed partially by the phase an-gle. Feng et al. (2018) fixed the phase angle and freed the radius in a starshade rendezvous scenario for WFIRST ,now the Nancy Grace Roman Space Telescope, finding that blue photometry combined with red spectroscopy still leaves substantial degeneracies in the inferred trace-gas abundances. arXiv:2608.06649v1 [astro-ph.EP] 6 Aug 2026 2Carri´ on-Gonz´ alez et al. (2020) explicitly accounted for the cost of radius uncertainty: comparing retrievals with the radius fixed versus free, they found that an unconstrained radius inflates the uncertainty in cloud optical thickness and absorber abundance to the point where cloudy and cloud-free atmospheres become for-mally indistinguishable. Their analysis of intermediate radius priors showed that reducing the prior uncertainty on Rp from unconstrained to roughly ±10% recovers most of the retrieval performance lost to the degeneracy. Carri´ on-Gonz´ alez et al. (2021) demonstrated that si-multaneous multi-phase retrievals, combining small and large phase angles, recover the radius to within about 35% due to the angular structure of the phase law. The external-prior approach substitutes independent information for the missing radius. Mass-radius rela-tions (M¨ uller et al. 2024) translate a radial-velocity mass into a radius estimate, but for non-transiting targets where only M sin i is available, the effective radius un-certainty remains close to a factor of two, well short of the ±10% threshold identified by Carri´ on-Gonz´ alez et al. (2020). A transit-derived radius is the cleanest external constraint but is available only for a small fraction of targets with favorably oriented orbits. In every approach noted above, the observables re-main extensive: at any specified phase, the reflected flux scales as R2p, so the radius explicitly becomes a part of the inference and must either be retrieved internally within an assumed atmospheric model class or supplied externally with substantial uncertainty. The geometric albedo inferred in each case therefore inherits both the radius prior and the assumptions of the forward model. We pursue a different strategy: instead of constraining the radius and propagating it into the albedo, we con-vert observables into intensive ratios in which the radius-dependent normalization cancels identically, leaving the planetary scattering state constrained independently of 
+
+Rp.1.2. Multi-epoch intensive observables 
+
+The reflected intensity is an extensive property of the planet: at a specified phase, it scales with the emitting area, ∝ R2p, and hence carries the full radius-albedo de-generacy of Equation 1. We note that a multi-epoch se-quence, consisting of the Stokes vector of disk-integrated fluxes Iλ(αi) = {Iλ(αi), Q λ(αi), U λ(αi)} at wavelength 
+
+λ and phases αi, contains radius-free information before any absolute radius is inferred. In contrast to extensive observables like disk-integrated flux, we define intensive observables as ratios in which the radius-dependent nor-malization cancels identically, thereby constraining the planetary state without reference to the radius. Four such observables are available from spectrophotometry and polarimetry in a narrow ultraviolet window: 1. the normalized 400 nm phase shape, L400 =
+
+{I400 (αi)/ max j I400 (αj )},2. the spectral slope of the intensity at each epoch, 
+
+SI ≡ (I360 − I400 )/I 400 ,3. the degree of linear polarization, DOLP 400 ≡pQ2 + U 2/I at 400 nm, and 4. the spectral slope of the DOLP at each epoch, 
+
+SD ≡ (DOLP 360 − DOLP 400 )/DOLP 400 ,Each is a ratio of disk-integrated quantities measured on the same source or across the same source at dif-ferent epochs: the factor R2p that multiplies the Stokes vector cancels. These observables therefore depend only on the intrinsic scattering state of the planet and on observing geometry. In the spectrally featureless ul-traviolet regime developed in the following, the shared atmosphere-surface state is defined by ( τ400 , ρ surf ) and the geometry is the phase tuple ( α1, . . . , α N ), where τ400 
+
+and ρsurf are the optical depth of Rayleigh scattering in the atmosphere and the Lambertian surface albedo at 400 nm, respectively. The organization of the paper follows the observ-ing problem. We begin with a multi-epoch measure-ment vector and treat known phase as the conditional limit in which the orbit supplies the phase tuple. We then compare it to the unknown-phase case, where the same intensive data must infer (u, ρ surf , α 1, . . . , α N ), with u = ln τ400 . We define the ultraviolet forward model in section 2. In section 3, we examine how well the multi-epoch intensive observables determine the scatter-ing state, how the residual state uncertainty propagates into albedo and radius, and how these quantities change with SNR and polarimetry. Section 4 summarizes the resulting recipe to obtain the effective planetary radius in the UV. This has both instrument and observing-strategy im-plications for HWO. The relevant radius-free informa-tion is delivered by near-ultraviolet color and polariza-tion ratios. High-SNR spectrophotometry in the 360-400 nm window, together with linear polarimetry, there-fore directly improves the ability to separate geometric albedo from radius. This is especially important for optically thinner, Earth-like Rayleigh columns, where residual uncertainty in state parameters maps into a larger spread in disk brightness. When phase is known, the known-phase map can be applied directly. In the absence of phase information, obtaining multiple dis-tinct phases becomes critical, because phase diversity 3lets the same data constrain the phase tuple as well as the atmosphere-surface state. The lower bound of the wavelength range has opera-tional significance: If the same observing concept were shifted redward by 40 nm to 400-440 nm, the Rayleigh column would be weaker by the λ−4 scaling. For exam-ple, the Rayleigh optical depth at 380 nm is ∼1.5 times greater than at 420 nm. Because the radius consequence is highly sensitive to predictable atmospheric and sur-face information in this regime, access shortward of 400 nm is a scientific requirement for the cleanest Earth-like cases.  
+
+> 2.
+
+THE ULTRAVIOLET WINDOW AND THE FORWARD MODEL 2.1. Why the ultraviolet 
+
+The UV-blue window near 360-400 nm is favorable for three independent reasons. First, the Rayleigh scat-tering cross section scales as λ−4, so the atmospheric scattering optical depth is roughly an order of magni-tude larger than in the red, and the atmosphere con-tributes strongly to the reflected signal even for modest columns. [For reference, the Rayleigh optical depth of Earth’s clear-sky atmosphere at 400 nm is τ400 ≈ 0.36 (τ400 = 0 .3585 for a standard sea-level column; Bod-haine et al. 1999), so an Earth twin inhabits the opti-cally thin part of the regime considered in the following. We use this value as the Earth-like reference throughout this manuscript.] The λ−4 scaling is a detracting factor against, for example, a 400-440 nm implementation: a measurement centered near 380 nm samples a Rayleigh optical depth roughly 1.5 times larger than a measure-ment centered near 420 nm. Since SI , DOLP, and SD
+
+are all generated by this atmospheric scattering column, moving the window redward would reduce the intensive contrast that breaks the radius-albedo degeneracy. Second, most natural solid and liquid surfaces like sil-icate rock, soil, vegetation, and open ocean are rela-tively dark in the near-UV because electronic transitions in minerals and organic materials cause increased ab-sorption at these wavelengths. Vegetation and organic-rich soils typically have reflectivities of only ∼ 0.03-0.08 across 360-400 nm, with tropical forests commonly near 0.04-0.06. Arid mineral surfaces are substantially darker in the ultraviolet than in the visible, with typical reflectivities of ∼ 0.15-0.35 (Herman & Celarier 1997; Kleipool et al. 2008). Open-ocean scenes are moder-ately reflective in this window, particularly near 380 nm, but remain far dimmer than clouds or snow. These be-haviors arise from generic condensed-matter radiative physics, and are hence not limited to Earth: ultraviolet photons stimulate electronic-state transitions in miner-als and organics, whereas large ice and water particles scatter quasi-geometrically, thus remaining bright and spectrally flat. Third, the surfaces that are bright in the ultravio-let form a short and well-behaved list: snow, ice, and water or ice clouds. These are spectrally flat across 360-400 nm to within a percent (Herman & Celarier 1997; Kleipool et al. 2008), because they scatter off particles much larger than the wavelength. They can therefore be represented, to first order, as a spectrally flat Lamber-tian lower boundary. The Lambertian approximation is more valid in the UV because surface flux is largely diffuse owing to high Rayleigh optical depth. We restrict attention to a window devoid of strong molecular absorption. On an Earth-like planet the ozone Hartley-Huggins system suppresses reflectance short-ward of ∼330 nm. We work longward of this, in 360-400 nm, where the assumption of weak absorption is defen-sible for the purpose of a first-order treatment. The role of residual absorbers and of photochemical hazes, which violate this assumption, is considered in Section 6. 2.2. Forward model and code validation 
+
+We compute disk-integrated Stokes vectors with the GPU-accelerated vector radiative-transfer code 
+
+vSmartMOM (Sanghavi et al. 2014; Jeyaram et al. 2022), with the disk integral evaluated by Horak’s sphere-only crescent quadrature (Horak 1950). This use of 
+
+vSmartMOM builds on earlier applications of the same vec-tor radiative-transfer capability to disk-integrated pho-topolarimetry of brown dwarfs and directly imaged ex-oplanets (Sanghavi & Shporer 2018; Sanghavi & West 2019; Sanghavi et al. 2021). Horak’s change of vari-ables places the quadrature nodes directly inside the il-luminated and visible crescent, with final flux weights that already include the spherical area factor and the observer projection. We use a n = 6 Horak prod-uct rule, corresponding to 36 local radiative-transfer evaluations per disk. For arbitrary observer inclina-tion, the Horak nodes are constructed in the natural star-observer phase frame at the physical phase an-gle, cos α = − sin θincl cos ϕpl , and then rotated into the tidally locked body frame before computing the lo-cal solar zenith, viewing zenith, relative azimuth, and Stokes-frame rotation; in the edge-on limit this reduces to α = π − ϕpl . The atmosphere is a pure Rayleigh scatterer with single-scattering albedo of unity and λ−4
+
+optical-depth scaling. The surface is a spectrally flat Lambertian of scalar albedo ρsurf . We parameterize the atmospheric column by its Rayleigh optical depth at 400 nm, τ400 .4Figure 1 compares this configuration with the bench-mark disk-integrated polarized phase curves of Buenzli & Schmid (2009) for a semi-infinite, conservatively scat-tering Rayleigh atmosphere over a black surface at edge-on inclination. We use BS09 as an external community benchmark, so that the comparison tests consistency between two independent numerical approaches. The plane-parallel Rayleigh calculation itself is also tested against the high-accuracy benchmark tables of Natraj et al. (2009), for which vSmartMOM agrees at the tabu-lated precision over the tested cases. The BS09 com-parison below is used specifically as a disk-integrated reflected-light benchmark. The three columns show the disk-integrated intensity (left), the polarized component Q (middle), and the DOLP (right) as functions of phase angle, with the BS09 values overplotted on the vSmartMOM calculation in the top panels. The lower panels show the residuals be-tween the two. The intensity matches the benchmark to better than 0 .6% RMS over the well-conditioned range 
+
+α ≤ 165 ◦, the Stokes component Q to ∼10 −4, and the DOLP to ∼3 × 10 −3. The residual growth as α → 180 ◦
+
+cannot be assigned uniquely to either calculation: near the crescent limit the reflected signal becomes small and the contribution is localized near the terminator and limb, so small absolute differences are amplified in frac-tional residuals. We therefore quote validation residu-als for α ≤ 165 ◦ and choose the demonstration phases in the following to be well clear of crescent geometry. This comparison should also be interpreted relative to the Monte Carlo noise in the BS09 reference calcula-tion. Buenzli & Schmid (2009) report a formal model-grid limit ∆( Q/I ) < 0.1% for α = 0 ◦-130 ◦, correspond-ing to ∆ I/I < 0.07%, and identify 30 ◦ ≲ α ≲ 120 ◦
+
+as the most well-populated phase-bin range. Over that range, the Horak/ vSmartMOM residuals are 0 .064% in in-tensity and 4 .4×10 −4 in DOLP, comparable to or below the BS09 noise scale. Residuals beyond α = 130 ◦ are crescent-regime comparisons outside the formal BS09 Monte Carlo guarantee. A Horak-order check gives the same conclusion: increasing the crescent rule from n = 6 to n = 12 (36 to 144 nodes) changes the all-phase in-tensity RMS only from 1 .211% to 1 .204%, leaves the 
+
+α ≤ 165 ◦ RMS at about 0 .586%, and leaves the deep-est crescent residual near −6.1%. Thus, over the range relevant to the analysis in this paper, the disk integra-tion has effectively converged with respect to increasing the number of Horak quadrature points. The endpoint discrepancy could reflect BS09 Monte Carlo sampling, phase-bin limitations, or other small differences in im-plementation details. 2.3. The state space at fixed wavelength window 
+
+We computed disk-integrated Stokes vectors on a grid spanning τ400 ∈ [0 , 20], with the Earth-like reference value τ400 = 0 .3585 appearing near its thin end, ρsurf ∈{0, 0.1, . . . , 1.0}, and direct-imaging phase angles sam-pled from α = 2 .5◦ to 150 ◦, at the wavelengths λ = 360 and 400 nm, all at edge-on inclination θincl = 90 ◦ so that 
+
+vSmartMOM ´s orbital phase azimuth and the phase angle are related as α = π−ϕpl . Intensities are normalized to a white Lambertian disk of the assumed radius, so that the photometric ordinate I400 /I disk is the phase-dependent disk reflectivity up to the assumed-radius normalization. At full phase, the same normalization corresponds to the geometric albedo. The general one-epoch state is ( u, ρ surf , α ), with u =ln τ400 . For N epochs with unknown phases, the state becomes ( u, ρ surf , α 1, . . . , α N ). When the phases are known, the phase coordinates are fixed externally, and the inferred atmosphere-surface state reduces to (τ400 , ρ surf ) on that specified phase set. The symbol 
+
+α denotes the star-planet-observer phase angle used in the forward model; it does not require that the real system be observed edge-on. The edge-on grid used here is a computational simplification that lets the disk-integrated phase angle be sampled directly for spheri-cally shaped planets. Figure 2 shows the resulting phase curves of the four observables for a representative subset of the surface-albedo grid. Each column corresponds to one surface albedo, from dark ( ρsurf = 0) to bright ( ρsurf = 1), and within each panel the curves are colored by τ400 
+
+from thin to thick Rayleigh columns, so that each panel traces the response of an observable to the atmospheric column for a fixed surface. The top row is the ex-tensive intensity I400 /I disk ; the lower three rows are the intensive observables SI , DOLP 400 , and SD . The top row depends on the assumed disk radius (through the normalization) and therefore carries the degeneracy, while the lower three rows are radius-free and resolve the ( τ400 , ρ surf ) state. Several features are worth not-ing. Over a dark surface ( ρsurf = 0, left column) the intensity climbs steadily with τ400 as the Rayleigh col-umn brightens, while the DOLP falls monotonically as multiple scattering depolarizes the signal. Over a bright surface ( ρsurf = 1, right column) the intensity is nearly independent of τ400 , because the bright Lambertian floor dominates, yet the DOLP rises with τ400 as the polariz-ing Rayleigh column builds over the unpolarized surface. The intensity is thus least informative exactly where the polarization is most informative. The intensity spectral slope SI over a bright surface illustrates this point: over a conservatively scattering 50.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7                                              
+
+> I / Idisk, Lamb
+> BS09 (Table A.1) Horak n=6
+> 025 50 75 100 125 150 175
+> BS09 phase angle []
+> 2
+> 1
+> 012
+> I/IBS09  (%)
+> RMS = 1.21% (165 : 0.59%)
+> BS09 MC: ±0.07% (130 )
+> 0.00 0.01 0.02 0.03 0.04 0.05 0.06 0.07 0.08
+> Q / Idisk, Lamb
+> 025 50 75 100 125 150 175
+> BS09 phase angle []
+> 0.0002
+> 0.0000 0.0002
+> Q
+> RMS = 1.00e-04
+> BS09 MC propagated (130 )
+> best-populated BS09 bins
+> 0.00 0.05 0.10 0.15 0.20 0.25 0.30 0.35
+> DOLP =  Q/I (U = 0)
+> 025 50 75 100 125 150 175
+> BS09 phase angle []
+> 0.004
+> 0.002
+> 0.000 0.002 0.004
+> (Q/I)
+> RMS = 2.92e-03
+> BS09 MC: ±10 3
+> (130 )
+> Horak crescent quadrature vs. Buenzli & Schmid (2009) Table A.1 -= 10, = 1, AS= 0, incl = 90 (n=6, 36 crescent nodes)
+
+Figure 1. Validation of the Horak n = 6 crescent quadrature coupled to vSmartMOM against the Buenzli & Schmid (2009) (BS09) Table A.1 benchmark for a semi-infinite conservative Rayleigh atmosphere ( τ = 10, ϖ = 1, ρsurf = 0, edge-on). Left to right: disk-integrated intensity normalized to a white Lambertian disk, Stokes component Q, and degree of linear polarization, each as a function of phase angle α. Lower panels show residuals. Amber bands mark the formal BS09 Monte Carlo limits through α = 130 ◦ (±0.07% in I, propagated in Q, and ±10 −3 in DOLP): the dotted vertical line marks the end of that quoted limit, and the gray bracket marks the most well-populated BS09 phase bins ( α ≃ 30 ◦-120 ◦). The residual RMS values shown in the panels are 1 .21% in I over all plotted phases, or 0 .59% when the final crescent point is excluded, 1 .00 × 10 −4 in Q, and 2.92 × 10 −3 in DOLP. 
+
+(ϖ = 1) atmosphere above a white ( ρsurf = 1) surface, no photons are absorbed anywhere, so the total disk-integrated reflectance is nearly wavelength-independent by construction and SI → 0. The only residual color comes from the angular redistribution of photons be-tween the atmospheric and surface paths. The slope therefore carries Rayleigh information only when the column is optically thin ( τ400 ≲ 1-2), while I360 and 
+
+I400 become increasingly similar for thicker columns. This is precisely the regime in which the polarimetric observables, DOLP 400 and SD , with greater sensitivity to the scattering geometry, become the operative dis-criminants. 
+
+3. MULTI-EPOCH CONDITIONING, UNIQUENESS, AND RADIUS CONSEQUENCE Section 2.3 establishes that a multi-epoch sequence contains both extensive and intensive information. The question is whether they can be used to determine the albedo and radius uniquely enough to be useful. To study this, we introduce the term “consequence” for the relative posterior uncertainty in quantities such as the inferred disk brightness, albedo, or radius after the ob-servables have constrained the allowed states. We consider two observing circumstances: known and unknown phase. In the known-phase case, the orbit sup-plies each αi, so the inferred state reduces to ( τ400 , ρ surf ). In the unknown-phase case, the phase angles are inferred with the atmosphere-surface state, so the N -epoch state is ( u, ρ surf , α 1, . . . , α N ). The known-phase case is the conditional baseline, while the unknown-phase case is the more general observation problem. In both cases the normalized 400 nm lightcurve shape is an intensive observable, while the absolute 400 nm flux scale is re-served until the final radius inference. The invertibility of our set of intensive parameters to a unique state ( τ400 , ρ surf ) depends on the physical map-ping between the state and the observables, as well as its resilience to blurring due to instrument noise. To study this, we use two related diagnostics: The first is the noise-free conditioning of the observable map to help us 6
+
+Figure 2. Disk-integrated lightcurves versus phase angle α over the ( τ400 , ρ surf ) state space, at the edge-on inclination. Columns: surface albedo ρsurf from 0 (dark) to 1 (bright). Rows: the extensive intensity I400 /I disk (top) whose normalization determines the intensive observable L400 , and the remaining three intensive observables: intensity spectral slope ( I360 − I400 )/I 400 , degree of linear polarization DOLP 400 , and DOLP spectral slope (DOLP 360 − DOLP 400 )/DOLP 400 . Color encodes the Rayleigh optical depth τ400 from low (dark) to high (light). The top row scales with the assumed disk radius, the lower three rows are radius-free. 
+
+understand the sensitivity of a given set of observables to different parts of the state space. It is measured by the local area metric, A, representing the projection in observable space of a unit area of state space. Larger val-ues of A indicate a well-conditioned map, while A = 0 denotes local non-uniqueness (more details in the fol-lowing). The second is the state-specific distribution of radius consequence as a function of SNR, obtained by propagating finite-SNR noise through the intensive ob-servables. We also compare these two diagnostics state-by-state, because poor local conditioning is only found to affect the radius consequence significantly when the allowed states span different disk brightnesses. For one epoch, the spectropolarimetric intensive ob-servable vector is 
+
+mpol (x, α ) =  SI , DOLP 400 , SD
+
+⊤. (2) The photometry-only subset becomes a singleton 
+
+mphot = ( SI ). For a multi-epoch phase tuple A =(α1, . . . , α N ), the radius-free 400 nm shape is 
+
+L400 i(x, A ) = I400 (x, α i)max k(I400 (x, α k)) , i = 1 , . . . , N. 
+
+(3) Thus the full intensive measurement vector is either 
+
+ypol (x, A ) = [ mpol (x, α 1), . . . , mpol (x, α N ), L400 (x, A )] (4) or, when polarimetry is unavailable, 
+
+yphot (x, A ) = [ mphot (x, α 1), . . . , mphot (x, α N ), L400 (x, A )] .
+
+(5) For the known-phase local maps, the inferred state is denoted x = (u, ρ surf )⊤, with u = ln τ400 . The lo-cal area metric, A, is computed from the Jacobian 
+
+J(x; α) = ∂mpol /∂ x ( or the corresponding photometry-only Jacobian when the DOLP rows are omitted), as 
+
+A = pdet( G), (6) where 
+
+G = J(x; α)⊤J(x; α). (7) For a known set of phases, the phase-stacked metric is 
+
+Gstack =
+
+> N
+
+X
+
+> i=1
+
+J(x; αi)⊤J(x; αi), AN α = pdet( Gstack ).
+
+(8) This quantity is the area in observable space spanned by a unit square in ( u, ρ surf ). Thus AN α = 0 marks lo-cal non-uniqueness, while larger AN α indicates a better conditioned local map. 7At finite SNR, the intensive observables define weights over trial states. Each allowed trial state has a corre-sponding disk reflectivity Λ = I400 /I disk . Since the mea-sured flux satisfies Fobs ∝ ΛR2p, the posterior spread in Λ gives the radius consequence, 
+
+σ(Rp)
+
+Rp
+
+≃ 12
+
+σΛ
+
+Λ . (9) The derivation of the area metric is given in Ap-pendix A.1. The observable definitions, noise propaga-tion, likelihood weights, and radius-consequence calcu-lations are given in Sections A.2 and A.3 of Appendix A. 3.1. Known phases: uniqueness, radius consequence, and polarimetry 
+
+Figure 3 shows the known-phase spectropo-larimetric result for the six-phase set α =(150 ◦, 120 ◦, 90 ◦, 60 ◦, 30 ◦, 5◦). The left column gives 
+
+A6α, repeated in each row because it is independent of SNR (see Eq. 8). The darkest region, representing the smallest A6α and thus highest local non-uniqueness, is the high-τ400 edge, where the spectral slope and the DOLP observables approach saturation (as seen in Fig. 2). The middle column shows the resulting radius consequence at SNR = 5, 20, and 100. Increasing SNRs progressively deminish the uncertainties in the inferred radius. While noise uniformly dominates the state space at SNR = 5, a moderate SNR of 20 shows good improvements in state resolution, especially for thinner atmospheres over darker surfaces (Earth-like), and at SNR = 100, the inversion approaches the high-precision limit. At τ400 ≳ 1-2, poor local state-resolution often has limited radius consequence because the allowed degener-acy direction is nearly brightness-preserving. At τ400 ≲
+
+1-2, the same state uncertainty can span a larger range of disk brightnesses, producing a more scene-dependent spread in radius consequence. This optically thinner regime is the one most relevant to an Earth-like Rayleigh column in the near ultraviolet, so useful radius recovery for Earth-like cases depends especially strongly on high-SNR measurements. The right column plots the radius consequence of each grid cell against its area metric, colored by τ400 . It is evident that the area metric is ordered almost entirely by the optical depth: thick columns show small A6α,while thin columns occupy the large-A6α end. The rela-tion between the two quantities changes with SNR. At SNR = 5, the radius consequence is largest at the large-
+
+A6α end, because the thin columns couple their state un-certainty to a wide range of disk brightnesses, with noise dominating every cell. As the SNR increases, this order-ing is progressively inverted: the large-A6α cells improve fastest, and at SNR = 100 they reach the smallest radius consequences on the plane, while the small-A6α, high-
+
+τ400 cells improve more slowly, becoming limiting cases. The local geometry thus sets the bounds on the preci-sion with which planetary radius can be determined at high SNR, while the noise level determines which part of the state plane dominates the error budget at a given SNR. Figure 4 shows the corresponding values when po-larimetry is not available, replacing ypol with yphot in Equation 5. This removes the DOLP and SD rows and retains only the normalized 400 nm phase shape and the ultraviolet color slope, so it is a strict information-loss test of the value of polarimetry. Polarimetry increases the local area metric most clearly in the intermediate and optically thick parts of the grid, where the inten-sity color has partially saturated but the polarization still responds to the Rayleigh column and surface re-flectance. The radius consequence, however, improves most where the state uncertainty spans the largest range of disk brightnesses. This occurs in the optically thin part of the grid: at SNR = 20, the cell-wise polarimet-ric gain reaches factors of 1.3-2.2 for τ400 ≲ 0.4 over dark-to-moderate surfaces ( ρsurf ≈ 0.1-0 .4), the corner that contains the Earth-like Rayleigh column, while re-maining near 1.1 over the optically thick bulk of the plane. At SNR = 100 the largest gains are seen for intermediate columns (0 .5 ≲ τ400 ≲ 2), where the no-polarimetry uncertainty is 2-5 times larger cell-by-cell (see Table 1). For the six-phase known-phase grid, the median radius consequence with polarimetry is 9 .50%, 3.26%, and 0 .45% at SNR = 5, 20, and 100, respec-tively. The corresponding no-polarimetry medians are 10 .13%, 3 .76%, and 0 .57%. The 90th percentiles are 13 .55%, 4 .65%, and 0 .64% with polarimetry, compared with 14 .61%, 5 .18%, and 0 .78% without polarimetry. These full-plane medians understate the polarimetric contribution because they are dominated by the opti-cally thick portion of the grid, where the shape and color observables already constrain the state, belying the re-gional structure of the gain summarized in Table 1. 3.2. Unknown phases 
+
+When phase is not supplied by the orbit, the trial set includes both the atmosphere-surface state and the phase tuple. The measured flux now depends on the unknown phase as 
+
+Fobs (α) ∝ R2pΛ( u, ρ surf , α ), (10) making it a conditional bound. The unknown-phase cal-culation is the conservative limit in which trial phases may occupy the sampled phase grid. If astrometry or a 800.2 0.4 0.6 0.8 1SNR 5                       
+
+> local geometry: 6(Rp)/ Rpfrom fitted scale
+> 0.001 0.01 0.1 110
+> geometry vs consequence
+> 00.2 0.4 0.6 0.8 1
+> surf
+> SNR 20
+> 0.001 0.01 0.1 110
+> (Rp)/ Rp [%]
+> 0.1 110
+> 400
+> 00.2 0.4 0.6 0.8 1SNR 100 0.1 110
+> 400
+> 0.0001 0.001 0.01 0.1 1
+> 6
+> 0.001 0.01 0.1 110
+> 0.0003 0.003 0.05 0.5
+> 6=det Gstack
+> 0.2 1 2 10
+> (Rp)/ Rp[%]
+> 0.2 1210
+> 400
+
+Figure 3. Known-phase local state uniqueness versus radius consequence with polarimetry. Rows show SNR = 5, 20, and 100. Left: the six-phase local area metric A6α = √det Gstack for α = (150 ◦, 120 ◦, 90 ◦, 60 ◦, 30 ◦, 5◦). Middle: the finite-SNR radius consequence from the posterior spread in disk brightness, σ(Rp)/R p = (1 /2) σΛ/Λ, plotted in percent. Right: state-by-state comparison of A6α and σ(Rp)/R p, colored by τ400 . Dashed contours and vertical lines mark the bottom decile of A6α.
+
+preliminary orbit fit restricts the possible phase angles without fixing them uniquely, the likelihood should in-clude that information as a prior on ( α1, . . . , α N ). Such cases should fall between the known-phase and fully unknown-phase limits. The likelihood, phase marginal-ization (summation of posterior weight over candidate phase tuples), and radius-consequence calculation for this comparison are given in Appendix A.3. The setup is as follows: 1. Known phase: Trial phases are fixed to the ob-served set, and the posterior is over ( u, ρ surf ). 2. Unknown phase: Trial phase pairs are drawn from the sampled phase grid, and the posterior is over (u, ρ surf , α 1, . . . , α 6). Figure 5 shows the six-epoch spectropo-larimetric comparison for true phases α =(150 ◦, 120 ◦, 90 ◦, 60 ◦, 30 ◦, 5◦). The radius consequence calculations for known and unknown phases are com-pared side-by-side: each panel is a map over the (τ400 , ρ surf ) state plane, and the three rows correspond to SNR =5, 20, and 100. The left column shows the known-phase radius consequence and the middle column shows the same quantity when the phases are treated as unknown. The right column depicts their cell-by-cell ra-tio, representing the penalty of the unknown-phase case against the known-phase baseline. At SNR = 5 (top panels), the radius uncertainties are large throughout the state plane in both columns, resulting in a nearly uniform penalty that never exceeds 1.5 throughout the state space. At SNR = 20 (middle row), both columns improve, most strongly in the lower-left region of thin columns over dark surfaces that contains Earth-like cases. The six-epoch data now constrain the phase tuple well enough that the penalty falls to unity over most of the plane. However, larger penalties persist in the lower-left region, because the known-phase un-certainty falls relatively faster with increasingly SNR. At SNR = 100, both columns approach sub-percent levels across the plane. In the Earth-like region, the known-phase uncertainty falls below the resolution of the state grid while the unknown-phase consequence remains finite, causing the ratio to saturate. Figure 6 shows the no-polarimetry counterpart of Fig-ure 5. With six distinct phases, the unknown-phase penalty is modest in the spectropolarimetric calculation: the me-dian known-phase radius consequence is 11 .00%, 3 .22%, and 0 .45% at SNR = 5, 20, and 100, while the corre-900.2 0.4 0.6 0.8 1SNR 5                         
+
+> local geometry: 6(Rp)/ Rpfrom fitted scale
+> 0.001 0.01 0.1 110
+> geometry vs consequence
+> 00.2 0.4 0.6 0.8 1
+> surf
+> SNR 20
+> 0.001 0.01 0.1 110
+> (Rp)/ Rp [%]
+> 0.1 110
+> 400
+> 00.2 0.4 0.6 0.8 1SNR 100 0.1 110
+> 400
+> 1e-5 0.0001 0.001 0.01 0.1 1
+> 6
+> 0.001 0.01 0.1 110
+> 0.00005 0.001 0.015 0.2
+> 6=det Gstack
+> 0.2 1210
+> (Rp)/ Rp[%]
+> 0.2 1210
+> 400
+
+Figure 4. Same as Figure 3, but without polarimetry. The measurement vector retains the ultraviolet intensity slope and normalized 400 nm phase shape but omits DOLP and SD . Comparing this figure with Figure 3 isolates the information gain supplied by the polarimetric observables. 
+
+sponding unknown-phase medians are 14 .00%, 3 .20%, and 0 .47%. In the majority of the state plane, the penalty is a factor 1.27 at SNR=5, and is near unity at SNR=20 and 100. This is because phase diversity constrains the phase tuple well enough for the extra pa-rameters to be included at negligible cost. The median posterior uncertainty in the inferred phases range from 9.47 ◦ at SNR = 5 to 1 .75 ◦ at SNR = 20 and 0 .22 ◦
+
+at SNR = 100. Removing polarimetry increases the unknown-phase medians to 14 .93%, 3 .93%, and 0 .63%. The loss is again concentrated in the scientifically valu-able ranges: in the thin Earth-like corner the unknown-phase no-polarimetry median at SNR = 20 is 7 .22% against 4 .75% with polarimetry, with cell-wise gains reaching factors of 3-9. For intermediate columns at SNR = 100, the median doubles from 0 .29% to 0 .63% (Table 1). At high SNR, some penalty maps are dom-inated by regions where the known-phase denominator becomes vanishingly small - the penalty ratios should therefore not be interpreted independently of radius-consequence. 3.3. How many distinct phases are needed 
+
+The unknown-phase penalty decreases because addi-tional distinct phases add angular information. Co-adding at the same phase would reduce noise with-out providing information on the angular structure of the problem. Distinct phases improve our sampling of the Rayleigh phase function, the surface contribution, and the lightcurve shape, thereby reducing the range of phase-angle tuples consistent with the data. Improve-ments in the conditioning of the state result in improved radius consequences. To show this effect, we use nested phase sets for three scenes chosen to represent different challenging regimes: a low-τ400 bright-surface transition ( τ400 = 0 .1, 
+
+ρsurf = 0 .4) that represents the transition of the thin col-umn case from dark to bright surfaces, a moderate inte-rior scene ( τ400 = 2, ρsurf = 0 .4) representing competing sources of intermediate brightness, and a high-τ400 sat-urated scene ( τ400 = 20, ρsurf = 0 .8). In Figures 7 (8 is its non-polarimetric counterpart), the left panel gives the absolute radius consequence for known (dashed) and unknown phase (solid), while the right panel shows their ratio. The sequence represented by the x-axis begins at 
+
+α = 90 ◦, adds 60 ◦, then adds 120 ◦, and then extends toward 30 ◦, 150 ◦, and 5 ◦. Thus increasing Nphase corre-sponds to the addition of observing epochs in the above order. The dashed and solid curves in the left panels 10 
+
+Table 1. Median radius consequences σ(Rp)/R p (%) for the six-phase sequence α = (150 ◦, 120 ◦, 90 ◦, 60 ◦, 30 ◦, 5◦), with and without polarimetry.                             
+
+> With polarimetry No polarimetry Case State range SNR 5 SNR 10 SNR 20 SNR 100 SNR 5 SNR 10 SNR 20 SNR 100 Known phases (Sec. 3.1) full plane 9.50 5.86 3.26 0.45 10.13 6.33 3.76 0.57 thin, Earth-like ( τ400 ≤0.5, ρsurf ≤0.4) 14.47 9.90 4.00 <0.01
+
+a 15.20 10.28 5.25 < 0.01 a                                                                
+
+> intermediate (0 .5< τ 400 <2) 11.03 6.80 3.64 0.25 11.77 7.90 4.00 0.49 thick ( τ400 ≥2) 8.66 4.60 2.58 0.56 9.54 5.22 2.96 0.68 Unknown phases (Sec. 3.2) full plane 14.00 6.25 3.20 0.47 14.93 8.14 3.93 0.63 thin, Earth-like ( τ400 ≤0.5, ρsurf ≤0.4) 19.20 11.83 4.75 0.08 19.12 14.22 7.22 0.09 intermediate (0 .5< τ 400 <2) 14.85 7.12 3.55 0.29 16.19 9.80 4.33 0.63 thick ( τ400 ≥2) 13.38 5.20 2.62 0.56 14.71 7.48 3.19 0.71
+> aBelow the resolution of the state grid in both observable modes: the posterior collapses to the truth cell, so the residual spread is not a measurable radius consequence. In the unknown-phase case the phase uncertainty keeps the posterior finite, so the corresponding entries remain quotable.
+
+converge as phases are added. The right panels demon-strate the rate of this convergence, revealing the number of distinct epochs needed before unknown phases stop costing radius precision. At SNR = 5, phase uncertainty remains expensive for the first few epochs, but the penalty decreases steadily. At SNR = 20, the penalty is already close to unity once 5-6 distinct phases are used. At SNR = 100, the known-phase bound can become so tight that some penalty ratios look large even when the absolute radius conse-quence is small. The phase diversity turns unknown phase from an external requirement into a fitted part of the multi-epoch problem. 
+
+4. LOOK-UP-TABLE INFERENCE OF THE PLANETARY STATE In the above analysis, the forward model defined the radius-free map between the state and the intensive ob-servables (τ400 , ρ surf , α ) 7 −→  SI , DOLP 400 , SD
+
+, (11) as well as the extensive brightness Λ( τ400 , ρ surf , α ) = 
+
+I400 /I disk . Using the intensive observables to identify the allowed region of the forward-model grid allowed us to compute the corresponding posterior spread in the extensive brightness Λ. Combining that brightness with the measured absolute flux allows us to use the rela-tionship Fobs ∝ R2pΛ to infer the effective ultraviolet ra-dius. Both the known- and unknown-phase calculations of Section 3 are lookup-table posteriors on a discrete grid: no continuous parameter sampling, realistic noise or forward-model error have yet been accounted for. The results should therefore be interpreted as an idealized sensitivity study of the information content of the in-tensive observables, and not as a retrieval-performance forecast. Our present calculations use the discrete grid directly, with the weights interpreted as quadrature weights over state-cell volume. In an simulated or operational inver-sion, the same table can be treated as samples of a con-tinuous forward map. Interpolating the observables and Λ over u = ln τ400 , ρsurf , and α would allow the problem to be adapted to the continuous state space applicable to retrievals. Note that our method determines the effective ultra-violet radius Rp(λUV ), the radius of the equivalent re-flecting sphere in the chosen ultraviolet window. For an atmosphere over a condensed surface, this effective ra-dius is the core radius plus the altitude of the effective Rayleigh-scattering layer. 
+
+5. HWO OBSERVING IMPLICATIONS 5.1. The Habitable Worlds Observatory 
+
+We now ask what implications the above study has for the Habitable Worlds Observatory (HWO). The flagship mission recommended by the Astro2020 Decadal Sur-vey (National Academies of Sciences, Engineering, and Medicine 2021) is being designed to push direct imag-ing beyond current limits. Where current high-contrast instruments reach planet-star flux ratios of ∼ 10 −6, suf-ficient only for young, self-luminous giant planets, HWO is designed to suppress starlight to the 10 −10 level re-quired to separate an Earth-size planet in reflected light from a Sun-like host at habitable-zone separations. Its motivating goal is to survey on the order of a hundred nearby stellar systems and to detect and spectroscop-ically characterize approximately 25 potentially Earth-like worlds, searching their atmospheres for indications of habitability and life (National Academies of Sciences, Engineering, and Medicine 2021; Stark et al. 2024). Unlike transit missions, whose targets come with known ephemerides, HWO will discover most of the 11 00.2 0.4 0.6 0.8 1SNR 5 
+
+known phases: = 150, 120, 90, 60, 30, 5 unknown phases unknown/known penalty                 
+
+> 00.2 0.4 0.6 0.8 1
+> surf
+> SNR 20 0.1 110 00.2 0.4 0.6 0.8 1SNR 100 0.1 110
+> 400
+> 0.1 110
+> 0.2 0.5 1510
+> (Rp)/ Rp[%]
+> 12510 20 50
+> unknown / known
+
+Figure 5. Penalty incurred when phase is unknown, with polarimetry. The true phase set is α = (150 ◦, 120 ◦, 90 ◦, 60 ◦, 30 ◦, 5◦). Left: known-phase radius consequence, in which trial phases are fixed to the true set. Middle: unknown-phase radius conse-quence, in which trial phase tuples are marginalized over the sampled grid while the normalized I400 lightcurve shape is included with the intensive observables. Right: unknown-phase to known-phase penalty ratio. 
+
+planets it characterizes. The current HWO obser-vation strategy thus anticipates mostly unknown tar-gets with poorly constrained orbits, requiring phase an-gles to be inferred jointly with the atmosphere-surface state. Multi-phase observations add angular diversity, constrain the normalized lightcurve shape, and reduce the unknown-phase penalty. Thus, for planets without known orbits, prioritizing distinct phase samples would provide more information than co-adding longer at a sin-gle phase. Multiple revisits are in any case required to confirm candidates and establish orbits, so a multi-epoch cadence is built into the mission concept. Accordingly, we structure the observing plan as a six-epoch campaign and assume an allocation of 72 h on average per epoch at SNR=20, or 6 × 72 h = 432 h per object, commensu-rate with the per-target budgets contemplated in HWO yield studies (Stark et al. 2014, 2024). The instrument imposes photometric and geometric constraints on the observation campaign: The achiev-able planetary count rate is determined by the telescope aperture, the optical throughput, the coronagraphic raw contrast, and astrophysical backgrounds such as exo-zodiacal dust. Our exposure-time treatment follows the photon-limited formalism developed by Stark et al. (2014) for exoEarth yield estimation, expressed in the photon-rate notation of Mennesson et al. (2024), who also review the laboratory starlight-suppression perfor-mance achieved to date and pathways to the required 10 −10 contrast. Further, a coronagraph transmits planet light only outside an inner working angle (IWA), the smallest angular separation from the star at which the design contrast and throughput are delivered. The IWA scales with the diffraction limit of the telescope of di-ameter Dtel and is conventionally expressed as a small multiple of λ/D tel . We adopt 
+
+θIWA = 3λDtel 
+
+. (12) The projected angular separation of a planet on a circu-lar orbit of radius a, observed at phase angle α around a star at distance d⋆, is 
+
+θp(α) = ad⋆
+
+sin α. (13) A phase is observable only while θp(α) ≥ θIWA , so the IWA excludes the most crescent and most gibbous ge-12 00.2 0.4 0.6 0.8 1SNR 5 
+
+known phases: = 150, 120, 90, 60, 30, 5 unknown phases unknown/known penalty                  
+
+> 00.2 0.4 0.6 0.8 1
+> surf
+> SNR 20 0.1 110 00.2 0.4 0.6 0.8 1SNR 100 0.1 110
+> 400
+> 0.1 110
+> 0.2 12520
+> (Rp)/ Rp[%]
+> 12510
+> unknown / known
+> Figure 6. Same as Figure 5, but without polarimetry. The comparison retains the normalized 400 nm lightcurve shape and ultraviolet color slope, while omitting DOLP and SD.
+
+ometries. The extent of exclusion increases with increas-ing distance. For the goal of resolving the albedo-radius degeneracy for reflected-light planets, an ideal instrument capabil-ity would deliver multi-epoch polarimetric observations in the near ultraviolet at high SNR. Accessing the 360-400 nm window and measuring polarization there im-prove our ability to infer albedo before using the exten-sive flux to infer radius. This is directly relevant to near-UV starlight-suppression capabilities for HWO. A short-wavelength cutoff at or longer than 400 nm would move the diagnostic color baseline into a region with substan-tially less Rayleigh optical depth, whereas 360-400 nm keeps the measurement close to the steep part of the 
+
+λ−4 leverage. The need for high SNR is strongest in the optically thinner τ400 ≲ 1-2 regime, where the allowed state spread maps into a larger spread in disk bright-ness. This is also the regime most relevant to Earth-like Rayleigh columns in the near ultraviolet. In this section, we quantify the precision with which the planetary radius can be determined for otherwise identical systems at different distances under HWO’s instrument constraints - distance degrades the measure-ment through both the photon rate and through the IWA-limited phase coverage. For each system, we select six phases that yield the widest evenly spaced phase in-terval satisfying both the IWA constraint and the total-time budget. 5.2. Six-phase observations of hypothetical Solar twins 
+
+In the preceding sections, we described the degeneracy-breaking information content in abstract SNR units. Now we implement our intensive-observable strategy for HWO observations outlined above. We assume an Earth-radius Rayleigh/Lambertian planet as our fiducial planet, with ρsurf = 0 .2, and a = 1 AU, observed around synthetic solar twins at a distance, d⋆,of 6 and 12 pc, respectively. The instrument model assumes a telescope of diameter Dtel = 8 m, two 10 nm ultraviolet bands centered at 360 and 400 nm, through-put T = 0.1, PSF fraction Υ = 0.69, raw contrast 10 −10 , three exozodis, and zero detector read noise, dark current, and systematic contrast floor. The exposure-time calculation follows the photon-limited formalism of Stark et al. (2014), cross-checked against the photon-rate notation of Mennesson et al. (2024), as introduced in Section 5.1. The detailed count-rate equations are given in Appendix C. 13 0.01 0.01 0.02 0.03 0.05 0.1 0.1 0.2 0.3 0.5 1123510 10 20 30 50 100 100                    
+
+> (Rp)/ Rp [%]
+> SNR = 5
+> solid: unknown phase dashed: known phase
+> (Rp)/ Rp[%]
+> 1123510 10
+> phase penalty
+> unknown / known phase penalty
+> = 0.1, = 0.4
+> = 2, = 0.4
+> = 20, = 0.8
+> = 0.1, = 0.4
+> = 2, = 0.4
+> = 20, = 0.8
+> 0.01 0.01 0.02 0.03 0.05 0.1 0.1 0.2 0.3 0.5 1123510 10 20 30 50 100 100
+> (Rp)/ Rp [%]
+> SNR = 20
+> 1123510 10
+> phase penalty
+> 123456
+> number of distinct phases Nphase
+> 0.01 0.01 0.02 0.03 0.05 0.1 0.1 0.2 0.3 0.5 1123510 10 20 30 50 100 100
+> (Rp)/ Rp [%]
+> SNR = 100
+> 123456
+> number of distinct phases Nphase
+> 1123510 10
+> phase penalty
+
+Figure 7. Effect of the number of distinct phases with polarimetry, for SNR = 5, 20, and 100. The three colored curves are the low-τ400 bright-surface transition, moderate interior, and high-τ400 saturated scenes. Solid/dashed curves represent unknown/known phase sets. Left: absolute radius consequence. Right: unknown-to-known phase penalty ratio. The phase design is nested, so each step adds an epoch to the previous set. 
+
+Applying the IWA constraint of Equations 12-13 at 400 nm, where the IWA is most restrictive within our spectral window, the resulting θIWA = 30 .94 mas trans-lates to low-phase limits of 10 .70 ◦ at 6 pc and 21 .79 ◦ at 12 pc. Figure 9 shows the per-epoch exposure times for three Rayleigh columns, including the Earth-like value 
+
+τ400 = 0 .3585 at 400 nm and the optically thicker com-parison cases τ400 = 0 .5 and 1.0. Table 2 summarizes the selected phase sets. The two distances are representative of the anticipated HWO sample: of the 164 stars in the NASA Exoplanet Ex-ploration Program (ExEP) Mission Star List for HWO (Mamajek & Stapelfeldt 2024), 66 lie within 12 pc and 20 within 6 pc, so the constructed solar twins at 6 and 12 pc cover the nearer half of the target list. The 12 pc case is, for example, directly comparable to the solar-type target ζ2 Reticuli (HD 20807) at 12.04 pc, while the 6 pc case is an optimistic nearby benchmark. At 6 pc, the target permits a much wider phase span, but the crescent endpoint consumes most of the total time. At 12 pc, the total-time budget compresses the campaign into a narrower, more quadrature-centered phase range. In Figure 10, we show the radius consequence, 
+
+σ(Rp)/R p, of the six-epoch HWO observations de-scribed above as a function of SNR. These calculations differ from the diagnostic degeneracy maps shown ear-lier in the paper: here, each point is obtained from an explicit inversion of synthetic observations, rather than by comparing discrete grid cells. For each distance, Rayleigh column, and SNR, we generate noise-free real-izations of the synthetic observables (the model observ-ables are left unperturbed) at the retained six phases, including both the per-epoch intensive observables and the normalized 400 nm lightcurve shape. We evalu-ate the Horak/vSmartMOM lookup table with cubic interpolation between grid points and iteratively min-imize a full-covariance weighted residual, χ2 = ( ymod −
+
+yobs )T C−1(ymod − yobs ), taking into account the exact form of HWO noise prescribed by Stark et al. (2014); Mennesson et al. (2024). Employing a multistart search over the state space, the lowest-cost solution is used to compute the local posterior covariance. The details of this inversion are given in Appendix B. The inferred 14 0.01 0.01 0.02 0.03 0.05 0.1 0.1 0.2 0.3 0.5 1123510 10 20 30 50 100 100 
+
+> (Rp)/ Rp [%]
+
+SNR = 5 
+
+> solid: unknown phase dashed: known phase
+
+(Rp)/ Rp [%] 
+
+> 1123510 10
+> phase penalty
+
+unknown / known phase penalty       
+
+> = 0.1, = 0.4
+> = 2, = 0.4
+> = 20, = 0.8
+> = 0.1, = 0.4
+> = 2, = 0.4
+> = 20, = 0.8
+> 0.01 0.01 0.02 0.03 0.05 0.1 0.1 0.2 0.3 0.5 1123510 10 20 30 50 100 100
+> (Rp)/ Rp [%]
+
+SNR = 20       
+
+> 1123510 10
+> phase penalty
+> 123456
+> number of distinct phases Nphase
+> 0.01 0.01 0.02 0.03 0.05 0.1 0.1 0.2 0.3 0.5 1123510 10 20 30 50 100 100
+> (Rp)/ Rp [%]
+
+SNR = 100       
+
+> 123456
+> number of distinct phases Nphase
+> 1123510 10
+> phase penalty
+
+Figure 8. Same as Figure 7, but without polarimetry. The no-polarimetry curves retain ultraviolet color and the normalized 400 nm phase shape. 
+
+Table 2. Selected HWO six-phase campaigns at SNR=20.                          
+
+> Case αIWA αmax Total time Phase set Comparison 6 pc solar twin 10 .70 ◦135 .72 ◦432.0 h 135 .72 ,110 .72 ,85 .71 ,60 .71 ,35 .70 ,10 .70 ◦nearby benchmark 12 pc solar twin 21 .79 ◦88 .26 ◦432.0 h 88 .26 ,74 .97 ,61 .68 ,48 .38 ,35 .09 ,21 .79 ◦HD 20807-like
+
+state is 
+
+x = [ln τ400 , ρ surf , α 1, . . . , α 6], (14) with the phase prior restricted to the HWO-feasible in-terval for the corresponding system. Choosing the best-fitting intensive state, we propagate the local covariance through the model brightness to obtain the radius un-certainty implied by the remaining albedo-phase degen-eracy. The left panel of Figure 10 represents the polari-metric case, using the full spectropolarimetric observ-able set, and the right panel represents the correspond-ing no-polarimetry case, in which DOLP and the DOLP spectral slope are removed. The smaller values of the left panel indicate that the retained observables leave less uncertainty in the disk brightness, and hence in the radius inferred from the absolute flux. The best fits re-cover the truth to numerical precision in all reported cases. Distance affects the inference through phase coverage as well as exposure time. The 6 pc case permits a broad phase span, including a deeper crescent, whereas the 12 pc case is forced to adopt a narrower, more quadrature-centered window due to IWA and time-budget con-straints. The resulting loss of angular coverage makes the 12 pc radius consequence larger, especially when po-larimetry is removed. For the fiducial τ400 = 1 case at SNR=20, the six-phase radius consequence with po-larimetry is 4 .81% at 6 pc and 9 .07% at 12 pc, while without polarimetry we get 5 .78% and 27 .21%. For an Earth-like Rayleigh optical depth estimate of τ400 =0.3585 at 400 nm, using the same phase angles, the cor-responding full-observable values are 7 .19% and 14 .46%, with total SNR=20 campaign times of 639 h and 777 h. 15 20 40 60 80 100 120 140 
+
+Selected phase angle α [deg] 
+
+> 0.5 12510 20 72 100 200 500 1000 5000 20000
+> Exposure time per epoch [h]
+
+6 pc       
+
+> 20 40 60 80 100 120 140
+
+Selected phase angle α [deg] 
+
+12 pc     
+
+> target
+> SNR 5 SNR 20 SNR 100
+> τcase
+> τ400, ⊕ = 0.3585
+> τ400 = 0.5
+> τ400 = 1
+
+Figure 9. Per-epoch HWO ultraviolet exposure times for synthetic solar twins at 6 pc and 12 pc. Curves show the selected phase angles for target SNR = 5, 20, and 100, with line style distinguishing the Rayleigh optical-depth cases: solid curves show the Earth-like column, τ400 ,⊕ = 0 .3585, marked by the ⊕ symbol in the legend, with the optically thicker comparison cases 
+
+τ400 = 0 .5 and 1.0 dashed and dotted. The horizontal reference marks 72 h per epoch, corresponding to a 432 h six-epoch object budget. 
+
+Table 3. Local-covariance radius consequences for retained HWO phase sets, showing the full spectropolarimetric observable set alongside the intensity-only limit at each SNR.                                                                     
+
+> Spectropolarimetric σ(Rp)/R p[%] No-polarimetry σ(Rp)/R p[%] Case τ400 SNR 5 SNR 10 SNR 20 SNR 100 SNR 5 SNR 10 SNR 20 SNR 100 6 pc solar twin 0.3585 28.77 14.39 7.19 1.41 44.23 22.11 11.06 2.17 6 pc solar twin 0.5 24.68 12.34 6.17 1.21 33.66 16.83 8.41 1.66 6 pc solar twin 1.0 19.24 9.62 4.81 0.93 23.12 11.56 5.78 1.13 12 pc solar twin 0.3585 59.51 29.75 14.46 2.85 97.22 48.61 24.30 4.08 12 pc solar twin 0.5 52.17 26.08 13.01 2.51 92.93 46.46 23.23 3.93 12 pc solar twin 1.0 36.27 18.13 9.07 1.81 108.96 54.45 27.21 4.94
+
+Without polarimetry, the Earth-like cases yield 11 .06% and 24 .30%. At SNR = 10, the Earth-like radius con-sequences are 14.4% at 6 pc and 29.8% at 12 pc with polarimetry, and 22.1% and 48.6% without, while the total campaign times shrink to ∼160 h and ∼194 h (see Table 3). A six-epoch SNR = 10 campaign therefore fits within practical time allocations while still constrain-ing the radius well below the factor-of-two uncertainty of external mass-radius priors for non-transiting planets (M¨ uller et al. 2024; Carri´ on-Gonz´ alez et al. 2020). It should be noted that these values, obtained from un-perturbed model observables, are not end-to-end HWO performance predictions. They simply show how the proposed intensive-observable method couples to a plau-sible exposure-time scale in which phase coverage, dis-tance, polarimetry, and Rayleigh optical depth affect the radius consequence. 5.3. Limitations of the noise-free-realization HWO target assessment 
+
+The HWO simulations above are noise-aware but realization-free: the covariance matrices propagate the full astrophysical noise budget of Appendix C, including planetary shot noise and the residual-starlight, zodiacal, and exozodiacal backgrounds at the stated SNR, but the synthetic observables themselves are evaluated at their 16 5 20 100 
+
+SNR 
+
+> 0.5 12510 20 50 100 200
+> σ(Rp)/ Rp [%]
+
+w/ polarimetry   
+
+> distance
+> 6 pc 12 pc
+> 520 100
+
+SNR 
+
+no polarimetry     
+
+> τcase
+> τ400, ⊕ = 0.3585
+> τ400 = 0.5
+> τ400 = 1
+
+Figure 10. Local-covariance radius consequences for the HWO six-phase campaigns. The vertical axis is the fractional radius uncertainty induced by the remaining albedo/phase degeneracy after fitting the radius-free observables. Left: full spectropolarimetry, using SI , DOLP 400 , SD , and the normalized 400 nm lightcurve shape. Right: no-polarimetry limit, using only SI and the normalized 400 nm shape. Blue and red curves show the 6 pc and 12 pc solar-twin examples. Line style distinguishes the considered Rayleigh optical depths, with the solid curves showing the Earth-like column τ400 ,⊕ = 0 .3585 ( ⊕
+
+in the legend). The phase angles are fixed to those selected from the τ400 = 1, ρsurf = 0 .2, SNR=20 total-budget calculation. Lower Rayleigh optical depths are shown at the same phases rather than being re-optimized, so their total SNR=20 campaign times can exceed the 432 h design budget. 
+
+exact model values and are never perturbed by random noise. The results should therefore be interpreted as a target-assessment exercise rather than as a complete retrieval-performance forecast. They are useful for con-trasting different observing choices like SNR, number of phases, and the inclusion of polarimetry vs. intensity-only measurements on a uniform quantitative basis. Our simulations identify configurations that preserve more radius information and observation compromises that could be costly. The numerical radius consequences, however, are more qualitative than quantitative. They are local covariance consequences around unperturbed synthetic observations, and thus do not include the scat-ter, bias, multimodality, or failure modes that would ap-pear in noisy realizations of the measurement. A more exact assessment would require a suite of full synthetic retrievals against known truth values of Rp, τ400 , ρsurf ,and phase, with realistic noise injected into the simu-lated observations. Such an ensemble would allow the reported radius consequence to be evaluated as an ac-tual retrieval error distribution, rather than as the local diagnostic used here. A further instrument-level consideration is spectral bandwidth. The two 10 nm bands adopted here are narrow relative to the ∼20% instantaneous bandwidth anticipated for HWO coronagraph channels (Mennesson et al. 2024). Wider bands within 360-400 nm would raise the photon rates and shorten the exposure times, but at the cost of partially averaging the intensity and DOLP spectral slopes across the steep λ−4 gradient that gener-ates them. Quantifying this sensitivity-versus-leverage trade requires band-integrated forward modeling and is deferred to follow-up work. The path from this idealized study to a synthetic, and eventually real, retrieval is nevertheless well-defined. The free phase tuple of Section 3.2 could obtain priors from an orbit-parameterized tuple anchored to known epoch times, or from the astrometry that the same imag-ing epochs deliver. The look-up table that discretizes our forward model would be interpolated continuously in (τ400 , ρ surf , α ) with explicit grid-convergence tests. This would also allow us to test and quantify the forward model error caused by departures of real planets from homogeneous Rayleigh-Lambertian assumptions. 17 5.4. UV spectropolarimetry: tradeoffs 
+
+The near-ultraviolet coverage and polarimetry that define the observing strategy developed above involve significant engineering costs for HWO. Extending high-contrast coronagraphy shortward of 400 nm tightens re-quirements on wavefront stability, optical surface qual-ity, scattered light, and polarization aberrations, be-cause coronagraphic contrast at the 10 −10 level becomes progressively harder as λ decreases (Balasubramanian et al. 2011; Breckinridge et al. 2015; Kim et al. 2025). Polarimetry demands instrumental real estate (a Wol-laston prism, polarization modulator, or equivalent), a calibration burden (instrumental polarization known to ≲ 10 −4 for absolute reflected-light studies), and a photon-budget cost, since the Stokes I signal is split between two orthogonal channels. Can these costs be justified by the corresponding scientific gains? A two-decade body of work argues that polarime-try delivers information that flux measurements can-not. Goodis Gordon et al. (2025) show that an Earth-like planet could be characterized in polarized and un-polarized light throughout its geological history, not-ing that flux-only strategies exploit only a fraction of the information content of reflected starlight. Chubb et al. (2026) arrive at the same conclusion for the HWO instrument suite, and Kane et al. (2026) develop the closely related spectral, polarimetric, and UV case for Venus-like worlds. These build on extensive reflected-light polarimetry studies (e.g., Stam 2008; Karalidi & Stam 2012; Trees & Stam 2019; Groot et al. 2020; Trees & Stam 2022) and on the community white paper to the National Academies’ exoplanet science strategy (Millar-Blanchaer et al. 2018). The UV window is like-wise already a recognized HWO science requirement for rocky-planet biosignatures: ozone and related species have their strongest features in the near-UV, accessi-ble at modest spectral resolution (Damiano et al. 2023; Schlecker et al. 2025). The stellar NUV inputs needed for such observations are being assembled for HWO tar-get systems (Bhattacharyya et al. 2026). The intensive-observable method presented by this paper makes a dis-tinct contribution to this list by using the NUV window to break the radius-albedo degeneracy. Solar System research points at two important prece-dents in which exactly this combination of disk-integrated polarimetry with a near-UV spectral win-dow resolved compositional and structural ambigui-ties that could not be resolved by flux measurements. The sulfuric-acid composition and narrow ∼1 μm size distribution of the Venus cloud droplets were estab-lished from ground-based multi-wavelength polarization phase curves in which the 365 nm band constrained the refractive-index (Hansen & Hovenier 1974), four years before in-situ confirmation. Pioneer Venus polarimetry at 270 and 365 nm subsequently revealed the planet’s submicron upper haze (Kawabata et al. 1980). For Ti-tan, ground-based polarimetry (Veverka 1973; Zellner 1973) and UV photometry (Caldwell 1975) established the aerosol haze. The incompatibility of Pioneer 11 and Voyager 2 photopolarimetry at 264 and 750 nm (Tomasko & Smith 1982; West et al. 1983) with any spherical particle model forced the fractal-aggregate de-scription (West & Smith 1991) that Cassini-Huygens confirmed in situ more than two decades later (Tomasko et al. 2008). The required capabilities have been studied and are advancing on the engineering side as well: POLLUX, developed for LUVOIR, demonstrated a formally costed high-resolution spectropolarimeter design covering 100-400 nm (Bouret et al. 2018). A UV integral-field spec-trograph has been added to the HWO exploratory ana-lytic cases EAC4 and EAC5 in response to community science case development documents (Vieira et al. 2026) and laboratory demonstration of UV coronagraphy at HWO-relevant contrast is underway (Kim et al. 2025). Within the current HWO architecture development, the exploratory analytic cases (Liu et al. 2026a) base-line the main coronagraph at 400-1700 nm, but in-clude an unpopulated instrument bay that can accom-modate a to-be-determined instrument, for example a UV coronagraph or a camera coupled to a UV star-shade. A near-UV starshade is under consideration as a second-generation capability at the 30-35 m scale con-sistent with current starshade technology (Liu et al. 2026b). HWO is also designed for robotic servicing, through which UV capabilities could be implemented after launch. The present work adds a unique science case for such a UV starlight-suppression instrument: planetary-model-independent recovery of the planet ra-dius and geometric albedo of habitable-zone targets, at the exposure-time scales quantified in Section 5.2.  
+
+> 6.
+
+DISCUSSION 6.1. Assumptions underlying our method 
+
+Our method is based on a set of first-order assump-tions listed below. Future work will test their limits by quantifying forward modeling biases on the precision of radius retrievals. 1. Spectrally flat Lambertian surface. We repre-sent the surface as a Lambertian albedo ρsurf , con-stant across 360-400 nm. The spectral-flatness as-sumption is supported for the relevant bright sur-faces: snow, ice, and clouds are flat in the ultravi-olet to a fraction of a percent (Herman & Celarier 18 1997; Kleipool et al. 2008), while the contribution of any spectral structure in dark surfaces is sup-pressed by their small absolute reflectivity. The Lambertian assumption could be violated by spec-ular surfaces and strongly non-Lambertian ices, which need to be addressed separately. 2. Homogeneous disk. We treat the surface and atmosphere as laterally uniform over the visible hemisphere. A real planet presents a heteroge-neous disk, with continents, oceans, and variable cloud cover. The rotational and orbital modula-tion of a heterogeneous disk will be an important extension of this work. 3. Clouds and hazes as a thick Lambertian boundary. We approximate optically thick clouds as a bright, spectrally flat Lambertian sur-face placed at the cloud top. Though this captures the first-order brightening, it cannot account for the polarizing properties of cloud particles or the forward-scattering signature of sub-micron photo-chemical hazes. Hazes can often be absorbing in the ultraviolet, violating the weak-absorption as-sumption of Section 2.1, while also altering the phase law, each requiring updates to our forward model. 4. Weak absorption in 360-400 nm. We assume the window is free of strong molecular absorption. On an Earth-like planet this requires working long-ward of the ozone Hartley-Huggins ( ∼200-370 nm) system (e.g., Gorshelev et al. 2014; Huang et al. 2019). This is not, however, a universal guarantee of a clean ultraviolet window. Other atmospheric states can introduce absorption in or near this interval: SO 2 in volcanically active atmospheres (Vandaele et al. 1994; Sprague & Joens 1995; Shi-nohara 2008), NO 2 from lightning or high-NOx chemistry (Vandaele et al. 1998; Logan 1983; Tie et al. 2002), BrO and related halogen species from marine or sea-salt photochemistry (Wahner et al. 1988; Sander et al. 2003; Saiz-Lopez et al. 2004), and sulfur-bearing gases or photochemical hazes in reducing or volcanically supplied atmospheres. In addition, moving the diagnostic window longward of 400 nm does not solve this problem for Earth-like planets, because the ozone Chappuis band introduces additional visible absorption structure (Brion et al. 1998; Huang et al. 2019) simultane-ously as Rayleigh scattering weakens. Identifying clean intervals, or explicitly retrieving trace ab-sorbers with the Rayleigh/surface state, will thus be planet-specific. 6.2. Existing degeneracy-breaking strategies 
+
+The method proposed here is complementary to the retrieval-based approaches of Section 1.1. Hitherto ap-proaches constrain the radius (internally or via exter-nal priors) and propagate it into the albedo, while ours constrains the albedo directly, through radius-free observables, and propagates it into the radius. The two are independent and could be combined: the intensive-observable inference provides a simple prior on (τ400 , ρ surf ) that a full retrieval can further refine. The multi-phase strategy of Carri´ on-Gonz´ alez et al. (2021) already exploits phase-angle diversity, but while its flux-based retrieval includes radius as a fit parameter, the intensive observables could remove the radius from the inference entirely. 6.3. Toward the full state space 
+
+This conceptual study can be extended in the fu-ture to include: (i) a formal probabilistic inversion that propagates realistic photometric and polarimetric noise into a posterior over ( τ400 , ρ surf ) at known phase, or over ( τ400 , ρ surf , α 1, . . . , α N ) when the phases are un-known, (ii) relaxation of the homogeneous-disk assump-tion, using rotational light curves to constrain surface and cloud heterogeneity, (iii) explicit treatment of pho-tochemical hazes and non-Lambertian surfaces, and (iv) the connection of the recovered effective ultraviolet ra-dius to the core radius, via the chromatic dependence of the effective scattering altitude and the separate de-termination of atmospheric scale height from pressure-broadened bands where available. Each of these cases presents an avenue for the application of the clean in-tensive/extensive separation of observables established in this work to more realistic/complex scenes.  
+
+> 7.
+
+CONCLUSIONS We have shown that the radius-albedo degeneracy in directly imaged exoplanets can be broken using multi-epoch observables that are independent of the planetary radius. The absolute disk-integrated reflected intensity is an extensive observable that carries the radius-albedo degeneracy. The radius dependence cancels through the construction of intrinsic variables like the normal-ized 400 nm phase shape, the intensity spectral slope, the degree of linear polarization, and the DOLP spec-tral slope. In a spectrally featureless ultraviolet window where Rayleigh scattering dominates and natural sur-faces are either dark or spectrally flat, these intensive observables depend only on the Rayleigh optical depth, the surface albedo, and the phase tuple. Using vSmartMOM , validated for 1D radiative transfer against Natraj et al. (2009) and disk-integrated radia-19 tive transfer against the Buenzli & Schmid (2009) bench-mark, we quantified the albedo and radius consequence of this map under two observing circumstances: When the phases are known, the six-phase spectropolarimetric map is locally unique over most of the state plane, and the radius consequence decreases strongly from SNR = 5 to SNR = 100. Treating phase as unknown is more con-servative, but the six-phase normalized lightcurve shape substantially reduces the unknown-phase penalty. No-polarimetry simulations show the information loss in-curred when DOLP and SD are unavailable. For HWO’s Earth-like reflected-light characterization, high-SNR spectrophotometry and polarimetry in the 360-400 nm window provide more precise and scien-tifically more useable radius inferences than photome-try alone. Particularly for optically thinner, Earth-like Rayleigh columns, residual state uncertainty produces a larger spread in disk brightness. The strongly diminish-ing strength of Rayleigh scattering with increasing wave-length presents a strong case for maintaining a window shortward of 400 nm. For targets without orbits precise enough to supply the phases, multi-phase sampling pro-vides the phase diversity needed to determine the phase law simultaneously with the atmosphere-surface state. A robust validation path for our method may be sup-plied by transiting rocky planets whose radii are known independently. Recent atmospheric-retention tests span both positive and negative cases: helium escape from the habitable-zone rocky planet LHS 1140b (15 pc) sug-gests that it has retained an atmosphere (Dittmann et al. 2017; Cherubim et al. 2026), whereas thermal-emission measurements of LHS 3844b (14.9 pc) and TRAPPIST-1b/c (12.4 pc) have been used to rule out thick atmospheres in highly irradiated rocky systems (Kreidberg et al. 2019; Greene et al. 2023; Zieba et al. 2023). Such objects are not direct HWO analogues. LHS 1140b, for example, is a transiting M-dwarf planet at about 15 pc and has a small projected separation. They could, however, represent valuable data-points in terms of atmospheric-evolution, because their indepen-dently known radii allow the radii inferred from HWO’s reflected-light observables to be compared against an ex-ternal truth. Extending the HWO calculation toward Sun-like systems at distances approaching 15 pc would thus connect the radius-determination method to the broader question of which rocky planets retain Earth-like atmospheres over geological time. Our first-order treatment using assumptions of spec-trally flat Lambertian surfaces, a homogeneous disk, and clouds approximated as a thick Lambertian boundary define the path toward a fuller exploration of the exo-planet state space. APPENDIX  
+
+> A.
+
+CONDITIONING AND RADIUS-CONSEQUENCE CALCULATIONS This appendix gives the mathematical steps used for the conditioning, known-phase, and unknown-phase comparisons in Section 3. The reader-facing phase angle is 
+
+α = 180 ◦ − ϕpl , (A1) where ϕpl is the internal vSmartMOM coordinate used in the file names for the edge-on grid. The symbol α should be read as the star-planet-observer phase angle; it does not imply that a real observed system must be edge-on. For one epoch, the general state is 
+
+z = ( u, ρ surf , α ), u = ln τ400 . (A2) For N epochs with unknown phases this becomes 
+
+zN = ( u, ρ surf , α 1, . . . , α N ). (A3) When phase is known, α is fixed externally and the inferred atmosphere-surface state is 
+
+x = ( u, ρ surf ), u = ln τ400 . (A4) 20 For each atmosphere-surface state and phase, the forward model returns the disk-integrated quantities I360 , I400 ,
+
+Q400 , U400 , DOLP 360 , and DOLP 400 . The intensive observables are 
+
+SI (x, α ) = I360 (x, α ) − I400 (x, α )
+
+I400 (x, α ) , (A5) DOLP 400 (x, α ) = 
+
+pQ2400 (x, α ) + U 2400 (x, α )
+
+I400 (x, α ) , (A6) 
+
+SD (x, α ) = DOLP 360 (x, α ) − DOLP 400 (x, α )DOLP 400 (x, α ) . (A7) We collect them as 
+
+m(x, α ) = ( SI , DOLP 400 , SD )⊤. (A8) A.1. Local area metric 
+
+For known phase, the observable map is restricted to the two-dimensional state x = ( u, ρ surf )⊤. Its local sensitivity is 
+
+J(x; α) = ∂m
+
+∂x . (A9) The corresponding Gram matrix is 
+
+G(x; α) = J(x; α)⊤J(x; α), (A10) and the local area metric is 
+
+A(x; α) = pdet G(x; α). (A11) This is the infinitesimal area in observable space corresponding to a unit area in ( u, ρ surf ). For multiple known phases, the Gram matrices add, 
+
+Gstack (x) = X
+
+> i
+
+J(x; αi)⊤J(x; αi), (A12) so the plotted six-phase metric in Figure 3 is A6α = √det Gstack for α = (150 ◦, 120 ◦, 90 ◦, 60 ◦, 30 ◦, 5◦). Distinct phases improve the conditioning only when their sensitivity directions are not redundant. The phase-dependent disk reflectivity used for the radius consequence is Λ( x, α ) = I400 (x, α )
+
+Idisk 
+
+, Idisk = 32 I400 (τ400 = 0 , ρ surf = 1 , α = 0 ◦). (A13) The full-phase point α = 0 ◦ is used for this normalization, but is excluded from the unknown-phase trial set because it is not a direct-imaging geometric configuration. For a stated SNR referenced to I400 , the propagated uncertainties used to whiten the intensive observables are 
+
+σ(SI ) = 
+
+√2SNR 
+
+I360 
+
+I400 
+
+, (A14) 
+
+σ(DOLP λ) = 
+
+q
+
+1 + DOLP 2
+
+> λ
+
+SNR , (A15) 
+
+σ(SD ) = 1
+
+|DOLP 400 |
+
+σ(DOLP 360 )2 + (1 + SD )2σ(DOLP 400 )21/2 . (A16) For a true state a and trial state b, the symmetric whitening scale for observable component j is ¯σj (a, b ) = 12 [σj (a) + σj (b)] . (A17) Because SI becomes numerically unreliable when I360 and I400 differ only at the disk-integration floor, we include the intensity-color component in the distance metric only when the spectral difference is above this floor for both the true and trial states: 
+
+|I360 (x, α ) − I400 (x, α )| ≥ ϵfloor , ϵfloor = 3 × 10 −5. (A18) The present implementation applies this floor only to SI . An analogous floor for SD would be required in regions where either DOLP 400 or the 360-400 nm DOLP difference approaches the disk-integration floor. 21 A.2. Single-epoch known and unknown phase 
+
+For a single observation at true phase αtrue , the known-phase trial set fixes the trial phase to the true phase. The whitened distance is 
+
+d2known (a, b ) = X
+
+> j∈kept
+
+ mj (xb, α true ) − mj (xa, α true )¯σj (a, b )
+
+2
+
+. (A19) The posterior weight includes the state-cell volume, 
+
+wb(a) ∝ exp[ −d2known (a, b )/2] ∆ ub ∆ρb, Wb(a) = wb(a)
+
+P 
+
+> c
+
+wc(a) . (A20) In the unknown-phase bound, the trial phase is also varied over the sampled phase grid. The distance becomes 
+
+d2unknown (a, b ) = X
+
+> j∈kept
+
+ mj (xb, α b) − mj (xa, α true )¯σj (a, b )
+
+2
+
+, (A21) and the posterior weight is 
+
+wb(a) ∝ exp[ −d2unknown (a, b )/2] ∆ ub ∆ρb ∆αb, Wb(a) = wb(a)
+
+P 
+
+> c
+
+wc(a) . (A22) For a single epoch, the reflected flux satisfies 
+
+Fobs ∝ R2pΛ( x, α ). (A23) For the true state a and trial state b, matching the same measured flux gives 
+
+Rp2 
+
+> b
+
+Λb = Rp2
+
+> a
+
+Λa, Rpb
+
+Rpa
+
+=
+
+ Λa
+
+Λb
+
+1/2
+
+. (A24) For continuity with the albedo-degeneracy analysis in the main text, the linearized consequence is reported as 
+
+σ(Rp)
+
+Rp
+
+≃ 12
+
+σΛ
+
+Λa
+
+, (A25) where ¯Λ( a) = X
+
+> b
+
+Wb(a)Λ b, (A26) 
+
+σ2Λ(a) = X
+
+> b
+
+Wb(a)[Λ b − ¯Λ( a)] 2. (A27) A.3. Multi-epoch unknown-phase calculation 
+
+For N epochs, let the true phase tuple be 
+
+Atrue = ( αtrue ,1, . . . , α true ,N ). (A28) Known-phase trial states use Ab = Atrue . Unknown-phase trial states use an ordered tuple from the sampled phase grid, 
+
+Ab = ( αb, 1, . . . , α b,N ). (A29) The stacked intensive vector is 
+
+Mint (x, A ) = [ m(x, α 1), . . . , m(x, α N )] . (A30) Let αref denote the reference phase, chosen here as the brightest epoch in the multi-epoch set, 
+
+αref = αk∗ , k∗ = arg(max  
+
+> k
+
+(I400 (x, α k))) . (A31) 22 The normalized lightcurve-shape vector is 
+
+ℓi(x, A ) = I400 (x, α i)
+
+I400 (x, α ref ) , i = 1 , . . . , N. (A32) Equivalently, after ordering the phase tuple so that α1 = αref , the shape vector is ℓi = I400 (αi)/I 400 (α1). The full multi-epoch measurement vector is 
+
+y(x, A ) = [ Mint (x, A ), ℓ (x, A )] . (A33) The calculation uses the independent ratio approximation 
+
+σ(ℓi) = 
+
+√2 ℓi
+
+SNR , (A34) with the same symmetric whitening prescription as Equation A17. The multi-epoch distance is 
+
+d2multi (a, b ) = 
+
+> N
+
+X
+
+> k=1
+
+X
+
+> j∈kept k
+
+ mj (xb, α b,k ) − mj (xa, α true ,k )¯σj,k (a, b )
+
+2
+
++
+
+> N
+
+X
+
+> k=1
+
+ ℓk(xb, A b) − ℓk(xa, A true )¯σℓ,k (a, b )
+
+2
+
+. (A35) The corresponding weights are 
+
+wb, known (a) ∝ exp[ −d2multi (a, b )/2] ∆ ub ∆ρb, (A36) 
+
+wb, unknown (a) ∝ exp[ −d2multi (a, b )/2] ∆ ub ∆ρbNY
+
+> k=1
+
+∆αb,k , (A37) followed in each case by the normalization Wb(a) = wb(a)/ P 
+
+> c
+
+wc(a). For the radius consequence, define the true-state and trial-state reflectivity vectors 
+
+Λa = [Λ( xa, α true ,1), . . . , Λ( xa, α true ,N )] , (A38) 
+
+Λb = [Λ( xb, α b, 1), . . . , Λ( xb, α b,N )] . (A39) The observed flux vector is proportional to Rp2
+
+> a
+
+Λa. A trial state uses a fitted scale sb = ( Rpb/R pa)2, chosen by least squares: 
+
+sb = arg min 
+
+> sN
+
+X
+
+> i=1
+
+(sΛb,i − Λa,i )2. (A40) Differentiating with respect to s gives 0 = 2 X
+
+> i
+
+Λb,i (sbΛb,i − Λa,i ), (A41) and therefore 
+
+sb = Λb · Λa
+
+Λb · Λb
+
+, rb ≡ Rpb
+
+Rpa
+
+=
+
+ Λb · Λa
+
+Λb · Λb
+
+1/2
+
+. (A42) The plotted multi-epoch radius consequence is the posterior width of rb,¯r(a) = X
+
+> b
+
+Wb(a)rb, (A43) 
+
+σ2 
+
+> r
+
+(a) = X
+
+> b
+
+Wb(a)[ rb − ¯r(a)] 2, (A44) 100 σ(Rp)
+
+Rp
+
+= 100 σr (a). (A45) 23 The diagnostic RMSE about the true radius is RMSE r (a) = 
+
+"X
+
+> b
+
+Wb(a)( rb − 1) 2
+
+#1/2
+
+. (A46) For the unknown-phase case, the posterior phase spread at epoch k is ¯αk(a) = X
+
+> b
+
+Wb(a)αb,k , (A47) 
+
+σ2
+
+> α,k
+
+(a) = X
+
+> b
+
+Wb(a)[ αb,k − ¯αk(a)] 2, (A48) and the reported diagnostic phase spread is the epoch average 
+
+σα, reported (a) = 1
+
+N
+
+> N
+
+X
+
+> k=1
+
+σα,k (a). (A49) Finally, the known-phase and unknown-phase cases are limiting forms of a more general phase-prior calculation. Aprior p(Ab) would replace the uniform phase-volume factor by 
+
+> N
+
+Y
+
+> k=1
+
+∆αb,k −→ p(Ab)
+
+> N
+
+Y
+
+> k=1
+
+∆αb,k . (A50) 
+
+B. CONTINUOUS INVERSION USED FOR THE HWO RADIUS CONSEQUENCES The HWO-simulation radius consequences in Figure 10 are computed with a continuous lookup-table inversion, rather than by summing over the discrete trial states used in Appendix A. For N = 6 epochs, the inference vector is 
+
+x = ( u, ρ surf , α 1, . . . , α N )⊤, u = ln τ400 . (B51) For a given HWO case, the allowed state domain is 
+
+DHWO = {x : umin ≤ u ≤ umax , ρ min ≤ ρsurf ≤ ρmax , α min ≤ αi ≤ αmax } , (B52) where the phase bounds are the IWA- and exposure-limited interval for the corresponding target distance. The forward model is the Horak/ vSmartMOM table evaluated by cubic interpolation. For any tabulated quantity q, we write this interpolated value as 
+
+eq(u, ρ surf , α ) = Icub [q]( u, ρ surf , α ). (B53) The normalized 400 nm flux, or lightcurve-shape component, divides out one common brightness scale: 
+
+L400 i(x) = eI400 (u, ρ surf , α i)
+
+Iref (x) , i = 1 , . . . , N. (B54) Here Iref is a fixed reference intensity from the same modeled phase set. One component of L400 i is therefore unity by construction and carries no independent shape information. At each epoch, the full spectropolarimetric observable vector is 
+
+mfull  
+
+> i
+
+(x) = [ L400 i(x), SI (u, ρ surf , α i), DOLP 400 (u, ρ surf , α i), SD (u, ρ surf , α i)] ⊤ , (B55) with the spectral and polarization components defined as in Equation A7, but evaluated using the interpolated table. The no-polarimetry case retains only the intensity-color and normalized-flux components, 
+
+mnopol  
+
+> i
+
+(x) = [ L400 i(x), SI (u, ρ surf , α i)] ⊤ . (B56) Thus the modeled measurement vector for observable mode o ∈ { full , nopol } is 
+
+yo(x) = PL400 [mo
+
+> 1
+
+, . . . , moN ]⊤ . (B57) 24 The synthetic observation is generated at the retained phase set x∗,
+
+y∗,o = yo(x∗), (B58) and the inversion uses the full measurement covariance Co for the chosen SNR. The objective function is 
+
+χ2
+
+> o
+
+(x) = [ yo(x) − y∗,o ]⊤ C−1 
+
+> o
+
+[yo(x) − y∗,o ] . (B59) The reported best fit is 
+
+bx = arg min 
+
+> x∈D HWO
+
+χ2
+
+> o
+
+(x). (B60) Numerically, the minimization is carried out as a multistart search in the transformed bounded space; the lowest-χ2
+
+converged result is retained. The local covariance is then computed from the linearized map at the best-fitting state. Let 
+
+Jo = ∂yo
+
+∂x bx
+
+. (B61) The Gaussian approximation to the posterior is 
+
+χ2
+
+> o
+
+(bx + δx) ≃ χ2
+
+> o
+
+(bx) + δx⊤Hoδx, Ho = J⊤ 
+
+> o
+
+C−1 
+
+> o
+
+Jo, (B62) so that 
+
+Σx = H−1 
+
+> o
+
+. (B63) The radius is not fitted in the intensive-observable inversion. It is introduced only after the atmosphere-surface-phase covariance has been estimated. Define the six-epoch disk-brightness vector 
+
+Λ(x) = [Λ( u, ρ surf , α 1), . . . , Λ( u, ρ surf , α N )] ⊤ , (B64) with Λ defined by Equation A13. A perturbation δx changes the least-squares radius scale required to match the same absolute 400 nm fluxes. Linearizing Equation A42 gives 
+
+δ ln Rp = g⊤ 
+
+> R
+
+δx, g⊤ 
+
+> R
+
+= − 12
+
+Λ⊤ (∂Λ/∂ x)
+
+Λ⊤Λ bx
+
+. (B65) The plotted local-covariance radius consequence is therefore 100 σ(Rp)
+
+Rp
+
+= 100  g⊤ 
+
+> R
+
+ΣxgR
+
+1/2 . (B66) Because the synthetic observations in this diagnostic are evaluated at their exact model values, with the astrophysical noise budget affecting only the covariance, the best-fitting states recover x∗ to numerical precision. The plotted width is the local consequence of the adopted SNR and observable set, not the error of a noisy realization.  
+
+> C.
+
+HWO UV-A EXPOSURE-TIME FORMALISM This appendix documents the exposure-time calculation used for the six-phase HWO simulations in Section 5.2. For each trial phase angle, exposure times are computed independently in two 10 nm UV-A bands, 355-365 nm and 395-405 nm, represented by the 360 nm and 400 nm Horak/ vSmartMOM reflectivities. The required exposure time for that phase is the slower of the two bands. This ensures that both the intensity and polarization-slope observables can be measured at the target SNR. Let Φ ⋆,λ (λ) be the stellar photon spectral flux density at the observer, in photons m −2 s−1 nm −1. For the synthetic solar twins at distance d, this is computed from the ASTM E490 AM0 solar spectrum as Φ⋆,λ (λ; d) = FE490 (λ) λhc 
+
+ AU 
+
+d
+
+2
+
+, (C67) 25 where FE490 (λ) is the solar irradiance at 1 AU in W m −2 nm −1. The band-integrated photon flux is Φ⋆, band (d) = 
+
+Z
+
+> band
+
+Φ⋆,λ (λ; d) dλ. (C68) For real host stars, the implementation applies a simple blackbody color correction using the stellar effective temper-ature and luminosity. For the constructed solar twins used here, the correction is unity. The detected stellar count rate before coronagraphic suppression is 
+
+Ns = Φ ⋆, band (d)Atel T, Atel = πD 2tel 
+
+4 , (C69) with Dtel = 8 m and T = 0 .1 in the numerical examples. The phase-dependent planet-star contrast is 
+
+ϵ(α) = Λ( τ400 , ρ surf , α )
+
+ Rp
+
+a
+
+2
+
+, (C70) where Λ = Iband /I disk is obtained from the Horak/ vSmartMOM disk-integrated forward model. The detected planet count rate is 
+
+CR p = Υ ϵ(α) Ns, (C71) with Υ = 0 .69 inside the Stark photometric aperture X = 0 .7λ/D tel .The total background count rate is 
+
+CR b = CR star leak + CR zodi + CR exozodi . (C72) The residual stellar leakage term is 
+
+CR star leak = Υ RC N s, RC = 10 −10 . (C73) The photometric aperture solid angle is Ωap = π
+
+ Xλ c
+
+Dtel 
+
+2
+
+, (C74) where λc is the band center. The local-zodi and exozodi count rates are 
+
+CR zodi = Bzodi ,band Ωap Atel T, (C75) 
+
+CR exozodi = nexozodi Bexozodi ,band Ωap Atel T. (C76) The UV-A surface brightnesses are color-corrected from the V-band Stark surface-brightness anchors, 
+
+Bzodi ,band = 1
+
+θ2arcsec 
+
+Z
+
+> band
+
+F0,V 10 −0.4z Φ⊙(λ)Φ⊙(550 nm) dλ, (C77) 
+
+Bexozodi ,band = 1
+
+θ2arcsec 
+
+Z
+
+> band
+
+F0,V 10 −0.4x Φ⋆(λ)Φ⋆(550 nm) dλ, (C78) with F0,V = 9500 × 10 13 photons m −3 s−1, z = 23 mag arcsec −2, x = 22 mag arcsec −2, nexozodi = 3, and θarcsec =
+
+π/ (180 × 3600). The photon-limited Stark exposure time is 
+
+tStark = SNR 2 CR p + 2 CR b
+
+CR 2
+
+> p
+
+. (C79) The factor of two multiplying CR b follows the conservative background-subtraction convention used by Stark et al. (2014); the planet shot-noise term is included once. The corresponding Mennesson-style implementation is 
+
+tMennesson = SNR 2 CR p + 2 CR b
+
+CR 2 
+
+> p
+
+− SNR 2(Υ σ∆C Ns)2 . (C80) For all HWO examples in this manuscript bundle, σ∆C = 0, so tMennesson = tStark .26 ACKNOWLEDGEMENTS The work presented herein is supported by the National Aeronautics and Space Administration under a contract issued through the Astrophysics Division of the Science Mission Directorate (80NM0018D0004). This research was carried out at the Jet Propulsion Laboratory, California Institute of Technology, under contract with NASA. Copyright 2026. All rights reserved. REFERENCES 
+
+Balasubramanian, K., et al. 2011, in Proc. SPIE, Vol. 8151, Techniques and Instrumentation for Detection of Exoplanets V, 815104, doi: 10.1117/12.895018 Bhattacharyya, D., France, K., Rao, S., et al. 2026, The Astronomical Journal, 172, 27 Bodhaine, B. A., Wood, N. B., Dutton, E. G., & Slusser, J. R. 1999, Journal of Atmospheric and Oceanic Technology, 16, 1854, doi: 10.1175/1520-0426(1999)016 ⟨1854:ORODC ⟩2.0.CO;2 Bouret, J.-C., Neiner, C., G´ omez de Castro, A. I., et al. 2018, in Proc. SPIE, Vol. 10699, Space Telescopes and Instrumentation 2018: Ultraviolet to Gamma Ray, 106993B, doi: 10.1117/12.2312621 Breckinridge, J. B., Lam, W. S. T., & Chipman, R. A. 2015, Publications of the Astronomical Society of the Pacific, 127, 445, doi: 10.1086/681280 Brion, J., Chakir, A., Charbonnier, J., et al. 1998, Journal of Atmospheric Chemistry, 30, 291, doi: 10.1023/A:1006036924364 Buenzli, E., & Schmid, H. M. 2009, Astronomy & Astrophysics, 504, 259 Caldwell, J. 1975, Icarus, 25, 384, doi: 10.1016/0019-1035(75)90003-3 Carri´ on-Gonz´ alez, ´O., Garc´ ıa Mu˜ noz, A., Cabrera, J., et al. 2020, Astronomy & Astrophysics, 640, A136 Carri´ on-Gonz´ alez, ´O., Garc´ ıa Mu˜ noz, A., Santos, N. C., et al. 2021, Astronomy & Astrophysics, 655, A92 Cherubim, C., Vissapragada, S., Cunningham, T., et al. 2026, Science, doi: 10.1126/science.aea9708 Chubb, K. L., Karalidi, T., et al. 2026, arXiv e-prints Damiano, M., Hu, R., & Mennesson, B. 2023, The Astronomical Journal, 166, 157, doi: 10.3847/1538-3881/acefd3 Dittmann, J. A., Irwin, J. M., Charbonneau, D., et al. 2017, Nature, 544, 333, doi: 10.1038/nature22055 Feng, Y. K., Robinson, T. D., Fortney, J. J., et al. 2018, The Astronomical Journal, 155, 200 Goodis Gordon, K. E., Karalidi, T., Bott, K. M., et al. 2025, The Astrophysical Journal, 983, 168, doi: 10.3847/1538-4357/adc09c Gorshelev, V., Serdyuchenko, A., Weber, M., Chehade, W., & Burrows, J. P. 2014, Atmospheric Measurement Techniques, 7, 609, doi: 10.5194/amt-7-609-2014 Greene, T. P., Bell, T. J., Ducrot, E., et al. 2023, Nature, 618, 39, doi: 10.1038/s41586-023-05951-7 Groot, A., Rossi, L., Trees, V. J. H., Cheung, J. C. Y., & Stam, D. M. 2020, Astronomy & Astrophysics, 640, A121, doi: 10.1051/0004-6361/202037569 Hansen, J. E., & Hovenier, J. W. 1974, Journal of the Atmospheric Sciences, 31, 1137, doi: 10.1175/1520-0469(1974)031 ⟨1137: IOTPOV ⟩2.0.CO;2 Herman, J. R., & Celarier, E. A. 1997, Journal of Geophysical Research: Atmospheres, 102, 28003 Horak, H. G. 1950, Astrophysical Journal, vol. 112, p. 445, 112, 445 Huang, X., Schwenke, D. W., & Lee, T. J. 2019, Earth and Space Science, 6, 322, doi: 10.1029/2018EA000517 Jeyaram, R., Sanghavi, S., & Frankenberg, C. 2022, Journal of Open Source Software, 7, 4575 Kane, S. R., Bott, K. M., Goodis Gordon, K. E., et al. 2026, Publications of the Astronomical Society of the Pacific, 138, 024404, doi: 10.1088/1538-3873/ae417d Karalidi, T., & Stam, D. M. 2012, Astronomy & Astrophysics, 546, A56, doi: 10.1051/0004-6361/201219297 Kawabata, K., Coffeen, D. L., Hansen, J. E., et al. 1980, Journal of Geophysical Research, 85, 8129, doi: 10.1029/JA085iA13p08129 Kim, Y., et al. 2025, arXiv e-prints Kleipool, Q. L., Dobber, M. R., de Haan, J. F., & Levelt, P. F. 2008, Journal of Geophysical Research: Atmospheres, 113, D18308 Kreidberg, L., Koll, D. D. B., Morley, C., et al. 2019, Nature, 573, 87, doi: 10.1038/s41586-019-1497-4 Liu, A., Levine, M., Noecker, C., Sitarski, B., et al. 2026a, arXiv e-prints, doi: 10.48550/arXiv.2602.11046 Liu, A., et al. 2026b, arXiv e-prints Logan, J. A. 1983, Journal of Geophysical Research: Oceans, 88, 10785, doi: 10.1029/JC088iC15p10785 Lupu, R. E., Marley, M. S., Lewis, N., et al. 2016, The Astronomical Journal, 152, 217 27 
+
+Mamajek, E. E., & Stapelfeldt, K. R. 2024, arXiv e-prints, arXiv:2402.12414, doi: 10.48550/arXiv.2402.12414 Mennesson, B., Belikov, R., Por, E., et al. 2024, Journal of Astronomical Telescopes, Instruments, and Systems, 10, 035004 Millar-Blanchaer, M. A., Sanghavi, S., Wiktorowicz, S., et al. 2018, Polarimetry of exoplanets, White paper, National Academies of Sciences, Engineering, and Medicine, Committee on Exoplanet Science Strategy, Washington, D.C., doi: 10.17226/25187 M¨ uller, S., Baron, J., Helled, R., Bouchy, F., & Parc, L. 2024, Astronomy & Astrophysics, 686, A296 National Academies of Sciences, Engineering, and Medicine. 2021, Pathways to Discovery in Astronomy and Astrophysics for the 2020s (Washington, DC: The National Academies Press) Natraj, V., Li, K.-F., & Yung, Y. L. 2009, The Astrophysical Journal, 691, 1909 Nayak, M., Robinson, T. D., Marley, M. S., & Fortney, J. J. 2017, Publications of the Astronomical Society of the Pacific, 129, 044401 Saiz-Lopez, A., Plane, J. M. C., McFiggans, G., et al. 2004, Geophysical Research Letters, 31, L03111, doi: 10.1029/2003GL018956 Sander, R., Keene, W. C., Pszenny, A. A. P., et al. 2003, Atmospheric Chemistry and Physics, 3, 1301, doi: 10.5194/acp-3-1301-2003 Sanghavi, S., Davis, A. B., & Eldering, A. 2014, Journal of Quantitative Spectroscopy and Radiative Transfer, 133, 412 Sanghavi, S., & Shporer, A. 2018, The Astrophysical Journal, 866, 28 Sanghavi, S., & West, R. 2019, The Astrophysical Journal, 877, 134 Sanghavi, S., West, R., & Jiang, J. 2021, The Astrophysical Journal, 907, 30 Schlecker, M., Apai, D., Affholder, A., et al. 2025, The Astrophysical Journal, 987, 24, doi: 10.3847/1538-4357/add92c Shinohara, H. 2008, Reviews of Geophysics, 46, RG4005, doi: 10.1029/2007RG000244 Sprague, K. E., & Joens, J. A. 1995, Journal of Quantitative Spectroscopy and Radiative Transfer, 53, 349, doi: 10.1016/0022-4073(95)90011-X Stam, D. 2008, Astronomy & Astrophysics, 482, 989 Stark, C. C., Mennesson, B., Bryson, S., et al. 2024, Journal of Astronomical Telescopes, Instruments, and Systems, 10, 034006, doi: 10.1117/1.JATIS.10.3.034006 Stark, C. C., Roberge, A., Mandell, A., & Robinson, T. D. 2014, The Astrophysical Journal, 795, 122, doi: 10.1088/0004-637X/795/2/122 Tie, X., Zhang, R., Brasseur, G., & Lei, W. 2002, Proceedings of the National Academy of Sciences, 99, 14094, doi: 10.1073/pnas.182382799 Tomasko, M. G., Doose, L., Engel, S., et al. 2008, Planetary and Space Science, 56, 669, doi: 10.1016/j.pss.2007.11.019 Tomasko, M. G., & Smith, P. H. 1982, Icarus, 51, 65, doi: 10.1016/0019-1035(82)90030-6 Trees, V. J., & Stam, D. M. 2022, Astronomy & Astrophysics, 664, A172 Trees, V. J. H., & Stam, D. M. 2019, Astronomy & Astrophysics, 626, A129, doi: 10.1051/0004-6361/201935399 Vandaele, A. C., Simon, P. C., Guilmot, J. M., Carleer, M., & Colin, R. 1994, Journal of Geophysical Research: Atmospheres, 99, 25599, doi: 10.1029/94JD02187 Vandaele, A. C., Hermans, C., Simon, P. C., et al. 1998, Journal of Quantitative Spectroscopy and Radiative Transfer, 59, 171, doi: 10.1016/S0022-4073(97)00168-4 Veverka, J. 1973, Icarus, 18, 657, doi: 10.1016/0019-1035(73)90068-7 Vieira, A., et al. 2026, arXiv e-prints Wahner, A., Ravishankara, A. R., Sander, S. P., & Friedl, R. R. 1988, Chemical Physics Letters, 152, 507, doi: 10.1016/0009-2614(88)80450-0 West, R. A., & Smith, P. H. 1991, Icarus, 90, 330, doi: 10.1016/0019-1035(91)90113-8 West, R. A., Lane, A. L., Hart, H., et al. 1983, Journal of Geophysical Research: Space Physics, 88, 8699, doi: 10.1029/JA088iA11p08699 Zellner, B. 1973, Icarus, 18, 661, doi: 10.1016/0019-1035(73)90069-9 Zieba, S., Kreidberg, L., Ducrot, E., et al. 2023, Nature, 620, 746, doi: 10.1038/s41586-023-06232-z

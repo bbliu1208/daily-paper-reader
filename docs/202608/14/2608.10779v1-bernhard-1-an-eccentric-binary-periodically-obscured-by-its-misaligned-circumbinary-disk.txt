@@ -1,0 +1,420 @@
+Title: Bernhard-1: An Eccentric Binary Periodically Obscured by its Misaligned Circumbinary Disk
+
+URL Source: https://arxiv.org/pdf/2608.10779v1
+
+Published Time: Wed, 12 Aug 2026 01:10:10 GMT
+
+Number of Pages: 17
+
+Markdown Content:
+> Draft version August 12, 2026
+> Typeset using L ATEX twocolumn style in AASTeX7.0.1
+
+Bernhard-1: An Eccentric Binary Periodically Obscured by its Misaligned Circumbinary Disk 
+
+Zhecheng Hu ( 胡哲程) ,1 Wei Zhu ( 祝伟) ,1 Ping Chen ( 陈平) ,2 Richard Post, 3 and Weicheng Zang ( 臧伟呈) 4
+
+> 1Department of Astronomy, Tsinghua University, Beijing 10084, China
+> 2Institute for Advanced Study in Physics, Zhejiang University, Hangzhou 310058, People’s Republic of China
+> 3Post Observatory, Lexington, MA, USA
+> 4Department of Astronomy, Westlake University, Hangzhou 310030, Zhejiang Province, China
+
+ABSTRACT Bernhard-1 is a proposed KH 15D-like circumbinary disk occultation (CBO) system, but its binary nature and disk geometry have not previously been confirmed. We present new optical and near-infrared spectroscopy together with multi-band photometric monitoring of the system. The radial velocities confirm that Bernhard-1 hosts a highly eccentric binary with e = 0 .80 ± 0.09, confirming that the periodic photometric variability arises from occultation by a misaligned circumbinary disk. Joint modeling of the spectra and phase-dependent spectral energy distributions yields pre-main-sequence components with masses of ∼ 1.1 M⊙ and ∼ 0.8 M⊙. Combining stellar isochrones with the measured lithium abundance yields a system age of ∼ 10 Myr. Together with the spatial, astrometric, and metallicity properties of Bernhard-1, this suggests that Bernhard-1 is probably a member of the open cluster Dolidze 42. By combining the RV orbit with a semi-transparent occultation-screen model, we infer a disk–binary mutual inclination of roughly 50 ◦ or 130 ◦, with the degeneracy arising from the unknown disk rotation direction. This geometric method can be applied to any CBO system once radial velocity monitoring yields an orbital solution. The new light curves deviate from earlier model predictions, consistent with ongoing disk precession, while the phase-dependent H α profiles indicate pulsed accretion near periastron. Bernhard-1 therefore joins KH 15D and Bernhard-2 as a rare spectroscopically confirmed CBO system. 
+
+Keywords: Circumstellar disks; Variable stars; Spectroscopy; Pre-main sequence stars 
+
+1. INTRODUCTION Binary stars are common outcomes of star formation, with a multiplicity fraction of nearly 50% among field solar-type stars in the solar neighborhood (D. Raghavan et al. 2010; G. Duchˆ ene & A. Kraus 2013). Planets orbiting both stars in a binary, known as circumbinary planets (CBPs), therefore provide an important test of planet formation and orbital evolution in dynamically complex environments. To date, 17 CBPs have been confirmed, with 14 found by transit (e.g., L. R. Doyle et al. 2011; V. B. Kostov et al. 2020) and the rest by eclipse timing variations (M. Goldberg et al. 2023) or by a dedicated radial velocity survey such as the Binaries 
+
+> Corresponding author: Zhecheng Hu, Wei Zhu hzc22@mails.tsinghua.edu.cn weizhu@tsinghua.edu.cn
+
+Escorted By Orbiting Planets (BEBOP) survey (D. V. Martin et al. 2019). Of particular interest is the alignment between the bi-nary and planetary orbital planes. Transit detections, however, are biased toward coplanar systems, and all known transiting CBPs have mutual inclinations < 4.5◦
+
+(D. V. Martin & A. H. M. J. Triaud 2014; Z. Chen & D. Kipping 2022). Yet highly misaligned and even po-lar CBPs are predicted to exist, since the polar con-figuration is another stable attractor, especially for ec-centric binaries (e.g., R. G. Martin & S. H. Lubow 2017; J. J. Zanazzi & D. Lai 2018; A. C. Childs & R. G. Martin 2021). Demographic arguments based on the transiting sample suggest that, if giant planets occur with similar frequencies around single and binary stars, the observed yield is consistent with a coplanar CBP population (D. J. Armstrong et al. 2014; D. V. Mar-tin & A. H. M. J. Triaud 2014). However, this infer-arXiv:2608.10779v1 [astro-ph.SR] 11 Aug 2026 2ence remains indirect because highly inclined systems are intrinsically difficult to detect. The true mutual-inclination distribution of CBPs therefore still lacks di-rect observational constraints. Because circumbinary protoplanetary disks define the birth planes of circumbinary planets, their alignment distribution offers a useful proxy for the primordial in-clination distribution of CBPs. Many such disks are observed to be misaligned with eccentric central bina-ries (e.g., K. E. Kearns & W. Herbst 1998; R. K¨ ohler 2011; G. M. Kennedy et al. 2012, 2019; C. Brinch et al. 2016; S. Lacour et al. 2016; M. Fern´ andez-L´ opez et al. 2017; M. A. Kenworthy et al. 2022; Z. Hu et al. 2024). This misalignment appears especially common around binaries with intermediate orbital periods (30–10 5 days; I. Czekala et al. 2019), which are longer than those of the currently known transiting CBP hosts. Misaligned circumbinary disks therefore constrain both the initial conditions of CBP evolution and a binary parameter space largely inaccessible to the present CBP sample. Among misaligned circumbinary disks, the circumbi-nary disk occultation (CBO) systems, of which KH 15D is the prototype, are uniquely valuable (K. E. Kearns & W. Herbst 1998). In this configuration, a misaligned cir-cumbinary disk periodically occults the central binary, producing characteristic flux variations (E. I. Chiang & R. A. Murray-Clay 2004; J. N. Winn et al. 2004, 2006). Decades of photometric follow-up of KH 15D have re-vealed long-term changes in its light curve driven by disk precession, and detailed modeling has constrained the disk–binary mutual inclination to ∼ 15 ◦ and the disk warp to ∼ 10 ◦ (J. N. Winn et al. 2006; M. Poon et al. 2021). Such systems are therefore rare cases in which time-domain photometry, when combined with orbital information, can be converted into geometric constraints on a young circumbinary disk. Large-scale photometric surveys are now rapidly ex-panding the CBO sample, but spectroscopic confirma-tion lags far behind. More than 30 CBO candidates have been proposed from the Zwicky Transient Facility (ZTF, E. C. Bellm et al. 2019; F. J. Masci et al. 2019; W. Zhu et al. 2022; Z. Hu et al. 2026), the Optical Gravitational Lensing Experiment (OGLE, A. Udalski et al. 1997; A. Udalski 2003; A. Udalski et al. 2015; M. A. Urbanowicz et al. 2026), All-Sky Automated Survey for Supernovae (ASAS-SN, B. J. Shappee et al. 2014; C. S. Kochanek et al. 2017; R. For´ es-Toribio et al. 2025; N. L. Zakamska et al. 2025) and the VISTA Variables in the Via Lactea survey (VVV, D. Minniti et al. 2010; P. W. Lucas et al. 2024). Yet only one, Bernhard-2, has had its central bi-nary confirmed by the radial velocity (RV) method (Z. Hu et al. 2024), with e ≃ 0.7 and a potentially highly misaligned disk. In this work, we confirm Bernhard-1, which is the other candidate CBO system identified in W. Zhu et al. (2022), based on dedicated spectroscopic and multi-band photometric observations. Located at (20 h20 m55 .22 s, +38 ◦13 ′23 .1′′ ), Bernhard-1 is a 192-day system with r-band magnitudes of 17.30 outside occul-tation and 19.42 during occultation, making it both op-tically fainter and longer-period than Bernhard-2 (W. Zhu et al. 2022). The radial velocities reveal a highly eccentric central binary, confirming that the periodic variability arises from occultation by circumbinary ma-terial. We jointly model the spectra and spectral energy distributions (SEDs) to infer the stellar properties, and we model the light curve with a semi-transparent oc-cultation screen. Combining the screen geometry with the RV orbit yields a rough disk–binary mutual inclina-tion of 50 ◦ or 130 ◦. The light curve also shows long-term changes attributable to disk precession, while the phase-dependent H α profiles indicate pulsed accretion near pericenter passage. All of these features closely resemble the observations of KH 15D and Bernhard-2. The paper is organized as follows. Section 2 describes our spectroscopic and photometric observations. Sec-tion 3 infers the stellar parameters from the spectra and SEDs. Section 4 models the RV orbit, while Section 5 presents our semi-transparent occultation-screen model. Section 6 discusses the cluster association, lithium age, disk geometry, precession, and pulsed accretion. We summarize our conclusions in Section 7.  
+
+> 2.
+
+OBSERVATIONS AND DATA REDUCTION 2.1. GTC/OSIRIS 
+
+We obtained seven spectra of Bernhard-1 between 2025 June 18 and August 21 with the OSIRIS instru-ment (J. Cepa 2010) installed on the 10.4 m Gran Tele-scopio Canarias (GTC). Observations were taken at ran-dom orbital phases during the out-of-occultation win-dows. We used the long-slit mode of OSIRIS, with the R2500R grism and a slit width of 0.6 ′′ for Bernhard-1. This yields a wavelength coverage from 5575 ˚ A to 7685 ˚A and a spectral resolution of ∼ 2500. The exposure time is 900 s for Bernhard-1. The GTC data were reduced with the PypeIt 5 pack-age (J. X. Prochaska et al. 2020a,b) following the stan-dard process. We refined the wavelength solution after the lamp calibration by calibrating the telluric emis-sion lines to the sky spectrum model, following Z. Hu  
+
+> 5https://pypeit.readthedocs.io/en/latest/
+
+36120 6140 6160 6180 6200 6220 6240 6260 0.4 0.5 0.6 0.7 0.8 0.9 1.0 
+
+> Normalized Flux
+
+(a) GTC/OSIRIS coadd ( F1/F2 4.0 )      
+
+> Observed Primary ( Teff = 5069 K) Secondary ( Teff = 4199 K)
+> 10750 10800 10850 10900 10950
+
+Wavelength (Å) 
+
+> 0.875 0.900 0.925 0.950 0.975 1.000 1.025
+> Normalized Flux
+
+(b) MMT/MMIRS ( F1/F2 0.6 )
+
+Figure 1. Comparison between the combined GTC/OSIRIS spectra, obtained out of occultation, and the MMT/MMIRS spectrum, obtained at the end of ingress. The upper panel shows the combined GTC spectrum, in which the flux ratio between the primary and the secondary F1/F 2 in the corresponding wavelength range is about 4.0. The lower panel shows the MMT/MMIRS observation, which was obtained when F1/F 2 ∼ 0.6 in the corresponding wavelength. The black curves and shaded bands indicate the observed spectra and the corresponding uncertainties. The blue solid line and the orange dashed line show the synthesized stellar spectra using the best-fit stellar parameters in Table 2 for the primary and secondary star, respectively. The blue shaded rectangle in the lower panel indicates the He I 10830 line, which shows emission and does not align well with either templates. 
+
+et al. (2024). Specifically, we extracted the observed sky emission lines with PypeIt and compared them to the wavelengths of the sky spectrum model, available on the GTC website 6. Applying the same procedure of Z. Hu et al. (2024), we obtained a per-resolution wavelength uncertainty of ∼ 0.2 ˚ A based on the internal scatter. At 
+
+∼ 6500 , ˚A, with more than 30 spectral lines contribut-ing to the RV measurement, this wavelength uncertainty corresponds to a velocity uncertainty of ∼ 1 to 2 km , s−1
+
+(e.g., F. Bouchy et al. 2001). The sixth GTC observa-tion has a relatively larger wavelength uncertainty of 
+
+∼ 0.36 ˚ A, and thus is assigned a larger RV noise during modeling. 2.2. MMT/MMIRS 
+
+We obtained two spectra of Bernhard-1 with the MMIRS instrument (B. McLeod et al. 2012) on the 6.5 m  
+
+> 6https://www.gtc.iac.es/instruments/osiris+/media/sky/ sky res2500.txt
+
+MMT Telescope on 2025 September 10 and November 3. The two observations were conducted during the ingress of the occultation as well as the occultation itself. We used the zJ filter with the J grism, with a 0.6 ′′ slit width in the long-slit mode. This yields a wavelength coverage from 0.9 μm to 1.5 μm and a spectral resolu-tion of ∼ 2000. The exposure times are 7200 s for each observation. Note that the ingress observation has the low noise gain configuration (gain=0.95), while the oc-cultation observation has the high dynamical range gain configuration (gain=2.68) 7.The MMIRS data were reduced using two pipelines because the official data product for the second ob-servation exhibited strong systematics. In addition to the standard product from the SAO Telescope Data Center using the IDL pipeline (I. Chilingarian et al.  
+
+> 7See the MMIRS Observer’s Manual: https://lweb.cfa.harvard. edu/mmti/mmirs/MMIRSObsManual.pdf.
+
+42015), we developed a customized pipeline 8. The two pipelines yield generally consistent results, except that our custom pipeline yields fewer outliers due to a different up-the-ramp fitting algorithm. We therefore use the customized pipeline for further reductions. In this pipeline, we combined the up-the-ramp fitting code 
+
+fitramp 9 (T. D. Brandt 2024a,b) with the PypeIt pack-age. While our code, which wraps fitramp , yields ramp-fitted and overscan-corrected dark, flat, and science im-ages, PypeIt handles with the standard calibrations for a typical long-slit spectrum. While the reductions yield SNRs of about 150 and 70 for the ingress and occultation observations, we found that the observation during occultation with gain=2.68 suffers severely from systematics. The median absolute deviations (MADs) for the two observations are about two and seven times larger than those derived from the pipeline-produced noise, respectively, which means that the observations during occultation are severely affected by systematics. Therefore, we only use the MMIRS ob-servation during ingress for further modeling. 2.3. Photometric Observations 
+
+We have obtained photometric observations from the ZTF as well as the Post Observatory. For the ZTF data, we retrieved the ZTF g, r, and i band light curve from ZTF DR24 after JD 2460800, within a range of 1.5 arcsec from Bernhard-1. We retained only observations with good quality flags, i.e., catflags < 32768 (F. J. Masci et al. 2019). We performed follow-up photometric observations of Bernhard-1 using the telescopes operated by Post Ob-servatory (hereafter PO) from 2024 July 14 to 2025 September 9. The images were taken with a Corrected Dall-Kirkham 17-inch telescope (hereafter CDK17), a Corrected Dall-Kirkham 24-inch telescope (hereafter CDK24), and a Ritchey-Chretien 32-inch telescope (hereafter RC32). The CDK17 telescope is located at Trenton, Maine, USA, and both the CDK24 and RC32 telescopes are located at Mayhill, New Mexico, USA. Basic image reductions, including bias subtraction, dark subtraction, and flat fielding, have been performed with the MaxIm DL Version 6.50 software. We per-formed point-spread function (PSF) photometry for Bernhard-1 and the reference objects in the field of each image using DoPHOT (P. L. Schechter et al. 1993; J. Alonso-Garc´ ıa et al. 2012). The photometric calibra-tion is against the SDSS magnitudes transformed from   
+
+> 8https://github.com/zhechenghu/mmt-mmirs-up-the-ramp-pypeit
+> 9https://github.com/t-brandt/fitramp
+
+the Pan-STARRS photometric catalog (H. A. Flewelling et al. 2020). All the photometry procedures follow the method outlined in P. Chen et al. (2022).  
+
+> 3.
+
+STELLAR PARAMETER MODELING 3.1. Spectral Fitting 
+
+We model each spectrum with a single-star template, because one star dominates the observed flux in each observation. Outside occultation, the secondary con-tributes only ∼ 0.16 of the total flux in the wavelength range of the low-resolution GTC spectra, similar to the case of Bernhard-2 (Z. Hu et al. 2024), so we use the GTC/OSIRIS spectra to derive the stellar parameters and RVs of the primary star. The MMT/MMIRS spec-trum, in contrast, was obtained during ingress, when the primary contributes about one-third of the total flux. We therefore use its single-star fit only as a consistency check rather than as an unbiased measurement, noting also that its RV may be distorted by a line-profile ef-fect during partial occultation analogous to the Rossiter-McLaughlin effect (R. A. Rossiter 1924; D. B. McLaugh-lin 1924), which is believed to affect RV measurement of KH 15D (J. N. Winn et al. 2006). We fit the spectra with starfish (I. Czekala et al. 2015), which interpolates synthetic spectral grids and models correlated residuals with a Gaussian Process (GP), reducing the biases in the inferred stellar param-eters caused by imperfect templates and observational systematics. Separate optical and NIR emulators were trained for the GTC and MMT spectra, covering 588– 684 nm and 996–1350 nm, respectively. The underlying grids were generated with iSpec (S. Blanco-Cuaresma 2019), using the SPECTRUM radiative-transfer code (R. O. Gray & C. J. Corbally 1994), ATLAS9 model atmospheres (F. Castelli & R. L. Kurucz 2003), the N. Grevesse & A. J. Sauval (1998) solar abundance scale, and the VALD linelist (T. Ryabchikova et al. 2015). Both grids span Teff =4000–6000 K, log g =3.0–5.0, and [Fe /H] = −1.5 to 0.5, with spacings of 200 K, 0.5 dex, and 0.3 dex, respectively. Microturbulent and macro-turbulent velocities were estimated using the empiri-cal prescriptions implemented in iSpec . Although the young stars like Bernhard-1 may rotate more rapidly, line broadening in our spectra is dominated by the low spectral resolution. As a result, we fix the projected ro-tational velocity to 1.60 km s −1 and the limb-darkening coefficient to 0.6 (D. F. Gray 2005). Because our grids are continuum-flattened, we removed the Planck scaling term from the GP covariance matrix, which is designed for flux-calibrated grids such as the PHOENIX library (e.g., T.-O. Husser et al. 2013). 5
+
+Table 1. GTC/OSIRIS RV data of Bernhard-1 used in the orbit modeling. Here BJD ′ =BJD −2460000. The RV uncer-tainties include the 1 km s −1 RV noise floor.                            
+
+> Date (UTC) BJD ′RV (km s −1)σRV (km s −1)2025-06-18 844.613 -6.03 1.74 2025-06-25 851.557 4.73 1.68 2025-07-04 860.610 25.28 1.82 2025-07-13 870.464 9.13 2.23 2025-07-28 885.497 -10.59 1.69 2025-08-11 a899.446 -17.46 5.10 2025-08-21 908.516 -5.87 1.60
+> a
+
+The observation with relatively worse wavelength un-certainty. 
+
+The optical and NIR spectra were fit with slightly different sampling strategies. For the optical spectra, we adopted uniform priors within the grid for Teff and [Fe /H], and a prior on log g from an initial SED fitting (Section 3.2), because low-resolution spectra alone con-strain surface gravity only weakly (M. S. Xiang et al. 2015). We first optimized the third-order Chebyshev baseline, stellar parameters, and GP hyper-parameters with the Nelder-Mead method (J. A. Nelder & R. Mead 1965) implemented in scipy (P. Virtanen et al. 2020) for all the optical spectra. We then fixed the GP hyper-parameters and sampled the posterior around the best fit with emcee for the seven spectra (D. Foreman-Mackey et al. 2013). For the single usable NIR spec-trum, we directly sampled the posterior with free GP hyper-parameters. We adopt the GTC-derived stellar parameters and RVs with additional systematic noise floors to down-stream modeling. As low-resolution spectra are known to suffer from systematic uncertainties, we added noise floors of 100 K in Teff , 0.3 dex in log g, 0.1 dex in metal-licity. An RV noise floor of 1 km/s will be added as a jit-ter term in RV modeling process. These noise values are comparable to the reported uncertainties of high-SNR LAMOST spectra (M. S. Xiang et al. 2015) and previous GTC/OSIRIS stellar spectra (e.g., D. S. Aguado et al. 2021). The best-fit primary parameters, Teff ,1 ≈ 5100 K with the corresponding log g1 and [Fe /H], are used as a prior in the SED fitting, and the RV measurements are listed in Table 1. The phase dependence of the observed spectra pro-vides evidence for the binary nature of Bernhard-1 inde-pendent of the RV measurements. While the GTC and MMIRS metallicities agree within 1 σ, the MMIRS spec-trum yields a substantially cooler effective temperature of ∼ 4400 K than the GTC value of ∼ 5100 K. Figure 1 compares the combined out-of-occultation GTC spec-
+
+Table 2. The adopted SED, spectral, RV, and static-screen best-fit parameters for Bernhard-1, as well as inferred prop-erties marked with ∗. The subscripts 1 and 2 indicate the primary and secondary star in the binary, respectively. Here BJD ′ =BJD −2460000.                                                                                                                    
+
+> Parameter Symbol Value
+> SED and spectral fitting
+> S1 EEP EEP 1175 ±4S2 EEP EEP 2165 ±5Log of age (yr) log Age 6.99 ±0.13 Metallicity a[Fe /H] −0.22 ±0.10 Distance d(kpc) 1.20 ±0.12 Extinction AV(mag) 3.17 ±0.14 S1 Effective Temp. aTeff ,1(K) 5050 ±120 S1 Surface Gravity alog g1(cgs) 4.27 ±0.06 S1 Mass M∗
+> 1(M⊙)1.11 ±0.09 a
+> S1 Radius R∗
+> 1(R⊙)1.28 ±0.14 S2 Effective Temp. T∗
+> eff ,2(K) 4200 ±90 S2 Surface Gravity log g∗
+> 2(cgs) 4.29 ±0.06 S2 Mass M∗
+> 2(M⊙)0.82 ±0.06 S2 Radius R∗
+> 2(R⊙)1.07 ±0.10
+> RV fitting
+> Orbital period (fixed) P(d) 191 .41 (fixed) Periastron time TP(BJD ′)863 .9+0 .9
+> −3.3
+> Eccentricity e0.80 +0 .09
+> −0.08
+> Argument of periastron ω1(deg) 4+4
+> −10
+> RV semi-amplitude K1(km s −1)27 +29
+> −7
+> System velocity γ(km s −1)−5.8+1 .3
+> −1.5
+> Binary Separation a∗
+> b(AU) 0.79 +0 .07
+> −0.03
+> Inclination estimate i∗
+> b(deg) 54 +8
+> −12
+> Light-curve / occultation fitting
+> Screen angle θ0(deg) 128 .94 ±0.08 Screen offset |d0|(AU) 0.4094 ±0.0004 Opacity scale s0(AU) 0.03336 ±0.00018
+> a
+
+These quantities are constrained by both the GTC spec-tral and SED fitting. 
+
+trum with the MMIRS spectrum obtained near the end of ingress. The warmer primary-star template matches the GTC spectrum better, whereas the cooler secondary-star template better matches the MMIRS spectrum, in which the secondary contributes the majority of the ob-served flux. 3.2. SED Fitting 
+
+Following Z. Hu et al. (2024) and Z. Hu et al. (2026), we constrain the physical parameters of both stars by simultaneously fitting the out-of-occultation and in-occultation SEDs, which measure the total flux of the binary and the flux of the secondary, respectively. The SED model is built on the isochrones package (T. D. Morton 2015), which interpolates the MESA Isochrones and Stellar Tracks (MIST, J. Choi et al. 2016; A. Dotter 2016) to predict broadband magnitudes. The magnitude 6of a single star in band B is given by 
+
+mB = f (EEP , log age , [Fe /H] , d, A V ) (1) where EEP is the equivalent evolutionary phase (A. Dotter 2016), d is the distance, and AV is the V -band extinction, for which we adopt the J. A. Cardelli et al. (1989) law with RV = 3.1. Assuming the two stars are coeval, they share all parameters ex-cept their EEPs, giving six free parameters in total: (EEP 1, EEP 2, log age , [Fe /H] , d, A V ). The model out-of-occultation magnitude in each band is the sum of the two stellar fluxes, while the in-occultation magnitude is that of the secondary alone. The SED fitting is performed on the photometry com-piled in W. Zhu et al. (2022), together with the Gaia 
+
+DR3 parallax as a Gaussian prior on the distance. Anoise floor of 0.03 mag is added in quadrature to all photometric uncertainties to account for calibration sys-tematics and imperfections in the stellar models. The WISE W3 and W4 measurements are excluded because they show clear infrared excess. We first locate the maximum-likelihood solution by optimizing the total log-likelihood, and then sample the posterior with emcee 
+
+(D. Foreman-Mackey et al. 2013). Because the SED and spectral analyses constrain com-plementary parameters, we iterated between them to get a converged solution. The log g1 posterior from an ini-tial SED run was adopted as the prior for the GTC spectral fitting as described in Section 3.1, because low-resolution spectra alone constrain it only weakly. The spectroscopic Teff ,1, log g1, and [Fe /H] of the primary, with the systematic noise floors described in Section 3.1, were then applied as priors on the second, final SED run. The best-fit parameters and uncertainties are listed in Table 2, and the corresponding model SEDs are com-pared with the photometry in Figure 2. As an independent consistency check, we compare the derived secondary temperature with the MMIRS spec-trum fitting result. Although the MMIRS spectrum was taken during ingress and is thus contaminated by the primary, which still contributes ∼ 1/3 of the flux, its fit-ted temperature of ∼4400 K is substantially lower than that of the primary and reasonably close to the derived 
+
+Teff ,2 = 4200 ±90 K, supporting the SED decomposition.  
+
+> 4.
+
+RV MODELING We fit a Keplerian orbit to the seven GTC radial velocities to constrain the orbital elements of the bi-nary. The MMT/MMIRS RV is excluded from the fit because the observation was taken during partial occul-tation, where the asymmetric obscuration of the stellar disk biases the line profile in a manner analogous to the 10 0 10 1
+
+Wavelength ( m)      
+
+> 10 10
+> 10 11
+> 10 12
+> F (Jy Hz)
+> Pan-STARRS 2MASS WISE
+> Primary Secondary Total
+> Figure 2. Photometric measurements and the best-fit SED models of Bernhard-1. The red, purple, and pink markers represent data from Pan-STARRS, 2MASS, and WISE, re-spectively. Circles show the out-of-occultation photometry, fit by the total, i.e., primary plus secondary, model SED, and squares show the in-occultation photometry, fit by the secondary-only model SED. The WISE W3 and W4 mea-surements are excluded from the fit due to infrared excess and marked with crosses.
+
+Rossiter–McLaughlin effect (R. A. Rossiter 1924; D. B. McLaughlin 1924; J. N. Winn et al. 2006). The RV model is parameterized by six quantities: the orbital period P , the RV semi-amplitude K1, the ec-centricity e, the argument of periastron ω1, the time of periastron passage TP , and the systemic velocity γ. We fix P = 191 .41 days, obtained by refitting the W. Zhu et al. (2022) sharp-edge occultation model to the com-bined archival and new photometry. The remaining five parameters are sampled with uniform priors over physi-cally permitted ranges using the radvel package (B. J. Fulton et al. 2018) with emcee (D. Foreman-Mackey et al. 2013). We adopt a fixed RV jitter of 1 km s −1 added in quadrature to every measurement uncertainty, as a noise floor for low-resolution spectroscopy. The sixth GTC epoch, which has a larger wavelength calibration un-certainty of ∼0.36 ˚ A , receives conservative larger noise of 5 km s −1 to account for potential systematics. We verified this noise treatment by repeating the fit with the jitter as a free parameter drawn from a log-uniform prior. The jitter posterior piles up toward zero, suggest-ing that the measurement uncertainties introduced by the GP covariance matrix already account for most of the systematics. We nonetheless adopted the 1 km s −1
+
+floor to be conservative. 720                                  
+
+> 020 40
+> RV (km/s)
+> 1234567
+> K= 27 +29 7km/s
+> e= 0.80 +0.09 0.08
+> (a) 1
+> Best-fit model GTC/OSIRIS+
+> 800 825 850 875 900 925 950 975
+> Time (JD 2460000)
+> 17 18 19 20 21
+> Magnitude
+> ZTF r
+> ZTF g
+> PO r+1 mag PO i
+> (b)
+> 1234567
+> 0.6 0.4 0.2 0.0 0.2 0.4 0.6 0.8
+> X (AU)
+> 0.4
+> 0.2
+> 0.0 0.2 0.4
+> Y (AU)
+> LOS
+> (c)
+> = 0.01
+> = 1
+> = 100  Primary Secondary
+> 0
+> d0
+> 700 750 800 850 900 950
+> Time (JD 2460000)
+> 17.5 18.0 18.5 19.0 19.5
+> Magnitude
+> (d) Total Primary Secondary
+
+Figure 3. Radial velocity and photometric data, best-fit models, and the geometric configuration of Bernhard-1. (a) Radial velocity curve. The black line and gray shading show the best-fit Keplerian model and its 1 σ uncertainty. Blue circles are the GTC/OSIRIS measurements used in the fit. Numbers label the epoch indices. (b) Multi-band light curves. Green diamonds, red circles, pink squares, and purple triangles denote ZTF g, ZTF r, PO r with +1 mag offset, and PO i, respectively. Solid curves are the best-fit semi-transparent screen model in each band. (c) Projected orbital geometry and occultation screen. Blue solid and orange dashed ellipses trace the primary and secondary orbits; the plus sign marks the barycenter. Numbered markers correspond to the RV epochs in panel (a), with the clockwise sense indicating the direction of orbital motion. Note that the 
+
+Y -axis is inverted so that the Z-axis points away from the observer. The solid, dashed, and dash-dotted black lines mark the loci where the screen optical depth τ = 1, 0.01, and 100, respectively. The double arrow and arc indicate the projected screen offset d0 and orientation angle θ0. (d) Decomposed flux contributions in ZTF r. The black, blue, and orange dashed curves show the total, primary, and secondary flux, respectively. The primary dominates the occultation depth, while the secondary remains nearly unobscured throughout the orbit. 
+
+The best-fit orbit is highly eccentric with e ≈ 0.80. All fitted parameters and uncertainties are listed in Ta-ble 2. Combining the radial velocity with the SED-derived masses M1 and M2 yields the semi-major axis 
+
+a ≈ 0.79 AU and an orbital inclination ib ≈ 54 ◦. These quantities, together with e, ω1, and TP , fully specify the projected orbit shape on the sky. The orientation of the orbit is still unknown without a measurement of the longitude of the ascending node Ω. 
+
+5. LIGHT CURVE MODELING We model the multi-band light curves in two steps: the sharp-edge occultation model of W. Zhu et al. (2022) is used only to refine the orbital period, while a new, physically motivated semi-transparent screen model is used to characterize the occulting material and geome-try. The physical model is required because, although the W. Zhu et al. (2022) model fits the light curve well, it implies an unrealistically slow transverse velocity of 
+
+∼ 0.1 R⋆ per day, an order of magnitude lower than the apocentric velocity of an equal-mass solar binary with 
+
+e = 0 .8 on a 200-day orbit. We also tested the J. N. Winn et al. (2006) model, but this model converges ef-fectively to a similar semi-transparent screen model, as explained at the end of this section. We first refit the sharp-edge model of W. Zhu et al. (2022) to the combined archival and new photometry to determine the orbital period. This model assumes an opaque, straight occulting edge and no limb darkening across the stellar photosphere, so that the occultation with orbital period P is fully characterized by the ve-locities ( vin , vout ) and timings ( tin , tout ) of the primary 8304.6 304.8 305.0 305.2 305.4 305.6 305.8                    
+
+> (deg)
+> 37.8 38.0 38.2 38.4 38.6 38.8
+> (deg)
+> (a)
+> Dolidze 42 LP 2179 HSC 599 Berkeley 86
+> Bernhard-1
+> r50
+> rtot
+> 4.5 4.0 3.5 3.0 2.5 2.0 1.5 1.0
+> *(mas yr 1)
+> 7.5
+> 7.0
+> 6.5
+> 6.0
+> 5.5
+> 5.0
+> 4.5
+> 4.0
+> (mas yr  1)
+> Field Median
+> (b)
+> 0500 1000 1500 2000 2500 3000
+> Distance (pc)
+> 10 4
+> 10 3
+> 10 2
+> 10 1
+> Density
+> (c)
+> 0.4
+> 0.2
+> 0.0
+> [M/H]
+> Dol 42 Member Star (Gaia RVS) Bernhard-1 Optical Spectra + SED Bernhard-1 NIR Spectrum
+> (d)
+
+Figure 4. The astrometric properties of Bernhard-1 and nearby clusters, together with the comparison of metallicity between Bernhard-1 and Dolidze 42. Panel a: The sky distribution of four closest open clusters, where the solid lines represent the 50% cluster membership and dashed lines the total cluster radius (E. L. Hunt & S. Reffert 2024). Panel b: Proper motions of the identified cluster members, Bernhard-1, and a sample of nearby field stars in Gaia DR3. The field stars are shown as gray points and the median of them are shown as the black cross. Panel c: Normalized histograms of the distance of nearby open clusters and the posterior distribution of the distance constrained by the parallax and the SED. Panel d: The metallicity of one of the Dolidze 42 members and Bernhard-1. Note that Gaia RVS measurements are not available for the members in other nearby open clusters. 
+
+star relative to the edge at ingress and egress. We re-fer the reader to W. Zhu et al. (2022) for details. The model yields P = 191 .41 ± 0.07 days, which is held fixed in the RV modeling of Section 4. Our physical model represents the occulter as astatic, semi-transparent screen projected onto the sky plane. We assume the projected column density varies smoothly across the edge relative to the stellar radius. We approximate the variation in optical depth of the screen edge as an exponential profile 
+
+τ (s) = τ0 exp ( −s/s 0) . (2) Here s0 is the characteristic scale length. The exponen-tial profile in optical depth comes naturally out of an exponential projected column-density profile. We adopt a sky-plane coordinate system centered on the binary center of mass, with the x-axis pointing toward the as-cending node. The screen edge is specified by its perpen-dicular offset d0 from the origin and by its orientation angle θ0, measured from the x-axis in the direction of the projected orbital motion of the primary (see panel c of Figure 3). The edge position d0 is so defined that the optical depth τ0 = 1. For an arbitrary sky-plane position r = ( x, y ), we define the signed distance from the edge as 
+
+s ≡ ˆqθ · r − d0 = x sin θ0 − y cos θ0 − d0, (3) where ˆ qθ = (sin θ0, − cos θ0) is the unit normal to the screen edge. Points with s > 0 lie on the more transpar-ent side of the screen, where τ < 1 and approaches zero far from the edge, whereas points with s < 0 lie deeper inside the screen, where τ > 1. We treat both stars as point sources, as the scale length s0 ≈ 0.033 AU is several times larger than the stellar radii. The total observed flux is 
+
+Ftot = F1 e−τ (s1) + F2 e−τ (s2), (4) where sj is the signed distance of star j from the screen edge, and F1 and F2 are the unobscured fluxes of the two stars in a given band. In practice, F1 and F2 are deter-mined by linear regression for each trial set of screen parameters, so they are profiled out rather than sam-pled. We fix the orbital motion of the binary to the best-fit solution from the RV modeling. Fitting the physical model to the multi-band light curves yields a tightly constrained screen geometry. We fit the ZTF g, r, and the PO r and i photometry from JD 2460775 to 2460975 simultaneously, sampling the poste-rior of ( θ0, d 0, s 0) with emcee (D. Foreman-Mackey et al. 2013) under uniform priors. The best-fit parameters are listed in Table 2, and the best-fit model is compared with the data in panel (b) of Figure 3. As shown by the flux decomposition in panel (d), the occultation depth is dominated by the primary, while the secondary remains nearly unobscured throughout the orbit. For completeness, we also apply the model of J. N. Winn et al. (2006), and conclude that this model does not yield a physically meaningful solution in the case of Bernhard-1. This model describes the occultation of limb-darkened stars, each surrounded by a halo with 9an exponential brightness profile, by an opaque sharp edge. Applying it to Bernhard-1, the model always con-verged to an unrealistic solution in which the halo is far brighter than the central stars, and forcing the halo to be fainter than the star would substantially degrade the goodness of the fit. Because the preferred solution ob-scures an effectively exponential brightness profile with a sharp edge, it is mathematically equivalent to block-ing a point source with an exponential transmission pro-file. We therefore conclude that the J. N. Winn et al. (2006) model qualitatively converges into the same semi-transparent screen model, although it is not exactly the same as the one we have adopted.  
+
+> 6.
+
+DISCUSSION 6.1. Cluster Identification 
+
+To independently constrain the age, metallicity, and distance of Bernhard-1, we investigated whether it is as-sociated with any known open cluster (OC) or moving group (MG). We compared the system with the OC/MG catalog of E. L. Hunt & S. Reffert (2024) by cross-matching it using the Gaia DR3 sky coordinates and proper motions, along with the SED-derived distance that employs the Gaia parallax as a prior. A direct membership check first shows that the Gaia DR3 source ID of Bernhard-1 is not listed as a member of any cataloged OC or MG. We therefore searched for all OC/MGs whose centers lie within 30 ′ of Bernhard-1, yielding six spatial candidates. Of these, only four fall within 10 σ of Bernhard-1 in proper-motion space, ac-counting for both the measurement uncertainty and the intrinsic cluster scatter, and only Dolidze 42 (hereafter D42) lies within the 3 σ region (panel b of Figure 4). The distance provides an independent filter with the same outcome, that only D42 agrees with Bernhard-1 within 3σ (panel c). We use the metallicity as a final sanity check. Gaia RVS metallicities are unavailable for the members of most nearby candidate clusters. Among the candidates considered here, only one D42 member has a Gaia RVS metallicity measurement, and its metallicity is broadly consistent with our GTC and MMT values (panel d). Despite the qualitative agreement between properties of D42 and Bernhard-1, the membership probability re-mains limited by the distance uncertainty. To quan-tify it, we trained a seven-component Gaussian mixture model (GMM) in proper-motion-parallax space, fixing six components to the means and covariances of the member astrometry of each candidate cluster and fitting one additional component to the field-star population. Drawing 10 4 samples from the Bernhard-1 posterior in this space yields a ∼ 30% probability that Bernhard-1 is a D42 member, against ∼ 70% for the field. This mod-est probability is driven almost entirely by the distance uncertainty, which is large compared with the distance scatter of the D42 members. As shown in the follow-ing subsection, the lithium- and SED-derived ages are nonetheless consistent with the age of D42, which inde-pendently supports the association. 6.2. Lithium Abundance and Age Determination 
+
+The GTC/OSIRIS spectra cover the Li I 6708 ˚ A line, which provides an independent age estimate that tests both the youth of Bernhard-1 and its association with D42. Following the procedure adopted for Bernhard-2 (Z. Hu et al. 2024), we measured the lithium abun-dance using the same spectral-synthesis settings as in Section 3.1. We built a grid spanning A(Li) = 0 .0–6 .0 in steps of 0.1 dex and effective resolving power R = 1500– 3500 in steps of 100, over the 668.6–672.6 nm range, with all other stellar parameters fixed to the values in Table 2. During the fit, we interpolate within this grid, multiply the model by a third-order polynomial to ac-count for the local continuum, and include a jitter term to absorb residual systematics. This yields a lithium abundance of A(Li) = 3 .32 ± 0.11, as shown in the left panel of Figure 5. The lithium abundance implies a young age consistent with the pre-main-sequence interpretation of Bernhard-1. We convert the best-fit lithium feature into an equiva-lent width by integrating the flux difference between the best-fit synthetic spectrum and a zero-lithium model, and then infer the age using eagles (R. D. Jeffries et al. 2023). The resulting 1 σ age range is 4–46 Myr, as shown in the right panel of Figure 5. This lithium age is con-sistent with both the SED-derived age ( ∼ 11 Myr) and the age of D42 ( ∼ 8 Myr), reinforcing the cluster asso-ciation inferred in Section 6.1 and confirming the pre-main-sequence nature of the system. 6.3. Mutual Inclination Between the Disk and Binary 
+
+The phenomenological screen parameters ( d0 and θ0)derived from the light curve provide a geometric con-straint on the disk, regardless of which specific part of the disk causes the occultation. Misaligned circumbi-nary disks typically have low eccentricities ( e ≲ 0.1) that decrease further from the central binary (J. L. Small-wood et al. 2022; E. Ragusa et al. 2020). Therefore, a warped circumbinary disk can be conceptualized as a series of concentric circular rings, only with different in-clinations and twists. The occulting edge, which could be the inner edge, outer edge, or even a warped struc-ture, still corresponds to one of these rings. Because our goal is to provide a rough estimate of the overall 10 6695 6700 6705 6710 6715 6720 
+
+Wavelength (Å, air)    
+
+> 0.85 0.90 0.95 1.00 1.05
+> Normalized flux
+> Li I 6707.8
+> Coadd (7 epochs)
+> A(Li) = 0
+> A(Li) = 3.0
+> A(Li) = 4.0
+> A(Li) = 3.32 +0.11 0.11
+> 6789
+
+log(age / yr)   
+
+> 0.0 0.2 0.4 0.6 0.8 1.0
+> P(log age)
+> 1-sigma: [4, 46] Myr Dolidze 42 ( 8 Myr)
+> SED ( 11 Myr)
+
+Figure 5. The combined GTC spectrum and synthetic spectra around the 6708 ˚ ALi I line, together with the age determination from the lithium abundance. Left panel: The black solid line represents the combined data, with the gray region indicating the 1σ uncertainty. The black dashed line shows the spectrum with no lithium. The spectra in orange, green, and red have lithium abundances A(Li) = 3.0, 3.32 (the best-fit value), and 4.0, respectively. The vertical dashed blue line marks the center of the 6708 ˚ ALi I line. Right panel: The age determination from lithium abundance using eagles (R. D. Jeffries et al. 2023). The posterior is shown by the solid line, with the dark gray shaded region indicating the 1 σ region. The black dashed and dotted lines indicate the age of Dolidze 42 and the median age in the SED posterior, respectively. 
+
+disk–binary mutual inclination, treating the occulting structure as a representative circular ring is physically well-justified. Furthermore, because the projected dis-tance from the binary barycenter to the screen edge d0
+
+is much smaller than the expected disk inner edge trun-cation radius ( ≳ 2ab, R. Miranda & D. Lai 2015), the local curvature of the disk edge is negligible. The screen can therefore be safely modeled as a straight line tan-gent to this projected representative ring, as illustrated in Figure 6. The edge offset alone requires the occulting ring to lie close to edge-on and gives a conservative lower limit on the mutual inclination. A circular ring of radius Rring 
+
+and sky-plane inclination iring projects to an ellipse with semiminor axis Rring | cos iring |. The ring inclination is therefore bounded by iring ≥ arccos ( |d0|/R ring ). For the fiducial choice Rring = 3 ab ≃ 2.4 AU and the measured 
+
+|d0| ≃ 0.4 AU, this gives iring ≳ 80 ◦. Combining this result with ib ≃ 54 ◦ yields imut ≥ | iring − ib| ≳ 26 ◦,independent of the longitude of the ascending node of the occultation ring. Adopting Rring = 2–3 ab gives a similar lower limit of approximately 21 ◦–26 ◦.The measured edge orientation provides a substan-tially stronger constraint than the offset alone. We de-fine the unit vector normal to the occultation edge in the sky plane as ˆ qθ = (sin θ0, − cos θ0, 0). Because the 
+
+x-axis is defined along the ascending node of the bi-nary orbit, the binary angular-momentum unit vector is ˆLb = (0 , − sin ib, cos ib). In the exactly edge-on limit, the angular momentum of the occulting ring lies in the sky plane and is normal to the projected ring edge, such that ˆLring = ±ˆqθ . The mutual inclination then satisfies cos imut = ˆLring · ˆLb = ± sin ib cos θ0. (5) Using the measured values of ib and θ0 gives imut ≃ 120 ◦
+
+or 180 ◦ − imut ≃ 60 ◦. These two solutions reflect the fact that the projected occultation geometry constrains the ring plane but cannot determine the sign of its angular-momentum vector, and therefore cannot dis-tinguish between the corresponding prograde-like and retrograde-like configurations. The finite screen offset changes the edge-on estimate by only a modest amount as |90 ◦ −iring | ≪ imut in the nearly edge-on case. Apply-ing the d0 correction with a fiducial Rring = 3 ab yields a mutual inclination of imut ∼ 50 ◦ or 130 ◦, and the case with imut = 52 ◦ is shown in Figure 6. All geometries consistent with the occultation edge therefore identify Bernhard-1 as a highly misaligned circumbinary-disk system. Its inferred mutual inclina-tion is substantially larger than the ∼ 10 ◦ misalignment measured for KH 15D (J. N. Winn et al. 2006; M. Poon et al. 2021). Such a large tilt, together with the high ec-centricity of the central binary, places Bernhard-1 in the dynamical regime where evolution toward a polar con-figuration may be possible (e.g., R. G. Martin & S. H. Lubow 2017; J. J. Zanazzi & D. Lai 2018; A. C. Childs & R. G. Martin 2021). More generally, the same ap-proach can be applied to CBO systems for which RV monitoring yields a binary orbit and photometric mod-eling constrains an occulting edge. A larger sample of 11 3 2 1 0 1 2 3
+
+sky-plane x [AU]              
+
+> 3
+> 2
+> 1
+> 0123
+> sky-plane y [AU]
+> -0.5 -0.25 00.25 0.5 0.75 -0.25 00.25
+> Lb
+> LbLring
+> imut
+> q
+> Figure 6. Schematic geometry of the binary orbit and a misaligned circumbinary disk with imut = 52 ◦.The lower panel shows the sky-plane projection of the binary orbits and the circumbinary disk, with the primary and secondary shown in blue and orange, respectively. The black dashed line marks the best-fit occultation edge from the semi-trans-parent screen model, while the solid gray ellipse shows a cir-cular disk ring whose projected tangent matches this edge. The dotted gray ellipse illustrates another possible disk edge, whose location is unconstrained and is shown only for visu-alization. The occultation-edge normal ˆ qθand the angular– momentum unit vectors of the ring and binary are shown in the upper-left corner. The upper panel zooms in on the binary and occultation edge, illustrating that the projected ring is locally well approximated by a straight screen. The binary rotates clockwise, using the same sky-plane conven-tion as in Figure 3.
+
+RV-confirmed CBO systems would therefore provide a direct way to measure the mutual-inclination distribu-tion of young circumbinary disks. 6.4. Disk Precession and Occultation Color Change From the Light Curve 
+
+The multi-band light curves show both long-term oc-cultation evolution and weak optical chromaticity. In the following, we first quantify the timing evolution, and then use the color–magnitude behavior to test the gray-occultation approximation and discuss possible dust constraints. The new occultation is shorter than that observed around 2020, likely due to a precessing misaligned disk. We compare our semi-transparent screen model, fit to the multi-band photometry from JD 2460775 to 2460975, with the best-fit W. Zhu et al. (2022) model in panel (a) of Figure 7. The occultation duration is now clearly shorter than in the earlier epoch. The same grad-ual drift is seen in Bernhard-2 (Z. Hu et al. 2024) and KH 15D (e.g., J. N. Winn et al. 2006; A. Garc´ ıa Soto et al. 2020; M. Poon et al. 2021), where it is naturally ex-plained by the precession of a misaligned circumbinary disk. We construct a “river plot” to compare the observed data and modeled timings. We quantify the occultation timing evolution by converting the optical light curves into the visible fraction of the primary star. For each band, we define 
+
+η(t) = F (t) − F2
+
+F1
+
+, (6) where F (t) is the instantaneous observed flux in that band. This normalization allows us to combine the ZTF and PO observations into a common light-curve diagnos-tic under the approximation that the optical occultation is nearly achromatic, which will be justified in the color discussion below. We divide each orbital cycle into 100 phase bins, corresponding to a bin width of about two days, and assign each bin the median value of η from all valid observations in that bin. A color is assigned for each bin from blue (low η) to red (high η). We then fit the W. Zhu et al. (2022) sharp-edge model separately to each cycle, with the component fluxes fixed, to esti-mate the ingress and egress timings whenever the corre-sponding phase range is sufficiently sampled. These are marked by rightward and leftward triangles in Figure 8. The occultation duration shows two behaviors: an overall shrinking trend superposed with non-monotonic variations on a few-period timescale. The black dashed lines in Figure 8 mark the ingress and egress timings of the first observed ZTF period. All later durations fall within this range and tend to shorten in recent periods. Yet the trend is not monotonic: the duration in cycle 11 ( ∼101 days) exceeds that in cycle 9 ( ∼93 days). ALomb-Scargle analysis of the ingress and egress timings, after removing the orbital-period alias, shows a tenta-tive peak near 1000 days. The overall shrinking matches the expectation for a precessing disk, whereas the short-timescale variation is far shorter than the disk–binary secular interaction timescale. These deviations could re-flect local disk structure, or opacity variations, but the 12 775 800 825 850 875 900 925 950               
+
+> Time (JD 2460000)
+> 17 18 19 20 21 22
+> Magnitude
+> ZTF r
+> ZTF g
+> PO r+1 mag PO i
+> Zhu+22 model
+> (a)
+> 0.8 1.0 1.2
+> PO ri
+> 17.5 18.0 18.5 19.0 19.5
+> PO  r
+> (b)
+> 1.5 2.0 2.5
+> ZTF gr
+> 17.5 18.0 18.5 19.0 19.5
+> ZTF  r
+> (c)
+> 775 800 825 850 875 900 925 950
+> Time (JD  2460000)
+
+Figure 7. The light curve with the new model and W. Zhu et al. (2022) model, together with the corresponding color magnitude variation for the occultation process in panels (b) and (c). The label in panel (a) is the same as in panel (b) of Figure 3, except for the green dashed line, which represents the W. Zhu et al. (2022) model in the ZTF g band and shows a longer occultation duration. Panels (b) and (c): CMD of the PO r and i observations and the ZTF g and r observations. The color indicates the time of the observation. CMD points are plotted only when both bands were obtained on the same night. The black solid line in the two panels indicates the model CMD track corresponding to the solid line in panel (a). 
+
+present data are insufficient to assign a physical inter-pretation to this signal. Combining the timing change with the RV orbit gives an order-of-magnitude precession rate. The change ap-pears in two geometric signatures. First, the shorter duration corresponds to an increase in the screen off-set d0 of about 0.1 AU, obtained by fitting the screen model to the earlier ZTF data. For an occultation edge at ∼ 3a ≈ 2 AU, this implies an angular change of about 3◦. Second, the egress shifts by about 15 days while the ingress shifts by less than 10 days, corresponding to a decrease in the screen angle θ0 of about 10 ◦, which is larger than the offset-based estimation. Since the com-bined data span roughly 15 orbits, the precession rate implied by θ0 alone is about 0 .7◦ per binary orbit, or 
+
+∼ 1◦ yr −1. This is of the same order as the precession observed in KH 15D (J. N. Winn et al. 2006; M. Poon et al. 2021). Continued monitoring is needed to refine these values and to constrain disk parameters such as the scale of the occultation disk. The occultation is also mildly redder than a gray pro-cess. We construct color–magnitude diagrams of the oc-cultation for both the PO and ZTF photometry, shown in panels (b) and (c) of Figure 7, using only observa-tions obtained on the same night so as to remove the color change induced by orbital motion between nights. The resulting time separations are less than an hour for PO and less than two hours for ZTF. The black solid line marks the track expected for an achromatic occultation in flux space, and the PO data show tenta-tive evidence for reddening relative to this gray track at ingress/egress. This chromaticity is small enough to validate the achromatic assumption used in the river plot. The r − i
+
+difference is only about 0.1 mag, which translates to about one day in occultation timing, and is much shorter than the multi-period timescale of the timing change it-self. Future multi-band monitoring, particularly in the infrared, will be able to infer the extinction law of the oc-cultation material and thereby constrain the dust grain size, as has been done for KH 15D (e.g., N. A. Aru-lanantham et al. 2016; A. Garc´ ıa Soto et al. 2020). 6.5. Pulsed Accretion from H α
+
+The H α line profiles observed by GTC/OSIRIS vary with orbital phase and show enhanced, inverse P-Cygni profile near pericenter, indicating pulsed accretion. This behavior closely resembles that of Bernhard-2 (Z. Hu et al. 2024) and of nearly aligned or coplanar circumbi-nary systems such as KH 15D and DQ Tau (C. M. Hamilton et al. 2012; B. M. Tofflemire et al. 2017). The corresponding line profiles are shown in Figure 9. The H α morphology evolves from emission-dominated profiles after egress to inverse P-Cygni profiles closer to periastron. Epochs 1 and 2, obtained about 20 days af-ter egress, show mainly emission-only profiles. In the later epochs, the line develops a redshifted absorption component, with the most prominent accretion-like pro-file appearing at epoch 3, close to periastron passage. Using the empirical relation between the H α 10% width, WH α(10%), and the mass-accretion rate, we estimate an accretion scale of order 10 −10 M⊙ yr −1 for the first three 13 0.0 0.2 0.4 0.6 0.8 1.0   
+
+> Orbital Phase
+> 12345678910 11 12 13 14 15
+> Period
+> 0.0 0.2 0.4 0.6 0.8 1.0
+> Primary Star Visible Fraction  = ( F L2)/ L1
+> Figure 8. Evolution of the occultation morphology across different orbital cycles, shown as a river plot. The color represents the visible fraction of the primary-star flux, with blue corresponding to nearly complete occultation and red corresponding to an unobscured primary. Rightward and leftward triangles mark the best-fit ingress and egress timings of individual cycles, respectively. The error bars are smaller than the markers. The two vertical dashed lines mark the ingress and egress timings of the first observed ZTF cycle.
+
+epochs (J. M. Alcal´ a et al. 2014). Because the line pro-files are complex and our spectra have moderate resolu-tion, we use this relation only as an order-of-magnitude accretion diagnostic. The timing of this accretion enhancement is consis-tent with expectations for an eccentric, misaligned cir-cumbinary disk. In the coplanar case, pulsed accre-tion is understood as a two-step process: the accretion stream from the circumbinary disk is enhanced near apocenter, while near pericenter the strong tidal and magnetospheric interactions between the stars promote angular-momentum loss and rapid magnetospheric ac-cretion (e.g., P. Artymowicz & S. H. Lubow 1996; G. Basri et al. 1997; D. J. Mu˜ noz & D. Lai 2016; B. M. Tofflemire et al. 2017). In the misaligned case, instead, the accretion stream from the disk is enhanced near the nodes of the binary orbit relative to the disk plane (e.g., J. L. Smallwood et al. 2023), and the accretion onto the star is similar to that in the coplanar case. For the highly eccentric orbit of Bernhard-1, the node lies close to pericenter, and the two effects seem to coincide and produce enhanced accretion generally near pericenter. Our MMT/MMIRS observation taken during the ingress of the occultation covers both the He I 10830 line and several Paschen lines, all of which could serve as tracers of accretion (e.g., J. M. Alcal´ a et al. 2014). We find that the He line shows a broad emission feature with a full width at half maximum (FWHM) of about 300 km s −1, whereas the Paschen lines appear in ab-sorption and are consistent with the stellar template. Therefore, the broad, emission-only He profile is more likely a signature of an accretion-powered stellar wind or jet rather than of accretion itself (S. Edwards et al. 2006; J. Erkal et al. 2022; J. Kwan et al. 2007).  
+
+> 7.
+
+CONCLUSION Our new spectroscopic and multi-band photometric observations confirm Bernhard-1 as a CBO system, the third after KH 15D and Bernhard-2 (J. A. Johnson et al. 2004; J. N. Winn et al. 2006; Z. Hu et al. 2024). The radial velocities reveal a highly eccentric binary (e = 0 .80 ± 0.09) composed of two pre-main-sequence K dwarfs of ∼ 1.1 M⊙ and ∼ 0.8 M⊙, whose periodic dimming arises from occultation by a misaligned cir-cumbinary disk. The lithium and SED ages both in-dicate a young system of ∼10 Myr. Furthermore, its spatial, astrometric, and metallicity properties are all consistent with the open cluster Dolidze 42, suggesting that Bernhard-1 could be a member of this ∼ 8 Myr cluster. Combining the RV orbit with the occultation-screen geometry yields a rough disk–binary mutual inclination of imut ∼ 50 ◦ or 130 ◦, with the degeneracy arising from the unknown disk rotation direction. This mutual incli-nation is substantially larger than the ∼ 10 ◦ measured for KH 15D, the well-studied prototype of CBO systems. Considering its high eccentricity, Bernhard-1 likely will evolve into a polar aligned configuration. This geomet-ric method can be applied to any CBO system once RV monitoring delivers an orbital solution, opening a 14 840 860 880 900 920 
+
+JD 2460000 
+
+> 20
+> 020 40
+> RV (km/s)
+> 12345678
+
+TP                        
+
+> Mid-ingress
+> Best-fit model 1
+> GTC OSIRIS+ MMT/MMIRS (not used in RV)
+> -200 0200
+> 1.0 1.5 Norm. Flux  1=-0.10
+> -200 0200 2=-0.06
+> -200 0200 3=-0.02
+> -200 0200 4=0.03
+> -200 0200
+> 1.0 1.5 Norm. Flux  5=0.11
+> -200 0200 6=0.18
+> -200 0200 7=0.23
+> -200 0200 8He I 10830 =0.34
+
+Velocity (km s 1)
+
+Figure 9. The RV fitting result (upper panel) and the corresponding spectral profiles near the accretion indicators (lower panels). The description for the data and model in the upper panel is the same as in Figure 3. In the lower panels, the blue solid lines and the green solid line represent the observations from GTC and MMT, respectively, while the black solid line corresponds to the template of the best-fit primary star. The horizontal and vertical black dashed lines indicate the continuum and the line center, respectively. The numbers in the upper left corner indicate the observation index, and the numbers in the upper right corner indicate the phase of the observation. 
+
+route to measuring the mutual-inclination distribution of young circumbinary disks. Like KH 15D and Bernhard-2, Bernhard-1 displays both ongoing disk precession and pulsed accretion near pericenter. The light curve shows a shorter occultation than was observed around 2020, implying a precession rate of about 0.7 ◦ per binary orbital period, while the phase-dependent H α profiles show enhanced inverse P-Cygni profile near pericenter. All three spectroscopically confirmed CBO systems thus share these two features. The precession is expected, although the differences in rate among systems require dedicated modeling. The persistence of pulsed accretion, on the other hand, may indicate that the general accretion pattern observed in coplanar systems also applies to misaligned circumbi-nary disks. Bernhard-1 nonetheless joins a still small, statistically limited, and yet scientifically valuable sample: to date, only three of more than 30 proposed CBO candidates have been confirmed via spectroscopy. Systematic RV monitoring is required to increase the size of this sam-ple. Such observations will provide constraints on the distribution of primordial disk–binary alignments and, in turn, on the initial conditions governing the forma-tion of circumbinary planets. ACKNOWLEDGMENTS We thank Jeremy Smallwood, Ruiqi Yang, J.J. Zanazzi, and Gabriella Zsidi for useful discussions. Z.H., W. Zhu and W. Zang acknowledge support by the Na-tional Natural Science Foundation of China (grant No. 12133005). P.C. acknowledges support from the Zhe-jiang Provincial Top-Level Research Support Program. Observations reported here were obtained at the MMT Observatory, a joint facility of the Smithsonian Institu-tion and the University of Arizona. This paper uses data products produced by the OIR Telescope Data Center, supported by the Smithsonian Astrophysical Observa-tory. This research benefited from Z.H.’s participation 15 in the 2026 workshop “Exploring Planetary Systems in the Era of Time-domain Astronomy”, hosted by the Institute for Astronomy at the University of Hawai’i and supported by award 2106927 from the National Sci-ence Foundation’s Astronomy & Astrophysics Research Grants program. 
+
+## Facilities: GTC (OSIRIS), MMT (MMIRS), ZTF, 
+
+Gaia , 2MASS, Pan-STARRS, WISE 
+
+## Software: astropy ( Astropy Collaboration et al. 2013, 2018, 2022), scipy (P. Virtanen et al. 2020), 
+
+emcee (D. Foreman-Mackey et al. 2013), isochrones 
+
+(T. D. Morton 2015), PypeIt (J. X. Prochaska et al. 2020a,b) fitramp (T. D. Brandt 2024a,b) iSpec (S. Blanco-Cuaresma et al. 2014; S. Blanco-Cuaresma 2019), 
+
+starfish (I. Czekala et al. 2015), DoPHOT (P. L. Schechter et al. 1993; J. Alonso-Garc´ ıa et al. 2012), 
+
+radvel (B. J. Fulton et al. 2018), eagles (R. D. Jeffries et al. 2023) REFERENCES 
+
+Aguado, D. S., Myeong, G. C., Belokurov, V., et al. 2021, MNRAS, 500, 889, doi: 10.1093/mnras/staa3250 Alcal´ a, J. M., Natta, A., Manara, C. F., et al. 2014, A&A, 561, A2, doi: 10.1051/0004-6361/201322254 Alonso-Garc´ ıa, J., Mateo, M., Sen, B., et al. 2012, AJ, 143, 70, doi: 10.1088/0004-6256/143/3/70 Armstrong, D. J., Osborn, H. P., Brown, D. J. A., et al. 2014, MNRAS, 444, 1873, doi: 10.1093/mnras/stu1570 Artymowicz, P., & Lubow, S. H. 1996, ApJL, 467, L77, doi: 10.1086/310200 Arulanantham, N. A., Herbst, W., Cody, A. M., et al. 2016, AJ, 151, 90, doi: 10.3847/0004-6256/151/4/90 Astropy Collaboration, Robitaille, T. P., Tollerud, E. J., et al. 2013, A&A, 558, A33, doi: 10.1051/0004-6361/201322068 Astropy Collaboration, Price-Whelan, A. M., Sip˝ ocz, B. M., et al. 2018, AJ, 156, 123, doi: 10.3847/1538-3881/aabc4f Astropy Collaboration, Price-Whelan, A. M., Lim, P. L., et al. 2022, ApJ, 935, 167, doi: 10.3847/1538-4357/ac7c74 Basri, G., Johns-Krull, C. M., & Mathieu, R. D. 1997, AJ, 114, 781, doi: 10.1086/118510 Bellm, E. C., Kulkarni, S. R., Graham, M. J., et al. 2019, PASP, 131, 018002, doi: 10.1088/1538-3873/aaecbe Blanco-Cuaresma, S. 2019, MNRAS, 486, 2075, doi: 10.1093/mnras/stz549 Blanco-Cuaresma, S., Soubiran, C., Heiter, U., & Jofr´ e, P. 2014, A&A, 569, A111, doi: 10.1051/0004-6361/201423945 Bouchy, F., Pepe, F., & Queloz, D. 2001, A&A, 374, 733, doi: 10.1051/0004-6361:20010730 Brandt, T. D. 2024a, PASP, 136, 045004, doi: 10.1088/1538-3873/ad38d9 Brandt, T. D. 2024b, PASP, 136, 045005, doi: 10.1088/1538-3873/ad38da Brinch, C., Jørgensen, J. K., Hogerheijde, M. R., Nelson, R. P., & Gressel, O. 2016, ApJL, 830, L16, doi: 10.3847/2041-8205/830/1/L16 Cardelli, J. A., Clayton, G. C., & Mathis, J. S. 1989, ApJ, 345, 245, doi: 10.1086/167900 Castelli, F., & Kurucz, R. L. 2003, in IAU Symposium, Vol. 210, Modelling of Stellar Atmospheres, ed. N. Piskunov, W. W. Weiss, & D. F. Gray, A20, doi: 10.48550/arXiv.astro-ph/0405087 Cepa, J. 2010, in Astrophysics and Space Science Proceedings, Vol. 14, Highlights of Spanish Astrophysics V, ed. J. M. Diego, L. J. Goicoechea, J. I. Gonz´ alez-Serrano, & J. Gorgas, 15, doi: 10.1007/978-3-642-11250-8 2 Chen, P., Dong, S., Kochanek, C. S., et al. 2022, ApJS, 259, 53, doi: 10.3847/1538-4365/ac50b7 Chen, Z., & Kipping, D. 2022, MNRAS, 513, 5162, doi: 10.1093/mnras/stac1246 Chiang, E. I., & Murray-Clay, R. A. 2004, ApJ, 607, 913, doi: 10.1086/383522 Childs, A. C., & Martin, R. G. 2021, ApJL, 920, L8, doi: 10.3847/2041-8213/ac2957 Chilingarian, I., Beletsky, Y., Moran, S., et al. 2015, PASP, 127, 406, doi: 10.1086/680598 Choi, J., Dotter, A., Conroy, C., et al. 2016, ApJ, 823, 102, doi: 10.3847/0004-637X/823/2/102 Czekala, I., Andrews, S. M., Mandel, K. S., Hogg, D. W., & Green, G. M. 2015, The Astrophysical Journal, 812, 128, doi: 10.1088/0004-637X/812/2/128 Czekala, I., Chiang, E., Andrews, S. M., et al. 2019, ApJ, 883, 22, doi: 10.3847/1538-4357/ab287b Dotter, A. 2016, ApJS, 222, 8, doi: 10.3847/0067-0049/222/1/8 Doyle, L. R., Carter, J. A., Fabrycky, D. C., et al. 2011, Science, 333, 1602, doi: 10.1126/science.1210923 16 
+
+Duchˆ ene, G., & Kraus, A. 2013, ARA&A, 51, 269, doi: 10.1146/annurev-astro-081710-102602 Edwards, S., Fischer, W., Hillenbrand, L., & Kwan, J. 2006, ApJ, 646, 319, doi: 10.1086/504832 Erkal, J., Manara, C. F., Schneider, P. C., et al. 2022, A&A, 666, A188, doi: 10.1051/0004-6361/202244254 Fern´ andez-L´ opez, M., Zapata, L. A., & Gabbasov, R. 2017, ApJ, 845, 10, doi: 10.3847/1538-4357/aa7d51 Flewelling, H. A., Magnier, E. A., Chambers, K. C., et al. 2020, ApJS, 251, 7, doi: 10.3847/1538-4365/abb82d Foreman-Mackey, D., Hogg, D. W., Lang, D., & Goodman, J. 2013, Publications of the Astronomical Society of the Pacific, 125, 306, doi: 10.1086/670067 For´ es-Toribio, R., JoHantgen, B., Kochanek, C. S., et al. 2025, The Open Journal of Astrophysics, 8, 114, doi: 10.33232/001c.143105 Fulton, B. J., Petigura, E. A., Blunt, S., & Sinukoff, E. 2018, PASP, 130, 044504, doi: 10.1088/1538-3873/aaaaa8 Garc´ ıa Soto, A., Ali, A., Newmark, A., et al. 2020, AJ, 159, 135, doi: 10.3847/1538-3881/ab6efd Goldberg, M., Fabrycky, D., Martin, D. V., et al. 2023, MNRAS, 525, 4628, doi: 10.1093/mnras/stad2568 Gray, D. F. 2005, The Observation and Analysis of Stellar Photospheres, doi: 10.1017/CBO9781316036570 Gray, R. O., & Corbally, C. J. 1994, AJ, 107, 742, doi: 10.1086/116893 Grevesse, N., & Sauval, A. J. 1998, SSRv, 85, 161, doi: 10.1023/A:1005161325181 Hamilton, C. M., Johns-Krull, C. M., Mundt, R., Herbst, W., & Winn, J. N. 2012, ApJ, 751, 147, doi: 10.1088/0004-637X/751/2/147 Hu, Z., Zhu, W., Dai, F., et al. 2024, ApJL, 977, L28, doi: 10.3847/2041-8213/ad94e8 Hu, Z., Zhu, W., Wang, S., & Wang, S. X. 2026, ApJS, 284, 70, doi: 10.3847/1538-4365/ae5d41 Hunt, E. L., & Reffert, S. 2024, A&A, 686, A42, doi: 10.1051/0004-6361/202348662 Husser, T.-O., Wende-von Berg, S., Dreizler, S., et al. 2013, A&A, 553, A6, doi: 10.1051/0004-6361/201219058 Jeffries, R. D., Jackson, R. J., Wright, N. J., et al. 2023, MNRAS, 523, 802, doi: 10.1093/mnras/stad1293 Johnson, J. A., Marcy, G. W., Hamilton, C. M., Herbst, W., & Johns-Krull, C. M. 2004, AJ, 128, 1265, doi: 10.1086/422735 Kearns, K. E., & Herbst, W. 1998, AJ, 116, 261, doi: 10.1086/300426 Kennedy, G. M., Wyatt, M. C., Sibthorpe, B., et al. 2012, MNRAS, 421, 2264, doi: 10.1111/j.1365-2966.2012.20448.x Kennedy, G. M., Matr` a, L., Facchini, S., et al. 2019, Nature Astronomy, 3, 230, doi: 10.1038/s41550-018-0667-x Kenworthy, M. A., Gonz´ alez Picos, D., Elizondo, E., et al. 2022, A&A, 666, A61, doi: 10.1051/0004-6361/202243441 Kochanek, C. S., Shappee, B. J., Stanek, K. Z., et al. 2017, Publications of the Astronomical Society of the Pacific, 129, 104502, doi: 10.1088/1538-3873/aa80d9 K¨ ohler, R. 2011, A&A, 530, A126, doi: 10.1051/0004-6361/201016327 Kostov, V. B., Orosz, J. A., Feinstein, A. D., et al. 2020, AJ, 159, 253, doi: 10.3847/1538-3881/ab8a48 Kwan, J., Edwards, S., & Fischer, W. 2007, ApJ, 657, 897, doi: 10.1086/511057 Lacour, S., Biller, B., Cheetham, A., et al. 2016, A&A, 590, A90, doi: 10.1051/0004-6361/201527863 Lucas, P. W., Smith, L. C., Guo, Z., et al. 2024, MNRAS, 528, 1789, doi: 10.1093/mnras/stad3929 Martin, D. V., & Triaud, A. H. M. J. 2014, A&A, 570, A91, doi: 10.1051/0004-6361/201323112 Martin, D. V., Triaud, A. H. M. J., Udry, S., et al. 2019, A&A, 624, A68, doi: 10.1051/0004-6361/201833669 Martin, R. G., & Lubow, S. H. 2017, ApJL, 835, L28, doi: 10.3847/2041-8213/835/2/L28 Masci, F. J., Laher, R. R., Rusholme, B., et al. 2019, PASP, 131, 018003, doi: 10.1088/1538-3873/aae8ac McLaughlin, D. B. 1924, ApJ, 60, 22, doi: 10.1086/142826 McLeod, B., Fabricant, D., Nystrom, G., et al. 2012, PASP, 124, 1318, doi: 10.1086/669044 Minniti, D., Lucas, P. W., Emerson, J. P., et al. 2010, NewA, 15, 433, doi: 10.1016/j.newast.2009.12.002 Miranda, R., & Lai, D. 2015, MNRAS, 452, 2396, doi: 10.1093/mnras/stv1450 Morton, T. D. 2015, isochrones: Stellar model grid package,, Astrophysics Source Code Library, record ascl:1503.010 Mu˜ noz, D. J., & Lai, D. 2016, ApJ, 827, 43, doi: 10.3847/0004-637X/827/1/43 Nelder, J. A., & Mead, R. 1965, The Computer Journal, 7, 308, doi: 10.1093/comjnl/7.4.308 Poon, M., Zanazzi, J. J., & Zhu, W. 2021, MNRAS, 503, 1599, doi: 10.1093/mnras/stab575 Prochaska, J. X., Hennawi, J. F., Westfall, K. B., et al. 2020a, Journal of Open Source Software, 5, 2308, doi: 10.21105/joss.02308 Prochaska, J. X., Hennawi, J., Cooke, R., et al. 2020b, pypeit/PypeIt: Release 1.0.0, v1.0.0 Zenodo, doi: 10.5281/zenodo.3743493 Raghavan, D., McAlister, H. A., Henry, T. J., et al. 2010, ApJS, 190, 1, doi: 10.1088/0067-0049/190/1/1 17 
+
+Ragusa, E., Alexander, R., Calcino, J., Hirsh, K., & Price, D. J. 2020, MNRAS, 499, 3362, doi: 10.1093/mnras/staa2954 Rossiter, R. A. 1924, ApJ, 60, 15, doi: 10.1086/142825 Ryabchikova, T., Piskunov, N., Kurucz, R. L., et al. 2015, PhyS, 90, 054005, doi: 10.1088/0031-8949/90/5/054005 Schechter, P. L., Mateo, M., & Saha, A. 1993, PASP, 105, 1342, doi: 10.1086/133316 Shappee, B. J., Prieto, J. L., Grupe, D., et al. 2014, The Astrophysical Journal, 788, 48, doi: 10.1088/0004-637X/788/1/48 Smallwood, J. L., Lubow, S. H., & Martin, R. G. 2022, MNRAS, 514, 1249, doi: 10.1093/mnras/stac1416 Smallwood, J. L., Martin, R. G., & Lubow, S. H. 2023, MNRAS, 520, 2952, doi: 10.1093/mnras/stad338 Tofflemire, B. M., Mathieu, R. D., Ardila, D. R., et al. 2017, ApJ, 835, 8, doi: 10.3847/1538-4357/835/1/8 Udalski, A. 2003, AcA, 53, 291, doi: 10.48550/arXiv.astro-ph/0401123 Udalski, A., Kubiak, M., & Szymanski, M. 1997, AcA, 47, 319, doi: 10.48550/arXiv.astro-ph/9710091 Udalski, A., Szyma´ nski, M. K., & Szyma´ nski, G. 2015, AcA, 65, 1, doi: 10.48550/arXiv.1504.05966 Urbanowicz, M. A., Soszy´ nski, I., Pietrukowicz, P., et al. 2026, arXiv e-prints, arXiv:2605.08470, doi: 10.48550/arXiv.2605.08470 Virtanen, P., Gommers, R., Oliphant, T. E., et al. 2020, Nature Methods, 17, 261, doi: 10.1038/s41592-019-0686-2 Winn, J. N., Hamilton, C. M., Herbst, W. J., et al. 2006, ApJ, 644, 510, doi: 10.1086/503417 Winn, J. N., Holman, M. J., Johnson, J. A., Stanek, K. Z., & Garnavich, P. M. 2004, ApJL, 603, L45, doi: 10.1086/383089 Xiang, M. S., Liu, X. W., Yuan, H. B., et al. 2015, MNRAS, 448, 822, doi: 10.1093/mnras/stu2692 Zakamska, N. L., Adamane Pallathadka, G., Bizyaev, D., et al. 2025, arXiv e-prints, arXiv:2507.05367, doi: 10.48550/arXiv.2507.05367 Zanazzi, J. J., & Lai, D. 2018, MNRAS, 473, 603, doi: 10.1093/mnras/stx2375 Zhu, W., Bernhard, K., Dai, F., et al. 2022, The Astrophysical Journal Letters, 933, L21, doi: 10.3847/2041-8213/ac7b2d

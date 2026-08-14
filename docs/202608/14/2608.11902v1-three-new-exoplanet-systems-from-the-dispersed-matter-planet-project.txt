@@ -1,0 +1,2238 @@
+Title: Three new exoplanet systems from the Dispersed Matter Planet Project
+
+URL Source: https://arxiv.org/pdf/2608.11902v1
+
+Published Time: Thu, 13 Aug 2026 00:46:11 GMT
+
+Number of Pages: 28
+
+Markdown Content:
+MNRAS 000 , 1–26 (2026) Preprint 13 August 2026 Compiled using MNRAS L ATEX style file v3.3 
+
+# Three new exoplanet systems from the Dispersed Matter Planet Project 
+
+# J. R. Barnes, 1⋆ C. A. Haswell, 1 Z. O. B. Ross, 1 E. Rutherford, 1 M. R. Standing 2,1
+
+# A. T. Stevenson 3,1 D. Staab, 1 L. Fossati, 4 J. S. Jenkins, 5,6 D. Alves, 7
+
+> 1
+
+School of Physical Sciences, The Open University, Walton Hall, Milton Keynes. MK7 6AA. UK 
+
+> 2
+
+European Space Agency (ESA), European Space Astronomy Centre (ESAC), Camino Bajo del Castillo s/n, E-28692 Villanueva de la Cañada, Madrid, Spain 
+
+> 3
+
+School of Physics & Astronomy, University of Birmingham, Edgbaston, Birmingham B15 2TT, UK 
+
+> 4
+
+Space Research Institute, Austrian Academy of Sciences, Schmiedlstraße 6, 8042 Graz, Austria 
+
+> 5
+
+Instituto de Estudios Astrofísicos, Facultad de Ingeniería y Ciencias, Universidad Diego Portales, Av. Ejército 441, Santiago, Chile 
+
+> 6
+
+Centro de Astrofísica y Tecnologías Afines (CATA), Casilla 36-D, Santiago, Chile 
+
+> 7
+
+Departamento de Astronomía, Universidad de Chile, Casilla 36-D, Santiago, Chile 
+
+Accepted for publication in MNRAS. DOI: 10.1093/mnras/stag1486 
+
+ABSTRACT 
+
+We present a radial velocity analysis of three bright, low-activity stars identified by the Dispersed Matter Planet Project (DMPP). We use a Bayesian framework to compare purely Keplerian models with models incorporating stellar activity via a quasi-periodic Gaussian Process (GP). DMPP-7 (HD 118006) is a slightly evolved star that harbours a single 0 .72 Saturn-mass giant ( mp sin i = 69 M ⊕) with an orbital period of P = 4 .93 d. A longer 21 d – 22 d period cannot be conclusively confirmed as a stellar rotation signature rather than a purely Keplerian signal. For HD 67200, which exhibits Ca ii H&K variability, a model with only a GP is strongly favoured over a purely dynamical model. The GP model shows moderate evidence for a single Keplerian with P = 2 .67 d. For HD 2134, a 21 d – 32 d rotation period signal is associated with tentative FWHM variability. A model with a GP is not conclusively favoured, but all models considered show moderate evidence for an additional single Keplerian with P = 2 .78 d. Despite our target selection favouring near edge-on orbital geometries, we find no evidence for transits in TESS photometry. DMPP-7 b lies at the transition between the high-radius population and the Neptunian ridge and savannah regions. Further observations are required to establish whether the coherent short-period HD 67200 and HD 2134 signals are stellar or dynamical in origin. If planetary, the signals correspond to minimum masses of mp sin i = 2 .07 M ⊕ and 
+
+mp sin i = 2 .86 M ⊕.
+
+Key words: stars: activity – exoplanets – techniques: radial velocities 
+
+1 INTRODUCTION 
+
+Exoplanet research is increasingly focused on terrestrial plan-ets and smaller gas giants. The statistics of these planets are dominated by transit-based surveys, particularly the Ke-pler and K2 missions, which comprise over 73% of discoveries (Christiansen 2025) 1. Hence, the number of planets with a measured radius outnumber those with determined mass or minimum mass by a factor of 2 .4. This discrepancy arises largely because many of the transiting systems are too faint for efficient radial velocity (RV) follow-up. The two detection methods have differing selection effects, so it is unsurprising that the subsets of known planets discovered by each of them  
+
+> ⋆
+
+E-mail: john.barnes@open.ac.uk  
+
+> 1
+
+Extracted from the NASA Exoplanet Archive on 01/06/26 
+
+https://exoplanetarchive.ipac.caltech.edu 
+
+have differing demographics. Müller et al. 2024 (M24) derived the mass-radius relationship using planets with reliable val-ues for both mass and radius. The relationships facilitate a comparison of planets in a given mass interval with those in the corresponding radius interval, revealing the RV method has been relatively unsuccessful at discovering and measur-ing masses for low-mass planets. The fraction of exoplanets with measured radii falling at or below 1 .8 R ⊕, which corre-sponds to the Radius Valley for FGK stars, is approximately 32%, while the planets with measured corresponding masses (or minimum masses) of ≲ 6.2 M ⊕ (M24) is only 20%. Sim-ilarly, for sub-Neptunian to Neptunian planets with proba-ble H 2-dominated atmospheres, 43% have measured radii in the 1 .8 − 3.9, R⊕ range. In contrast, only 22% have mass determinations in the corresponding 6 .2 − 17 .15 , M⊕ range. Conversely, the largest and most massive planets are rela-tively over-represented in the RV population: the fraction of 
+
+© 2026 The Authors arXiv:2608.11902v1 [astro-ph.EP] 12 Aug 2026 2 J. Barnes et al. 
+
+planets with measured radius > RNept is 24%, while the cor-responding fraction of planets with measured mass > MNept 
+
+is ∼ 48%. This last category of planet is the easiest to detect via either method, but the ratio of known large and small transiting planets is limited by the inherent rarity of large planets relative to small ones. This factor is less influential in RV surveys, where observers are encouraged by detections of RV variability resulting in a bias towards detections of more massive planets. The sheer volume of measurements from high cadence space-based photometric surveys enable relatively low am-plitude characteristic transits to be recovered from any back-ground stellar signals that tend to vary on longer timescales. Establishing detections with RV surveys is more difficult since fewer observations must be able to discriminate between po-tentially multiple periodic signals of dynamical origin and quasi-periodic stellar signals. The problem is most acute for low-mass planetary systems, where the induced dynamical amplitudes are close to the stellar activity amplitudes. The difficulty of disentangling signals is exacerbated because the periods of the vast majority of currently known exoplanets span the 1 − 100 d range, which coincides with stellar rota-tion signals. The most obvious route to identifying low-mass planets with RV surveys has been to target stars with rela-tively low activity. This does not necessarily guarantee that activity modelling can or should be circumvented. The Dispersed Matter Planet Project (Haswell et al. 2020) (DMPP) selects stars with some of the lowest-known activ-ity levels. The observed sub-basal chromospheric emission is attributed to the presence of close-orbiting, mass-losing exo-planets. An analysis of all observations to date, including sur-vey completeness and planetary occurrence rates is detailed in Standing et al. (2026) (hereafter S26). While S26 includes all reported DMPP targets with sufficient single or multiple epoch observations, including those reported by Haswell et al. (2020); Staab et al. (2020); Barnes et al. (2020) and Steven-son et al. (2025b), the study used purely Keplerian signals to determine survey completeness. This approach is warranted by the lack of significant correlation between RV and activity, as well as the limited data available for most targets, while still allowing estimation of survey completeness and occur-rence rates. Here, we present a more detailed analysis of three of the previously unpublished systems with the largest and most extensive datasets that were reported in S26. We compare purely Keplerian models with models that also include a Gaussian Process (GP) to model stellar activity contribu-tions. To avoid potential accumulative systematic biases aris-ing from recursively adding signals, we use models that in-clude the number of Keplerian signals as a free parameter. Diffusive nested sampling thus enables us to identify com-peting solutions within multimodal posterior space and com-pare models directly. Section §2 details the observations and analysis methods and §3 gives details of DMPP target selec-tion. In §4 we present a detailed analysis of each target before discussing our findings further in §5. 
+
+2 OBSERVATIONS AND ANALYSIS METHODS 2.1 Spectroscopic observations and data extraction 
+
+Regular RV observations were made with the 3.6m European Southern Observatory (ESO) telescope and the High Accu-racy Radial Velocity Planet Searcher (HARPS) spectrograph. The observations were taken between 2015 and 2023 and were made in ESO Periods 095.C-0799(A), 097.C-0390(B), 098.C-0269(A), 098.C0499(A), 098.C-0269(B), 099.C-0798(A), 0100.C-0836(A) and 0110.248C.001. We refer to these ob-serving periods as P95–P110. The observing runs spanned between 3 and 11 nights with up to 8 observations per tar-get per night. The P95–P100 “post-2015” observations (sub-sequent to the 2015 HARPS fibre upgrade) were made in HARPS High Accuracy Mode using a nightly master cali-bration and simultaneous object+ThAr observations to en-able drift correction. The final P110 “post-2020” run (i.e. af-ter the HARPS warm-up in early 2020) comprised 11 nights and was made using simultaneous Fabry-Perot observations to correct drift. First epoch observations of DMPP-7 were made in P110 and supplemented with a further 29 epochs spanning 71 nights in Period 114.27LM.001 (P114) in 2025 with the Echelle Spectrograph for Rocky Exoplanet and Sta-ble Spectroscopic Observations (ESPRESSO) at ESOs 8.2m VLT facility (Pepe et al. 2013). We re-extracted the standard HARPS and ESPRESSO Data Reduction Software (DRS) radial velocities (RVs) us-ing the “Semi-Bayesian Approach for RVs with Template-matching” code ( s-bart ), which has demonstrated improved precision (Silva et al. 2022). The same approach was used by Stevenson et al. (2025b) and the same RVs that were derived in S26 are used here. The activity parameters for Bisector Inverse Span (BIS) and Full Width at Half Maximum (FWHM) were obtained from the HARPS DRS cross-correlation function (CCF) pro-files and the Ca ii H&K S-index measurements were obtained from actin2 (Gomes da Silva et al. 2018). We also measured the line moments from the CCFs as outlined in Barnes et al. (2024) and include M3, a measure of CCF symmetry, as a potential correlator in our analysis. 
+
+2.2 Photometric observations with TESS 
+
+Each of the three targets were observed with the Transit-ing Exoplanet Survey Satellite (TESS) in multiple sectors and observing cycles. The TESS Simple Aperture Photome-try (SAP) and Pre-Conditioned SAP (PDCSAP) lightcurves (Twicken et al. 2020) based on the shorter cadence obser-vations are optimised for transit searches. As discussed in S26, the co-trending basis vectors used to obtain the PDC-SAP data can lead to removal of stellar variability, while the potentially more suitable SAP data contain large systematic effects that make them unsuitable for analysis of low-activity stars 2. We instead performed photometric extraction of the TESS full frame images (FFIs) using the unpopular package (Hattori et al. 2022). Reliable rotation periods have been re-ported from K2 photometry by Reinhold & Hekker (2020)          
+
+> 2see https://archive.stsci.edu/missions-and-data/tess and the TESS archive manual at https://outerspace.stsci.edu/ display/TESS/TESS+Archive+Manual
+> MNRAS 000 , 1–26 (2026)
+
+# DMPP exoplanet systems 30 10 20 30 40 50 Period [d] 0.00 0.02 0.04 0.06 Frequency                               
+
+> HD 67200, R = 1.27 ± 0.01 R
+> vsini: 2.4 ± 0.9 kms 1(SPECIES), 0.0 ( up = 3.0) kms 1(M16)
+> 0o<i<90 o, P=19.4d
+> i=90 o, P=22.2d
+> 0o<i<90 o, P=12.0d
+> i=90 o, P=15.2d 010 20 30 40 50 Period [d] 0.00 0.02 0.04 0.06 0.08
+> DMPP-7, R = 1.49 ± 0.02 R
+> vsini: = 3.0 ± 0.7 kms 1(SPECIES), 2.6 +2.3 2.6 kms 1(M16)
+> 0o<i<90 o, P=19.8d
+> i=90 o, P=22.4d
+> 0o<i<90 o, P=13.0d
+> i=90 o, P=15.6d 010 20 30 40 50 Period [d] 0.00 0.02 0.04 0.06 0.08 0.10
+> HD 2134, R = 1.16 ± 0.01 R
+> vsini: 2.6 ± 0.6 kms 1(SPECIES), 0.0 ( up = 3.0) kms 1(M16)
+> 0o<i<90 o, P=18.4d
+> i=90 o, P=20.8d
+> 0o<i<90 o, P=10.6d
+> i=90 o, P=13.5d
+
+Figure 1. Monte Carlo period simulations for each target. The v sin i values derived from species are used for randomly oriented (sinusoidally distributed) axial inclinations (green) and for a fixed i = 90 o (light grey). The respective curves using the M16 v sin i
+
+estimates are also shown (orange and dark grey). The modal periods, ˆP , are shown for each distribution. 
+
+at the ≳ 1000 ppm level, while Boyle et al. (2025) found sig-nificant drop in reliability for periods beyond the TESS or-bital period due to the 27 d sector length limitation. When used in conjunction with periodogram searches that account for zero point offsets for each sector, the photometric output from unpopular has the potential to retain signals at periods longer than the ∼ 27 d TESS sector length unlike the TESS PDCSAP data, which are optimised for transit searches. 
+
+2.3 Radial Velocity Data Analysis 
+
+We performed data analysis of the spectroscopic data using the likelihood periodogram analysis routine in the Astrom-etry and Radial velocity Software package, ars (Anglada-Escudé et al. 2013, 2016). The likelihood model in ars can search for purely sinusoidal variability (e.g. circular orbits) or variability due to Keplerian orbits. It includes both offsets, 
+
+γ, and additional white noise (jitter) terms, σjit , for individ-ual datasets (i.e. HARPS post-2015, HARPS post-2020, and ESPRESSO for the datasets we consider here). More detailed RV and photometric data analysis employed kima (Faria et al. 2018, 2023). Kima uses DNest4 (Brewer & Foreman-Mackey 2016) to perform diffusive nested sampling, enabling global model evidence to be calculated and assessed (e.g. Standing et al. 2022). Kima employs a model that includes the number of Keplerians as a model parameter. The optimal number of Keplerians that are needed to adequately describe the data, 
+
+Np, can thus be obtained, avoiding potential biases that can arise when adding Keplerians recursively through more stan-dard modelling. As with ars , kima allows individual data sets to be modelled simultaneously by including offset parameters and white noise terms in the likelihood model. 
+
+2.3.1 Gaussian Process models in Kima 
+
+Kima enables a GP to be included in the model, either solely on the primary data (i.e. the RVs) or jointly with activ-ity indicators. In addition to spectroscopic data modelling, photometric data can be modelled with kima by using a purely GP model. The standard quasi-periodic kernel in kima 
+
+is implemented as the squared-exponential periodic (SEP) kernel. kima also includes implementation of the s+leaf 
+
+Exponential–Sine Periodic (ESP) kernel (Delisle et al. 2020) for modelling RV timeseries. We adapted kima to implement the s+leaf ESP kernel for simultaneous RV and activity timeseries modelling. In this implementation, as in the stan-dard SEP kernel, the RVs and the activity indicator share the hyperparameters η2 (decay timescale), η3 (characteris-tic period), and η4 (proxy for harmonic complexity), while allowing separate GP amplitudes for the RVs ( η1 in all mod-els) and the activity ( ηact 1 ). The model is configured so the ESP kernel is essentially a substitute for the standard SEP kernel, with the advantage that ESP kernel computes time scales as ∼ O (Ndata ) rather than O(N 3data ) (Ambikasaran 2015; Foreman-Mackey et al. 2017; Delisle et al. 2020). Fur-ther detail is given in Appendix A, including an assessment of how choice of the “harmonic complexity”, η4, controls the structure within each quasi-periodic cycle. 
+
+2.3.2 Further details on modelling with Kima 
+
+With kima , models can be selected based on the global evi-dence Z (or, equivalently, the log-evidence log Z). The Bayes factor (BF) between two competing models M1 and M2 is defined as the ratio of their evidences BF( M1/M 2) = Z1
+
+Z2
+
+= exp(log Z1 − log Z2) , (1) where values > 1 favour model M1. In addition, a converged solution with kima enables the evidence for Np Keplerians in a model to be compared with the evidence for Np − 1Keplerians by simply taking the ratio of the corresponding number of posterior samples to obtain BF( Np/(Np −1)). Fol-lowing Trotta (2008) and Standing et al. (2022), we assume BF > 150 implies strong evidence in favour of a model, while BF ≤ 3 implies inconclusive evidence for a model. Intermedi-ate values of 3 < BF ≤ 12 are interpreted as weak evidence and 12 < BF ≤ 150 as moderate evidence. Further details, including corresponding probabilities and sigma values, are given in Table 2 of Standing et al. (2022). 
+
+Kima enables angular momentum deficit (AMD) checks (Laskar 1997, 2000; Petit et al. 2017) to ensure that pos-terior samples describing only stable orbits are obtained (see section 4.2 in Stevenson et al. 2025b). This can be especially important for compact multiplanet systems where high ec-centricity or resonant orbits might quickly lead to physically 
+
+MNRAS 000 , 1–26 (2026) 4 J. Barnes et al.                                                                                                                                                                  
+
+> HD 67200 HD 118006 / DMPP-7 HD 2134 Ref
+> B8.29 9.39 9.50 1
+> V7.70 8.80 8.82 1
+> G7.57 8.66 8.66 2Age [Gyr] 1.23 +0 .39
+> −0.52 3.87 +0 .28
+> −0.31 6.63 +0 .94
+> −0.86 3
+> π[mas] 18 .37 ±0.01 9.78 ±0.02 14 .00 ±0.01 21/π [pc] 54 .44 ±0.04 102 .3±0.271 .44 ±0.06 2
+> M∗[M ⊙]1.27 ±0.02 1.23 ±0.02 1.05 ±0.02 3
+> R∗[R ⊙]1.27 ±0.01 1.49 ±0.02 1.16 ±0.01 3
+> Teff [K] 6140 ±50 6096 ±30 5675 ±50 3log g4.35 ±0.08 4.17 ±0.09 4.22 ±0.10 3Fe/H 0.36 ±0.04 0.13 ±0.05 0.24 ±0.04 3
+> vsin i[km s −1] ( species )2.4±0.93.0±0.72.6±0.63
+> vmac [km s −1] ( species )4.7±0.31.5±0.13.1±0.33
+> vsin i[km s −1] (M16) <32.6+2 .3
+> −2.6<33
+> vmac [km s −1] (M16) 5.0±0.54.8±0.33.7±0.53log R′
+> HK −5.03 ±0.01 −5.05 ±0.03 −5.05 ±0.05 3log R′
+> HK min, max −5.08 ,−4.99 −5.11 ,−5.00 −5.28 ,−4.86 3
+> Table 1. Stellar parameters - references: Høg et al. (2000) 1, Gaia Collaboration et al. (2023) 2, this work using species 3.
+
+unstable solutions. kima automatically selects wide priors for the model parameters based on the input data to ensure un-biased sampling. These can be adjusted if necessary. In par-ticular, we follow the same procedure outlined in S26 and use the Kipping (2013) Beta distribution prior for eccentricities. 
+
+kima uses the more flexible Kumaraswamy distribution for which the parameters α = 0 .881 , β = 2 .878 closely match the Beta distribution (Stevenson et al. 2025a). The AMD criterion and eccentricity distribution prior together tend to favour more stable and less eccentric orbits, but still enable eccentricity and closely packed orbits where there is evidence in the data. 
+
+3 TARGET SELECTION 
+
+The DMPP survey candidates were identified by selecting targets with log R′ 
+
+> HK |max
+
+< −5.1 from the catalogue com-piled by P13. Further details of the selection are given in Haswell et al. (2020) (see methods section) and S26. Using the Phase 3 products for our targets, extracted with DRS Version 3.8 (i.e. with no sky subtraction), we obtain the in-strument specific S-index converted to the Mount Wilson S-index (hereafter, S MW ) using actin2 3 (Gomes da Silva et al. 2018, 2021, 2022) to monitor activity variability and calcu-late log R′ 
+
+> HK
+
+directly for each measurement. Flux level mea-surements from échelle spectra without sky subtraction are prone to systematic errors. The sky background contribution is greatest during bright time when the source is relatively close to the bright moon, particularly if thin cirrus cloud was also present during an observation. The problem becomes more of an issue when the Ca ii H&K chromospheric core fluxes are very small or the signal-to-noise ratio (SNR) of the data are low (e.g. for fainter targets). Activities derived from HARPS DRS spectra may overestimate log R′ 
+
+> HK
+
+since  
+
+> 3https://github.com/gomesdasilva/ACTIN2
+
+sky subtraction is not performed during extraction when a simultaneous reference spectrum is used on Fibre B 4.As Table 1 shows, the mean log R′ 
+
+> HK
+
+values we obtain from our HARPS observations are not strictly sub-basal, contrary to their survey selection criterion (i.e. they have log R′ 
+
+> HK
+
+> −5.1). However, with the exception of HD 67200, they show activities that are at times sub-basal. For two of our targets, we find that observations taken at the small-est moon-object distance, θsep , and highest fractional lunar illumination (FLI) have systematically elevated S MW levels relative to observations at higher θsep and FLI. Inspection of S MW as a function of θsep × FLI (as a first order ap-proximation) suggests ∼ 1 − 3% higher S MW for HD 67200 and HD 2134 under the brightest and closest moon condi-tions compared with FLI ∼ 0% conditions. The correspond-ing tabulated log R′ 
+
+> HK
+
+values may thus be overestimated by only 0 .02 dex and 0 .03 dex respectively, i.e. remaining above the basal flux limit after correction. No significant trend can be discerned for HD 118006 from the single epoch HARPS observations, likely owing to a greater θsep = 131 − 170 ◦ and smaller range of FLI = 0 −69% (for comparison, the HD 67200 and HD 2134 observations were taken with θsep = 83 − 103 ◦
+
+and 64 − 112 ◦ for FLI ∼ 0 − 90%). HD 67200, HD 118006 and HD 2134 show log R′ 
+
+> HK
+
+< −5.1for respectively 0%, 16% and 10% of the HARPS observa-tions. Accounting for the systematic overestimates of log R′
+
+> HK
+
+does not yield any HD 67200 observations with log R′ 
+
+> HK
+
+< 5.1, while 21% of HD 2134 observations would fall below log R′
+
+> HK
+
+< 5.1. Irrespective of whether or not these stars show sub-basal chromospheric activity at all observation epochs, they exhibit very low-activity levels and are thus amenable to searches for low-amplitude dynamically induced signals.   
+
+> 4www.eso.org/sci/facilities/lasilla/instruments/harps/ doc/manual/HARPS-UserManual2.4.pdf MNRAS 000 , 1–26 (2026)
+
+# DMPP exoplanet systems 500.5 11 10 100 
+
+(f) Window function |W| Period [d] 010 20 30 (e) SMW FWHM 
+
+> ∆ log L
+
+010 BIS M3
+
+> ∆ log L
+
+(d) 
+
+010 20 (c) P3 = 2.83 d 
+
+> ∆ log L
+
+020 40 (b) P2 = 4.85 d 
+
+> ∆ log L
+
+020 40 (a) P1 = 36.4 d 
+
+> ∆ log L
+
+Figure 2. HD 67200 log-likelihood periodograms. Panels (a), (b) and (c) show the recursive RV periodograms. The corresponding activity periodograms are shown for (d) BIS and M3 and (e) S MW 
+
+and FWHM. Significant power is only seen in S MW centred around 15 .99 d (grey tick). The window function in (f) shows significant peaks at 12.1, 16.3, 17.1, 18.8 and 34.5 d (highlighted by the ver-tical dashed lines in all panels). -0.005 00.005 0 5 10 15 P = 15.99 d 
+
+> 2016/17 (P98) 2017 (P99) 2018 (P100) 2023 (P110)
+> ∆SMW
+> Time [d]
+
+Figure 3. SMW phased on the P = 15 .99 d period in Fig. 2. The additive noise term from the maximum likelihood fit is shown by the darker and thinner error bars. The data from ESO Periods P98, P99, P100 (post-2015) and P110 (post-2020) are plotted with different colours and symbols. 
+
+4 RESULTS 
+
+The available photometric data and spectroscopic activity indicators were used to help inform our modelling of each target. We performed likelihood periodogram analysis and posterior sampling using both Keplerian-only and Keple-rian+GP models. -10 -5 0510 -5 0 5              
+
+> (c) <BIS> = 16.19 [ms -1 ]
+> ∆BIS [ms -1 ]RV [ms -1 ]
+> r = -0.06 ( -0.17, 0.04); p = 0.54 r = 0.26 ( 0.03, 0.47); p = 0.26 -0.01 -0.005 00.005 -5 05
+> (d) <S MW > = 0.1501
+> ∆SMW
+> RV [ms -1 ]
+> r = -0.16 ( -0.26, -0.06); p = 0.12 r = 0.32 ( 0.08, 0.52); p = 0.17
+> 05-5 05
+> (a) <M 3> = 0.0027 2016/17 (P98) 2017 (P99) 2018 (P100) 2023 (P110)
+> ∆M3
+> r = -0.28 ( -0.37, -0.18); p = 0.01 r = -0.19 ( -0.41, 0.05); p = 0.42
+> 050 -5 05
+> (b) <FWHM> = 7.88 kms -1
+> ∆FWHM [ms -1 ]
+> r = 0.26 ( 0.16, 0.36); p = 0.01 r = -0.43 ( -0.61, -0.22); p = 0.06
+
+Figure 4. HD 67200 RV correlations with activity indicator met-rics. The data are colour coded as in Fig. 3. The Pearson’s r linear correlation value, with uncertainties and the p-statistic, are indi-cated for the combined P98–P100, post-2015 epochs (red) and the P110, post-2020 epoch (blue). 
+
+4.1 HD 67200 
+
+4.1.1 HD 67200 stellar parameters and evolution status 
+
+HD 67200 is a bright nearby F star with a visual magnitude of 
+
+V = 7 .7. We used the Spectroscopic Parameters and atmo-sphEric ChemIstriEs of Stars code, species (Soto & Jenk-ins 2018; Soto et al. 2021) to derive stellar parameters for HD 67200 (Table 1). P13 identified HD 67200 as a low activ-ity star from two observations of log R′ 
+
+> HK
+
+= −5.34 and −5.10. The original observations were made by Arriagada (2011) and Jenkins et al. (2011) who both used inter-order scattered-light subtraction during the extraction process. The need for sky background subtraction was not deemed necessary by Arria-gada (2011). From their Ca ii H&K S-index measurements, we found log R′ 
+
+> HK
+
+= −5.23 and −5.05 after correcting the log R′ 
+
+> HK
+
+calculation issue (see §3) in the P13 catalogue. Thus, although HD 67200 does not meet the log R′ 
+
+> HK |max
+
+< −5.1requirement for DMPP selection, we retained it in our sam-ple owing to the low log R′ 
+
+> HK
+
+= −5.23 value. We also note that the log R′ 
+
+> HK
+
+= −5.05 from Jenkins et al. (2011) may be closer to the basal level if sky background was actually significant during the observations. With actin2 and the HARPS S MW conversion calibrated with 43 stars, we find log R′ 
+
+> HK
+
+= −5.03 ± 0.01. The full range of −5.08 < log R′
+
+> HK
+
+< −4.99 is not consistent with the sub-basal Arriagada (2011) observation, indicating that HD 67200 was in a persistently higher activity state during the period of our DMPP obser-vations with HARPS. The main sequence age of 1 .23 ± 0.52 Gyr is consistent with the estimate made by Gomes da Silva et al. (2022). The equatorial rotation velocity of v sin i = 5 .2±0.3 km s −1
+
+is consistent with the species -derived estimate of Perdel-witz et al. (2024). However, species does not take into ac-count the macroturbulent velocity contribution when ob-taining rotational broadening estimates. The macroturbu-lent velocity contribution, vmac = 4.7 ± 0.3 km s −1, is obtained by species from the relationship in dos San-tos et al. (2016). A more reliable rotational velocity esti-
+
+MNRAS 000 , 1–26 (2026) 6 J. Barnes et al. 
+
+mate is thus obtained by simply subtracting in quadrature 
+
+v sin i = √v sin i2 
+
+> species
+
+− v2mac, species . The adjusted estimate of v sin i = 2 .4±0.9 km s −1 is given in Table 1. An alternative approach, implemented by Murphy et al. (2016) (M16), de-rives both v sin i and vmac directly from the spectra, but re-quires high spectral resolution for successful recovery of both parameters, particularly when v sin i is close to the spectral resolution. For HD 67200, an M16 two-parameter fit is op-timised when v sin i = 0 km s −1; hence, while we obtain a finite positive vmac estimate, we can only determine a v sin i
+
+upper 68.3% confidence limit of 3 km s −1 (Table 1). We thus prefer the species estimate. Monte Carlo simulations with R = 1 .27 ± 0.01 R ⊙, ran-domly oriented (i.e. sinusoidally distributed) stellar axial in-clinations and the species v sin i = 2 .4 ± 0.9 km s −1 estimate (Fig. 1, green) suggest a modal or most probable stellar ro-tation period of ˆProt = 19 .4 d, with a median and upper and lower 68 .3% values of ˜Prot = 21 .9 (13 .4; 35 .5) d. From our M16 estimate, we find ˆProt = 11 .8 d with a distribution (Fig. 1, orange) that is skewed to longer rotation rates due to the half-Gaussian distributed values of 0 < v sin i ≤ 3 km s −1;here, we find ˜Prot = 24 .5(10 .8; 83 .9) d. The distributions and modal periods are also shown and indicated in Fig. 1 (grey) for a fixed i = 90 o. The SPECIES age estimate for HD 67200 suggests a rotation period of 10 .6+2 .2 
+
+> −3.1
+
+d based on the gy-rochronology relation of Mamajek & Hillenbrand (2008). An age estimate from actin2 of 3 .7 ± 1.7 Gyr similarly leads to a rotation period estimate of 19 .9 ± 5.6 d, but may be slightly biased to younger ages in the absence of sky subtraction and to older ages given the likelihood that chromospheric emis-sion is depressed under the DMPP hypothesis. 
+
+4.1.2 HD 67200 search for Prot in TESS photometry 
+
+With a high negative declination of -70:01:25.96 (J2000), HD 67200 has been observed by TESS during Years 1, 3, 5 and 7 in a total of 42 sectors. Recovery of periods be-yond ∼10 days or half the TESS sector length of 13.7 d with standard period analyses is difficult or unreliable (e.g. see Colman et al. 2024; Claytor et al. 2022; Boyle et al. 2025). Hattori et al. (2025) had success recovering longer periods with periodogram analyses that employed separate zero-point offsets for each sector. Appendix B presents the unpopular 
+
+lightcurves in Fig. B1. The corresponding sinusoidal periods, 
+
+P , and the semi-amplitudes, A, that we discussed in S26 are tabulated in Table B1. In addition, we give the Rvar variabil-ity, which measures the 5% – 95% span of the sorted data after resampling into 3 hr bins to reduce short-timescale noise in the TESS photometry (Basri et al. 2011; Reinhold & Hekker 2020). Using the same approach as Hattori et al. (2025), with standard GLS periodogram analysis, (Zechmeister & Kürster 2009) yields inconsistent periods for HD 67200, from year to year and also when analysing Years 1 and 3 as separate odd and even sectors. We find periods of 3 .65 d – 13 .7 d, but with relatively stable sinusoidal amplitudes, A, of 30–49 ppm. The amplitudes are significantly below the span of the photom-etry, indicated by the Rvar statistic. We suspect that TESS instrumental systematics may be affecting the HD 67200 pho-tometry (see Appendix B for further details). To investigate whether the high Rvar to A ratio arises from modulating activity levels, we attempted to recover stellar ro-tation periodicities by using the s+leaf ESP kernel (Delisle et al. 2020). The expected harmonic content of spot mod-ulated light curves can be quantitatively justified using the Kepler analysis of Basri & Nguyen (2018), who show that “double-dip” lightcurve segments have photometric variabil-ity amplitudes approximately half those of “single-dip” seg-ments. With respect to the fundamental characteristic rota-tion period, η3, this implies a relative η3/2 harmonic am-plitude of ∼30–50%. Table A1 shows this corresponds to (η3/2) /η 3 harmonic weighting ratios in the ESP kernel of 
+
+w2/w 1 ≈ 0.3–0 .5, which is achieved for η4 ≈ 0.7–0 .9. We initially tried using a uniform prior of η4 : U[0 .8; 10] on the harmonic complexity to ensure that double-dip morphology could be adequately captured in the lightcurves ( η4 ∼ 10 essentially only allows the fundamental η3 harmonic to ap-pear). A wide characteristic period prior of η3 : U[10; 100] was adopted, with lower bound informed by our Monte-Carlo simulation. We assumed that photometric coherence should persist for at least as long as the time an active region is visible, with a prior of η2 : U[> 0.5 η3; tspan ], though more properly to recover periodicity on the characteristic rota-tion timescale, prior ranges of at least η2 : U[> η 3; tspan ]or η2 : U[> 2 η3; tspan ] are more appropriate as is typically seen in lightcurve data (Basri & Nguyen 2018). We re-binned the photometric observations obtained with 
+
+unpopular into 0 .5 d bins to ensure that effective posterior sampling was computationally tractable. As we suspected, runs with a prior of η2 : U[> 0.5η3; tspan ] tend to favour pile-up of the hyperparameter posteriors at the lower η3 = 10 d boundary with the correlated photometric variability de-scribed by the η2 timescale at ∼ 0.5η3. i.e. the GP prefers to use the decay timescale correlation to fit the very short timescale variability that is probably due to data systemat-ics. Requiring U[≥ η3; tspan ], also tends to result in η3 pos-terior sample pile up at the lower 10 d boundary or a pref-erence for η3 ∼ 13 − 14 d; which probably corresponds to the 13.5 d TESS Earth-orbit signature. While the GP model with appropriate harmonic complexity has the potential to capture the observed variability better than a strict sinusoid, the presence of spacecraft systematics precludes successful recovery of stellar rotation signals for HD 67200. Restricting harmonic complexity to include only the fundamental char-acteristic periodicity does not offer any significant benefits over straightforward periodogram analysis in this instance. 
+
+4.1.3 HD 67200 Activity indicators 
+
+With the exception of S MW , the likelihood periodograms in Fig. 2 a,b do not show any evidence for periodic signals (i.e. no power with ∆ log L > 15). Significant S MW periodicities are present at periods close to 15 .99 d, with a number of closely related significant aliases. There does not appear to be a direct coincidence of the window function peaks (indi-cated by the vertical dashed lines in Fig. 2 a-e) and signifi-cant S MW peaks. A phase fold of S MW for the 15 .99 d period is shown in Fig. 3 The data points are colour coded to high-light the individual observing epochs. The additional additive noise term from the likelihood model in ars (assuming a si-nusoidal waveform) corresponding to this period is 3 .0 times the mean S MW errors, suggesting significant underestimation of the data uncertainties. The P98-P100 (post-2015) data sets individually span  
+
+> MNRAS 000 , 1–26 (2026)
+
+# DMPP exoplanet systems 7
+
+Model 1a ( Np = 2) Parameter HD 67200 b ′ HD 67200 c ′
+
+P [d] 7.60197 +0 .02557 
+
+> −0.00126
+
+[7 .60182] 36 .44961 +0 .49779 
+
+> −0.06229
+
+[36 .51028] 
+
+K [ms −1] 1.90 +0 .27 
+
+> −0.25
+
+[2 .25] 2.62 +0 .28 
+
+> −0.35
+
+[2 .63] 
+
+M0 [rad] 1.102 +3 .095 
+
+> −0.315
+
+[0 .995] 2.943 +3 .097 
+
+> −2.704
+
+[0 .110] e 0.353 +0 .094 
+
+> −0.087
+
+[0 .476] 0.193 +0 .097 
+
+> −0.126
+
+[0 .296] 
+
+ω [rad] 3.048 +0 .333 
+
+> −0.257
+
+[3 .069] 3.090 +0 .586 
+
+> −0.493
+
+[2 .788] 
+
+σp15, p20 [ms −1] 0.89 +0 .09 
+
+> −0.08
+
+[0 .82], 1.39 +0 .36 
+
+> −0.26
+
+[1 .25] 
+
+γp15, p20 − 15032 .84 [ms −1] 0.22 +1 .25 
+
+> −1.07
+
+[0 .16], 14 .01 +1 .10 
+
+> −1.15
+
+[15 .52] 
+
+a [AU] 0.0820 +0 .0005 
+
+> −0.0005
+
+[0 .0822] 0.2332 +0 .0019 
+
+> −0.0015
+
+[0 .2356] 
+
+mp sin i [M ⊕] 6.389 +0 .731 
+
+> −0.817
+
+[7 .180] 15 .570 +1 .688 
+
+> −2.032
+
+[15 .611] 
+
+tc [JD] 58861 .421 +0 .308 
+
+> −3.747
+
+[58861 .780] 58850 .875 +5 .986 
+
+> −30 .479
+
+[58858 .968] BF( Np = 2 /N p = 1) > 2213 ln L [MAP] −161 .20 Model 1b ( Np = 3) Parameter HD 67200 b ′′ HD 67200 c ′′ HD 67200 d ′′ 
+
+P [d] 3.20794 +0 .00475 
+
+> −0.27300
+
+[3 .20803] 7.62757 +0 .00085 
+
+> −0.00130
+
+[7 .62780] 36 .97461 +0 .05330 
+
+> −0.56404
+
+[37 .01817] 
+
+K [ms −1] 1.01 +0 .21 
+
+> −0.19
+
+[1 .11] 2.01 +0 .22 
+
+> −0.28
+
+[2 .30] 3.08 +0 .34 
+
+> −0.44
+
+[3 .30] 
+
+M0 [rad] 3.494 +1 .663 
+
+> −2.625
+
+[3 .459] 4.357 +0 .368 
+
+> −0.641
+
+[4 .478] 3.826 +1 .449 
+
+> −2.696
+
+[5 .135] e 0.244 +0 .147 
+
+> −0.174
+
+[0 .335] 0.221 +0 .067 
+
+> −0.064
+
+[0 .229] 0.031 +0 .039 
+
+> −0.024
+
+[0 .039] 
+
+ω [rad] 3.666 +0 .960 
+
+> −1.033
+
+[3 .809] 2.872 +0 .388 
+
+> −0.372
+
+[2 .869] 2.532 +2 .132 
+
+> −1.308
+
+[1 .194] 
+
+σp15, p20 [ms −1] 0.75 +0 .09 
+
+> −0.08
+
+[0 .63], 0.96 +0 .35 
+
+> −0.29
+
+[0 .71] 
+
+γp15, p20 − 15032 .84 [ms −1] 0.15 +1 .22 
+
+> −1.11
+
+[0 .03], 13 .77 +1 .06 
+
+> −1.18
+
+[14 .48] 
+
+a [AU] 0.0459 +0 .0004 
+
+> −0.0025
+
+[0 .0460] 0.0821 +0 .0005 
+
+> −0.0005
+
+[0 .0826] 0.2347 +0 .0016 
+
+> −0.0020
+
+[0 .2356] 
+
+mp sin i [M ⊕] 2.601 +0 .506 
+
+> −0.541
+
+[2 .814] 7.085 +0 .815 
+
+> −1.037
+
+[8 .156] 18 .779 +2 .102 
+
+> −2.696
+
+[20 .216] 
+
+tc [JD] 58861 .900 +0 .719 
+
+> −0.930
+
+[58861 .124] 58857 .233 +0 .500 
+
+> −0.235
+
+[58857 .215] 58835 .929 +18 .859  
+
+> −2.190
+
+[58835 .526] BF( Np = 3 /N p = 2) 22 .9ln L [MAP] −138 .85 Global evidence, ln Z −213 .25 Model 2a (GP + Np = 0) Model 2b (GP + Np = 1) Parameter HD 67200 b ′′′ 
+
+P [d] 2.79853 +0 .40939 
+
+> −0.30363
+
+[3 .20815] 
+
+K [ms −1] 0.89 +0 .36 
+
+> −0.20
+
+[1 .43] 
+
+M0 [rad] 3.273 +1 .482 
+
+> −1.788
+
+[3 .648] e 0.212 +0 .351 
+
+> −0.170
+
+[0 .650] 
+
+ω [rad] 3.375 +1 .389 
+
+> −1.886
+
+[3 .393] 
+
+η1 [ms −1] 2.86 +0 .81 
+
+> −0.58
+
+[2 .09] 2.90 +1 .31 
+
+> −0.69
+
+[2 .89] 
+
+η2 [d] 9.130 +69 .080  
+
+> −3.402
+
+[5 .098] 69 .977 +164 .569  
+
+> −45 .913
+
+[568 .287] 
+
+η3 [d] 10 .829 +4 .304 
+
+> −0.734
+
+[10 .046] 14 .741 +3 .439 
+
+> −0.592
+
+[19 .598] 
+
+η4 0.671 +0 .216 
+
+> −0.120
+
+[0 .503] 0.677 +0 .208 
+
+> −0.127
+
+[0 .548] 
+
+σp15, p20 [ms −1] 0.71 +0 .12 
+
+> −0.10
+
+[0 .65], 1 .15 +0 .44 
+
+> −0.35
+
+[0 .81] 0.67 +0 .08 
+
+> −0.07
+
+[0 .59], 0 .82 +0 .35 
+
+> −0.28
+
+[0 .78] 
+
+γp15, p20 − 15032 .84 [ms −1] 0.02 +0 .93 
+
+> −1.30
+
+[1 .04], 13 .50 +1 .77 
+
+> −1.70
+
+[13 .30]0 .67 +0 .08 
+
+> −0.07
+
+[0 .59], 13 .77 +2 .00 
+
+> −1.82
+
+[13 .04] 
+
+a [AU] 0.0421 +0 .0038 
+
+> −0.0029
+
+[0 .0466] 
+
+mp sin i [M ⊕] 2.175 +0 .605 
+
+> −0.492
+
+[2 .997] 
+
+tc [JD] 58862 .203 +1 .213 
+
+> −1.119
+
+[58861 .602] ln L [MAP] −182 .75 −164 .62 BF(GP/no-GP) | BF( Np = 1 /N p = 0) > 1271 10 .73 Global evidence, ln Z −207 .67 
+
+Table 2. Top: HD 67200 parameters for the purely Keplerian models with Np = 2 (Model 1a) and Np = 3 (Model 1b). Bottom: Parameters for models containing a pure GP with Np = 0 (Model 2a) and a GP with Np = 1 (Model 2b). White noise ( σp15, p20 ) and velocity offsets (γp15, p20 ) for post-2015 and post-2020 datasets are given. Maximum posterior (MAP) solutions are indicated in square parentheses. Derived a, mp sin i and time of inferior conjunction, tc, are given. MNRAS 000 , 1–26 (2026) 8 J. Barnes et al. RVs (N p = 2) 
+
+(a) 
+
+> 95% 68% 50% Kep med
+
+-5 05RV [ms -1 ]-4 040 10 20 30 40 O-C [ms -1 ]170 post-2015 410 420 post-2020 2270 2280 2290 RVs (N p = 3) 
+
+(b) 
+
+-5 05RV [ms -1 ]-4 040 10 20 30 40 O-C [ms -1 ]170 410 420 2270 2280 2290 RVs (GP + N p = 0) 
+
+(c) 
+
+> 95% 68% 50% GP med
+
+-5 05RV [ms -1 ]-4 040 10 20 30 40 O-C [ms -1 ]170 410 420 2270 2280 2290 RVs (GP + N p = 1) 
+
+(d) 
+
+> 95% 68% 50% GP med
+> Kep med
+> GP+Kep med
+
+-5 05RV [ms -1 ]-4 040 10 20 30 40 O-C [ms -1 ]170 410 420 2270 2280 2290 BJD - 2457720 [d] 
+
+Figure 5. Solution curves for the HD 67200 RVs. The purely Keplerian solutions are shown in (a) for Np = 2 (Model 1a) and in (b) for the Np = 3 (Model 1b). The GP + Keplerian solutions are shown in (c) for Np = 0 (Model 2a) and in (d) for Np = 1 (Model 2b). See Table 2 for model solution details. The median 50% curve (dark grey) from the posteriors and single most representative median curves (see legends) are shown along with the 68% confidence (mid grey) and 95% confidence (light grey) envelopes (see main text for details). Residuals and binned residual points for the representative median sample are shown in the lower sub-panels. The data uncertainties are plotted and also show the representative median model white noise terms added in quadrature (darker shades, thinner and longer error bars). Nightly binned data points are also plotted as darker open symbols. MNRAS 000 , 1–26 (2026) DMPP exoplanet systems 9
+
+Model 3a (GP + Np = 0) Model 3b (GP + Np = 1) Parameter HD 67200 b 
+
+P [d] 2.67380 +0 .30804 
+
+> −0.19540
+
+[2 .26190] 
+
+K [ms −1] 0.84 +0 .29 
+
+> −0.19
+
+[1 .16] 
+
+M0 [rad] 3.350 +1 .637 
+
+> −1.828
+
+[2 .398] e 0.178 +0 .347 
+
+> −0.137
+
+[0 .551] 
+
+ω [rad] 3.250 +1 .829 
+
+> −1.921
+
+[2 .796] 
+
+η1 [ms −1] 2.91 +0 .99 
+
+> −0.62
+
+[2 .83] 2.82 +0 .84 
+
+> −0.61
+
+[1 .89] 
+
+ηact 1 (S MW ) 1.95 +0 .59 
+
+> −0.43
+
+[1 .94] 1.97 +0 .61 
+
+> −0.42
+
+[1 .68] 
+
+η2 [d] 57 .723 +40 .720 
+
+> −34 .227
+
+[83 .942] 66 .151 +49 .913 
+
+> −32 .654
+
+[56 .459] 
+
+η3 [d] 15 .103 +0 .750 
+
+> −0.520
+
+[15 .120] 15 .035 +0 .553 
+
+> −0.455
+
+[15 .006] 
+
+η4 0.625 +0 .158 
+
+> −0.089
+
+[0 .547] 0.634 +0 .164 
+
+> −0.096
+
+[0 .511] 
+
+σp15, p20 (RV) [ms −1] 0.78 +0 .11 
+
+> −0.09
+
+[0 .81], 1.24 +0 .36 
+
+> −0.30
+
+[1 .06] 0.68 +0 .09 
+
+> −0.08
+
+[0 .59], 0.82 +0 .35 
+
+> −0.27
+
+[1 .24] 
+
+σp15, p20 (S MW ) 0.68 +0 .08 
+
+> −0.08
+
+[0 .73], 1.99 +0 .49 
+
+> −0.36
+
+[1 .75] 0.68 +0 .08 
+
+> −0.07
+
+[0 .69], 1.97 +0 .47 
+
+> −0.36
+
+[1 .69] 
+
+γp15, p20 (RV) −15032 .84 [ms −1] −0.28 +1 .04 
+
+> −1.35
+
+[−0.66], 13 .45 +1 .83 
+
+> −1.65
+
+[13 .31] 0.05 +11 .50  
+
+> −2.68
+
+[0 .11], 12 .96 +2 .19 
+
+> −12 .30
+
+[−21 .80] 
+
+γp15, p20 (S MW ) 147 .97 +0 .83 
+
+> −0.77
+
+[147 .94], 147 .41 +1 .19 
+
+> −1.13
+
+[146 .75] 150 .41 +0 .84 
+
+> −0.61
+
+[149 .54], 147 .59 +1 .23 
+
+> −1.19
+
+[147 .65] 
+
+a [AU] 0.0409 +0 .0030 
+
+> −0.0021
+
+[0 .0367] 
+
+mp sin i [M ⊕] 2.066 +0 .518 
+
+> −0.468
+
+[2 .353] 
+
+Teq (AB = 0 , 0.36) [K] 1650 , 1475 
+
+Rp (predicted from mp sin i) [R ⊕] 1.24 +0 .10 
+
+> −0.09
+
+Rp (predicted, i = 57 .3◦) [R ⊕] 1.30 +0 .11 
+
+> −0.10
+
+tc [JD] 58862 .236 +1 .227 
+
+> −1.130
+
+[58862 .727] ln L [MAP] −367 .57 −346 .43 BF(GP/no-GP) | BF( Np = 1 /N p = 0) > 1013 10 .32 Global evidence, ln Z −400 .04 
+
+Table 3. Top: HD 67200 parameters for the GP + Keplerian model with RV and simultaneous S MW . The GP + N p = 0 (Model 3a) and GP + N p = 1 (Model 3b) are tabulated. Parameters are given in as in Table 2 with the addition of ηact 1 , σ and γ parameters for the S MW 
+
+timeseries. The derived planet equilibrium temperature, Teq , and predicted planet radii, Rp, (M24) are given for Model 3b. 
+
+small fractions ( < 31%) of the candidate 15 .99 d rotation period. Although the 10 d span of the P110 (post-2020) data set covers 60% of the rotation phase, there are also too few data in P110 alone to reliably identify significant periodicity. It is possible that power at the 15 .99 d period is affected by stochastic changes in chromospheric activity at each observ-ing epoch, so we should not necessarily expect active regions to generate perfectly sinusoidal modulation. While the mean SMW levels in P98 and P100 are different, suggesting long term activity changes, these data fall within the S MW range spanned by the P110 data. We note however that the mean SNR = 33 (Ca ii H&K orders) for P110 is lower than the pre-ceding epochs, where the mean SNR = 41. The P98-100 and P110 data sets yield inconsistent S MW vs SNR correlations of r = −0.20 ± 0.10 ( p = 0 .05) and r = 0 .52 +0 .16  
+
+> −0.20
+
+(p = 0 .02). Confirmation of a 15 .99 d stellar rotation period for HD 67200 would imply active regions contributing significant chromo-spheric variability are present at relatively fixed longitudes on the 6 .25 year span of the observations. Even if active lon-gitudes exist, as has been suggested for over 100 years of solar data by Berdyugina & Usoskin (2003), the long-term coherence of such structures remains unclear. None of the activity indicators show consistent or strong linear correlations with the RVs. Each sub-panel of Fig. 4 gives the Pearson’s r linear RV vs activity correlation, with upper and lower 68.3% confidences in parentheses, and the 
+
+p statistic, with which the null hypothesis of no correlation can be rejected. The P110 data set is probably too small to return meaningful correlations. This is reflected in the large Pearson’s r uncertainties for this data set. The RVs are offset by the mean value for each of the P98–100 and P110 periods. The RV vs BIS correlation in the P98–P100 data sets is con-sistent with no correlation ( r = −0.06). Similarly, the RV vs M3 correlation of r = −0.28 and RV vs FWHM correlation of r = 0 .26 are weak. Despite the tentative S MW periodic-ity at 15 .99 d, the P98–P100 data suggests weak RV vs S MW 
+
+negative correlation ( r = −0.16 ± 0.10, p = 0 .12 and there is weak to moderate evidence for a linear correlation with Pearson’s r = 0 .32 +0 .20  
+
+> −0.24
+
+and p = 0 .17 in P110 suggesting the hypothesis of no correlation cannot be reliably ruled out. The RV vs S MW distribution shown in Fig. 4 d appears to show offsets between observing epochs, which may be indica-tive of activity changes. Further, it is worth noting that the P98 data, which span 40 d, appear to show a correlation. Two data points from P98 sit above the main group of points, both with amongst the highest uncertainties. Hence, while with all P98 data, we obtain r = 0 .13 +0 .14 
+
+> −0.21
+
+, p = 0 .32), removal of the outliers yields r = 0 .25 +0 .12 
+
+> −0.13
+
+, p = 0 .06, a correlation that is much more consistent with the P110 data. The P99 and P100 subsets are too small to yield useful correlations. It is probable that changing activity masks a clean linear correlation. Also, it is not clear that S MW or FWHM should correlate linearly with RV; Barragán et al. (2022) showed that the RVs correlate with the time derivative of log R′
+
+> HK
+
+.
+
+MNRAS 000 , 1–26 (2026) 10 J. Barnes et al. RVs (GP + N p = 0) 
+
+(a) 
+
+> 95% 68% 50% GP med
+
+-5 05RV [ms -1 ]-4 04O-C [ms -1 ]S-index (GP) 
+
+> 50% GP med
+
+-0.005 00.005 S-index -0.005 00.005 0 10 20 30 40 O-C [ms -1 ]170 180 post-2015 410 420 post-2020 2270 2280 2290 RVs (GP + N p = 1) 
+
+(b)  
+
+> 95% 68% 50% GP med
+> Kep med
+> GP+Kep med
+
+-5 05RV [ms -1 ]-4 04O-C [ms -1 ]S-index (GP) 
+
+> 50% GP med
+
+-0.005 00.005 S-index -0.005 00.005 0 10 20 30 40 O-C [ms -1 ]170 180 410 420 2270 2280 2290 BJD - 2457720 [d] 
+
+Figure 6. HD 67200 solution curves for simultaneous RV + S MW models for (a) a pure GP with Np = 0 (Model 3a) and (b) the GP + 
+
+Np = 1 solution (Model 3b). 
+
+This behaviour was also demonstrated between RVs and the second line moment of the RV CCF, M2, in Barnes et al. (2024). Solar observations and time-resolved analyses show that correlations between RVs and activity indicators are not stationary in time, and may vary with activity level and phase coverage (e.g. Simola et al. 2022; Klein et al. 2024). More-over, quasi-periodic models of stellar activity indicate that these signals arise from evolving surface features, such that no single, fixed phase relationship is expected (e.g. Nichol-son & Aigrain 2022). Since for HD 67200, S MW is the only 
+
+MNRAS 000 , 1–26 (2026) DMPP exoplanet systems 11 
+
+RV vs activity correlator that shows both a potential linear correlation and significant periodicity, we performed cross-correlation analysis between the RVs and S MW . We used the P98 data (with two outliers removed) and the P110 data (spanning 11 d) to search for signs of a phase lag on timescales of the 15 .99 d periodicity. The cross-correlation function ex-hibits peaks at lags of ∼ +0 .6 d and +15 .7 d for P98, implying periodic behaviour that matches the S MW 15 .99 d period. For P110, a lag of −5 d is seen. These values are not consistent between datasets and correspond to a substantial fraction of the inferred stellar rotation period in P110. Visual inspection of the P110 RVs and S MW in Fig. 6 suggests correlated vari-ability, but the presence of a clear one-to-one relationship is not obvious. This, combined with the incomplete phase coverage means the −5 d lag is unlikely to be robust. The observed behaviour is consistent with quasi-periodic variabil-ity and evolving active regions, for which the apparent lag depends on phase coverage and time baseline. We therefore conclude that, although RV and S MW variations are probably correlated, there is no robust evidence for a well-defined or stable phase offset between them. In summary, HD 67200 appears to be photometrically very quiet. Because of probable instrument systematics, there is no convincing evidence from photometry for periodicity associ-ated with the expected stellar rotation period. The tentative SMW periodicity is probably affected by changes in activity between observing runs. However, the combination of S MW 
+
+periodicity with weak to moderate linear correlation at some epochs, means careful consideration is warranted when in-specting the RVs for evidence of potential Keplerian signals. No clear correlation between the RVs and other activity indi-cators, nor any corresponding significant periodicity, is read-ily apparent when examining the entire data set or observing run subsets. 
+
+4.1.4 HD 67200 - Purely Keplerian model 
+
+The recursive maximum likelihood periodograms (Fig. 2 a, b and c) indicate three persistent periodicities in the 6.25 yr span of the data, all with ∆ log L > 15. The third peak has P = 2 .83 d and e = 0 .47. A likelihood model with fixed eccentricity, e = 0, yields a different period of P = 3 .88 d. The distinct period-power distributions yield very similar likelihoods in both instances, indicating the need for a fully Bayesian approach to properly explore posterior space. RV solutions with kima presented by S26 found strong evidence for two purely Keplerian signals, identified as DMPP-6 b and DMPP-6 c. Further moderate evidence for a P ∼ 3 d signal was also found. With kima , using a purely Keplerian model with Npmax = 4 (i.e. integer prior Np : U[0; 4]), we confirm strong evidence for 2 Keplerians ( Np = 2) with BF( Np = 2 /N p = 1) > 2213. Note that the Bayes Factor is a lower limit since no poste-rior samples (generated by kima from the weighted DNest4 
+
+raw samples) with Np < 2 are generated for the HD 67200 data with this model. In other words, Np = 0 and Np = 1 are very strongly disfavoured. The Model 1a parameters, statistics and derived parameters for the candidate signals, HD 67200 b ′ and HD 67200 c ′, are listed in Table 2. The data and Np = 2 model curves are shown in Fig. 5 a; the median 50% curve and the corresponding 68% and 95% envelopes are determined from 1000 randomly selected samples from -5 050 1 2 3Model 1b – N p = 3(b)                          
+
+> P = 3.208 d
+> RV [ms -1 ]Period [d] HD 67200 b ''
+> -4 04012Model 2b –GP + N p=1–Model 3b (c)
+> P = 2.799 d
+> RV [ms -1 ]Period [d] HD 67200 b ''' (RV) -5 050246Model 1a – N p=2(a)
+> P = 7.602 d
+> RV [ms -1 ]Period [d] HD 67200 b '
+> 0246
+> P = 7.628 d
+> Period [d] HD 67200 c ''
+> 012
+> P = 2.674 d
+> Period [d]
+> HD 67200 b (RV+S MW )
+> 010 20 30
+> P = 36.45 d
+> Period [d] HD 67200 c '
+> 010 20 30
+> P = 36.97 d
+> Period [d] HD 67200 d ''
+
+Figure 7. HD 67200 phase-folded RVs for the purely Keplerian models with (a) Np = 2 (Model 1a) and (b) Np = 3 (Model 1b). Shown in (c) are the Keplerian phase-folds with Np = 1 (Model 2b and preferred Model 3b, highlighted in bold) after subtracting the GP components. The nightly binned data (as in Figs. 5 and 6) are shown by small filled circles. 
+
+the Np = 2 posteriors. The single sample most representa-tive of the 50% median is determined via least squares and shown as the blue curve. The corresponding phase-folded RVs are shown in the upper panels of Fig. 7. Our Model 1a sig-nals correspond to the two maximum posterior DMPP-6 so-lutions presented in S26. There is moderate evidence for 3 Keplerians ( Np = 3), with of BF( Np = 3 /N p = 2) = 23 .2. The parameters for the Model 1b solution are presented in Table 2 with candidate planets HD 67200 b ′′ , HD 67200 c ′′ 
+
+and HD 67200 d ′′ . The apparent improvement in fit (maxi-mum posterior log L = −138 .85, compared with −161 .20 for 
+
+Np = 2) is visually evident in the full RV solution curves shown in Fig. 5 b, particularly in the 2023 (P110) data set (blue points). The white noise terms, σp15 and σp20 (post-2015 and post-2020 respectively) in the likelihood model with 
+
+Np = 2 accommodate some of the variability that can be fit with the additional Keplerian signal in the Np = 3 model. The ratio of σp15 /σ p20 in the Np = 3 model is also slightly reduced over Np = 2 model, suggesting that the post-2020 data are better fit with the additional Keplerian. Despite imposing AMD stability checks and using the Beta distribution eccentricity prior (§2.3.2), it is possible that the data sampling has biased the eccentricity distributions of the planet candidates. For the Np = 3 solution, both the in-ner planets’ eccentricities, with e > 0.2, are greater than the 
+
+e = 0 .031 of the outer planet candidate. Since the eccentricity of the planet candidates in the Np = 2 scenario are greater 
+
+MNRAS 000 , 1–26 (2026) 12 J. Barnes et al. 
+
+than those in the Np = 3 solution, it is possible that more data would provide evidence for more signals with even lower eccentricities. On the other hand, we cannot ignore the pos-sibility that stellar activity contributes to the RV variability or describes the RV variability better. 
+
+4.1.5 HD 67200 - Keplerian model with a GP 
+
+We employed the s+leaf ESP kernel to model the RVs (Model 2) and used relatively broad hyperparameter priors to check for simultaneous Keplerian and activity signals (see Table 2). A broad uniform prior of η3 : U[10; 100] (with lower bound informed by the Monte Carlo simulation) was used in conjunction with an η2 : U[> 0.5 η3; tspan ] prior as in §4.1.2. Although HD 67200 is more massive than the Sun, its low v sin i and low activity most closely resemble a sub-solar minimum to solar minimum state. If a close-orbiting planet is present, as suggested by the original sub-basal activity selec-tion of this target, it is possible that the underlying activity level is above solar minimum. The solar min and max models in Barnes et al. (2024), which model both cool spots and fac-ular regions, indicate the presence of harmonics at η3/2 and 
+
+η3/3, in the M1 central line moments (a proxy for RV) typi-cally recovering periodicity at the fundamental characteristic (rotation) η3 and η3/3 (Barnes et al. 2024; Fig. 7). To match these signatures, we allowed for harmonics with 3 : 2 and 3 : 1 amplitude contributions of η3/2 and η3/3, by assuming a prior η4 of U[0 .8; 10] (see Table A1). We again used a prior of Npmax = 4 for the number of Keplerian signals. For Model 2a (Table 2), a BF(GP/no-GP) > 1271 (the lower BF limit is determined by the to-tal number of generated posterior samples in this converged model) signals strong evidence to include a GP with no ad-ditional Keplerian signals. In other words for Model 2a, all the RV variability is accommodated by the GP. Fig. 5 c shows the resulting GP + Np = 0 model solution curves. The global evidence, log Z = −207 .67, strongly favours Model 2 with a GP over the purely Keplerian Model 1, with ∆ log Z = 5 .58 (i.e. BF ∼ 265). The marginalised characteristic period for Model 2a is η3 = 10 .83 +0 .43  
+
+> −0.73
+
+d. With η2 = 9 .130 d and a max-imum posterior at ∼ η3/2, it is clear that the GP prefers to fit the short period signals with periodicities that are not op-timally matched to the system parameters and Monte Carlo simulation. The evidence for a GP with a single Keplerian (Model 2b; Table 2) is BF( Np = 1 /N p = 0) = 10 .7. The Model 2b solu-tion, plotted in Fig. 5 d, approaches the moderate BF = 12 threshold on the Trotta (2008) scale. The Model 2b Keple-rian periodicity of P = 2 .799 d is close to the P3 = 2 .83 d periodogram signal and the 3 .208 d HD 67200 d in Model 1b. In Model 2b, η3 = 14 .74 +3 .44  
+
+> −0.59
+
+d also closely matches the peak power periodicity in the S MW . The GP amplitude dom-inates over the RV variability with a median η1 = 2 .90 m s −1
+
+over a Keplerian amplitude of 0 .89 m s −1. The marginalised eccentricity distribution is also skewed to large amplitudes (e = 0 .21 +0 .35 
+
+> −0.17
+
+) with a maximum likelihood of e = 0 .65. 
+
+4.1.6 HD 67200 - Keplerian model with a GP using simultaneous RV and S MW timeseries 
+
+We extended the RV-only analysis in §4.1.5 by adopting the SMW as a simultaneous activity timeseries modelled in conjunction with the RVs. The GP hyperparameters, 
+
+η2, η 3 and η4 are common to the RVs and S MW measurements, while separate η1 and ηact 1 are used. Adopting the same priors as in §4.1.5 yields strong evidence for a model with a GP and no additional Keplerian signals. Model 3a (GP + Np = 0) is shown in Table 3 and plotted in Fig. 6 a. Since Model 3 con-tains a simultaneous activity timeseries, the global evidence of ln Z = −400 .04 can not be compared directly with Models 1 and 2. The previously identified S MW periodicity leads to a posterior η3 = 15 .10 +0 .75  
+
+> −0.52
+
+d. We note that the additive noise term is slightly larger on the RVs than for Model 2a, while the SMW post-2020 observations with large additive noise do not contribute significant evidence for this solution. In Model 3b, BF( Np = 1 /N p = 0) = 10 .3 is found, again approaching the moderate evidence threshold (see Table 3 and Fig. 6b). The posterior period distribution favours a Keplerian with 
+
+P = 2 .674 +0 .308  
+
+> −0.195
+
+d and a moderate eccentricity with poste-rior that is skewed to higher values ( e = 0 .18 +0 .35  
+
+> −0.14
+
+d). The 
+
+K = 0 .84 m s −1 and GP η1 = 2 .82 m s −1amplitude are simi-lar to Model 2b. We refer the Model 3b planet candidate as HD 67200 b. 
+
+4.1.7 HD 67200 summary 
+
+Recursive likelihood periodogram analysis of the HD 67200 RVs reveals long-term coherent periodicity. Posterior sam-pling with Np as a free parameter yields strong evidence for at least two Keplerian signals and moderate evidence for three Keplerians. Despite this, there remain systematics in the residuals, which point to either additional Keplerian sig-nals or stellar variability. For the purely Keplerian model, the observation sampling results in phase gaps for the longest period candidates: i.e. the Model 1a ( Np = 2), HD 67200 c ′
+
+phase fold ( P = 36 .45 d) and the Model 1b ( Np = 3), HD 67200 d ′′ phase fold ( P = 36 .97 d), shown respectively in Fig. 7 a and Fig. 7 b. Apparent clustering of RVs from dif-ferent runs at specific phases is also seen in Fig. 7 b for the Model 1b ( Np = 3) HD 67200 c ′′ phase fold. Introducing a model with a GP to investigate a stellar component in the RVs is supported by the apparent S MW 
+
+periodicity at ∼ 15 d, which is in broad agreement with the expected stellar rotation period. The Keplerian models with a GP for the RV timeseries and the simultaneous RV + S MW 
+
+timeseries both show strong evidence for a pure GP, with 
+
+Np = 0. In other words, both the RV and RV + S MW vari-abilities are well-modelled by the GP alone. The global model evidence can be compared in the RV-only models, allowing us to select Model 2 with a GP over the purely Keplerian model. We thus consider the Keplerian signals reported as DMPP-6 b and DMPP-6 c in our previous study (Standing et al. 2026) to be superseded by the models with GPs pre-sented here. While the global model evidence favours Model 2 over Model 1 with BF = 265, the GP model shows a prefer-ence for the single Keplerian Model 2b (GP + Np = 1) with evidence approaching the moderate threshold. The phase folds for Model 2b and 3b (GP + Np = 1) are shown in Fig. 7 c. Both Model 2b and Model 3b yield broadly similar hyperparameters and Keplerian parameters. Since more data are used as evidence in Model 3b (i.e. the simulta-neous S MW timeseries), we retain it, with its corresponding  
+
+> MNRAS 000 , 1–26 (2026)
+
+# DMPP exoplanet systems 13 00.5 1 10 100           
+
+> (c) Window function |W| Period [d] 0510 (b) SMW FWHM BIS M3
+> ∆ log L 050 100 0510 15 20
+> (a) P1= 4.93 d P2= 11.8 d
+> ∆ log L
+
+Figure 8. DMPP-7 RV and activity periodograms as in Fig. 2. The second RV period, P2, in (a) is borderline significant, as indicated by the dashed green line indicating ∆ log L = 15. -5 05-20 0 20                       
+
+> (c) <BIS> = 34.10 [ms -1 ]
+> ∆BIS [ms -1 ]RV [ms -1 ]
+> r = 0.02 ( -0.23, 0.26); p = 0.94 r = 0.08 ( -0.11, 0.26); p = 0.68
+> -5 05-20 020
+> (c) <BIS> = 34.10 [ms -1 ]
+> ∆BIS [ms -1 ]RV [ms -1 ]
+> r = 0.02 ( -0.23, 0.26); p = 0.94 r = 0.08 ( -0.11, 0.26); p = 0.68 -0.01 -0.005 00.005 0.01 -20 020
+> (d) <S MW > = 0.1483, 0.1445
+> ∆SMW
+> RV [ms -1 ]
+> r = 0.32 ( 0.08, 0.52); p = 0.19 r = 0.11 ( -0.08, 0.29); p = 0.56 -0.01 -0.005 00.005 0.01 -20 020
+> (d) <S MW > = 0.1483, 0.1445
+> ∆SMW
+> RV [ms -1 ]
+> r = 0.32 ( 0.08, 0.52); p = 0.19 r = 0.11 ( -0.08, 0.29); p = 0.56
+> -4 -2 0246-20 020
+> (a) <M 3> = 0.0067 HARPS: 2023 (P110) ESPRESSO: 2025 (P114)
+> ∆M3
+> r = -0.04 ( -0.28, 0.21); p = 0.88 r = -0.10 ( -0.29, 0.09); p = 0.59 -30 -20 -10 010 20 -20 020
+> (b) <FWHM> = 8.32 kms -1
+> ∆FWHM [ms -1 ]
+> r = -0.13 ( -0.36, 0.12); p = 0.59 r = -0.06 ( -0.24, 0.13); p = 0.77 -30 -20 -10 010 20 -20 020
+> (b) <FWHM> = 8.32 kms -1
+> ∆FWHM [ms -1 ]
+> r = -0.13 ( -0.36, 0.12); p = 0.59 r = -0.06 ( -0.24, 0.13); p = 0.77
+
+Figure 9. DMPP-7 Activity vs RV for the P110 and P114 obser-vations indicating no significant correlations. 
+
+tentative HD 67200 b candidate (Fig. 7 c, right panel), as our preferred solution. If confirmed with further more extensively sampled observations, HD 67200 b, with 2 .07 +0 .52  
+
+> −0.47
+
+M⊕ is ex-pected to be in a 0 .041 AU orbit; consistent with the hypoth-esis underlying DMPP that the target stars host short period mass-losing planets. 
+
+4.2 DMPP-7 
+
+4.2.1 DMPP-7 stellar parameters and evolution status 
+
+HD 118006 (hereafter DMPP-7) was classified as a G1V star by Houk & Swift (1999). It was selected as a DMPP target from our measurement of log R′ 
+
+> HK
+
+= −5.11 based on an single spectrum from the California Planet Search (CPS) program reported by Isaacson & Fischer (2010). No information on sky subtraction is given by the CPS, though we assume that inter-order scattered light subtraction was performed. Our subsequent HARPS spectra show log R′ 
+
+> HK
+
+= −5.05 ± 0.03 (Table 1), with two of the 20 HARPS spectra taken in P110 indicating sub-basal values. The M∗ and Teff and B − V
+
+colour estimate (Table 1) are indicative of a late-F star or early-G star, while our age estimate of 3 .87 +0 .28  
+
+> −0.31
+
+Gyr and log g = 4 .17 ± 0.09 indicate DMPP-7 is a main sequence star. These parameters are at tension with the corresponding ra-dius estimate of R∗ = 1 .49 ± 0.02 R ⊙, which implies slightly evolved status. Further, an independent radius estimate us-ing parameters derived from the Gaia mission (Gaia Col-laboration et al. 2023) returns R∗ = 1 .64 ± 0.04 R ⊙. With ∆Mv = +0 .44 above the default main-sequence, it only just meets our DMPP selection criterion (§3). The renormalised unit weight error (RUWE) value of 0.844 from Gaia (Linde-gren et al. 2021; Gaia Collaboration et al. 2023) is below the 1.25 threshold, which would potentially indicate a dynamical companion (Penoyre et al. 2022; Castro-Ginard et al. 2024). A fainter background star, Gaia DR3 3663052713405023616, at 1.25 kpc, with G = 14 .56 (Gaia Collaboration et al. 2023) is located ∼ 19 ′′ NW of DMPP-7 and visible in a number of optical and infrared survey images such as the Sloan Digi-tal Sky Survey Data Release 9 (Ahn et al. 2012). The Gaia DR3 estimate of Teff = 5278 K indicates it is likely an early K star. A second, closer companion at ∼ 12 ′′ NNE of DMPP-7 is only seen in the Two Micron All Sky Survey (2MASS) J band image (Skrutskie et al. 2006). Neither of these compan-ions will contribute to our DMPP-7 HARPS spectra. They are also too faint (i.e. Gaia DR3 3663052713405023616 is 5.9 mag fainter than DMPP-7) to contribute to elevated absolute magnitude measurements that would indicate evolved status of DMPP-7. We find v sin i = 3 .0 ± 0.7 km s −1 from species , yielding (Fig. 1) most probable ˆProt = 19 .8 d, with median, upper and lower 68.3% confidences of ˜Prot = 20 .4 (12 .9; 28 .3) d. The rotational velocity estimate from M16, gives 
+
+v sin i = 2.6+2 .3 
+
+> −2.6
+
+km s −1, with ˆProt = 12 .8 d and ˜Prot = 16 .8(13 .4; 46 .1) d. 
+
+4.2.2 DMPP-7 recursive RV solution 
+
+Recursive likelihood periodograms of the RVs are presented in Fig. 8 a. The RVs show very strong evidence for a sin-gle Keplerian with P1 = 4 .93 d. A second Keplerian with 
+
+P2 = 11 .8 d and significance of ∆ log L = 15 .0 is found, with a wider, less significant double-peaked cluster at longer periods of 18 .7 d and 20 .3 d. The phase folds nevertheless reveal signif-icant outliers in both the HARPS and ESPRESSO RVs; with respective additive white noise of 2 .1 m s −1 and 1 .8 m s −1,the residual r.m.s. values are 2 .4 m s −1 and 1 .8 m s −1. These values are particularly significant for the ESPRESSO RVs. While the P = 4 .93 d signal is persistent on the timescale of the observations, with K = 22 .5 m s −1, it is not clear that the second signal, with K = 4 .8 m s −1, is dynamically induced by an orbiting body. 
+
+4.2.3 DMPP-7 activity indicators and TESS photometry 
+
+The activity periodograms (Fig. 8 b) do not show evidence for significant periodicities. Further, there is no convincing evidence for a linear correlation between the activity indi-cators and the RVs (Fig. 9). DMPP-7 has been observed 
+
+MNRAS 000 , 1–26 (2026) 14 J. Barnes et al. HARPS post-2020 -20 020 RV [ms -1 ]-10 010 0 10 O-C [ms -1 ]ESPRESSO (a)            
+
+> 95% 68% 50% Kep med
+> 710 720 730 740 750 760 770 780 -20 020 RV [ms -1 ]-10 010 010 O-C [ms -1 ]
+
+(b)         
+
+> 710 720 730 740 750 760 770 780 -20 020 RV [ms -1 ]-10 010 010 O-C [ms -1 ]
+
+(c)             
+
+> 95% 68% 50% GP med Kep med GP+Kep med
+> 710 720 730 740 750 760 770 780 BJD - 2459992 [d]
+
+Figure 10. Solution curves for the DMPP-7 RVs. The purely Keplerian solutions are shown in (a) for Np = 1 (Model 1a) and in (b) for the Np = 2 (Model 1b). The GP + Keplerian solution is shown in (c) for Np = 1 (Model 2). See Table 4 for model solution details. 
+
+in TESS Sectors 23, 46, 50 and 91. The lightcurves ob-tained with unpopular are shown in Fig. B2 revealing the large mid-sector gaps in the data, and clipping of system-atics. Rvar = 546 ppm is somewhat higher than was found for HD 67200. There is a significant P = 21 .5 d power, with a sinusoidal semi-amplitude of A = 111 ppm, while a lower significance 9 .4 d peak is a suspected harmonic of this pe-riod. Although the ratio of Rvar /A is lower than we see for HD 67200, we we were unable to recover reliable periodicities using the s+leaf GP model. 
+
+4.2.4 DMPP-7 - Purely Keplerian solution 
+
+Assuming a prior in kima of Np : U[0; 4], returned strong evidence for a single Keplerian. Table 4 presents the Np = 1 solution (Model 1 a) with P = 4 .93 d, confirming the high am-plitude signal identified through the likelihood periodogram search. The RVs, and model solution are plotted in Fig. 10 a. The residuals reveal additional, potentially correlated scatter, which is partially accommodated by the white noise terms (σHARPS = 3 .4 m s −1 and σESPRESSO = 3 .3 m s −1.Moderate evidence is found for a second signal, with BF( Np = 2 /N p = 1) = 60 .0 (Fig. 10 b). The scatter and white noise terms are reduced with respect to Model 1a. However, the posterior period distribution reveals a multi-modal solution, with periods at P ∼ 11 .8 d and a second group at ∼ 21 d, in general agreement with the periodogram. The second group is split into two clusters centred on ∼ 19 d and ∼ 23 d. We tabulate the solution as Model 1b in Ta-ble 4 with P = 21 .47 +2 .10  
+
+> −3.19
+
+d. The eccentricity of DMPP-7 c ′′ 
+
+of e = 0 .46 +0 .15  
+
+> −0.25
+
+is high and the phase fold (Fig. 11 a, right panel) reveals this to be driven by only a few data points. De-spite higher evidence, this period is not conclusively favoured (BF = 1 .2) over the P = 11 .79 +0 .22  
+
+> −0.20
+
+d alternative second pe-riod, which has a lower eccentricity ( e = 0 .30 +0 .20 
+
+> −0.16
+
+). 
+
+4.2.5 DMPP-7 - Keplerian solution with a GP 
+
+With a GP, we again adopted a prior of Np : U[0; 4] and the same GP priors as the HD 67200 analysis. We find strong evi-dence for a single Keplerian with with BF( Np = 1 /N p = 0) >
+
+4564 (Table 4, Model 2). The Model 1 and Model 2 P = 4 .93 d Keplerian periods are essentially identical, while the preferred 
+
+η3 = 22 .15 +1 .61  
+
+> −3.02
+
+d in Model 2 is again inconclusively preferred over the posterior cluster of η3 = 11 .81 +0 .50  
+
+> −0.40
+
+d samples with BF = 1 .8. These periodicities are consistent with the 22 .5 d 
+
+MNRAS 000 , 1–26 (2026) DMPP exoplanet systems 15 
+
+Model 1a ( Np = 1) Model 1b ( Np = 2) Parameter DMPP-7 b ′ DMPP-7 b ′′ DMPP-7 c ′′ 
+
+P 4.92658 +0 .00042 
+
+> −0.00032
+
+[4 .92673] 4.92662 +0 .00036 
+
+> −0.00032
+
+[4 .92654] 21 .46877 +2 .10500 
+
+> −3.18984
+
+[23 .56424] 
+
+K 22 .10 +0 .66 
+
+> −0.69
+
+[22 .13] 22 .38 +0 .57 
+
+> −0.56
+
+[22 .46] 3.37 +0 .73 
+
+> −0.72
+
+[3 .78] 
+
+M 0 2.386 +1 .684 
+
+> −0.990
+
+[2 .284] 2.452 +0 .522 
+
+> −0.393
+
+[2 .458] 3.032 +2 .475 
+
+> −1.412
+
+[1 .469] 
+
+e 0.032 +0 .030 
+
+> −0.025
+
+[0 .057] 0.056 +0 .033 
+
+> −0.034
+
+[0 .102] 0.457 +0 .151 
+
+> −0.254
+
+[0 .556] 
+
+ω 2.964 +1 .091 
+
+> −1.077
+
+[2 .892] 2.768 +0 .411 
+
+> −0.379
+
+[2 .746] 1.009 +1 .377 
+
+> −0.663
+
+[0 .691] 
+
+γHARPS − 36651 [ms −1] 0.61 +0 .93 
+
+> −0.90
+
+[0 .38] −0.40 +1 .06 
+
+> −1.09
+
+[−0.67] 
+
+γESPRESSO − 36651 [ms −1] −13 .17 +0 .69 
+
+> −0.53
+
+[−12 .73] −12 .97 +0 .52 
+
+> −0.51
+
+[−12 .88] 
+
+σHARPS [ms −1] 3.42 +0 .79 
+
+> −0.67
+
+[2 .92] 2.17 +0 .65 
+
+> −0.49
+
+[1 .78] 
+
+σESPRESSO [ms −1] 3.28 +0 .54 
+
+> −0.35
+
+[3 .43] 2.39 +0 .47 
+
+> −0.34
+
+[2 .08] 
+
+a [AU] 0.0607 +0 .0004 
+
+> −0.0003
+
+[0 .0605] 0.0607 +0 .0003 
+
+> −0.0003
+
+[0 .0610] 0.1614 +0 .0113 
+
+> −0.0153
+
+[0 .1733] 
+
+mp sin i [M ⊕] 67 .335 +2 .178 
+
+> −2.176
+
+[67 .039] 68 .191 +1 .906 
+
+> −1.838
+
+[68 .938] 14 .436 +3 .202 
+
+> −2.840
+
+[16 .336] 
+
+tc [JD] 60379 .537 +0 .071  
+
+> −0.058
+
+60379 .583 +0 .055  
+
+> −0.058
+
+60374 .704 +2 .890 
+
+> −8.992
+
+[60377 .702] [60379 .610] [60379 .646] [60377 .702] ln L [MAP] −123 .45 −100 .70 BF( Np/(Np − 1)) > 165 60 .03 Global evidence, ln Z (Np ≤ 4) −153 .73 Model 2 (GP + Np = 1) Parameter DMPP-7 b 
+
+P [d] 4.92666 +0 .00030 
+
+> −0.00030
+
+[4 .92661] 
+
+K [ms −1] 22 .61 +0 .49 
+
+> −0.49
+
+[22 .62] 
+
+M0 [rad] 2.553 +0 .501 
+
+> −0.386
+
+[2 .741] e 0.054 +0 .025 
+
+> −0.029
+
+[0 .059] 
+
+ω [rad] 2.641 +0 .372 
+
+> −0.445
+
+[2 .445] 
+
+η1 [ms −1] 5.13 +6 .49 
+
+> −2.08
+
+[3 .91] 
+
+η2 [d] 49 .742 +119 .105  
+
+> −28 .149
+
+[34 .862] 
+
+η3 [d] 22 .152 +1 .613 
+
+> −3.019
+
+[23 .182] 
+
+η4 1.461 +2 .089 
+
+> −0.705
+
+[0 .967] 
+
+γHARPS − 36651 [ms −1] −0.36 +5 .88 
+
+> −6.06
+
+[−2.68] 
+
+γESPRESSO − 36651 [ms −1] −14 .00 +3 .26 
+
+> −4.69
+
+[−16 .13] 
+
+σHARPS [ms −1] 2.28 +0 .69 
+
+> −0.51
+
+[1 .78] 
+
+σESPRESSO [ms −1] 1.93 +0 .62 
+
+> −0.45
+
+[1 .28] 
+
+a [AU] 0.0607 +0 .0003 
+
+> −0.0003
+
+[0 .0603] 
+
+mp sin i [M ⊕] 68 .958 +1 .692 
+
+> −1.663
+
+[68 .066] 
+
+Teq (AB = 0 , 0.36) [K] 1456 , 1302 
+
+Rp (predicted from mp sin i) [R ⊕] 9.55 ± 2.09 
+
+Rp (predicted, i = 57 .3◦) [R ⊕] 10 .7 ± 2.4
+
+tc [JD] 60379 .591 +0 .046 
+
+> −0.054
+
+[60379 .586] ln L [MAP] −114 .033 BF(GP + Np = 1 /N p = 0) > 4564 Global evidence, ln Z −154 .59 
+
+Table 4. DMPP-7 parameters for purely Keplerian models, Np = 1 (Model 1a) and Np = 2 (Model 1b) and the GP model with Np = 1 (Model 2). 
+
+Keplerian period from Model 1b and are also consistent with the Monte Carlo period distribution and photometric 21 .5 d power. The correlated noise in the residuals is visibly reduced in Fig. 10 c, while σESPRESSO is lower but not distinct from the distribution in Model 1b (see Table 4). The DMPP-7 b (Model 2) phase fold in Fig. 11 b shows notably less scatter than the Model 1b phase fold for DMPP-7 b ′′ in Fig. 11 a. There is only weak evidence for an additional Keplerian in this model, where we find BF( Np = 2 /N p = 1) = 4.0. Despite a preference for Model 1 over Model 2, the relative global evidence of ∆ log Z = 0 .86 (BF ∼ 2.4) is inconclusive. Since the two models yield essentially the same global evi-dence, we also performed additional comparisons with fixed 
+
+Np to compare models at equal dimensionality. Variants of 
+
+MNRAS 000 , 1–26 (2026) 16 J. Barnes et al. -20 020 0 1 2 3 4Model 1b – N p = 2(a)             
+
+> P = 4.927 d RV [ms -1 ]Period [d] DMPP-7 b'' -20 020 01234
+> Model 2 – GP + N p=1(b)
+> P = 4.927 d RV [ms -1 ]Period [d]
+> DMPP-7 b
+> -10 010 010 20
+> Model 2 – GP + N p=1(b)
+> P = 21.47 d Period [d] DMPP-7 c''
+
+Figure 11. DMPP-7 phase-folded RVs for the purely Keplerian model with (a) Np = 2 (Model 1b). Shown in (b) is the Keplerian phase-fold with Np = 1 (preferred Model 2, highlighted in bold) after subtracting the GP component. 
+
+Models 1a and 1b, resulting from fixed Np priors of Np : F[1] or F[2]), give respective log Z = −157 .74 and −153 .68. Within this purely Keplerian framework, Np = 2 is again moderately preferred (∆ log Z = 4 .1; BF ∼ 60 .0), in agree-ment with the default Model 1 run with prior Np : U[0; 4]. A variant of Model 2 with a GP using fixed Np priors of Np :
+
+F[1] yields global evidence of log Z = −155 .21. Comparing the variants of Model 2 and Model 1b confirms only a weak preference for Model 1b over Model 2 (i.e. ∆ log Z = 1 .53; BF ∼ 4.6), confirming a degeneracy between modelling the additional variability as either a second Keplerian or corre-lated noise within this class of variant models. 
+
+4.2.6 A solar-like spot dynamo and starspot pattern? 
+
+A compact system architecture with interior hot Jupiter and exterior Neptune is not likely from both a theoretical and ob-servational evidence perspective (Steffen et al. 2012; Dawson & Johnson 2018; Zink & Howard 2023). Although the AMD checks suggest that Model 1b with two Keplerian orbits rep-resents a stable configuration, there is insufficient evidence to accept this scenario over Model 2. The high posterior eccen-tricity of DMPP-7 c ′′ may be evidence the Model 1b solution is driven by the data sampling. We suspect that the 11 .8 d period cluster found in the posteriors of both the purely Kep-lerian and GP models and the photometric 9 .4 d periodogram peak are stellar Prot /2 aliases. The split of the characteristic 
+
+Prot ∼ 21 d in the Keplerian posteriors in Model 1 and of η3
+
+in Model 2 into two clusters with median posterior periods of 
+
+η3 ∼ 18 .9 and ∼ 22 .5 d is indicative of differential rotation. This scenario may also indicate the presence of two active regions at different latitudes, possibly separated by ∼ 180 ◦
+
+(Berdyugina & Usoskin 2003). Assuming solar-like latitude dependent rotation and shear magnitude and scaling rela-00.5 11 10 100           
+
+> (d) Window function |W| Period [d] 0510 15 20 (c) SMW FWHM
+> ∆ log L 0510
+> (b) BIS M3
+> ∆ log L 010 20 30 (a) P1= 25.18 (32.33) d P2= 2.783 d
+> ∆ log L
+
+Figure 12. HD 2134 RV and activity periodograms showing (a) recursive log-likelihood periodograms, (b,c) activity periodograms and (d) the corresponding Window function with periods at 24.2 d and 31.2 d plotted as vertical dashed lines in all panels. 
+
+tionships from Barnes et al. (2017), an equatorial rotation period of ∼ 22 .5 d would lead us to expect a ∼ 18 .9 d ro-tation at a latitude of 32 ◦. This picture is entirely consis-tent with a solar-like dynamo mechanism in DMPP-7 with cool spots restricted to low latitudes. The activity pattern is clearly evolving between the HARPS observations and the ESPRESSO observations; a more clearly defined periodicity at Prot /2 is evident in the HARPS data set (see Fig. 10 c, dashed GP med curve). In addition to possible differential ro-tation, the implied activity evolution is a likely contributor to the multimodal periodicity in the secondary periodic signal in the posteriors. 
+
+4.2.7 DMPP-7 Summary 
+
+For DMPP-7, activity-related periodicities appear to be linked to stellar rotation. Further, the high eccentricity of the purely Keplerian Np = 2 solution leads us to a preferred interpretation of an active host star that is slightly evolved and which harbours a single close-orbiting giant planet (i.e. we prefer Model 2 with a GP and single Keplerian). Never-theless, modelling the lower amplitude second signal in the RVs as either a Keplerian or as activity via a GP has little impact on the 4 .297 d planet candidate parameters, which are consistent between Models 1a, 1b and 2. With the addition of ESPRESSO data, the planet parameters are more precisely determined than the HARPS-only solution presented in S26. Our Model 2 minimum mass of mp sin i = 69 .0 ± 1.7 M ⊕
+
+(∆ M/M = 2 .4%) is 11% higher than the S26 solution, im-plying DMPP-7 is a 0 .72 Saturn mass planet. 
+
+MNRAS 000 , 1–26 (2026) DMPP exoplanet systems 17 
+
+Model 1a ( Np = 1) Model 1b ( Np = 2) Parameter HD 2134 b ′ HD 2134 b ′′ HD 2134 c ′′ 
+
+P [d] 32 .31289 +0 .13035 
+
+> −0.13736
+
+[32 .30419] 2.78247 +0 .00275 
+
+> −0.18088
+
+[2 .78488] 32 .22380 +0 .17118 
+
+> −0.20701
+
+[31 .59403] 
+
+K [ms −1] 2.28 +0 .58 
+
+> −0.40
+
+[3 .50] 1.22 +0 .28 
+
+> −0.26
+
+[1 .79] 1.77 +0 .35 
+
+> −0.29
+
+[1 .44] 
+
+M0 [rad] 2.890 +0 .546 
+
+> −0.700
+
+[2 .926] 3.343 +1 .556 
+
+> −1.818
+
+[3 .506] 3.271 +0 .675 
+
+> −0.875
+
+[4 .032] e 0.254 +0 .176 
+
+> −0.170
+
+[0 .526] 0.143 +0 .198 
+
+> −0.109
+
+[0 .082] 0.225 +0 .146 
+
+> −0.158
+
+[0 .734] 
+
+ω [rad] 0.887 +4 .897 
+
+> −0.640
+
+[0 .326] 3.891 +1 .156 
+
+> −1.927
+
+[4 .486] 4.562 +1 .386 
+
+> −4.194
+
+[5 .185] 
+
+a [AU] 0.2018 +0 .0014 
+
+> −0.0015
+
+[0 .2041] 0.0391 +0 .0005 
+
+> −0.0015
+
+[0 .0396] 0.2014 +0 .0015 
+
+> −0.0016
+
+[0 .1996] 
+
+mp sin i [M ⊕] 11 .325 +2 .412 
+
+> −1.920
+
+[15 .685] 2.676 +0 .569 
+
+> −0.586
+
+[4 .104] 8.842 +1 .652 
+
+> −1.594
+
+[5 .042] 
+
+tc [JD] 57580 .664 +2 .041 
+
+> −2.058
+
+[57578 .315] 57589 .521 +1 .646 
+
+> −1.036
+
+[57588 .483] 57581 .232 +2 .076 
+
+> −2.169
+
+[57577 .997] 
+
+γHARPS − 4263 [ms −1] −0.16 +0 .29 
+
+> −0.29
+
+[0 .01] −0.20 +0 .27 
+
+> −0.27
+
+[−0.39] 
+
+σHARPS [ms −1] 1.16 +0 .16 
+
+> −0.14
+
+[1 .14] 0.85 +0 .16 
+
+> −0.15
+
+[0 .70] ln L [MAP] −144 .74 −126 .96 BF( Np/(Np − 1)) > 2822 31 .10 Global evidence, ln Z −166 .24 Model 2 (GP + Np = 1 ) Model 3 (GP + Np = 1 ) Parameters HD 2134 b ′′′ (RV) HD 2134 b (RV+FWHM) 
+
+P [d] 2.78379 +0 .00221 
+
+> −0.11880
+
+[2 .34923] 2.78368 +0 .00223 
+
+> −0.12077
+
+[2 .78366] 
+
+K [ms −1] 1.33 +0 .31 
+
+> −0.27
+
+[2 .21] 1.31 +0 .31 
+
+> −0.27
+
+[1 .74] 
+
+M0 [rad] 3.567 +1 .498 
+
+> −1.683
+
+[4 .964] 3.489 +1 .469 
+
+> −1.619
+
+[3 .266] e 0.153 +0 .211 
+
+> −0.118
+
+[0 .840] 0.156 +0 .216 
+
+> −0.119
+
+[0 .320] 
+
+ω [rad] 3.894 +1 .193 
+
+> −2.011
+
+[4 .248] 3.919 +1 .225 
+
+> −1.973
+
+[4 .654] 
+
+η1 [ms −1] 1.74 +1 .82 
+
+> −0.70
+
+[1 .38] 2.03 +2 .12 
+
+> −0.89
+
+[1 .10] 
+
+ηact 1 (FWHM) [ms −1] 4.57 +4 .10 
+
+> −1.86
+
+[3 .95] 
+
+η2 [d] 82 .740 +262 .302  
+
+> −58 .480
+
+[574 .590] 156 .316 +262 .976 
+
+> −120 .185
+
+[133 .863] 
+
+η3 [d] 24 .272 +7 .379 
+
+> −6.089
+
+[21 .174] 25 .610 +6 .236 
+
+> −4.940
+
+[25 .704] 
+
+η4 2.731 +3 .923 
+
+> −1.665
+
+[0 .567] 2.613 +3 .342 
+
+> −1.388
+
+[0 .725] 
+
+γ − 4263 [ms −1] 0.32 +1 .22 
+
+> −1.07
+
+[0 .02] 0.37 +1 .59 
+
+> −1.27
+
+[0 .24] 
+
+γFWHM [ms −1] −1.12 +3 .50 
+
+> −3.00
+
+[−1.60] 
+
+σ [ms −1] 0.91 +0 .17 
+
+> −0.15
+
+[0 .72] 0.92 +0 .17 
+
+> −0.14
+
+[0 .71] 
+
+σ(FWHM) [ms −1] 4.06 +0 .45 
+
+> −0.42
+
+[3 .76] 
+
+a [AU] 0.0393 +0 .0004 
+
+> −0.0010
+
+[0 .0356] 0.0393 +0 .0004 
+
+> −0.0013
+
+[0 .0395] 
+
+mp sin i [M ⊕] 2.919 +0 .648 
+
+> −0.604
+
+[2 .633] 2.862 +0 .668 
+
+> −0.650
+
+[3 .760] 
+
+Teq (AB = 0 , 0.36) [K] 1487 , 1330 
+
+Rp (predicted from mp sin i) [R ⊕] 1.35 ± 0.11 
+
+Rp (predicted, i = 57 .3◦) [R ⊕] 1.42 ± 0.12 
+
+tc [JD] 57589 .079 +2 .075 
+
+> −0.645
+
+[57589 .094] 57589 .426 +1 .713 
+
+> −0.987
+
+[57588 .520] ln L [MAP] −138 .01 −390 .309 BF( Np = 1 /N p = 0) 28 .55 18 .39 Global evidence, ln Z −165 .19 −423 .88 
+
+Table 5. HD 2134 parameters. Top: the purely Keplerian models with Np = 1 (Model 1a) and Np = 2 (Model 1b). Bottom: GP + Np = 1 parameters using only the RV timeseries (Model 2) and the corresponding simultaneous RV and FWHM timeseries (Model 3). 
+
+4.3 HD 2134 
+
+In ESO periods P95, P97, P98 and P99 (2015–2017) 83 ob-servations of HD 2134 were obtained with 1 − 7 observations per night. The last two observations of the four obtained in P110 (2023) at high airmasses of 1 .97 − 2.01 had to be cut short due to a tip-tilt guiding system fault, leaving only two observations. Because of the need for separate RV offsets be-tween the P95–P99 and P110 data sets, we did not include the P110 data. 
+
+4.3.1 HD 2134 Stellar parameters 
+
+The effective temperature, Teff = 5675 ± 50 K, and other stellar parameters for HD 2134 (Table 1) are consistent with those of a main-sequence early-mid G dwarf. It is just over 71 pc away and slightly older than the Sun, with an esti-mated age of 6 .64 +0 .49  
+
+> −0.86
+
+Gyr. HD 2134 was selected for DMPP through log R′ 
+
+> HK
+
+= −5.23 ±0.03 from the S-index reported by Jenkins et al. (2011). The low log R′ 
+
+> HK
+
+is likely to be robust against systematic effects of order a few percent, meaning 
+
+MNRAS 000 , 1–26 (2026) 18 J. Barnes et al. -20 -10 010 20 -5 0 5               
+
+> (c) <BIS> = -15.86 [ms -1 ]
+> ∆BIS [ms -1 ]RV [ms -1 ]
+> r = 0.03 ( -0.08, 0.14); p = 0.78 -0.04 -0.02 00.02 0.04 -5 05
+> (d) <S MW > = 0.1524
+> ∆SMW
+> RV [ms -1 ]
+> r = 0.24 ( 0.13, 0.34); p = 0.03
+> -2 -1 0123-5 05
+> (a) <M 3> = -0.0026 2015 (P95) 2016 (P97) 2016 (P98) 2017 (P99)
+> ∆M3
+> r = -0.10 ( -0.21, 0.01); p = 0.38 -40 -20 020 40 -5 05
+> (b) <FWHM> = 7.28 kms -1
+> ∆FWHM [ms -1 ]
+> r = 0.31 ( 0.21, 0.41); p = 0.00
+
+Figure 13. HD 2134 activity vs RV indicators correlations. The data are colour coded according to observing runs in ESO Periods P95, P97, P98 and P99. 
+
+that even sky background subtraction would probably not yield activity above the basal flux level. Table 1 shows higher log R′ 
+
+> HK
+
+during the HARPS observations; we find 10/87 ob-servations (11%) have log R′ 
+
+> HK
+
+< −5.1. The species estimate of v sin i = 2 .6 ± 0.6 km s −1 (after applying the vmac as in §4.3.1) is given in Table 1. For HD 2134, as with HD 67200, the method of M16 is not able to obtain a finite positive esti-mate for v sin i, but yields v sin i = 0 km s −1 and an upper (68.3%) limit of 3 km s −1. Monte Carlo simulations (see Fig. 1) using R = 1 .16 ± 0.01 R ⊙, randomly oriented stellar axial inclinations and the species v sin i estimate suggest a most probable stellar rotation period of ˆProt = 18 .4 d, with a me-dian and 68 .3% ranges of ˜Prot = 18 .5 (11 .8; 24 .8) d. Assuming 
+
+v sin i = 0 km s −1 and a 68 .3% upper limit of 3 km s −1, we find ˆProt = 10 .8 d and a period distribution that is skewed to longer rotation rates due to small v sin i values, with me-dian ˜Prot = 22 .4(9 .9; 76 .7) d. An age estimate of 6 .2 ± 2.9 Gyr from Mamajek & Hillenbrand (2008) is consistent with our 
+
+species estimate and leads us to expect Prot = 32 .9 ± 3.4 d, based on our log R′ 
+
+> HK
+
+measurements. 
+
+4.3.2 HD 2134 TESS photometry 
+
+TESS observed HD 2134 in Years 3, 5 and 7 in three consecu-tive pairs of TESS sectors: Sectors 27 and 28, Sectors 67 and 68 and Sectors 94 and 95. The lightcurves (Fig. B3) reveal peak period power at P = 26 .4 d, sinusoidal semi-amplitude 
+
+A = 105 ppm and a similar Rvar /A to DMPP-7 (Table B1). As reported in Standing et al. 2026, analysis restricted to Sec-tors 27 and 28 indicates peak power at 13 .4 d with 99 ppm sinusoidal amplitude while Sectors 67 and 68 yielded 27 .2 d with 115 ppm. For Sectors 94 and 95, peaks at 6 .2 d (110 ppm) and 18 .0 d (113 ppm) were found along with a peak at 27 .5 d (114 ppm). Application of the s+leaf ESP kernel to investi-gate periodicities again reveals a degeneracy between the hy-perparameters due to instrumental systematics. Recovering a consistent reliable characteristic GP period was not possible for the available HD 2134 TESS sectors. 
+
+4.3.3 HD 2134 Recursive RV solution and activity correlations 
+
+Recursive periodogram analysis reveals two significant peri-odicities in the RVs, with P1 = 25 .2 d and 2 .78 d (Fig. 12 a). The 25 .2 d signal is not significantly preferred over the second 32 .3 d peak (∆log L = 0 .4). Both peaks are potentially either caused, or influenced, by the nearby window function peaks at 24 .2 d and 31 .2 d, though these coincide with regions of low power in the RV periodograms. The correlation between activity indicators and RV are shown in Fig. 13 for the observing post-2015 runs in P95, P97, P98 and P99. There does not appear to be any correlation between BIS or M3 and RV. Similarly only weak correlation is seen between S MW and RV. The FWHM in Fig. 13 b is the only indicator showing a correlation, albeit weak to moder-ate, with r > 0.3, and p < 0.05. The three FWHM peaks with most power at 21 .1 d, 24 .5 d and 31 .6 d (Fig. 12 c) again show potential influence of the window function (Fig. 12 d). Cross-correlation of the RV and FWHM timeseries does not indicate a significant phase lag. 
+
+4.3.4 HD 2134 - Purely Keplerian model 
+
+With kima , we find strong evidence of BF( Np = 1 /N p = 0) >
+
+2822 for a single Keplerian (Model 1a) and moderate evidence of BF( Np = 2 /N p = 1) = 31 .1 for a model with two Kepleri-ans (Model 1b). The RV solutions are shown in Table 5 and Fig. 14 a,b, which reveal a dominant RV signal at P ∼ 32 .3 d and 32 .2 d for Models 1a and 1b. This period is favoured over posterior samples that contain periods at P = 21 .50 d and 26 .54 d with BF = 5 .2 and 1 .8. The 32 .31 d period is thus inconclusively favoured over the 26 .54 d period. The second Keplerian in Model 1b has a period of P = 2 .782 +0 .003  
+
+> −0.181
+
+d and 
+
+K = 1 .2 m s −1, which is revealed through the high cadence sampling of the observations. For this model, three compet-ing posterior solutions again reveal essentially the same peri-ods, at P = 21 .43 d, 26 .50 d and 32 .33 d. The Bayes factors, BF(32 .33 d / 21 .43 d) = 1 .0 and BF(32 .33 d / 26 .50 d) = 1 .1, mean none of these three periods are preferred. 
+
+4.3.5 HD 2134 - Keplerian model with a GP 
+
+Since the TESS photometry and FWHM provide evidence for periodicities matching the 21 d – 32 d periods found in the RVs and there is tentative evidence for a weak to moderate FWHM correlation ( r = 0 .31), we modelled the data with an activity component. We first modelled only the RV data by adding a GP to the Keplerian model. The same hyper-parameter priors as used for HD 67200 and DMPP-7 were adopted. Inconclusive evidence for Model 2 over Model 1 is found, with ∆ ln Z = 1 .06 or BF = 2 .9 (see Table 5). For Model 2, the evidence for a pure GP and no additional Kep-lerians (GP + Np = 0) is strong, with BF(GP /no-GP) > 457. We have not tabulated this model for HD 2134, but note that it has an amplitude η1 = 1 .95 +1 .63  
+
+> −0.60
+
+m s −1 that is consistent with the Keplerian semi-amplitude, K = 2 .28 +0 .58  
+
+> −0.40
+
+m s −1, in Model 1a. Clustering of samples in the η3 = 25 .26 +7 .31  
+
+> −5.90
+
+dposterior range is again concentrated at η3 ∼ 22 d, 25 d and 32 d with relative Bayes Factors of BF(25 .5 d / 22 .0 d) = 1.83 and BF(25 .5 d / 32 .0 d) = 1 .41. 
+
+MNRAS 000 , 1–26 (2026) DMPP exoplanet systems 19 -5 05RV [ms -1 ]-5 050 10 O-C [ms -1 ]320 RVs (N p = 1) 
+
+(a)         
+
+> 95% 68% 50% Kep med
+> 440 450 460 post-2015 610 -5 05RV [ms -1 ]-5 05010 O-C [ms -1 ]320 RVs (N p=2)
+
+(b)            
+
+> 95% 68% 50% Kep med
+> 440 450 460 610 -5 05RV [ms -1 ]-5 05010 O-C [ms -1 ]
+> 95% 68% 50%
+> 320 RVs (GP + N p=1)
+
+(c)      
+
+> GP med Kep med GP+Kep med
+> 440 450 460 610 BJD - 2457283 [d]
+
+Figure 14. Solution curves for the HD 2134 RVs. The purely Keplerian solutions are shown in (a) for Np = 1 (Model 1a) and in (b) for the Np = 2 (Model 1b). The moderately significant GP + Keplerian solution is shown in (c) for Np = 1 (Model 2). See Table 5 for HD 2134 solution details. 
+
+Model 2 shows moderate evidence for a single Keplerian, with BF( Np = 1 /N p = 0) = 28 .6. The solution is detailed in Table 5 (GP + Np = 1) and illustrated in Fig. 14 c. The samples comprise Keplerians with a median orbital period of 
+
+P = 2 .784 d and η3 = 24 .27 +7 .38  
+
+> −6.09
+
+d, which are consistent with the purely Keplerian periods found in Model 1b. 
+
+4.3.6 HD 2134 - Keplerian model with a GP using simultaneous RV and FWHM timeseries 
+
+We modelled the RV and simultaneous FWHM timeseries with the same broad prior on η3. Strong evidence is found for a pure GP model, with BF(GP /no-GP) > 949 (as in §4.3.5, for the sake of brevity, we do not tabulate the parameters). Additional moderate evidence for a single Keplerian is indi-cated with BF( Np = 1 /N p = 0) = 18 .39. We find again find an orbital period of P = 2 .784 d and the same three longer periodicities, which are described by the GP characteristic period distribution of η3 = 25 .61 +6 .24  
+
+> −4.94
+
+d. The corresponding complete Np = 1 parameters are presented in Table 5 as Model 3 and shown in Fig. 15. 
+
+4.3.7 HD 2134 summary 
+
+The 21 d – 32 d periodicities seen in the HD 2134 RVs are ei-ther astrophysical or arise from window function contamina-tion. Since the same periods also appear in only the simulta-neous CCF FWHM timeseries with no strong indications in the other activity timeseries, and there is tentative evidence of a weak to moderate RV-FWHM correlation, we considered both purely Keplerian and models with a GP. Resolution of this issue requires further precise and carefully sampled radial velocities. All the models with an additional periodic-ity (i.e. Models 1b, 2 and 3) show moderate evidence of BF = 18 .4 – 31 .1 for a short period candidate signal at 2 .782 d or 2 .784 d. This short period, candidate is also close to, but 
+
+MNRAS 000 , 1–26 (2026) 20 J. Barnes et al. -5 05RV [ms -1 ]-5 050 10 O-C [ms -1 ]-10 010 FWHM -10 010 0 10 O-C [ms -1 ]             
+
+> 95% 68% 50%
+> 320 320 RVs (GP + N p=1)
+> GP med Kep med GP+Kep med
+> 440 450 460 FWHM (GP)
+> GP med
+> 440 450 460 610 post-2015 610 BJD - 2457283 [d]
+> Figure 15. The HD 2134 moderately significant GP + Keplerian solution for Np= 1 (Model 3) using simultaneous RV (upper panels) and FWHM data (lower panels). See Table 5 for HD 2134 solution details.
+
+marginally longer than periods typically expected from su-pergranulation (Rincon & Rieutord 2018). We discuss this possibility further in §5, but note here the persistent peri-odicity implies coherence on the 1 .7 yr timespan of the ob-servations. Furthermore, a short-period planet is expected a priori under the DMPP hypothesis. The Keplerian signal ap-pears well sampled throughout the orbital phase, as shown in Fig. 16. Joint modelling of RVs and FWHM may ultimately be improved by considering the FWHM timeseries deriva-tive if better-sampled data becomes available (Barragán et al. 2022; Barnes et al. 2024). For all models presented in Table 5, where the 2 .78 d signal is present, the derived orbital radii and minimum masses of the putative planet are consistent within the uncertainties. Model 3, using the RV and FWHM data, indicates a planet candidate with mass 2 .86 +0 .67  
+
+> −0.65
+
+M⊕
+
+in a 0 .0393 +0 .0004  
+
+> −0.0013
+
+AU orbit. We consider this further in §5, though emphasise that more data are needed for signal con-firmation. 
+
+4.4 Transit searches 
+
+Transiting planets identified in TESS data with signatures of around 100 − 400 ppm (Jones et al. 2020; Serrano et al. 2022; Silverstein et al. 2024) are not common as they of-ten do not pass the S/N criterion for TESS Object of Inter-est (TOI) identification (Twicken et al. 2018; Guerrero et al. 2021). For instance, HD 93965 A b, with a transit depth of 131 .5 ppm was only identified through further analysis, fol-lowing the 812 .5 ppm transit candidate previously identified as TOI-1797.01, and subsequently designated HD 93965 A c (Serrano et al. 2022). Individual searches for shallow transits, where planet candidates have been identified by other means, are thus prudent. For each target, we searched for transits using TESS pho-tometry. For all target stars, the 120 s cadence light curves files were downloaded from the Mikulski Archive for Space Telescopes (MAST) 5. We used the PDCSAP data with all non-zero quality cadences removed and performed 3 σ clip-ping of outlier fluxes. We also supplemented the dataset with the 200 s cadence data from the FFIs from Sectors 67 and 68 (since PDCSAP lightcurves were not available). We then further detrended the data using a biweight filter from the 
+
+w¯ otan Python package (Hippke et al. 2019). Detrending window lengths of 1 .0 d or 1 .5 d were chosen such that they were at least three times the approximate transit duration of the largest period from the RV models calculated using 
+
+w¯ otan ’s duration approximation function. We removed ca-dences within 2 .5 hours of mid-sector and inter-sector data gaps. For HD 67200 specifically, we binned the data in 30 minute bins prior to searching for transits. We then searched for transits using the TransitLeastSquares (TLS) algorithm (Hippke & Heller 2019) for periods between 0 .5 and 40 d and intensively in small windows around the periods from the RV solutions. The data were phase-folded using the best-fit ephemerides from the RV models. With the largest predicted radius amongst our planets (Ta-ble 4 and §5 discussion below), DMPP-7 might be expected to most readily reveal a transit signature, with a depth of around 3400 ppm. However, no significant transit signals were   
+
+> 5https://mast.stsci.edu/portal/Mashup/Clients/ Mast/Portal.html MNRAS 000 , 1–26 (2026)
+
+# DMPP exoplanet systems 21 -5 050 1 2Model 1b – N p = 2(b)                           
+
+> P = 2.782 d RV [ms -1 ]Period [d] HD 2134 b ''
+> -4 04012
+> (c)
+> P = 2.784 d RV [ms -1 ]Period [d] HD 2134 b ''' (RV) -5 05010 20 30 Model 1a – N p=1(a)
+> P = 32.31 d RV [ms -1 ]Period [d] HD 2134 b '
+> 010 20 30 P = 32.22 d Period [d] HD 2134 c ''
+> 012Model 2 –GP + N p=1–Model 3
+> P = 2.784 d Period [d]
+> HD 2134 b (RV+FWHM)
+> Figure 16. HD 2134 phase-folded RVs for the purely Keplerian models with (a) Np= 1 (Model 1a) and (b) Np= 2 (Model 1b). Shown in (c) are the Keplerian phase-folds with Np= 1 (Model 2 and preferred Model 3, highlighted in bold) after subtracting the GP components.
+
+found. From the M24 predicted radii, the HD 67200 b candi-date (Table 3, Model 3b) should exhibit a transit depths of 
+
+∼ 80 – 90 ppm, while the putative 2 .783 d HD 2134 b candi-date (Table 5; Model 3) could show a ∼ 114 – 126 ppm transit. Despite the large number of sectors and multiple RV planets, no convincing transit candidates were found for HD 67200. We found evidence for a 25 .995 d transit candidate about HD 2134, matching the central 21 d – 35 d candidate period-icities, but the transits for this signal coincided with noisy regions of data from sectors 27, 94 and 95. The transit candi-dates thus probably arise from improperly corrected system-atics. 
+
+5 DISCUSSION 
+
+Fig. 17 presents exoplanet mass-period ( Mp-P ) and radius-period ( Rp-P ) demographic plots and illustrates some of the statistics discussed in §1. Assuming stellar activity periodic-ities are present in all three stellar hosts, DMPP-7 is the only planet candidate with strong evidence in this study. The Mp-P panel in Fig. 17 a (large symbols) shows the lo-cation of DMPP-7 b (Model 3) and the tentative HD 67200 b (Model 3b) and HD 2134 b (Model 3) planet candidates iden-tified with moderate evidence in §4. Because we cannot defini-tively rule out the purely Keplerian models for DMPP-7 and HD 2134, we also plot DMPP-7 c ′′ and HD 2134 b ′′ from the Model 1b solutions (smaller symbols). Fig. 17 a also shows all confirmed planets 1 for which an estimated equilibrium tem-perature, Teq , and either a mass or minimum mass, mp sin i,are known. The HD 67200 and HD 2134 planet candidates belong to the population of less massive planets in the Mass-Period diagram, whereas the 0.72 Saturn mass of DMPP-7 b places it in the upper region of the Neptunian savannah. HD 67200 b is the coolest candidate planet presented in this paper, with equilibrium temperature of Teff = 616 K, assum-ing an average solar-system Bond albedo of AB = 0 .36. The remaining planets receive considerably higher instellation, in-dicating equilibrium temperatures of 1041 K < T eff < 1393 K. Fig. 17 b shows the Rp-P diagram for planets with an esti-mated equilibrium temperature and either a measured tran-sit radius, or in the case of our candidates, a predicted ra-dius (M24). The location of the radius valley is shown, where 
+
+Rp(P ) = (1 .88 /11 .2)( P/ 10) −0.11 MJ (Affolter et al. 2023). The boundaries related to the Neptunian desert, as defined by Castro-González et al. 2024 (CG24), are also plotted. The small open squares in Fig. 17 b illustrate the sheer number of 
+
+V > 10 planets with measured radius, but no mass measure-ment. In addition to radii, the radius uncertainties for our planets are also obtained from M24 and represent the ranges arising from the population spread of radius for a given mass. The predicted radii and their uncertainties are given for the main solutions for each system in Tables 2, 4 and 5. Assum-ing an isotropic distribution of orbital orientations, true exo-planet masses derived from RVs should on average be 18.8% higher than the measured minimum mass. The correspond-ing adjusted radii for the inclination distribution mean of 
+
+i = 57 .3◦ are given for each target in Tables 2, 4 & 5 to en-able an assessment of potential systematic radius bias. The difference between the radii predicted from mp sin i and the adjusted radii are probably pessimistic as the DMPP hypoth-esis leads us to expect edge-on or near edge-on systems. As-suming the lack of transits is not limited by data quality, or-bital inclinations of i < 82 ◦ – 83 ◦ are implied for our planets. Orbits with these marginal non-detection inclinations yield true masses that are < 1% greater than mp sin i.DMPP-7 b has a well defined period and small minimum mass uncertainty of ∆ M/M ∼ 2.6%. The main uncertainty in the corresponding predicted radius (∆ Rp/R = 22%) arises from the relatively larger spread in measured radii at higher masses (M24). At 69 .0 M ⊕, equivalently 0 .22 M J, 0 .72 M Sat or 4.0 M Nept , DMPP-7 b lies at the upper end of the mass range where radii increase rapidly; hence the apparently large pre-dicted Rp = 9 .6 ± 2.1 R ⊕ or 0 .87 ± 0.19 R J. It lies at the 5 d boundary of the Neptunian ridge and Neptunian savan-nah regions recently identified by CG24. Since such planets are expected to form beyond the ice line, at periods longer than shown in Fig. 17, and rocky bodies with sufficient mass are generally expected to rapidly accrete to become Jupiter-mass/radius planets, the Neptunes in the ridge and savannah are likely to have been disrupted in some way. Disc migration is expected to result in low-eccentricity planets as is found  
+
+> MNRAS 000 , 1–26 (2026)
+
+# 22 J. Barnes et al. 
+
+in the savannah region ( P > 5 d), whereas the Kozai-Lidov mechanism would lead to inclined orbits and the higher ec-centricities that are found in the over-dense Neptunian ridge (CG24). The low eccentricity of DMPP-7 b favours the disc migration mechanism. A smaller radius would intriguingly place DMPP-7 b closer to the Ridge over-density. However, with no transit signal apparent in the four TESS sectors at the ∼ 5 d orbital period of the planet, we are unable to obtain a direct radius estimate. Since the Bayesian evidence does not enable the purely Keplerian solution to be formally rejected, we consider the DMPP-7 c ′′ candidate, corresponding to Model 1b. Burn et al. (2024) updated the Bern planet population synthe-sis model (Emsenhuber et al. 2021) to include mixed H/He + H 2O envelopes. By simulating migrating “steam worlds”, they are able to explain the radius valley at ∼ 1.7 R ⊕ and also the radius cliff at ∼ 3.0 R ⊕, which is clear in Fig. 17 b. The radius cliff marks the transition from planets with H 2Orich atmospheres to exoplanets that contain several tens of per cent of H/He by mass. This corresponds to the drop in occurrence rate at around the mass of Neptune, where rapid gas accretion then leads to the more massive gas giant popu-lation. The location of DMPP-7 c ′′ with a predicted mass of 14 .4+3 .2 
+
+> −2.8
+
+M⊕ and radius of 3 .4+0 .6 
+
+> −0.7
+
+R⊕ (respectively 19% and 12% higher if i = 57 .3◦) is thus intriguing as it is potentially represents one of the relatively few (13-16%) Neptune-mass planets simulated by Burn et al. (2024) with some H/He in their atmospheres. The Keplerian orbital periods and amplitudes for the mod-erately significant Np = 1 models for HD 67200 (Model 3b) and HD 2134 (Model 3) are both small. The data sampling for most of the observing runs, with multiple observations per night, means that we are particularly sensitive to 1 d – 2 d sig-nals, regardless of whether they are stellar or dynamical in origin. Solar supergranulation effects are generally seen on 0.5 d – 2 d timescales (Rincon & Rieutord 2018) with ampli-tudes of 0 .7− ≳ 2 m s −1 (O’Sullivan et al. 2025). While mod-elling of the Sun has been carried out by Meunier et al. (2015), stellar ‘jitter’ that includes convective granulation and su-pergranulation effects is typically expected to be ∼ 2 m s −1
+
+for the lowest activity stars with log R′ 
+
+> HK
+
+∼ − 5.0 (Meunier et al. 2019). Further investigation of these effects by Meunier & Lagrange (2020) found potentially significant impact on the recovery of habitable zone planet masses, with the effect being most prominent in F stars; up to 100% mass uncertain-ties are possible for 1 M ⊕ and 2 M ⊕ planets. Analysis of So-lar Cycle 24 and 25 observations by O’Sullivan et al. (2025) reveals that supergranulation is highest, at around 2 m s −1
+
+during the solar minimum period. Our two shortest period planet candidates, HD 67200 b and HD 2134 b are revealed from data taken on multiple year timescales. Coherent peri-odicities cannot be attributed to stochastic convective jitter, but we cannot rule out the possibility that the RVs are con-taminated by stellar convection effects. Depending on exact periodicity interplay, one may expect masses to be overesti-mated if short period signals comprise both stochastic and Keplerian components. Fig. 17 shows that the HD 67200 b and HD 2134 b can-didates, which lie below the radius valley with respective 
+
+Teff = 1650 and 1487 K ( AB = 0), are likely to be atmo-sphereless planets that could be responsible for mass-loss in these systems. Given their implied equilibrium temperatures, 0.001  0.01  0.1  1 10 1 10 100 1 10  100  1000                   
+
+> (a)
+> Mp [MJ] Mp [ME] P [d] Neptunian Desert MSat MSat MNep MNep ME ME 0.01 2.5 3.0 0.05  0.1  0.2  0.5  1 2110 100 0.5  1.0  2 5 10  20
+> (b)
+> Rp [RJ] Rp [RE] P [d]
+> 0500 1000 1500 2000 2500 Teq [K] Neptunian Desert Radius Valley RSat RSat RNep RNep RE RE 0.1  0.15 2.5 3.0
+> Figure 17. (a) Mass-Period and (b) Radius-Period diagrams for planet candidates. Masses and predicted radii for DMPP-7 (large solid diamond). The moderate evidence candidates HD 67200 b and HD 2134 b are also shown in the main panels and inset plots (large open triangles and squares). Planets corresponding to the other candidate Keplerian signals for each host star are shown by the corresponding smaller open symbols. Archival planets with ei-ther measured minimum mass, or true mass (where inclination is known) are plotted for bright V<10 planets (filled circles) and for V≥10 planets (open circles) in both (a) and (b). Planets with measured radii but no mass are similarly plotted with small filled and open squares in (b). The colour scale indicates the equilibrium temperature, Teq . The location of the radius valley (grey dashed curve) and the boundaries of the Neptunian desert features are shown in (b).
+
+exospheres and mass loss may result from the presence of liq-uid magma; as noted by Staab et al. (2020), 1100 K– 1500 K is typical for liquid magma on the Earth (Sigurdsson et al. 2015). Even for exoplanets such as HD 219134 b, that are not hot enough to suggest liquid magma oceans might be present, Vidotto et al. (2018) showed that an exosphere of up to sev-eral planetary radii can be formed by sputtering of surface particles from a dense stellar wind. This explanation was also  
+
+> MNRAS 000 , 1–26 (2026)
+
+# DMPP exoplanet systems 23 
+
+posited by Barnes et al. (2020) as a possible explanation for mass loss from DMPP-3A b and may be important for the slightly cooler equilibrium temperatures expected when 
+
+AB > 0. Because the Np = 2 model for HD 2134 is not conclusively rejected, we plot HD 2134 c ′′ in Fig. 17 and note the implied planet would likely be a steam world with a significant at-mosphere. It is clear that high precision RV instruments and more intensive monitoring campaigns are needed to efficiently monitor HD 67200 and HD 2134 to confirm and improve so-lutions or remove inconclusive candidates. 
+
+6 CONCLUSIONS 
+
+We have found strong Bayesian evidence in support of a 0.72 Saturn mass planet, DMPP-7 b, and moderate evidence for two low mass planet candidates orbiting HD 67200 and HD 2134. The existence of ultra-short orbiting exoplanets (Rappaport et al. 2012, 2014; Sanchis-Ojeda et al. 2015; Hon et al. 2025) and the lack of previously reported massive exo-planets for the bright systems in this study led us to expect the presence of predominantly low-mass, short-period plan-ets. Even for the lowest activity stars, the burden of proof for dynamically induced radial velocity signals is a signif-icant obstacle for low amplitude signals. The evidence for multiplanet systems can be overstated when purely Keplerian models are assumed. Models that include activity generally yield different configurations with fewer planet candidates, as we have demonstrated for HD 67200. Although short period signals are easier to identify with short observing campaigns, stochastic stellar activity with similar timescales and ampli-tudes can also easily contaminate or obscure true Keplerian signals. Modelling the number of Keplerians as a free parameter with nested sampling in conjunction with GPs has facilitated an objective way to present competing models and intra-modal signals with similar significance. Adopting a Gaus-sian Process such as the s+leaf ESP kernel, with rela-tively physical hyperparameters, can prove problematic with-out careful consideration of appropriate priors. This further compounds the difficulties of correctly modelling sparsely sampled data. Nevertheless, we have demonstrated that the ESP kernel is remarkably stable if the number of harmonics and their relative contributions are carefully controlled (§2.3 and Appendix A). In the wider context, the future recovery of masses for the under-represented fainter, low-mass planetary systems, from the Kepler and K2 missions in particular, must adopt meth-ods offering a full exploration of posterior space. This ap-proach offers the best chance of obtaining the least biased outcomes with the optimal combination of signals for which strong evidence is present while enabling an assessment of more tentative signals with moderate evidence. This will be especially important when the small, fainter host stars tar-geted by missions such as Ariel (Edwards & Tinetti 2022) are adopted. The considerable observing time needed to ob-tain reliable Ariel mission target masses (Barnes & Haswell 2022), will be further optimised with Bayesian analysis tools such as kima . To put this in context, approximately 73% of known systems with measured radii and V > 10 do not cur-rently have measured masses and will require time on the largest optical and near infrared facilities, which are under high demand. The planet candidates we report here belong to quite dif-ferent parts of the mass-period and radius-period diagrams. Despite their likely differing formation mechanisms, they all have high instellation and projected equilibrium tempera-tures, that could lead to mass-loss via different mechanisms. The dominant species that are ‘evaporated’ may differ, de-pending on the presence or absence of significant atmo-spheres. Lammer et al. (2022), for instance, have reviewed the various mechanisms that can lead to mass loss of refrac-tory elements from close orbiting rocky exoplanets with liquid magma ocean. Studies of the signatures of multiple species expected from ongoing mass loss are needed and may shed further light on the bulk compositions of the components of exoplanets in the systems studied here. 
+
+ACKNOWLEDGEMENTS 
+
+This paper is based on data taken with the Euro-pean Southern Observatory (ESO) 3.6 m telescope un-der programme IDs: 095.C-0799(A), 097.C-0390(B), 098.C-0269(A), 096.C0499(A), 098.C-0269(B), 098.C-0269(B), 099.C-0798(A), 0100.C-0836(A) and 0110.248C.001 and the VLT facility under programme ID: 114.27LM.001. This pa-per includes data collected by the TESS mission and obtained from the MAST data archive at the Space Telescope Science Institute (STScI). STScI is operated by the Association of Universities for Research in Astronomy, Inc., under NASA contract NAS 5–26555. JRB and CAH were funded by STFC under consolidated grant ST/T000295/1 and ST/X001164/1. MRS acknowledges support from the European Space Agency as an ESA Re-search Fellow, and was supported by grant ST/T000295/1 from the Science and Technology Facilities Council (STFC) for the early part of this work. ATS, ZOBR and ER were sup-ported by Science and Technology Facilities Council (STFC) studentships. 
+
+DATA AVAILABILITY 
+
+The data underlying this article will be shared on reasonable request to the corresponding author. 
+
+REFERENCES  
+
+> Affolter L., Mordasini C., Oza A. V., Kubyshkina D., Fossati L., 2023, A&A, 676, A119 Ahn C. P., et al., 2012, ApJS, 203, 21 Ambikasaran S., 2015, Numerical Linear Algebra with Applica-tions, 22, 1102 Anglada-Escudé G., et al., 2013, A&A, 556, A126 Anglada-Escudé G., et al., 2016, Nature, 536, 437 Arriagada P., 2011, ApJ, 734, 70 Barnes J. R., Haswell C. A., 2022, Experimental Astronomy, 53, 589 Barnes J. R., Jeffers S. V., Haswell C. A., Jones H. R. A., Shulyak D., Pavlenko Y. V., Jenkins J. S., 2017, MNRAS, 471, 811 Barnes J. R., et al., 2020, Nature Astronomy, 4, 419 MNRAS 000 , 1–26 (2026)
+
+# 24 J. Barnes et al. 
+
+Barnes J. R., Jeffers S. V., Haswell C. A., Damasso M., Del Sordo F., Liebing F., Perger M., Anglada-Escudé G., 2024, MNRAS, 534, 1257 Barragán O., Aigrain S., Rajpaul V. M., Zicher N., 2022, MNRAS, 509, 866 Basri G., Nguyen H. T., 2018, ApJ, 863, 190 Basri G., et al., 2011, AJ, 141, 20 Berdyugina S. V., Usoskin I. G., 2003, A&A, 405, 1121 Boyle A. W., Mann A. W., Bush J., 2025, ApJ, 985, 233 Brewer B. J., Foreman-Mackey D., 2016, arXiv e-prints, p. arXiv:1606.03757 Burn R., Mordasini C., Mishra L., Haldemann J., Venturini J., Emsenhuber A., Henning T., 2024, Nature Astronomy, 8, 463 Castro-Ginard A., et al., 2024, A&A, 688, A1 Castro-González A., Bourrier V., Lillo-Box J., Delisle J.-B., Arm-strong D. J., Barrado D., Correia A. C. M., 2024, A&A, 689, A250 Christiansen J. L. e. a., 2025, Planetary Science Journal, 6, 186 Claytor Z. R., van Saders J. L., Llama J., Sadowski P., Quach B., Avallone E. A., 2022, ApJ, 927, 219 Colman I. L., Angus R., David T., Curtis J., Hattori S., Lu Y. L., 2024, AJ, 167, 189 Dawson R. I., Johnson J. A., 2018, ARA&A, 56, 175 Delisle J.-B., Hara N., Ségransan D., 2020, A&A, 638, A95 Edwards B., Tinetti G., 2022, AJ, 164, 15 Emsenhuber A., Mordasini C., Burn R., Alibert Y., Benz W., As-phaug E., 2021, A&A, 656, A69 Faria J. P., Santos N. C., Figueira P., Brewer B. J., 2018, The Journal of Open Source Software, 3, 487 Faria J. P., Santos N. C., Figueira P., Brewer B. J., 2023, kima: Exoplanet detection in RVs with DNest4 and GPs, https:// ascl.net/2302.014 
+
+Foreman-Mackey D., Agol E., Ambikasaran S., Angus R., 2017, AJ, 154, 220 Gaia Collaboration et al., 2023, A&A, 674, A1 Gomes da Silva J., Figueira P., Santos N., Faria J., 2018, The Journal of Open Source Software, 3, 667 Gomes da Silva J., et al., 2021, A&A, 646, A77 Gomes da Silva J., Bensabat A., Monteiro T., Santos N. C., 2022, A&A, 668, A174 Guerrero N. M., et al., 2021, ApJS, 254, 39 Haswell C. A., et al., 2020, Nature Astronomy, 4, 408 Hattori S., Foreman-Mackey D., Hogg D. W., Montet B. T., Angus R., Pritchard T. A., Curtis J. L., Schölkopf B., 2022, AJ, 163, 284 Hattori S., Angus R., Foreman-Mackey D., Lu Y. L., Colman I., 2025, AJ, 170, 15 Hippke M., Heller R., 2019, Astronomy & Astrophysics, 623, A39 Hippke M., David T. J., Mulders G. D., Heller R., 2019, The As-tronomical Journal, 158, 143 Høg E., et al., 2000, A&A, 355, L27 Hon M., et al., 2025, ApJ, 984, L3 Houk N., Swift C., 1999, Michigan Spectral Survey, 5, 0 Isaacson H., Fischer D., 2010, ApJ, 725, 875 Jenkins J. S., et al., 2011, A&A, 531, A8 Jones M. H., Haswell C. A., Barnes J. R., Staab D., Heller R., 2020, ApJ, 895, L17 Kipping D. M., 2013, MNRAS, 434, L51 Klein B., et al., 2024, MNRAS, 531, 4238 Lammer H., et al., 2022, Space Sci. Rev., 218, 15 Laskar J., 1997, A&A, 317, L75 Laskar J., 2000, Phys. Rev. Lett., 84, 3240 Lindegren L., et al., 2021, A&A, 649, A2 Mamajek E. E., Hillenbrand L. A., 2008, ApJ, 687, 1264 Meunier N., Lagrange A.-M., 2020, A&A, 642, A157 Meunier N., Lagrange A.-M., Borgniet S., Rieutord M., 2015, A&A, 583, A118 Meunier N., Lagrange A.-M., Cuzacq S., 2019, A&A, 632, A81 Müller S., Baron J., Helled R., Bouchy F., Parc L., 2024, A&A, 686, A296 Murphy S. J., Fossati L., Bedding T. R., Saio H., Kurtz D. W., Grassitelli L., Wang E. S., 2016, MNRAS, 459, 1201 Nicholson B. A., Aigrain S., 2022, MNRAS, 515, 5251 O’Sullivan N. K., et al., 2025, MNRAS, 541, 3942 Pace G., 2013, A&A, 551, L8 Penoyre Z., Belokurov V., Evans N. W., 2022, MNRAS, 513, 2437 Pepe F., et al., 2013, The Messenger, 153, 6 Perdelwitz V., Trifonov T., Teklu J. T., Sreenivas K. R., Tal-Or L., 2024, A&A, 683, A125 Petit A. C., Laskar J., Boué G., 2017, A&A, 607, A35 Rappaport S., et al., 2012, ApJ, 752, 1 Rappaport S., Barclay T., DeVore J., Rowe J., Sanchis-Ojeda R., Still M., 2014, ApJ, 784, 40 Reinhold T., Hekker S., 2020, A&A, 635, A43 Rincon F., Rieutord M., 2018, Living Reviews in Solar Physics, 15, 6Sanchis-Ojeda R., et al., 2015, ApJ, 812, 112 Serrano L. M., et al., 2022, A&A, 667, A1 Sigurdsson H., Houghton B., McNutt S., Rymer H., Stix J., eds, 2015, The Encyclopedia of Volcanoes, 2nd edn. Elsevier Science & Technology, Amsterdam, doi:10.1016/C2011-0-00438-6 Silva A. M., et al., 2022, A&A, 663, A143 Silverstein M. L., et al., 2024, AJ, 167, 255 Simola U., Bonfanti A., Dumusque X., Cisewski-Kehe J., Kaski S., Corander J., 2022, A&A, 664, A127 Skrutskie M. F., et al., 2006, AJ, 131, 1163 Soto M. G., Jenkins J. S., 2018, A&A, 615, A76 Soto M. G., Jones M. I., Jenkins J. S., 2021, A&A, 647, A157 Staab D., et al., 2020, Nature Astronomy, 4, 427 Standing M. R., et al., 2022, MNRAS, 511, 3571 Standing M., Barnes J. R., Haswell C. A. H., et al. submitted 2026, MNRAS Steffen J. H., et al., 2012, Proceedings of the National Academy of Science, 109, 7982 Stevenson A. T., Haswell C. A., Faria J. P., Barnes J. R., Barstow J. K., Dickinson H., Standing M. R., 2025a, MNRAS, 539, 727 Stevenson A. T., Haswell C. A., Barnes J. R., Standing M. R., Barstow J. K., Ross Z. O. B., Freckelton A. V., Staab D., 2025b, MNRAS, 543, 28 Trotta R., 2008, Contemporary Physics, 49, 71 Twicken J. D., et al., 2018, PASP, 130, 064502 Twicken J. D., et al., 2020, NASA Technical Mem-orandum NASA/TM-20205008729, TESS Science Data Products Description Document, https: //archive.stsci.edu/files/live/sites/mast/files/ home/missions-and-data/active-missions/tess/ _documents/EXP-TESS-ARC-ICD-TM-0014-Rev-F.pdf .NASA Ames Research Center, https://archive. stsci.edu/files/live/sites/mast/files/home/ missions-and-data/active-missions/tess/_documents/ EXP-TESS-ARC-ICD-TM-0014-Rev-F.pdf 
+
+Vidotto A. A., et al., 2018, MNRAS, 481, 5296 Zechmeister M., Kürster M., 2009, A&A, 496, 577 Zink J. K., Howard A. W., 2023, ApJ, 956, L29 dos Santos L. A., et al., 2016, A&A, 592, A156 
+
+APPENDIX A: GAUSSIAN PROCESS IMPLEMENTATION IN KIMA 
+
+The standard squared-exponential periodic (SEP) kernel in 
+
+kima is defined as 
+
+kSEP (τ ) = η 21 exp 
+
+[
+
+− τ 2
+
+2η 22
+
+− 2 sin 2 (πτ /η 3)
+
+η 24
+
+]
+
+. (A1) 
+
+MNRAS 000 , 1–26 (2026) DMPP exoplanet systems 25 
+
+where τ = ti − tj is the time lag between observations, η1
+
+is the GP amplitude, η2 is the exponential decay timescale, and η3 is the characteristic period. The amount of sub-structure within each cycle is controlled by η4, which is re-lated to the “harmonic complexity” Γ. Kima internally uses Γ = 2 /η 24 whereas a more common convention in the litera-ture is Γ = 1 /(2 η24 ). The SEP kernel requires a full Cholesky decomposition of the covariance matrix, with computational cost scaling as 
+
+O(N 3data ). A more efficient semiseparable (celerite -like) representation providing a linear scaling of ∼ O(Ndata )(Foreman-Mackey et al. 2017) is provided by the s+leaf 
+
+framework (Delisle et al. 2020), which includes the Exponential–Sine Periodic (ESP) kernel. The ESP kernel used in kima has the form 
+
+kESP (τ ) = 
+
+{
+
+η 21 exp 
+
+(
+
+− |τ |
+
+η2
+
+)
+
+exp 
+
+[
+
+−
+
+(2 sin( πτ /η 3))2
+
+η 24
+
+]} 
+
+×
+
+{nharm ∑
+
+> h=0
+
+˜Ih
+
+( 1
+
+η 24
+
+)
+
+cos 
+
+(
+
+h 2πη3
+
+τ
+
+)}
+
+, (A2) with the normalised coefficients ˜Ih(f ) = Ih(f )
+
+> nharm
+
+∑
+
+> k=0
+
+Ik (f )
+
+, f = 1
+
+η24
+
+. (A3) where nharm is the number of harmonics. The first term in Eqn. A2 is the Exponential–Sine (ES) envelope, which com-bines an exponential decay ( η2) with a periodic smooth-ing term ( η3, η4). The second part of Eqn. A2 is a trun-cated Fourier–Bessel series that captures periodic structure through the normalised modified Bessel functions ˜Ih(f ) in Eqn. A3. By default kima restricts this to nharm = 3, cor-responding to the fundamental period η3 and its first two harmonics ( η3/2 and η3/3). Table A1 shows how choice of η4
+
+controls the modified Bessel function harmonic weights. 
+
+APPENDIX B: TESS LIGHTCURVES 
+
+We plot the lightcurves obtained using unpopular (Hattori et al. 2022) in Figs B1, B2 and B3. Unpopular uses dis-tant pixels in the TESS FFIs to model and detrend sys-tematic effects and employs regularisation to prevent over-fitting. We optimised tunable parameters and found similar settings to those adopted by Boyle et al. (2025) gave op-timal results. Cutouts of 64 × 64 pixels were downloaded from the FFIs, and 200 predictive pixels with the “Simi-lar Brightness” method were used. We found that L2 reg-ularisation with 0 .01, or 0 .1 was suitable for our targets, which minimised the scatter while avoiding over-fitting (Hat-tori et al. 2022). The periods discussed in S26 and this pa-per are tabulated in Table B1. The Rvar column in Table B1 lists the difference in ppm between the 95th and 5th percentile of the sorted flux after 3 hr binning. The rela-tively high ratio of Rvar /A may result from changing activ-ity levels, but probably arises largely from TESS systemat-ics. For HD 67200, the data span fairly constant ranges, with 297 ppm < R var < 354 ppm). This variability is lower than the majority of K2 amplitudes with successful period deter-minations Reinhold & Hekker (2020) or TESS Boyle et al. (2025). Only 0.24% of the Reinhold & Hekker (2020) 32387 K2 period determinations possessed Rvar < 359 ppm. Simi-larly, only 1.27% of their period determinations were made for lightcruves with Rvar < R var (DMPP-7) = 546 ppm. Al-though Hattori et al. (2025) were able to recover periods of 10 − 100 d, their sample also comprised stars with typically an order of magnitude greater variability than our targets.  
+
+> MNRAS 000 , 1–26 (2026)
+
+# 26 J. Barnes et al. 
+
+Table A1. Correspondence between η4 and harmonic complexity in Kima ’s implementation of the S+LEAF ESP kernel (Delisle et al. 2020). Normalised harmonic weights for the ESP kernel using f = 1 /η 24 as the modified Bessel argument. The harmonic complexity is implemented in kima as Γ = 2 /η 24 . Weights wh = Ih(f )/ ∑ 3 
+
+> k=0
+
+Ik (f ) for h = 1 , 2, 3 correspond to the fundamental characteristic period 
+
+η3, the first harmonic η3/2, and second harmonic η3/3, respectively ( I0 is a constant term). The weighting ratios w2/w 1, w3/w 2 and 
+
+w3/w 1 respectively corresponding to ( η3/2) /η 3, ( η3/3) /(η3/2) and ( η3/3) /η 3 quantify the relative harmonic strengths. 
+
+η4 f = 1 /η 24 Γ = 2 f w2/w 1 w3/w 2 w3/w 1 Comments 0.1 100 200 0.9850 0.9752 0.9606 Extremely harmonic-rich 0.2 25 50 0.9406 0.9031 0.8495 Very high harmonic complexity 0.5 4.0 8.0 0.6580 0.5196 0.3420 Strong η3/2 and η3/3; well-suited to RV activity signals 0.8 1.5625 3.125 0.3561 0.2482 0.0884 Classic double-dip morphology ( η3/2 ≈ 36 %) 1.0 1.0 2.0 0.2402 0.1633 0.03923 Weak double-dip; modest harmonic content 1.5 0.4444 0.8889 0.1102 0.07377 0.00813 η3/2 ≈ 11%; approaching sinusoidal 2.0 0.25 0.50 0.06234 0.04161 0.00259 Shallow η3/2 ≈ 6% 5.0 0.04 0.08 0.009999 0.006666 6.7 × 10 −5 Almost pure sinusoid 10.0 0.01 0.02 0.002500 0.001667 4.2 × 10 −6 Essentially pure sinusoid TESS Sectors P A Rvar 
+
+year [d] [ppm] [ppm] HD 67200 1 1–5, 9–13 (odd) 10.4 48 333 2–12 (even) 6.23 30 (N/S) 354 3 27–39 (odd) 13.7 47 297 28–38 (even) 10.7 46 297 5 61–64, 66 , 68 , 69 4.52 38 345 7 87–90 , 93 , 96–98 3.65 49 359 DMPP-7 2, 4, 7 23 , 46 , 50 , 91 21.5 111 546 HD 2134 3, 5, 7 27 , 28 , 67 , 68 , 94 , 95 26.4 105 535 
+
+Table B1. TESS Photometry results for each target. GLS peri-odogram analysis was used to recover the sinusoidal periodicities (P ) and amplitudes ( A). Rvar measures the 5th–95th percentile span of the 3 hr-binned differential flux. This paper has been typeset from a TEX/L ATEX file prepared by the author. MNRAS 000 , 1–26 (2026) DMPP exoplanet systems 27 Sector 1 -500 0500 1330 1340 1350 
+
+> ΔF [ppm]
+
+Sector 3 1390 1400 Sector 5 1440 1450 1460 Sector 9 1550 1560 1570 Sector 11 1600 1610 1620 Sector 13 1660 1670 1680 Sector 2 -500 0500 1360 1370 1380 
+
+> ΔF [ppm]
+
+Sector 4 1410 1420 1430 Sector 6 1470 1480 1490 Sector 8 1520 1530 1540 Sector 10 1580 1590 Sector 12 1630 1640 1650 Sector 27 -500 0500 2040 2050 2060 
+
+> ΔF [ppm]
+
+Sector 29 2090 2100 2110 Sector 31 2150 2160 2170 Sector 33 2200 2210 2220 Sector 35 2260 2270 2280 Sector 37 2310 2320 2330 Sector 39 2360 2370 2380 2390 Sector 28 -500 0500 2060 2070 2080 
+
+> ΔF [ppm]
+
+Sector 30 2120 2130 2140 Sector 32 2180 2190 2200 Sector 34 2230 2240 2250 Sector 36 2290 2300 Sector 38 2340 2350 2360 Sector 61 -500 0500 2970 2980 2990 
+
+> ΔF [ppm]
+
+Sector 62 2990 3000 3010 Sector 63 3020 3030 3040 Sector 64 3040 3050 3060 3070 Sector 66 3100 3110 3120 Sector 68 3160 3170 3180 Sector 69 3190 3200 Sector 87 -500 0500 3680 
+
+> ΔF [ppm]
+
+Sector 88 3700 Sector 89 BJD - 2457000 [d] 3720 3740 Sector 90 3760 Sector 93 3840 Sector 96 3920 Sector 97 3940 3960 3980 Sector 98 4000 
+
+Figure B1. HD 67200 TESS photometry showing the unbinned data (light grey), the 0 .5 d binned points (black). Year 1 is plotted as odd and even sectors in rows 1 and 2. Year 3 is similarly plotted in rows 3 and 4. See Table B1 for statistics and periodicities. Sector 23 -500 0500 1930 1940 1950 
+
+> ΔF [ppm]
+
+Sector 46 2560 2570 2580 Sector 50 BJD - 2457000 [d] 2670 2680 2690 Sector 91 3780 3790 3800 
+
+Figure B2. DMPP-7 TESS photometry. MNRAS 000 , 1–26 (2026) 28 J. Barnes et al. Sector 27 -500 0500 2040 2050 2060 
+
+> ΔF [ppm]
+
+Sector 28 2070 2080 Sector 67 BJD - 2457000 [d] 3130 3140 3150 Sector 68 3160 3170 3180 Sector 94 3860 3870 3880 Sector 95 3890 3900 
+
+Figure B3. HD 2134 TESS photometry. MNRAS 000 , 1–26 (2026)

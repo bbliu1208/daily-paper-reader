@@ -1,0 +1,196 @@
+Title: Are Near Resonant Multiple-planet Systems from Kepler Young?
+
+URL Source: https://arxiv.org/pdf/2608.12786v1
+
+Published Time: Fri, 14 Aug 2026 00:29:18 GMT
+
+Number of Pages: 7
+
+Markdown Content:
+RAA Vol.0 (20xx) No.0, 000–000 © 2019 National Astronomical Observatories, CAS and IOP Publishing Ltd. 
+
+http://www.raa-journal.org http://iopscience.iop.org/raa 
+
+Research in 
+
+Astronomy and 
+
+Astrophysics 
+
+# Are Near Resonant Multiple-planet Systems from Kepler Young? 
+
+Wei Zhu ( 祝伟)1 and Qingru Hu ( 胡清茹)1
+
+Department of Astronomy, Tsinghua University, Beijing 100084, China; weizhu@tsinghua.edu.cn 
+
+Received 20xx month day; accepted 20xx month day 
+
+Abstract Recent studies have claimed that Kepler multi-planet systems hosting near-resonant planet pairs— particularly those near second-order mean-motion resonances (MMRs)—exhibit smaller stellar velocity dispersions than the general population of Kepler planet hosts. Interpreting velocity dispersion as an age in-dicator, these works concluded that near-resonant systems are systematically younger. We revisit this claim, but we explicitly account for contamination by thick disk stars, which are kinematically hotter and follow a different age-velocity dispersion relation (AVR) than thin disk stars. Using the kinematic criterion to sep-arate thin and thick disk stars, we show that systems classified as having plausible second-order resonant pairs are preferentially hosted by brighter, closer stars and are therefore less contaminated by thick disk stars than the overall sample. After applying a cut to remove probable thick disk contaminants ( TD /D < 0.1), the vertical velocity dispersion of near-resonant systems becomes statistically indistinguishable from that of the overall Kepler multi-planet sample. We conclude that the apparent kinematic youth of near-resonant systems in Kepler may not be due to a genuine age difference, but rather arises from observational selection effects linked to host star properties and planet detectability. We also comment on the kinematic ages of ultra-short-period planets (USPs). 
+
+Key words: Planetary systems – Stars: kinematics and dynamics – Methods: statistical 
+
+1 INTRODUCTION 
+
+Mean-motion resonance (MMR) is an appealing feature in the study of multi-planet systems. It occurs when the or-bital periods of two planets are close to some small in-teger ratio and the resonance angle librates. According to the current theoretical understanding, planets can often (e.g., Borderies & Goldreich 1984; Lee & Peale 2002), though not always (e.g., Goldreich & Schlichting 2014; Yang & Li 2024; Chen et al. 2025), be locked into MMRs if they undergo convergent migration in the protoplane-tary disk, and population synthesis models indeed predict that MMRs should be abundant in multi-planet systems when they are young (e.g., Izidoro et al. 2017; Emsenhuber et al. 2021). On the other hand, observations have shown that, among the mature multi-planet systems, those host-ing MMR planet pairs are a minor fraction (e.g., Fabrycky et al. 2014; Huang & Ormel 2023; Dai et al. 2024). Growing evidence also appears that even the planet pairs with period ratios very close to small integer ratios are in fact near but not in MMR (Goldberg & Batygin 2023; Hu et al. 2025). Recent observational studies have sought to link the presence of near-resonant architectures to stellar age (Dai et al. 2024; Hamer & Schlaufman 2024; Schmidt et al. 2024). In particular, Hamer & Schlaufman (2024, hereafter HS24) analyzed a large sample of Kepler multi-planet sys-tems and claimed that systems hosting planet pairs near second-order MMRs and those near first-order MMRs but affected by stellar tides have smaller velocity dispersions than the general field stars hosting planets. Taking the ve-locity dispersion as an age indicator, those authors argued that systems with near resonant configurations are on av-erage younger. Schmidt et al. (2024) further converted the measured velocity dispersion into stellar age and claimed that Kepler multi-planet systems with plausible 2nd-order MMRs are only 1–2 Gyr old, whereas the general Kepler systems span a much wider age range of 1–10 Gyr (but see Bouma et al. 2024). The same claim was also made for systems with plausible 1st-order MMRs, but only for sys-tems that are likely affected by tidal dissipation inside the innermost planet (Schmidt et al. 2024). While stellar kinematics has been widely accepted as an empirical aging technique, the standard age–velocity dispersion relation (AVR, Str¨ omberg 1946; Wielen 1977) uses the vertical velocity dispersion and only applies to thin disk stars (e.g., Seabroke & Gilmore 2007; Aumer arXiv:2608.12786v1 [astro-ph.EP] 13 Aug 2026 2
+
+et al. 2016; Mackereth et al. 2019), and even so, it appears to vary with Galactic locations (e.g., Ting & Rix 2019; Sharma et al. 2021; Sun et al. 2025). Whereas in HS24, the authors used the total velocity dispersion as an age indica-tor, 1 and applied it to the stars in the Kepler field, which span a wide range in distance, Galactic height, and kine-matic environment. If a sample is contaminated by thick disk stars, which are kinematically hotter and do not appear to have a well established relation between age and the to-tal velocity dispersion (see Silva Aguirre et al. 2018 and Miglio et al. 2021 for close examples in the Kepler field), the inferred age of a subsample could be biased. While HS24 had tried to remove thick disk (and halo) stars from their sample based on the orbital parameters in the Galactic potential, this dynamical method is model-dependent, re-lies on very precise astrometric and radial velocity mea-surements, and is not able to identify all (probable) thick disk stars (Alinder et al. 2025). As an example, Kepler-444 (KIC 6278762) is a known thick disk star based on both its chemical and kinematic properties (Campante et al. 2015), but it was not identified by the dynamical method of HS24. Besides the dynamical method, other methods are available to separate stars belonging to the different Galactic components, most importantly, the thin and thick disks (see Alinder et al. 2025 for an overview). Since most of the stars in the Kepler field do not have [α/ Fe] mea-surements, an appropriate alternative is then the kinematic method, which evaluates the probability of a star belonging to the thick disk relative to the thin disk, often denoted as 
+
+TD /D, based on its 3D velocity (e.g., Bensby et al. 2003, 2014) 
+
+TD /D ≡ XTD 
+
+XD
+
+· fTD 
+
+fD
+
+. (1) Here XTD = 0 .09 and XD = 0 .85 , which measure the observed fractions of the thick and thin populations in the Solar neighborhood, respectively. The factor f measures the three-dimensional velocity ellipsoid 
+
+f = k · exp 
+
+
+
+− U 2LSR 
+
+2σ2
+
+> U
+
+− (VLSR − Vasym )2
+
+2σ2
+
+> V
+
+− W 2LSR 
+
+2σ2
+
+> W
+
+
+
+,
+
+(2) where k ≡ (2 π)−3/2(σU σV σW )−1. We follow Bensby et al. (2014) and adopt characteristic velocity dis-persions (σU , σ V , σ W ) = (35 , 20 , 16) km s −1 and 
+
+(67 , 38 , 35) km s −1 for the thin and the thick populations, respectively. The asymmetric drift of the U component has been set at zero, and the asymmetric drift of the V compo-nent is chosen as Vasym = −15 km s −1 for thin disk and 
+
+−46 km s −1 for thick disk. 2 Compared to the dynamical     
+
+> 1As pointed out in Hu et al. (in prep), the definition of the velocity standard deviation in HS24 is non-standard.
+> 2Chen et al. (2021) proposed an improved TD /Dformula that takes into account the density or velocity variations of the thin vs. thick disk
+
+method that integrates the stellar orbit for typically a few Gyr, the kinematic method is much easier to implement. Using this kinematical selection criterion, we show that the planetary host sample of HS24 is indeed contam-inated by (possible) thick disk stars and that the level of contamination varies across the subsets of planetary hosts that were investigated. After a proper correction of the thick disk contamination, we find that the systems with plausible MMR planet pairs are consistent in stellar ver-tical velocity dispersion with the overall sample of plan-etary hosts. In other words, our refined analysis does not find statistical evidence supporting the claim of HS24 that near resonant systems in the Kepler sample are systemati-cally younger than the general population. This paper is organized in the following way: in Section 2 we reconstruct the stellar sample, which follows closely the procedures in HS24; in Section 3 we present our refined analysis and the key results that near-resonant systems do not appear kinematically younger than the gen-eral population; in Section 4 we present a plausible reason why the near-resonant systems are less contaminated by thick disk stars; in Section 5 we provide a brief summary of our findings. 
+
+2 SAMPLE RECONSTRUCTION 
+
+We start from the Table 1 of Schmidt et al. (2024), which provides names and the adopted RV values of the systems used in HS24. Systems with in/near 1st-order and 2nd-order MMR pairs have been labeled, which were defined using the δres criterion of HS24. After cross-matching with the Cumulative KOI Data of NASA Exoplanet Archive (Christiansen et al. 2025), we obtain the Kepler-band mag-nitudes and the observed transit multiplicity of the systems. In this step, we additionally exclude 16 stars that were re-ported as USP hosts in Schmidt et al. (2024), but which we identify as false positives. The final sample therefore con-tains 667 planetary systems, which include 60 labeled with plausible 1st-order MMR pairs, 60 with plausible 2nd-order MMR pairs, and nine that are labeled as tidally af-fected 1st-order MMR systems. Similar to HS24, the par-allax and proper motion measurements are taken from Gaia DR3 (Gaia Collaboration et al. 2023), and the stellar kine-matics are computed via pyia (Price-Whelan & Brammer 2021). The classification of stars into different Galactic com-ponents affects the conversion from stellar kinematics to their ages. We classify the stars in our sample into thin and thick disk components based on the TD /D parameter, which is the relative probability that a star belongs to the thin disk over the thick disk (Bensby et al. 2014).                 
+
+> population across the Galactic distance. We confirm here that the adoption of the Chen et al. (2021) TD /Dformulism does not affect our results. 3200 150 100 50 050
+> VLSR (km/s) 050 100 150 200 250
+> U2LSR  + W2LSR  (km/s)
+> TD/D<0.1 0.1<TD/D<1 1<TD/D<10 TD/D>10 10 210 110 010 110 2
+> TD/D 0.0 0.2 0.4 0.6 0.8 1.0 CDF All w/ 1st MMR w/ 2nd MMR w/ 1st MMR & Pin < 3 d USP
+
+Fig. 1 Left panel: Toomre diagram for the stars in our sample, color-coded by the TD /D value. Right panel: cumulative distribution function (CDF) of the TD /D values for stars with planetary systems classified into different categories. A system with at least one planet pair that is identified as plausible 1st-order (2nd-order) resonance by HS24 is labeled “w/ 1st MMR” (“w/ 2nd MMR”). The category, “w/ 1st MMR & Pin < 3 d”, corresponds approximately to the stars with plausibly 1st-order resonant and tidal decay timescale τe < 20 Myr in HS24. “USP” is the sample of planetary systems hosting ultra-short-period planets as identified in Schmidt et al. (2024). The left panel of Figure 1 shows the Toomre diagram for the stars in our sample. While the majority of the stars have kinematics resembling those of typical thin disk stars, some do act more like thick disk stars, with the derived 
+
+TD /D > 10 . The cumulative distribution of the TD /D
+
+parameter, as shown in the right panel of Figure 1, also confirms this. Additionally, while the plausible 1st-order resonant systems do follow the overall stellar distribution and have a long tail towards large TD /D, almost all of the plausible 2nd-order resonant systems belong to the thin disk component with very few exceptions (i.e., three with 
+
+TD /D > 0.1). A two-sample Kolmogorov–Smirnov (KS) test between the plausible 2nd-order resonant sample and the overall sample yields p = 0 .011 , and the Anderson– Darling (AD) test yields p = 0 .007 , both rejecting the hypothesis that the two distributions are drawn from the same underlying distribution. In other words, the systems classified by HS24 as plausibly in/near 2nd-order MMR are much less contaminated by the (possible) thick disk stars than the systems classified to have plausible 1st-order MMRs. This is the reason that makes the 2nd-order MMR systems appear kinematically younger, as further explained later. The same is true for the systems classified as plausi-bly in/near 1st-order MMR and affected stellar tides. To identify systems that belong to this category, we adopt a more empirical criterion rather than adopting the existing label in Schmidt et al. (2024). In the calculation of the tidal circularization timescale τe in HS24, values of some unknown parameters (e.g., tidal quality factor Q) have been assumed, which have (large) systematic uncertainties. Making use of the strong dependence of the tidal circular-ization timescale on the orbital period (e.g., Figure 3 of HS24), we simply choose systems with the innermost or-bital period Pin < 3 d as those with tidal circularization timescale τe ≲ 20 Myr. With the assumed Mars-like dis-sipative properties of HS24, these values correspond to a typical Kepler planet with a radius of ∼ 1.5 R⊕ and a mass of ∼ 5 M⊕ around a Sun-like host (Lithwick & Wu 2012). As shown in the right panel of Figure 1, systems with plau-sible 1st-order resonant pairs and Pin < 3 d are also pref-erentially around stars that likely belong to the thin disk population, although because of the much smaller sample size the statistical difference is not as large for the 2nd-order resonant systems. As such, the cause of such sys-tems appearing kinematically younger in HS24 is the same as those with 2nd-order MMRs. Given the uncertainty in the identification of such systems and the small (i.e., nine) number of systems in this sample, we no longer consider this group separately in the following analysis. In the right panel of Figure 1 we also show the cu-mulative distribution of the TD /D parameters derived for the ultra-short-period planet (USP) hosts in Schmidt et al. (2024). Unlike the systems with plausible 2nd-order MMRs, USP hosts are more, though at less significant level, contaminated by probable thick disk stars compared 410.0 12.5 15.0 17.5 20.0 22.5 25.0  
+
+> W(km/s)
+> 0.0 0.1 0.2 0.3 0.4 0.5 PDF
+
+No cut on TD/D 
+
+> All 1st MMR 2nd MMR
+
+Fig. 2 Distributions of the vertical velocity dispersion (σW ) from bootstrap tests of the three planet host groups. Here we have included all stars and do not perform cut on 
+
+TD /D. In this case, the velocity dispersion in systems with plausible 2nd-order MMRs is statistically smaller than that of the overall sample, whereas the velocity dispersion in systems with plausible 1st-order MMRs is statistically sim-ilar to that of the overall sample. These results are qualita-tively similar to that of HS24. to the overall planetary hosts, as has been noticed in Tu et al. (2025). However, we do not see statistically signifi-cant difference in velocity dispersion between USP hosts and the overall planetary sample, as further explained in Appendix A. 
+
+3 NEAR-RESONANT KEPLER SYSTEMS DO NOT APPEAR KINEMATICALLY YOUNGER 
+
+We derive the vertical velocity dispersions for the three stellar groups and evaluate their uncertainties via bootstrap tests, 3 following closely the procedures of HS24. The re-sult before correcting for the thick disk star contaminants is shown in Figure 2. Without any cut on the stellar sam-ple, the systems with plausible 2nd-order MMRs do have a smaller velocity dispersion than the overall sample. This reproduces the key result of HS24, even though we have slightly different stellar samples and use the more proper age indicator. Because the Kepler multi-planet systems are contam-inated by thick disk stars, which do not follow the same AVR as the thin disk stars, it is reasonable (and compul-  
+
+> 3These bootstrap tests are done via scipy.stats.bootstrap .
+
+sory) to remove the contaminants in order to ensure that they do not affect the subsequent statistical analyses. We have chosen two different criteria for removing thick disk contaminants, and the results are shown in Figure 3. In the left panel, we adopt a rather loose crite-rion of TD /D < 0.5 as thin disk stars, whereas in the right panel we adopt a stricter criterion of TD /D < 0.1 as thin disk stars, both having been used in the literature (e.g., Bensby et al. 2014; Chen et al. 2021; Boettner et al. 2024). After imposing such cuts on the stellar sample, the veloc-ity dispersion of stars with plausible 2nd-order MMRs is nearly unaffected, but the velocity dispersions of the other two stellar samples are substantially reduced. In particu-lar, only three out of 60 stars in the 2nd-order MMR group is removed by the stricter cut of TD /D < 0.1, but the resulting velocity dispersion is now statistically indistin-guishable to the velocity dispersions of both the overall star sample and the stars with plausible 1st-order MMRs.  
+
+> 4
+
+This means that contamination from thick disk stars in-deed has impact on the derived velocity dispersions. After such contaminants are removed, the systems with plausible 1st-order or 2nd-order MMRs are both statistically similar in kinematics, and thus in the inferred ages, to the overall sample of stars. HS24 also claimed that the near/in 1st-order MMR systems affected by tidal dissipation inside the innermost planets were kinematically colder than the parent sam-ple. As shown in Figure 1, this subset of systems is also less contaminated by the thick disk stars similar to the 2nd-order MMR systems, so their apparently colder kinematics—and thus younger age—can also be explained by the same bias as for the 2nd-order MMR systems. 
+
+4 WHY ARE NEAR-RESONANT SYSTEMS LESS CONTAMINATED BY THICK DISK STARS? 
+
+We have shown in the previous section that the apparent kinematic youth of near-resonant systems disappears af-ter removing thick disk contaminants, but why are sys-tems with plausible 2nd-order MMRs preferentially found around thin disk stars? The answer lies not in an intrinsic age difference, but (more likely) in observational selection effects linked to the host star properties and the detectabil-ity of multiple, small transiting planets. In Figure 4, we show three stellar/planetary prop-erties across the overall sample, systems with plausible 1st-order MMRs, and systems with plausible 2nd-order MMRs. Stars hosting 2nd-order resonant pairs are system-atically brighter and closer than the overall sample (as well as the stars hosting 1st-order resonant pairs). As the photo- 
+
+> 4The smaller standard deviation of the “All” sample is simply due to its larger sample size.
+
+510.0 12.5 15.0 17.5 20.0 22.5 25.0  
+
+> W(km/s)
+> 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 PDF
+
+TD/D<0.5        
+
+> All 1st MMR 2nd MMR 10.0 12.5 15.0 17.5 20.0 22.5 25.0
+> W(km/s)
+> 0.0 0.2 0.4 0.6 0.8 1.0 PDF
+
+TD/D<0.1 
+
+> All 1st MMR 2nd MMR
+
+Fig. 3 Similar to Figure 2, but now we have removed the possible thick disk contaminants from the analysis. In the left panel, stars with TD /D > 0.5 are excluded, and the statistical difference between the velocity dispersions in stars with plausible 2nd-order MMRs and the overall stellar sample is reduced to 2.1σ. In the right panel, stars with TD /D > 0.1
+
+are excluded. This stricter cut only removes three out of 60 stars in the plausible 2nd-order MMR group (see right panel of Figure 1), but the three resulting velocity dispersions become all statistically similar ( < 0.5σ). 8 10 12 14 16 Kepler magnitude 0.0 0.2 0.4 0.6 0.8 1.0 CDF All 1st MMR 2nd MMR 10 2 10 3     
+
+> Distance (pc) 0.0 0.2 0.4 0.6 0.8 1.0 CDF 234567Transit multiplicity 0.0 0.1 0.2 0.3 0.4 0.5 0.6 Normalized counts
+
+Fig. 4 Distributions of the Kepler magnitudes (left panel), distance (middle panel), and observed transit multiplicity (right panel) of the overall stellar sample, the plausible 1st-order MMR systems, and the plausible 2nd-order MMR systems. Compared to the overall stellar sample, stars with plausible 2nd-order MMR planet pairs are systematically brighter, closer, and known to host more transiting planet detections. metric precision increases with stellar brightness, one nat-urally expects to detect smaller and more transiting plan-ets around those brighter stars for the same transit signal-to-noise ratios (Zhu 2020). This is confirmed by the third panel of Figure 4, which shows that systems with plausi-ble 2nd-order resonant pairs do preferentially contain more transiting planet detections. With more detected planets, the by-chance probability increases that two of the de-tected planets are closer to some small integer ratio in or-bital periods, even if the periods are randomly distributed. Smaller planets can be put into tighter orbits and have smaller period ratios without affecting the long-term sta-bility (e.g., Section 2.4.2 of Zhu & Dong 2021), and the chance also increases that such period ratios hit one of the small integer ratios, especially those corresponding to 2nd-order MMRs. A comprehensive validation of this hypothe-sis would require the construction of synthetic multi-planet system populations whose statistical properties reproduce those of the observed ensemble. Such an investigation lies beyond the scope of the present study. 6
+
+As thick disk stars are known to be systematically fainter and more distant than thin disk stars in the Kepler field, the preference for brighter and closer stars in the de-tection of 2nd-order resonant planet pairs can lead to a sample of stars that are less contaminated by thick disk stars. 
+
+5 SUMMARY 
+
+Using the multi-planet systems from Kepler, a previous work by HS24 claimed that systems with planets in/near MMRs were kinematically colder and thus younger than the overall multi-planet systems (see also Schmidt et al. 2024). We show here that the apparent kinematic youth of near-resonant (especially near 2nd-order resonant) sys-tems from the Kepler sample can be explained by the fact that their host stars are preferentially drawn from the brighter and closer thin disk population. After excluding the thick disk contaminants from the sample, which fol-low a different age–velocity dispersion relation, the verti-cal velocity dispersions—and hence the inferred ages—of near-resonant systems become statistically indistinguish-able from those of the overall Kepler multi-planet sample. Although the occurrence rate of near-resonant planetary systems within the overall exoplanet population may de-crease with stellar age (Dai et al. 2024), our results sug-gest that this rate ceases to undergo significant evolution beyond a stellar age of approximately ∼ 1 Gyr. Together with Hu et al. (submitted), who re-examined the kinematic ages of hot Jupiter systems, our work high-lights the need for caution when using stellar kinematics to infer (relative) ages of planetary systems at the population level. 
+
+Acknowledgements We thank the anonymous reviewer for comments on the manuscript. Work by W.Z. and Q.H. was funded by the National Natural Science Foundation of China (NSFC) under No. 12133005. 
+
+Appendix A: ON THE KINEMATIC AGES OF USP HOSTS 
+
+We briefly comment on the kinematic ages of USP hosts here. As shown in Figure 1 and noted in Section 2, a larger fraction of USP hosts belong to the (probable) thick disk, although the statistical difference is marginal at p =0.06 for both KS and AD tests. However, as shown in Figure A.1, the derived vertical velocity dispersion σW
+
+shows no significant difference between the USP hosts and the overall planetary hosts. It is only when a strict cut of 
+
+TD /D < 0.1 is imposed that we see a marginal σW dif-ference at the level of ∼ 2σ. Here we have not corrected for the other differences in the USP host properties (e.g., stellar types; Tu et al. 2025). As the result is sensitive to the selection criterion of thin disk stars, it is unclear whether the ages of the USP hosts are indeed systematically older than the general plan-etary hosts. We leave a more systematic analysis of the USP systems to some future study. 
+
+References 
+
+Alinder, S., Bensby, T., & McMillan, P. 2025, arXiv e-prints, arXiv:2511.10092 2 Aumer, M., Binney, J., & Sch¨ onrich, R. 2016, MNRAS, 462, 1697 1 Bensby, T., Feltzing, S., & Lundstr¨ om, I. 2003, A&A, 410, 527 2 Bensby, T., Feltzing, S., & Oey, M. S. 2014, A&A, 562, A71 2, 4 Boettner, C., Viswanathan, A., & Dayal, P. 2024, A&A, 692, A150 4 Borderies, N., & Goldreich, P. 1984, Celestial Mechanics, 32, 127 1 Bouma, L. G., Hillenbrand, L. A., Howard, A. W., et al. 2024, ApJ, 976, 234 1 Campante, T. L., Barclay, T., Swift, J. J., et al. 2015, ApJ, 799, 170 2 Chen, D.-C., Xie, J.-W., Zhou, J.-L., et al. 2021, ApJ, 909, 115 2, 4 Chen, Y.-X., Wu, Y., Li, Y.-P., et al. 2025, MNRAS, 540, 1998 1 Christiansen, J. L., McElroy, D. L., Harbut, M., et al. 2025, PSJ, 6, 186 2 Dai, F., Goldberg, M., Batygin, K., et al. 2024, AJ, 168, 239 1, 6 Emsenhuber, A., Mordasini, C., Burn, R., et al. 2021, A&A, 656, A69 1 Fabrycky, D. C., Lissauer, J. J., Ragozzine, D., et al. 2014, ApJ, 790, 146 1 Gaia Collaboration, Vallenari, A., Brown, A. G. A., et al. 2023, A&A, 674, A1 2 Goldberg, M., & Batygin, K. 2023, ApJ, 948, 12 1 Goldreich, P., & Schlichting, H. E. 2014, AJ, 147, 32 1 Hamer, J. H., & Schlaufman, K. C. 2024, AJ, 167, 55 1, 2, 3, 4, 6 Hu, Z., Dai, F., Zhu, W., et al. 2025, ApJ, 995, 206 1 Huang, S., & Ormel, C. W. 2023, MNRAS, 522, 828 1 Izidoro, A., Ogihara, M., Raymond, S. N., et al. 2017, MNRAS, 470, 1750 1 Lee, M. H., & Peale, S. J. 2002, ApJ, 567, 596 1 Lithwick, Y., & Wu, Y. 2012, ApJ, 756, L11 3 Mackereth, J. T., Bovy, J., Leung, H. W., et al. 2019, MNRAS, 489, 176 2 Miglio, A., Chiappini, C., Mackereth, J. T., et al. 2021, A&A, 645, A85 2 Price-Whelan, A., & Brammer, G. 2021, pyia 2 715 20 25  
+
+> W(km/s)
+> 0.0 0.1 0.2 0.3 0.4 0.5 0.6 PDF  18.3 ± 0.6 km/s 19.9 ± 1.9 km/s
+
+No TD/D cut    
+
+> All USP 15 20 25
+> W(km/s)
+> 0.0 0.2 0.4 0.6 0.8 PDF  15.2 ± 0.5 km/s 16.6 ± 1.5 km/s
+
+TD/D<0.5    
+
+> All USP 15 20 25
+> W(km/s)
+> 0.0 0.2 0.4 0.6 0.8 1.0 PDF  13.1 ± 0.4 km/s 15.0 ± 1.3 km/s
+
+TD/D<0.1 
+
+> All USP
+
+Fig. A.1 Similar to Figures 2 and 3, but for the USP hosts in the sample of Schmidt et al. (2024). The vertical velocity dispersions and the associated uncertainties estimated from bootstrap tests are shown in each panel. A marginally signif-icant ( ∼ 2σ) σW difference is only seen when all stars with TD /D > 0.1 are excluded. If no TD /D cut or a less strict cut ( TD /D < 0.5) is imposed, the σW values derived from the USP hosts and the overall planetary hosts are statistically indistinguishable ( < 1σ). Schmidt, S. P., Schlaufman, K. C., & Hamer, J. H. 2024, AJ, 168, 109 1, 2, 3, 6, 7 Seabroke, G., & Gilmore, G. 2007, Monthly Notices of the Royal Astronomical Society, 380, 1348 1 Sharma, S., Hayden, M. R., Bland-Hawthorn, J., et al. 2021, Monthly Notices of the Royal Astronomical Society, 506, 1761 2 Silva Aguirre, V., Bojsen-Hansen, M., Slumstrup, D., et al. 2018, MNRAS, 475, 5487 2 Str¨ omberg, G. 1946, ApJ, 104, 12 1 Sun, W., Shen, H., Jiang, B., & Liu, X. 2025, The Astrophysical Journal, 979, 103 2 Ting, Y.-S., & Rix, H.-W. 2019, ApJ, 878, 21 2 Tu, P.-W., Xie, J.-W., Chen, D.-C., & Zhou, J.-L. 2025, Nature Astronomy, 9, 995 4, 6 Wielen, R. 1977, A&A, 60, 263 1 Yang, H., & Li, Y.-P. 2024, MNRAS, 534, 485 1 Zhu, W. 2020, AJ, 159, 188 5 Zhu, W., & Dong, S. 2021, ARA&A, 59, 291 5

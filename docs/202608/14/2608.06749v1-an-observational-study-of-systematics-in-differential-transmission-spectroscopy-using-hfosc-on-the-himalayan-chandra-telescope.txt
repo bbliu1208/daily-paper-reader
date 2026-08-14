@@ -1,0 +1,413 @@
+Title: An Observational Study of Systematics in Differential Transmission Spectroscopy Using HFOSC on the Himalayan Chandra Telescope
+
+URL Source: https://arxiv.org/pdf/2608.06749v1
+
+Published Time: Mon, 10 Aug 2026 00:23:30 GMT
+
+Number of Pages: 19
+
+Markdown Content:
+# An Observational Study of Systematics Affecting Differential Transmission Spectroscopy Using HFOSC on the Himalayan Chandra Telescope 
+
+Manjunath Bestha a,b , Athira Unni c, T. Sivarani a, Parvathy M a,b , and Devika Divakar daIndian Institute of Astrophysics, Bangalore, India 
+
+> b
+
+University of Calcutta, India 
+
+> c
+
+University of California, Santa Cruz, USA 
+
+> d
+
+University of Texas, Austin, USA 
+
+ABSTRACT 
+
+Ground-based low-resolution transmission spectroscopy requires photometric precision of a few hundred parts per million, making it sensitive to instrumental and atmospheric systematics. This work studies the systematic effects affecting differential transmission spectroscopy using the Hanle Faint Object Spectrograph Camera (HFOSC) on the 2-m Himalayan Chandra Telescope (HCT). The study was motivated by an additional flux drop observed in the white-light curve of HAT-P-1 b. HAT-P-1 b is an ideal target for differential spectrophotometry because it has a visual binary companion with similar brightness at a suitable separation, allowing the companion star to be used as a reference. To investigate the origin of this feature, we analyzed several observational parameters, including FWHM variations, spectral trace motion, centroid drift, and spectral shifts. We also observed WASP-33 b in slitless mode to test whether differential slit losses could explain the observed systematic. In addition, observations of WASP-12 b were used to derive a broadband optical transmission spectrum using common-mode correction. The additional flux drop is unlikely to be caused only by differential slit losses, since similar differential centroid and spectral shifts are present in both slit and slitless observations. The results suggest that the observed systematic may be related to field-dependent distortions and pointing-dependent instrumental flexure, although its exact cause is still unknown. Overall, this work highlights the importance of understanding and reducing observational systematics in ground-based exoplanet transmission spectroscopy, especially for measurements that require photometric precision of a few hundred parts per million. 
+
+Keywords: Himalayan Chandra Telescope, Transmission Spectroscopy, Hanle Faint Object Spectroscopic Cam-era, High Dispersion Spectroscopy 
+
+1. INTRODUCTION 
+
+Transmission spectroscopy during planetary transits provides a direct method for probing exoplanet atmospheres by measuring wavelength-dependent variations in transit depth. 1–3 Low-resolution transmission spectroscopy (LRTS) is particularly suited for studying broadband atmospheric features such as Rayleigh scattering slopes, clouds, hazes, and broad atomic absorption signatures. 4 For hot Jupiters, the expected atmospheric signals are typically at the level of a few hundred parts per million (ppm), requiring high spectrophotometric precision and careful control of systematic effects. 1, 2, 5 
+
+Ground-based spectroscopic transit observations are affected by several sources of systematic noise, including atmospheric dispersion, seeing variations, differential slit losses, guiding errors, and telluric absorption. 2, 4, 6–9 
+
+However, additional observational and instrumental systematics can affect the measured transit depths and 
+
+Further author information(Send correspondence to Manjunath Bestha): Manjunath Bestha: E-mail: bestha95@gmail.com Sivarani Thirupathi: E-mail: sivarani@iiap.res.in arXiv:2608.06749v1 [astro-ph.EP] 7 Aug 2026 the resulting transmission spectrum. Understanding and characterizing these effects is therefore important for achieving the spectrophotometric precision required for atmospheric characterization. Recent transmission spectroscopy observations obtained with the Hanle Faint Object Spectrograph Camera (HFOSC) on the 2 m Himalayan Chandra Telescope (HCT) demonstrated the feasibility of conducting transmis-sion spectroscopy from Hanle using wide-slit multi-object techniques. During the analysis of these observations, an additional relative flux dip was identified in the white-light transit curve of HAT-P-1 b beyond the expected transit profile (see Figure 1). 10 
+
+One possible explanation for such behavior is differential slit loss. Variations in seeing, atmospheric dispersion, guiding, and small alignment differences between the target and reference stars can introduce unequal flux losses that are not perfectly removed through differential correction. 4 If these effects vary with time, they can produce artificial structures in light curves. To investigate the origin of the observed feature, additional transit observations were obtained using both slit and slitless configurations. The primary objective of this work is to identify the dominant sources of systematic error in HFOSC-HCT observations. 0.04 0.02 0.00 0.02 0.04 MJD (mid) 0.970 0.975 0.980 0.985 0.990 0.995 1.000 1.005 Normalized Flux 
+
+> HAT-P-1 b
+> Program Target LC / Reference Target LC Transit model
+
+Figure 1: White light curve of HAT-P-1,b showing an additional dip during observations at higher elevations. The region between the red and blue lines corresponds to the data obtained at higher elevations. 
+
+2. OBSERVATIONS 
+
+The time-series multi-object low-resolution transmission spectroscopy comprises several key stages: observa-tional planning, data reduction, light-curve extraction, and construction of exoplanet transmission spectra. In general, the interpretation of transmission spectra involves atmospheric retrieval frameworks and forward-model comparisons to constrain atmospheric properties. However, the primary objective of this work is to identify and characterize the major observational and instrumental systematics affecting transmission spectroscopy ob-servations obtained with HCT. Therefore, the emphasis is placed on the observational strategy, data-reduction procedures, and systematic effects that influence the derived transmission spectra, rather than on detailed at-mospheric interpretation. The individual steps of the workflow and their role in understanding these systematics are described in the following sections. The observations of HAT-P-1 b were carried out using HCT-HFOSC. A detailed description of the site char-acteristics, telescope configuration, and instrument specifications is provided in Table 1. We performed differential spectrophotometry using HFOSC, observing the target and a suitable reference star simultaneously. This approach helps correct for common systematics affecting both stars. To achieve this, Table 1: Overview of the Himalayan Chandra Telescope (HCT) and the Hanle Faint Object Spectrograph Camera (HFOSC) 
+
+Parameter Description 
+
+Himalayan Chandra Telescope (HCT) 
+
+Location Indian Astronomical Observatory, Hanle, Ladakh Altitude ∼4500 m above sea level Telescope Type Ritchey–Chr´ etien Aperture 2.0 m Mount Alt-azimuth Operating Wavelength Optical to Near-Infrared Primary Science Optical spectroscopy and imaging 
+
+Hanle Faint Object Spectrograph Camera (HFOSC) 
+
+Instrument Type Optical imager and spectrograph Wavelength Coverage ∼350–900 nm Spectral Resolution R ∼ 100–2000 (Slit width dependent) Slit Widths 0.77–15.41 arcsec (typical) Detector 2048 × 4096 CCD Pixel Scale ∼0.296 arcsec/pixel Observing Modes Imaging, long-slit spectroscopy Primary Use Spectroscopy and photometry of faint objects the slit was aligned along the position angle connecting the target and reference stars. In order to minimize differential slit losses between the two objects, a wide slit of 1340 μm was used during the observations. The targets were selected based on the following criteria to ensure their suitability for observations with the 2 m HCT and HFOSC: 
+
+• Since the sensitivity of a 2 m class telescope limits observations of very faint systems, we selected relatively bright targets with magnitudes brighter than ∼ 12, and planetary systems exhibiting relatively deep transits (transit depth ≳ 6000 ppm). 
+
+• We selected targets with short orbital periods and transit durations of only a few hours, so that a complete transit, along with a sufficient out-of-transit and baseline, could be observed within a single night. 
+
+• The availability of a suitable reference star is essential for differential spectrophotometry. Therefore, we selected systems for which a nearby reference star of comparable brightness and, where possible, similar spectral type was available within the field of view of the spectrograph ( ≈ 10 arc min). 5
+
+During the observations, the instrument cube at the Cassegrain focus was rotated so that both the target and reference stars could be aligned along the slit. Initially, we hypothesized that the additional dip observed in the white-light curve was caused by differential slit losses, as discussed by Sing et al 2012. 11 To test this possibility, we carried out slitless observations of the target WASP-33 b, an approximately 8th-magnitude system (see Table 2). The observations were performed with an exposure time of 150 s using Grism 7. Since no suitable reference star of similar spectral type was available within the field of view of HFOSC, we selected an F-type reference star located ≈ 5 arcmin from WASP-33 (see Figure 2), which is an A-type δ
+
+Scuti host star. 12, 13 In addition, the observations were planned to cover a similar airmass/elevation range to that of the HAT-P-1 b observations, particularly the high-elevation regime. This was motivated by the fact that the additional dip in the HAT-P-1 b white-light curve appears during the portion of the observations obtained at elevations above ∼ 80 ◦. Therefore, replicating the observing strategy was important for testing whether the observed feature could be associated with slit-loss effects or other elevation-dependent systematics. 2.1 Data Reduction and Light-Curve Extraction 
+
+The data reduction process includes all steps from the raw science frames (see Figure 3) to the extraction of white- and spectroscopic-light curves. The initial processing involves cosmic-ray removal using the lacosmic ∗
+
+routine available in astropy †, followed by bias subtraction. Stellar spectra were then extracted by identifying the spectral trace and fitting the sky background for subtraction using a custom pipeline developed based on the Pykosmos ‡ Python package. The extraction aperture was varied between (1 σ) and (5 σ) of the spatial profile FWHM, and the sky background was estimated using regions containing the same number of pixels as the extraction aperture. The background regions were selected at a distance of approximately twice the aperture width from the extraction aperture to avoid contamination from the stellar wings. The final aperture and background regions were chosen based on the out-of-transit scatter of the normalized light curve, with the optimal configuration corresponding to the minimum scatter relative to the out-of-transit baseline. For the HAT-P-1 system, the target and reference stars are separated by only ≈ 14 arcsec, and both spectra are recorded on the same detector frame. To avoid contamination during sky subtraction, the reference-star spectrum was masked when extracting the target spectrum, and the target spectrum was similarly masked during the extraction of the reference star. Wavelength calibration was performed using PyRAF § through the identification of Fe-Ar arc lamp emission lines. Once the spectra of both the program and reference stars were cleaned (see Figure 4), wavelength calibrated, and extracted for all time-series frames, they were integrated over the ≈ 400 to 750 nm wavelength range to construct the white-light curves. Table 2: Stellar and planetary parameters of WASP-33 b 
+
+Parameter Description Value Reference 
+
+Stellar Parameters 
+
+Teff Effective temperature 7430 ± 100 K 14 
+
+log g Surface gravity (cgs) 4.3 ± 0.2 14 
+
+[Fe /H] Metallicity 0.10 ± 0.20 14 
+
+R⋆ Stellar radius 1.444 ± 0.034 R⊙ 14 
+
+Planetary Parameters 
+
+P Orbital period 1.2198675 ± 1.1 × 10 −6 days 15 
+
+T0 Transit mid-time (BJD) 2455507 .5222 ± 0.0003 15 
+
+a/R ⋆ Scaled semi-major axis 3.68 ± 0.03 15 
+
+i Orbital inclination 87 .90 ± 0.93 ◦ 15 
+
+λ Sky-projected spin-orbit angle −112 .93 +0 .23 
+
+> −0.20
+
+° 16 
+
+Rp/R ⋆ Planet-to-star radius ratio 0.1046 ± 0.0006 15 
+
+b Impact parameter 0.0840 +0 .0020  
+
+> −0.0019 16
+
+The extracted fluxes were first normalized using the median out-of-transit flux for each star. The white-light curve of the target was then obtained by dividing the normalized flux of the program star by that of the reference star (see Figures 5 and 9). 
+
+2.2 Identifying source for an extra-dip 
+
+As mentioned in the previous Section 1, observed HAT-P-1 b, whose host star is a G-type star accompanied by a nearby G-type companion that was used as the reference star. The angular separation between the target and reference stars is ≈ 14 arcsec, as shown in Figure 2 (a). The properties of the host star and planet are listed in Table 4, and a representative time-series spectrum of the target and reference on the HFOSC detector is shown in Figure 3 (a).  
+
+> ∗https://www.astropy.org/ccd-reduction-and-photometry-guide/v/dev/notebooks/ 08-03-Cosmic-ray-removal.html
+> †https://www.astropy.org/
+> ‡https://github.com/jradavenport/pykosmos
+> §https://pyraf.readthedocs.io/en/latest/ (a) Field of view of HAT-P-1 and its reference star. (b) Field of view of WASP-33 and its reference star.
+> (c) Field of view of WASP-12 and its reference star.
+
+Figure 2: Field-of-view images of the three targets HAT-P-1, WASP-33, and WASP-12, showing their respective reference stars and surrounding sky regions. The red lines indicate the angular separation between the program and reference stars (in arcseconds). The images are obtained from the Aladin Sky Atlas. 0 100 200 300 400 X [pixel] 0500 1000 1500 2000 2500 3000 Y [pixel] 
+
+> 030000 60000 90000 120000 150000 180000 Counts
+
+(a) HAT-P-1 0 250 500 750 1000 1250 X [pixel] 0500 1000 1500 2000 2500 3000 Y [pixel]  
+
+> 04000 8000 12000 16000 20000 Counts
+
+(b) WASP-33 0 500 1000 1500 2000 X [pixel] 0500 1000 1500 2000 2500 3000 Y [pixel] 
+
+> 150
+> 0150 300 450 600 750 Counts
+
+(c) WASP-12 
+
+Figure 3: Two-dimensional spectroscopic CCD frames of HAT-P-1, WASP-33, and WASP-12 obtained with HFOSC, showing the program and corresponding reference stars in a single exposure. Table 3: Stellar and planetary parameters of WASP-12 b 
+
+Parameter Description Value Reference 
+
+Stellar Parameters 
+
+Teff Effective temperature 6300 +200  
+
+> −100
+
+K 17 
+
+log g Surface gravity (cgs) 4.38 ± 0.10 17 
+
+[Fe /H] Metallicity 0.30 +0 .05  
+
+> −0.15 17
+
+R⋆ Stellar radius 1.57 ± 0.07 R⊙ 17 
+
+v sin i⋆ Projected rotation velocity 2.2 ± 1.5 km s −1 17 
+
+Planetary Parameters 
+
+P Orbital period 1.0914203 ± 1.44 × 10 −7 days 18 
+
+T0 Transit mid-time (BJD TDB ) 2456176 .668258 ± 7.77 × 10 −5 18 
+
+a/R ⋆ Scaled semi-major axis 3.039 +0 .034  
+
+> −0.033 18
+
+i Orbital inclination (Degrees) 83 .37 +0 .72  
+
+> −0.64 18
+
+Rp/R ⋆ Planet-to-star radius ratio 0.11785 +0 .00053  
+
+> −0.00054 18
+
+b Impact parameter 0.351 +0 .030          
+
+> −0.034 18 350 400 450 500 550 600 650 700 750 Wavelength (nm) 0.0 0.5 1.0 1.5 2.0 Counts 1e6 Ref Program
+
+(a) HAT-P-1 400 450 500 550 600 650 700 750 Wavelength (nm) 0100000 200000 300000 400000 Counts Ref Program (b) WASP-33 400 450 500 550 600 650 700 750 Wavelength (nm) 02000 4000 6000 8000 10000 Counts Ref Program 
+
+(c) WASP-12 
+
+Figure 4: Extracted spectra of the three targets HAT-P-1, WASP-33, and WASP-12 from single exposures, showing both the program and corresponding reference stars As discussed earlier, the additional dip in the white-light curve appears during the high-elevation portion of the observations, above ∼ 80 ◦ (see Figure 1). To know whether this feature could be caused by differential effects between the program and reference stars, we examined several parameters, including the full width at half maximum (FWHM), spectral trace position, centroid shift, and spectral shift. The FWHM variation for both stars was estimated by fitting a Gaussian profile to a horizontal cut taken along the spatial direction near the middle of the two-dimensional spectral image. The Gaussian profile is given by 
+
+G(x) = A exp 
+
+
+
+− (x − x0)2
+
+2σ2
+
+
+
++ C, (1) where A is the amplitude, x0 is the centroid position, σ is the Gaussian width, and C is a constant background term. The full width at half maximum was then calculated as FWHM = 2 .355 σ. (2) The spectral traces were obtained using Pykosmos with a bin size of 15 pixels. We did not find any significant differential trend in either the FWHM or the trace position between the target and reference stars, as shown in Figure 7 (a & d). However, we did notice random variations in the trace position over time (see Figure 6), which were particularly pronounced during the high-elevation observations. 0.04 0.02 0.00 0.02 0.04 Phase 0.80 0.85 0.90 0.95 1.00 Normalized Flux Program and Reference Targets Light Curves Reference Target LC Program Target LC Program Target LC/Reference Target LC Transit model (a) HAT-P-1: Normalized light curves of the program and reference stars and their ratio (white light curve) with a model overplotted. 0.02 0.01 0.00 0.01 0.02 0.03 0.04 0.05 Phase 0.925 0.950 0.975 1.000 1.025 1.050 Normalized Flux Program and Reference Targets Light Curves Reference Target LC Program Target LC Program Target LC/Reference Target LC Transit model 
+
+(b) WASP-33: Normalized light curves of the program and reference stars and their ratio (white light curve) with a model overplotted. 0.01 0.00 0.01 0.02 0.03 Phase 0.94 0.96 0.98 1.00 Normalized Flux Program and Reference Targets Light Curves Reference Target LC Program Target LC Program Target LC/Reference Target LC Transit model 
+
+(c) WASP-12: Normalized light curves of the program and reference stars and their ratio (white light curve) with a model overplotted. 
+
+Figure 5: Median out-of-transit normalised light curves of the program and reference stars for HAT-P-1, WASP-33, and WASP-12. The corresponding white-light curves (ratios) are shown, along with an overplotted model. The region between the two vertical lines indicates the selected high-altitude observation window. 220 240 260 280 300 320 340 Pixels 0500 1000 1500 2000 2500 Pixels (Spectral Direction) 
+
+12345678910 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 277.8 277.9 278.0 278.1 278.2 278.3 278.4 020 40 60 80 100 0123 45 67(a) HAT-P-1 60 80 100 120 140 Pixels 0500 1000 1500 2000 Pixels (Spectral Direction) 
+
+12 3 45 678910 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 137.5 140.0 142.5 145.0 147.5 150.0 152.5 020 40 60 80 100 0 1 610 16 19 40 (b) WASP-33 100 120 140 160 180 200 Pixels 0500 1000 1500 2000 Pixels (Spectral Direction) 
+
+12345678910 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 141.0 141.5 142.0 142.5 143.0 020 40 60 80 100 01 2 34 5 6 7
+
+(c) WASP-12 
+
+Figure 6: Traces of the three targets HAT-P-1, WASP-33, and WASP-12, demonstrating random motion on the HFOSC detector during the observations. The inset image shows a zoomed-in view of a smaller region. 40 60 80 Altitude (deg)  (a) Target Altitude vs Phase 
+
+02FWHM Var. (pix)  (b) FWHM Variation vs Phase 
+
+> Ref Program
+
+05Centroid Shift (pix) 
+
+(c) Weighted Average Centroid Drift vs Phase 
+
+> Ref Program
+
+05Trace Shift (pix)  (d) Trace Drift vs Phase (HAT-P-1 b) 
+
+> Ref Program
+
+0.04 0.02 0.00 0.02 0.04 Phase 10 
+
+0Spectrum Shift (pix) 
+
+(e) Spectrum Drift vs Phase 
+
+> Ref Program (a) HAT-P-1 b
+
+Figure 7: Time-dependent observational diagnostics for HAT-P-1 as a function of phase. Panel (a) shows the target altitude, 90 ◦ − z, where z is the zenith angle. Panel (b) shows the FWHM variation (in pixels) for the reference star and the program target, each normalized to its first frame. Panel (c) shows the weighted centroid drift in the spatial direction (pixels), again relative to the first frame. Panel (d) shows the trace-position drift (pixels), measured at detector column x = 750 after trimming 500 pixels from both spectral ends, relative to the first frame. Panel (e) shows the spectrum drift (pixels) from wavelength-shift measurements, relative to the first frame. The region between the red and blue dashed vertical lines represents observations carried out at higher elevations. 25 50 75 Altitude (deg)  (a) Target Altitude vs Phase 
+
+0510 FWHM Var. (pix)  (b) FWHM Variation vs Phase 
+
+> Ref Program
+
+5
+
+05Centroid Shift (pix) 
+
+(c) Weighted Average Centroid Drift vs Phase 
+
+> Ref Program
+
+5
+
+05Trace Shift (pix)  (d) Trace Drift vs Phase 
+
+> Ref Program
+
+0.02 0.01 0.00 0.01 0.02 0.03 0.04 0.05 Phase 010 Spectrum Shift (pix) 
+
+(e) Spectrum Drift vs Phase 
+
+> Ref Program
+
+Figure 8: Time-dependent observational diagnostics for WASP-33 as a function of phase. as like Figure 7 Table 4: Stellar and planetary parameters of HAT-P-1 b adopted in this work. 
+
+Parameter Description Value Reference 
+
+Stellar Parameters 
+
+Teff Effective temperature 5980 ± 49 K 19 
+
+log g⋆ Surface gravity (cgs) 4.359 ± 0.014 19 
+
+[Fe /H] Metallicity 0.130 ± 0.008 19 
+
+M⋆ Stellar mass 1.151 +0 .052  
+
+> −0.051
+
+M⊙ 19 
+
+R⋆ Stellar radius 1.174 +0 .026  
+
+> −0.027
+
+R⊙ 19 
+
+v sin i⋆ Projected stellar rotation velocity 3.74 ± 0.30 km s −1 20 
+
+Planetary Parameters 
+
+P Orbital period 4.46529976 ± 0.00000055 days 19 
+
+T0 Reference transit mid-time (BJD TDB ) 2453979 .93202 ± 0.00024 19 
+
+a Semi-major axis 0.05561 +0 .00082  
+
+> −0.00083
+
+AU 19 
+
+a/R ⋆ Scaled semi-major axis 9.853 ± 0.071 19 
+
+i Orbital inclination 85 .634 ± 0.056 ◦ 19 
+
+λ Sky-projected spin–orbit angle 3.7 ± 2.1◦ 20 
+
+Mp Planetary mass 0.525 ± 0.019 MJ 19 
+
+Rp Planetary radius 1.319 ± 0.019 RJ 19 
+
+Rp/R ⋆ Planet-to-star radius ratio 0.11802 ± 0.00018 19 
+
+b Impact parameter 0.7501 +0 .0064  
+
+> −0.0069 19
+
+Teq Equilibrium temperature 1322 +14  
+
+> −15
+
+K 19 0.02 0.01 0.00 0.01 0.02 0.03 0.04 0.05 Phase 0.980 0.985 0.990 0.995 1.000 1.005 Normalized Flux WASP-33 b 
+
+> Program Target LC / Reference Target LC Transit model
+
+Figure 9: White-light curve of WASP-33 b showing an additional dip during observations at high elevations. The region between the vertical lines corresponds to the data obtained during the high-elevation phase of the observations. The centroid position in the spatial direction was estimated using a weighted-average method. A narrow strip centered on the spectral trace was integrated along the spatial direction, yielding a one-dimensional flux distribution as a function of pixel position in the spatial direction. The centroid position, xc, was then computed as, 
+
+xc =
+
+P 
+
+> j
+
+xj Ij
+
+P 
+
+> j
+
+Ij
+
+, (3) where xj is the pixel position along the spatial direction and Ij is the integrated flux within the selected strip. To examine temporal variations, the centroid drift for each star was measured relative to the first frame, such that ∆xc(t) = xc(t) − xc(t0), (4) where xc(t) is the centroid position at time t and xc(t0) is the centroid position in the first exposure. The relative centroid drift was then plotted as a function of orbital phase, as shown in Figure 7 (c), and a significant differential centroid shift between the program and reference stars was observed. We also identified a differential spectral shift in spectral direction by fitting a Gaussian profile to a strong telluric absorption feature in the O 2 band around 680–720 nm (see Figure 7 (e)). A similar analysis was carried out for the slitless observations of WASP-33 b. In this case, the reference star is located ≈ 4 arcmin from the target, as shown in Figure 2 (b), and the corresponding stellar and planetary properties are listed in Table 2. Representative spectra of the A-type host star and the F-type reference star are shown in Figure 4 (b). For WASP-33 we again found similar trends in the FWHM and trace position, with no strong evidence for differential FWHM or trace-shift variations. However, differential centroid and spectral shifts were also present in the slitless observations. Unlike HAT-P-1 the differential centroid shift in WASP-33 was observed throughout the observations and not only at high elevations. This may be partly due to the δ Scuti pulsations of the host star, as well as the mismatch in spectral type and brightness between the target and reference stars, and might be because WASP-33 is an eclipsing binary system. 21 
+
+Since differential centroid shifts and spectral shifts are present in both slit and slitless observations, while the extra dip in the white-light curves of both HAT-P-1 b and WASP-33 b appears at high elevations, it is unlikely that the observed feature is caused purely by differential slit losses. Instead, these results suggest that the effect may arise from distortions in the detector image, possibly due to mechanical flexure in the instrument. One possible explanation is that the observed systematic may arise from limitations in the field rotator’s ability to accurately compensate for the rapid field rotation encountered at very high elevations in alt-azimuth telescopes. This could introduce differential distortions between the spectra of the target and reference stars. We also note that the differential spectral shift appears to be larger when the program and reference stars are more widely separated on the detector. This suggests that such distortions may increase with separation, leading to stronger differential systematics in the extracted light curves. 
+
+2.3 Transmission spectrum of WASP-12 b 
+
+In addition to WASP-33 b, we also observed WASP-12 b, for which the transit observations did not extend into the very high-elevation regime (see Figure 11(a). WASP-12 b is one of the most intensely irradiated ultra-hot Jupiters known, orbiting a late-F type star with an orbital period of approximately 1.09 days. Owing to its close-in orbit, the planet experiences extreme stellar irradiation, leading to a highly inflated, extended atmosphere. Its large atmospheric scale height and relatively deep transit make it a favorable target for transmission spectroscopy and atmospheric characterization, with a transmission spectroscopy metric of ≈ 200. The observations were carried out using a reference star of similar spectral type and comparable brightness, separated by ≈ 4.8 arcmin from the target, as shown in Figure 2(c). Observations were taken with an exposure 0.01 0.00 0.01 0.02 0.03     
+
+> Phase
+> 0.9850 0.9875 0.9900 0.9925 0.9950 0.9975 1.0000
+> Flux Ratio (PT_LC / RT_LC)  Model HFOSC, HCT
+> 0.01 0.00 0.01 0.02 0.03
+> Phase
+> 0.9980 0.9985 0.9990 0.9995 1.0000 1.0005 1.0010 1.0015
+> Residual (Data/Model)
+> Residuals (767.888 ppm)
+
+Figure 10: Observed white-light curve of WASP-12 b obtained using HFOSC on the HCT, with the best-fit transit model overplotted. The right panel shows the residuals. time of 120 s. However, the beginning of the transit could not be fully observed due to cloudy conditions, and the observations were interrupted on a few instances, resulting in gaps in the time series. The remaining observations were carried out under thin cloud conditions. The data were reduced following the same procedure described in the section 2.1. The extracted spectra of both G-type stars are shown in Figure 4(c). We did not find any significant differential trends in the FWHM, trace position, or centroid shift between the target and reference stars. However, a differential spectral shift remained. This may be due to field-dependent distortions, since the target and reference stars are relatively widely separated on the detector (see Figure 11). A transit model was fitted to the white-light curve using the PyLightcurve ¶ Python package. The residuals were then obtained by dividing the observed white-light curve by the best-fitting transit model. These residuals were assumed to represent wavelength-independent systematics common across all spectral channels. To construct the transmission spectrum, the extracted spectra were binned in wavelength to generate spec-troscopic light curves. These light curves were produced in a manner similar to the white-light curve: flux was integrated within each wavelength bin of 35 nm for both the target and reference stars, and their ratio was calculated. The spectroscopic light curves were subsequently corrected using the white-light curve residuals. This procedure, commonly referred to as common-mode correction, removes systematics that are shared across all wavelength channels and improves the precision of the final transmission spectrum. 22 
+
+Spectroscopic light curves were fitted using the PyLightcurve package to measure the wavelength-dependent transit depths. The transmission spectrum was extracted over the wavelength range 450 to 750 nm. The resulting transmission spectrum appears largely flat, although the uncertainties are relatively large. This is likely due to a weak signal from cloudy observing conditions, along with possible wavelength-dependent systematics affecting the extracted spectra. 
+
+3. CONCLUSION 
+
+In this work, we studied systematic effects affecting multi-object low-resolution transmission spectroscopy using HFOSC on the Himalayan Chandra Telescope. A detailed analysis of several observational diagnostics, including FWHM variations, trace position, centroid drift, and spectral shifts, was carried out for the HAT-P-1 b datasets. No significant differential trends were 
+
+> ¶https://github.com/ucl-exoplanets/pylightcurve
+
+40 60 80 Altitude (deg)  (a) Target Altitude vs Phase 
+
+0.0 2.5 FWHM Var. (pix)  (b) FWHM Variation vs Phase 
+
+> Ref Program
+
+02Centroid Shift (pix) 
+
+(c) Weighted Average Centroid Drift vs Phase 
+
+> Ref Program
+
+024Trace Shift (pix)  (d) Trace Drift vs Phase 
+
+> Ref Program
+
+0.01 0.00 0.01 0.02 0.03 Phase 5
+
+05Spectrum Shift (pix) 
+
+(e) Spectrum Drift vs Phase 
+
+> Ref Program (a) WASP-12 b
+
+Figure 11: Time-dependent observational diagnostics for WASP-12 as a function of phase. as like Figure 7 0.01 0.00 0.01 0.02 0.03 Phase 1.00 1.05 1.10 1.15 1.20 1.25 1.30 1.35 Relative Flux + Offset 
+
+> 466.4 nm 501.5 nm 536.4 nm 571.4 nm 606.4 nm 641.4 nm 676.5 nm 711.5 nm
+
+Spectroscopic Light Curves 0.01 0.00 0.01 0.02 0.03 Phase 1.00 1.05 1.10 1.15 1.20 1.25 1.30 1.35 Residuals + Offset 
+
+> RMS = 1872.5 ppm RMS = 1215.6 ppm RMS = 1572.6 ppm RMS = 1000.5 ppm RMS = 840.8 ppm RMS = 846.9 ppm RMS = 814.3 ppm RMS = 1140.6 ppm
+
+Residuals with RMS (ppm) Figure 12: Scattered points represent the spectroscopic light curves of WASP-12 b obtained using 35 nm wave-length bins. The overplotted curves show the corresponding best-fit transit models for each bin. The right panel shows the residuals. 450 500 550 600 650 700 Wavelength (nm) 10000 12000 14000 16000 Transit Depth (ppm) 
+
+# WASP-12 b Figure 13: Observed transmission spectrum of WASP-12 b obtained using HFOSC on the HCT. The error bars represent the standard deviation of the residuals from the spectroscopic light curves. found in the FWHM or trace position between the program and reference stars. However, differential centroid shifts and spectral shifts were seen in both datasets. To examine whether these effects could be attributed to differential slit losses, additional slitless observations of WASP-33 b were analyzed. The presence of similar centroid and spectral shifts in both slit and slitless observations indicates that differential slit losses are unlikely to be the sole source of the observed systematic feature. The systematic feature was observed during the high-elevation portion of the HAT-P-1 b and WASP-33 b observations, whereas no comparable feature was noticed in the WASP-12 b observations, which did not extend into the same elevation range. This suggests the presence of an elevation-dependent systematic effect. The observed differential centroid and spectral shifts suggest that the systematic feature may be associated with field-dependent distortions and instrumental flexure, which could lead to differential spectral extraction. Although the precise origin of the effect remains uncertain, the observations indicate that differential slit losses alone cannot account for the systematic feature. A transmission spectrum of WASP-12 b was also extracted using common-mode correction techniques. The resulting spectrum exhibits relatively large uncertainties (( ≥ 800) ppm), likely due to observing conditions and residual wavelength-dependent systematics, limiting the interpretation of atmospheric features. 
+
+ACKNOWLEDGMENTS 
+
+We thank the staff of the Indian Astronomical Observatory (IAO), Hanle, and the Center for Research & Education in Science & Technology (CREST), Hoskote, for their support in making these observations possible. The facilities at IAO and CREST are operated by the Indian Institute of Astrophysics (IIA), Bangalore. We also thank the HCT Time Allocation Committee for granting observing time for this project. REFERENCES 
+
+[1] Bean, J. L., Miller-Ricci Kempton, E., and Homeier, D., “A ground-based transmission spectrum of the super-Earth exoplanet GJ 1214b,” Nature 468 , 669–672 (dec 2010). [2] Ahrer, E.-M., Low Resolution Transmission Spectroscopy of Exoplanet Atmospheres using Ground-based and Space Telescopes , phd thesis, University of Warwick, Coventry, UK (June 2023). [3] Rukdee, S., “Instrumentation prospects for rocky exoplanet atmospheres studies with high resolution spec-troscopy,” Scientific Reports 14 , 27356 (Nov. 2024). [4] Sedaghati, E., Boffin, H. M. J., Csizmadia, Sz., Gibson, N., Kabath, P., Mallonn, M., and Van den Ancker, M. E., “Regaining the fors: optical ground-based transmission spectroscopy of the exoplanet wasp-19b with vlt+fors2,” A&A 576 , L11 (2015). [5] Unni, A., Sivarani, T., and Goyal, J., “Low-resolution transit spectroscopy of three hot jupiters using the 2m himalayan chandra telescope,” Monthly Notices of the Royal Astronomical Society 535 , 1123–1135 (10 2024). [6] Huitson, C. M., D´ esert, J.-M., Bean, J. L., Fortney, J. J., Stevenson, K. B., and Bergmann, M., “Gem-ini/GMOS Transmission Spectral Survey: Complete Optical Transmission Spectrum of the Hot Jupiter WASP-4b,” aj 154 , 95 (Sept. 2017). [7] Langeveld, A. B., Characterizing Exoplanet Atmospheres with High-Resolution Transmission Spectroscopy ,phd thesis, University of Cambridge, Cambridge, UK (July 2022). [8] Schmidt, L. M., Oelkers, R. J., Cook, E., Limbach, M. A., DePoy, D. L., Marshall, J. L., Holcomb, L., Pena, W., Purcell, J., and Vega, E. G., “Rapid characterization of exoplanet atmospheres with the Exoplanet Transmission Spectroscopy Imager,” Journal of Astronomical Telescopes, Instruments, and Systems 10 (4), 045005 (2024). [9] Williams, J. E. and Konidaris, N. P., “Using chromatic covariance to correct scintillation noise in ground-based spectrophotometry,” Monthly Notices of the Royal Astronomical Society 543 , 1624–1637 (09 2025). [10] Unni, A., Optical spectroscopy of exoplanets and hosts stars , PhD thesis, Pondicherry University, Puducherry, India (2022). Supervisor: Sivarani Thirupathi. [11] Sing, D. K., Huitson, C. M., Lopez-Morales, M., Pont, F., D´ esert, J.-M., Ehrenreich, D., Wilson, P. A., Ballester, G. E., Fortney, J. J., Lecavelier des Etangs, A., and Vidal-Madjar, A., “Gtc osiris transiting exoplanet atmospheric survey: detection of sodium in xo-2b from differential long-slit spectroscopy,” Monthly Notices of the Royal Astronomical Society 426 , 1663–1670 (10 2012). [12] von Essen, C., Mallonn, M., Welbanks, L., Madhusudhan, N., Pinhas, A., Bouy, H., and Weis Hansen, P., “An optical transmission spectrum of the ultra-hot jupiter wasp-33 b - first indication of aluminum oxide in an exoplanet,” A&A 622 , A71 (2019). [13] Nugroho, S. K., Kawahara, H., Gibson, N. P., de Mooij, E. J. W., Hirano, T., Kotani, T., Kawashima, Y., Masuda, K., Brogi, M., Birkby, J. L., Watson, C. A., Tamura, M., Zwintz, K., Harakawa, H., Kudo, T., Kuzuhara, M., Hodapp, K., Ishizuka, M., Jacobson, S., Konishi, M., Kurokawa, T., Nishikawa, J., Omiya, M., Serizawa, T., Ueda, A., and Vievard, S., “First detection of hydroxyl radical emission from an exoplanet atmosphere: High-dispersion characterization of wasp-33b using subaru/ird,” The Astrophysical Journal Letters 910 , L9 (mar 2021). [14] Collier Cameron, A., Guenther, E., Smalley, B., McDonald, I., Hebb, L., Andersen, J., Augusteijn, T., Barros, S. C. C., Brown, D. J. A., Cochran, W. D., Endl, M., Fossey, S. J., Hartmann, M., Maxted, P. F. L., Pollacco, D., Skillen, I., Telting, J., Waldmann, I., and West, R. G., “Line-profile tomography of exoplanet transits – II. a gas-giant planet transiting a rapidly-rotating A5 star,” Monthly Notices of the Royal Astronomical Society 407 (1), 507–514 (2010). [15] von Essen, C., Czesla, S., Wolter, U., Breger, M., Herrero, E., Albrecht, S., Wyttenbach, A., and Drei-zler, S., “Comprehensive time series analysis of the transiting extrasolar planet WASP-33b,” Astronomy & Astrophysics 561 , A48 (2014). [16] Johnson, M. C., Cochran, W. D., Collier Cameron, A., and Bayliss, D., “Measurement of the nodal preces-sion of WASP-33 b via Doppler tomography,” The Astrophysical Journal Letters 810 (2), L23 (2015). [17] Hebb, L., Collier-Cameron, A., Loeillet, B., Pollacco, D., H´ ebrard, G., Street, R. A., Bouchy, F., Stempels, H. C., Moutou, C., Simpson, E., Udry, S., Joshi, Y. C., West, R. G., Skillen, I., Wilson, D. M., McDonald, I., Gibson, N. P., Aigrain, S., Anderson, D. R., Benn, C. R., Christian, D. J., Enoch, B., Haswell, C. A., Hellier, C., Horne, K., Irwin, J., Lister, T. A., Maxted, P., Mayor, M., Norton, A. J., Parley, N., Pont, F., Queloz, D., Smalley, B., and Wheatley, P. J., “WASP-12b: The Hottest Transiting Extrasolar Planet Yet Discovered,” apj 693 , 1920–1928 (Mar. 2009). [18] Collins, K. A., Kielkopf, J. F., and Stassun, K. G., “Transit Timing Variation Measurements of WASP-12b and Qatar-1b: No Evidence Of Additional Planets,” aj 153 , 78 (Feb. 2017). [19] Nikolov, N., Sing, D. K., Pont, F., Burrows, A. S., Fortney, J. J., Ballester, G. E., Evans, T. M., Huitson, C. M., Wakeford, H. R., Wilson, P. A., Aigrain, S., Deming, D., Gibson, N. P., Henry, G. W., Knutson, H., Lecavelier des Etangs, A., Showman, A. P., Vidal-Madjar, A., and Zahnle, K., “Hubble Space Telescope hot jupiter transmission spectral survey: A detection of Na and strong optical absorption in HAT-P-1b,” 
+
+Monthly Notices of the Royal Astronomical Society 437 (1), 46–66 (2014). [20] Johnson, J. A., Winn, J. N., Narita, N., Enya, K., Williams, P. K. G., Marcy, G. W., Sato, B., Ohta, Y., Taruya, A., Suto, Y., Turner, E. L., Bakos, G., Butler, R. P., Vogt, S. S., Aoki, W., Tamura, M., Yamada, T., Yoshii, Y., and Hidas, M., “Measurement of the spin-orbit angle of exoplanet HAT-P-1b,” The Astrophysical Journal 686 (1), 649–657 (2008). [21] G¨ unther, M. N., Queloz, D., Gillen, E., McCormac, J., Bayliss, D., Bouchy, F., Walker, S. R., West, R. G., Eigm¨ uller, P., Smith, A. M. S., Armstrong, D. J., Burleigh, M., Casewell, S. L., Chaushev, A. P., Goad, M. R., Grange, A., Jackman, J., Jenkins, J. S., Louden, T., Moyano, M., Pollacco, D., Poppenhaeger, K., Rauer, H., Raynard, L., Thompson, A. P. G., Udry, S., Watson, C. A., and Wheatley, P. J., “Centroid vetting of transiting planet candidates from the next generation transit survey,” Monthly Notices of the Royal Astronomical Society 472 , 295–307 (11 2017). [22] Gibson, N. P., Aigrain, S., Barstow, J. K., Evans, T. M., Fletcher, L. N., and Irwin, P. G. J., “The optical transmission spectrum of the hot jupiter hat-p-32b: clouds explain the absence of broad spectral features?,” 
+
+Monthly Notices of the Royal Astronomical Society 436 , 2974–2988 (12 2013).
